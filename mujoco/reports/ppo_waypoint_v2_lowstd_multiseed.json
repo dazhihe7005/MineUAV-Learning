@@ -1,0 +1,1252 @@
+{
+  "experiment": "Reward V2, PPO log_std_init=-2.0, five training seeds",
+  "training_seed_order": [
+    20260929,
+    0,
+    8,
+    16,
+    24
+  ],
+  "original_seed_provenance": "The old run records SB3 seed 20260929; Python/NumPy/Torch and env seeding follow SB3 set_random_seed in the unchanged old runner but first training targets were not logged then.",
+  "new_seed_provenance": "Python, NumPy, PyTorch and SB3 seeds explicitly recorded; rank-specific Gymnasium first-reset seeds and actual first targets verified and recorded in individual reports.",
+  "fixed_benchmark_seeds": [
+    20261001,
+    20261002,
+    20261003,
+    20261004,
+    20261005,
+    20261006,
+    20261007,
+    20261008,
+    20261009,
+    20261010,
+    20261011,
+    20261012,
+    20261013,
+    20261014,
+    20261015,
+    20261016,
+    20261017,
+    20261018,
+    20261019,
+    20261020,
+    20261021,
+    20261022,
+    20261023,
+    20261024,
+    20261025,
+    20261026,
+    20261027,
+    20261028,
+    20261029,
+    20261030,
+    20261031,
+    20261032,
+    20261033,
+    20261034,
+    20261035,
+    20261036,
+    20261037,
+    20261038,
+    20261039,
+    20261040,
+    20261041,
+    20261042,
+    20261043,
+    20261044,
+    20261045,
+    20261046,
+    20261047,
+    20261048,
+    20261049,
+    20261050,
+    20261051,
+    20261052,
+    20261053,
+    20261054,
+    20261055,
+    20261056,
+    20261057,
+    20261058,
+    20261059,
+    20261060,
+    20261061,
+    20261062,
+    20261063,
+    20261064,
+    20261065,
+    20261066,
+    20261067,
+    20261068,
+    20261069,
+    20261070,
+    20261071,
+    20261072,
+    20261073,
+    20261074,
+    20261075,
+    20261076,
+    20261077,
+    20261078,
+    20261079,
+    20261080,
+    20261081,
+    20261082,
+    20261083,
+    20261084,
+    20261085,
+    20261086,
+    20261087,
+    20261088,
+    20261089,
+    20261090,
+    20261091,
+    20261092,
+    20261093,
+    20261094,
+    20261095,
+    20261096,
+    20261097,
+    20261098,
+    20261099,
+    20261100
+  ],
+  "holdout_seeds": [
+    20271001,
+    20271002,
+    20271003,
+    20271004,
+    20271005,
+    20271006,
+    20271007,
+    20271008,
+    20271009,
+    20271010,
+    20271011,
+    20271012,
+    20271013,
+    20271014,
+    20271015,
+    20271016,
+    20271017,
+    20271018,
+    20271019,
+    20271020,
+    20271021,
+    20271022,
+    20271023,
+    20271024,
+    20271025,
+    20271026,
+    20271027,
+    20271028,
+    20271029,
+    20271030,
+    20271031,
+    20271032,
+    20271033,
+    20271034,
+    20271035,
+    20271036,
+    20271037,
+    20271038,
+    20271039,
+    20271040,
+    20271041,
+    20271042,
+    20271043,
+    20271044,
+    20271045,
+    20271046,
+    20271047,
+    20271048,
+    20271049,
+    20271050,
+    20271051,
+    20271052,
+    20271053,
+    20271054,
+    20271055,
+    20271056,
+    20271057,
+    20271058,
+    20271059,
+    20271060,
+    20271061,
+    20271062,
+    20271063,
+    20271064,
+    20271065,
+    20271066,
+    20271067,
+    20271068,
+    20271069,
+    20271070,
+    20271071,
+    20271072,
+    20271073,
+    20271074,
+    20271075,
+    20271076,
+    20271077,
+    20271078,
+    20271079,
+    20271080,
+    20271081,
+    20271082,
+    20271083,
+    20271084,
+    20271085,
+    20271086,
+    20271087,
+    20271088,
+    20271089,
+    20271090,
+    20271091,
+    20271092,
+    20271093,
+    20271094,
+    20271095,
+    20271096,
+    20271097,
+    20271098,
+    20271099,
+    20271100
+  ],
+  "holdout_first_seed": 20271001,
+  "holdout_seed_range_predeclared_before_training": true,
+  "holdout_targets_generated_after_training_without_model_selection": true,
+  "convergence_resolution": "Only checkpoint evaluations at 20,480, 51,200 and 100,352 transitions; threshold crossing between checkpoints is unknown, and none means not observed by 100,352.",
+  "rows": [
+    {
+      "seed": 20260929,
+      "source": "preexisting_lowstd_run",
+      "actual_timesteps": 100352,
+      "training_wall_s": 255.85600484899987,
+      "checkpoint": "/home/keyousuke/MineUAV-Learning/mujoco/rl/models/ppo_waypoint_v2_lowstd_100k.zip",
+      "fixed": {
+        "episodes": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "mean_final_distance_m": 0.08414608033092565,
+        "mean_successful_completion_time_s": 7.6316,
+        "mean_episode_length": 190.79,
+        "ever_within_0_1_m_fraction": 1.0,
+        "ever_distance_and_speed_fraction": 1.0,
+        "near_target_actual_speed_m_s": 0.10377103863158527,
+        "near_target_command_speed_m_s": 0.04202239789423691,
+        "near_target_tangential_speed_m_s": 0.06249230047625704,
+        "crossing_rate": 0.01,
+        "action_saturation_fraction": 0.0
+      },
+      "holdout": {
+        "episodes": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "mean_final_distance_m": 0.0829063496317596,
+        "mean_successful_completion_time_s": 7.3764,
+        "mean_episode_length": 184.41,
+        "ever_within_0_1_m_fraction": 1.0,
+        "ever_distance_and_speed_fraction": 1.0,
+        "near_target_actual_speed_m_s": 0.11069185817997672,
+        "near_target_command_speed_m_s": 0.04564904367987373,
+        "near_target_tangential_speed_m_s": 0.0717329137426853,
+        "crossing_rate": 0.02,
+        "action_saturation_fraction": 0.0
+      },
+      "first_observed_full_success_threshold_timesteps": {
+        "50pct": 51200,
+        "90pct": 100352,
+        "100pct": 100352
+      },
+      "sigma_by_checkpoint": {
+        "initial": {
+          "log_std": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0
+          ],
+          "std": [
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127
+          ],
+          "physical_command_std": [
+            0.20300292485491905,
+            0.20300292485491905,
+            0.1353352832366127,
+            0.1353352832366127
+          ]
+        },
+        "20k": {
+          "log_std": [
+            -2.049424171447754,
+            -2.0457866191864014,
+            -1.9814512729644775,
+            -2.0017809867858887
+          ],
+          "std": [
+            0.12880905416792243,
+            0.12927845705537455,
+            0.13786900648949008,
+            0.1350944673940744
+          ],
+          "physical_command_std": [
+            0.19321358125188365,
+            0.19391768558306183,
+            0.13786900648949008,
+            0.1350944673940744
+          ]
+        },
+        "50k": {
+          "log_std": [
+            -2.0873911380767822,
+            -2.072312116622925,
+            -1.9729989767074585,
+            -2.0375447273254395
+          ],
+          "std": [
+            0.12401023976000923,
+            0.12589436248901298,
+            0.13903925485293295,
+            0.13034835907030992
+          ],
+          "physical_command_std": [
+            0.18601535964001384,
+            0.18884154373351947,
+            0.13903925485293295,
+            0.13034835907030992
+          ]
+        },
+        "100k": {
+          "log_std": [
+            -2.1467273235321045,
+            -2.1067776679992676,
+            -2.060332775115967,
+            -2.032371759414673
+          ],
+          "std": [
+            0.11686599721319459,
+            0.12162926552152517,
+            0.12741156344150611,
+            0.13102439399495308
+          ],
+          "physical_command_std": [
+            0.1752989958197919,
+            0.18244389828228774,
+            0.12741156344150611,
+            0.13102439399495308
+          ]
+        }
+      },
+      "final_training_metrics": {
+        "timesteps": 100352,
+        "rollout_ep_rew_mean": 23.74678768999999,
+        "rollout_ep_len_mean": 206.45,
+        "episode_count_in_window": 100,
+        "train": {
+          "policy_gradient_loss": -0.006301237945444882,
+          "value_loss": 0.7929672129452229,
+          "entropy_loss": 2.669199192523956,
+          "approx_kl": 0.0065585654228925705,
+          "clip_fraction": 0.0765625,
+          "explained_variance": 0.6667001843452454
+        },
+        "policy_std": {
+          "log_std": [
+            -2.1467273235321045,
+            -2.1067776679992676,
+            -2.060332775115967,
+            -2.032371759414673
+          ],
+          "std": [
+            0.11686599721319459,
+            0.12162926552152517,
+            0.12741156344150611,
+            0.13102439399495308
+          ],
+          "physical_command_std": [
+            0.1752989958197919,
+            0.18244389828228774,
+            0.12741156344150611,
+            0.13102439399495308
+          ]
+        }
+      }
+    },
+    {
+      "seed": 0,
+      "source": "new_independent_run",
+      "actual_timesteps": 100352,
+      "training_wall_s": 260.8777417350002,
+      "checkpoint": "/home/keyousuke/MineUAV-Learning/mujoco/rl/models/ppo_waypoint_v2_lowstd_multiseed/seed_0/ppo_waypoint_v2_lowstd_100k.zip",
+      "fixed": {
+        "episodes": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "mean_final_distance_m": 0.08760193254916569,
+        "mean_successful_completion_time_s": 6.8076,
+        "mean_episode_length": 170.19,
+        "ever_within_0_1_m_fraction": 1.0,
+        "ever_distance_and_speed_fraction": 1.0,
+        "near_target_actual_speed_m_s": 0.09444044515343633,
+        "near_target_command_speed_m_s": 0.05136497126048671,
+        "near_target_tangential_speed_m_s": 0.059341236323093294,
+        "crossing_rate": 0.0,
+        "action_saturation_fraction": 0.0
+      },
+      "holdout": {
+        "episodes": 100,
+        "successes": 100,
+        "success_rate": 1.0,
+        "mean_final_distance_m": 0.08747032335512764,
+        "mean_successful_completion_time_s": 6.6528,
+        "mean_episode_length": 166.32,
+        "ever_within_0_1_m_fraction": 1.0,
+        "ever_distance_and_speed_fraction": 1.0,
+        "near_target_actual_speed_m_s": 0.08959102635622557,
+        "near_target_command_speed_m_s": 0.05453640330814813,
+        "near_target_tangential_speed_m_s": 0.05178406647163767,
+        "crossing_rate": 0.0,
+        "action_saturation_fraction": 0.0
+      },
+      "first_observed_full_success_threshold_timesteps": {
+        "50pct": 100352,
+        "90pct": 100352,
+        "100pct": 100352
+      },
+      "sigma_by_checkpoint": {
+        "initial": {
+          "log_std": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0
+          ],
+          "std": [
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127
+          ],
+          "physical_command_std": [
+            0.20300292485491905,
+            0.20300292485491905,
+            0.1353352832366127,
+            0.1353352832366127
+          ]
+        },
+        "20k": {
+          "log_std": [
+            -2.013061046600342,
+            -2.0209574699401855,
+            -2.046492576599121,
+            -2.010348081588745
+          ],
+          "std": [
+            0.13357915618906666,
+            0.1325285122463659,
+            0.1291872241773636,
+            0.13394204379419766
+          ],
+          "physical_command_std": [
+            0.20036873428359997,
+            0.19879276836954884,
+            0.1291872241773636,
+            0.13394204379419766
+          ]
+        },
+        "50k": {
+          "log_std": [
+            -2.0301406383514404,
+            -2.0390567779541016,
+            -2.086867570877075,
+            -1.9914618730545044
+          ],
+          "std": [
+            0.13131705163610452,
+            0.13015141468449656,
+            0.12407518445394758,
+            0.13649574007928103
+          ],
+          "physical_command_std": [
+            0.19697557745415678,
+            0.19522712202674486,
+            0.12407518445394758,
+            0.13649574007928103
+          ]
+        },
+        "100k": {
+          "log_std": [
+            -2.1150875091552734,
+            -2.1177687644958496,
+            -2.1281135082244873,
+            -1.9792020320892334
+          ],
+          "std": [
+            0.12062273349777412,
+            0.12029974634839762,
+            0.11906169102504703,
+            0.1381794561014114
+          ],
+          "physical_command_std": [
+            0.18093410024666118,
+            0.18044961952259642,
+            0.11906169102504703,
+            0.1381794561014114
+          ]
+        }
+      },
+      "final_training_metrics": {
+        "timesteps": 100352,
+        "rollout_ep_rew_mean": 23.10945210000001,
+        "rollout_ep_len_mean": 193.51,
+        "episode_count_in_window": 100,
+        "train": {
+          "policy_gradient_loss": -0.005907593126175925,
+          "value_loss": 0.5821721225976944,
+          "entropy_loss": 2.6493754208087923,
+          "approx_kl": 0.006528643891215324,
+          "clip_fraction": 0.05771484375,
+          "explained_variance": 0.8310612440109253
+        },
+        "policy_std": {
+          "log_std": [
+            -2.1150875091552734,
+            -2.1177687644958496,
+            -2.1281135082244873,
+            -1.9792020320892334
+          ],
+          "std": [
+            0.12062273349777412,
+            0.12029974634839762,
+            0.11906169102504703,
+            0.1381794561014114
+          ],
+          "physical_command_std": [
+            0.18093410024666118,
+            0.18044961952259642,
+            0.11906169102504703,
+            0.1381794561014114
+          ]
+        }
+      }
+    },
+    {
+      "seed": 8,
+      "source": "new_independent_run",
+      "actual_timesteps": 100352,
+      "training_wall_s": 473.36931403199924,
+      "checkpoint": "/home/keyousuke/MineUAV-Learning/mujoco/rl/models/ppo_waypoint_v2_lowstd_multiseed/seed_8/ppo_waypoint_v2_lowstd_100k.zip",
+      "fixed": {
+        "episodes": 100,
+        "successes": 97,
+        "success_rate": 0.97,
+        "mean_final_distance_m": 0.09098028545961732,
+        "mean_successful_completion_time_s": 6.6569072164948455,
+        "mean_episode_length": 172.68,
+        "ever_within_0_1_m_fraction": 0.97,
+        "ever_distance_and_speed_fraction": 0.97,
+        "near_target_actual_speed_m_s": 0.07645073141835845,
+        "near_target_command_speed_m_s": 0.05032881989149006,
+        "near_target_tangential_speed_m_s": 0.042147634575078294,
+        "crossing_rate": 0.04,
+        "action_saturation_fraction": 0.0
+      },
+      "holdout": {
+        "episodes": 100,
+        "successes": 97,
+        "success_rate": 0.97,
+        "mean_final_distance_m": 0.09130581433065416,
+        "mean_successful_completion_time_s": 6.840000000000002,
+        "mean_episode_length": 177.12,
+        "ever_within_0_1_m_fraction": 0.98,
+        "ever_distance_and_speed_fraction": 0.98,
+        "near_target_actual_speed_m_s": 0.07265934350886435,
+        "near_target_command_speed_m_s": 0.04877278486744497,
+        "near_target_tangential_speed_m_s": 0.03847377279021178,
+        "crossing_rate": 0.03,
+        "action_saturation_fraction": 0.0
+      },
+      "first_observed_full_success_threshold_timesteps": {
+        "50pct": 100352,
+        "90pct": 100352,
+        "100pct": null
+      },
+      "sigma_by_checkpoint": {
+        "initial": {
+          "log_std": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0
+          ],
+          "std": [
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127
+          ],
+          "physical_command_std": [
+            0.20300292485491905,
+            0.20300292485491905,
+            0.1353352832366127,
+            0.1353352832366127
+          ]
+        },
+        "20k": {
+          "log_std": [
+            -2.0823681354522705,
+            -2.0166542530059814,
+            -2.0305211544036865,
+            -1.9869434833526611
+          ],
+          "std": [
+            0.12463471056606074,
+            0.13310004000655046,
+            0.13126709289567748,
+            0.13711387646449164
+          ],
+          "physical_command_std": [
+            0.1869520658490911,
+            0.1996500600098257,
+            0.13126709289567748,
+            0.13711387646449164
+          ]
+        },
+        "50k": {
+          "log_std": [
+            -2.1806740760803223,
+            -2.0513343811035156,
+            -2.098985195159912,
+            -2.061196804046631
+          ],
+          "std": [
+            0.11296535772461666,
+            0.12856323672507472,
+            0.12258076070498986,
+            0.12730152371019302
+          ],
+          "physical_command_std": [
+            0.16944803658692498,
+            0.19284485508761207,
+            0.12258076070498986,
+            0.12730152371019302
+          ]
+        },
+        "100k": {
+          "log_std": [
+            -2.2071266174316406,
+            -2.112610340118408,
+            -2.223600387573242,
+            -2.1339995861053467
+          ],
+          "std": [
+            0.11001631374298837,
+            0.12092190679676691,
+            0.10821877703371802,
+            0.11836294309879876
+          ],
+          "physical_command_std": [
+            0.16502447061448255,
+            0.18138286019515037,
+            0.10821877703371802,
+            0.11836294309879876
+          ]
+        }
+      },
+      "final_training_metrics": {
+        "timesteps": 100352,
+        "rollout_ep_rew_mean": 20.40752517,
+        "rollout_ep_len_mean": 248.2,
+        "episode_count_in_window": 100,
+        "train": {
+          "policy_gradient_loss": -0.0047762942762346935,
+          "value_loss": 0.8740671202540398,
+          "entropy_loss": 2.995297709107399,
+          "approx_kl": 0.009230968542397022,
+          "clip_fraction": 0.07880859375,
+          "explained_variance": 0.8114443421363831
+        },
+        "policy_std": {
+          "log_std": [
+            -2.2071266174316406,
+            -2.112610340118408,
+            -2.223600387573242,
+            -2.1339995861053467
+          ],
+          "std": [
+            0.11001631374298837,
+            0.12092190679676691,
+            0.10821877703371802,
+            0.11836294309879876
+          ],
+          "physical_command_std": [
+            0.16502447061448255,
+            0.18138286019515037,
+            0.10821877703371802,
+            0.11836294309879876
+          ]
+        }
+      }
+    },
+    {
+      "seed": 16,
+      "source": "new_independent_run",
+      "actual_timesteps": 100352,
+      "training_wall_s": 478.888980875,
+      "checkpoint": "/home/keyousuke/MineUAV-Learning/mujoco/rl/models/ppo_waypoint_v2_lowstd_multiseed/seed_16/ppo_waypoint_v2_lowstd_100k.zip",
+      "fixed": {
+        "episodes": 100,
+        "successes": 91,
+        "success_rate": 0.91,
+        "mean_final_distance_m": 0.08671464264269643,
+        "mean_successful_completion_time_s": 9.475164835164835,
+        "mean_episode_length": 249.31,
+        "ever_within_0_1_m_fraction": 0.91,
+        "ever_distance_and_speed_fraction": 0.91,
+        "near_target_actual_speed_m_s": 0.16199641418012234,
+        "near_target_command_speed_m_s": 0.15233571365993656,
+        "near_target_tangential_speed_m_s": 0.11696859754028317,
+        "crossing_rate": 0.07,
+        "action_saturation_fraction": 0.0
+      },
+      "holdout": {
+        "episodes": 100,
+        "successes": 86,
+        "success_rate": 0.86,
+        "mean_final_distance_m": 0.08556964880703095,
+        "mean_successful_completion_time_s": 9.146046511627908,
+        "mean_episode_length": 249.14,
+        "ever_within_0_1_m_fraction": 0.87,
+        "ever_distance_and_speed_fraction": 0.87,
+        "near_target_actual_speed_m_s": 0.17816403481491583,
+        "near_target_command_speed_m_s": 0.17018771840198368,
+        "near_target_tangential_speed_m_s": 0.12309664292430215,
+        "crossing_rate": 0.11,
+        "action_saturation_fraction": 0.0
+      },
+      "first_observed_full_success_threshold_timesteps": {
+        "50pct": 100352,
+        "90pct": 100352,
+        "100pct": null
+      },
+      "sigma_by_checkpoint": {
+        "initial": {
+          "log_std": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0
+          ],
+          "std": [
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127
+          ],
+          "physical_command_std": [
+            0.20300292485491905,
+            0.20300292485491905,
+            0.1353352832366127,
+            0.1353352832366127
+          ]
+        },
+        "20k": {
+          "log_std": [
+            -2.0286216735839844,
+            -2.028468132019043,
+            -2.0208332538604736,
+            -2.020434617996216
+          ],
+          "std": [
+            0.13151666917853222,
+            0.13153686400406667,
+            0.13254497544108276,
+            0.13259782315471794
+          ],
+          "physical_command_std": [
+            0.19727500376779833,
+            0.1973052960061,
+            0.13254497544108276,
+            0.13259782315471794
+          ]
+        },
+        "50k": {
+          "log_std": [
+            -2.0765013694763184,
+            -2.1247386932373047,
+            -2.06128191947937,
+            -2.0629987716674805
+          ],
+          "std": [
+            0.12536806234362932,
+            0.11946418098688631,
+            0.12729068884702763,
+            0.1270723370418759
+          ],
+          "physical_command_std": [
+            0.188052093515444,
+            0.17919627148032946,
+            0.12729068884702763,
+            0.1270723370418759
+          ]
+        },
+        "100k": {
+          "log_std": [
+            -2.1345603466033936,
+            -2.2185587882995605,
+            -2.1261565685272217,
+            -2.143915891647339
+          ],
+          "std": [
+            0.11829658844215032,
+            0.10876575039308796,
+            0.11929491570352335,
+            0.11719502030028302
+          ],
+          "physical_command_std": [
+            0.1774448826632255,
+            0.16314862558963195,
+            0.11929491570352335,
+            0.11719502030028302
+          ]
+        }
+      },
+      "final_training_metrics": {
+        "timesteps": 100352,
+        "rollout_ep_rew_mean": 19.95970967,
+        "rollout_ep_len_mean": 287.3,
+        "episode_count_in_window": 100,
+        "train": {
+          "policy_gradient_loss": -0.005606612790143117,
+          "value_loss": 1.008602424710989,
+          "entropy_loss": 2.9284253269433975,
+          "approx_kl": 0.007230076473206282,
+          "clip_fraction": 0.081494140625,
+          "explained_variance": 0.4585798978805542
+        },
+        "policy_std": {
+          "log_std": [
+            -2.1345603466033936,
+            -2.2185587882995605,
+            -2.1261565685272217,
+            -2.143915891647339
+          ],
+          "std": [
+            0.11829658844215032,
+            0.10876575039308796,
+            0.11929491570352335,
+            0.11719502030028302
+          ],
+          "physical_command_std": [
+            0.1774448826632255,
+            0.16314862558963195,
+            0.11929491570352335,
+            0.11719502030028302
+          ]
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "source": "new_independent_run",
+      "actual_timesteps": 100352,
+      "training_wall_s": 453.15927978699983,
+      "checkpoint": "/home/keyousuke/MineUAV-Learning/mujoco/rl/models/ppo_waypoint_v2_lowstd_multiseed/seed_24/ppo_waypoint_v2_lowstd_100k.zip",
+      "fixed": {
+        "episodes": 100,
+        "successes": 90,
+        "success_rate": 0.9,
+        "mean_final_distance_m": 0.09813394678268487,
+        "mean_successful_completion_time_s": 6.837777777777779,
+        "mean_episode_length": 191.35,
+        "ever_within_0_1_m_fraction": 0.9,
+        "ever_distance_and_speed_fraction": 0.9,
+        "near_target_actual_speed_m_s": 0.0797653038175713,
+        "near_target_command_speed_m_s": 0.05077794510460019,
+        "near_target_tangential_speed_m_s": 0.039365712984665985,
+        "crossing_rate": 0.01,
+        "action_saturation_fraction": 0.0
+      },
+      "holdout": {
+        "episodes": 100,
+        "successes": 95,
+        "success_rate": 0.95,
+        "mean_final_distance_m": 0.09308599251145652,
+        "mean_successful_completion_time_s": 6.824421052631579,
+        "mean_episode_length": 180.83,
+        "ever_within_0_1_m_fraction": 0.95,
+        "ever_distance_and_speed_fraction": 0.95,
+        "near_target_actual_speed_m_s": 0.08280440357916874,
+        "near_target_command_speed_m_s": 0.05342133483188434,
+        "near_target_tangential_speed_m_s": 0.04445691135144756,
+        "crossing_rate": 0.0,
+        "action_saturation_fraction": 0.0
+      },
+      "first_observed_full_success_threshold_timesteps": {
+        "50pct": 100352,
+        "90pct": 100352,
+        "100pct": null
+      },
+      "sigma_by_checkpoint": {
+        "initial": {
+          "log_std": [
+            -2.0,
+            -2.0,
+            -2.0,
+            -2.0
+          ],
+          "std": [
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127,
+            0.1353352832366127
+          ],
+          "physical_command_std": [
+            0.20300292485491905,
+            0.20300292485491905,
+            0.1353352832366127,
+            0.1353352832366127
+          ]
+        },
+        "20k": {
+          "log_std": [
+            -2.0576281547546387,
+            -2.0491273403167725,
+            -1.9919826984405518,
+            -1.9975202083587646
+          ],
+          "std": [
+            0.12775662977663083,
+            0.12884729438031373,
+            0.13642466814240148,
+            0.13567130299805255
+          ],
+          "physical_command_std": [
+            0.19163494466494624,
+            0.1932709415704706,
+            0.13642466814240148,
+            0.13567130299805255
+          ]
+        },
+        "50k": {
+          "log_std": [
+            -2.114665985107422,
+            -2.1228585243225098,
+            -2.0362327098846436,
+            -1.9948371648788452
+          ],
+          "std": [
+            0.12067358959844271,
+            0.1196890051138466,
+            0.13051949063003615,
+            0.13603580377002183
+          ],
+          "physical_command_std": [
+            0.18101038439766406,
+            0.1795335076707699,
+            0.13051949063003615,
+            0.13603580377002183
+          ]
+        },
+        "100k": {
+          "log_std": [
+            -2.1411311626434326,
+            -2.151672840118408,
+            -2.1062216758728027,
+            -2.13931941986084
+          ],
+          "std": [
+            0.11752183150154812,
+            0.11628946129465793,
+            0.12169690923844731,
+            0.11773494382563213
+          ],
+          "physical_command_std": [
+            0.17628274725232218,
+            0.1744341919419869,
+            0.12169690923844731,
+            0.11773494382563213
+          ]
+        }
+      },
+      "final_training_metrics": {
+        "timesteps": 100352,
+        "rollout_ep_rew_mean": 19.95217959,
+        "rollout_ep_len_mean": 244.92,
+        "episode_count_in_window": 100,
+        "train": {
+          "policy_gradient_loss": -0.003731821801920887,
+          "value_loss": 0.7400837369263172,
+          "entropy_loss": 2.862834411859512,
+          "approx_kl": 0.010440148413181305,
+          "clip_fraction": 0.10302734375,
+          "explained_variance": 0.9153275489807129
+        },
+        "policy_std": {
+          "log_std": [
+            -2.1411311626434326,
+            -2.151672840118408,
+            -2.1062216758728027,
+            -2.13931941986084
+          ],
+          "std": [
+            0.11752183150154812,
+            0.11628946129465793,
+            0.12169690923844731,
+            0.11773494382563213
+          ],
+          "physical_command_std": [
+            0.17628274725232218,
+            0.1744341919419869,
+            0.12169690923844731,
+            0.11773494382563213
+          ]
+        }
+      }
+    }
+  ],
+  "aggregate": {
+    "fixed": {
+      "success_rate": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.9560000000000001,
+        "std": 0.04827007354458866,
+        "min": 0.9,
+        "max": 1.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "mean_final_distance_m": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.089515377553018,
+        "std": 0.005402787040528431,
+        "min": 0.08414608033092565,
+        "max": 0.09813394678268487,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "mean_successful_completion_time_s": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 7.481809965887491,
+        "std": 1.1774656866093873,
+        "min": 6.6569072164948455,
+        "max": 9.475164835164835,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "mean_episode_length": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 194.864,
+        "std": 31.993158331118234,
+        "min": 170.19,
+        "max": 249.31,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "ever_within_0_1_m_fraction": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.9560000000000001,
+        "std": 0.04827007354458866,
+        "min": 0.9,
+        "max": 1.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "ever_distance_and_speed_fraction": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.9560000000000001,
+        "std": 0.04827007354458866,
+        "min": 0.9,
+        "max": 1.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "near_target_actual_speed_m_s": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.10328478664021475,
+        "std": 0.0346364931019761,
+        "min": 0.07645073141835845,
+        "max": 0.16199641418012234,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "near_target_command_speed_m_s": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.06936596956215009,
+        "std": 0.04653926570081588,
+        "min": 0.04202239789423691,
+        "max": 0.15233571365993656,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "near_target_tangential_speed_m_s": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.06406309637987555,
+        "std": 0.03128099913640888,
+        "min": 0.039365712984665985,
+        "max": 0.11696859754028317,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "crossing_rate": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.026000000000000002,
+        "std": 0.02880972058177587,
+        "min": 0.0,
+        "max": 0.07,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "action_saturation_fraction": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      }
+    },
+    "holdout": {
+      "success_rate": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.9559999999999998,
+        "std": 0.05770615218501404,
+        "min": 0.86,
+        "max": 1.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "mean_final_distance_m": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.08806762572720576,
+        "std": 0.004150460828739822,
+        "min": 0.0829063496317596,
+        "max": 0.09308599251145652,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "mean_successful_completion_time_s": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 7.367933512851897,
+        "std": 1.0304480879005535,
+        "min": 6.6528,
+        "max": 9.146046511627908,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "mean_episode_length": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 191.56400000000002,
+        "std": 32.89104330969146,
+        "min": 166.32,
+        "max": 249.14,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "ever_within_0_1_m_fraction": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.96,
+        "std": 0.05431390245600108,
+        "min": 0.87,
+        "max": 1.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "ever_distance_and_speed_fraction": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.96,
+        "std": 0.05431390245600108,
+        "min": 0.87,
+        "max": 1.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "near_target_actual_speed_m_s": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.10678213328783023,
+        "std": 0.042265506847102306,
+        "min": 0.07265934350886435,
+        "max": 0.17816403481491583,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "near_target_command_speed_m_s": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.07451345701786696,
+        "std": 0.053603314134313865,
+        "min": 0.04564904367987373,
+        "max": 0.17018771840198368,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "near_target_tangential_speed_m_s": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.0659088614560569,
+        "std": 0.034339270598843764,
+        "min": 0.03847377279021178,
+        "max": 0.12309664292430215,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "crossing_rate": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.032,
+        "std": 0.045497252664309304,
+        "min": 0.0,
+        "max": 0.11,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "action_saturation_fraction": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      }
+    },
+    "first_observed_full_success_threshold_timesteps": {
+      "50pct": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 90521.6,
+        "std": 21981.442646013933,
+        "min": 51200.0,
+        "max": 100352.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "90pct": {
+        "count": 5,
+        "missing_count": 0,
+        "mean": 100352.0,
+        "std": 0.0,
+        "min": 100352.0,
+        "max": 100352.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      },
+      "100pct": {
+        "count": 2,
+        "missing_count": 3,
+        "mean": 100352.0,
+        "std": 0.0,
+        "min": 100352.0,
+        "max": 100352.0,
+        "std_definition": "sample standard deviation (ddof=1)"
+      }
+    }
+  },
+  "per_seed_report_paths": {
+    "20260929": "/home/keyousuke/MineUAV-Learning/mujoco/reports/ppo_waypoint_v2_lowstd.json",
+    "0": "/home/keyousuke/MineUAV-Learning/mujoco/reports/ppo_waypoint_v2_lowstd_multiseed/seed_0.json",
+    "8": "/home/keyousuke/MineUAV-Learning/mujoco/reports/ppo_waypoint_v2_lowstd_multiseed/seed_8.json",
+    "16": "/home/keyousuke/MineUAV-Learning/mujoco/reports/ppo_waypoint_v2_lowstd_multiseed/seed_16.json",
+    "24": "/home/keyousuke/MineUAV-Learning/mujoco/reports/ppo_waypoint_v2_lowstd_multiseed/seed_24.json"
+  }
+}

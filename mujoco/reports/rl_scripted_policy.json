@@ -1,0 +1,13 @@
+{
+  "episodes": 20,
+  "seed": 20260929,
+  "successes": 20,
+  "success_rate": 1.0,
+  "termination_reasons": {
+    "success": 20
+  },
+  "mean_episode_steps": 164.85,
+  "mean_final_distance_m": 0.08560125040018765,
+  "max_motor_rpm": 5922.636078984482,
+  "allocator_saturation_updates": 0
+}

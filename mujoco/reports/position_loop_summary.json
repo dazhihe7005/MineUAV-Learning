@@ -1,0 +1,278 @@
+{
+  "model": "/home/keyousuke/MineUAV-Learning/mujoco/models/mine_uav_dynamics_v2.xml",
+  "duration_s": 16.0,
+  "frames": "World XYZ has +Z up; thrust is body +Z; qpos quaternion body-to-world wxyz; qvel angular rate body frame",
+  "controller": {
+    "kp_position_s_inv2": [
+      0.5,
+      0.5,
+      2.0
+    ],
+    "kd_position_s_inv": [
+      1.2,
+      1.2,
+      2.0
+    ],
+    "horizontal_accel_limit_m_s2": 3.0,
+    "vertical_accel_limit_m_s2": 3.0,
+    "kp_attitude_s_inv2": [
+      6.0,
+      6.0,
+      2.0
+    ],
+    "kd_attitude_s_inv": [
+      4.0,
+      4.0,
+      2.8
+    ],
+    "integral_gain": 0.0
+  },
+  "event": {
+    "time_s": 2.0,
+    "horizontal_force_n": 21.0,
+    "force_duration_s": 0.10000000000000009,
+    "yaw_step_deg": 45.0
+  },
+  "settling_band": {
+    "position_error_norm_m": 0.05,
+    "speed_norm_m_s": 0.05,
+    "yaw_error_deg": 2.0
+  },
+  "cases": {
+    "A_x_plus_2": {
+      "target_position_m": [
+        2.0,
+        0.0,
+        1.0
+      ],
+      "target_yaw_deg": 0.0,
+      "final_position_m": [
+        1.998083876788327,
+        1.16873235268665e-14,
+        0.9999957436293552
+      ],
+      "final_velocity_m_s": [
+        0.00032904883417836963,
+        -5.530807673816196e-17,
+        -4.054150564078197e-06
+      ],
+      "final_position_error_norm_m": 0.0019161279391008079,
+      "final_speed_norm_m_s": 0.0003290738084547909,
+      "final_yaw_error_deg": 2.2469239919912552e-15,
+      "settling_time_s": 8.121999999999382,
+      "peak_position_error_m": 2.000092377958932,
+      "peak_post_event_error_m": null,
+      "max_abs_actual_roll_pitch_yaw_deg": [
+        2.0006507590011464e-14,
+        4.113367645718601,
+        6.897724514087306e-15
+      ],
+      "max_abs_desired_roll_pitch_yaw_deg": [
+        4.257064940151291e-14,
+        5.833411324583157,
+        2.414068084669287e-15
+      ],
+      "has_nonfinite_state": false,
+      "saturation_steps": 0,
+      "saturation_fraction": 0.0,
+      "max_motor_rpm": 5790.958483514918,
+      "max_tilt_deg": 4.113496024343251
+    },
+    "B_y_plus_2": {
+      "target_position_m": [
+        0.0,
+        2.0,
+        1.0
+      ],
+      "target_yaw_deg": 0.0,
+      "final_position_m": [
+        6.096676959581613e-14,
+        1.9980843914560107,
+        0.9999999431982818
+      ],
+      "final_velocity_m_s": [
+        3.5022988528669113e-16,
+        0.0003288767011974081,
+        -1.190877065642706e-07
+      ],
+      "final_position_error_norm_m": 0.0019156085448314548,
+      "final_speed_norm_m_s": 0.0003288767227584998,
+      "final_yaw_error_deg": 6.09572471278129e-15,
+      "settling_time_s": 8.121999999999382,
+      "peak_position_error_m": 2.0000925362233084,
+      "peak_post_event_error_m": null,
+      "max_abs_actual_roll_pitch_yaw_deg": [
+        4.113126359061202,
+        1.3095400316306147e-13,
+        8.589634182125091e-15
+      ],
+      "max_abs_desired_roll_pitch_yaw_deg": [
+        5.832579174451537,
+        3.135563671425148e-13,
+        2.108728423346609e-14
+      ],
+      "has_nonfinite_state": false,
+      "saturation_steps": 0,
+      "saturation_fraction": 0.0,
+      "max_motor_rpm": 5832.555491279496,
+      "max_tilt_deg": 4.113262087660078
+    },
+    "C_xy_plus_2": {
+      "target_position_m": [
+        2.0,
+        2.0,
+        1.0
+      ],
+      "target_yaw_deg": 0.0,
+      "final_position_m": [
+        1.998083585900265,
+        1.9980765486674599,
+        0.9999956982737696
+      ],
+      "final_velocity_m_s": [
+        0.00032071285238335895,
+        0.0003275717075380192,
+        -4.201083460004066e-06
+      ],
+      "final_position_error_norm_m": 0.002715202853409293,
+      "final_speed_norm_m_s": 0.0004584513129717066,
+      "final_yaw_error_deg": -9.22084800372909e-06,
+      "settling_time_s": 8.321999999999449,
+      "peak_position_error_m": 2.8285559278918493,
+      "peak_post_event_error_m": null,
+      "max_abs_actual_roll_pitch_yaw_deg": [
+        4.131773431892344,
+        4.10189523350603,
+        0.25765258403326524
+      ],
+      "max_abs_desired_roll_pitch_yaw_deg": [
+        5.868940645069589,
+        5.77874795177652,
+        0.5929819011974959
+      ],
+      "has_nonfinite_state": false,
+      "saturation_steps": 0,
+      "saturation_fraction": 0.0,
+      "max_motor_rpm": 5825.996226759319,
+      "max_tilt_deg": 5.819896022240926
+    },
+    "D_xyz_mixed": {
+      "target_position_m": [
+        -2.0,
+        1.0,
+        1.5
+      ],
+      "target_yaw_deg": 0.0,
+      "final_position_m": [
+        -1.9981130587787852,
+        0.9990544825364327,
+        1.5000040360586733
+      ],
+      "final_velocity_m_s": [
+        -0.00024263280335432792,
+        0.0001230651022426175,
+        4.00292984594328e-06
+      ],
+      "final_position_error_norm_m": 0.00211058445365258,
+      "final_speed_norm_m_s": 0.0002720877066332057,
+      "final_yaw_error_deg": 4.5132858825455535e-06,
+      "settling_time_s": 8.201999999999408,
+      "peak_position_error_m": 2.2912870186388488,
+      "peak_post_event_error_m": null,
+      "max_abs_actual_roll_pitch_yaw_deg": [
+        2.02414877804772,
+        4.029759858754702,
+        0.12293779061583436
+      ],
+      "max_abs_desired_roll_pitch_yaw_deg": [
+        2.7487258754727266,
+        5.447730912592458,
+        0.2611561382337195
+      ],
+      "has_nonfinite_state": false,
+      "saturation_steps": 0,
+      "saturation_fraction": 0.0,
+      "max_motor_rpm": 6117.899120176297,
+      "max_tilt_deg": 4.508928336401598
+    },
+    "E_horizontal_impulse": {
+      "target_position_m": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "target_yaw_deg": 0.0,
+      "final_position_m": [
+        -0.0013628837401683236,
+        1.1785556890468465e-14,
+        0.999996294161425
+      ],
+      "final_velocity_m_s": [
+        0.00046015613468678346,
+        -3.386549888376223e-16,
+        -2.25965862735855e-06
+      ],
+      "final_position_error_norm_m": 0.0013628887784609362,
+      "final_speed_norm_m_s": 0.00046016168283223385,
+      "final_yaw_error_deg": 2.1889884057723134e-15,
+      "settling_time_s": 7.421999999999405,
+      "peak_position_error_m": 0.29353920120907573,
+      "peak_post_event_error_m": 0.29353920120907573,
+      "max_abs_actual_roll_pitch_yaw_deg": [
+        2.9866028746768125e-14,
+        1.9109101754221236,
+        6.088247363729579e-15
+      ],
+      "max_abs_desired_roll_pitch_yaw_deg": [
+        6.740504311910822e-14,
+        2.347128129391653,
+        2.5769417759030076e-15
+      ],
+      "has_nonfinite_state": false,
+      "saturation_steps": 0,
+      "saturation_fraction": 0.0,
+      "max_motor_rpm": 5790.30655876853,
+      "max_tilt_deg": 1.9109101754221423
+    },
+    "F_yaw_step": {
+      "target_position_m": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "target_yaw_deg": 45.0,
+      "final_position_m": [
+        -2.8001457610197458e-05,
+        5.581275747637675e-05,
+        1.000000098103488
+      ],
+      "final_velocity_m_s": [
+        -1.5086509000707813e-05,
+        -4.2225846248572766e-05,
+        -7.982843165234615e-08
+      ],
+      "final_position_error_norm_m": 6.244321540173033e-05,
+      "final_speed_norm_m_s": 4.484006264285371e-05,
+      "final_yaw_error_deg": -3.9057938563172166e-07,
+      "settling_time_s": 5.401999999999627,
+      "peak_position_error_m": 0.005384528978675132,
+      "peak_post_event_error_m": 0.005384528978675132,
+      "max_abs_actual_roll_pitch_yaw_deg": [
+        0.03696241301278373,
+        0.022781786172877953,
+        44.99999960942061
+      ],
+      "max_abs_desired_roll_pitch_yaw_deg": [
+        0.041760174901559116,
+        0.027451544624902558,
+        45.00000308092396
+      ],
+      "has_nonfinite_state": false,
+      "saturation_steps": 0,
+      "saturation_fraction": 0.0,
+      "max_motor_rpm": 6630.871563177917,
+      "max_tilt_deg": 0.04017537363736718
+    }
+  },
+  "warning": "Mass/COM/inertia remain estimated; rotor signs temporary. Ideal motors and no aerodynamic disturbances."
+}

@@ -1,0 +1,8 @@
+source_model,propeller,voltage_v,throttle_pct,current_a,power_w,thrust_g,rpm,efficiency_g_per_w,torque_nm,motor_temperature_c,source_url,accessed_date
+MN5212 KV340,T-MOTOR 15*5CF,24,50,3.3,79.0,745,3821,9.44,0.142,38,https://store.tmotor.com/product/mn5212-kv340-motor-navigator-type.html,2026-09-27
+MN5212 KV340,T-MOTOR 15*5CF,24,55,4.2,99.8,910,4220,9.11,0.172,,https://store.tmotor.com/product/mn5212-kv340-motor-navigator-type.html,2026-09-27
+MN5212 KV340,T-MOTOR 15*5CF,24,60,5.2,123.6,1075,4576,8.70,0.198,,https://store.tmotor.com/product/mn5212-kv340-motor-navigator-type.html,2026-09-27
+MN5212 KV340,T-MOTOR 15*5CF,24,65,6.3,150.7,1254,4925,8.32,0.232,,https://store.tmotor.com/product/mn5212-kv340-motor-navigator-type.html,2026-09-27
+MN5212 KV340,T-MOTOR 15*5CF,24,75,9.1,217.2,1681,5663,7.74,0.310,,https://store.tmotor.com/product/mn5212-kv340-motor-navigator-type.html,2026-09-27
+MN5212 KV340,T-MOTOR 15*5CF,24,85,12.2,292.1,2115,6315,7.24,0.382,,https://store.tmotor.com/product/mn5212-kv340-motor-navigator-type.html,2026-09-27
+MN5212 KV340,T-MOTOR 15*5CF,24,100,17.8,426.7,2746,7167,6.44,0.498,,https://store.tmotor.com/product/mn5212-kv340-motor-navigator-type.html,2026-09-27

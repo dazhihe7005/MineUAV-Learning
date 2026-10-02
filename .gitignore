@@ -1,0 +1,87 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# TensorBoard
+**/tensorboard/**/events.out.tfevents.*
+runs/
+
+# Large / transient datasets
+*.csv.gz
+*.npz
+*.npy
+*.bag
+*.db3
+
+# Build/cache
+build/
+dist/
+*.egg-info/
+.cache/
+
+# Secrets
+.env
+*.pem
+*.key
+credentials*
+token*
+
+# Model files: consider Git LFS / Releases if large
+# *.zip
+# *.pt
+# *.pth
+README_old_backup.md
+
+# ============================================================
+# MineUAV-Learning project-specific exclusions
+# ============================================================
+
+# Local backup
+README_old_backup.md
+
+# Third-party repositories: do not vendor nested git repos
+third_party/
+
+# Large raw experiment traces
+mujoco/reports/**/integral_traces/
+mujoco/reports/ppo_braking_policy_steps.csv.gz
+
+# Raw CAD assembly - keep reports/scripts/previews instead
+cad_check/assembly_raw.stl
+
+# Python cache anywhere
+**/__pycache__/
+*.pyc
+
+# ============================================================
+# Raw RL training logs
+# ============================================================
+mujoco/rl/logs/
+
+# Raw viewer captures
+*.xwd
+
+# Raw closed-loop diagnostic CSVs
+mujoco/reports/closed_loop_*.csv
+
+# Detailed per-condition report fragments
+mujoco/reports/*_parts/
+
+# Old / intermediate large RL experiment reports
+mujoco/reports/ppo_waypoint_v2_lowstd_multiseed/seed_*.json
+mujoco/reports/ppo_waypoint_curriculum.json
+mujoco/reports/ppo_waypoint_reward_v4.json
+mujoco/reports/ppo_v2_exploration_audit_raw_mean.json
+
+# Keep source/report summaries, exclude raw trajectory-type data
+mujoco/reports/**/*_trace.json
+mujoco/reports/**/*_traces.json

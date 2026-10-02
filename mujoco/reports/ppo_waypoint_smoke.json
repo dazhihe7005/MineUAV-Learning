@@ -1,0 +1,143 @@
+{
+  "python": "3.10.12",
+  "torch": "2.14.0+cpu",
+  "torch_cuda": null,
+  "gymnasium": "1.3.0",
+  "stable_baselines3": "2.9.0",
+  "n_envs": 8,
+  "n_steps": 256,
+  "rollout_buffer_size": 2048,
+  "requested_timesteps": 20000,
+  "sampled_timesteps": 20000,
+  "completed_rollouts": 9,
+  "updated_timesteps": 18432,
+  "training_duration_s": 24.16878094599997,
+  "rollout_history": [
+    {
+      "timesteps": 2048,
+      "ep_rew_mean": null,
+      "ep_len_mean": null,
+      "episode_count_in_window": 0
+    },
+    {
+      "timesteps": 4096,
+      "ep_rew_mean": -12.013888625,
+      "ep_len_mean": 375.0,
+      "episode_count_in_window": 8
+    },
+    {
+      "timesteps": 6144,
+      "ep_rew_mean": -5.9572344375,
+      "ep_len_mean": 375.0,
+      "episode_count_in_window": 16
+    },
+    {
+      "timesteps": 8192,
+      "ep_rew_mean": -5.9572344375,
+      "ep_len_mean": 375.0,
+      "episode_count_in_window": 16
+    },
+    {
+      "timesteps": 10240,
+      "ep_rew_mean": -3.2178293749999995,
+      "ep_len_mean": 375.0,
+      "episode_count_in_window": 24
+    },
+    {
+      "timesteps": 12288,
+      "ep_rew_mean": -1.8347645000000004,
+      "ep_len_mean": 375.0,
+      "episode_count_in_window": 32
+    },
+    {
+      "timesteps": 14336,
+      "ep_rew_mean": -1.8347645000000004,
+      "ep_len_mean": 375.0,
+      "episode_count_in_window": 32
+    },
+    {
+      "timesteps": 16384,
+      "ep_rew_mean": -0.1514479250000001,
+      "ep_len_mean": 375.0,
+      "episode_count_in_window": 40
+    },
+    {
+      "timesteps": 18432,
+      "ep_rew_mean": 0.5485232916666665,
+      "ep_len_mean": 375.0,
+      "episode_count_in_window": 48
+    }
+  ],
+  "periodic_evaluations": [
+    {
+      "episodes": 5,
+      "successes": 0,
+      "success_rate": 0.0,
+      "mean_final_distance_m": 0.5189329114257406,
+      "mean_episode_length": 375.0,
+      "mean_completion_time_s": null,
+      "termination_reasons": {
+        "time_limit": 5
+      },
+      "training_timesteps": 4096
+    },
+    {
+      "episodes": 5,
+      "successes": 0,
+      "success_rate": 0.0,
+      "mean_final_distance_m": 0.46043096228004243,
+      "mean_episode_length": 375.0,
+      "mean_completion_time_s": null,
+      "termination_reasons": {
+        "time_limit": 5
+      },
+      "training_timesteps": 8192
+    },
+    {
+      "episodes": 5,
+      "successes": 0,
+      "success_rate": 0.0,
+      "mean_final_distance_m": 0.5217979468305922,
+      "mean_episode_length": 375.0,
+      "mean_completion_time_s": null,
+      "termination_reasons": {
+        "time_limit": 5
+      },
+      "training_timesteps": 12288
+    },
+    {
+      "episodes": 5,
+      "successes": 0,
+      "success_rate": 0.0,
+      "mean_final_distance_m": 0.4706701582201592,
+      "mean_episode_length": 375.0,
+      "mean_completion_time_s": null,
+      "termination_reasons": {
+        "time_limit": 5
+      },
+      "training_timesteps": 16384
+    }
+  ],
+  "final_train_metrics": {
+    "policy_gradient_loss": -0.007073906302684918,
+    "value_loss": 1.3695318669080734,
+    "entropy_loss": -5.558469861745834,
+    "approx_kl": 0.005317953415215015,
+    "clip_fraction": 0.02490234375,
+    "explained_variance": 0.5019069910049438
+  },
+  "final_evaluation": {
+    "episodes": 20,
+    "successes": 0,
+    "success_rate": 0.0,
+    "mean_final_distance_m": 0.3092890571778887,
+    "mean_episode_length": 375.0,
+    "mean_completion_time_s": null,
+    "termination_reasons": {
+      "time_limit": 20
+    }
+  },
+  "model_path": "/home/keyousuke/MineUAV-Learning/mujoco/rl/models/ppo_waypoint_smoke.zip",
+  "tensorboard_dir": "/home/keyousuke/MineUAV-Learning/mujoco/rl/tensorboard/ppo_waypoint_smoke",
+  "monitor_dir": "/home/keyousuke/MineUAV-Learning/mujoco/rl/logs/ppo_waypoint_smoke"
+}

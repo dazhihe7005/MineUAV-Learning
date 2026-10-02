@@ -1,0 +1,34 @@
+<mujoco model="simple_quadrotor">
+  <option timestep="0.002" gravity="0 0 -9.81"/>
+  <statistic center="0 0 1" extent="2"/>
+
+  <worldbody>
+    <light pos="0 0 4" dir="0 0 -1"/>
+    <geom name="ground" type="plane" size="3 3 0.1" rgba="0.7 0.7 0.7 1"/>
+
+    <body name="quadrotor" pos="0 0 1.5">
+      <freejoint name="root"/>
+      <inertial pos="0 0 0" mass="1" diaginertia="0.01 0.01 0.02"/>
+      <geom name="body_collision" type="box" size="0.12 0.08 0.04"
+            rgba="0.2 0.4 0.8 1"/>
+
+      <!-- Four thrust points, 0.2 m from the center. Local +Z points upward. -->
+      <site name="rotor_front" pos="0.2 0 0" size="0.025" rgba="1 0.2 0.2 1"/>
+      <site name="rotor_back" pos="-0.2 0 0" size="0.025" rgba="1 0.2 0.2 1"/>
+      <site name="rotor_left" pos="0 0.2 0" size="0.025" rgba="1 0.2 0.2 1"/>
+      <site name="rotor_right" pos="0 -0.2 0" size="0.025" rgba="1 0.2 0.2 1"/>
+    </body>
+  </worldbody>
+
+  <actuator>
+    <!-- Each control value is one rotor's upward force in newtons. -->
+    <motor name="front_thrust" site="rotor_front" gear="0 0 1 0 0 0"
+           ctrllimited="true" ctrlrange="0 5"/>
+    <motor name="back_thrust" site="rotor_back" gear="0 0 1 0 0 0"
+           ctrllimited="true" ctrlrange="0 5"/>
+    <motor name="left_thrust" site="rotor_left" gear="0 0 1 0 0 0"
+           ctrllimited="true" ctrlrange="0 5"/>
+    <motor name="right_thrust" site="rotor_right" gear="0 0 1 0 0 0"
+           ctrllimited="true" ctrlrange="0 5"/>
+  </actuator>
+</mujoco>

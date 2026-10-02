@@ -1,0 +1,15 @@
+{
+  "episodes": 20,
+  "seed": 20260929,
+  "check_env": "passed (headless render check skipped)",
+  "termination_reasons": {
+    "time_limit": 20
+  },
+  "mean_episode_steps": 375.0,
+  "min_episode_steps": 375,
+  "max_episode_steps_observed": 375,
+  "mean_episode_reward": -11.004822744031316,
+  "allocator_saturation_updates": 0,
+  "observation_action_reward_finite": true,
+  "reset_state_cleared": true
+}

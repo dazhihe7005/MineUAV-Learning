@@ -1,0 +1,6 @@
+motor,propeller,voltage_v,throttle_pct,current_a,power_w,thrust_g,rpm,efficiency_g_per_w,motor_temperature_c,source_url,accessed_date
+U7 KV490,T-MOTOR 15*5CF,22.2,50,9.3,206,1600,5300,7.75,46,https://store.tmotor.com/product/tmotor-u7-v2-motor-u-power.html,2026-09-27
+U7 KV490,T-MOTOR 15*5CF,22.2,65,18,400,2400,6600,6.01,,https://store.tmotor.com/product/tmotor-u7-v2-motor-u-power.html,2026-09-27
+U7 KV490,T-MOTOR 15*5CF,22.2,75,25.6,568,3060,7500,5.38,,https://store.tmotor.com/product/tmotor-u7-v2-motor-u-power.html,2026-09-27
+U7 KV490,T-MOTOR 15*5CF,22.2,85,33.3,739,3680,8100,4.98,,https://store.tmotor.com/product/tmotor-u7-v2-motor-u-power.html,2026-09-27
+U7 KV490,T-MOTOR 15*5CF,22.2,100,39.8,884,4100,8500,4.64,,https://store.tmotor.com/product/tmotor-u7-v2-motor-u-power.html,2026-09-27

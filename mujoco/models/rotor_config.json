@@ -1,0 +1,9 @@
+{
+  "note": "TEMPORARY ROTATION CONFIG: diagonally equal, adjacent opposite; verify actual CW/CCW wiring before using as a real UAV model",
+  "rotation_signs": [1, -1, 1, -1],
+  "k_f_n_per_rad_s_squared": 4.9977603696661616e-5,
+  "k_f_source": "https://store.tmotor.com/product/tmotor-u7-v2-motor-u-power.html",
+  "k_f_fit": "U7 KV490 + T-MOTOR 15*5CF, 5 static RPM-thrust points, least squares through origin",
+  "k_m_nm_per_rad_s_squared": 8.6e-7,
+  "k_m_provenance": "ESTIMATED_FROM_TMOTOR_15x5CF_STATIC_TESTS"
+}

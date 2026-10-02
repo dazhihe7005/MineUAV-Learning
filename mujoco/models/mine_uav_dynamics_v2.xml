@@ -1,0 +1,38 @@
+<mujoco model="Mine UAV dynamics v2 estimated mass properties">
+  <!-- Mass 7 kg; ESTIMATED_COM_V2 and ESTIMATED_INERTIA_V2 are engineering estimates, not measurements. -->
+  <compiler meshdir="../assets" />
+  <option timestep="0.002" gravity="0 0 -9.81" />
+  <statistic center="0 0 0.7" extent="1.2" />
+  <visual>
+    <headlight diffuse="0.9 0.9 0.9" ambient="0.45 0.45 0.45" specular="0 0 0" />
+    <global azimuth="135" elevation="-25" />
+  </visual>
+  <asset>
+    <mesh name="body_visual" file="mine_uav_body_visual.stl" />
+    <mesh name="lidar_visual" file="mine_uav_lidar_visual.obj" />
+    <mesh name="camera_visual" file="mine_uav_camera_visual.stl" />
+  </asset>
+  <worldbody>
+    <light pos="0 0 3" dir="0 0 -1" />
+    <geom name="floor" type="plane" size="2 2 0.1" rgba="0.7 0.7 0.7 1" />
+    <body name="mine_uav" pos="0 0 0.7">
+      <freejoint />
+      <!-- ESTIMATED_COM_V2 and ESTIMATED_INERTIA_V2 from 177 assembly STL files; not measured. -->
+      <inertial pos="0.015134357576683754 8.1249678553997436e-05 0.03602788555838244" mass="7" fullinertia="0.16122999827099874 0.14404023676416694 0.25167988037855171 -0.00086785714362115369 -0.011904748523811112 2.6621858998969504e-05" />
+      <geom name="body_visual" type="mesh" mesh="body_visual" rgba="0.22 0.27 0.32 1" contype="0" conaffinity="0" group="1" />
+      <geom name="lidar_visual" type="mesh" mesh="lidar_visual" rgba="0.15 0.55 0.9 1" contype="0" conaffinity="0" group="1" />
+      <geom name="camera_visual" type="mesh" mesh="camera_visual" rgba="0.95 0.45 0.12 1" contype="0" conaffinity="0" group="1" />
+      <!-- TEMPORARY_PLACEHOLDER collision: coarse central box, not actual airframe collision. -->
+      <geom name="coarse_collision" type="box" size="0.12 0.12 0.05" rgba="0.3 0.3 0.3 0.15" />
+      <!-- Positions converted from the four U7 STL geometric centroids; not measured thrust centers. -->
+      <site name="motor_1_site" pos="-0.218964 0.219884 -0.025425" size="0.012" rgba="1 0.1 0.1 1" />
+      <site name="motor_2_site" pos="-0.218964 -0.219118 -0.025425" size="0.012" rgba="0.1 1 0.1 1" />
+      <site name="motor_3_site" pos="0.220039 -0.219118 -0.025425" size="0.012" rgba="0.1 0.3 1 1" />
+      <site name="motor_4_site" pos="0.220039 0.219884 -0.025425" size="0.012" rgba="1 0.8 0.1 1" />
+    </body>
+  </worldbody>
+  <!-- Four combined rotor actuators are generated from one config file.
+       k_m provenance: ESTIMATED_FROM_TMOTOR_15x5CF_STATIC_TESTS.
+       Real CW/CCW wiring and motor dynamics remain TEMPORARY_PLACEHOLDER. -->
+  <include file="rotor_actuators.xml" />
+</mujoco>

@@ -1,0 +1,23 @@
+{
+  "experiment": "B_7d_ppo_direct_pi",
+  "training_seed": 0,
+  "waypoint_sha256": "df8b5995b7f1a4ab423c9d4e8aba95336085a8ca601e9e5d8db053f0bbb795fc",
+  "checkpoint": "/home/keyousuke/MineUAV-Learning/mujoco/rl/models/ppo_waypoint_v2_lowstd_multiseed/seed_0/ppo_waypoint_v2_lowstd_100k.zip",
+  "checkpoint_sha256": "d8d9b9ed42172d9b72c6116bd566b0b7285f6f82f9bda855610e72df68452133",
+  "deterministic": true,
+  "evaluation": {
+    "episodes": 100,
+    "successes": 78,
+    "success_rate": 0.78,
+    "mean_final_distance_m": 0.08886946734953238,
+    "mean_successful_completion_time_s": 8.107179487179488,
+    "mean_episode_length": 240.59,
+    "ever_within_0_1_m_fraction": 1.0,
+    "ever_distance_and_speed_fraction": 0.83,
+    "near_target_actual_speed_m_s": 0.22408641160734352,
+    "near_target_command_speed_m_s": 0.127415085552388,
+    "near_target_tangential_speed_m_s": 0.16338059949260245,
+    "crossing_rate": 0.53,
+    "action_saturation_fraction": 0.0
+  }
+}

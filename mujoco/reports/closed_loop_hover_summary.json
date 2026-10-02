@@ -1,0 +1,258 @@
+{
+  "model": "/home/keyousuke/MineUAV-Learning/mujoco/models/mine_uav_dynamics_v2.xml",
+  "duration_s": 10.0,
+  "target_z_m": 1.0,
+  "controller": {
+    "kp_z_n_per_m": 14.0,
+    "kd_z_n_per_m_s": 14.0,
+    "kp_attitude_per_s2": [
+      6.0,
+      6.0,
+      2.0
+    ],
+    "kd_attitude_per_s": [
+      4.0,
+      4.0,
+      2.8
+    ],
+    "integral_gain": 0.0,
+    "rigid_body_compensation": "omega cross (I omega)"
+  },
+  "settling_band": {
+    "z_m": 0.03,
+    "vz_m_s": 0.05,
+    "attitude_deg": 2.0,
+    "angular_velocity_rad_s": 0.1
+  },
+  "external_disturbance": {
+    "type": "world-frame vertical force at body COM",
+    "force_z_n": -21.0,
+    "start_s": 2.0,
+    "end_s": 2.1
+  },
+  "cases": {
+    "height_low": {
+      "initial_z_m": 0.5,
+      "final_position_m": [
+        8.779998304379049e-13,
+        3.5395067384017445e-13,
+        1.0000307727831923
+      ],
+      "final_velocity_m_s": [
+        1.8549800400350865e-13,
+        7.163420167783232e-14,
+        -2.4256270656697293e-05
+      ],
+      "final_attitude_error_deg": [
+        -4.9324339768471615e-14,
+        1.149136822524896e-13,
+        -3.845915827981371e-15
+      ],
+      "final_angular_velocity_rad_s": [
+        -1.0392478796206714e-15,
+        5.897079377684611e-17,
+        -2.5782334563048806e-17
+      ],
+      "final_z_error_m": 3.0772783192301034e-05,
+      "max_attitude_error_deg": [
+        6.478451458442641e-14,
+        1.2474489858974913e-13,
+        3.845915827981371e-15
+      ],
+      "max_abs_height_error_m": 0.499996,
+      "height_overshoot_m": 0.02147118656910041,
+      "settling_time_s": 2.491999999999947,
+      "max_motor_rpm": 6071.21617591717,
+      "saturation_count": 0,
+      "saturation_fraction": 0.0,
+      "has_nonfinite_state": false,
+      "peak_post_disturbance_height_error_m": null
+    },
+    "height_high": {
+      "initial_z_m": 1.5,
+      "final_position_m": [
+        7.00124520249519e-13,
+        3.5731096999811505e-13,
+        0.999969227216804
+      ],
+      "final_velocity_m_s": [
+        1.6383456766159198e-13,
+        7.244010598161969e-14,
+        2.425627065908432e-05
+      ],
+      "final_attitude_error_deg": [
+        -4.438548132213718e-14,
+        1.144396561589929e-13,
+        -3.8235133975277634e-15
+      ],
+      "final_angular_velocity_rad_s": [
+        -1.047615685996373e-15,
+        -9.02585999087903e-17,
+        6.921064504130596e-18
+      ],
+      "final_z_error_m": -3.077278319596477e-05,
+      "max_attitude_error_deg": [
+        6.414773500988394e-14,
+        1.2137250537333365e-13,
+        4.109657630144288e-15
+      ],
+      "max_abs_height_error_m": 0.4999960000000001,
+      "height_overshoot_m": 0.021471186569100187,
+      "settling_time_s": 2.491999999999947,
+      "max_motor_rpm": 5844.597852971285,
+      "saturation_count": 0,
+      "saturation_fraction": 0.0,
+      "has_nonfinite_state": false,
+      "peak_post_disturbance_height_error_m": null
+    },
+    "roll_15": {
+      "initial_z_m": 1.0,
+      "final_position_m": [
+        1.078331420032121e-12,
+        -16.63174961766114,
+        1.0000000805334075
+      ],
+      "final_velocity_m_s": [
+        2.246375386039391e-13,
+        -1.734112783357337,
+        -1.6875555104682673e-07
+      ],
+      "final_attitude_error_deg": [
+        4.1131420387079195e-08,
+        1.3039582190057501e-13,
+        -1.7640330943147468e-14
+      ],
+      "final_angular_velocity_rad_s": [
+        -2.1246645420693358e-09,
+        -7.094136236132676e-17,
+        -7.042929475399572e-16
+      ],
+      "final_z_error_m": 8.053340749825111e-08,
+      "max_attitude_error_deg": [
+        14.999639999999998,
+        1.515211331402741e-13,
+        2.0387287060458238e-14
+      ],
+      "max_abs_height_error_m": 0.0004855437540952634,
+      "height_overshoot_m": 0.0004855437540952634,
+      "settling_time_s": 1.2000000000000008,
+      "max_motor_rpm": 5970.682761207512,
+      "saturation_count": 0,
+      "saturation_fraction": 0.0,
+      "has_nonfinite_state": false,
+      "peak_post_disturbance_height_error_m": null
+    },
+    "pitch_minus_15": {
+      "initial_z_m": 1.0,
+      "final_position_m": [
+        -16.62610256444559,
+        1.1075864415885665e-13,
+        0.9999996405587671
+      ],
+      "final_velocity_m_s": [
+        -1.7334766150022547,
+        2.615647511414615e-14,
+        5.561950173559058e-07
+      ],
+      "final_attitude_error_deg": [
+        -2.0314372556263137e-14,
+        -4.1131487287479415e-08,
+        4.901883611140443e-15
+      ],
+      "final_angular_velocity_rad_s": [
+        -1.4258593664106676e-16,
+        2.124661643645227e-09,
+        1.1009467819961316e-17
+      ],
+      "final_z_error_m": -3.5944123288889074e-07,
+      "max_attitude_error_deg": [
+        2.7860697190872874e-14,
+        14.999639999999998,
+        5.227311321272092e-15
+      ],
+      "max_abs_height_error_m": 0.0007595038931791365,
+      "height_overshoot_m": 0.0007595038931791365,
+      "settling_time_s": 1.2000000000000008,
+      "max_motor_rpm": 5853.431366313533,
+      "saturation_count": 0,
+      "saturation_fraction": 0.0,
+      "has_nonfinite_state": false,
+      "peak_post_disturbance_height_error_m": null
+    },
+    "combined": {
+      "initial_z_m": 0.7,
+      "final_position_m": [
+        -9.005480569847702,
+        -13.245396562637511,
+        1.0000182203036627
+      ],
+      "final_velocity_m_s": [
+        -0.9447861305375678,
+        -1.3762131497795238,
+        -1.4218296280567417e-05
+      ],
+      "final_attitude_error_deg": [
+        2.6119926450732656e-08,
+        -3.101523405283105e-08,
+        8.690810810558057e-05
+      ],
+      "final_angular_velocity_rad_s": [
+        -1.5889979315993027e-09,
+        1.305558391963937e-09,
+        -2.2595620439022366e-06
+      ],
+      "final_z_error_m": 1.8220303662719317e-05,
+      "max_attitude_error_deg": [
+        9.99974617021241,
+        9.999774445417586,
+        14.999910082453793
+      ],
+      "max_abs_height_error_m": 0.2999975925358477,
+      "height_overshoot_m": 0.012654343917176014,
+      "settling_time_s": 2.503999999999946,
+      "max_motor_rpm": 6257.654443387421,
+      "saturation_count": 0,
+      "saturation_fraction": 0.0,
+      "has_nonfinite_state": false,
+      "peak_post_disturbance_height_error_m": null
+    },
+    "external_vertical_force": {
+      "initial_z_m": 1.0,
+      "final_position_m": [
+        8.750754794524586e-13,
+        3.187354954580914e-13,
+        0.9998962515437604
+      ],
+      "final_velocity_m_s": [
+        1.8553093602038432e-13,
+        6.747167118502563e-14,
+        0.00011398552420183245
+      ],
+      "final_attitude_error_deg": [
+        -4.6781471398783706e-14,
+        1.1469930514490176e-13,
+        -3.370946065197583e-15
+      ],
+      "final_angular_velocity_rad_s": [
+        -1.0144640843091826e-15,
+        3.0579254964457213e-17,
+        1.5092165419199247e-17
+      ],
+      "final_z_error_m": -0.00010374845623961626,
+      "max_attitude_error_deg": [
+        6.224547568154896e-14,
+        1.2139867298189497e-13,
+        4.176816390281722e-15
+      ],
+      "max_abs_height_error_m": 0.09668005335480367,
+      "height_overshoot_m": 0.09668005335480367,
+      "settling_time_s": 4.183999999999761,
+      "max_motor_rpm": 5949.705291430055,
+      "saturation_count": 0,
+      "saturation_fraction": 0.0,
+      "has_nonfinite_state": false,
+      "peak_post_disturbance_height_error_m": 0.09668005335480367
+    }
+  },
+  "warning": "COM/inertia and rotor signs remain estimated/temporary; no x/y controller or integral term."
+}
