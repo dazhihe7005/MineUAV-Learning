@@ -86,3 +86,5 @@ mujoco/reports/ppo_v2_exploration_audit_raw_mean.json
 mujoco/reports/**/*_trace.json
 mujoco/reports/**/*_traces.json
 docs/superpowers/
+README_before_portfolio.md
+README_before_portfolio.md
