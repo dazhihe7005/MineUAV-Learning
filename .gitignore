@@ -85,3 +85,4 @@ mujoco/reports/ppo_v2_exploration_audit_raw_mean.json
 # Keep source/report summaries, exclude raw trajectory-type data
 mujoco/reports/**/*_trace.json
 mujoco/reports/**/*_traces.json
+docs/superpowers/
