@@ -99,6 +99,7 @@ mujoco/rl/models/ppo_recurrent_*/
 mujoco/rl/models/*.pt
 !mujoco/rl/models/markov_dynamics_mlp.pt
 !mujoco/rl/models/history_latent_gru.pt
+!mujoco/rl/models/history_latent_gru_no_memory.pt
 !mujoco/rl/models/oracle_dynamics_mlp.pt
 !mujoco/rl/models/latent_pi_linear_probe.pt
 README_before_portfolio.md

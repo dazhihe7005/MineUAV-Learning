@@ -54,9 +54,28 @@ class HistoryLatentDynamics(nn.Module):
         return pred
 
 
+class NoMemoryLatentDynamics(HistoryLatentDynamics):
+    """Identical parameters/head, but each timestep is a separate length-1 lane.
+
+    Reshape B,T into B*T independent GRU batch lanes, all with hidden=None (=0).
+    This is NOT sequence detachment: no previous hidden value enters any step.
+    Previous executed action still remains an explicit feature of current x_t.
+    """
+    def predict_sequence(self, history_input, action):
+        batch_size, length, _ = history_input.shape
+        latent, _ = self.encoder(history_input.reshape(batch_size * length, 1, 11), None)
+        latent = latent.reshape(batch_size, length, 64)
+        return self.head(torch.cat([latent, action], -1)), latent
+
+    def predict_step(self, history_input, action, state=None):
+        return super().predict_step(history_input, action, None)
+
+
 def make_model(kind):
     if kind == 'history':
         return HistoryLatentDynamics()
+    if kind == 'no_memory':
+        return NoMemoryLatentDynamics()
     if kind in ('markov', 'oracle'):
         return MarkovDynamics(oracle=(kind == 'oracle'))
     raise ValueError(f'unknown model {kind}')
@@ -70,7 +89,7 @@ def save_model(path, model, kind, statistics, metadata):
     path = Path(path); path.parent.mkdir(parents=True, exist_ok=True)
     torch.save(dict(kind=kind, state_dict=model.state_dict(), statistics=statistics,
                     metadata=metadata, architecture=dict(hidden=[64, 64], activation='Tanh',
-                    gru_hidden=64 if kind == 'history' else None, output=7)), path)
+                    gru_hidden=64 if kind in ('history', 'no_memory') else None, output=7)), path)
 
 
 def load_model(path):
