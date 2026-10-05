@@ -86,5 +86,20 @@ mujoco/reports/ppo_v2_exploration_audit_raw_mean.json
 mujoco/reports/**/*_trace.json
 mujoco/reports/**/*_traces.json
 docs/superpowers/
+.superpowers/
+
+# Raw datasets/derived latent arrays already covered by *.npz and *.npy above.
+# Keep manifest/config/hash metadata, not transient logs or replay checkpoints.
+*.log
+mujoco/reports/*_progress.json
+mujoco/reports/*_pre*/
+mujoco/rl/models/ppo_recurrent_*/
+
+# Small representative supervised models are explicitly versioned.
+mujoco/rl/models/*.pt
+!mujoco/rl/models/markov_dynamics_mlp.pt
+!mujoco/rl/models/history_latent_gru.pt
+!mujoco/rl/models/oracle_dynamics_mlp.pt
+!mujoco/rl/models/latent_pi_linear_probe.pt
 README_before_portfolio.md
 README_before_portfolio.md
