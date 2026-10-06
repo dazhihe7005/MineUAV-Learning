@@ -1,0 +1,1648 @@
+{
+  "dataset_split_sha256": "bbbbf3d376864873ad234ae8337c6f9ed885898cb0ec5a8030f958b759542a5c",
+  "episodes": [
+    {
+      "episode_id": 0,
+      "target_id": 12,
+      "source": "scripted",
+      "source_rows": [
+        0,
+        74
+      ],
+      "transition_count": 74,
+      "decoder_frame_count": 75,
+      "teacher_latent_sha256": "d370ad7b6c4e7b02094c12d6bd8cbe2b14c1ea0f40198c906f12a0d201f519e9",
+      "executed_actions_sha256": "8ccca029f3797e960998cc10f31d5e1ffef15977136a213c2d07598a618c677f"
+    },
+    {
+      "episode_id": 1,
+      "target_id": 12,
+      "source": "oracle_ppo",
+      "source_rows": [
+        75,
+        138
+      ],
+      "transition_count": 63,
+      "decoder_frame_count": 64,
+      "teacher_latent_sha256": "b5aad1a4d62124baa84166a5b134804c52d2b483c80de6fd1cf9e0b083385ff1",
+      "executed_actions_sha256": "0910e7be7677633b1fc95aa97d3fcd2e9ded8aa7999c9b080020f977f6475595"
+    },
+    {
+      "episode_id": 2,
+      "target_id": 12,
+      "source": "pi7_ppo",
+      "source_rows": [
+        139,
+        207
+      ],
+      "transition_count": 68,
+      "decoder_frame_count": 69,
+      "teacher_latent_sha256": "5cd38b40e7a15e7ffaafa9ec65a06eb9ddc7b2f0b6599d8c365535b45ab729f3",
+      "executed_actions_sha256": "c82771f400754b8034fecb61bf70e697a6bf5083f6daddba35cf09b4db77973b"
+    },
+    {
+      "episode_id": 3,
+      "target_id": 12,
+      "source": "zero",
+      "source_rows": [
+        208,
+        582
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "a4bb8f7bc66b85466465e2bf2a0a8f4ce562c47c6fa750dafef13485bf31eb1e",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 4,
+      "target_id": 12,
+      "source": "random_iid",
+      "source_rows": [
+        583,
+        957
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "bf45ba4e575b6b9a9b4d4f6b88cbd5a493222e486c5daeba3460ceb2e91a1d98",
+      "executed_actions_sha256": "933b2d3fc8c21ffbcbb11b8ed4d984928da50040f92944af96375e0949279987"
+    },
+    {
+      "episode_id": 5,
+      "target_id": 12,
+      "source": "random_held",
+      "source_rows": [
+        958,
+        1332
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "54de0d18b4af48c600feb1925d4c4f0b9ec36baa593b9237a4202858c0a2e644",
+      "executed_actions_sha256": "3be96e7fcb0748bfa0b2e1fdd5569d8ca85db3d00dd38b63612fbce6175e1bb7"
+    },
+    {
+      "episode_id": 6,
+      "target_id": 12,
+      "source": "alternating",
+      "source_rows": [
+        1333,
+        1618
+      ],
+      "transition_count": 285,
+      "decoder_frame_count": 286,
+      "teacher_latent_sha256": "e6098a8940764c12d3e07f35e435c1e8a06503a5721973d6d294bff2d1f450ca",
+      "executed_actions_sha256": "fb87c0c7135fa6faf8a64b9fd6dff8cf20331cfaecfa0da858d6201375f3522a"
+    },
+    {
+      "episode_id": 7,
+      "target_id": 14,
+      "source": "scripted",
+      "source_rows": [
+        1619,
+        1683
+      ],
+      "transition_count": 64,
+      "decoder_frame_count": 65,
+      "teacher_latent_sha256": "a97341d8c66322797ff0aa27bfc16187af9dff1d3611f7aaf3d1ea92a9abf92d",
+      "executed_actions_sha256": "a31f9e127a7201e7fa67b0c111fb18d4a65aaa04cadcc6160aa4b0790c925ac0"
+    },
+    {
+      "episode_id": 8,
+      "target_id": 14,
+      "source": "oracle_ppo",
+      "source_rows": [
+        1684,
+        1743
+      ],
+      "transition_count": 59,
+      "decoder_frame_count": 60,
+      "teacher_latent_sha256": "556ce7dfdd04da9447f3b1214947aae34f27060ad6c999b7d9386f298c2d8613",
+      "executed_actions_sha256": "581c7ea9eccdb7636e4123f28c2ce2ffad0e6c979103d256e0d2722b6e46c08e"
+    },
+    {
+      "episode_id": 9,
+      "target_id": 14,
+      "source": "pi7_ppo",
+      "source_rows": [
+        1744,
+        1806
+      ],
+      "transition_count": 62,
+      "decoder_frame_count": 63,
+      "teacher_latent_sha256": "ab6edc28f8d451cd6f79715807cb4901606f93265637de3c896c9a6cf7fa2715",
+      "executed_actions_sha256": "6dce3640ccd24acca5658cdf31ce22597d98fd7668a7e5b2b0618f9c97eb6236"
+    },
+    {
+      "episode_id": 10,
+      "target_id": 14,
+      "source": "zero",
+      "source_rows": [
+        1807,
+        2181
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "c778acbab015048d0df6c65dfdb6b640932283ac88fa4b185b91a734a8b4549c",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 11,
+      "target_id": 14,
+      "source": "random_iid",
+      "source_rows": [
+        2182,
+        2556
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "89c7cad8b2cd7244bcf6c44d1a3464fcc0abb8877f60d2e4a3838132f203e09e",
+      "executed_actions_sha256": "34d98308efd078c1658db6b3a2fcc8518eaafe21417e8edc21cbcb5429ac052a"
+    },
+    {
+      "episode_id": 12,
+      "target_id": 14,
+      "source": "random_held",
+      "source_rows": [
+        2557,
+        2931
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "e0633747c819a53e66fd0a519410d8a251ee3df7d164a6840e973bce2c263d32",
+      "executed_actions_sha256": "cf2d910be2f6a5458c05c33d67cc74710260c8dead4301496fa9b871495ee8eb"
+    },
+    {
+      "episode_id": 13,
+      "target_id": 14,
+      "source": "alternating",
+      "source_rows": [
+        2932,
+        3052
+      ],
+      "transition_count": 120,
+      "decoder_frame_count": 121,
+      "teacher_latent_sha256": "c5e5084fd99dc8cf8f30d137ee2ccd08e73e0b3062bd43e8ab52ccf68e418774",
+      "executed_actions_sha256": "76fd33610fe9345feee94cb0cd36bd73e22351d8a8623dfbda0819959477ba30"
+    },
+    {
+      "episode_id": 14,
+      "target_id": 31,
+      "source": "scripted",
+      "source_rows": [
+        3053,
+        3142
+      ],
+      "transition_count": 89,
+      "decoder_frame_count": 90,
+      "teacher_latent_sha256": "da067ce4cf63683cd1ddd087cd118e511132a9f6d3acbb3fcbcfafdaea7e41d6",
+      "executed_actions_sha256": "3a2b322997ba656d66424caa507c23709b3d5b421dacf7d96da35cb3612e8ca8"
+    },
+    {
+      "episode_id": 15,
+      "target_id": 31,
+      "source": "oracle_ppo",
+      "source_rows": [
+        3143,
+        3234
+      ],
+      "transition_count": 91,
+      "decoder_frame_count": 92,
+      "teacher_latent_sha256": "d0fa1970f8e1093120b6dc914f0492613421e2300227aac13861c9d3b29cdcc2",
+      "executed_actions_sha256": "0ee55e4495aad0a162c1bbfc72c2b4430bfecc2aca36bc68df05848a92d1eae8"
+    },
+    {
+      "episode_id": 16,
+      "target_id": 31,
+      "source": "pi7_ppo",
+      "source_rows": [
+        3235,
+        3307
+      ],
+      "transition_count": 72,
+      "decoder_frame_count": 73,
+      "teacher_latent_sha256": "d68c448dcb442e01504e1c773dee81784b71c8942956ac4e856ba6e2ce568668",
+      "executed_actions_sha256": "032e70a134aa94efecb30201d30ef1bf008a2bbfeb2bf5a3defefc95371f3f84"
+    },
+    {
+      "episode_id": 17,
+      "target_id": 31,
+      "source": "zero",
+      "source_rows": [
+        3308,
+        3682
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "d6da464159fa128e5e0434b3cda6383a68d2f1534a01c903323f1f62bb48550b",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 18,
+      "target_id": 31,
+      "source": "random_iid",
+      "source_rows": [
+        3683,
+        4057
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "d45a5faafd77b426b49efb3d907fd68347a67258030f849c8e4203d00dd6803a",
+      "executed_actions_sha256": "37f03941429ab4562a8e2e78eb6a475d1747f37ce3e33b2fff56285bc1fa5634"
+    },
+    {
+      "episode_id": 19,
+      "target_id": 31,
+      "source": "random_held",
+      "source_rows": [
+        4058,
+        4432
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "d1efebdb6e6202416e61e32ac76ede84c40c5d9fe3ab6cd91b380b2f57496996",
+      "executed_actions_sha256": "a9512c4fedcf56ec07e1ada1b7201757a145781e7a576d0059e644eb255b4da3"
+    },
+    {
+      "episode_id": 20,
+      "target_id": 31,
+      "source": "alternating",
+      "source_rows": [
+        4433,
+        4589
+      ],
+      "transition_count": 156,
+      "decoder_frame_count": 157,
+      "teacher_latent_sha256": "66f162f8d337501e6a4ac733df7590e7bb190fc3aed8160549a4999ef2943f71",
+      "executed_actions_sha256": "7e1c0fe4111412b9cbae3d288b25e947a91fc19cec4b7af39bb79dc0674f4475"
+    },
+    {
+      "episode_id": 21,
+      "target_id": 32,
+      "source": "scripted",
+      "source_rows": [
+        4590,
+        4661
+      ],
+      "transition_count": 71,
+      "decoder_frame_count": 72,
+      "teacher_latent_sha256": "98365710a9cf991550bbd219290710c18c6dd57cf28731f89b4aff0ad5991e52",
+      "executed_actions_sha256": "a380188f4d43b00686fd6c4e028e61808af15472017cc0a738cd111f7964ed14"
+    },
+    {
+      "episode_id": 22,
+      "target_id": 32,
+      "source": "oracle_ppo",
+      "source_rows": [
+        4662,
+        4737
+      ],
+      "transition_count": 75,
+      "decoder_frame_count": 76,
+      "teacher_latent_sha256": "3cc764278ebfa2c91b49d56a6a6c4eea5c42cb77a47c44f9d4b6b9548169c7a0",
+      "executed_actions_sha256": "e1e6b95ed3fc1b0960c24f1666d20dc6a13a282fd038fee4e4d9dfad5bf45e55"
+    },
+    {
+      "episode_id": 23,
+      "target_id": 32,
+      "source": "pi7_ppo",
+      "source_rows": [
+        4738,
+        4807
+      ],
+      "transition_count": 69,
+      "decoder_frame_count": 70,
+      "teacher_latent_sha256": "123eef63317ddd5e03a70ee1900c96d080968c2238cee43a39108edf184878d7",
+      "executed_actions_sha256": "8645cc510ba33a8e6a3a171561f0ed9555896f2a6b339d48a753f106d55d99cd"
+    },
+    {
+      "episode_id": 24,
+      "target_id": 32,
+      "source": "zero",
+      "source_rows": [
+        4808,
+        5182
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "4f0a03edbafa99fcf8e6648e6b0b8a32eee107e12b48e55177028353831c0dc3",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 25,
+      "target_id": 32,
+      "source": "random_iid",
+      "source_rows": [
+        5183,
+        5557
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "ff15104c63b5bf6be12a3db1cd60066623fbae73f300cf4be495a6e9ce8e09b2",
+      "executed_actions_sha256": "1fab0eba96ff63b85e4646dd4fdccd536d1b7e9d1946ed3c68648b07b123db28"
+    },
+    {
+      "episode_id": 26,
+      "target_id": 32,
+      "source": "random_held",
+      "source_rows": [
+        5558,
+        5932
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "349d3da5c02f3ca61931113db06bf84c3dae452397e0db834089bc121c84ad34",
+      "executed_actions_sha256": "9699ba8f53ddd555fda128d671c228ab9c157934d06b178cbf9f25821907d816"
+    },
+    {
+      "episode_id": 27,
+      "target_id": 32,
+      "source": "alternating",
+      "source_rows": [
+        5933,
+        6073
+      ],
+      "transition_count": 140,
+      "decoder_frame_count": 141,
+      "teacher_latent_sha256": "86b7e6902cb0de7f9579ff82db3b7a2df7523add25f9d6149caecbf4276d652d",
+      "executed_actions_sha256": "b88de5a02e75a828709a714e5cc71d9beeeeecf7b5f4b71bd3f144b1e5065553"
+    },
+    {
+      "episode_id": 28,
+      "target_id": 38,
+      "source": "scripted",
+      "source_rows": [
+        6074,
+        6171
+      ],
+      "transition_count": 97,
+      "decoder_frame_count": 98,
+      "teacher_latent_sha256": "09da016633745635e1252395e966f5346f661ff75b4812caf5ec4f90647d3dde",
+      "executed_actions_sha256": "2ee8d007c2c97dc0f35b5d16e759a4ece20f389070703fc31231f7666bcb8967"
+    },
+    {
+      "episode_id": 29,
+      "target_id": 38,
+      "source": "oracle_ppo",
+      "source_rows": [
+        6172,
+        6273
+      ],
+      "transition_count": 101,
+      "decoder_frame_count": 102,
+      "teacher_latent_sha256": "fc555382c77a5caf77b8ed0a7583d86a7563ce07ab8791e014ea503b3d98cb49",
+      "executed_actions_sha256": "93e470bd89eeaaddc58ad01aec188e2379508fafdd5f1c73956843b02deddc5f"
+    },
+    {
+      "episode_id": 30,
+      "target_id": 38,
+      "source": "pi7_ppo",
+      "source_rows": [
+        6274,
+        6356
+      ],
+      "transition_count": 82,
+      "decoder_frame_count": 83,
+      "teacher_latent_sha256": "be7942449b92a8d22738f12c869b100a46610c751e808911c26d81adbc269a60",
+      "executed_actions_sha256": "61a20871d8ba704d5163b1e79a1a2bdd952f9091a1e2394eb5e2e16542e3996c"
+    },
+    {
+      "episode_id": 31,
+      "target_id": 38,
+      "source": "zero",
+      "source_rows": [
+        6357,
+        6731
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "cdff6a58642715238aa45c575c5a7fff5227880dad47e2e9ec5332d32d7f0338",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 32,
+      "target_id": 38,
+      "source": "random_iid",
+      "source_rows": [
+        6732,
+        7106
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "44c972861add8248fcc1150caf54ff25de368e4754eba3f70c1c0ca3775454ca",
+      "executed_actions_sha256": "eb5fd466aaa973b3f32935ed1bd22f7eb9a74e4ff07c20d8524eda9f17de85c6"
+    },
+    {
+      "episode_id": 33,
+      "target_id": 38,
+      "source": "random_held",
+      "source_rows": [
+        7107,
+        7481
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "284bf728e0edb9a4f7caf56d3952afb40b210a63ccff712f8d757e791dfe848a",
+      "executed_actions_sha256": "362d233763bcfea513c120a6708d18c00c7d959eb6e3e48bd36081ab52b10233"
+    },
+    {
+      "episode_id": 34,
+      "target_id": 38,
+      "source": "alternating",
+      "source_rows": [
+        7482,
+        7799
+      ],
+      "transition_count": 317,
+      "decoder_frame_count": 318,
+      "teacher_latent_sha256": "c547aa94b5297921e9cbba6220658a28d9b46e1fae9eb326b9443975d1d6d440",
+      "executed_actions_sha256": "1f4d54b20bba4ebf814a2b0039425e5d2723cc1029884ff5d8b1c2a12c1fae46"
+    },
+    {
+      "episode_id": 35,
+      "target_id": 40,
+      "source": "scripted",
+      "source_rows": [
+        7800,
+        7871
+      ],
+      "transition_count": 71,
+      "decoder_frame_count": 72,
+      "teacher_latent_sha256": "6d53cf3b8fe6f1ac6fc26fa1af396ff2c22808bf74323936e76758046e783b75",
+      "executed_actions_sha256": "e66f2ac058db1ae62b22cc00cbc1a59ff56c21dea4d79cae4c08fdaf1bf59bc4"
+    },
+    {
+      "episode_id": 36,
+      "target_id": 40,
+      "source": "oracle_ppo",
+      "source_rows": [
+        7872,
+        7936
+      ],
+      "transition_count": 64,
+      "decoder_frame_count": 65,
+      "teacher_latent_sha256": "547b8596ac3c336a26cd7ca56e4209bb1723b7adeb39257cbaa7e524e0a212ba",
+      "executed_actions_sha256": "7f2bdcd36bba67aefeda5cbaf5c88640979a12c4e43a78d063a79e75b2d8b77c"
+    },
+    {
+      "episode_id": 37,
+      "target_id": 40,
+      "source": "pi7_ppo",
+      "source_rows": [
+        7937,
+        8005
+      ],
+      "transition_count": 68,
+      "decoder_frame_count": 69,
+      "teacher_latent_sha256": "60f9f6db6dd56fec942b60887979cf9f91f0dc4f5fbe5147c1a53e8f43917dd8",
+      "executed_actions_sha256": "125cc317512699a4ae1e67cb676884b36171ba2cbf161e2aad2085ac7bb74ac7"
+    },
+    {
+      "episode_id": 38,
+      "target_id": 40,
+      "source": "zero",
+      "source_rows": [
+        8006,
+        8380
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "2af999417903bb0ea0f9b52693ec20a27d1e2d3f287385ba1738676643078d94",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 39,
+      "target_id": 40,
+      "source": "random_iid",
+      "source_rows": [
+        8381,
+        8755
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "4e0c415bf2e15cd68e6cc3265f61fff3897b2c13b62e0d662994b5ad203c4fce",
+      "executed_actions_sha256": "7764b3e77b261e3aaba3bbc5be98c73786f5c2d408d6738b39274bc0d5419bf1"
+    },
+    {
+      "episode_id": 40,
+      "target_id": 40,
+      "source": "random_held",
+      "source_rows": [
+        8756,
+        9130
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "9a3fe2195c9c88bcfbb29df1c8a9d7a13c216484feb944d9677fbc36f8f3ddfc",
+      "executed_actions_sha256": "982f0dea565187acc050f7956dc3ff9f2db893060d5c01e67f74c4730831851e"
+    },
+    {
+      "episode_id": 41,
+      "target_id": 40,
+      "source": "alternating",
+      "source_rows": [
+        9131,
+        9314
+      ],
+      "transition_count": 183,
+      "decoder_frame_count": 184,
+      "teacher_latent_sha256": "e0b239eea001a0eb0d3707e012ef28e5398c5e05e3aaa738d1e0975dbce77bec",
+      "executed_actions_sha256": "45b1ddc54fc394a33e3a4ff3a2ff6593ecf75dbf25a717c57b0d0f73f3501439"
+    },
+    {
+      "episode_id": 42,
+      "target_id": 46,
+      "source": "scripted",
+      "source_rows": [
+        9315,
+        9390
+      ],
+      "transition_count": 75,
+      "decoder_frame_count": 76,
+      "teacher_latent_sha256": "971979120a2de670e01df2cea822622c5a71c9e5ddb2a9c3d370a2a5d89215f2",
+      "executed_actions_sha256": "3cd09a92bea7183c4e2bcbdfdfbc7db9ad4f287725c15518141396c5fc1a6f04"
+    },
+    {
+      "episode_id": 43,
+      "target_id": 46,
+      "source": "oracle_ppo",
+      "source_rows": [
+        9391,
+        9486
+      ],
+      "transition_count": 95,
+      "decoder_frame_count": 96,
+      "teacher_latent_sha256": "d70b8705d55d37c1f3b3efcc18868977a24ecaa8648e93a5591b772b9a62ca79",
+      "executed_actions_sha256": "f7b465cca6672cc18c0e2c3dfce8b3130e1336397dd4ae0d865c2145b48029bd"
+    },
+    {
+      "episode_id": 44,
+      "target_id": 46,
+      "source": "pi7_ppo",
+      "source_rows": [
+        9487,
+        9573
+      ],
+      "transition_count": 86,
+      "decoder_frame_count": 87,
+      "teacher_latent_sha256": "99840c6c3a2df2a4b9045996796e614deaa1b0799033fad97a282c761ccc1b97",
+      "executed_actions_sha256": "9fa977d95b7bf428eb22c95dc932e931ad7213063406f0534ffe90532277a0cd"
+    },
+    {
+      "episode_id": 45,
+      "target_id": 46,
+      "source": "zero",
+      "source_rows": [
+        9574,
+        9948
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "a8c406e73a1dd5b16dd197c7c77d141626a678b8689fac0db0dc39bec56adb57",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 46,
+      "target_id": 46,
+      "source": "random_iid",
+      "source_rows": [
+        9949,
+        10323
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "93ec41c8ef76d685e9120b1b4994a5072ed466437df4b55820320b84c4446645",
+      "executed_actions_sha256": "a03acc14b309f2bc0af67b0ab381df8a7f5657bb6c663c9c4d503ecaa97d91fa"
+    },
+    {
+      "episode_id": 47,
+      "target_id": 46,
+      "source": "random_held",
+      "source_rows": [
+        10324,
+        10698
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "608b7620069945764587de6503baffd15e763b299df435af1496e9ab98a9c265",
+      "executed_actions_sha256": "13658a5605cd8a09fff9f8d7cc045dea429bd30f3d374268a70266ad96190fd6"
+    },
+    {
+      "episode_id": 48,
+      "target_id": 46,
+      "source": "alternating",
+      "source_rows": [
+        10699,
+        10829
+      ],
+      "transition_count": 130,
+      "decoder_frame_count": 131,
+      "teacher_latent_sha256": "822ddff036ab6f6ae45daef46e847bf3f867ec5f6c28d65e4c2d87f138b8f4f2",
+      "executed_actions_sha256": "8167ecca612e45f962630472e4bc5e3fc68d0ad247d4cb6bf0b13bf3f16f6abb"
+    },
+    {
+      "episode_id": 49,
+      "target_id": 49,
+      "source": "scripted",
+      "source_rows": [
+        10830,
+        10919
+      ],
+      "transition_count": 89,
+      "decoder_frame_count": 90,
+      "teacher_latent_sha256": "1700f0a1b46aed75e9da9e455bf4aadb3c4d3aa62e78c5c690e368b960438f3e",
+      "executed_actions_sha256": "23f0ee71f198e5dfbdae4e846f6fb2128186fe96fcf370138e6132fcbc70783d"
+    },
+    {
+      "episode_id": 50,
+      "target_id": 49,
+      "source": "oracle_ppo",
+      "source_rows": [
+        10920,
+        11009
+      ],
+      "transition_count": 89,
+      "decoder_frame_count": 90,
+      "teacher_latent_sha256": "f1317982b0a34ee48e6947c35721ca782251a91ec820512e689b8e8cc9758d63",
+      "executed_actions_sha256": "e16a0378650ffe27bf83b4a0b0d9fcf4daa5ead561df0579f03882a5b64fdfdb"
+    },
+    {
+      "episode_id": 51,
+      "target_id": 49,
+      "source": "pi7_ppo",
+      "source_rows": [
+        11010,
+        11087
+      ],
+      "transition_count": 77,
+      "decoder_frame_count": 78,
+      "teacher_latent_sha256": "aa95ae930dbd71c6b25ad028452bdd6759666c78352e1c070ab576c7ea0a6bfc",
+      "executed_actions_sha256": "4cef9a6dd05e949db86b6d104c67a58b12c6dc633744e657fe08cba0b00a1e8c"
+    },
+    {
+      "episode_id": 52,
+      "target_id": 49,
+      "source": "zero",
+      "source_rows": [
+        11088,
+        11462
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "ae3d1d8bfbb7679ee1956d83cd9d394f5bf7a09b90c8dbc96310f25e10077fbd",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 53,
+      "target_id": 49,
+      "source": "random_iid",
+      "source_rows": [
+        11463,
+        11837
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "1e59f27cf5cf644ff1ae9de3a197de24fc5eb2a813f39801371c0bb41a450990",
+      "executed_actions_sha256": "ff8cb562b9afd972559bb4a70ace3e916053dcae15624a6d4043763c0fcebce7"
+    },
+    {
+      "episode_id": 54,
+      "target_id": 49,
+      "source": "random_held",
+      "source_rows": [
+        11838,
+        12212
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "95fe1c628791c78cd7bbd97f98fcfa8322c5c3e27f654c620b0bf829367219eb",
+      "executed_actions_sha256": "cbe07ad01f0c00a54aebb1bb47f8d368912813e09693f06f91e8cbe624c0d5b9"
+    },
+    {
+      "episode_id": 55,
+      "target_id": 49,
+      "source": "alternating",
+      "source_rows": [
+        12213,
+        12322
+      ],
+      "transition_count": 109,
+      "decoder_frame_count": 110,
+      "teacher_latent_sha256": "ae3871333009efbbe8fdb84f076a233991af1683709987c856cc4174ebb5136d",
+      "executed_actions_sha256": "62be3c5d0198e95a9edb8e8e45c8137738a6f43d13cbe9f6a6a942166a09933a"
+    },
+    {
+      "episode_id": 56,
+      "target_id": 58,
+      "source": "scripted",
+      "source_rows": [
+        12323,
+        12400
+      ],
+      "transition_count": 77,
+      "decoder_frame_count": 78,
+      "teacher_latent_sha256": "84c8b043c7447351c1f50d773f8b07dac78468baba1682199ca5d48abc152c5c",
+      "executed_actions_sha256": "e69961982060e0f2994d265ace142da35e661346de756da0d1cabfa551dcb44b"
+    },
+    {
+      "episode_id": 57,
+      "target_id": 58,
+      "source": "oracle_ppo",
+      "source_rows": [
+        12401,
+        12484
+      ],
+      "transition_count": 83,
+      "decoder_frame_count": 84,
+      "teacher_latent_sha256": "07e19fc340eb41c7f29990c97e6d8b9ea99590d9aa13a9f3609dfb7e85b64a84",
+      "executed_actions_sha256": "e84b30372ec4c3bf77f03dce4128ecab6321bb08c8bc04ae28021230f0a4b4ef"
+    },
+    {
+      "episode_id": 58,
+      "target_id": 58,
+      "source": "pi7_ppo",
+      "source_rows": [
+        12485,
+        12625
+      ],
+      "transition_count": 140,
+      "decoder_frame_count": 141,
+      "teacher_latent_sha256": "6a0ec1141c0a0d125bed52525fa39cbdc703a604aa1d150ea35b22db09ebeba3",
+      "executed_actions_sha256": "17c322fa84f78da1205a13f31cdd9a64d56b99319c5d7603a9fe5787967c7199"
+    },
+    {
+      "episode_id": 59,
+      "target_id": 58,
+      "source": "zero",
+      "source_rows": [
+        12626,
+        13000
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "a1ee7f2f05ee0922cd8bd44c44d08d77a24d4f99093787403cf39707f8415f55",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 60,
+      "target_id": 58,
+      "source": "random_iid",
+      "source_rows": [
+        13001,
+        13375
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "fe0ced85ab9319d12404dbf36ef029f3273eb94c6fae4de3d4d202561ff24e05",
+      "executed_actions_sha256": "d4c15bd4bca0b431e297943c33efa3f2a12ff05b3f461cce84af2ab9efde8a89"
+    },
+    {
+      "episode_id": 61,
+      "target_id": 58,
+      "source": "random_held",
+      "source_rows": [
+        13376,
+        13750
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "f048fdc8e6b67e6ac76852b4a60f4879cff00f08d0fb88fe20defdcae6cb399e",
+      "executed_actions_sha256": "41db5bab4c9131ee959f5e4a1fbe5a1d62c663329bc47e194df8a414b730d369"
+    },
+    {
+      "episode_id": 62,
+      "target_id": 58,
+      "source": "alternating",
+      "source_rows": [
+        13751,
+        14070
+      ],
+      "transition_count": 319,
+      "decoder_frame_count": 320,
+      "teacher_latent_sha256": "757058bb73d3c5c56b9a08c5879ee7fec5f073538afcf1691cb995e8c447214e",
+      "executed_actions_sha256": "57d9f0c58173a0d81d9758c42e0661b9ccd46d9e2b983aeea73db4983f570ba5"
+    },
+    {
+      "episode_id": 63,
+      "target_id": 61,
+      "source": "scripted",
+      "source_rows": [
+        14071,
+        14158
+      ],
+      "transition_count": 87,
+      "decoder_frame_count": 88,
+      "teacher_latent_sha256": "7438f9c82c6e88f8c3bb4f343769dff7ab8270dbb7760308915669ac493a2e4d",
+      "executed_actions_sha256": "d7a65fbe8b95eea9a4b3eec9395843dc9c4202fc4ba3a77f49b2afa44f93b598"
+    },
+    {
+      "episode_id": 64,
+      "target_id": 61,
+      "source": "oracle_ppo",
+      "source_rows": [
+        14159,
+        14315
+      ],
+      "transition_count": 156,
+      "decoder_frame_count": 157,
+      "teacher_latent_sha256": "4bbcac95df50e0d83ef4500b53b295d38861563a7b6b0e7b922136b6ef193896",
+      "executed_actions_sha256": "6cdcf5facab4b4f6bda80b6e24c7a718b8e2cfd7b806f3c1b6c5848a4dd7c64b"
+    },
+    {
+      "episode_id": 65,
+      "target_id": 61,
+      "source": "pi7_ppo",
+      "source_rows": [
+        14316,
+        14597
+      ],
+      "transition_count": 281,
+      "decoder_frame_count": 282,
+      "teacher_latent_sha256": "3b5fd65243c501a0327809a901e1e4a3edd190ca133bc691294b20b23f91d323",
+      "executed_actions_sha256": "9972697e879ee08b46a8412afd00e6547bf74a717040adc5a6c9d11b54f486d8"
+    },
+    {
+      "episode_id": 66,
+      "target_id": 61,
+      "source": "zero",
+      "source_rows": [
+        14598,
+        14972
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "78b54fdc471eb9dc3c5c66d7c8984b54c4ed933bad96714df3b807d12c845ca9",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 67,
+      "target_id": 61,
+      "source": "random_iid",
+      "source_rows": [
+        14973,
+        15347
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "e54ee1b69533dd26d906953865d3128b099da1a2480ebd02ee3054ac7f31556e",
+      "executed_actions_sha256": "986d3ff99c0c3543d23c9cbff2bc8323e664384bf739c344b1ac774399a2d3d8"
+    },
+    {
+      "episode_id": 68,
+      "target_id": 61,
+      "source": "random_held",
+      "source_rows": [
+        15348,
+        15722
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "fbbe8d0f87ec20bdfd14c40cd4cc4b8f9b49f4e69def27d9dbc36a190793087e",
+      "executed_actions_sha256": "7a704c4e8883388cd4b8deace7def29da1fea5df21439dd7a84a3c65529bd384"
+    },
+    {
+      "episode_id": 69,
+      "target_id": 61,
+      "source": "alternating",
+      "source_rows": [
+        15723,
+        15851
+      ],
+      "transition_count": 128,
+      "decoder_frame_count": 129,
+      "teacher_latent_sha256": "7881c086a71d099c4862b9f0b58f830adffd0739350eaffc8eb8996edbce3bff",
+      "executed_actions_sha256": "47b2ee09c59b20a3e8feb58f6b9e99735341615b0d34df381b71bfe104f0d030"
+    },
+    {
+      "episode_id": 70,
+      "target_id": 73,
+      "source": "scripted",
+      "source_rows": [
+        15852,
+        16044
+      ],
+      "transition_count": 192,
+      "decoder_frame_count": 193,
+      "teacher_latent_sha256": "e0db738ba2a11d13b9c140fc0f77e70c8fca8e13f66338714b4a5a3635cd3053",
+      "executed_actions_sha256": "f9a6dcc552b9011de9ce410ce5f58c192a4a68da7a316889427b15f0180b0855"
+    },
+    {
+      "episode_id": 71,
+      "target_id": 73,
+      "source": "oracle_ppo",
+      "source_rows": [
+        16045,
+        16230
+      ],
+      "transition_count": 185,
+      "decoder_frame_count": 186,
+      "teacher_latent_sha256": "e86cef694d15717d0944df4230d09cbb1634756d47fd8adc7b9b4bc6c9cf44b8",
+      "executed_actions_sha256": "8388902ffa8c9edaa0d4e4ba996d7b03c6c117d8ea1dcb2d06d7070bf5376cc8"
+    },
+    {
+      "episode_id": 72,
+      "target_id": 73,
+      "source": "pi7_ppo",
+      "source_rows": [
+        16231,
+        16585
+      ],
+      "transition_count": 354,
+      "decoder_frame_count": 355,
+      "teacher_latent_sha256": "c563f163222b00aa8b6210b2e1420b19b50b9527811d031b5f1d0e2907eaf681",
+      "executed_actions_sha256": "0e884a207a3806b98d1b1dc58981541c7d891c544f2be357022caaa4571f44fe"
+    },
+    {
+      "episode_id": 73,
+      "target_id": 73,
+      "source": "zero",
+      "source_rows": [
+        16586,
+        16960
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "ca8608cfd90479db263f9ded185666e0bb0a337ac1824f469f0fb06e613dddc2",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 74,
+      "target_id": 73,
+      "source": "random_iid",
+      "source_rows": [
+        16961,
+        17335
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "dab3051e6e46e99073a3699b2429229f7543e9291204c9a5fb1ebe803f0dbd6d",
+      "executed_actions_sha256": "7f9fea37d32a8c3dce6967f3047ce13eee5d097ffa3836a00678efb54abcb9b5"
+    },
+    {
+      "episode_id": 75,
+      "target_id": 73,
+      "source": "random_held",
+      "source_rows": [
+        17336,
+        17710
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "10c3a3a0f51bcfa8fc12b0f9c8820fcc89e6aaab4a3cdb50fed97bf60be28222",
+      "executed_actions_sha256": "7ae8c21325a268278800d9370c19cf717eecc40ea53e683def4aea68ef4bf6fe"
+    },
+    {
+      "episode_id": 76,
+      "target_id": 73,
+      "source": "alternating",
+      "source_rows": [
+        17711,
+        17959
+      ],
+      "transition_count": 248,
+      "decoder_frame_count": 249,
+      "teacher_latent_sha256": "311b61094f4adaafe525e2c1474f994ea19e72ab023f156da68c7f5b2849f344",
+      "executed_actions_sha256": "2be5ca4f41b754db688191ab1337efdbe64b3d4806b0607f153aa9f7ff9c9f96"
+    },
+    {
+      "episode_id": 77,
+      "target_id": 89,
+      "source": "scripted",
+      "source_rows": [
+        17960,
+        18123
+      ],
+      "transition_count": 163,
+      "decoder_frame_count": 164,
+      "teacher_latent_sha256": "daa02b11318b2c122767ff3cdb3faccb4eb486d0a2ab6f78b136046c56dae0cf",
+      "executed_actions_sha256": "62b2249aa5a046e9325cd8499f290ef69055d990fb0c9855e59ae6daca1adf7c"
+    },
+    {
+      "episode_id": 78,
+      "target_id": 89,
+      "source": "oracle_ppo",
+      "source_rows": [
+        18124,
+        18222
+      ],
+      "transition_count": 98,
+      "decoder_frame_count": 99,
+      "teacher_latent_sha256": "ad823781917122a6c6b03675567a7f7a59889eecfad09cd4753fbef094b4e3f4",
+      "executed_actions_sha256": "06cd629b745226b3584a32cfc39ae82f60c89b5f6e86a16b69071bc951e657fd"
+    },
+    {
+      "episode_id": 79,
+      "target_id": 89,
+      "source": "pi7_ppo",
+      "source_rows": [
+        18223,
+        18376
+      ],
+      "transition_count": 153,
+      "decoder_frame_count": 154,
+      "teacher_latent_sha256": "da387f6094af0b29b90b234badd860c2f1dbb03a18aa3383b9a7cf1c219fadf6",
+      "executed_actions_sha256": "4e2b7207b10bcf65d7c5ea0095fce91a8eb94445ae085d47e36730586ba5d63f"
+    },
+    {
+      "episode_id": 80,
+      "target_id": 89,
+      "source": "zero",
+      "source_rows": [
+        18377,
+        18751
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "d6f04d6b5409c38009b3042b50ee9396c4d8740f19ee0fc1c2e8d5ff673c854a",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 81,
+      "target_id": 89,
+      "source": "random_iid",
+      "source_rows": [
+        18752,
+        19126
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "c1d5e63502d9a776d4aa3ee6ca532532a77331a6858081804cf7dfc4e00a5b2c",
+      "executed_actions_sha256": "5f67d6cb260494c92a9168b960f21457025e0e40e8d98dd3a541abd844bf26ab"
+    },
+    {
+      "episode_id": 82,
+      "target_id": 89,
+      "source": "random_held",
+      "source_rows": [
+        19127,
+        19501
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "38f14c968ac7df1ddfee10b14686c0e13a9e0e73e01e2838f42317114df705f7",
+      "executed_actions_sha256": "82a40b8cfdd9fc97c286abfbcf78124160f323eaee711e047ad1853b0d1f9809"
+    },
+    {
+      "episode_id": 83,
+      "target_id": 89,
+      "source": "alternating",
+      "source_rows": [
+        19502,
+        19646
+      ],
+      "transition_count": 144,
+      "decoder_frame_count": 145,
+      "teacher_latent_sha256": "85d4a5de3d51b78c7ca6cf12e08a167bfaabdbe85ede8991dc8e8c5aa08849b7",
+      "executed_actions_sha256": "534de6953617433eb8b16a041831750e4a632e5ec5e0e1f4404a6eeb0a13a846"
+    },
+    {
+      "episode_id": 84,
+      "target_id": 96,
+      "source": "scripted",
+      "source_rows": [
+        19647,
+        19840
+      ],
+      "transition_count": 193,
+      "decoder_frame_count": 194,
+      "teacher_latent_sha256": "bdaa27a1874b129d183d5370f03c74214d3e1ac6defd0f62d80e0e7fba200935",
+      "executed_actions_sha256": "0c3cf1c26e806c3c6f7a66ba9bd908d0586d021f0373b3fbc82d40fc9a4dfa3d"
+    },
+    {
+      "episode_id": 85,
+      "target_id": 96,
+      "source": "oracle_ppo",
+      "source_rows": [
+        19841,
+        19995
+      ],
+      "transition_count": 154,
+      "decoder_frame_count": 155,
+      "teacher_latent_sha256": "90d9420a345905d09b0f199cf75de64850caa6764d4106c4b606030b48c71643",
+      "executed_actions_sha256": "9f4504ccedaeac985e702e8751cd44a4ab0f23f580fe09ae725034f1efe0c4bd"
+    },
+    {
+      "episode_id": 86,
+      "target_id": 96,
+      "source": "pi7_ppo",
+      "source_rows": [
+        19996,
+        20370
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "ed8794ea8bb049a49c4b8568c17aa8a1c2da8aaad65b306fb100bbc8c62b7c41",
+      "executed_actions_sha256": "116bd40901f79394f32905e1cad169ea6264d30d9c27af987323677912cbbddb"
+    },
+    {
+      "episode_id": 87,
+      "target_id": 96,
+      "source": "zero",
+      "source_rows": [
+        20371,
+        20745
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "3f8ab8ea19682449881ddd3709739ade850e087b7436ada448f23288f857d663",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 88,
+      "target_id": 96,
+      "source": "random_iid",
+      "source_rows": [
+        20746,
+        21120
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "d9f7b9e1cd51ba3309917f6e158735ef197ef929452c310c230abb6f510a8124",
+      "executed_actions_sha256": "e9b55ae2a78bbd4e78570428212865f3c1af0b66b16d41af5604b4c4077a6e3e"
+    },
+    {
+      "episode_id": 89,
+      "target_id": 96,
+      "source": "random_held",
+      "source_rows": [
+        21121,
+        21495
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "730ef6d5350dbcd6c6641767a564e21e34b67e16fad14e38310fa6b18d5d34d7",
+      "executed_actions_sha256": "6f0fe1eb276a375b42fb2a672f6cbcf8f78938edc94558095752cedb04308131"
+    },
+    {
+      "episode_id": 90,
+      "target_id": 96,
+      "source": "alternating",
+      "source_rows": [
+        21496,
+        21856
+      ],
+      "transition_count": 360,
+      "decoder_frame_count": 361,
+      "teacher_latent_sha256": "e1824d218e39e3f62797c5e861fc1d30b7fd6b9c77164bd64880564dbf39f66d",
+      "executed_actions_sha256": "69bb7c7a10413704f7e66cbada4da8e1ff25da4f0be48868729710569b66442d"
+    },
+    {
+      "episode_id": 91,
+      "target_id": 106,
+      "source": "scripted",
+      "source_rows": [
+        21857,
+        21934
+      ],
+      "transition_count": 77,
+      "decoder_frame_count": 78,
+      "teacher_latent_sha256": "334eca513c2fada186b60f23611a8a875dc11b046170500b6dddbd249a804193",
+      "executed_actions_sha256": "f0ffb8b9843150c0223fff5204b6213c0a23b6fdf152f67ca9b970e9d8503b2d"
+    },
+    {
+      "episode_id": 92,
+      "target_id": 106,
+      "source": "oracle_ppo",
+      "source_rows": [
+        21935,
+        22010
+      ],
+      "transition_count": 75,
+      "decoder_frame_count": 76,
+      "teacher_latent_sha256": "b101176e0022c7ade9e3d67d250505716e38212030a126d2ee90685d917a22d7",
+      "executed_actions_sha256": "7eabe25b2c122926f4b52d9728f2b40773fa86ec58152b85b212b65e0a1aa3a5"
+    },
+    {
+      "episode_id": 93,
+      "target_id": 106,
+      "source": "pi7_ppo",
+      "source_rows": [
+        22011,
+        22160
+      ],
+      "transition_count": 149,
+      "decoder_frame_count": 150,
+      "teacher_latent_sha256": "3293fa562a70151a0b6c1467e33674221aa3502535f0040b9062d809ba91008e",
+      "executed_actions_sha256": "297053be5380ab0b0bb3b5a6bc38b47022d4913302b0a1d0191b8a5394d0378e"
+    },
+    {
+      "episode_id": 94,
+      "target_id": 106,
+      "source": "zero",
+      "source_rows": [
+        22161,
+        22535
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "846124e2b2a3577bad16617f9c824d1485ee58d62f51ad939753abaad0b94694",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 95,
+      "target_id": 106,
+      "source": "random_iid",
+      "source_rows": [
+        22536,
+        22910
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "3b85f1bf941cc0bdae9c873c4173b11931a5020a9d034974e54f5089eba1eab5",
+      "executed_actions_sha256": "cfd23c33b0639ecace83c79241a8b1d77148393c7110bf3826956395cd9661fd"
+    },
+    {
+      "episode_id": 96,
+      "target_id": 106,
+      "source": "random_held",
+      "source_rows": [
+        22911,
+        23285
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "0eaa44ed76f6611ffb31868dce638f681d5704f02e10a36e72353fecef8e34dd",
+      "executed_actions_sha256": "b3391cff0cf35844352bb7f403c3a4df278ad371855c87d01a292988589f8688"
+    },
+    {
+      "episode_id": 97,
+      "target_id": 106,
+      "source": "alternating",
+      "source_rows": [
+        23286,
+        23477
+      ],
+      "transition_count": 191,
+      "decoder_frame_count": 192,
+      "teacher_latent_sha256": "5816ff8045bbef7310bdcc71c263e572369634d62db50852c80977343730c9fc",
+      "executed_actions_sha256": "c2b4818931a4168590de1381892d1c5eae56c62a6e9d8732b71f6d93acf1be16"
+    },
+    {
+      "episode_id": 98,
+      "target_id": 112,
+      "source": "scripted",
+      "source_rows": [
+        23478,
+        23669
+      ],
+      "transition_count": 191,
+      "decoder_frame_count": 192,
+      "teacher_latent_sha256": "d1f213a773b1a73cb6613708864ea89358c42387572d66f44865eca26f592cf7",
+      "executed_actions_sha256": "fa650bb58dde078d0a7e916a6cc1166d984f905443a68619e27363589a6cd420"
+    },
+    {
+      "episode_id": 99,
+      "target_id": 112,
+      "source": "oracle_ppo",
+      "source_rows": [
+        23670,
+        23846
+      ],
+      "transition_count": 176,
+      "decoder_frame_count": 177,
+      "teacher_latent_sha256": "576773e3500b64ed179863c5ea5e78a84da11802f110077a4251d0f292ac5ec4",
+      "executed_actions_sha256": "3b3aeb372e3c942f1c879321911b88c4183c6a0ac51dba27a27d390c250c2552"
+    },
+    {
+      "episode_id": 100,
+      "target_id": 112,
+      "source": "pi7_ppo",
+      "source_rows": [
+        23847,
+        24214
+      ],
+      "transition_count": 367,
+      "decoder_frame_count": 368,
+      "teacher_latent_sha256": "1df928e5c46f0e34a10b1e09da0fd019c4cba9bcd96bca88901f680cb70fd783",
+      "executed_actions_sha256": "f4b7f58e09a71b0a20d82be791868b5ecf2837c885a9c86cfb2e1c1f9c66d5c6"
+    },
+    {
+      "episode_id": 101,
+      "target_id": 112,
+      "source": "zero",
+      "source_rows": [
+        24215,
+        24589
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "fc83852c1caed9b6f1d4ac61272f271d51a5e90304f6bcd0110b9efb30df4875",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 102,
+      "target_id": 112,
+      "source": "random_iid",
+      "source_rows": [
+        24590,
+        24964
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "287f9b15317832e7bc47bda25845c2a8b5195902590b23fded5557094d2a1886",
+      "executed_actions_sha256": "e062658955ba91ed957a1bf7a4bd61645d15a71e5fb18a48a1ecaebfd22b2e4e"
+    },
+    {
+      "episode_id": 103,
+      "target_id": 112,
+      "source": "random_held",
+      "source_rows": [
+        24965,
+        25339
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "ee4b2099e648b9f17db42f3ad4e4b43a0acbed12b19a064194b46afac449f4c7",
+      "executed_actions_sha256": "615f98eba383f855c9795f743e2ebddd59a2d5d186cb1909e9bbf9ec37e5ad49"
+    },
+    {
+      "episode_id": 104,
+      "target_id": 112,
+      "source": "alternating",
+      "source_rows": [
+        25340,
+        25650
+      ],
+      "transition_count": 310,
+      "decoder_frame_count": 311,
+      "teacher_latent_sha256": "a7c24115681a2b403fc51a3591f94d4ec9a8fe3e1345ef497017491f1c49759e",
+      "executed_actions_sha256": "fcf9cad02a3d27bead693a5d0725ae48fe8e717bf48dd3599a812eb18563eb65"
+    },
+    {
+      "episode_id": 105,
+      "target_id": 115,
+      "source": "scripted",
+      "source_rows": [
+        25651,
+        25737
+      ],
+      "transition_count": 86,
+      "decoder_frame_count": 87,
+      "teacher_latent_sha256": "ef9c5f51923a6d9ce277f42949231dc1b59a393d5cbaa2e3705352a6bea5c7f2",
+      "executed_actions_sha256": "d5c94ebaf3ac031c87d22a569fbb5f5844fe87e815a5e668a390f1364b8b7a35"
+    },
+    {
+      "episode_id": 106,
+      "target_id": 115,
+      "source": "oracle_ppo",
+      "source_rows": [
+        25738,
+        25815
+      ],
+      "transition_count": 77,
+      "decoder_frame_count": 78,
+      "teacher_latent_sha256": "a2c99fba45c03e9c3c89ed15089decdc8aec4fcd528d66261cddd6567d475ef0",
+      "executed_actions_sha256": "06b9cd6555e9bf432e7d6f0ebef1484c971253ee8311f46fb0c86d505c6c584f"
+    },
+    {
+      "episode_id": 107,
+      "target_id": 115,
+      "source": "pi7_ppo",
+      "source_rows": [
+        25816,
+        25977
+      ],
+      "transition_count": 161,
+      "decoder_frame_count": 162,
+      "teacher_latent_sha256": "f4e8e71f827b64aa4319e930adc2e1c946fcbac75c95d80d6db75803e7e8d9a5",
+      "executed_actions_sha256": "b52fd361f61467c7acaf6a03209a46b364cd530fc761257a21ccd65627a0a21a"
+    },
+    {
+      "episode_id": 108,
+      "target_id": 115,
+      "source": "zero",
+      "source_rows": [
+        25978,
+        26352
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "2fc0a870448d0d958fb75a47b99a31eb2136546b1a3939ec65a296d2e6f144ad",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 109,
+      "target_id": 115,
+      "source": "random_iid",
+      "source_rows": [
+        26353,
+        26727
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "5cc50e5e25571bbf1a225bca6c7f5f4e041c96a0bf78af361ea3c30636749e9c",
+      "executed_actions_sha256": "b887785b4614828796bc0d629afb1317ce3c7cbc1ef1f7b08e2c9aa9937db708"
+    },
+    {
+      "episode_id": 110,
+      "target_id": 115,
+      "source": "random_held",
+      "source_rows": [
+        26728,
+        27102
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "841b6db080da020454f66ff091b3bc5295d88fbda853322f398a7d25b9c9b395",
+      "executed_actions_sha256": "61b1a87404fbedef85587e56e648975498520b6b217a74cc6bfc56b8299df1a7"
+    },
+    {
+      "episode_id": 111,
+      "target_id": 115,
+      "source": "alternating",
+      "source_rows": [
+        27103,
+        27245
+      ],
+      "transition_count": 142,
+      "decoder_frame_count": 143,
+      "teacher_latent_sha256": "a1e5dab7b8d164001227921cfc5824b087a2c07828cf5ae4d2f137602e67e050",
+      "executed_actions_sha256": "e1ca69e83c1804e8c5e5820a9202337ec89dd94838e0043867a8f4a326deb0f7"
+    },
+    {
+      "episode_id": 112,
+      "target_id": 116,
+      "source": "scripted",
+      "source_rows": [
+        27246,
+        27335
+      ],
+      "transition_count": 89,
+      "decoder_frame_count": 90,
+      "teacher_latent_sha256": "81780e476003286ad87da1788c734189af368fb7847ac1b6afb4c3b93f0f4567",
+      "executed_actions_sha256": "a9d017698ec3ad53b2349180f48b7cd8cb65e308099aed77116f508b58638138"
+    },
+    {
+      "episode_id": 113,
+      "target_id": 116,
+      "source": "oracle_ppo",
+      "source_rows": [
+        27336,
+        27488
+      ],
+      "transition_count": 152,
+      "decoder_frame_count": 153,
+      "teacher_latent_sha256": "4218878d7054c9c75fbcfa0ba76655509516dfa293c02600724e3195cb25a928",
+      "executed_actions_sha256": "d612d0490410344cd37818054fab8fca78c9c851286c6cae34ba5456150e2418"
+    },
+    {
+      "episode_id": 114,
+      "target_id": 116,
+      "source": "pi7_ppo",
+      "source_rows": [
+        27489,
+        27688
+      ],
+      "transition_count": 199,
+      "decoder_frame_count": 200,
+      "teacher_latent_sha256": "8d62231ebdea94c52ca5846fa04e7b5abb76e33330e6949b7aa1f29657905e24",
+      "executed_actions_sha256": "c1b32a633c33d9309d42d37dc15689370fe873b4285d34326f04e23ece35f1a0"
+    },
+    {
+      "episode_id": 115,
+      "target_id": 116,
+      "source": "zero",
+      "source_rows": [
+        27689,
+        28063
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "0645b0c5a7924d12e5f8ccf215147de87463667c11af3e73c6fa2d410a60c92d",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 116,
+      "target_id": 116,
+      "source": "random_iid",
+      "source_rows": [
+        28064,
+        28438
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "5cd21504df4b7e699f2814cef49241a9582b92c77a09c7692d09cd692e9af5b9",
+      "executed_actions_sha256": "317b467efe1b7d33371b3431c2a322ee0565b2dfeaa926d877caf3584cee3647"
+    },
+    {
+      "episode_id": 117,
+      "target_id": 116,
+      "source": "random_held",
+      "source_rows": [
+        28439,
+        28813
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "c4a4d4ef6dca64eca8a262f93827d009dc8b144519a5a2fadb36d62043b7bd2f",
+      "executed_actions_sha256": "07a8f17d741f3ba47d5aa9e4b7d3cf382ab6525b7186416b34e9d370b6959cbc"
+    },
+    {
+      "episode_id": 118,
+      "target_id": 116,
+      "source": "alternating",
+      "source_rows": [
+        28814,
+        29085
+      ],
+      "transition_count": 271,
+      "decoder_frame_count": 272,
+      "teacher_latent_sha256": "920425f384ab8be9476cf2c781ef0fba37a9a5c0e32515a09e80e2bc7748214f",
+      "executed_actions_sha256": "ff53d3337087b111f8475d7413fda7b16edc952fcfcd4f52cdafb14a871ea09d"
+    },
+    {
+      "episode_id": 119,
+      "target_id": 118,
+      "source": "scripted",
+      "source_rows": [
+        29086,
+        29171
+      ],
+      "transition_count": 85,
+      "decoder_frame_count": 86,
+      "teacher_latent_sha256": "eefafb0e0593e5daf0d0050c3f0fbe3a1b5ef40bae18e983623b30161eff28c4",
+      "executed_actions_sha256": "909323e48051fb4276355ed58678d0726bd06858000d0e8a2d1c4341c2855752"
+    },
+    {
+      "episode_id": 120,
+      "target_id": 118,
+      "source": "oracle_ppo",
+      "source_rows": [
+        29172,
+        29311
+      ],
+      "transition_count": 139,
+      "decoder_frame_count": 140,
+      "teacher_latent_sha256": "141ab05bc479367996f6c0eae300c040233d8cbf4504b5349914ad20d2318859",
+      "executed_actions_sha256": "1e88f7eed7228d1ae2519a6b813090ea1bae8002143fb488f221813cfd4efebf"
+    },
+    {
+      "episode_id": 121,
+      "target_id": 118,
+      "source": "pi7_ppo",
+      "source_rows": [
+        29312,
+        29497
+      ],
+      "transition_count": 185,
+      "decoder_frame_count": 186,
+      "teacher_latent_sha256": "7dcc925a370dd092b091f16128ea7c81c36d4fef46af3b4368a0c870247de898",
+      "executed_actions_sha256": "7d5ca4fac4ce66fd693213a8fb082edc39eccbbc52b811a1b4a6384a84bbd450"
+    },
+    {
+      "episode_id": 122,
+      "target_id": 118,
+      "source": "zero",
+      "source_rows": [
+        29498,
+        29872
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "0115d41f8bfe7f08ab6702627c490ac5e24e837b33e853658317e60c12b01fc1",
+      "executed_actions_sha256": "468772113ce18022f9d5c795ac224f878d1b776d496f1a68ee1b58225c1b9425"
+    },
+    {
+      "episode_id": 123,
+      "target_id": 118,
+      "source": "random_iid",
+      "source_rows": [
+        29873,
+        30247
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "475839909cd2e59bb581ff644f6d3c0a5377ba95adbea277a7b16c4585c8cbc6",
+      "executed_actions_sha256": "08f156a3dd3ba6eff9698ddaf9de27c9671d6e56bce1a07767ac488cb102e662"
+    },
+    {
+      "episode_id": 124,
+      "target_id": 118,
+      "source": "random_held",
+      "source_rows": [
+        30248,
+        30622
+      ],
+      "transition_count": 374,
+      "decoder_frame_count": 375,
+      "teacher_latent_sha256": "e890f7c34b19d6da41ebe336f7c8b39afd1b4538249a092da93e8b8c2888f65f",
+      "executed_actions_sha256": "9b4bd536297bda2e90e050a9851c90272ebe5a89cfb8fb357f03f295736b2f94"
+    },
+    {
+      "episode_id": 125,
+      "target_id": 118,
+      "source": "alternating",
+      "source_rows": [
+        30623,
+        30801
+      ],
+      "transition_count": 178,
+      "decoder_frame_count": 179,
+      "teacher_latent_sha256": "c57ddc3676574daec58933ca1923e5ae0b09140c8cad54f80a562dcdf3607698",
+      "executed_actions_sha256": "a8741e1ca7810c01f01476e782c35cf75ab105c7e1cd7f7d9200766efbc1e09a"
+    }
+  ],
+  "transition_count": 30676,
+  "decoder_frame_count": 30802,
+  "pair_rule": "z[t], action[t], z[t+1]; t=0..N-1 inside same original episode",
+  "teacher_rule": "frozen GRU, normalized [recorded observation,previous executed action]; hidden=None at each episode",
+  "manifest_sha256": "a46e6defc33ab66308c58a903f789e4e815267ead9b02ac9ab7594d004055830"
+}

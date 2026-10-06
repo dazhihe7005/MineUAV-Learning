@@ -102,6 +102,8 @@ mujoco/rl/models/*.pt
 !mujoco/rl/models/history_latent_gru_no_memory.pt
 !mujoco/rl/models/history_latent_gru_multistep10.pt
 !mujoco/rl/models/history_latent_gru_matched_one_step.pt
+!mujoco/rl/models/latent_transition_mlp.pt
+!mujoco/rl/models/latent_observation_decoder.pt
 !mujoco/rl/models/oracle_dynamics_mlp.pt
 !mujoco/rl/models/latent_pi_linear_probe.pt
 README_before_portfolio.md
