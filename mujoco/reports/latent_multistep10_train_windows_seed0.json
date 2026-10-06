@@ -1,0 +1,7658 @@
+{
+  "protocol": "all starts t in range(max(0,N-H+1)), per episode",
+  "horizons": [
+    10
+  ],
+  "episodes": [
+    {
+      "episode_id": 0,
+      "target_id": 0,
+      "source": "scripted",
+      "transition_count": 73,
+      "source_rows": [
+        0,
+        73
+      ],
+      "valid_start_count": {
+        "10": 64
+      }
+    },
+    {
+      "episode_id": 1,
+      "target_id": 0,
+      "source": "oracle_ppo",
+      "transition_count": 64,
+      "source_rows": [
+        74,
+        138
+      ],
+      "valid_start_count": {
+        "10": 55
+      }
+    },
+    {
+      "episode_id": 2,
+      "target_id": 0,
+      "source": "pi7_ppo",
+      "transition_count": 76,
+      "source_rows": [
+        139,
+        215
+      ],
+      "valid_start_count": {
+        "10": 67
+      }
+    },
+    {
+      "episode_id": 3,
+      "target_id": 0,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        216,
+        590
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 4,
+      "target_id": 0,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        591,
+        965
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 5,
+      "target_id": 0,
+      "source": "random_held",
+      "transition_count": 267,
+      "source_rows": [
+        966,
+        1233
+      ],
+      "valid_start_count": {
+        "10": 258
+      }
+    },
+    {
+      "episode_id": 6,
+      "target_id": 0,
+      "source": "alternating",
+      "transition_count": 134,
+      "source_rows": [
+        1234,
+        1368
+      ],
+      "valid_start_count": {
+        "10": 125
+      }
+    },
+    {
+      "episode_id": 7,
+      "target_id": 1,
+      "source": "scripted",
+      "transition_count": 78,
+      "source_rows": [
+        1369,
+        1447
+      ],
+      "valid_start_count": {
+        "10": 69
+      }
+    },
+    {
+      "episode_id": 8,
+      "target_id": 1,
+      "source": "oracle_ppo",
+      "transition_count": 69,
+      "source_rows": [
+        1448,
+        1517
+      ],
+      "valid_start_count": {
+        "10": 60
+      }
+    },
+    {
+      "episode_id": 9,
+      "target_id": 1,
+      "source": "pi7_ppo",
+      "transition_count": 140,
+      "source_rows": [
+        1518,
+        1658
+      ],
+      "valid_start_count": {
+        "10": 131
+      }
+    },
+    {
+      "episode_id": 10,
+      "target_id": 1,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        1659,
+        2033
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 11,
+      "target_id": 1,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        2034,
+        2408
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 12,
+      "target_id": 1,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        2409,
+        2783
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 13,
+      "target_id": 1,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        2784,
+        3158
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 14,
+      "target_id": 2,
+      "source": "scripted",
+      "transition_count": 71,
+      "source_rows": [
+        3159,
+        3230
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 15,
+      "target_id": 2,
+      "source": "oracle_ppo",
+      "transition_count": 79,
+      "source_rows": [
+        3231,
+        3310
+      ],
+      "valid_start_count": {
+        "10": 70
+      }
+    },
+    {
+      "episode_id": 16,
+      "target_id": 2,
+      "source": "pi7_ppo",
+      "transition_count": 75,
+      "source_rows": [
+        3311,
+        3386
+      ],
+      "valid_start_count": {
+        "10": 66
+      }
+    },
+    {
+      "episode_id": 17,
+      "target_id": 2,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        3387,
+        3761
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 18,
+      "target_id": 2,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        3762,
+        4136
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 19,
+      "target_id": 2,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        4137,
+        4511
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 20,
+      "target_id": 2,
+      "source": "alternating",
+      "transition_count": 311,
+      "source_rows": [
+        4512,
+        4823
+      ],
+      "valid_start_count": {
+        "10": 302
+      }
+    },
+    {
+      "episode_id": 21,
+      "target_id": 3,
+      "source": "scripted",
+      "transition_count": 77,
+      "source_rows": [
+        4824,
+        4901
+      ],
+      "valid_start_count": {
+        "10": 68
+      }
+    },
+    {
+      "episode_id": 22,
+      "target_id": 3,
+      "source": "oracle_ppo",
+      "transition_count": 69,
+      "source_rows": [
+        4902,
+        4971
+      ],
+      "valid_start_count": {
+        "10": 60
+      }
+    },
+    {
+      "episode_id": 23,
+      "target_id": 3,
+      "source": "pi7_ppo",
+      "transition_count": 133,
+      "source_rows": [
+        4972,
+        5105
+      ],
+      "valid_start_count": {
+        "10": 124
+      }
+    },
+    {
+      "episode_id": 24,
+      "target_id": 3,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        5106,
+        5480
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 25,
+      "target_id": 3,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        5481,
+        5855
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 26,
+      "target_id": 3,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        5856,
+        6230
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 27,
+      "target_id": 3,
+      "source": "alternating",
+      "transition_count": 317,
+      "source_rows": [
+        6231,
+        6548
+      ],
+      "valid_start_count": {
+        "10": 308
+      }
+    },
+    {
+      "episode_id": 28,
+      "target_id": 4,
+      "source": "scripted",
+      "transition_count": 96,
+      "source_rows": [
+        6549,
+        6645
+      ],
+      "valid_start_count": {
+        "10": 87
+      }
+    },
+    {
+      "episode_id": 29,
+      "target_id": 4,
+      "source": "oracle_ppo",
+      "transition_count": 100,
+      "source_rows": [
+        6646,
+        6746
+      ],
+      "valid_start_count": {
+        "10": 91
+      }
+    },
+    {
+      "episode_id": 30,
+      "target_id": 4,
+      "source": "pi7_ppo",
+      "transition_count": 71,
+      "source_rows": [
+        6747,
+        6818
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 31,
+      "target_id": 4,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        6819,
+        7193
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 32,
+      "target_id": 4,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        7194,
+        7568
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 33,
+      "target_id": 4,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        7569,
+        7943
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 34,
+      "target_id": 4,
+      "source": "alternating",
+      "transition_count": 323,
+      "source_rows": [
+        7944,
+        8267
+      ],
+      "valid_start_count": {
+        "10": 314
+      }
+    },
+    {
+      "episode_id": 35,
+      "target_id": 5,
+      "source": "scripted",
+      "transition_count": 62,
+      "source_rows": [
+        8268,
+        8330
+      ],
+      "valid_start_count": {
+        "10": 53
+      }
+    },
+    {
+      "episode_id": 36,
+      "target_id": 5,
+      "source": "oracle_ppo",
+      "transition_count": 55,
+      "source_rows": [
+        8331,
+        8386
+      ],
+      "valid_start_count": {
+        "10": 46
+      }
+    },
+    {
+      "episode_id": 37,
+      "target_id": 5,
+      "source": "pi7_ppo",
+      "transition_count": 61,
+      "source_rows": [
+        8387,
+        8448
+      ],
+      "valid_start_count": {
+        "10": 52
+      }
+    },
+    {
+      "episode_id": 38,
+      "target_id": 5,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        8449,
+        8823
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 39,
+      "target_id": 5,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        8824,
+        9198
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 40,
+      "target_id": 5,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        9199,
+        9573
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 41,
+      "target_id": 5,
+      "source": "alternating",
+      "transition_count": 161,
+      "source_rows": [
+        9574,
+        9735
+      ],
+      "valid_start_count": {
+        "10": 152
+      }
+    },
+    {
+      "episode_id": 42,
+      "target_id": 6,
+      "source": "scripted",
+      "transition_count": 88,
+      "source_rows": [
+        9736,
+        9824
+      ],
+      "valid_start_count": {
+        "10": 79
+      }
+    },
+    {
+      "episode_id": 43,
+      "target_id": 6,
+      "source": "oracle_ppo",
+      "transition_count": 98,
+      "source_rows": [
+        9825,
+        9923
+      ],
+      "valid_start_count": {
+        "10": 89
+      }
+    },
+    {
+      "episode_id": 44,
+      "target_id": 6,
+      "source": "pi7_ppo",
+      "transition_count": 81,
+      "source_rows": [
+        9924,
+        10005
+      ],
+      "valid_start_count": {
+        "10": 72
+      }
+    },
+    {
+      "episode_id": 45,
+      "target_id": 6,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        10006,
+        10380
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 46,
+      "target_id": 6,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        10381,
+        10755
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 47,
+      "target_id": 6,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        10756,
+        11130
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 48,
+      "target_id": 6,
+      "source": "alternating",
+      "transition_count": 173,
+      "source_rows": [
+        11131,
+        11304
+      ],
+      "valid_start_count": {
+        "10": 164
+      }
+    },
+    {
+      "episode_id": 49,
+      "target_id": 8,
+      "source": "scripted",
+      "transition_count": 81,
+      "source_rows": [
+        11305,
+        11386
+      ],
+      "valid_start_count": {
+        "10": 72
+      }
+    },
+    {
+      "episode_id": 50,
+      "target_id": 8,
+      "source": "oracle_ppo",
+      "transition_count": 85,
+      "source_rows": [
+        11387,
+        11472
+      ],
+      "valid_start_count": {
+        "10": 76
+      }
+    },
+    {
+      "episode_id": 51,
+      "target_id": 8,
+      "source": "pi7_ppo",
+      "transition_count": 86,
+      "source_rows": [
+        11473,
+        11559
+      ],
+      "valid_start_count": {
+        "10": 77
+      }
+    },
+    {
+      "episode_id": 52,
+      "target_id": 8,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        11560,
+        11934
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 53,
+      "target_id": 8,
+      "source": "random_iid",
+      "transition_count": 110,
+      "source_rows": [
+        11935,
+        12045
+      ],
+      "valid_start_count": {
+        "10": 101
+      }
+    },
+    {
+      "episode_id": 54,
+      "target_id": 8,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        12046,
+        12420
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 55,
+      "target_id": 8,
+      "source": "alternating",
+      "transition_count": 263,
+      "source_rows": [
+        12421,
+        12684
+      ],
+      "valid_start_count": {
+        "10": 254
+      }
+    },
+    {
+      "episode_id": 56,
+      "target_id": 9,
+      "source": "scripted",
+      "transition_count": 71,
+      "source_rows": [
+        12685,
+        12756
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 57,
+      "target_id": 9,
+      "source": "oracle_ppo",
+      "transition_count": 71,
+      "source_rows": [
+        12757,
+        12828
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 58,
+      "target_id": 9,
+      "source": "pi7_ppo",
+      "transition_count": 82,
+      "source_rows": [
+        12829,
+        12911
+      ],
+      "valid_start_count": {
+        "10": 73
+      }
+    },
+    {
+      "episode_id": 59,
+      "target_id": 9,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        12912,
+        13286
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 60,
+      "target_id": 9,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        13287,
+        13661
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 61,
+      "target_id": 9,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        13662,
+        14036
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 62,
+      "target_id": 9,
+      "source": "alternating",
+      "transition_count": 316,
+      "source_rows": [
+        14037,
+        14353
+      ],
+      "valid_start_count": {
+        "10": 307
+      }
+    },
+    {
+      "episode_id": 63,
+      "target_id": 10,
+      "source": "scripted",
+      "transition_count": 67,
+      "source_rows": [
+        14354,
+        14421
+      ],
+      "valid_start_count": {
+        "10": 58
+      }
+    },
+    {
+      "episode_id": 64,
+      "target_id": 10,
+      "source": "oracle_ppo",
+      "transition_count": 64,
+      "source_rows": [
+        14422,
+        14486
+      ],
+      "valid_start_count": {
+        "10": 55
+      }
+    },
+    {
+      "episode_id": 65,
+      "target_id": 10,
+      "source": "pi7_ppo",
+      "transition_count": 71,
+      "source_rows": [
+        14487,
+        14558
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 66,
+      "target_id": 10,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        14559,
+        14933
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 67,
+      "target_id": 10,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        14934,
+        15308
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 68,
+      "target_id": 10,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        15309,
+        15683
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 69,
+      "target_id": 10,
+      "source": "alternating",
+      "transition_count": 261,
+      "source_rows": [
+        15684,
+        15945
+      ],
+      "valid_start_count": {
+        "10": 252
+      }
+    },
+    {
+      "episode_id": 70,
+      "target_id": 11,
+      "source": "scripted",
+      "transition_count": 75,
+      "source_rows": [
+        15946,
+        16021
+      ],
+      "valid_start_count": {
+        "10": 66
+      }
+    },
+    {
+      "episode_id": 71,
+      "target_id": 11,
+      "source": "oracle_ppo",
+      "transition_count": 98,
+      "source_rows": [
+        16022,
+        16120
+      ],
+      "valid_start_count": {
+        "10": 89
+      }
+    },
+    {
+      "episode_id": 72,
+      "target_id": 11,
+      "source": "pi7_ppo",
+      "transition_count": 71,
+      "source_rows": [
+        16121,
+        16192
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 73,
+      "target_id": 11,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        16193,
+        16567
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 74,
+      "target_id": 11,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        16568,
+        16942
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 75,
+      "target_id": 11,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        16943,
+        17317
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 76,
+      "target_id": 11,
+      "source": "alternating",
+      "transition_count": 273,
+      "source_rows": [
+        17318,
+        17591
+      ],
+      "valid_start_count": {
+        "10": 264
+      }
+    },
+    {
+      "episode_id": 77,
+      "target_id": 13,
+      "source": "scripted",
+      "transition_count": 72,
+      "source_rows": [
+        17592,
+        17664
+      ],
+      "valid_start_count": {
+        "10": 63
+      }
+    },
+    {
+      "episode_id": 78,
+      "target_id": 13,
+      "source": "oracle_ppo",
+      "transition_count": 55,
+      "source_rows": [
+        17665,
+        17720
+      ],
+      "valid_start_count": {
+        "10": 46
+      }
+    },
+    {
+      "episode_id": 79,
+      "target_id": 13,
+      "source": "pi7_ppo",
+      "transition_count": 59,
+      "source_rows": [
+        17721,
+        17780
+      ],
+      "valid_start_count": {
+        "10": 50
+      }
+    },
+    {
+      "episode_id": 80,
+      "target_id": 13,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        17781,
+        18155
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 81,
+      "target_id": 13,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        18156,
+        18530
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 82,
+      "target_id": 13,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        18531,
+        18905
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 83,
+      "target_id": 13,
+      "source": "alternating",
+      "transition_count": 264,
+      "source_rows": [
+        18906,
+        19170
+      ],
+      "valid_start_count": {
+        "10": 255
+      }
+    },
+    {
+      "episode_id": 84,
+      "target_id": 15,
+      "source": "scripted",
+      "transition_count": 71,
+      "source_rows": [
+        19171,
+        19242
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 85,
+      "target_id": 15,
+      "source": "oracle_ppo",
+      "transition_count": 69,
+      "source_rows": [
+        19243,
+        19312
+      ],
+      "valid_start_count": {
+        "10": 60
+      }
+    },
+    {
+      "episode_id": 86,
+      "target_id": 15,
+      "source": "pi7_ppo",
+      "transition_count": 76,
+      "source_rows": [
+        19313,
+        19389
+      ],
+      "valid_start_count": {
+        "10": 67
+      }
+    },
+    {
+      "episode_id": 87,
+      "target_id": 15,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        19390,
+        19764
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 88,
+      "target_id": 15,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        19765,
+        20139
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 89,
+      "target_id": 15,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        20140,
+        20514
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 90,
+      "target_id": 15,
+      "source": "alternating",
+      "transition_count": 139,
+      "source_rows": [
+        20515,
+        20654
+      ],
+      "valid_start_count": {
+        "10": 130
+      }
+    },
+    {
+      "episode_id": 91,
+      "target_id": 16,
+      "source": "scripted",
+      "transition_count": 73,
+      "source_rows": [
+        20655,
+        20728
+      ],
+      "valid_start_count": {
+        "10": 64
+      }
+    },
+    {
+      "episode_id": 92,
+      "target_id": 16,
+      "source": "oracle_ppo",
+      "transition_count": 76,
+      "source_rows": [
+        20729,
+        20805
+      ],
+      "valid_start_count": {
+        "10": 67
+      }
+    },
+    {
+      "episode_id": 93,
+      "target_id": 16,
+      "source": "pi7_ppo",
+      "transition_count": 150,
+      "source_rows": [
+        20806,
+        20956
+      ],
+      "valid_start_count": {
+        "10": 141
+      }
+    },
+    {
+      "episode_id": 94,
+      "target_id": 16,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        20957,
+        21331
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 95,
+      "target_id": 16,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        21332,
+        21706
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 96,
+      "target_id": 16,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        21707,
+        22081
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 97,
+      "target_id": 16,
+      "source": "alternating",
+      "transition_count": 147,
+      "source_rows": [
+        22082,
+        22229
+      ],
+      "valid_start_count": {
+        "10": 138
+      }
+    },
+    {
+      "episode_id": 98,
+      "target_id": 17,
+      "source": "scripted",
+      "transition_count": 73,
+      "source_rows": [
+        22230,
+        22303
+      ],
+      "valid_start_count": {
+        "10": 64
+      }
+    },
+    {
+      "episode_id": 99,
+      "target_id": 17,
+      "source": "oracle_ppo",
+      "transition_count": 75,
+      "source_rows": [
+        22304,
+        22379
+      ],
+      "valid_start_count": {
+        "10": 66
+      }
+    },
+    {
+      "episode_id": 100,
+      "target_id": 17,
+      "source": "pi7_ppo",
+      "transition_count": 130,
+      "source_rows": [
+        22380,
+        22510
+      ],
+      "valid_start_count": {
+        "10": 121
+      }
+    },
+    {
+      "episode_id": 101,
+      "target_id": 17,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        22511,
+        22885
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 102,
+      "target_id": 17,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        22886,
+        23260
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 103,
+      "target_id": 17,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        23261,
+        23635
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 104,
+      "target_id": 17,
+      "source": "alternating",
+      "transition_count": 178,
+      "source_rows": [
+        23636,
+        23814
+      ],
+      "valid_start_count": {
+        "10": 169
+      }
+    },
+    {
+      "episode_id": 105,
+      "target_id": 18,
+      "source": "scripted",
+      "transition_count": 100,
+      "source_rows": [
+        23815,
+        23915
+      ],
+      "valid_start_count": {
+        "10": 91
+      }
+    },
+    {
+      "episode_id": 106,
+      "target_id": 18,
+      "source": "oracle_ppo",
+      "transition_count": 95,
+      "source_rows": [
+        23916,
+        24011
+      ],
+      "valid_start_count": {
+        "10": 86
+      }
+    },
+    {
+      "episode_id": 107,
+      "target_id": 18,
+      "source": "pi7_ppo",
+      "transition_count": 83,
+      "source_rows": [
+        24012,
+        24095
+      ],
+      "valid_start_count": {
+        "10": 74
+      }
+    },
+    {
+      "episode_id": 108,
+      "target_id": 18,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        24096,
+        24470
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 109,
+      "target_id": 18,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        24471,
+        24845
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 110,
+      "target_id": 18,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        24846,
+        25220
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 111,
+      "target_id": 18,
+      "source": "alternating",
+      "transition_count": 127,
+      "source_rows": [
+        25221,
+        25348
+      ],
+      "valid_start_count": {
+        "10": 118
+      }
+    },
+    {
+      "episode_id": 112,
+      "target_id": 19,
+      "source": "scripted",
+      "transition_count": 71,
+      "source_rows": [
+        25349,
+        25420
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 113,
+      "target_id": 19,
+      "source": "oracle_ppo",
+      "transition_count": 82,
+      "source_rows": [
+        25421,
+        25503
+      ],
+      "valid_start_count": {
+        "10": 73
+      }
+    },
+    {
+      "episode_id": 114,
+      "target_id": 19,
+      "source": "pi7_ppo",
+      "transition_count": 66,
+      "source_rows": [
+        25504,
+        25570
+      ],
+      "valid_start_count": {
+        "10": 57
+      }
+    },
+    {
+      "episode_id": 115,
+      "target_id": 19,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        25571,
+        25945
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 116,
+      "target_id": 19,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        25946,
+        26320
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 117,
+      "target_id": 19,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        26321,
+        26695
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 118,
+      "target_id": 19,
+      "source": "alternating",
+      "transition_count": 151,
+      "source_rows": [
+        26696,
+        26847
+      ],
+      "valid_start_count": {
+        "10": 142
+      }
+    },
+    {
+      "episode_id": 119,
+      "target_id": 20,
+      "source": "scripted",
+      "transition_count": 74,
+      "source_rows": [
+        26848,
+        26922
+      ],
+      "valid_start_count": {
+        "10": 65
+      }
+    },
+    {
+      "episode_id": 120,
+      "target_id": 20,
+      "source": "oracle_ppo",
+      "transition_count": 66,
+      "source_rows": [
+        26923,
+        26989
+      ],
+      "valid_start_count": {
+        "10": 57
+      }
+    },
+    {
+      "episode_id": 121,
+      "target_id": 20,
+      "source": "pi7_ppo",
+      "transition_count": 146,
+      "source_rows": [
+        26990,
+        27136
+      ],
+      "valid_start_count": {
+        "10": 137
+      }
+    },
+    {
+      "episode_id": 122,
+      "target_id": 20,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        27137,
+        27511
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 123,
+      "target_id": 20,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        27512,
+        27886
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 124,
+      "target_id": 20,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        27887,
+        28261
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 125,
+      "target_id": 20,
+      "source": "alternating",
+      "transition_count": 111,
+      "source_rows": [
+        28262,
+        28373
+      ],
+      "valid_start_count": {
+        "10": 102
+      }
+    },
+    {
+      "episode_id": 126,
+      "target_id": 21,
+      "source": "scripted",
+      "transition_count": 75,
+      "source_rows": [
+        28374,
+        28449
+      ],
+      "valid_start_count": {
+        "10": 66
+      }
+    },
+    {
+      "episode_id": 127,
+      "target_id": 21,
+      "source": "oracle_ppo",
+      "transition_count": 90,
+      "source_rows": [
+        28450,
+        28540
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 128,
+      "target_id": 21,
+      "source": "pi7_ppo",
+      "transition_count": 143,
+      "source_rows": [
+        28541,
+        28684
+      ],
+      "valid_start_count": {
+        "10": 134
+      }
+    },
+    {
+      "episode_id": 129,
+      "target_id": 21,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        28685,
+        29059
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 130,
+      "target_id": 21,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        29060,
+        29434
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 131,
+      "target_id": 21,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        29435,
+        29809
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 132,
+      "target_id": 21,
+      "source": "alternating",
+      "transition_count": 250,
+      "source_rows": [
+        29810,
+        30060
+      ],
+      "valid_start_count": {
+        "10": 241
+      }
+    },
+    {
+      "episode_id": 133,
+      "target_id": 22,
+      "source": "scripted",
+      "transition_count": 80,
+      "source_rows": [
+        30061,
+        30141
+      ],
+      "valid_start_count": {
+        "10": 71
+      }
+    },
+    {
+      "episode_id": 134,
+      "target_id": 22,
+      "source": "oracle_ppo",
+      "transition_count": 103,
+      "source_rows": [
+        30142,
+        30245
+      ],
+      "valid_start_count": {
+        "10": 94
+      }
+    },
+    {
+      "episode_id": 135,
+      "target_id": 22,
+      "source": "pi7_ppo",
+      "transition_count": 69,
+      "source_rows": [
+        30246,
+        30315
+      ],
+      "valid_start_count": {
+        "10": 60
+      }
+    },
+    {
+      "episode_id": 136,
+      "target_id": 22,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        30316,
+        30690
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 137,
+      "target_id": 22,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        30691,
+        31065
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 138,
+      "target_id": 22,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        31066,
+        31440
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 139,
+      "target_id": 22,
+      "source": "alternating",
+      "transition_count": 328,
+      "source_rows": [
+        31441,
+        31769
+      ],
+      "valid_start_count": {
+        "10": 319
+      }
+    },
+    {
+      "episode_id": 140,
+      "target_id": 23,
+      "source": "scripted",
+      "transition_count": 70,
+      "source_rows": [
+        31770,
+        31840
+      ],
+      "valid_start_count": {
+        "10": 61
+      }
+    },
+    {
+      "episode_id": 141,
+      "target_id": 23,
+      "source": "oracle_ppo",
+      "transition_count": 60,
+      "source_rows": [
+        31841,
+        31901
+      ],
+      "valid_start_count": {
+        "10": 51
+      }
+    },
+    {
+      "episode_id": 142,
+      "target_id": 23,
+      "source": "pi7_ppo",
+      "transition_count": 63,
+      "source_rows": [
+        31902,
+        31965
+      ],
+      "valid_start_count": {
+        "10": 54
+      }
+    },
+    {
+      "episode_id": 143,
+      "target_id": 23,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        31966,
+        32340
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 144,
+      "target_id": 23,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        32341,
+        32715
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 145,
+      "target_id": 23,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        32716,
+        33090
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 146,
+      "target_id": 23,
+      "source": "alternating",
+      "transition_count": 241,
+      "source_rows": [
+        33091,
+        33332
+      ],
+      "valid_start_count": {
+        "10": 232
+      }
+    },
+    {
+      "episode_id": 147,
+      "target_id": 24,
+      "source": "scripted",
+      "transition_count": 63,
+      "source_rows": [
+        33333,
+        33396
+      ],
+      "valid_start_count": {
+        "10": 54
+      }
+    },
+    {
+      "episode_id": 148,
+      "target_id": 24,
+      "source": "oracle_ppo",
+      "transition_count": 54,
+      "source_rows": [
+        33397,
+        33451
+      ],
+      "valid_start_count": {
+        "10": 45
+      }
+    },
+    {
+      "episode_id": 149,
+      "target_id": 24,
+      "source": "pi7_ppo",
+      "transition_count": 64,
+      "source_rows": [
+        33452,
+        33516
+      ],
+      "valid_start_count": {
+        "10": 55
+      }
+    },
+    {
+      "episode_id": 150,
+      "target_id": 24,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        33517,
+        33891
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 151,
+      "target_id": 24,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        33892,
+        34266
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 152,
+      "target_id": 24,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        34267,
+        34641
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 153,
+      "target_id": 24,
+      "source": "alternating",
+      "transition_count": 198,
+      "source_rows": [
+        34642,
+        34840
+      ],
+      "valid_start_count": {
+        "10": 189
+      }
+    },
+    {
+      "episode_id": 154,
+      "target_id": 25,
+      "source": "scripted",
+      "transition_count": 88,
+      "source_rows": [
+        34841,
+        34929
+      ],
+      "valid_start_count": {
+        "10": 79
+      }
+    },
+    {
+      "episode_id": 155,
+      "target_id": 25,
+      "source": "oracle_ppo",
+      "transition_count": 91,
+      "source_rows": [
+        34930,
+        35021
+      ],
+      "valid_start_count": {
+        "10": 82
+      }
+    },
+    {
+      "episode_id": 156,
+      "target_id": 25,
+      "source": "pi7_ppo",
+      "transition_count": 81,
+      "source_rows": [
+        35022,
+        35103
+      ],
+      "valid_start_count": {
+        "10": 72
+      }
+    },
+    {
+      "episode_id": 157,
+      "target_id": 25,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        35104,
+        35478
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 158,
+      "target_id": 25,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        35479,
+        35853
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 159,
+      "target_id": 25,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        35854,
+        36228
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 160,
+      "target_id": 25,
+      "source": "alternating",
+      "transition_count": 284,
+      "source_rows": [
+        36229,
+        36513
+      ],
+      "valid_start_count": {
+        "10": 275
+      }
+    },
+    {
+      "episode_id": 161,
+      "target_id": 26,
+      "source": "scripted",
+      "transition_count": 76,
+      "source_rows": [
+        36514,
+        36590
+      ],
+      "valid_start_count": {
+        "10": 67
+      }
+    },
+    {
+      "episode_id": 162,
+      "target_id": 26,
+      "source": "oracle_ppo",
+      "transition_count": 78,
+      "source_rows": [
+        36591,
+        36669
+      ],
+      "valid_start_count": {
+        "10": 69
+      }
+    },
+    {
+      "episode_id": 163,
+      "target_id": 26,
+      "source": "pi7_ppo",
+      "transition_count": 67,
+      "source_rows": [
+        36670,
+        36737
+      ],
+      "valid_start_count": {
+        "10": 58
+      }
+    },
+    {
+      "episode_id": 164,
+      "target_id": 26,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        36738,
+        37112
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 165,
+      "target_id": 26,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        37113,
+        37487
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 166,
+      "target_id": 26,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        37488,
+        37862
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 167,
+      "target_id": 26,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        37863,
+        38237
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 168,
+      "target_id": 27,
+      "source": "scripted",
+      "transition_count": 70,
+      "source_rows": [
+        38238,
+        38308
+      ],
+      "valid_start_count": {
+        "10": 61
+      }
+    },
+    {
+      "episode_id": 169,
+      "target_id": 27,
+      "source": "oracle_ppo",
+      "transition_count": 66,
+      "source_rows": [
+        38309,
+        38375
+      ],
+      "valid_start_count": {
+        "10": 57
+      }
+    },
+    {
+      "episode_id": 170,
+      "target_id": 27,
+      "source": "pi7_ppo",
+      "transition_count": 72,
+      "source_rows": [
+        38376,
+        38448
+      ],
+      "valid_start_count": {
+        "10": 63
+      }
+    },
+    {
+      "episode_id": 171,
+      "target_id": 27,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        38449,
+        38823
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 172,
+      "target_id": 27,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        38824,
+        39198
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 173,
+      "target_id": 27,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        39199,
+        39573
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 174,
+      "target_id": 27,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        39574,
+        39948
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 175,
+      "target_id": 28,
+      "source": "scripted",
+      "transition_count": 68,
+      "source_rows": [
+        39949,
+        40017
+      ],
+      "valid_start_count": {
+        "10": 59
+      }
+    },
+    {
+      "episode_id": 176,
+      "target_id": 28,
+      "source": "oracle_ppo",
+      "transition_count": 62,
+      "source_rows": [
+        40018,
+        40080
+      ],
+      "valid_start_count": {
+        "10": 53
+      }
+    },
+    {
+      "episode_id": 177,
+      "target_id": 28,
+      "source": "pi7_ppo",
+      "transition_count": 68,
+      "source_rows": [
+        40081,
+        40149
+      ],
+      "valid_start_count": {
+        "10": 59
+      }
+    },
+    {
+      "episode_id": 178,
+      "target_id": 28,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        40150,
+        40524
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 179,
+      "target_id": 28,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        40525,
+        40899
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 180,
+      "target_id": 28,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        40900,
+        41274
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 181,
+      "target_id": 28,
+      "source": "alternating",
+      "transition_count": 131,
+      "source_rows": [
+        41275,
+        41406
+      ],
+      "valid_start_count": {
+        "10": 122
+      }
+    },
+    {
+      "episode_id": 182,
+      "target_id": 30,
+      "source": "scripted",
+      "transition_count": 74,
+      "source_rows": [
+        41407,
+        41481
+      ],
+      "valid_start_count": {
+        "10": 65
+      }
+    },
+    {
+      "episode_id": 183,
+      "target_id": 30,
+      "source": "oracle_ppo",
+      "transition_count": 90,
+      "source_rows": [
+        41482,
+        41572
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 184,
+      "target_id": 30,
+      "source": "pi7_ppo",
+      "transition_count": 71,
+      "source_rows": [
+        41573,
+        41644
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 185,
+      "target_id": 30,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        41645,
+        42019
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 186,
+      "target_id": 30,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        42020,
+        42394
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 187,
+      "target_id": 30,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        42395,
+        42769
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 188,
+      "target_id": 30,
+      "source": "alternating",
+      "transition_count": 134,
+      "source_rows": [
+        42770,
+        42904
+      ],
+      "valid_start_count": {
+        "10": 125
+      }
+    },
+    {
+      "episode_id": 189,
+      "target_id": 34,
+      "source": "scripted",
+      "transition_count": 69,
+      "source_rows": [
+        42905,
+        42974
+      ],
+      "valid_start_count": {
+        "10": 60
+      }
+    },
+    {
+      "episode_id": 190,
+      "target_id": 34,
+      "source": "oracle_ppo",
+      "transition_count": 66,
+      "source_rows": [
+        42975,
+        43041
+      ],
+      "valid_start_count": {
+        "10": 57
+      }
+    },
+    {
+      "episode_id": 191,
+      "target_id": 34,
+      "source": "pi7_ppo",
+      "transition_count": 71,
+      "source_rows": [
+        43042,
+        43113
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 192,
+      "target_id": 34,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        43114,
+        43488
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 193,
+      "target_id": 34,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        43489,
+        43863
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 194,
+      "target_id": 34,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        43864,
+        44238
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 195,
+      "target_id": 34,
+      "source": "alternating",
+      "transition_count": 139,
+      "source_rows": [
+        44239,
+        44378
+      ],
+      "valid_start_count": {
+        "10": 130
+      }
+    },
+    {
+      "episode_id": 196,
+      "target_id": 35,
+      "source": "scripted",
+      "transition_count": 70,
+      "source_rows": [
+        44379,
+        44449
+      ],
+      "valid_start_count": {
+        "10": 61
+      }
+    },
+    {
+      "episode_id": 197,
+      "target_id": 35,
+      "source": "oracle_ppo",
+      "transition_count": 52,
+      "source_rows": [
+        44450,
+        44502
+      ],
+      "valid_start_count": {
+        "10": 43
+      }
+    },
+    {
+      "episode_id": 198,
+      "target_id": 35,
+      "source": "pi7_ppo",
+      "transition_count": 56,
+      "source_rows": [
+        44503,
+        44559
+      ],
+      "valid_start_count": {
+        "10": 47
+      }
+    },
+    {
+      "episode_id": 199,
+      "target_id": 35,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        44560,
+        44934
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 200,
+      "target_id": 35,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        44935,
+        45309
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 201,
+      "target_id": 35,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        45310,
+        45684
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 202,
+      "target_id": 35,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        45685,
+        46059
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 203,
+      "target_id": 36,
+      "source": "scripted",
+      "transition_count": 76,
+      "source_rows": [
+        46060,
+        46136
+      ],
+      "valid_start_count": {
+        "10": 67
+      }
+    },
+    {
+      "episode_id": 204,
+      "target_id": 36,
+      "source": "oracle_ppo",
+      "transition_count": 77,
+      "source_rows": [
+        46137,
+        46214
+      ],
+      "valid_start_count": {
+        "10": 68
+      }
+    },
+    {
+      "episode_id": 205,
+      "target_id": 36,
+      "source": "pi7_ppo",
+      "transition_count": 144,
+      "source_rows": [
+        46215,
+        46359
+      ],
+      "valid_start_count": {
+        "10": 135
+      }
+    },
+    {
+      "episode_id": 206,
+      "target_id": 36,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        46360,
+        46734
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 207,
+      "target_id": 36,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        46735,
+        47109
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 208,
+      "target_id": 36,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        47110,
+        47484
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 209,
+      "target_id": 36,
+      "source": "alternating",
+      "transition_count": 330,
+      "source_rows": [
+        47485,
+        47815
+      ],
+      "valid_start_count": {
+        "10": 321
+      }
+    },
+    {
+      "episode_id": 210,
+      "target_id": 37,
+      "source": "scripted",
+      "transition_count": 68,
+      "source_rows": [
+        47816,
+        47884
+      ],
+      "valid_start_count": {
+        "10": 59
+      }
+    },
+    {
+      "episode_id": 211,
+      "target_id": 37,
+      "source": "oracle_ppo",
+      "transition_count": 75,
+      "source_rows": [
+        47885,
+        47960
+      ],
+      "valid_start_count": {
+        "10": 66
+      }
+    },
+    {
+      "episode_id": 212,
+      "target_id": 37,
+      "source": "pi7_ppo",
+      "transition_count": 130,
+      "source_rows": [
+        47961,
+        48091
+      ],
+      "valid_start_count": {
+        "10": 121
+      }
+    },
+    {
+      "episode_id": 213,
+      "target_id": 37,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        48092,
+        48466
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 214,
+      "target_id": 37,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        48467,
+        48841
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 215,
+      "target_id": 37,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        48842,
+        49216
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 216,
+      "target_id": 37,
+      "source": "alternating",
+      "transition_count": 194,
+      "source_rows": [
+        49217,
+        49411
+      ],
+      "valid_start_count": {
+        "10": 185
+      }
+    },
+    {
+      "episode_id": 217,
+      "target_id": 39,
+      "source": "scripted",
+      "transition_count": 87,
+      "source_rows": [
+        49412,
+        49499
+      ],
+      "valid_start_count": {
+        "10": 78
+      }
+    },
+    {
+      "episode_id": 218,
+      "target_id": 39,
+      "source": "oracle_ppo",
+      "transition_count": 95,
+      "source_rows": [
+        49500,
+        49595
+      ],
+      "valid_start_count": {
+        "10": 86
+      }
+    },
+    {
+      "episode_id": 219,
+      "target_id": 39,
+      "source": "pi7_ppo",
+      "transition_count": 133,
+      "source_rows": [
+        49596,
+        49729
+      ],
+      "valid_start_count": {
+        "10": 124
+      }
+    },
+    {
+      "episode_id": 220,
+      "target_id": 39,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        49730,
+        50104
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 221,
+      "target_id": 39,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        50105,
+        50479
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 222,
+      "target_id": 39,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        50480,
+        50854
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 223,
+      "target_id": 39,
+      "source": "alternating",
+      "transition_count": 272,
+      "source_rows": [
+        50855,
+        51127
+      ],
+      "valid_start_count": {
+        "10": 263
+      }
+    },
+    {
+      "episode_id": 224,
+      "target_id": 42,
+      "source": "scripted",
+      "transition_count": 73,
+      "source_rows": [
+        51128,
+        51201
+      ],
+      "valid_start_count": {
+        "10": 64
+      }
+    },
+    {
+      "episode_id": 225,
+      "target_id": 42,
+      "source": "oracle_ppo",
+      "transition_count": 72,
+      "source_rows": [
+        51202,
+        51274
+      ],
+      "valid_start_count": {
+        "10": 63
+      }
+    },
+    {
+      "episode_id": 226,
+      "target_id": 42,
+      "source": "pi7_ppo",
+      "transition_count": 70,
+      "source_rows": [
+        51275,
+        51345
+      ],
+      "valid_start_count": {
+        "10": 61
+      }
+    },
+    {
+      "episode_id": 227,
+      "target_id": 42,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        51346,
+        51720
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 228,
+      "target_id": 42,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        51721,
+        52095
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 229,
+      "target_id": 42,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        52096,
+        52470
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 230,
+      "target_id": 42,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        52471,
+        52845
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 231,
+      "target_id": 43,
+      "source": "scripted",
+      "transition_count": 98,
+      "source_rows": [
+        52846,
+        52944
+      ],
+      "valid_start_count": {
+        "10": 89
+      }
+    },
+    {
+      "episode_id": 232,
+      "target_id": 43,
+      "source": "oracle_ppo",
+      "transition_count": 96,
+      "source_rows": [
+        52945,
+        53041
+      ],
+      "valid_start_count": {
+        "10": 87
+      }
+    },
+    {
+      "episode_id": 233,
+      "target_id": 43,
+      "source": "pi7_ppo",
+      "transition_count": 88,
+      "source_rows": [
+        53042,
+        53130
+      ],
+      "valid_start_count": {
+        "10": 79
+      }
+    },
+    {
+      "episode_id": 234,
+      "target_id": 43,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        53131,
+        53505
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 235,
+      "target_id": 43,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        53506,
+        53880
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 236,
+      "target_id": 43,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        53881,
+        54255
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 237,
+      "target_id": 43,
+      "source": "alternating",
+      "transition_count": 139,
+      "source_rows": [
+        54256,
+        54395
+      ],
+      "valid_start_count": {
+        "10": 130
+      }
+    },
+    {
+      "episode_id": 238,
+      "target_id": 44,
+      "source": "scripted",
+      "transition_count": 73,
+      "source_rows": [
+        54396,
+        54469
+      ],
+      "valid_start_count": {
+        "10": 64
+      }
+    },
+    {
+      "episode_id": 239,
+      "target_id": 44,
+      "source": "oracle_ppo",
+      "transition_count": 65,
+      "source_rows": [
+        54470,
+        54535
+      ],
+      "valid_start_count": {
+        "10": 56
+      }
+    },
+    {
+      "episode_id": 240,
+      "target_id": 44,
+      "source": "pi7_ppo",
+      "transition_count": 71,
+      "source_rows": [
+        54536,
+        54607
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 241,
+      "target_id": 44,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        54608,
+        54982
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 242,
+      "target_id": 44,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        54983,
+        55357
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 243,
+      "target_id": 44,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        55358,
+        55732
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 244,
+      "target_id": 44,
+      "source": "alternating",
+      "transition_count": 233,
+      "source_rows": [
+        55733,
+        55966
+      ],
+      "valid_start_count": {
+        "10": 224
+      }
+    },
+    {
+      "episode_id": 245,
+      "target_id": 45,
+      "source": "scripted",
+      "transition_count": 92,
+      "source_rows": [
+        55967,
+        56059
+      ],
+      "valid_start_count": {
+        "10": 83
+      }
+    },
+    {
+      "episode_id": 246,
+      "target_id": 45,
+      "source": "oracle_ppo",
+      "transition_count": 96,
+      "source_rows": [
+        56060,
+        56156
+      ],
+      "valid_start_count": {
+        "10": 87
+      }
+    },
+    {
+      "episode_id": 247,
+      "target_id": 45,
+      "source": "pi7_ppo",
+      "transition_count": 79,
+      "source_rows": [
+        56157,
+        56236
+      ],
+      "valid_start_count": {
+        "10": 70
+      }
+    },
+    {
+      "episode_id": 248,
+      "target_id": 45,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        56237,
+        56611
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 249,
+      "target_id": 45,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        56612,
+        56986
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 250,
+      "target_id": 45,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        56987,
+        57361
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 251,
+      "target_id": 45,
+      "source": "alternating",
+      "transition_count": 286,
+      "source_rows": [
+        57362,
+        57648
+      ],
+      "valid_start_count": {
+        "10": 277
+      }
+    },
+    {
+      "episode_id": 252,
+      "target_id": 47,
+      "source": "scripted",
+      "transition_count": 66,
+      "source_rows": [
+        57649,
+        57715
+      ],
+      "valid_start_count": {
+        "10": 57
+      }
+    },
+    {
+      "episode_id": 253,
+      "target_id": 47,
+      "source": "oracle_ppo",
+      "transition_count": 75,
+      "source_rows": [
+        57716,
+        57791
+      ],
+      "valid_start_count": {
+        "10": 66
+      }
+    },
+    {
+      "episode_id": 254,
+      "target_id": 47,
+      "source": "pi7_ppo",
+      "transition_count": 78,
+      "source_rows": [
+        57792,
+        57870
+      ],
+      "valid_start_count": {
+        "10": 69
+      }
+    },
+    {
+      "episode_id": 255,
+      "target_id": 47,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        57871,
+        58245
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 256,
+      "target_id": 47,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        58246,
+        58620
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 257,
+      "target_id": 47,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        58621,
+        58995
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 258,
+      "target_id": 47,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        58996,
+        59370
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 259,
+      "target_id": 50,
+      "source": "scripted",
+      "transition_count": 75,
+      "source_rows": [
+        59371,
+        59446
+      ],
+      "valid_start_count": {
+        "10": 66
+      }
+    },
+    {
+      "episode_id": 260,
+      "target_id": 50,
+      "source": "oracle_ppo",
+      "transition_count": 64,
+      "source_rows": [
+        59447,
+        59511
+      ],
+      "valid_start_count": {
+        "10": 55
+      }
+    },
+    {
+      "episode_id": 261,
+      "target_id": 50,
+      "source": "pi7_ppo",
+      "transition_count": 71,
+      "source_rows": [
+        59512,
+        59583
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 262,
+      "target_id": 50,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        59584,
+        59958
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 263,
+      "target_id": 50,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        59959,
+        60333
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 264,
+      "target_id": 50,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        60334,
+        60708
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 265,
+      "target_id": 50,
+      "source": "alternating",
+      "transition_count": 121,
+      "source_rows": [
+        60709,
+        60830
+      ],
+      "valid_start_count": {
+        "10": 112
+      }
+    },
+    {
+      "episode_id": 266,
+      "target_id": 51,
+      "source": "scripted",
+      "transition_count": 72,
+      "source_rows": [
+        60831,
+        60903
+      ],
+      "valid_start_count": {
+        "10": 63
+      }
+    },
+    {
+      "episode_id": 267,
+      "target_id": 51,
+      "source": "oracle_ppo",
+      "transition_count": 87,
+      "source_rows": [
+        60904,
+        60991
+      ],
+      "valid_start_count": {
+        "10": 78
+      }
+    },
+    {
+      "episode_id": 268,
+      "target_id": 51,
+      "source": "pi7_ppo",
+      "transition_count": 67,
+      "source_rows": [
+        60992,
+        61059
+      ],
+      "valid_start_count": {
+        "10": 58
+      }
+    },
+    {
+      "episode_id": 269,
+      "target_id": 51,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        61060,
+        61434
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 270,
+      "target_id": 51,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        61435,
+        61809
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 271,
+      "target_id": 51,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        61810,
+        62184
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 272,
+      "target_id": 51,
+      "source": "alternating",
+      "transition_count": 155,
+      "source_rows": [
+        62185,
+        62340
+      ],
+      "valid_start_count": {
+        "10": 146
+      }
+    },
+    {
+      "episode_id": 273,
+      "target_id": 52,
+      "source": "scripted",
+      "transition_count": 72,
+      "source_rows": [
+        62341,
+        62413
+      ],
+      "valid_start_count": {
+        "10": 63
+      }
+    },
+    {
+      "episode_id": 274,
+      "target_id": 52,
+      "source": "oracle_ppo",
+      "transition_count": 89,
+      "source_rows": [
+        62414,
+        62503
+      ],
+      "valid_start_count": {
+        "10": 80
+      }
+    },
+    {
+      "episode_id": 275,
+      "target_id": 52,
+      "source": "pi7_ppo",
+      "transition_count": 75,
+      "source_rows": [
+        62504,
+        62579
+      ],
+      "valid_start_count": {
+        "10": 66
+      }
+    },
+    {
+      "episode_id": 276,
+      "target_id": 52,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        62580,
+        62954
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 277,
+      "target_id": 52,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        62955,
+        63329
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 278,
+      "target_id": 52,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        63330,
+        63704
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 279,
+      "target_id": 52,
+      "source": "alternating",
+      "transition_count": 138,
+      "source_rows": [
+        63705,
+        63843
+      ],
+      "valid_start_count": {
+        "10": 129
+      }
+    },
+    {
+      "episode_id": 280,
+      "target_id": 53,
+      "source": "scripted",
+      "transition_count": 67,
+      "source_rows": [
+        63844,
+        63911
+      ],
+      "valid_start_count": {
+        "10": 58
+      }
+    },
+    {
+      "episode_id": 281,
+      "target_id": 53,
+      "source": "oracle_ppo",
+      "transition_count": 64,
+      "source_rows": [
+        63912,
+        63976
+      ],
+      "valid_start_count": {
+        "10": 55
+      }
+    },
+    {
+      "episode_id": 282,
+      "target_id": 53,
+      "source": "pi7_ppo",
+      "transition_count": 80,
+      "source_rows": [
+        63977,
+        64057
+      ],
+      "valid_start_count": {
+        "10": 71
+      }
+    },
+    {
+      "episode_id": 283,
+      "target_id": 53,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        64058,
+        64432
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 284,
+      "target_id": 53,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        64433,
+        64807
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 285,
+      "target_id": 53,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        64808,
+        65182
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 286,
+      "target_id": 53,
+      "source": "alternating",
+      "transition_count": 208,
+      "source_rows": [
+        65183,
+        65391
+      ],
+      "valid_start_count": {
+        "10": 199
+      }
+    },
+    {
+      "episode_id": 287,
+      "target_id": 55,
+      "source": "scripted",
+      "transition_count": 71,
+      "source_rows": [
+        65392,
+        65463
+      ],
+      "valid_start_count": {
+        "10": 62
+      }
+    },
+    {
+      "episode_id": 288,
+      "target_id": 55,
+      "source": "oracle_ppo",
+      "transition_count": 54,
+      "source_rows": [
+        65464,
+        65518
+      ],
+      "valid_start_count": {
+        "10": 45
+      }
+    },
+    {
+      "episode_id": 289,
+      "target_id": 55,
+      "source": "pi7_ppo",
+      "transition_count": 58,
+      "source_rows": [
+        65519,
+        65577
+      ],
+      "valid_start_count": {
+        "10": 49
+      }
+    },
+    {
+      "episode_id": 290,
+      "target_id": 55,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        65578,
+        65952
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 291,
+      "target_id": 55,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        65953,
+        66327
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 292,
+      "target_id": 55,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        66328,
+        66702
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 293,
+      "target_id": 55,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        66703,
+        67077
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 294,
+      "target_id": 57,
+      "source": "scripted",
+      "transition_count": 63,
+      "source_rows": [
+        67078,
+        67141
+      ],
+      "valid_start_count": {
+        "10": 54
+      }
+    },
+    {
+      "episode_id": 295,
+      "target_id": 57,
+      "source": "oracle_ppo",
+      "transition_count": 58,
+      "source_rows": [
+        67142,
+        67200
+      ],
+      "valid_start_count": {
+        "10": 49
+      }
+    },
+    {
+      "episode_id": 296,
+      "target_id": 57,
+      "source": "pi7_ppo",
+      "transition_count": 67,
+      "source_rows": [
+        67201,
+        67268
+      ],
+      "valid_start_count": {
+        "10": 58
+      }
+    },
+    {
+      "episode_id": 297,
+      "target_id": 57,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        67269,
+        67643
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 298,
+      "target_id": 57,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        67644,
+        68018
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 299,
+      "target_id": 57,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        68019,
+        68393
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 300,
+      "target_id": 57,
+      "source": "alternating",
+      "transition_count": 116,
+      "source_rows": [
+        68394,
+        68510
+      ],
+      "valid_start_count": {
+        "10": 107
+      }
+    },
+    {
+      "episode_id": 301,
+      "target_id": 60,
+      "source": "scripted",
+      "transition_count": 188,
+      "source_rows": [
+        68511,
+        68699
+      ],
+      "valid_start_count": {
+        "10": 179
+      }
+    },
+    {
+      "episode_id": 302,
+      "target_id": 60,
+      "source": "oracle_ppo",
+      "transition_count": 132,
+      "source_rows": [
+        68700,
+        68832
+      ],
+      "valid_start_count": {
+        "10": 123
+      }
+    },
+    {
+      "episode_id": 303,
+      "target_id": 60,
+      "source": "pi7_ppo",
+      "transition_count": 194,
+      "source_rows": [
+        68833,
+        69027
+      ],
+      "valid_start_count": {
+        "10": 185
+      }
+    },
+    {
+      "episode_id": 304,
+      "target_id": 60,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        69028,
+        69402
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 305,
+      "target_id": 60,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        69403,
+        69777
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 306,
+      "target_id": 60,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        69778,
+        70152
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 307,
+      "target_id": 60,
+      "source": "alternating",
+      "transition_count": 274,
+      "source_rows": [
+        70153,
+        70427
+      ],
+      "valid_start_count": {
+        "10": 265
+      }
+    },
+    {
+      "episode_id": 308,
+      "target_id": 62,
+      "source": "scripted",
+      "transition_count": 88,
+      "source_rows": [
+        70428,
+        70516
+      ],
+      "valid_start_count": {
+        "10": 79
+      }
+    },
+    {
+      "episode_id": 309,
+      "target_id": 62,
+      "source": "oracle_ppo",
+      "transition_count": 121,
+      "source_rows": [
+        70517,
+        70638
+      ],
+      "valid_start_count": {
+        "10": 112
+      }
+    },
+    {
+      "episode_id": 310,
+      "target_id": 62,
+      "source": "pi7_ppo",
+      "transition_count": 161,
+      "source_rows": [
+        70639,
+        70800
+      ],
+      "valid_start_count": {
+        "10": 152
+      }
+    },
+    {
+      "episode_id": 311,
+      "target_id": 62,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        70801,
+        71175
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 312,
+      "target_id": 62,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        71176,
+        71550
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 313,
+      "target_id": 62,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        71551,
+        71925
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 314,
+      "target_id": 62,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        71926,
+        72300
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 315,
+      "target_id": 64,
+      "source": "scripted",
+      "transition_count": 190,
+      "source_rows": [
+        72301,
+        72491
+      ],
+      "valid_start_count": {
+        "10": 181
+      }
+    },
+    {
+      "episode_id": 316,
+      "target_id": 64,
+      "source": "oracle_ppo",
+      "transition_count": 150,
+      "source_rows": [
+        72492,
+        72642
+      ],
+      "valid_start_count": {
+        "10": 141
+      }
+    },
+    {
+      "episode_id": 317,
+      "target_id": 64,
+      "source": "pi7_ppo",
+      "transition_count": 196,
+      "source_rows": [
+        72643,
+        72839
+      ],
+      "valid_start_count": {
+        "10": 187
+      }
+    },
+    {
+      "episode_id": 318,
+      "target_id": 64,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        72840,
+        73214
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 319,
+      "target_id": 64,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        73215,
+        73589
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 320,
+      "target_id": 64,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        73590,
+        73964
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 321,
+      "target_id": 64,
+      "source": "alternating",
+      "transition_count": 178,
+      "source_rows": [
+        73965,
+        74143
+      ],
+      "valid_start_count": {
+        "10": 169
+      }
+    },
+    {
+      "episode_id": 322,
+      "target_id": 65,
+      "source": "scripted",
+      "transition_count": 193,
+      "source_rows": [
+        74144,
+        74337
+      ],
+      "valid_start_count": {
+        "10": 184
+      }
+    },
+    {
+      "episode_id": 323,
+      "target_id": 65,
+      "source": "oracle_ppo",
+      "transition_count": 220,
+      "source_rows": [
+        74338,
+        74558
+      ],
+      "valid_start_count": {
+        "10": 211
+      }
+    },
+    {
+      "episode_id": 324,
+      "target_id": 65,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        74559,
+        74933
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 325,
+      "target_id": 65,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        74934,
+        75308
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 326,
+      "target_id": 65,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        75309,
+        75683
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 327,
+      "target_id": 65,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        75684,
+        76058
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 328,
+      "target_id": 65,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        76059,
+        76433
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 329,
+      "target_id": 66,
+      "source": "scripted",
+      "transition_count": 194,
+      "source_rows": [
+        76434,
+        76628
+      ],
+      "valid_start_count": {
+        "10": 185
+      }
+    },
+    {
+      "episode_id": 330,
+      "target_id": 66,
+      "source": "oracle_ppo",
+      "transition_count": 236,
+      "source_rows": [
+        76629,
+        76865
+      ],
+      "valid_start_count": {
+        "10": 227
+      }
+    },
+    {
+      "episode_id": 331,
+      "target_id": 66,
+      "source": "pi7_ppo",
+      "transition_count": 363,
+      "source_rows": [
+        76866,
+        77229
+      ],
+      "valid_start_count": {
+        "10": 354
+      }
+    },
+    {
+      "episode_id": 332,
+      "target_id": 66,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        77230,
+        77604
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 333,
+      "target_id": 66,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        77605,
+        77979
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 334,
+      "target_id": 66,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        77980,
+        78354
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 335,
+      "target_id": 66,
+      "source": "alternating",
+      "transition_count": 308,
+      "source_rows": [
+        78355,
+        78663
+      ],
+      "valid_start_count": {
+        "10": 299
+      }
+    },
+    {
+      "episode_id": 336,
+      "target_id": 67,
+      "source": "scripted",
+      "transition_count": 191,
+      "source_rows": [
+        78664,
+        78855
+      ],
+      "valid_start_count": {
+        "10": 182
+      }
+    },
+    {
+      "episode_id": 337,
+      "target_id": 67,
+      "source": "oracle_ppo",
+      "transition_count": 176,
+      "source_rows": [
+        78856,
+        79032
+      ],
+      "valid_start_count": {
+        "10": 167
+      }
+    },
+    {
+      "episode_id": 338,
+      "target_id": 67,
+      "source": "pi7_ppo",
+      "transition_count": 369,
+      "source_rows": [
+        79033,
+        79402
+      ],
+      "valid_start_count": {
+        "10": 360
+      }
+    },
+    {
+      "episode_id": 339,
+      "target_id": 67,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        79403,
+        79777
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 340,
+      "target_id": 67,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        79778,
+        80152
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 341,
+      "target_id": 67,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        80153,
+        80527
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 342,
+      "target_id": 67,
+      "source": "alternating",
+      "transition_count": 162,
+      "source_rows": [
+        80528,
+        80690
+      ],
+      "valid_start_count": {
+        "10": 153
+      }
+    },
+    {
+      "episode_id": 343,
+      "target_id": 68,
+      "source": "scripted",
+      "transition_count": 89,
+      "source_rows": [
+        80691,
+        80780
+      ],
+      "valid_start_count": {
+        "10": 80
+      }
+    },
+    {
+      "episode_id": 344,
+      "target_id": 68,
+      "source": "oracle_ppo",
+      "transition_count": 164,
+      "source_rows": [
+        80781,
+        80945
+      ],
+      "valid_start_count": {
+        "10": 155
+      }
+    },
+    {
+      "episode_id": 345,
+      "target_id": 68,
+      "source": "pi7_ppo",
+      "transition_count": 304,
+      "source_rows": [
+        80946,
+        81250
+      ],
+      "valid_start_count": {
+        "10": 295
+      }
+    },
+    {
+      "episode_id": 346,
+      "target_id": 68,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        81251,
+        81625
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 347,
+      "target_id": 68,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        81626,
+        82000
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 348,
+      "target_id": 68,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        82001,
+        82375
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 349,
+      "target_id": 68,
+      "source": "alternating",
+      "transition_count": 307,
+      "source_rows": [
+        82376,
+        82683
+      ],
+      "valid_start_count": {
+        "10": 298
+      }
+    },
+    {
+      "episode_id": 350,
+      "target_id": 70,
+      "source": "scripted",
+      "transition_count": 89,
+      "source_rows": [
+        82684,
+        82773
+      ],
+      "valid_start_count": {
+        "10": 80
+      }
+    },
+    {
+      "episode_id": 351,
+      "target_id": 70,
+      "source": "oracle_ppo",
+      "transition_count": 175,
+      "source_rows": [
+        82774,
+        82949
+      ],
+      "valid_start_count": {
+        "10": 166
+      }
+    },
+    {
+      "episode_id": 352,
+      "target_id": 70,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        82950,
+        83324
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 353,
+      "target_id": 70,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        83325,
+        83699
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 354,
+      "target_id": 70,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        83700,
+        84074
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 355,
+      "target_id": 70,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        84075,
+        84449
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 356,
+      "target_id": 70,
+      "source": "alternating",
+      "transition_count": 154,
+      "source_rows": [
+        84450,
+        84604
+      ],
+      "valid_start_count": {
+        "10": 145
+      }
+    },
+    {
+      "episode_id": 357,
+      "target_id": 71,
+      "source": "scripted",
+      "transition_count": 74,
+      "source_rows": [
+        84605,
+        84679
+      ],
+      "valid_start_count": {
+        "10": 65
+      }
+    },
+    {
+      "episode_id": 358,
+      "target_id": 71,
+      "source": "oracle_ppo",
+      "transition_count": 94,
+      "source_rows": [
+        84680,
+        84774
+      ],
+      "valid_start_count": {
+        "10": 85
+      }
+    },
+    {
+      "episode_id": 359,
+      "target_id": 71,
+      "source": "pi7_ppo",
+      "transition_count": 146,
+      "source_rows": [
+        84775,
+        84921
+      ],
+      "valid_start_count": {
+        "10": 137
+      }
+    },
+    {
+      "episode_id": 360,
+      "target_id": 71,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        84922,
+        85296
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 361,
+      "target_id": 71,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        85297,
+        85671
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 362,
+      "target_id": 71,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        85672,
+        86046
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 363,
+      "target_id": 71,
+      "source": "alternating",
+      "transition_count": 277,
+      "source_rows": [
+        86047,
+        86324
+      ],
+      "valid_start_count": {
+        "10": 268
+      }
+    },
+    {
+      "episode_id": 364,
+      "target_id": 72,
+      "source": "scripted",
+      "transition_count": 193,
+      "source_rows": [
+        86325,
+        86518
+      ],
+      "valid_start_count": {
+        "10": 184
+      }
+    },
+    {
+      "episode_id": 365,
+      "target_id": 72,
+      "source": "oracle_ppo",
+      "transition_count": 151,
+      "source_rows": [
+        86519,
+        86670
+      ],
+      "valid_start_count": {
+        "10": 142
+      }
+    },
+    {
+      "episode_id": 366,
+      "target_id": 72,
+      "source": "pi7_ppo",
+      "transition_count": 165,
+      "source_rows": [
+        86671,
+        86836
+      ],
+      "valid_start_count": {
+        "10": 156
+      }
+    },
+    {
+      "episode_id": 367,
+      "target_id": 72,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        86837,
+        87211
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 368,
+      "target_id": 72,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        87212,
+        87586
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 369,
+      "target_id": 72,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        87587,
+        87961
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 370,
+      "target_id": 72,
+      "source": "alternating",
+      "transition_count": 174,
+      "source_rows": [
+        87962,
+        88136
+      ],
+      "valid_start_count": {
+        "10": 165
+      }
+    },
+    {
+      "episode_id": 371,
+      "target_id": 74,
+      "source": "scripted",
+      "transition_count": 192,
+      "source_rows": [
+        88137,
+        88329
+      ],
+      "valid_start_count": {
+        "10": 183
+      }
+    },
+    {
+      "episode_id": 372,
+      "target_id": 74,
+      "source": "oracle_ppo",
+      "transition_count": 157,
+      "source_rows": [
+        88330,
+        88487
+      ],
+      "valid_start_count": {
+        "10": 148
+      }
+    },
+    {
+      "episode_id": 373,
+      "target_id": 74,
+      "source": "pi7_ppo",
+      "transition_count": 198,
+      "source_rows": [
+        88488,
+        88686
+      ],
+      "valid_start_count": {
+        "10": 189
+      }
+    },
+    {
+      "episode_id": 374,
+      "target_id": 74,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        88687,
+        89061
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 375,
+      "target_id": 74,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        89062,
+        89436
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 376,
+      "target_id": 74,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        89437,
+        89811
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 377,
+      "target_id": 74,
+      "source": "alternating",
+      "transition_count": 273,
+      "source_rows": [
+        89812,
+        90085
+      ],
+      "valid_start_count": {
+        "10": 264
+      }
+    },
+    {
+      "episode_id": 378,
+      "target_id": 75,
+      "source": "scripted",
+      "transition_count": 187,
+      "source_rows": [
+        90086,
+        90273
+      ],
+      "valid_start_count": {
+        "10": 178
+      }
+    },
+    {
+      "episode_id": 379,
+      "target_id": 75,
+      "source": "oracle_ppo",
+      "transition_count": 147,
+      "source_rows": [
+        90274,
+        90421
+      ],
+      "valid_start_count": {
+        "10": 138
+      }
+    },
+    {
+      "episode_id": 380,
+      "target_id": 75,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        90422,
+        90796
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 381,
+      "target_id": 75,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        90797,
+        91171
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 382,
+      "target_id": 75,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        91172,
+        91546
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 383,
+      "target_id": 75,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        91547,
+        91921
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 384,
+      "target_id": 75,
+      "source": "alternating",
+      "transition_count": 115,
+      "source_rows": [
+        91922,
+        92037
+      ],
+      "valid_start_count": {
+        "10": 106
+      }
+    },
+    {
+      "episode_id": 385,
+      "target_id": 80,
+      "source": "scripted",
+      "transition_count": 97,
+      "source_rows": [
+        92038,
+        92135
+      ],
+      "valid_start_count": {
+        "10": 88
+      }
+    },
+    {
+      "episode_id": 386,
+      "target_id": 80,
+      "source": "oracle_ppo",
+      "transition_count": 93,
+      "source_rows": [
+        92136,
+        92229
+      ],
+      "valid_start_count": {
+        "10": 84
+      }
+    },
+    {
+      "episode_id": 387,
+      "target_id": 80,
+      "source": "pi7_ppo",
+      "transition_count": 84,
+      "source_rows": [
+        92230,
+        92314
+      ],
+      "valid_start_count": {
+        "10": 75
+      }
+    },
+    {
+      "episode_id": 388,
+      "target_id": 80,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        92315,
+        92689
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 389,
+      "target_id": 80,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        92690,
+        93064
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 390,
+      "target_id": 80,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        93065,
+        93439
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 391,
+      "target_id": 80,
+      "source": "alternating",
+      "transition_count": 128,
+      "source_rows": [
+        93440,
+        93568
+      ],
+      "valid_start_count": {
+        "10": 119
+      }
+    },
+    {
+      "episode_id": 392,
+      "target_id": 81,
+      "source": "scripted",
+      "transition_count": 90,
+      "source_rows": [
+        93569,
+        93659
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 393,
+      "target_id": 81,
+      "source": "oracle_ppo",
+      "transition_count": 152,
+      "source_rows": [
+        93660,
+        93812
+      ],
+      "valid_start_count": {
+        "10": 143
+      }
+    },
+    {
+      "episode_id": 394,
+      "target_id": 81,
+      "source": "pi7_ppo",
+      "transition_count": 199,
+      "source_rows": [
+        93813,
+        94012
+      ],
+      "valid_start_count": {
+        "10": 190
+      }
+    },
+    {
+      "episode_id": 395,
+      "target_id": 81,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        94013,
+        94387
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 396,
+      "target_id": 81,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        94388,
+        94762
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 397,
+      "target_id": 81,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        94763,
+        95137
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 398,
+      "target_id": 81,
+      "source": "alternating",
+      "transition_count": 146,
+      "source_rows": [
+        95138,
+        95284
+      ],
+      "valid_start_count": {
+        "10": 137
+      }
+    },
+    {
+      "episode_id": 399,
+      "target_id": 82,
+      "source": "scripted",
+      "transition_count": 88,
+      "source_rows": [
+        95285,
+        95373
+      ],
+      "valid_start_count": {
+        "10": 79
+      }
+    },
+    {
+      "episode_id": 400,
+      "target_id": 82,
+      "source": "oracle_ppo",
+      "transition_count": 145,
+      "source_rows": [
+        95374,
+        95519
+      ],
+      "valid_start_count": {
+        "10": 136
+      }
+    },
+    {
+      "episode_id": 401,
+      "target_id": 82,
+      "source": "pi7_ppo",
+      "transition_count": 198,
+      "source_rows": [
+        95520,
+        95718
+      ],
+      "valid_start_count": {
+        "10": 189
+      }
+    },
+    {
+      "episode_id": 402,
+      "target_id": 82,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        95719,
+        96093
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 403,
+      "target_id": 82,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        96094,
+        96468
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 404,
+      "target_id": 82,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        96469,
+        96843
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 405,
+      "target_id": 82,
+      "source": "alternating",
+      "transition_count": 263,
+      "source_rows": [
+        96844,
+        97107
+      ],
+      "valid_start_count": {
+        "10": 254
+      }
+    },
+    {
+      "episode_id": 406,
+      "target_id": 83,
+      "source": "scripted",
+      "transition_count": 191,
+      "source_rows": [
+        97108,
+        97299
+      ],
+      "valid_start_count": {
+        "10": 182
+      }
+    },
+    {
+      "episode_id": 407,
+      "target_id": 83,
+      "source": "oracle_ppo",
+      "transition_count": 134,
+      "source_rows": [
+        97300,
+        97434
+      ],
+      "valid_start_count": {
+        "10": 125
+      }
+    },
+    {
+      "episode_id": 408,
+      "target_id": 83,
+      "source": "pi7_ppo",
+      "transition_count": 164,
+      "source_rows": [
+        97435,
+        97599
+      ],
+      "valid_start_count": {
+        "10": 155
+      }
+    },
+    {
+      "episode_id": 409,
+      "target_id": 83,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        97600,
+        97974
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 410,
+      "target_id": 83,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        97975,
+        98349
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 411,
+      "target_id": 83,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        98350,
+        98724
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 412,
+      "target_id": 83,
+      "source": "alternating",
+      "transition_count": 297,
+      "source_rows": [
+        98725,
+        99022
+      ],
+      "valid_start_count": {
+        "10": 288
+      }
+    },
+    {
+      "episode_id": 413,
+      "target_id": 84,
+      "source": "scripted",
+      "transition_count": 191,
+      "source_rows": [
+        99023,
+        99214
+      ],
+      "valid_start_count": {
+        "10": 182
+      }
+    },
+    {
+      "episode_id": 414,
+      "target_id": 84,
+      "source": "oracle_ppo",
+      "transition_count": 160,
+      "source_rows": [
+        99215,
+        99375
+      ],
+      "valid_start_count": {
+        "10": 151
+      }
+    },
+    {
+      "episode_id": 415,
+      "target_id": 84,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        99376,
+        99750
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 416,
+      "target_id": 84,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        99751,
+        100125
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 417,
+      "target_id": 84,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        100126,
+        100500
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 418,
+      "target_id": 84,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        100501,
+        100875
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 419,
+      "target_id": 84,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        100876,
+        101250
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 420,
+      "target_id": 85,
+      "source": "scripted",
+      "transition_count": 191,
+      "source_rows": [
+        101251,
+        101442
+      ],
+      "valid_start_count": {
+        "10": 182
+      }
+    },
+    {
+      "episode_id": 421,
+      "target_id": 85,
+      "source": "oracle_ppo",
+      "transition_count": 177,
+      "source_rows": [
+        101443,
+        101620
+      ],
+      "valid_start_count": {
+        "10": 168
+      }
+    },
+    {
+      "episode_id": 422,
+      "target_id": 85,
+      "source": "pi7_ppo",
+      "transition_count": 311,
+      "source_rows": [
+        101621,
+        101932
+      ],
+      "valid_start_count": {
+        "10": 302
+      }
+    },
+    {
+      "episode_id": 423,
+      "target_id": 85,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        101933,
+        102307
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 424,
+      "target_id": 85,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        102308,
+        102682
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 425,
+      "target_id": 85,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        102683,
+        103057
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 426,
+      "target_id": 85,
+      "source": "alternating",
+      "transition_count": 315,
+      "source_rows": [
+        103058,
+        103373
+      ],
+      "valid_start_count": {
+        "10": 306
+      }
+    },
+    {
+      "episode_id": 427,
+      "target_id": 86,
+      "source": "scripted",
+      "transition_count": 90,
+      "source_rows": [
+        103374,
+        103464
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 428,
+      "target_id": 86,
+      "source": "oracle_ppo",
+      "transition_count": 144,
+      "source_rows": [
+        103465,
+        103609
+      ],
+      "valid_start_count": {
+        "10": 135
+      }
+    },
+    {
+      "episode_id": 429,
+      "target_id": 86,
+      "source": "pi7_ppo",
+      "transition_count": 195,
+      "source_rows": [
+        103610,
+        103805
+      ],
+      "valid_start_count": {
+        "10": 186
+      }
+    },
+    {
+      "episode_id": 430,
+      "target_id": 86,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        103806,
+        104180
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 431,
+      "target_id": 86,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        104181,
+        104555
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 432,
+      "target_id": 86,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        104556,
+        104930
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 433,
+      "target_id": 86,
+      "source": "alternating",
+      "transition_count": 279,
+      "source_rows": [
+        104931,
+        105210
+      ],
+      "valid_start_count": {
+        "10": 270
+      }
+    },
+    {
+      "episode_id": 434,
+      "target_id": 87,
+      "source": "scripted",
+      "transition_count": 87,
+      "source_rows": [
+        105211,
+        105298
+      ],
+      "valid_start_count": {
+        "10": 78
+      }
+    },
+    {
+      "episode_id": 435,
+      "target_id": 87,
+      "source": "oracle_ppo",
+      "transition_count": 150,
+      "source_rows": [
+        105299,
+        105449
+      ],
+      "valid_start_count": {
+        "10": 141
+      }
+    },
+    {
+      "episode_id": 436,
+      "target_id": 87,
+      "source": "pi7_ppo",
+      "transition_count": 297,
+      "source_rows": [
+        105450,
+        105747
+      ],
+      "valid_start_count": {
+        "10": 288
+      }
+    },
+    {
+      "episode_id": 437,
+      "target_id": 87,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        105748,
+        106122
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 438,
+      "target_id": 87,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        106123,
+        106497
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 439,
+      "target_id": 87,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        106498,
+        106872
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 440,
+      "target_id": 87,
+      "source": "alternating",
+      "transition_count": 303,
+      "source_rows": [
+        106873,
+        107176
+      ],
+      "valid_start_count": {
+        "10": 294
+      }
+    },
+    {
+      "episode_id": 441,
+      "target_id": 88,
+      "source": "scripted",
+      "transition_count": 90,
+      "source_rows": [
+        107177,
+        107267
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 442,
+      "target_id": 88,
+      "source": "oracle_ppo",
+      "transition_count": 131,
+      "source_rows": [
+        107268,
+        107399
+      ],
+      "valid_start_count": {
+        "10": 122
+      }
+    },
+    {
+      "episode_id": 443,
+      "target_id": 88,
+      "source": "pi7_ppo",
+      "transition_count": 160,
+      "source_rows": [
+        107400,
+        107560
+      ],
+      "valid_start_count": {
+        "10": 151
+      }
+    },
+    {
+      "episode_id": 444,
+      "target_id": 88,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        107561,
+        107935
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 445,
+      "target_id": 88,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        107936,
+        108310
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 446,
+      "target_id": 88,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        108311,
+        108685
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 447,
+      "target_id": 88,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        108686,
+        109060
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 448,
+      "target_id": 90,
+      "source": "scripted",
+      "transition_count": 192,
+      "source_rows": [
+        109061,
+        109253
+      ],
+      "valid_start_count": {
+        "10": 183
+      }
+    },
+    {
+      "episode_id": 449,
+      "target_id": 90,
+      "source": "oracle_ppo",
+      "transition_count": 148,
+      "source_rows": [
+        109254,
+        109402
+      ],
+      "valid_start_count": {
+        "10": 139
+      }
+    },
+    {
+      "episode_id": 450,
+      "target_id": 90,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        109403,
+        109777
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 451,
+      "target_id": 90,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        109778,
+        110152
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 452,
+      "target_id": 90,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        110153,
+        110527
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 453,
+      "target_id": 90,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        110528,
+        110902
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 454,
+      "target_id": 90,
+      "source": "alternating",
+      "transition_count": 133,
+      "source_rows": [
+        110903,
+        111036
+      ],
+      "valid_start_count": {
+        "10": 124
+      }
+    },
+    {
+      "episode_id": 455,
+      "target_id": 91,
+      "source": "scripted",
+      "transition_count": 89,
+      "source_rows": [
+        111037,
+        111126
+      ],
+      "valid_start_count": {
+        "10": 80
+      }
+    },
+    {
+      "episode_id": 456,
+      "target_id": 91,
+      "source": "oracle_ppo",
+      "transition_count": 132,
+      "source_rows": [
+        111127,
+        111259
+      ],
+      "valid_start_count": {
+        "10": 123
+      }
+    },
+    {
+      "episode_id": 457,
+      "target_id": 91,
+      "source": "pi7_ppo",
+      "transition_count": 161,
+      "source_rows": [
+        111260,
+        111421
+      ],
+      "valid_start_count": {
+        "10": 152
+      }
+    },
+    {
+      "episode_id": 458,
+      "target_id": 91,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        111422,
+        111796
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 459,
+      "target_id": 91,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        111797,
+        112171
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 460,
+      "target_id": 91,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        112172,
+        112546
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 461,
+      "target_id": 91,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        112547,
+        112921
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 462,
+      "target_id": 92,
+      "source": "scripted",
+      "transition_count": 90,
+      "source_rows": [
+        112922,
+        113012
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 463,
+      "target_id": 92,
+      "source": "oracle_ppo",
+      "transition_count": 171,
+      "source_rows": [
+        113013,
+        113184
+      ],
+      "valid_start_count": {
+        "10": 162
+      }
+    },
+    {
+      "episode_id": 464,
+      "target_id": 92,
+      "source": "pi7_ppo",
+      "transition_count": 283,
+      "source_rows": [
+        113185,
+        113468
+      ],
+      "valid_start_count": {
+        "10": 274
+      }
+    },
+    {
+      "episode_id": 465,
+      "target_id": 92,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        113469,
+        113843
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 466,
+      "target_id": 92,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        113844,
+        114218
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 467,
+      "target_id": 92,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        114219,
+        114593
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 468,
+      "target_id": 92,
+      "source": "alternating",
+      "transition_count": 301,
+      "source_rows": [
+        114594,
+        114895
+      ],
+      "valid_start_count": {
+        "10": 292
+      }
+    },
+    {
+      "episode_id": 469,
+      "target_id": 93,
+      "source": "scripted",
+      "transition_count": 90,
+      "source_rows": [
+        114896,
+        114986
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 470,
+      "target_id": 93,
+      "source": "oracle_ppo",
+      "transition_count": 134,
+      "source_rows": [
+        114987,
+        115121
+      ],
+      "valid_start_count": {
+        "10": 125
+      }
+    },
+    {
+      "episode_id": 471,
+      "target_id": 93,
+      "source": "pi7_ppo",
+      "transition_count": 162,
+      "source_rows": [
+        115122,
+        115284
+      ],
+      "valid_start_count": {
+        "10": 153
+      }
+    },
+    {
+      "episode_id": 472,
+      "target_id": 93,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        115285,
+        115659
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 473,
+      "target_id": 93,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        115660,
+        116034
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 474,
+      "target_id": 93,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        116035,
+        116409
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 475,
+      "target_id": 93,
+      "source": "alternating",
+      "transition_count": 143,
+      "source_rows": [
+        116410,
+        116553
+      ],
+      "valid_start_count": {
+        "10": 134
+      }
+    },
+    {
+      "episode_id": 476,
+      "target_id": 94,
+      "source": "scripted",
+      "transition_count": 86,
+      "source_rows": [
+        116554,
+        116640
+      ],
+      "valid_start_count": {
+        "10": 77
+      }
+    },
+    {
+      "episode_id": 477,
+      "target_id": 94,
+      "source": "oracle_ppo",
+      "transition_count": 88,
+      "source_rows": [
+        116641,
+        116729
+      ],
+      "valid_start_count": {
+        "10": 79
+      }
+    },
+    {
+      "episode_id": 478,
+      "target_id": 94,
+      "source": "pi7_ppo",
+      "transition_count": 154,
+      "source_rows": [
+        116730,
+        116884
+      ],
+      "valid_start_count": {
+        "10": 145
+      }
+    },
+    {
+      "episode_id": 479,
+      "target_id": 94,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        116885,
+        117259
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 480,
+      "target_id": 94,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        117260,
+        117634
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 481,
+      "target_id": 94,
+      "source": "random_held",
+      "transition_count": 311,
+      "source_rows": [
+        117635,
+        117946
+      ],
+      "valid_start_count": {
+        "10": 302
+      }
+    },
+    {
+      "episode_id": 482,
+      "target_id": 94,
+      "source": "alternating",
+      "transition_count": 317,
+      "source_rows": [
+        117947,
+        118264
+      ],
+      "valid_start_count": {
+        "10": 308
+      }
+    },
+    {
+      "episode_id": 483,
+      "target_id": 97,
+      "source": "scripted",
+      "transition_count": 90,
+      "source_rows": [
+        118265,
+        118355
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 484,
+      "target_id": 97,
+      "source": "oracle_ppo",
+      "transition_count": 162,
+      "source_rows": [
+        118356,
+        118518
+      ],
+      "valid_start_count": {
+        "10": 153
+      }
+    },
+    {
+      "episode_id": 485,
+      "target_id": 97,
+      "source": "pi7_ppo",
+      "transition_count": 260,
+      "source_rows": [
+        118519,
+        118779
+      ],
+      "valid_start_count": {
+        "10": 251
+      }
+    },
+    {
+      "episode_id": 486,
+      "target_id": 97,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        118780,
+        119154
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 487,
+      "target_id": 97,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        119155,
+        119529
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 488,
+      "target_id": 97,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        119530,
+        119904
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 489,
+      "target_id": 97,
+      "source": "alternating",
+      "transition_count": 156,
+      "source_rows": [
+        119905,
+        120061
+      ],
+      "valid_start_count": {
+        "10": 147
+      }
+    },
+    {
+      "episode_id": 490,
+      "target_id": 98,
+      "source": "scripted",
+      "transition_count": 86,
+      "source_rows": [
+        120062,
+        120148
+      ],
+      "valid_start_count": {
+        "10": 77
+      }
+    },
+    {
+      "episode_id": 491,
+      "target_id": 98,
+      "source": "oracle_ppo",
+      "transition_count": 149,
+      "source_rows": [
+        120149,
+        120298
+      ],
+      "valid_start_count": {
+        "10": 140
+      }
+    },
+    {
+      "episode_id": 492,
+      "target_id": 98,
+      "source": "pi7_ppo",
+      "transition_count": 276,
+      "source_rows": [
+        120299,
+        120575
+      ],
+      "valid_start_count": {
+        "10": 267
+      }
+    },
+    {
+      "episode_id": 493,
+      "target_id": 98,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        120576,
+        120950
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 494,
+      "target_id": 98,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        120951,
+        121325
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 495,
+      "target_id": 98,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        121326,
+        121700
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 496,
+      "target_id": 98,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        121701,
+        122075
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 497,
+      "target_id": 99,
+      "source": "scripted",
+      "transition_count": 80,
+      "source_rows": [
+        122076,
+        122156
+      ],
+      "valid_start_count": {
+        "10": 71
+      }
+    },
+    {
+      "episode_id": 498,
+      "target_id": 99,
+      "source": "oracle_ppo",
+      "transition_count": 101,
+      "source_rows": [
+        122157,
+        122258
+      ],
+      "valid_start_count": {
+        "10": 92
+      }
+    },
+    {
+      "episode_id": 499,
+      "target_id": 99,
+      "source": "pi7_ppo",
+      "transition_count": 77,
+      "source_rows": [
+        122259,
+        122336
+      ],
+      "valid_start_count": {
+        "10": 68
+      }
+    },
+    {
+      "episode_id": 500,
+      "target_id": 99,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        122337,
+        122711
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 501,
+      "target_id": 99,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        122712,
+        123086
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 502,
+      "target_id": 99,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        123087,
+        123461
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 503,
+      "target_id": 99,
+      "source": "alternating",
+      "transition_count": 315,
+      "source_rows": [
+        123462,
+        123777
+      ],
+      "valid_start_count": {
+        "10": 306
+      }
+    },
+    {
+      "episode_id": 504,
+      "target_id": 100,
+      "source": "scripted",
+      "transition_count": 193,
+      "source_rows": [
+        123778,
+        123971
+      ],
+      "valid_start_count": {
+        "10": 184
+      }
+    },
+    {
+      "episode_id": 505,
+      "target_id": 100,
+      "source": "oracle_ppo",
+      "transition_count": 210,
+      "source_rows": [
+        123972,
+        124182
+      ],
+      "valid_start_count": {
+        "10": 201
+      }
+    },
+    {
+      "episode_id": 506,
+      "target_id": 100,
+      "source": "pi7_ppo",
+      "transition_count": 287,
+      "source_rows": [
+        124183,
+        124470
+      ],
+      "valid_start_count": {
+        "10": 278
+      }
+    },
+    {
+      "episode_id": 507,
+      "target_id": 100,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        124471,
+        124845
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 508,
+      "target_id": 100,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        124846,
+        125220
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 509,
+      "target_id": 100,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        125221,
+        125595
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 510,
+      "target_id": 100,
+      "source": "alternating",
+      "transition_count": 147,
+      "source_rows": [
+        125596,
+        125743
+      ],
+      "valid_start_count": {
+        "10": 138
+      }
+    },
+    {
+      "episode_id": 511,
+      "target_id": 101,
+      "source": "scripted",
+      "transition_count": 191,
+      "source_rows": [
+        125744,
+        125935
+      ],
+      "valid_start_count": {
+        "10": 182
+      }
+    },
+    {
+      "episode_id": 512,
+      "target_id": 101,
+      "source": "oracle_ppo",
+      "transition_count": 146,
+      "source_rows": [
+        125936,
+        126082
+      ],
+      "valid_start_count": {
+        "10": 137
+      }
+    },
+    {
+      "episode_id": 513,
+      "target_id": 101,
+      "source": "pi7_ppo",
+      "transition_count": 163,
+      "source_rows": [
+        126083,
+        126246
+      ],
+      "valid_start_count": {
+        "10": 154
+      }
+    },
+    {
+      "episode_id": 514,
+      "target_id": 101,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        126247,
+        126621
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 515,
+      "target_id": 101,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        126622,
+        126996
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 516,
+      "target_id": 101,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        126997,
+        127371
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 517,
+      "target_id": 101,
+      "source": "alternating",
+      "transition_count": 240,
+      "source_rows": [
+        127372,
+        127612
+      ],
+      "valid_start_count": {
+        "10": 231
+      }
+    },
+    {
+      "episode_id": 518,
+      "target_id": 102,
+      "source": "scripted",
+      "transition_count": 89,
+      "source_rows": [
+        127613,
+        127702
+      ],
+      "valid_start_count": {
+        "10": 80
+      }
+    },
+    {
+      "episode_id": 519,
+      "target_id": 102,
+      "source": "oracle_ppo",
+      "transition_count": 120,
+      "source_rows": [
+        127703,
+        127823
+      ],
+      "valid_start_count": {
+        "10": 111
+      }
+    },
+    {
+      "episode_id": 520,
+      "target_id": 102,
+      "source": "pi7_ppo",
+      "transition_count": 91,
+      "source_rows": [
+        127824,
+        127915
+      ],
+      "valid_start_count": {
+        "10": 82
+      }
+    },
+    {
+      "episode_id": 521,
+      "target_id": 102,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        127916,
+        128290
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 522,
+      "target_id": 102,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        128291,
+        128665
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 523,
+      "target_id": 102,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        128666,
+        129040
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 524,
+      "target_id": 102,
+      "source": "alternating",
+      "transition_count": 188,
+      "source_rows": [
+        129041,
+        129229
+      ],
+      "valid_start_count": {
+        "10": 179
+      }
+    },
+    {
+      "episode_id": 525,
+      "target_id": 104,
+      "source": "scripted",
+      "transition_count": 191,
+      "source_rows": [
+        129230,
+        129421
+      ],
+      "valid_start_count": {
+        "10": 182
+      }
+    },
+    {
+      "episode_id": 526,
+      "target_id": 104,
+      "source": "oracle_ppo",
+      "transition_count": 167,
+      "source_rows": [
+        129422,
+        129589
+      ],
+      "valid_start_count": {
+        "10": 158
+      }
+    },
+    {
+      "episode_id": 527,
+      "target_id": 104,
+      "source": "pi7_ppo",
+      "transition_count": 372,
+      "source_rows": [
+        129590,
+        129962
+      ],
+      "valid_start_count": {
+        "10": 363
+      }
+    },
+    {
+      "episode_id": 528,
+      "target_id": 104,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        129963,
+        130337
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 529,
+      "target_id": 104,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        130338,
+        130712
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 530,
+      "target_id": 104,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        130713,
+        131087
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 531,
+      "target_id": 104,
+      "source": "alternating",
+      "transition_count": 309,
+      "source_rows": [
+        131088,
+        131397
+      ],
+      "valid_start_count": {
+        "10": 300
+      }
+    },
+    {
+      "episode_id": 532,
+      "target_id": 105,
+      "source": "scripted",
+      "transition_count": 189,
+      "source_rows": [
+        131398,
+        131587
+      ],
+      "valid_start_count": {
+        "10": 180
+      }
+    },
+    {
+      "episode_id": 533,
+      "target_id": 105,
+      "source": "oracle_ppo",
+      "transition_count": 142,
+      "source_rows": [
+        131588,
+        131730
+      ],
+      "valid_start_count": {
+        "10": 133
+      }
+    },
+    {
+      "episode_id": 534,
+      "target_id": 105,
+      "source": "pi7_ppo",
+      "transition_count": 200,
+      "source_rows": [
+        131731,
+        131931
+      ],
+      "valid_start_count": {
+        "10": 191
+      }
+    },
+    {
+      "episode_id": 535,
+      "target_id": 105,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        131932,
+        132306
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 536,
+      "target_id": 105,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        132307,
+        132681
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 537,
+      "target_id": 105,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        132682,
+        133056
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 538,
+      "target_id": 105,
+      "source": "alternating",
+      "transition_count": 335,
+      "source_rows": [
+        133057,
+        133392
+      ],
+      "valid_start_count": {
+        "10": 326
+      }
+    },
+    {
+      "episode_id": 539,
+      "target_id": 107,
+      "source": "scripted",
+      "transition_count": 193,
+      "source_rows": [
+        133393,
+        133586
+      ],
+      "valid_start_count": {
+        "10": 184
+      }
+    },
+    {
+      "episode_id": 540,
+      "target_id": 107,
+      "source": "oracle_ppo",
+      "transition_count": 154,
+      "source_rows": [
+        133587,
+        133741
+      ],
+      "valid_start_count": {
+        "10": 145
+      }
+    },
+    {
+      "episode_id": 541,
+      "target_id": 107,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        133742,
+        134116
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 542,
+      "target_id": 107,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        134117,
+        134491
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 543,
+      "target_id": 107,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        134492,
+        134866
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 544,
+      "target_id": 107,
+      "source": "random_held",
+      "transition_count": 309,
+      "source_rows": [
+        134867,
+        135176
+      ],
+      "valid_start_count": {
+        "10": 300
+      }
+    },
+    {
+      "episode_id": 545,
+      "target_id": 107,
+      "source": "alternating",
+      "transition_count": 151,
+      "source_rows": [
+        135177,
+        135328
+      ],
+      "valid_start_count": {
+        "10": 142
+      }
+    },
+    {
+      "episode_id": 546,
+      "target_id": 109,
+      "source": "scripted",
+      "transition_count": 191,
+      "source_rows": [
+        135329,
+        135520
+      ],
+      "valid_start_count": {
+        "10": 182
+      }
+    },
+    {
+      "episode_id": 547,
+      "target_id": 109,
+      "source": "oracle_ppo",
+      "transition_count": 139,
+      "source_rows": [
+        135521,
+        135660
+      ],
+      "valid_start_count": {
+        "10": 130
+      }
+    },
+    {
+      "episode_id": 548,
+      "target_id": 109,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        135661,
+        136035
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 549,
+      "target_id": 109,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        136036,
+        136410
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 550,
+      "target_id": 109,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        136411,
+        136785
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 551,
+      "target_id": 109,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        136786,
+        137160
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 552,
+      "target_id": 109,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        137161,
+        137535
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 553,
+      "target_id": 110,
+      "source": "scripted",
+      "transition_count": 192,
+      "source_rows": [
+        137536,
+        137728
+      ],
+      "valid_start_count": {
+        "10": 183
+      }
+    },
+    {
+      "episode_id": 554,
+      "target_id": 110,
+      "source": "oracle_ppo",
+      "transition_count": 177,
+      "source_rows": [
+        137729,
+        137906
+      ],
+      "valid_start_count": {
+        "10": 168
+      }
+    },
+    {
+      "episode_id": 555,
+      "target_id": 110,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        137907,
+        138281
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 556,
+      "target_id": 110,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        138282,
+        138656
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 557,
+      "target_id": 110,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        138657,
+        139031
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 558,
+      "target_id": 110,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        139032,
+        139406
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 559,
+      "target_id": 110,
+      "source": "alternating",
+      "transition_count": 273,
+      "source_rows": [
+        139407,
+        139680
+      ],
+      "valid_start_count": {
+        "10": 264
+      }
+    },
+    {
+      "episode_id": 560,
+      "target_id": 111,
+      "source": "scripted",
+      "transition_count": 191,
+      "source_rows": [
+        139681,
+        139872
+      ],
+      "valid_start_count": {
+        "10": 182
+      }
+    },
+    {
+      "episode_id": 561,
+      "target_id": 111,
+      "source": "oracle_ppo",
+      "transition_count": 159,
+      "source_rows": [
+        139873,
+        140032
+      ],
+      "valid_start_count": {
+        "10": 150
+      }
+    },
+    {
+      "episode_id": 562,
+      "target_id": 111,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        140033,
+        140407
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 563,
+      "target_id": 111,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        140408,
+        140782
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 564,
+      "target_id": 111,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        140783,
+        141157
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 565,
+      "target_id": 111,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        141158,
+        141532
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 566,
+      "target_id": 111,
+      "source": "alternating",
+      "transition_count": 268,
+      "source_rows": [
+        141533,
+        141801
+      ],
+      "valid_start_count": {
+        "10": 259
+      }
+    },
+    {
+      "episode_id": 567,
+      "target_id": 113,
+      "source": "scripted",
+      "transition_count": 80,
+      "source_rows": [
+        141802,
+        141882
+      ],
+      "valid_start_count": {
+        "10": 71
+      }
+    },
+    {
+      "episode_id": 568,
+      "target_id": 113,
+      "source": "oracle_ppo",
+      "transition_count": 86,
+      "source_rows": [
+        141883,
+        141969
+      ],
+      "valid_start_count": {
+        "10": 77
+      }
+    },
+    {
+      "episode_id": 569,
+      "target_id": 113,
+      "source": "pi7_ppo",
+      "transition_count": 77,
+      "source_rows": [
+        141970,
+        142047
+      ],
+      "valid_start_count": {
+        "10": 68
+      }
+    },
+    {
+      "episode_id": 570,
+      "target_id": 113,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        142048,
+        142422
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 571,
+      "target_id": 113,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        142423,
+        142797
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 572,
+      "target_id": 113,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        142798,
+        143172
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 573,
+      "target_id": 113,
+      "source": "alternating",
+      "transition_count": 121,
+      "source_rows": [
+        143173,
+        143294
+      ],
+      "valid_start_count": {
+        "10": 112
+      }
+    },
+    {
+      "episode_id": 574,
+      "target_id": 114,
+      "source": "scripted",
+      "transition_count": 90,
+      "source_rows": [
+        143295,
+        143385
+      ],
+      "valid_start_count": {
+        "10": 81
+      }
+    },
+    {
+      "episode_id": 575,
+      "target_id": 114,
+      "source": "oracle_ppo",
+      "transition_count": 135,
+      "source_rows": [
+        143386,
+        143521
+      ],
+      "valid_start_count": {
+        "10": 126
+      }
+    },
+    {
+      "episode_id": 576,
+      "target_id": 114,
+      "source": "pi7_ppo",
+      "transition_count": 374,
+      "source_rows": [
+        143522,
+        143896
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 577,
+      "target_id": 114,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        143897,
+        144271
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 578,
+      "target_id": 114,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        144272,
+        144646
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 579,
+      "target_id": 114,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        144647,
+        145021
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 580,
+      "target_id": 114,
+      "source": "alternating",
+      "transition_count": 194,
+      "source_rows": [
+        145022,
+        145216
+      ],
+      "valid_start_count": {
+        "10": 185
+      }
+    },
+    {
+      "episode_id": 581,
+      "target_id": 117,
+      "source": "scripted",
+      "transition_count": 85,
+      "source_rows": [
+        145217,
+        145302
+      ],
+      "valid_start_count": {
+        "10": 76
+      }
+    },
+    {
+      "episode_id": 582,
+      "target_id": 117,
+      "source": "oracle_ppo",
+      "transition_count": 136,
+      "source_rows": [
+        145303,
+        145439
+      ],
+      "valid_start_count": {
+        "10": 127
+      }
+    },
+    {
+      "episode_id": 583,
+      "target_id": 117,
+      "source": "pi7_ppo",
+      "transition_count": 278,
+      "source_rows": [
+        145440,
+        145718
+      ],
+      "valid_start_count": {
+        "10": 269
+      }
+    },
+    {
+      "episode_id": 584,
+      "target_id": 117,
+      "source": "zero",
+      "transition_count": 374,
+      "source_rows": [
+        145719,
+        146093
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 585,
+      "target_id": 117,
+      "source": "random_iid",
+      "transition_count": 374,
+      "source_rows": [
+        146094,
+        146468
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 586,
+      "target_id": 117,
+      "source": "random_held",
+      "transition_count": 374,
+      "source_rows": [
+        146469,
+        146843
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    },
+    {
+      "episode_id": 587,
+      "target_id": 117,
+      "source": "alternating",
+      "transition_count": 374,
+      "source_rows": [
+        146844,
+        147218
+      ],
+      "valid_start_count": {
+        "10": 365
+      }
+    }
+  ],
+  "window_counts": {
+    "10": 141339
+  },
+  "split": "train",
+  "dataset_split_sha256": "830b76b8b460aed9f2254121782f71461972d544757d5ba140777548e3599ff7",
+  "manifest_sha256": "864b256ffdc02e802d45b2fb0620f56d7d4b7597b0c4273c2706927f95ac88e1"
+}
