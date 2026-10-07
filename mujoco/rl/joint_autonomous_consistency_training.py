@@ -1,4 +1,5 @@
 """v3: unchanged v1 observation path plus autonomous (NOT local) consistency."""
+import hashlib
 import random
 import time
 from pathlib import Path
@@ -99,8 +100,9 @@ def load_autonomous(path):
 
 
 def train_autonomous(model, train, val, stats, scale, config, path):
-    if config['horizon'] != 10 or config['seed'] != 0 or config['learning_rate'] != .0003:
-        raise ValueError('fixed K10 seed0 lr.0003 only')
+    if (config['horizon'] != 10 or type(config['seed']) is not int or
+            config['seed'] not in range(5) or config['learning_rate'] != .0003):
+        raise ValueError('fixed K10 seeds0..4 lr.0003 only')
     seed = config['seed']; random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
     torch.set_num_threads(1); torch.use_deterministic_algorithms(True)
     model.requires_grad_(True); before = component_hashes(model)
@@ -147,6 +149,7 @@ def train_autonomous(model, train, val, stats, scale, config, path):
         row = dict(epoch=epoch,
             train=dict(observation=float(a[0]), consistency=float(a[1]), weighted_consistency=float(LAMBDA*a[1]), total=float(a[2])),
             validation=valid, windows_used=count,
+            episode_order_sha256=hashlib.sha256(order.astype('<i8').tobytes()).hexdigest(),
             gradient_norms={k: dict(mean=float(np.mean(v)), max=max(v)) for k, v in norms.items()},
             objective_gradient_diagnostics={k: dict(weighted_consistency_norm=float(np.mean([t[0] for t in v])),
                 observation_norm=float(np.mean([t[1] for t in v])), mean_consistency_to_observation_ratio=float(np.mean([t[2] for t in v])),
@@ -171,6 +174,6 @@ def train_autonomous(model, train, val, stats, scale, config, path):
         parameter_hashes_before=before, parameter_hashes_best=after, parameter_count=sum(p.numel() for p in model.parameters()),
         architecture={k: repr(getattr(model, k)) for k in before}, elapsed_seconds=time.monotonic()-started,
         optimizer='same v1 Adam defaults lr=.0003 betas=.9/.999 eps1e-8; no clipping',
-        order_rule='same default_rng(seed0) complete-episode permutations/all legalK10 starts/16episodes per batch',
+        order_rule=f'same default_rng(seed={seed}) complete-episode permutations/all legalK10 starts/per episode batch',
         objective_gradient_rule='all minibatches: weighted autonomous-consistency via autograd.grad; total via loss.backward; observation=total-consistency (FP roundoff); diagnostic only',
         consistency_kind='autonomous multi-step only; no local term; fixed detached current-Encoder reference targets')

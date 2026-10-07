@@ -1,4 +1,5 @@
 """Joint E/T/D supervised training: equal k0..10 decoded observation loss."""
+import hashlib
 import random
 import time
 
@@ -93,6 +94,7 @@ def train_joint(model,train,val,stats,config,path):
         if not count: raise ValueError('no training windows')
         validation=validation_loss(model,val,stats,config['horizon'],config['batch_size'])
         row=dict(epoch=epoch,train_loss=total/count,validation_loss=validation,windows_used=count,
+                 episode_order_sha256=hashlib.sha256(order.astype('<i8').tobytes()).hexdigest(),
                  gradient_norms={k:dict(mean=float(np.mean(v)),max=max(v)) for k,v in norms.items()},**maxima)
         history.append(row)
         if validation<best:
@@ -109,5 +111,5 @@ def train_joint(model,train,val,stats,config,path):
         architecture={k:repr(getattr(model,k)) for k in before},elapsed_seconds=time.monotonic()-started,
         optimizer='joint Adam defaults lr=.0003 betas=.9/.999 eps=1e-8; no clipping',
         loss='uniform mean allwindows,k0..10,7dimensions normalized observation MSE; no latent teacher/auxiliary loss',
-        order_rule='default_rng(seed0).permutation(Train complete episodes); all legal K10 starts per16episodebatch',
+        order_rule=f'default_rng(seed={seed}).permutation(Train complete episodes); all legal K10 starts per episode batch',
         backpropagation='full causal prefix and10step latent recursion; no detach, no future input or decoder feedback')

@@ -327,3 +327,35 @@ Limitations: Single seed, nominal simulation, recorded actions, fixedlambda, mov
 Artifacts: `mujoco/reports/joint_latent_autonomous_consistency_v3_seed0.json`; best `joint_latent_world_model_v3_autonomous_consistency.pt` (305765bytes); own-Train statistics/hash JSON;13required PNGs;4modules/2test modules; `mujoco/rl/JOINT_LATENT_AUTONOMOUS_CONSISTENCY_V3.md`. Existing scale/manifests reused by hash. RawNPZ/latents/cache/logs remain local/ignored; no intermediate checkpoints or raw rollout arrays saved; historical untracked experiments preserved.
 
 Next: Only recommend an independently authorized multi-seed replication of the fixed v1-vs-v3 contrast, with no new consistency forms or lambda/K sweep. Stop consistency-family expansion; do not execute another experiment, replace baselines automatically, or start RSSM/Dreamer/planning/PPO.
+
+## 2026-10-07 — Joint v1 vs v3 Multi-Seed Replication
+
+Branch: `feat/joint-v1-v3-multiseed`; base `feat/joint-autonomous-consistency-v3` at `fa357af3c1a9fc0f24e635e1b073b180bdca4b64`.
+
+Research Question: Does the long-horizon benefit of autonomous latent-consistency training replicate across multiple paired joint-training seeds?
+
+Setup:
+
+- Paired seeds0–4; seed0 reused unchanged, eight new v1/v3 runs for seeds1–4. **Joint-training seed replication only**, not full end-to-end/random-initialization replication. All start from the same fixed pre-joint E/T/D checkpoints and component hashes.
+- Same74119parameter architecture, dataset/splits/normalization/manifests; Train/Val141339/29542K10windows, Test32296/31792/31162/29272/26122H1/5/10/25/50windows.
+- Adam.0003,16complete episodes/batch,K10,60epochs,no new clipping. Actual epoch-order hashes identical within each new pair; seed0 order hashes reconstructed and labelled accordingly. No upstream training, v2 condition or new sweep.
+- v1 Lobs only; v3 Lobs+.1Lauto with detached online encoder reference, no local term. Both selected only by Validation Lobs; paired best epochs60/59/58/51/60.
+
+Key Results:
+
+- H25 mean±sampleSD v1 .235221±.004865, v3 .200931±.002534; paired deltas[.029438,.033250,.033062,.032314,.043384], mean.034290±.005309; wins5/5. Paired percentage improvement14.55±1.96%.
+- H50 v1 .531082±.025303 (median.527100,range.505980–.567516), v3 .305755±.006403 (median.308050,range.297185–.313745); paired deltas[.202618,.208794,.253771,.219043,.242409], mean.225327±.021962; wins5/5. Per-seed improvements39.68/41.27/44.72/41.56/44.55%, mean42.35±2.20%. Improvement from group means42.43%is a different aggregation.
+- H1/H5/H10 v3 worsens5/5 by1.20–1.70%/.31–1.02%/.27–1.82%; stable small short-horizon trade-off. Current reconstruction improves slightly5/5: .038386±.000491→.038167±.000506.
+- H50 horizontal velocity .333208±.020359→.188546±.004836m/s; yaw .161008±.019745→.061557±.006383rad; both improve5/5.
+- Never−C1 correction gap .484969±.025287→.259062±.006228, mean paired reduction46.50%; never−C10 .421379±.025056→.195025±.005994,53.63%; both shrink5/5. Full C1/5/10/25/never curves retained for every seed.
+- H50 within-model mean native discrepancy .752141→.358191, cosine .881170→.976304; coordinate caveat applies. Every Train/Test latent has0near-zero dimensions; effective ranks v1≈12.05–12.42,v3≈11.73–12.12. No failed/abnormal/replaced seed, NaN/Inf/explosion or collapse warning; no heavy extra audit triggered.
+- Related13tests pass. Final full local suite with read-only historical Git fixture:430passed/0failed/4explicit GUI/absent-legacy-source skips (434total); no new algorithm skip. Seven final figures visually checked; core read-only review approved.
+- Independent saved-model verifier passes: seed0 archived metrics, all new Validation-best Train/Val losses, recorded histories/orders, frozen Test metrics, hashes and paired statistics reproduce without an optimizer.
+
+Conclusion: V3 receives preliminary paired five-training-seed support for long-horizon prediction with fixed upstream initialization. Establish the v3 formulation as the current deterministic latent dynamics baseline, retaining existing seed0 as reference rather than selecting the Test-best seed. This is not overall dominance at all horizons. Formally stop the deterministic consistency-objective family; no additional loss/K/lambda/EMA experiment is run.
+
+Limitations: Same upstream pretrained initialization, only joint-training seeds, n=5, nominal simulation, overlapping windows, recorded actions, fixedλ/K/budget and moving online targets; no policy/planning evaluation or statistical-significance claim. Best-at-cap is not proof of convergence.
+
+Artifacts: `mujoco/reports/joint_v1_v3_multiseed_replication.json`; eight small Validation-best models `joint_v1_seed{1..4}.pt` and `joint_v3_autonomous_consistency_seed{1..4}.pt`; seven required figures; runner/evaluation/plot code and tests; `mujoco/rl/JOINT_V1_V3_MULTISEED_REPLICATION.md`. Existing manifests/statistics referenced by hash. Raw arrays, per-branch report fragments, logs/cache remain local/ignored; original untracked diagnostics preserved.
+
+Next: Only recommend paired end-to-end replication across independently pretrained upstream initializations; do not execute it or start any next experiment here.
