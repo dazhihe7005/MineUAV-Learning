@@ -294,3 +294,36 @@ Limitations: Single seed, nominal simulation, recorded actions, fixedlambda, mov
 Artifacts: `mujoco/reports/joint_latent_consistency_v2_seed0.json`; best `joint_latent_world_model_v2_consistency.pt` (305395bytes); initial/post-trained Train statistics/hash JSON;12requested PNGs;4modules/2test modules; `mujoco/rl/JOINT_LATENT_CONSISTENCY_V2.md`. Original manifests reused; raw arrays/NPZ/cache/logs remain local/ignored, no intermediate epoch models or large rollout traces saved.
 
 Next: Only recommend a separately authorized objective-matched autonomous multi-step latent-consistency control. Do not execute it, sweep lambda, create a next branch, or start RSSM/Dreamer/planning/PPO.
+
+## 2026-10-07 — Autonomous Multi-Step Latent Consistency
+
+Branch: `feat/joint-autonomous-consistency-v3`; base `feat/joint-latent-consistency-v2` at `ad3e13c95bbdbebdc97738c99747c81b89901169`.
+
+Research Question: Does directly aligning autonomous latent rollouts with future encoder-reference states reduce long-horizon composition drift?
+
+Setup:
+
+- Same pre-joint E/T/D checkpoint initialization/hashes and74119parameter architecture as v1/v2; no baseline retraining or fine-tuning from their best models.
+- Original `pi_hidden_state_seed0`,84/18/18target groups,588/126/126episodes; exact Train/Val141339/29542K10windows and original Test manifest/normalization reused.
+- Same seed0/Adam.0003/16episode batches/60epochs, original uniform k0..10 observation loss. Add only .1×K10autonomous consistency using composed latent states and detached real-history Encoder references; no local consistency loss.
+- Fixed v2 initial Train latent std; fullBPTT/sourceE+T gradients, D no direct auxiliary gradient. Best by Validation Lobs only, epoch60. Test values opened after selection.
+
+Key Results:
+
+- Fixed selected-model Train/Val Lobs .002664117/.005034969,Lauto .006454096/.007723126,Ltotal .003309526/.005807282. Whole-run weighted-auto/obs gradient norm ratios E/T/D .058415/.050797/0; no minibatch auxiliary dominance.
+- Current reconstruction .038199 vs v1 .038286, essentially preserved. Local native Train-scale RMSE .048581,meanL2 .042709,cos .999355; relative residual median .441244. Native coordinate/near-stationary denominator caveats apply.
+- v3 H1/5/10/25/50 observation RMSE .044057/.071549/.104600/.201413/.308050. Relative to v1, short horizons worsen1.70/1.02/1.82%; H25/H50 improve12.75%/39.68%. H50 improves45.39%vs v2 but remains27.13%worse than DirectK10.
+- Autonomous native latent RMSE .048581/.106817/.147791/.247459/.356615; cosine .999355/.997659/.995819/.988820/.976299. Different learned geometries are not cross-model physical quantities.
+- H50C1/5/10/25/never RMSE .046858/.076610/.111145/.209165/.308050; never−C1gap .261191 vs v1 .464503 (−43.77%). No endpoint correction; identical26122H50cohort.
+- Own-Train H50 predicted/reference MahalanobisRMS .754693/.837605,PCAresidual .202782/.233190. No increasing off-distribution proxy departure, but smaller predicted scores may reflect contraction, not exact state agreement.
+- H50 horizontal velocity .187326m/s (−41.09%vs v1),yaw .070760rad (−54.65%). H50all distance/PI/action groups improve; large PI still .466219. Decoder empirical ratio grows .649475→1.891351 while decoded H50 deviation falls to .582185; do not infer intrinsic decoder robustness from native-coordinate ratios.
+- Train/Test effective ranks11.961706/11.738051,0near-zero-std dimensions; no collapse/NaN/Inf/explosion. All3best hashes changed; source hashes unchanged; future-target perturbation changes loss, not prediction.
+- Independent selected-model verifier passes,13figures visually checked,9new tests pass. Full tracked+new suite349passed/0failed/1optionalX11skip. Read-only review verifier/doc fixes did not alter formal training logic.
+
+Conclusion: Qualified positive controlled result: autonomous multi-step consistency reduces long-horizon composition error where local consistency v2 did not, without the v2 reconstruction regression. Deterministic state-space formulation remains promising, but short-horizon trade-off and the gap to DirectK10 remain. No unique root cause or multi-seed robustness established.
+
+Limitations: Single seed, nominal simulation, recorded actions, fixedlambda, moving online encoder targets, K10training horizon, overlapping windows, learned-coordinate changes/distribution proxies, no planning/policy evaluation. Best epoch at60is not proof of convergence. Historical gradients are logged, not replayed.
+
+Artifacts: `mujoco/reports/joint_latent_autonomous_consistency_v3_seed0.json`; best `joint_latent_world_model_v3_autonomous_consistency.pt` (305765bytes); own-Train statistics/hash JSON;13required PNGs;4modules/2test modules; `mujoco/rl/JOINT_LATENT_AUTONOMOUS_CONSISTENCY_V3.md`. Existing scale/manifests reused by hash. RawNPZ/latents/cache/logs remain local/ignored; no intermediate checkpoints or raw rollout arrays saved; historical untracked experiments preserved.
+
+Next: Only recommend an independently authorized multi-seed replication of the fixed v1-vs-v3 contrast, with no new consistency forms or lambda/K sweep. Stop consistency-family expansion; do not execute another experiment, replace baselines automatically, or start RSSM/Dreamer/planning/PPO.
