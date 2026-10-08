@@ -1,0 +1,30 @@
+{
+  "name": "Train central-95% support proxy",
+  "split": "train",
+  "count": 147219,
+  "lower": [
+    -0.8820207834243774,
+    -0.8766989707946777,
+    -0.888065755367279,
+    -0.9250337779521942
+  ],
+  "upper": [
+    0.8821067661046953,
+    0.8859273791313171,
+    0.8921637535095215,
+    0.9251185059547424
+  ],
+  "quantiles": [
+    0.025,
+    0.975
+  ],
+  "quantile_method": "NumPy linear",
+  "source": "/home/keyousuke/MineUAV-Learning/mujoco/rl/datasets/pi_hidden_state_seed0/train.npz",
+  "source_sha256": "830b76b8b460aed9f2254121782f71461972d544757d5ba140777548e3599ff7",
+  "actions_sha256": "2a9c7f2230ee2738ed8f5307096a98e29ecd68fe9cf0ac54b1c0332f9303673c",
+  "sample_rule": "ALL executed Train commands including terminal unpaired commands; no Val/Test/benchmark/holdout",
+  "units": "normalized environment command",
+  "tolerance": 1e-07,
+  "caveat": "per-dimension central95% box; NOT complete in-distribution manifold or strict OOD boundary",
+  "sha256": "fd137e5a27b98d831fafab39216579b641a2749f38d7e7d108f84956ac61dbde"
+}

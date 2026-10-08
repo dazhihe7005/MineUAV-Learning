@@ -389,3 +389,33 @@ Limitations: Single planner configuration, nominal simulation, recorded-action m
 Artifacts: `mujoco/reports/latent_random_shooting_mpc_seed0.json` (includes complete target manifest and source hashes); planner/evaluation/runner/read-only verification/plot code,3test modules,8requested figures; `mujoco/rl/LATENT_RANDOM_SHOOTING_MPC.md`. Existing model/dataset unchanged. Raw candidate arrays are not saved;6fixed-episode traces,2aggregate arrays and condition fragments stay local/ignored. Historical untracked experiments preserved.
 
 Next: Only recommend a separately authorized paired Train-supported-action constraint control, holding frozen model/N/H/cost fixed versus current environment-bound sampling, to test action-support departure. Do not execute here or train/tune any model/planner.
+
+## 2026-10-08 — Train-Supported Latent MPC Control
+
+Branch: `feat/latent-mpc-action-support`; base `feat/latent-random-shooting-mpc` at `7d360778a0e401a091c77811a78968805e813154`.
+
+Research Question: Does constraining random-shooting MPC to the action support observed in training reduce model exploitation and improve closed-loop waypoint control?
+
+Setup:
+
+- Frozen canonical v3seed0, N512/H10, original cost/noise/normalization/replanning/task/PI. Only intervention: per-step env clipping followed by central95% Train action-box projection, including anchors.
+- Full147219executed Train commands determine bounds; original model's146631paired-row action std remains the noise scale. Box is a coarse support proxy, not joint state-action/sequence support.
+- Both conditions rerun on100benchmark+100holdout; original episode RNG/fixeddraws preserve paired rawnoise without redefining baseline.200initial state/latent pairs and38083common decision noise hashes agree; later states diverge.
+
+Key Results:
+
+- UN success0/100benchmark,1/100holdout exactly reproduces prior scientific summaries; Supported0/100both. Finaldistance4.203→3.988benchmark,4.386→4.536holdout. Physicalfailures153→130, timeouts46→70, no task recovery.
+- Selected-action proxy departure85.98%→0%; standardizednorm3.445→3.075. Saturation39.15/40.24%→0%mechanically, because bounds<.95. Near-target command1.760/1.654→1.579/1.548m/s remains high; actual .818/.408→.796/.447m/s.
+- Supported projection56.2–56.6%candidate timesteps; L2mean≈.054,p95≈.144;0anchor projections. Selected boundary-element mass≈33%, but unique firstactions≈99.4%, no global candidate-set collapse.
+- Fixed-rule prefix H1/H10: benchmark .2224/1.2212→.2839/.4922, holdout .2508/.4107→.7207/1.2050, with26/32and11/37windows. Common-available identities21benchmark/11holdout: .1835/.4276→.2355/.5148 and .2508/.4107→.2069/.3011. Mixed, not stable validity improvement; state/window/yaw-wrap caveats.
+- First selectedaction changes15.5%; target xyz correlations .182/.051/.284→.190/.073/.348 remain weak. First selectedcost1.1022→1.1135; both firstcommands already within box.
+- CPU planningmean6.356→6.613ms, full decision6.742→7.289ms, allobserved<40ms.16new/31related tests pass; full461passed/0failed/4known skips (465run), read-only historical Git fixture. Independent verifier400cohorts/106prefix windows/supportquantiles/frozenhashes passes;8figures visuallychecked.
+- Fresh review found an executable-forward/checkpoint-loader cache dependency omission; fixed with a RED→GREEN regression. Preserved old fragments locally and reran the identical400protocol instead of relabelling caches: scientific summaries, action/cost/noise/projection arrays and106prefix forecasts bit-identical, only latency remeasured. Deferred minors: projected-only histogram/count tolerance-edge populations differ (published median/p95 unchanged), and verifier does not itself cover every derived summary (fresh reviewer independently checked current values).
+
+Conclusion: Negative task-control result. Central95%action projection eliminates defined departure and changes aggressive-failure mix but does not restore success or consistent prediction validity; not specific causal support for action OOD/model exploitation as the sufficient/unique mechanism. Stop MPC parameter tuning.
+
+Limitations: Central95%box is only a marginal support proxy; nominal MuJoCo, fixed cost/H/N/std, single canonicalmodel, diverging closed-loop visitation, small fixed prediction subset/termination-based commonwindows, ordinary yaw wrap, diagnostic CPU timing, no CEM/MPPI.
+
+Artifacts: `mujoco/reports/latent_mpc_train_supported_action_control_seed0.json`; `train_action_support_central95.json`; planner/evaluation/runner/verifier/plot code and3new testmodules;8requested PNGs; `mujoco/rl/LATENT_MPC_TRAIN_SUPPORTED_ACTION_CONTROL.md`. Raw12episode traces/4aggregate arrays/noise hashes/condition fragments remain local/ignored; dataset/model unchanged and historical untracked files preserved.
+
+Next: Only recommend an offline action-sequence ranking/decision-cost fidelity benchmark under identical executed sequences, same frozen model and cost. Not executed; no further support/N/H/std/cost sweep or stronger MPC method.

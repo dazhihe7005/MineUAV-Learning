@@ -79,7 +79,7 @@ class RandomShootingMPC:
         if z.shape!=(1,64) or not torch.isfinite(z).all(): raise ValueError('finite current inferred latent1x64 required')
         if self.device.type=='cuda': torch.cuda.synchronize(self.device)
         started=time.perf_counter()
-        candidates=sample_candidates(previous_action,self.statistics['action']['std'],self.low,self.high,self.rng)
+        candidates=self.make_candidates(previous_action)
         actions=torch.from_numpy(candidates).to(self.device)
         current=z.expand(N_CANDIDATES,-1)
         normalized=(actions-self.action_mean)/self.action_std
@@ -96,3 +96,7 @@ class RandomShootingMPC:
                     selected_cost=float(costs[index]),candidate_cost_min=float(costs.min()),
                     candidate_cost_median=float(np.median(costs)),candidate_cost_mean=float(costs.mean()),
                     planning_seconds=elapsed)
+
+    def make_candidates(self,previous_action):
+        # Default remains the original sampler; interventions override ONLY this.
+        return sample_candidates(previous_action,self.statistics['action']['std'],self.low,self.high,self.rng)
