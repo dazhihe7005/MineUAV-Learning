@@ -419,3 +419,31 @@ Limitations: Central95%box is only a marginal support proxy; nominal MuJoCo, fix
 Artifacts: `mujoco/reports/latent_mpc_train_supported_action_control_seed0.json`; `train_action_support_central95.json`; planner/evaluation/runner/verifier/plot code and3new testmodules;8requested PNGs; `mujoco/rl/LATENT_MPC_TRAIN_SUPPORTED_ACTION_CONTROL.md`. Raw12episode traces/4aggregate arrays/noise hashes/condition fragments remain local/ignored; dataset/model unchanged and historical untracked files preserved.
 
 Next: Only recommend an offline action-sequence ranking/decision-cost fidelity benchmark under identical executed sequences, same frozen model and cost. Not executed; no further support/N/H/std/cost sweep or stronger MPC method.
+
+## 2026-10-08 — World Model Decision-Cost Fidelity Audit
+
+Branch: `feat/world-model-decision-cost-fidelity`; base `feat/latent-mpc-action-support` at `d565cb8f3f85dccef1da4d5a9f713cf2f4142433`.
+
+Research Question: Does the frozen deterministic world model correctly rank the same candidate action sequences used by the failed MPC controller, and are the candidate set and fixed planning cost themselves capable of supporting useful decisions?
+
+Setup:
+
+- Frozen canonical v3seed0; N512/H10, original noise/cost/support/task/PI and100benchmark+100holdout first-decision states. No training/new closed-loop controller or MPC tuning.
+- Old raw candidate/snapshot arrays were not archived: deterministic immutable-source reset/sampler reconstruction verifies all200 saved initial obs/latent/noise/action/index/min/median/mean cost signals. New candidate/snapshot hashes disclosed, not invented historical hashes.
+- Full MjData and Python PI/yaw/allocator/task/RNG/previous-action snapshot restore per candidate;204800 MuJoCo candidate rollouts plus200 scripted10step references. Exact same actions to frozen pure latent model; scripted not injected into candidate set. No failure penalty added.
+
+Key Results:
+
+- All200 mean UN/S Spearman .616810/.602238, Kendall .454052/.442741. Model normalized regret .127614/.140823 vs analytic random .252689/.275561; model beats random expectation187/200 and186/200. Exact Top1 both7/200; predicted-best in trueTop5 15/200 and19/200. Selected true median rank26.22%/25.05%;35/34states in worse half.
+- True-cost best candidate improves distance193/200 both, mean .011286/.011131m, zero physical failures; model .003297/.003421m with123/127positive-progress states. Scripted .005400m, .060778m/s terminalspeed,200positive-progress states. These small0.4s gains do not prove oracle closed-loop success.
+- Scripted true median cost percentile .1953% both, beats99.56%/99.53% on average and every candidate78/200; better than model selected189/200. Predicted percentile median11.91%/11.33%, only1/0predicted wins over all candidates. Candidate oracle beats scripted122/200, tiny mean cost gap .0027/.0029: coverage incomplete, not uniformly bad candidates.
+- True cost aligns with H10 distance/speed (meanrho .507/.776 UN, .542/.751 S). Whole-set H10 NRMSE .1763/.1755; selected .2004/.1965. Error correlates negatively withrho and positively with regret; small-margin ties are not the sole ranking issue. Cost prediction is optimistic (mean bias≈−1.467), distinct from partial useful ranking.
+- Allcheckpoint/E/T/D/source hashes unchanged, allcandidate sets and endpoint costs independently verified; no failures/invalid/earlyterminations in this cohort. Ten figures;21new regression tests, complete derived-statistic tamper checks and exact physics replays. Full filesystem tests482passed/0failed/4knownskips (486run), unchanged read-only historical Git fixture. Sole fresh review's undefined paired-correlation edge case fixed RED→GREEN; allactual scientific values unchanged, no deferred issues.
+
+Conclusion: Partial first-decision decision utility, but poor best-tail ranking/scripted-quality recognition; central95%action support does not repair it. Proposal coverage is incomplete, yet oracle candidates generally progress and true cost ranks scripted well. First-decision evidence does not uniquely explain subsequent near-total closed-loop failure or establish cost-horizon/replanning causality. Do not change MPC from this audit.
+
+Limitations: First-decision offline audit only, fixed H10/candidate sets/cost, nominal MuJoCo, original raw firstarrays unavailable (explicit reconstructed evidence), no oracle closed-loop/control modification, no causal uniqueness claim.
+
+Artifacts: `mujoco/reports/world_model_decision_cost_fidelity_seed0.json`; `decision_cost_fidelity_manifest_seed0.json`; diagnostic/runner/verifier/postprocessing/plot code,7testmodules,10requiredfigures; `mujoco/rl/WORLD_MODEL_DECISION_COST_FIDELITY.md`. ~36MB local cost/endpoint/perstate fragments ignored; no raw candidate trajectories/dataset/model copies committed. Historical untracked experiments preserved.
+
+Next: Only recommend reusing saved failed MPC trajectories for an exact-state later-decision offline ranking audit under unchanged candidate/cost, testing receding-horizon state-distribution shift. Not executed.
