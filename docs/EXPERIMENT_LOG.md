@@ -359,3 +359,33 @@ Limitations: Same upstream pretrained initialization, only joint-training seeds,
 Artifacts: `mujoco/reports/joint_v1_v3_multiseed_replication.json`; eight small Validation-best models `joint_v1_seed{1..4}.pt` and `joint_v3_autonomous_consistency_seed{1..4}.pt`; seven required figures; runner/evaluation/plot code and tests; `mujoco/rl/JOINT_V1_V3_MULTISEED_REPLICATION.md`. Existing manifests/statistics referenced by hash. Raw arrays, per-branch report fragments, logs/cache remain local/ignored; original untracked diagnostics preserved.
 
 Next: Only recommend paired end-to-end replication across independently pretrained upstream initializations; do not execute it or start any next experiment here.
+
+## 2026-10-08 — Latent Random-Shooting MPC
+
+Branch: `feat/latent-random-shooting-mpc`; base `feat/joint-v1-v3-multiseed` at `e3ce35a0c736b3332c70dddd9c7d03cc20627b0d`.
+
+Research Question: Can the frozen deterministic latent dynamics model support useful model-based action selection in closed-loop waypoint control?
+
+Setup:
+
+- Fixed v3 seed0, unchanged E/T/D and checkpoint/module hashes, no training of models/policies/reward. No Test-best seed selection.
+- Random shooting512candidates/H10, bounded Gaussian random walk with0.5×Train action std, explicit zero/repeat-last candidates; pure latent transitions, real-history E updated each real step, only first action executed.
+- Hand-designed physical terminal error/speed/yaw cost plus normalized-command smoothness weights1/.5/.1/.05. No cost/N/H tuning or alternative planner.
+- Unchanged nominal PI waypoint RewardV2 environment, success hold5steps and15s timeout. Archived100benchmark+100holdout seeds/coordinates for zero/scripted/MPC (600episodes total).
+
+Key Results:
+
+- Success benchmark/holdout: zero0/0, scripted100/100, latentMPC0/1 (each denominator100). Final distance1.568/1.530 vs .07144/.06874 vs4.203/4.386m. MPC153physical failures,46timeouts,1success.
+- MPC near-target actual/command speed .818/1.760 and .408/1.654m/s, only29/81near-target steps; crossing11%/9%, command-element saturation39.15%/40.24%. Low crossing is not stable stopping evidence. MPC completion1.24s comes from only1success; scripted5.538/5.813s comes from100successes/split.
+- CPU Ryzen9 7940HX, one Torch thread,44229decisions: planning mean/median/p95/max6.535/6.494/6.765/13.422ms; including E6.704/6.654/6.991/14.445ms. All measured decisions below40ms, no real-time OS guarantee. Final same-protocol rerun reproduces all six scientific cohort summaries exactly.
+- Selected actions outside at least one per-axis central Train95% interval85.96%, outside elements45.35%, mean standardized norm3.445. Actions highly variable, not a constant/scripted equivalent; first-command target correlations x/y/z .182/.051/.284 are weak.
+- First3fixed episodes/split,37realized-action-prefix windows: normalized forecast H1/H10 .2224/1.2212benchmark and .2508/.4107holdout. These compare actual action prefixes, not the original candidate sequence; yaw branch cuts can inflate ordinary RMSE.
+-15new tests pass; independent read-only verifier reproduces target/count/summary/hash/timing/OOD/forecast data and future-observation perturbation leaves predictions bit-identical. Full filesystem suite with the unchanged read-only historical Git fixture:445passed/0failed/4explicit GUI-or-absent-legacy-source skips (449run). Eight final figures visually checked. Fresh read-only review found2integrity issues (cohort completeness/count and cache environment/runtime provenance), fixed with RED→GREEN regressions; same-protocol evaluation repeated without any model/control-path change.
+
+Conclusion: Negative decision-usefulness result for this fixed planner: good recorded-data prediction and fast runtime do not translate into safe/useful action selection here. Action-support departure and prediction mismatch are compatible with OOD/model-exploitation risk, but do not isolate it from cost/horizon/candidate coverage/state OOD. Do not promote this MPC or automatically escalate to CEM/MPPI.
+
+Limitations: Single planner configuration, nominal simulation, recorded-action model training, deterministic dynamics, hand-designed cost/short horizon, no uncertainty estimate. Marginal95% action ranges are not joint sequence-support tests; small fixed prediction subset; ordinary yaw RMSE wrap caveat; no causal model-use ablation.
+
+Artifacts: `mujoco/reports/latent_random_shooting_mpc_seed0.json` (includes complete target manifest and source hashes); planner/evaluation/runner/read-only verification/plot code,3test modules,8requested figures; `mujoco/rl/LATENT_RANDOM_SHOOTING_MPC.md`. Existing model/dataset unchanged. Raw candidate arrays are not saved;6fixed-episode traces,2aggregate arrays and condition fragments stay local/ignored. Historical untracked experiments preserved.
+
+Next: Only recommend a separately authorized paired Train-supported-action constraint control, holding frozen model/N/H/cost fixed versus current environment-bound sampling, to test action-support departure. Do not execute here or train/tune any model/planner.
