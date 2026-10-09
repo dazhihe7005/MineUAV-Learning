@@ -447,3 +447,29 @@ Limitations: First-decision offline audit only, fixed H10/candidate sets/cost, n
 Artifacts: `mujoco/reports/world_model_decision_cost_fidelity_seed0.json`; `decision_cost_fidelity_manifest_seed0.json`; diagnostic/runner/verifier/postprocessing/plot code,7testmodules,10requiredfigures; `mujoco/rl/WORLD_MODEL_DECISION_COST_FIDELITY.md`. ~36MB local cost/endpoint/perstate fragments ignored; no raw candidate trajectories/dataset/model copies committed. Historical untracked experiments preserved.
 
 Next: Only recommend reusing saved failed MPC trajectories for an exact-state later-decision offline ranking audit under unchanged candidate/cost, testing receding-horizon state-distribution shift. Not executed.
+
+## 2026-10-08 — Later-Decision Exact-State Ranking Audit
+
+Branch: feat/world-model-later-decision-ranking
+Base: feat/world-model-decision-cost-fidelity / e21e7c0cff7e18ce1e4e8074bd9a323e387b30e5
+
+Research Question: Does frozen-model decision ranking deteriorate as the original failed MPC trajectories visit later states?
+
+Setup: Frozen canonical v3 seed0, original UN/Train-supported trajectories;100 Benchmark+100 Holdout per condition; exact full simulator/controller/RNG restore; distinct nearest0/25/50/75% stages. N512/H10, cost/proposal/noise/PI unchanged. No training or new controller. All400 episodes retained including one UN success, failed-only paired sensitivity reported.
+
+Key Results:
+- All1600 states /819200 candidate rollouts complete; each stage200 states per condition. No stage attrition, constant target/failure-type composition. All perdecision original action/cost/noise signals exact;12 archived full representative traces exact. S0 metrics/candidate/snapshot hashes match prior audit.
+- UN Spearman S0/S1/S2/S3=.616810/.176074/−.111023/−.103874; Supported=.602238/.144396/−.084374/−.159296. Paired S3−S0=−.720684/−.761533,177/174 of200 worsen. Failed-only UN199 gives−.723830.
+- Normalized regret UN .127614→.548530, Supported .140823→.598313; S3 random expectation .516323/.524813. Model beats random187→96 and186→81 of200. Selected true-rank median26.22→59.88% /25.05→77.69%.
+- True best26rho .0814→−.1860 /.0908→−.1428; pairwise accuracy .5284→.4345 /.5310→.4497. True margins/tail spreads grow, not merely tiny-margin ambiguity.
+- Selected H10 NRMSE .200388→.874517 /.196549→.732984; actual observation OOD RMS .5154→2.6385/2.6661; actual encoder Mahalanobis RMS1.4242→3.7377/3.4584. OOD/rank/regret associations are descriptive, not unique causal proof.
+- Oracle distance-progress193→71 /193→78 of200; S3 mean reduction−.2595/−.1916m. Scripted S3−.2744/−.1995m immediate progress, despite true-cost median percentile11.33%/2.34%; predicted percentile98.63%/97.27%. Short0.4s recovery is also limited; this does not prove long-term scripted recovery impossible.
+- Zero physical-failure/invalid candidate flags;156 UN successful early terminations retained. Independent second replay validates all400 trajectories/1600 candidate sets/allcosts/derivedstatistics/Train geometry plus1693 exact physics repeats, including all1600 scripted references and independent outcome metadata/count checks. Checkpoint/E/T/D unchanged. No MPC change.21new audit tests pass; full filesystem suite503passed/0failed/4knownskips(507run), same read-only historical fixtures; final bare run's30 pre-existing dependency errors disclosed in experiment documentation. Sole final review's verification gap fixed RED→GREEN in one pass; no deferred findings.
+
+Conclusion: Strong later-state decision-fidelity degradation accompanies closed-loop state/latent distribution shift, beyond initial best-tail weakness. H10 oracle recovery also worsens. Marginal central95% support does not restore later ranking; it is not a sufficient remedy. Do not attribute everything to one module or upgrade the planner from this audit.
+
+Limitations: single frozen canonical model, fixedH10/N512/cost/proposal, nominal MuJoCo; relative realized episode stages, differing post-S0 condition states, repeated-state correlations, no causal uniqueness or long-horizon recovery test.
+
+Artifacts: `mujoco/reports/world_model_later_decision_ranking_audit_seed0.json`, `later_decision_ranking_manifest_seed0.json`, `later_decision_train_distribution_seed0.json`; audit/replay/metrics/reporting/verifier/plots/tests,10requiredfigures; `mujoco/rl/WORLD_MODEL_LATER_DECISION_RANKING_AUDIT.md`. Local candidate costs/endpoints/errors/scripts remain ignored, no raw512trajectories/snapshot dumps/dataset copies committed.
+
+Next: Only recommend one controlled on-policy model-data robustness experiment with new training targets/seeds disjoint from this audit cohort and architecture/planner/cost/H/N fixed. Not executed.
