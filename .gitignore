@@ -97,6 +97,7 @@ mujoco/rl/models/ppo_recurrent_*/
 
 # Small representative supervised models are explicitly versioned.
 mujoco/rl/models/*.pt
+!mujoco/rl/models/uav_bc_mlp_seed0.pt
 !mujoco/rl/models/markov_dynamics_mlp.pt
 !mujoco/rl/models/history_latent_gru.pt
 !mujoco/rl/models/history_latent_gru_no_memory.pt

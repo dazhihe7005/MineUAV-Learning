@@ -498,3 +498,28 @@ Limitations: single adaptation seed, nominal simulation, valid-window selection 
 Artifacts: `mujoco/reports/world_model_onpolicy_adaptation_seed0.json`, isolated target/data/Final manifests; two best299KB adapted models; collector/trainer/evaluator/verifier/analysis/plots/cache guard,7testmodules,8figures; `mujoco/rl/WORLD_MODEL_ONPOLICY_ADAPTATION.md`. Raw branch/rollout NPZ, per-update records, caches/runtime logs stay local-only in ignored experiment parts; original historical untracked files preserved.
 
 Next: Only suggest an offline best-tail decision-cost-supervised modeling control with nominal regression as an acceptance gate. Not executed; do not automatically rerun MPC.
+
+## 2026-10-09 — UAV Behavior Cloning Policy Baseline
+
+Branch: feat/uav-behavior-cloning-baseline
+Base: feat/world-model-onpolicy-adaptation / 4858ce65a29806f37a813f0225b6aa6adfa6cd15
+
+Research Question: Can a simple supervised 7D-observation neural policy imitate the existing Scripted controller and independently complete nominal MuJoCo waypoint tasks?
+
+Setup: Reuse original PI120 target coordinates/grouped84Train/18Val/18Test split, freshly collect one full expert episode per target (seeds2026100900+ID), 8974/1888/2199 labelled commands. All120 experts succeed; no outcome filtering. Archived benchmark100/holdout100 target/seeds checked disjoint from all120 dataset targets. Expert uses only current position error/yaw, no privileged state, and ignores velocity. Unchanged PI RewardV2, physics500/control100/policy25Hz, action bounds and success/failure/timeout. MLP7→128ReLU→128ReLU→4,18052params; Train-only obs/action scaling, action-std normalized MSE; seed0/Adam.001/batch512/exactly100epochs/Val-only selection, no tuning or extra loss. No World Model/PPO training or use in BC execution.
+
+Key Results:
+- Best epoch100; Train normalized MSE .0000812689, Val .0002641008. Gradient norm best mean/max .0110725/.0171335, all-training max .837776, no clipping/nonfinite values.
+- Independent2199sample Test: normalized action MSE .0004307048; raw-command MSE3.510915e-6, RMSE .001873744, MAE .001037225. Axis RMSE vx/vy/vz/yaw .00239668/.00273742/.000897631/.0000187293; correlations≥.999614. Distance/velocity/action regions saved with Train-only thresholds.
+- BC benchmark100/100 and holdout100/100; Scripted also100/100 each. No physical failure, timeout, action saturation or deployment clipping. Mean finaldistance BC .066642/.063369m vs Scripted .071441/.068744m; meancompletion5.7244/6.0464s vs5.5376/5.8132s. BC is slightly slower, not globally superior. Near-target actual speed .192324/.193490m/s averages transit steps, not success-terminal speed; unchanged hold criterion. Crossings .43/.43.
+- BC visited-state posthoc expert RMSE .003925/.003213 exceeds offline error. BC standardized obsRMS .9989/.9631 vs Train .8719, Scripted1.0344/.9905. Mild distribution differences without observed catastrophic accumulation; marginal box departures are not strict OOD proof. No privileged-input deficit for this expert; no general physical-state sufficiency claim.
+- Independent verifier checks all120expert labels/indices,400complete closedloop records, target isolation, scaling, epoch/Valselection, frozenmodel identity and metric recomputation; two real complete episodes bitwise reproducible. Canonical v3 SHA42571249… unchanged and unused.20newtests pass; fresh post-fix read-only historical-fixture suite547passed/4knownskips(551run), no current algorithm failure. Pre-review bare455passed/30knownlegacyimporterrors/1skip(486run) is disclosed separately, not claimed green. Sole fresh review's SIGTERM child cleanup and outcome-dependent publication fixes each RED→GREEN in one pass; no deferred Minor findings and no scientific metric change.
+- Serialized guarded CPU phases,1MuJoCo worker/max2allowed, reserve1.5GiB/abortavailable<2GiB/RSS>4GiB; atomic fsync/replace/cache identity. No new OOM or swap modification. Core experiment peakHWM approximately1.07GiB; final full-suite sampled process-tree peakRSS2.851GiB / summedHWM3.908GiB, minimum available8.258GiB. These sampled/aggregated values are not hard OS guarantees. No concurrent large simulation/training.
+
+Conclusion: Accept a nominal independent learned-policy baseline: BC matches Scripted200/200 success using the same nonprivileged observation. Offline errors remain small enough for this fixed nominal task. This does not establish noisy/reset/physics/recovery robustness or replace canonical world-model v3. No failures exist for the requested failed-trajectory plot; it truthfully states this instead of fabricating one.
+
+Limitations: one training seed,120 expert trajectories, simple directly representable expert, fixed nominal task/resets, narrow yaw/action coverage, ceiling-success evaluation, no perturbation/recovery/real flight/visual control; historical raw target archives remain local dependencies.
+
+Artifacts: best75KiB `mujoco/rl/models/uav_bc_mlp_seed0.pt`, `mujoco/reports/uav_behavior_cloning_seed0.json`, target/dataset/closedloop manifests/hashes, source/tests/verifier/runner, seven scientific figures, `mujoco/rl/UAV_BEHAVIOR_CLONING_BASELINE.md`. Raw NPZ, training/runtime logs, caches/scratch remain local-only; historical untracked files preserved.
+
+Next: Only recommend one fixed-manifest perturbed-initial-state BC robustness evaluation. Not executed. No DAgger/PPO/SAC/world-model/MPC/visual training is started.
