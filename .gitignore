@@ -108,5 +108,7 @@ mujoco/rl/models/*.pt
 !mujoco/rl/models/latent_observation_decoder.pt
 !mujoco/rl/models/oracle_dynamics_mlp.pt
 !mujoco/rl/models/latent_pi_linear_probe.pt
+!mujoco/rl/models/world_model_replay_adapted.pt
+!mujoco/rl/models/world_model_mpc_state_adapted.pt
 README_before_portfolio.md
 README_before_portfolio.md

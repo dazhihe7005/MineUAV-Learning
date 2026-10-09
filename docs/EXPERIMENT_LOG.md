@@ -473,3 +473,28 @@ Limitations: single frozen canonical model, fixedH10/N512/cost/proposal, nominal
 Artifacts: `mujoco/reports/world_model_later_decision_ranking_audit_seed0.json`, `later_decision_ranking_manifest_seed0.json`, `later_decision_train_distribution_seed0.json`; audit/replay/metrics/reporting/verifier/plots/tests,10requiredfigures; `mujoco/rl/WORLD_MODEL_LATER_DECISION_RANKING_AUDIT.md`. Local candidate costs/endpoints/errors/scripts remain ignored, no raw512trajectories/snapshot dumps/dataset copies committed.
 
 Next: Only recommend one controlled on-policy model-data robustness experiment with new training targets/seeds disjoint from this audit cohort and architecture/planner/cost/H/N fixed. Not executed.
+
+## 2026-10-09 — On-Policy State-Distribution Model Adaptation
+
+Branch: feat/world-model-onpolicy-adaptation
+Base: feat/world-model-later-decision-ranking / db532ac9b40d9fc49a1c2e18b55090aba4f6b19a
+
+Research Question: Does MPC-visited state coverage improve later prediction and decision fidelity beyond equal-budget scripted/replay-state adaptation without losing nominal prediction?
+
+Setup: Original canonical v3 frozen; Replay and MPC-state adaptations start from identical v3 E/T/D hashes. Fresh isolated60Train/20Val/100Final targets, seed202710091; no overlap with original PI120 or benchmark/holdout200. Per source800/200 accepted snapshots×8 actualK10 counterfactual branches=6400/1600 windows. All80 source episodes retained: Replay80success; MPC32tilt/33outside/15timeout. Adam.0003/seed0/batch16/1000updates, original L_obs+.1L_auto and normalization/scaling unchanged. Identical batch-order hash. Best by own ValL_obs only: Replay950,MPC700. Original frozen MPC/cost/N512/H10/proposal/physics/PI unchanged.
+
+Key Results:
+- All100unseen Final episodes /300S0/S2/S3 states /153600 true candidate rollouts complete; three models share exact snapshots/candidates/truth. All100 participate at each stage; no adapted-controller closed-loop evaluation.
+- Candidate-mean H10 NRMSE S0/S2/S3: Original .179442/.418474/.890673; Replay .143105/.591800/1.020330; MPC-state .223501/.451411/.799155. C vs B improves S2/S3 23.72%/21.68%, worsens S0 56.18%. C is still worse than Original atS2.
+- Whole rho S2/S3: Replay−.064821/−.013394; C−.021567/−.052754. Best-tail rho improves−.126003/−.108533→−.066721/−.050537, still negative. Regret .519367/.529725→.503737/.512777; paired median delta0, only48/46 of100 wins. S3 selected true-rank median worsens51.08%→56.65%. Decision-critical fidelity not robustly recovered.
+- Nominal H1/H10/H25/H50: Original .044057/.104600/.201413/.308050; Replay .092331/.175406/.309185/.458162; C .098742/.276733/.659729/1.172470. H50 regression48.73%/280.61%; strong forgetting. No collapse/NaN/Inf;64 nonzero-variance dimensions, C Train/Test effective rank12.22/12.17.
+- Shared oracle distance progress96/21/29 of100 S0/S2/S3; later mean progress negative. Scripted true-cost medians remain good (.20/.68/2.83%), but C predicted percentiles28.91/65.72/89.75%. Model improvement cannot remove the H10 recovery ceiling by itself.
+- Independent verification recomputes all true costs,900 model-state metrics/aggregates and state OOD, both best Val losses, compact training/complete selection schedule, numeric conclusion fields, source summaries, nested provenance, pairedbudget/order, exact fixed physics/scripted replay and nominal reproducibility. Original SHA42571249… unchanged.24new tests passed; full read-only-fixture suite527passed/0failed/4knownskips(531run). Bare-discovery30 historical dependency errors disclosed in the experiment documentation; no current algorithm failure. Future collection has fail-closed runtime/dependency guards; historical cache runtime stamps were not recorded or retroactively fabricated.
+
+Conclusion: State coverage helps later prediction relative to Replay, but this fixed dynamics objective does not reliably restore best-tail decisions and severely damages nominal prediction. Mixed/negative result; keep canonical v3 as baseline. No claim of improved closed-loop success; no MPC modification.
+
+Limitations: single adaptation seed, nominal simulation, valid-window selection bias,8branches/snapshot, different source-specific Validation distributions, fixedK10/H10/N512/cost, counterfactual actions not actually on-policy actions, no retention mixing, no adapted-controller evaluation.
+
+Artifacts: `mujoco/reports/world_model_onpolicy_adaptation_seed0.json`, isolated target/data/Final manifests; two best299KB adapted models; collector/trainer/evaluator/verifier/analysis/plots/cache guard,7testmodules,8figures; `mujoco/rl/WORLD_MODEL_ONPOLICY_ADAPTATION.md`. Raw branch/rollout NPZ, per-update records, caches/runtime logs stay local-only in ignored experiment parts; original historical untracked files preserved.
+
+Next: Only suggest an offline best-tail decision-cost-supervised modeling control with nominal regression as an acceptance gate. Not executed; do not automatically rerun MPC.
