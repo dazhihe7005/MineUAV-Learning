@@ -667,3 +667,28 @@ Artifacts: passive telemetry/acquisition/analysis/plots/testsource, `uav_pi_inte
 Final review: independent readonlyreview recomputed bothcomplete analyses, all12baselinearrays bitwiseequal, original/processor/figurehashesverified and45/45tests. No blockingproduction/scientificfinding. Raw-corruptiontest originallyfailedtooearlyonmissingrecorddigest; regradedImportant, strengthenedexpectedrawhasherrorRED→correctfixturevalidrecorddigestGREEN,45/45freshsuite. One documentationminor deferred: `--verify-only` is zero-new-flight verification but refreshes localverification.json, not literalfilesystem-read-only. No secondreview/newflight/controlchange.
 
 Next: One separate same-state local attitude-cascade response validation comparing requested braking with actual thrust-direction response, unchangedgains/taskcriteria. Recommendation only; no controller changes, PPO/SAC or othertraining executed.
+
+## 2026-10-10 — Gust Recovery Attitude-Thrust Response Audit
+
+Branch: feat/uav-attitude-thrust-response-audit
+Base: c84389c3457bfa88d6def6be517055ec3c8e8161
+
+Research Question: Where do requested braking, desired attitude, actual attitude, model-derived thrust and translational acceleration differ during the saved gust recovery?
+
+Setup: Exactly2saved Scripted Constant/Gust-Medium index000 trajectories. No new flight episodes or integrated steps. Same target/seed/initialstates/6.867N/worlddirection,500/100/25Hz,15stimeout, original success. Scratch mj_forward at1264+1500saved control states; compiled stateless motors/no delays/history/contact, current world COM force, correct body-origin/COM distinction. All historical input/source/checkpoint/report identities unchanged; full previous12-array bitwise reproduction reverified.
+
+Key Results:
+- Gust returning-motion P/relative-velocity braking event4.55–4.56s; opposingI delays PI/desiredtilt reversal4.81–4.82s. Actualtilt, model rotor force/currentCOM/origin acceleration and3Dspeed-power reversal5.50–5.51s. Speedpeak1.478594m/s@5.51s. P→PI separation.25–.27s, desired→actualtilt.68–.70s, descriptive crossing bounds notidentifiedpure delays. At4s earlier escapingmotion alreadydecelerates; these later events concern returning approach.
+- Model scalar actuatoroutput equals actualctrl exactly; no motor dynamic state/delay/history. Max scalar thrust difference1.57e-13N, COMtorque difference1.56e-14N·m, COMbalance3.08e-15m/s², requestedtorque/Euler angularacceleration discrepancy<9.73e-14rad/s². No additional resolved attitude→force→COMacceleration separation.
+- Fixed3–8s attitudeerrorRMS Constant3.07964°/Gust6.97201°, orientation acceleration-error contribution RMS.525025/1.200105m/s²; scalar-magnitude contribution≈1e-14m/s²; body-origin/COM correction.004260/.009267m/s². This exact geometry decomposition is not causal module attribution.
+- AtGustspeedpeak force-axisP+2.075234, I−.411827, PI+1.663408m/s²; I reduces signedP by19.84%. Physicalmodel COMaccel only+.014940/origin+.017735m/s² because actualthrust direction has onlyjustreversed. Integralopposition plus downstreamattituderesponse bothremain relevant.
+- Constant succeeds12.64s; Gusttime-outs15s. After4s100Hzjointgates19/0. Position/speedphase separation persists; no success criterion changes or eventualsettlingclaim.
+-66/66relevant tests pass(21new+45previous). One worker, atomic/frozenidentity/localderivedcache; noOOM/swapchange. Exact sampledRSS/HWM andphaseevidence in newreport. Earlier testfixture decimal-clock discrepancy3.47e-18 wascorrected tosaved-clockbitwise+1e-12lattice checks, not trajectory rounding.
+
+Conclusion: Strongest directly localized chain discrepancy is desired→actual attitude/thrust direction. No evidence for scalar allocator fidelity failure or simulated motor lag. Supports finite attitude/cascade response together with upstreamP/I opposition contributing to transient braking/settling; cannot uniquely blamePI/attitude/outerloop or infer specificgain/structuralfix.
+
+Limitations: oneMediumScriptedtarget/direction, saved100Hzstates, engineering mass/inertia/rotor model, conditional model-derived forces notsensors, finite15swindow, no causalintervention, Constant/Gusthistoriesalreadydiffer, no High/BC/generalcohort telemetry. Bare global simulation/trainingtests excluded. Raw/derivedarrays/identity/process evidence local-only; historicaluntracked preserved.
+
+Final review: fresh independent read-only reviewer found no Critical/Important issues;44hash/index checks passed. Fresh66/66coordinator tests,0skips/no integrated flight. One deferred Minor: PNG regeneration is not atomic; current5figures verified, changed hashes rejectfinalization. JSON/NPZpublication remainsatomic. No controller or scientific-result changes after review, no second review.
+
+Next: Stop this bounded audit. Any controller adjustment requires a separately authorized causal design; no new experiment, tuning or training automatically started.
