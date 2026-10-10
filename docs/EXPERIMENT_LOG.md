@@ -692,3 +692,32 @@ Limitations: oneMediumScriptedtarget/direction, saved100Hzstates, engineering ma
 Final review: fresh independent read-only reviewer found no Critical/Important issues;44hash/index checks passed. Fresh66/66coordinator tests,0skips/no integrated flight. One deferred Minor: PNG regeneration is not atomic; current5figures verified, changed hashes rejectfinalization. JSON/NPZpublication remainsatomic. No controller or scientific-result changes after review, no second review.
 
 Next: Stop this bounded audit. Any controller adjustment requires a separately authorized causal design; no new experiment, tuning or training automatically started.
+
+## 2026-10-10 — PPO vs Behavior Cloning Matched Nominal Evaluation
+
+Branch: feat/uav-ppo-bc-nominal-comparison
+Base: feat/uav-attitude-thrust-response-audit / 7e93edda8e1625862dc6dafb4baae58dd62ca3f5
+
+Research Question: Under exactly the same nominal7D observation,4D action, fixedPI dynamics and task protocol, can existing deterministic PPO matchBC closed-loop success, completion time and trajectory efficiency?
+
+Setup: FrozenScripted/OriginalBC/Yaw-AugmentedBC/PI7D PPO seed0, final100k checkpoint predeclared; no training/PI/reward/physics/task changes. New200targets seed2026101501, resetseeds950150000–950150199; disjoint from700known target records inBC/adaptation/yaw/external manifests. CompletePPO trainingtarget stream notpersisted, so fullPPOTrain nonoverlap unprovable/disclosed. ExactfullMjData/controller/task/RNG/allocator pairedinitialstate,500/100/25Hz,15s timeout, distance<.10m ANDspeed<.15m/s for5policy steps.
+
+Key Results:
+- Newnominal success S/Original/Yaw/PPO200/200,200/200,200/200,165/200; PPO35timeouts,0physicalfailures; all4command saturation0. Frozencheckpoint/parameter hashesunchanged.
+- Meanfinaldistance m .069621/.064944/.064173/.100744; meansuccessful completion s5.4632/5.7060/5.5780/8.773818(PPO n165). Timeoutnotcompletion; common-success165pairs PPO−Original time+3.292848s/path+.264823m, PPO−Yaw+3.394182s/path+.301698m. No faster/shorter-pathPPO advantage. PPOmeanpeakspeed.616836m/s lowerthanBC~.7477, notoverall superiority.
+- PPO35timeouts:19everenterdistancethreshold,10everjointgatewithout5stepdwell,5maxstreak4;15crossingepisodes. Timeoutmeanfinaldistance.190992m/speed.065723m/s; residualposition and/or sustainedsettling limitation, notuniversal runaway/saturation; noidentifieduniquerootcause.
+- SeparateoldPI7D benchmark/holdout200flights exactlyreproduce74/100and82/100success; meanfinaldistance matcheshistorical .10751775177629046/.09892600587780538m. Trainingreport lacksoriginalcheckpointSHA; currentZIP seed0/budget100352/network/hashfrozen, noinventedhistoricalidentity.
+- Historical95.6%mean belongsoldPvelocity-loop7Dfiveindependentseeds20260929/0/8/16/24, notcurrentPI. HistoricalPI10D100/100+100/100 usesextra3KiIaccelerationinputs, notfair7Dmaincomparison. Only1eligiblecurrentPI7Dseed; cross-training-seedSD N/A.642ZIPinventory includesintermediates/diagnosticreplays, not642independentseeds.
+- Formal1000uniquerecords(800new+200historical),4technicalexactrepeats=1004experimentflights. Repeatarraysbitwiseequal; allrecord/NPZ/manifesthashes andsnapshotpairschecked; resume0newflights/noomissions/duplicates. All38relevantnon-trainingtests passed(15new); bareglobaltraining/8-envfixtures deliberatelyexcluded. Oneworker, noOOM, sampledprocess-treeRSSpeak1.444GiB; HWMsummary1.572GiB notsimultaneousRSS. AtomicJSON/NPZ/PNG,4GiBcap/systemreserve1.5GiB/no swapchanges.
+
+SourceTeaching: PPO_FROM_SOURCE.md mapsactualSB32.9.0 actor/critic/distribution/GAE/clippedpolicy/value/entropy/Adam sourcefunctions toTensor shapesand formulas, distinguishesBCexpertMSE vs PPOrewardpolicygradient. Model9673parameters,BC18052; currentPPOactual100352transitions. Differenttrainingbudgets/architectures preclude sample-efficiencyclaim. Noactualoptimizerupdateperformed.
+
+Conclusion: ExistingPI7D PPO baselineisreproducible andevaluation-interface compatible, butnominal closed-loop success andpaired efficiency remain belowbothBCpolicies. BCretainscurrentnominalbaseline; noevidence hereofPPOdisturbance superiority. Noobviousaction/observationcompatibilitybugfound;7Dhiddencontrollerstate,finitebudget,rewardalignment arepossible factors, notproven uniquecauses. Noautomaticretraining.
+
+Limitations: singlecompatiblePI7Dtrainingseed; unknowncompletePPOtrainingtargetstream; historicalcheckpointSHA absent;nominalsimulation;deterministicinferenceonly;differentexpert/interactionbudgets andnetworks;fixed15sconditionedcompletionstatistics;noalgorithmcausalorreal-worldclaim.
+
+Artifacts:3source modules/1test module,summaryJSON/fixedmanifest,6atomicfigures,UAV_PPO_BC_NOMINAL_COMPARISON.md,PPO_FROM_SOURCE.md,thislog. Rawtraces/per-episodecache/resources/processledger remainlocal-only; previouscheckpoints/reports/untrackedpreserved.
+
+Final Review: Freshindependent read-only reviewfound noCritical/Importantissues; independentlychecked1000record/rawhashes/metrics/summaries,700knownexclusions,model/runner/SB3identities,figures/tutorial. Minor deferred: frozenacquisition training_source string says ::train, actualentrypoint ::run_training (teachingdoccorrect); preservecacheidentity, noresult/parameterimpact. Coordinator independentlyrecomputed185064formalpolicydecisions; allconsistent. Nosecondreviewornewflights.
+
+Next: Only recommend preregistering one7D PI-PPO independent-seed replication with unchangedinterface/PI/reward/fixedtrainingbudget, completeTrain targetprovenance andindependentVal/Test/checkpointselection. Do notexecute; stopaftercommit/push, noPPO/SACorothertraining.
