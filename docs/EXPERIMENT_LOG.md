@@ -639,3 +639,31 @@ Limitations: Existing100targetcohort, finite15s/right-censoring,25Hzstate logs v
 Artifacts: Pure analysis/plots source, fixturetests, `uav_gust_recovery_audit.json`, fivefigures, `UAV_GUST_RECOVERY_AUDIT.md`, thislog. Originalrawtrajectories and newanalysis scratch/resources remainlocal-only. No `pi_integral_diagnostics.png` because no crediblePI timeseries.
 
 Next: One minimal fixed-target Scripted Constant-Medium/Gust-Medium telemetry validation with unchanged gains/criteria, logging100HzP/I/error/raw-and-limitedacceleration/clamp/antiwindup/attitude/allocator. Suggested only, not executed. Stop this stage; no controller/model tuning.
+
+## 2026-10-10 — Minimal PI Gust Recovery Telemetry
+
+Branch: feat/uav-pi-internal-telemetry
+Base: feat/uav-gust-recovery-audit / a3e6ee4da8eb437f04d2e2c030f5be7b7b5d4737
+
+Research Question: Which measured internal cascade signals explain phase-separated position/speed recovery after gust removal, without changing controller gains or task criteria?
+
+Setup: Preselect old manifest targetexternal-final-2026101201-000/index000, seed950140000, fixed worldXYdirection[.98453548,.17518528,0]. Scripted Constant-Medium/Gust-Medium6.867N only; original500/100/25Hz and15sbudget. External passiveCPythontrace observer copies realPI intermediates/clampbranch/returnoutputs at100Hz; actualforce500Hz, originaltermination25Hz. No simulation/controller/model/policy/physics/gain changes ortraining.
+
+Key Results:
+- Full two retained trajectories match original nontelemetry arrays bitwise, including actions, states, timestamps,force andtermination. Constant316steps/12.64ssuccess; Gust375steps/15stimeout. Fullsnapshotrestore andinitialphysical/controllerpair hashesverified, excluding only deliberateforce-conditionname. Resume0newflights.
+- XYI peaknorm1.010090Constant/.809576Gust versus1.5m/s²cap. IntegralclampXY/Z, antiwindupfreezeXY/Z, accelerationlimitingXY/Z andallocatorsaturation all0inboth. Measuredretention is not saturation-drivenwindupproof.
+- Gust d4=1.265298m, post4peakd1.368262m@4.34s, thenreturns/crossestarget. Post4speedpeak1.478594m/s@5.51s. Alongforceaxis:P reverses4.55–4.56s; committedPI/desiredbodyZ4.81–4.82s; actualbodyZ5.50–5.51s; I6.10–6.11s. AtpeakP+2.075234/I−.411827/PI+1.663408m/s², actualbodyZonly+.001501. Requested/actualreversal timingseparation≈.68–.70s isdescriptive, notidentifiedpuredelay.
+- After4sGust100Hzdistance-only105/speed-only60/joint0;25Hz26/15/0. Near-targetminimumspeed.327396m/s; low-speedminimumdistance.211435m. Fivepost4signedposition/velocityreversals; nojointgates evenwithoutdwell. Timeoutcensors eventualsettling; noasymptoticinstabilityproof.
+- No separately storedPvariable: P isexplicitlyderivedfromactualerror/gains. Actualpre-limithelperlocal afterIcommit differsfrompreantiwinduptrialraw. Allocatorcommandedthrust isnotmeasuredrotorthrust. CachedMjDataqacc isfrompriorphysicsstep, notinstantaneousnewcommandresponse. Forceindexedafteractualhookavoidsstalebufferat2/4s.
+- Two uniqueepisodes,3flight executions: initialConstantcompletedbutpublicationfailedonnewvalidator's25/100Hznamespacecollision; exactregressionRED→GREEN, onesameepisode technicalrepeatlogged, no newtarget/condition. Allattempts/sourceidentities retained, no hiddenomission. NoOOM. One worker, guardedatomiccache; sampledRSS≈1.178GiB, sumhistoricalHWM≈1.184GiB, exactresourcephasesinreport.
+-45/45relevant tests passed(19new,18savedtraceaudit,8controller). No newflighttest/training. Bareglobaltestsnotrun becauseunrelatedsimulation/trainingfixtures violate minimalbudget. Originalsource/checkpointhashesunchanged.
+
+Conclusion: Confirmed phase-separated transient response and requested-versus-actualattitudelag; supported boundedintegral/P opposition plus finiteattitude/cascade response as contributors. No integralclamp/windup orunique modulecausalproof. OneMediumScriptedtarget cannot establish allHigh/BC600failures. No automaticPI adjustment orPPO/SACstart.
+
+Limitations: onefixedtarget/direction, ScriptedMediumonly; Constant/Gustonsethistoryconfound; finite15scensoring; diagnosticderivedP/angle/projections; commandednotmeasuredrotorthrust; no causalI/attitude intervention; no crosscontroller/hightelemetry.
+
+Artifacts: passive telemetry/acquisition/analysis/plots/testsource, `uav_pi_internal_telemetry.json`,8namespacedfigures, `UAV_PI_INTERNAL_TELEMETRY.md`, thislog. Rawtelemetry, selection/attempts/recovery/cache/resource/testevidence local-only; historicaluntracked/rawfilespreserved.
+
+Final review: independent readonlyreview recomputed bothcomplete analyses, all12baselinearrays bitwiseequal, original/processor/figurehashesverified and45/45tests. No blockingproduction/scientificfinding. Raw-corruptiontest originallyfailedtooearlyonmissingrecorddigest; regradedImportant, strengthenedexpectedrawhasherrorRED→correctfixturevalidrecorddigestGREEN,45/45freshsuite. One documentationminor deferred: `--verify-only` is zero-new-flight verification but refreshes localverification.json, not literalfilesystem-read-only. No secondreview/newflight/controlchange.
+
+Next: One separate same-state local attitude-cascade response validation comparing requested braking with actual thrust-direction response, unchangedgains/taskcriteria. Recommendation only; no controller changes, PPO/SAC or othertraining executed.
