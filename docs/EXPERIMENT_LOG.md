@@ -613,3 +613,29 @@ Artifacts: four new source modules/three testmodules, JSONreport/target+force+in
 Final review: two Important issues fixed in one RED→GREEN pass (partial/failed terminal steps cannot confirm gust recovery; retain one public acquisition identity with separately hashed revised processors/publication). Full2s gust exposure and consecutive completed25Hz boundaries are required. Original evaluator/source/cache/trace identities are preserved, not relabeled as new evidence; all1800 cached metrics recompute unchanged. One Minor generic `shared_failed_conditions` naming issue is deferred: authoritative same-target evidence is `three_way_paired_outcomes`, which independently reports100/100 shared High/gust failures. No new simulations or second review.
 
 Next: Only recommend one read-only fixed-controller post-gust PI-integral/braking-response audit with paired Scripted/BC traces, no tuning. Not executed; no DAgger/PPO/SAC/worldmodel/MPC next stage.
+
+## 2026-10-10 — UAV Gust Recovery Audit
+
+Branch: feat/uav-gust-recovery-audit
+Base: feat/uav-bc-external-disturbance / e273c24eda37a3f06c21d845a4bc5e94be065b98
+
+Research Question: Why do Scripted, Original BC and Yaw-Augmented BC share Gust-Medium/Gust-High failures, despite Scripted100/100success under Constant-Medium?
+
+Setup: Read-only code/trajectory audit;0new MuJoCo episodes,0model execution/training/optimizer steps,0PI/physics/success edits. All1800original task records/trace SHA256 verified,900existing episodes analyzed (3conditions x3controllers x100same targets). Fixed representative indices0/33/66/99 specified before metrics, with full-cohort aggregate and same-target pairing. Sequential source reads, atomic new report/figures, preserve original raw/cache/checkpoints/history.
+
+Key Results:
+- Timeline confirmed500Hzphysics/.002s,100HzPI/.01s,25Hzpolicy/.04s,15sunchanged timeout. Gustfull2s atinteger ticks1000–1999/[2,4)s, every post4srecordedphysics tick force0; all600gust episodes have11srecovery window and endtimeout, not physical/numericalfailure.
+- Constant-Medium success S/A/C100/97/94; GustMedium/High all0/100. Every600gust episode briefly increases targetdistance after4s then approaches again;599/600enterdistance<.1m,592/600everreduce speed<.15m/s, but0/600evermeet both simultaneously after4s. Five-step dwell alone cannot explain shared failure; permanent unrecoverability beyond15s remains censored.
+- ScriptedMedium/High d4=1.18295/2.49616m, d6=.72706/.49134m, final=.23564/.11499m; post4distance growth excessmean .10197/.29625m. Post4peak speedmean1.50649/2.08428m/s atmedian5.4/5.6s, after forcewithdrawal. Final1sspeedmean .29075/.45575m/s. BCcurves/velocity remain similar, with continued damped-looking targetcrossings rather than monotonic divergence.
+- Recorded command-element and allocator saturation0across900episodes. LateScriptedmedium/high XYopposing-command fraction47.78%/46.32% among command>=.02m/s &actualXYspeed>=.15m/s, longestcontinuousopposedrun episode-mean1.1012/1.2388s. Opposing direction can be legitimate braking, not proof of wrong-sign control.
+- SourcePI Kp[1.5,1.5,2], Ki[.5,.5,.8], KiI XYnorm/Zabs cap1.5m/s², outputacceleration caps3m/s², conditionalantiwindup freeze; episode-reset only, no gust-reset/leak. InitialIzero recorded, but subsequentintegral/P/output/clamp/freezecount/attitude/rotor time series NOTRECORDED. No syntheticPIplot and no directwindup/retention/rootcauseclaim.
+- Constant startsforceat0s; Gust startsat2s thenwithdrawsat4s, so histories differ beforewithdrawal. Cannot attribute Constant-vs-Gust difference solely to integral carryover/removal. Success stops Constant earlier, no post-success15scontinuation manufactured.
+- 18/18pure analysis regression tests and exact second-pass metrics/identity reproduction; oldscalars/success/recovery agree. Fresh finalreview terminal-failure/completion success-streak issue fixed in one RED→GREEN pass, and completedpublication HWM included rather than earlyRSS only. Checkpoint/source/rawhashes unchanged.0MuJoCoworkers,1serialanalysisprocess, noOOM; final guardedprocess-treeRSSpeak155.19MiB. Fullproject tests deliberately not run because some create episodes/train fixtures.
+
+Conclusion: Confirmed shared failure phenotype is postgust motion/target recrossing without joint position-and-speed settling within the unchanged15swindow. A common underdamped/transienttracking limitation is supported, but single-module cause is unresolved. PIwindup, actualintegralclamping, retained/reversedcompensation, or timingbug are not established. Effective stopping is insufficient in this window; does not prove divergentdynamics or permanent inability.
+
+Limitations: Existing100targetcohort, finite15s/right-censoring,25Hzstate logs vs100HzPI, missinginternaltelemetry, force-onsethistoryconfound, unequalConstantterminationexposure, no causal intervention.
+
+Artifacts: Pure analysis/plots source, fixturetests, `uav_gust_recovery_audit.json`, fivefigures, `UAV_GUST_RECOVERY_AUDIT.md`, thislog. Originalrawtrajectories and newanalysis scratch/resources remainlocal-only. No `pi_integral_diagnostics.png` because no crediblePI timeseries.
+
+Next: One minimal fixed-target Scripted Constant-Medium/Gust-Medium telemetry validation with unchanged gains/criteria, logging100HzP/I/error/raw-and-limitedacceleration/clamp/antiwindup/attitude/allocator. Suggested only, not executed. Stop this stage; no controller/model tuning.
