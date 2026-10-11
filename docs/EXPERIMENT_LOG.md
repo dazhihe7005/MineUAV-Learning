@@ -829,3 +829,27 @@ Final Review: Fresh independentread-only review59/59PASS0skip, allraw/protected/
 Limitations: boundednominalalignmentascent/one+10deg request; no completeflightresponse, multiseedrobustness orhardwaredeployment; pinnedsyntheticWMM/no calibratedmagnetometer; idealinstantaneousmotor/noESC/dragidentification; existing completebridge suiteonly, no historicaltrainingtests; diagnosticparser/workflowmistakesdisclosed.
 
 Next: Only recommend source-consistent livehealth telemetry publication/receipt timing and offline verification, then the same boundedyawprotocol before externalOdometry. Notexecuted; noPhase3.
+
+## 2026-10-11 — PX4–MuJoCo Telemetry Freshness and Yaw Validation Phase2B
+
+Branch: feat/px4-mujoco-yaw-telemetry-fix
+Base: feat/px4-mujoco-yaw-validation / 601f517bc9bc6034197808646931f8214e9596a4
+
+Research Question: Can source-consistent safety telemetry avoid false stopping of the fixed +10degree yaw test while remaining fail-closed, and does the real PX4 control chain produce a valid complete yaw response?
+
+Setup: Matching unchangedPX4 8f9b91b2bdd3a65952601a084c3aa35e96fee59d/prebuiltbinary, MuJoCo3.14.0, unchanged7kg/rotors/coefficients/idealactuator/PX4gains, correctedmagneticreference retained. Independent originalsourcepublication/sample, actualquery/receipt and250Hz lockstepactuator liveness times. Fixed source leases650/1650/1150ms: flags/status nominalperiod+500msquery+150msresponse;125Hzlocal650ms is conservative versus658ms worstsum. No duplicate timestamp renewal. Pendingquery forbids newmaneuvers, malformed/missing/unsafe/backwards/future/failsafe data latch stop; independent250ms wall actuator watchdog. Originalentrypoint retained, new Phase2B opt-in. No health spoofing, extra training, system installs or gain changes.
+
+Key Results:
+- RED monitor23failed→GREEN, opt-inrunner and analysis RED→GREEN. Original69tests retained; full bridge103/103passed0skip before independent finalreview. OriginalPhase2 ULog last5.196s replay passes newsemanticmonitor where old1s gate rejects normal queriedstates. Repository-widepytest attempted: CADcollection blocked by systemSciPy/venvNumPy2.2.6 ABI mismatch, no unrelatedinstall/fix.
+- Exactly1disarmed16s check then1full45s flight; no retry. Disarmed4000IMU/160GPS/3941actuator; flight11250IMU/450GPS/11187actuator. Bothcomplete/exit0/ctrlzero/historysame. No telemetryfault/falseabort. Finalmagalignment15.864s, headinggood16.872s; yawrequest32.004s. Flagpublicationage median.774s/p95 1.280s/max1.456s;38duplicate topicreceipts independentlylogged.
+- YawtrackingFAIL: trueyaw remains≈90deg whiledesired100deg. Maxpoststep targeterror10.001821deg, final2s mean9.996366deg, peakactualFRDzrate.000153485rad/s, settlingnotachieved under unchanged<2deg/<.05rad/s/2s/≤.15s samplingcriterion. Full12.996s responseobserved, notcensored/NOTTESTED. No active4motor saturation; maxphysicalheight2.056629m andXYexcursion.030747m stayinsideunchangedenvelope.
+- Confirmed pinnedsource/config with corroboratingULog: existing CT1/KM±.017207708 produces yawrow entriesbelowControlAllocator weakaxis threshold.05, so row iszeroed beforematrixassignment. Requestedrate≈.488rad/s/torque≈.097 butyawtorqueremainsunallocated, torqueachieved0/65poststep status samples. No actuator/PX4source/gainfix because fixedphaseprotocol forbids it. No secondflight.
+-1worker/1PX4, noOOMobserved. Bridgepeak584245248bytes, sampledPX4peak20361216bytes, minavailable10733146112bytes; atomicraw summaries andULoghashes preserved. No swapchanges; historical87untracked/main/models/dynamics/oldreports remainunchanged.
+
+Final Review: Independentreadonly103/103PASS,0Critical/2Important/1Minor, declinedjudgmentnone. Oneofflinefixpass:6newregressionsRED→full109/109PASS0skip; independentlycomplete unsafe topics survivefollowingfragmentedtitle, olddeadlineexpiry latches before anyrenewal, blockingreceive servicesconsole in≤8msslices andusesearliestabsolutequery/actuator deadline. Duplicatepublication fixture doubleactuator finding regradedImportant for safetyevidence and corrected; remainingDeferredMinor:none. No secondreview. Final hardening wasnotre-flown; bothrawSITLruns preceded it, rawsummary/ULGunchanged, finalsourcehashes identify currentcode notbyte-exacthistoricalexecution. Fullflightbudget2runs remains exhausted.
+
+Conclusion: PASS for telemetrytime semanticfix, realEKFalignment andcompleteboundedobservation. FAIL for yawcontrol andallocator yawauthority. ExternalOdometry/Phase3entry remainsBLOCKED. Successfullogcompletion isnot successfulmaneuver validation.
+
+Limitations: Onefixedboundedflight; idealmotor/nohardware calibration, sampledresources/nohardrealtimeguarantee, consolepolling may miss fullytransient fault betweenqueries; sustainedfault detection bounded, no unlimitedcachedhealth. Allocatorinternalmatrix is analyticalsource/config evidence, not a sensor; actual unallocatedtorque separatelylogged. HistoricalCAD/RLfullsuite notpassing/claimed. No ROS/Odometryintegration.
+
+Next: Only recommend separately authorized actuator-effectiveness scaling compatibility fix for pinnedPX4 threshold, verify physicaltorque mappingunchanged offline, then authorize a new bounded yawtest. Notexecuted; noPhase3.

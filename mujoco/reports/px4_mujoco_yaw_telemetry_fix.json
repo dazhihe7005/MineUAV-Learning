@@ -1,0 +1,789 @@
+{
+  "phase": "PX4-MuJoCo Phase2B telemetry freshness and yaw validation",
+  "date": "2026-10-11",
+  "branch": "feat/px4-mujoco-yaw-telemetry-fix",
+  "base_branch": "feat/px4-mujoco-yaw-validation",
+  "base_commit": "601f517bc9bc6034197808646931f8214e9596a4",
+  "px4": {
+    "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+    "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+    "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+    "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+    "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+    "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+    "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+  },
+  "runs": {
+    "disarmed_01": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_telemetry_fix_parts/disarmed_01/smoke_summary.json",
+      "summary_sha256": "7639adbed994fdd844e8f3ec10310436e6991201cfa959fb52200914ba8ef5db",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_telemetry_fix_parts/disarmed_01/log/2026-10-11/07_30_50.ulg",
+      "ulog_sha256": "81c208ed93201ce20f321899f428004b77dc383b119a207035646555f5db839b",
+      "complete": true,
+      "simulation_end_s": 16.00000000000201,
+      "wall_s": 16.00612801500006,
+      "physical_samples": 801,
+      "exception": null,
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": {
+        "COMMAND_LONG": 1,
+        "HEARTBEAT": 1,
+        "HIL_ACTUATOR_CONTROLS": 3941
+      },
+      "messages_sent": {
+        "HIL_SENSOR": 4000,
+        "HIL_GPS": 160
+      },
+      "bridge_peak_rss_bytes": 574648320,
+      "px4_sampled_peak_rss_bytes": 20205568,
+      "system_min_available_bytes": 10733146112,
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 3.4056053161621094,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": null,
+        "first_final_heading_good_s": null,
+        "final_heading_good": false
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 249,
+        "mean": -0.00038905040951252973,
+        "min": -0.006174085834683212,
+        "max": 0.004441416787343747,
+        "max_abs": 0.006174085834683212,
+        "rms": 0.0035840447557572933
+      },
+      "poststep_estimate_minus_truth_deg": null,
+      "poststep_desired_minus_estimate_deg": null,
+      "poststep_desired_minus_truth_deg": null,
+      "poststep_requested_target_minus_truth_deg": null,
+      "poststep_observed_duration_s": null,
+      "actual_step_time_s": null,
+      "gate_evidence": null,
+      "settling_time_s": null,
+      "yaw_response_status": "NOT TESTED",
+      "console_final_topic_ages_s": {
+        "vehicle_local_position": 0.008,
+        "estimator_status_flags": 0.456,
+        "vehicle_status": 0.104
+      },
+      "maximum_xy_excursion_m": 5.45059751601145e-06,
+      "maximum_height_m": 0.050882279999999995,
+      "maximum_speed_m_s": 0.06597676536695751,
+      "motor_output_fraction": {
+        "n": 3204,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": null,
+      "freshness": {
+        "query_response_wall_s": {
+          "n": 21,
+          "mean": 0.0037315039523946325,
+          "min": 0.0034043409998503193,
+          "max": 0.005677784999988944,
+          "max_abs": 0.005677784999988944,
+          "rms": 0.003757900496206475,
+          "median": 0.0036548640000546584,
+          "p95": 0.003823924000016632
+        },
+        "source_age_s": {
+          "estimator_status_flags": {
+            "n": 500,
+            "mean": 0.9635840000000001,
+            "min": 0.472,
+            "max": 1.456,
+            "max_abs": 1.456,
+            "rms": 1.0058740438046903,
+            "median": 0.964,
+            "p95": 1.412
+          },
+          "vehicle_local_position": {
+            "n": 500,
+            "mean": 0.26198400000000005,
+            "min": 0.02,
+            "max": 0.504,
+            "max_abs": 0.504,
+            "rms": 0.29905226299093607,
+            "median": 0.262,
+            "p95": 0.484
+          },
+          "vehicle_status": {
+            "n": 500,
+            "mean": 0.403584,
+            "min": 0.124,
+            "max": 0.684,
+            "max_abs": 0.684,
+            "rms": 0.4292842787710726,
+            "median": 0.404,
+            "p95": 0.6281999999999999
+          }
+        },
+        "duplicate_receipts": 10,
+        "query_pending_samples": 0,
+        "safe_stop_samples": 0,
+        "sample_count": 500,
+        "receipt_source_age_s": {
+          "estimator_status_flags": {
+            "n": 21,
+            "mean": 0.6956190476190475,
+            "min": 0.456,
+            "max": 0.96,
+            "max_abs": 0.96,
+            "rms": 0.739110404794974,
+            "median": 0.46,
+            "p95": 0.96
+          },
+          "vehicle_local_position": {
+            "n": 21,
+            "mean": 0.006095238095238096,
+            "min": 0.004,
+            "max": 0.008,
+            "max_abs": 0.008,
+            "rms": 0.006414269805898185,
+            "median": 0.008,
+            "p95": 0.008
+          },
+          "vehicle_status": {
+            "n": 21,
+            "mean": 0.14552380952380956,
+            "min": 0.104,
+            "max": 0.188,
+            "max_abs": 0.188,
+            "rms": 0.14780682373577056,
+            "median": 0.144,
+            "p95": 0.184
+          }
+        }
+      }
+    },
+    "yaw_01": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_telemetry_fix_parts/yaw_01/smoke_summary.json",
+      "summary_sha256": "5b2ae186bf63cec8f3e993d007309ea4f64074bb01534b578018d6bae6e22900",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_telemetry_fix_parts/yaw_01/log/2026-10-11/07_31_26.ulg",
+      "ulog_sha256": "1bae0790a3adb0ccfff6976bbdab8b3ce6a2de49229f679d75e4cb9839c868a5",
+      "complete": true,
+      "simulation_end_s": 45.00000000000903,
+      "wall_s": 45.00447818199996,
+      "physical_samples": 2251,
+      "exception": null,
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": {
+        "COMMAND_LONG": 1,
+        "HEARTBEAT": 1,
+        "HIL_ACTUATOR_CONTROLS": 11187
+      },
+      "messages_sent": {
+        "HIL_SENSOR": 11250,
+        "HIL_GPS": 450
+      },
+      "bridge_peak_rss_bytes": 584245248,
+      "px4_sampled_peak_rss_bytes": 20361216,
+      "system_min_available_bytes": 10755903488,
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 3.4056053161621094,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": 15.864,
+        "first_final_heading_good_s": 16.872,
+        "final_heading_good": true
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 250,
+        "mean": 0.01464688168126241,
+        "min": -0.007938941619435442,
+        "max": 0.026705294929779525,
+        "max_abs": 0.026705294929779525,
+        "rms": 0.017892437149119415
+      },
+      "poststep_estimate_minus_truth_deg": {
+        "n": 647,
+        "mean": -0.007303702948819223,
+        "min": -0.029806426782062766,
+        "max": 0.015530960331472657,
+        "max_abs": 0.029806426782062766,
+        "rms": 0.014633809046789435
+      },
+      "poststep_desired_minus_estimate_deg": {
+        "n": 647,
+        "mean": 9.97362557109796,
+        "min": 0.007420352398615421,
+        "max": 10.023952913953956,
+        "max_abs": 10.023952913953956,
+        "rms": 9.989060977937607
+      },
+      "poststep_desired_minus_truth_deg": {
+        "n": 647,
+        "mean": 9.96632186814914,
+        "min": -0.0001904772334395502,
+        "max": 10.001835793409052,
+        "max_abs": 10.001835793409052,
+        "rms": 9.98176224990275
+      },
+      "poststep_requested_target_minus_truth_deg": {
+        "n": 647,
+        "mean": 9.99722596813655,
+        "min": 9.992853813157808,
+        "max": 10.001821478665732,
+        "max_abs": 10.001821478665732,
+        "rms": 9.997226270521374
+      },
+      "poststep_observed_duration_s": 12.996000000015883,
+      "actual_step_time_s": 32.00399999999315,
+      "gate_evidence": {
+        "decision_clock_usec": 33004000,
+        "freshness": {
+          "safe_stop": false,
+          "allow_new_maneuver": true,
+          "reason": "healthy source + live transport",
+          "query_pending": false,
+          "clock_usec": 33004000,
+          "wall_s": 32.00455322700009,
+          "last_query": [
+            33004000,
+            32.00076728299996
+          ],
+          "last_response": [
+            33004000,
+            32.00417693600002
+          ],
+          "last_actuator": [
+            33000000,
+            32.00051478599994
+          ],
+          "topics": {
+            "vehicle_local_position": {
+              "publication_usec": 33000000.0,
+              "sample_usec": 33000000.0,
+              "received_clock_usec": 33004000,
+              "received_wall_s": 32.00417693600002,
+              "source_age_s": 0.004
+            },
+            "estimator_status_flags": {
+              "publication_usec": 32200000.0,
+              "sample_usec": 32048000.0,
+              "received_clock_usec": 33004000,
+              "received_wall_s": 32.00417693600002,
+              "source_age_s": 0.804
+            },
+            "vehicle_status": {
+              "publication_usec": 32668000.0,
+              "sample_usec": null,
+              "received_clock_usec": 33004000,
+              "received_wall_s": 32.00417693600002,
+              "source_age_s": 0.336
+            }
+          }
+        },
+        "topic_timestamps_usec": {
+          "vehicle_local_position": 33000000.0,
+          "estimator_status_flags": 32200000.0,
+          "vehicle_status": 32668000.0
+        },
+        "heading_good_for_control": true,
+        "cs_mag_aligned_in_flight": true,
+        "heading_estimated_rad": 1.57066,
+        "heading_true_rad": 1.5707972260012029,
+        "console_sha256": "5918319b0764651ab04f9c1b78ab01751cf17491886ea06c83f90dd8b059ccfc"
+      },
+      "settling_time_s": null,
+      "yaw_response_status": "FAIL",
+      "console_final_topic_ages_s": {
+        "vehicle_local_position": 0.008,
+        "estimator_status_flags": 0.8,
+        "vehicle_status": 0.228
+      },
+      "maximum_xy_excursion_m": 0.03074680357414976,
+      "maximum_height_m": 2.056628762571566,
+      "maximum_speed_m_s": 1.264302379173023,
+      "motor_output_fraction": {
+        "n": 9004,
+        "mean": 0.30820033637027294,
+        "min": 0.0,
+        "max": 0.5617732405662536,
+        "max_abs": 0.5617732405662536,
+        "rms": 0.36505568130795274
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": 0.003348604212956733,
+      "freshness": {
+        "query_response_wall_s": {
+          "n": 79,
+          "mean": 0.0036114315696378772,
+          "min": 0.0033156039999084896,
+          "max": 0.007618423999929291,
+          "max_abs": 0.007618423999929291,
+          "rms": 0.003642351845788596,
+          "median": 0.00358316000006198,
+          "p95": 0.003740325300054792
+        },
+        "source_age_s": {
+          "estimator_status_flags": {
+            "n": 1950,
+            "mean": 0.7756348717948718,
+            "min": 0.08,
+            "max": 1.456,
+            "max_abs": 1.456,
+            "rms": 0.8382943855967764,
+            "median": 0.774,
+            "p95": 1.28
+          },
+          "vehicle_local_position": {
+            "n": 1950,
+            "mean": 0.2619938461538462,
+            "min": 0.02,
+            "max": 0.504,
+            "max_abs": 0.504,
+            "rms": 0.29907099920270197,
+            "median": 0.262,
+            "p95": 0.484
+          },
+          "vehicle_status": {
+            "n": 1950,
+            "mean": 0.5910194871794872,
+            "min": 0.068,
+            "max": 0.992,
+            "max_abs": 0.992,
+            "rms": 0.6201756310379613,
+            "median": 0.592,
+            "p95": 0.888
+          }
+        },
+        "duplicate_receipts": 38,
+        "query_pending_samples": 0,
+        "safe_stop_samples": 0,
+        "sample_count": 1950,
+        "receipt_source_age_s": {
+          "estimator_status_flags": {
+            "n": 79,
+            "mean": 0.5231898734177213,
+            "min": 0.064,
+            "max": 0.96,
+            "max_abs": 0.96,
+            "rms": 0.5949830760277923,
+            "median": 0.46,
+            "p95": 0.9563999999999999
+          },
+          "vehicle_local_position": {
+            "n": 79,
+            "mean": 0.006025316455696204,
+            "min": 0.004,
+            "max": 0.008,
+            "max_abs": 0.008,
+            "rms": 0.006348527188911962,
+            "median": 0.008,
+            "p95": 0.008
+          },
+          "vehicle_status": {
+            "n": 79,
+            "mean": 0.33372151898734176,
+            "min": 0.052,
+            "max": 0.496,
+            "max_abs": 0.496,
+            "rms": 0.35468966646023237,
+            "median": 0.352,
+            "p95": 0.48039999999999994
+          }
+        }
+      },
+      "actual_publication_intervals_s": {
+        "vehicle_local_position": {
+          "n": 5455,
+          "mean": 0.008,
+          "min": 0.007999999999995566,
+          "max": 0.008000000000002672,
+          "max_abs": 0.008000000000002672,
+          "rms": 0.008000000000000002,
+          "median": 0.008000000000000007,
+          "p95": 0.008000000000002672
+        },
+        "estimator_status_flags": {
+          "n": 50,
+          "mean": 0.85712,
+          "min": 0.008000000000000007,
+          "max": 1.0000000000000036,
+          "max_abs": 1.0000000000000036,
+          "rms": 0.9157431954429146,
+          "median": 1.0,
+          "p95": 1.0
+        }
+      },
+      "poststep_height_error_m": {
+        "n": 651,
+        "mean": -0.002349940604219166,
+        "min": -0.00996930019483555,
+        "max": 0.0056287625715656375,
+        "max_abs": 0.00996930019483555,
+        "rms": 0.006017167062764465,
+        "median": -0.0016363531559591138,
+        "p95": 0.005454919091999688
+      },
+      "poststep_xy_excursion_m": {
+        "n": 651,
+        "mean": 0.011096904698344248,
+        "min": 0.001317791094464378,
+        "max": 0.02514040884801836,
+        "max_abs": 0.02514040884801836,
+        "rms": 0.013180230068518671,
+        "median": 0.008700773100980162,
+        "p95": 0.024316549689101942
+      },
+      "vehicle_rates_setpoint_poststep": {
+        "n": 649,
+        "mean": 0.48760050167839036,
+        "min": 0.09369540214538574,
+        "max": 0.4897637963294983,
+        "max_abs": 0.4897637963294983,
+        "rms": 0.4879324405132468,
+        "median": 0.4887741208076477,
+        "p95": 0.48972374200820923
+      },
+      "vehicle_torque_setpoint_poststep": {
+        "n": 650,
+        "mean": 0.09599597846265309,
+        "min": -0.0007725312607362866,
+        "max": 0.09720583260059357,
+        "max_abs": 0.09720583260059357,
+        "rms": 0.09633826866206391,
+        "median": 0.09700008109211922,
+        "p95": 0.09719855822622776
+      },
+      "control_allocator_status_poststep": {
+        "n": 65,
+        "mean": 0.09644954525507414,
+        "min": 0.0634537786245346,
+        "max": 0.097205750644207,
+        "max_abs": 0.097205750644207,
+        "rms": 0.09653844741153375,
+        "median": 0.09699898213148117,
+        "p95": 0.09719765186309814
+      },
+      "allocator_poststep_torque_achieved_count": 0,
+      "allocator_poststep_samples": 65,
+      "allocator_active_motor_saturation_count": 0
+    }
+  },
+  "yaw_response": {
+    "status": "FAIL",
+    "settling_time_s": null,
+    "settling_status": "FAIL",
+    "max_target_error_deg": 10.001821478665732,
+    "overshoot_deg": 0.0,
+    "steady_state_error_deg": 9.996365713056495,
+    "peak_body_z_rate_rad_s": 0.0001534854277122697,
+    "poststep_observation_s": 12.996000000015883,
+    "sampling_gap_max_s": 0.020000000000024443
+  },
+  "allocator_source_audit": {
+    "raw_matrix": [
+      [
+        0.21980275213718414,
+        -0.2191992551088333,
+        -0.2191992551088333,
+        0.21980275213718414
+      ],
+      [
+        -0.23409835994243622,
+        -0.23409835994243622,
+        0.20490464568138123,
+        0.20490464568138123
+      ],
+      [
+        -0.017207708209753036,
+        0.017207708209753036,
+        -0.017207708209753036,
+        0.017207708209753036
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    ],
+    "after_source_weak_row_removal": [
+      [
+        0.21980275213718414,
+        -0.2191992551088333,
+        -0.2191992551088333,
+        0.21980275213718414
+      ],
+      [
+        -0.23409835994243622,
+        -0.23409835994243622,
+        0.20490464568138123,
+        0.20490464568138123
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    ],
+    "threshold": 0.05,
+    "weak_rows": [
+      2,
+      3,
+      4
+    ],
+    "yaw_row_removed": true,
+    "evidence_type": "model-derived from actual ULog parameters and pinned source, not a logged matrix"
+  },
+  "protected_identities": {
+    "mujoco/models/mine_uav_dynamics_v2.xml": {
+      "base_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "current_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "unchanged": true
+    },
+    "mujoco/models/rotor_config.json": {
+      "base_sha256": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+      "current_sha256": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+      "unchanged": true
+    },
+    "mujoco/models/rotor_actuators.xml": {
+      "base_sha256": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44",
+      "current_sha256": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44",
+      "unchanged": true
+    },
+    "mujoco/rl/models/uav_bc_mlp_seed0.pt": {
+      "base_sha256": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "current_sha256": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "unchanged": true
+    },
+    "mujoco/rl/models/uav_bc_yaw_augmented_seed0.pt": {
+      "base_sha256": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "current_sha256": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "unchanged": true
+    },
+    "mujoco/rl/models/joint_latent_world_model_v3_autonomous_consistency.pt": {
+      "base_sha256": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+      "current_sha256": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+      "unchanged": true
+    },
+    "mujoco/reports/px4_mujoco_phase1.json": {
+      "base_sha256": "0ef399d4f8e66c4abc409e1e8bf0004a83a2effcd654692c51359b8b203fc974",
+      "current_sha256": "0ef399d4f8e66c4abc409e1e8bf0004a83a2effcd654692c51359b8b203fc974",
+      "unchanged": true
+    },
+    "mujoco/reports/px4_mujoco_yaw_validation.json": {
+      "base_sha256": "684b5c654ab205ea68b8f752e59025560f0f777cef3fb064de81a4d780dffc82",
+      "current_sha256": "684b5c654ab205ea68b8f752e59025560f0f777cef3fb064de81a4d780dffc82",
+      "unchanged": true
+    }
+  },
+  "px4_source_identities": {
+    "src/modules/ekf2/EKF2.cpp": "1c1e2bca5b9e33aaee146c078b95f5b6e2bd87734223f72a2e0505b300d94ef5",
+    "src/modules/commander/Commander.cpp": "611a0c5761f019ae7676660d052c668bd27d9c7d1e5729e749523e1aae2d465d",
+    "src/systemcmds/topic_listener/listener_main.cpp": "f49fe9cadff3c87dfe6b3c101fbcad1dd7b33e72069c9268a07fc4f8cea476fa",
+    "src/systemcmds/topic_listener/topic_listener.hpp": "b1244bf3f129ac3b4406bd18dde8f7fc70732e113efdb42a67ea23b8eb4183ca",
+    "src/modules/control_allocator/ControlAllocator.cpp": "f000d3ccd8a7675c5eb3045a013ec9aaa08489f31341f56483e21f3ad5cc8a1b",
+    "src/modules/control_allocator/VehicleActuatorEffectiveness/ActuatorEffectivenessRotors.cpp": "7b658fb98db375e9018c8fcb4e108067b7bfb4fae71419e1ab40b0d419140f4d"
+  },
+  "time_semantics": {
+    "sample": "timestamp_sample: EKF delayed/sample source; absent for vehicle_status",
+    "publication": "original uORB timestamp, never rewritten on duplicates",
+    "query": "actual bridge request simulation clock + host monotonic time",
+    "receipt": "actual console parse observation clock + host monotonic time, duplicate logged separately",
+    "liveness": "accepted exact timestamp HIL actuator at250Hz; .25s absolute wall watchdog plus process/socket/protocol checks",
+    "source_limits_s": {
+      "vehicle_local_position": 0.65,
+      "estimator_status_flags": 1.65,
+      "vehicle_status": 1.15
+    },
+    "derivation": "flags/status nominalperiod1/.5s +2Hz query(.5s)+bounded response(.15s). Local source is125Hz; the fixed.65s operational lease is conservative versus.008+.5+.15=.658s and may fail-closed at extreme jitter. Source lease remains independent of heartbeat/receipt.",
+    "partial_query": "no new maneuver while pending; existing flight bounded by.15s response deadline and unchanged finite source/transport leases; complete unsafe topic stops without waiting for rest of batch",
+    "old_gate_defect": "1Hz state+2Hz snapshot can normally be~1.5s old. At original32.196s flags age1.004s exceeded1s despitehealthy publication stream.",
+    "fault_latency_bounds": "Observed complete unsafe state stops at next4ms physics check or\u22648ms console-service slice during blocking receive. Sustained fault published just after query:\u2264.5+.15+.008=.658s under serviced polling. Source expiry on advancing simulation detected\u22641.654/1.154/.654s for flags/status/local. During stalled lockstep, earliest pending query150ms or actuator250ms absolute wall deadline caps receive; late packets cannot renew expired leases. Synthetic query timeout152ms and flags-only freeze1652ms on4ms grid. No hard real-time scheduling guarantee."
+  },
+  "status": {
+    "root_cause": "PASS",
+    "separated_time_semantics": "PASS",
+    "fault_closed_offline_regressions": "PASS",
+    "disarmed_bidirectional_communication": "PASS",
+    "no_spurious_telemetry_stop": "PASS",
+    "final_heading_alignment": "PASS",
+    "full_bounded_observation": "PASS",
+    "yaw_tracking": "FAIL",
+    "settling": "FAIL",
+    "motor_bounds": "PASS",
+    "allocator_yaw_authority": "FAIL",
+    "height_xy_envelope": "PASS",
+    "phase3_entry": "BLOCKED",
+    "external_odometry_integration": "NOT TESTED"
+  },
+  "failure_explanation": {
+    "level": "Confirmed source/config + corroborating ULog evidence",
+    "mechanism": "Existing CT=1 and |KM|=.017207708 yield yaw effectivenessentries below pinned allocator weak-axis threshold.05. ControlAllocator zeroes this row before assigning matrix. Desiredyaw100deg, desiredbodyzrate\u2248.488rad/s and requestedyawtorque\u2248.097 occur, but torque remainsunallocated and motors do not produce differentialyaw response. Not a heading/frame freshness failure.",
+    "not_fixed": "Changing existing allocator geometry/CT scaling or PX4 source would violate this phase fixedparameterprotocol; no extra flight, no gains tuned."
+  },
+  "execution": {
+    "sitl_runs": 2,
+    "disarmed_runs": 1,
+    "flight_runs": 1,
+    "retries": 0,
+    "workers": 1,
+    "only_simulation_hardware": "loopback TCP4560 + offboard UDP14540/14580, no serial/realmotors",
+    "no_parameter_model_physics_training_changes": true
+  },
+  "verification": {
+    "original_tests": 69,
+    "bridge_tests_before_final_review": 103,
+    "final_bridge_tests": 109,
+    "skipped": 0,
+    "red_green": "monitor23failed\u2192allpass; opt-in runner missingmodule\u2192pass; analysis4failed\u2192pass; review regressions6failed/29passed\u2192full bridge109passed",
+    "original_phase2_raw_replay": "primary0 actual ULog last5.196s, newmonitor passes with zero fabricatedhealth while old1sgate denies normal snapshots",
+    "repository_suite": "BLOCKED collection cad_check/test_inspect_stl_assembly.py: system SciPy/venv NumPy2.2.6 ABI mismatch; no install, no unrelated dependency fix",
+    "independent_review": {
+      "reviewer": "px4_telemetry_fix_review",
+      "read_only": true,
+      "tests_independently_verified": 103,
+      "critical": 0,
+      "important": 2,
+      "minor": 1,
+      "declined_to_judge": [],
+      "findings": [
+        "Complete unhealthy first topic could be hidden by next fragmented title",
+        "Late complete response could clear expired query; blocking actuator receive could overrun query deadline",
+        "General duplicate-stall test double-fed one actuator timestamp; redundant flags-only stall coverage was valid"
+      ],
+      "fix_passes": 1,
+      "fixes": "Preserve independently complete topics while keeping strict batch completion; latch old lease expiry before renewing any query/state/actuator; service console during\u22648ms receive slices and cap wait at earliest absolute watchdog. Correct duplicate-stall fixture to fail specifically on publication expiry.",
+      "minor_ruling": "Regraded Important: test fault-isolation was necessary evidence for safety-regression coverage; corrected in the same single offline pass",
+      "deferred_minor": [],
+      "repeat_review": false,
+      "post_fix_tests": 109
+    },
+    "post_review_flight_repeated": false,
+    "runtime_provenance": "Both authorized SITL runs preceded the final review hardening. Raw summary/ULog identities are immutable; source hashes below identify final offline-verified code, not a byte-exact attestation of the pre-hardening executed version. Post-review parser/deadline changes were not re-flown; no remaining authorized flight budget.",
+    "phase2b_source_hashes": {
+      "__init__.py": "12ce64c16d3d08e6146034a84d75edbfd08ec0ff6ed2242d2262a996039471c8",
+      "actuator_adapter.py": "99bc0b9768782f2566c77adfa7159c081a0a2828225cf5638f4dec412212985a",
+      "analyze_phase1.py": "7b09aa31803d6071d2190c23f7b994ccf3095e10d613e1595efa0082c2e7fa38",
+      "analyze_yaw.py": "18dac7435a2adc5ed1545817b1f564f18e63f0f2beb1fb466d38e3fdf98d4b89",
+      "analyze_yaw_telemetry.py": "43aff8c65ad8574894a223c5eb435964304c0040eb41ed972523e35ffd7f702d",
+      "closed_loop.py": "dc8bf0394adbd757bb9f9951a4bbc3527a0e49da26bf5c7847db541f09563ba0",
+      "diagnostics.py": "633ba6ba4763223cf5c2d59a72d72ea3365356fe78d0af403dc9ddf6fef40220",
+      "frame_conversions.py": "d9ee1d47b3518a16504086b96d413d2e483c5d30ed44755679afed80c592a3da",
+      "magnetic_model.py": "1edc003280d0f403f28ff7f4a8eecb4adc4c49d3aabe4d2919d13734d637550f",
+      "sensor_adapter.py": "a43c358ea2f3e2b1ce91746c119f10850bd978607e8ce8efd79f97a75a3e7df1",
+      "simulation_runner.py": "fdbeffb8e5dbefbdb4ea69bd142d2c42a3117e273cfaea870ad614fc7ceb2724",
+      "telemetry_freshness.py": "6e731e7d1b6b234e230e9d1cc95484cb18cc1714c9088476b80776a68c69baa9",
+      "test_analysis.py": "e1a7e45061948c996c10a39e3ae007900f9eb0406d446683c4d8423e6bbcc31c",
+      "test_closed_loop.py": "9adfafdbf8cf1b326e9df753304c5a5054072c3dd41a13c8e41155fe285b8df1",
+      "test_interfaces.py": "6ebcc1c91eadfaed27618c58aba03046dc7c7be1e3da89b48138e20139094282",
+      "test_runner.py": "12f2fde93a660070cec9a06edd90719f6506b4ac7a26614a3cc0a477c3171cd6",
+      "test_telemetry_freshness.py": "a0ac1a590494297be8286bfe737167a15796d80606af33b805dd6b9e593bcfa6",
+      "test_transport.py": "c75943491867006c6ecf7c9130660a9069d69b2df0799e534a36cd4d14ef550b",
+      "test_yaw_analysis.py": "3cf98a2b19eca4ae87ebc860e4f0ae0a967bdb42ad94f724395e44d9e65f5210",
+      "test_yaw_telemetry_analysis.py": "c59a16a557fa3af6aa0fb326b119140941c278877c390d672cba6f3e5b1a05f2",
+      "test_yaw_validation.py": "78d8daa5acbc2dc87c889ddadf993568cdb15561479d9e2af839d535708b8a67",
+      "transport.py": "dc684975ea54a2066d077e5ad2231851b29a9afad82b99d8fbc99d3bc1ab92a5",
+      "yaw_runner.py": "0b52be425180fd1cd2719a9be5ddece4a30b39c630af5ef6de8cdb37dda91261",
+      "yaw_telemetry_runner.py": "2d33a14e6a157dd8a7222630e85259dcad00e0e8e49a8aa6c6b21ad10675bee8",
+      "yaw_validation.py": "cabf737a3deeb6bda2652b54e1d75071fa7522ac1ef12d9ba01a031b5be96f78"
+    }
+  },
+  "resources": {
+    "oom_observed": false,
+    "workers": 1,
+    "swap_changed": false,
+    "bridge_peak_rss_bytes": 584245248,
+    "px4_sampled_peak_rss_bytes": 20361216,
+    "min_available_bytes": 10733146112,
+    "offline_peak_rss_bytes": 498544640
+  },
+  "limitations": [
+    "One bounded yawflight, ideal instantaneous actuator, no realhardware safety claim",
+    "Final review parser/deadline hardening passed offline regressions but was not re-flown; actual completed45s recording belongs to pre-hardening monitor",
+    "Console snapshots are polled; transient faults wholly betweenqueries maynotbeobserved; sustainedfault latency bounded, not unlimitedhealthycache",
+    "No continuous externalheadinghealth MAVLink equivalent substituted for exact EKF finalmagaligned flags",
+    "No hard realtime guarantee, physical50Hz response has~20ms measurement granularity",
+    "Full response FAIL, not missingdata NOTTESTED; observednearzeroovershoot doesnotmean goodtracking"
+  ],
+  "next_recommendation": "Approve a separate actuator-effectiveness scaling compatibility fix for pinned PX4 weak-row threshold, validate unchanged physical torque mapping offline, then authorize a new bounded yaw test; not executed.",
+  "figures": {
+    "px4_telemetry_fix_yaw_response.png": "c44e84241efc335df47a5b51ee686fd871a5f25922930e44b06edf37458ec6f6",
+    "px4_telemetry_fix_rate_and_motors.png": "debe07a01a9edbad5c2bf5d3fcea25d0190a9856ce827b9bf89a980cf6a82710",
+    "px4_telemetry_fix_position_hold.png": "3caecdb874239d4e6a0823ef5bd82b49f75ae7cbc10e46dc1897b834bab86b21",
+    "px4_telemetry_fix_freshness_and_health.png": "1d3fb819a578c142fe50f66bdff79c69e65290a8eac561cbf34b708656df99ec"
+  }
+}

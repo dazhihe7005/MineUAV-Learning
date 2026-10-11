@@ -35,7 +35,7 @@ def validate_model(model):
 def safe_stop(data):
     data.ctrl[:]=0
 
-def receive_current_actuator(wire,timestamp,lockstep,deadline):
+def receive_current_actuator(wire,timestamp,lockstep,deadline,service=None,deadline_provider=None):
     """Bootstrap may discard old outputs, but never renew its receive budget.
 
     After lockstep starts a stale response is a protocol fault, not a reason
@@ -43,9 +43,20 @@ def receive_current_actuator(wire,timestamp,lockstep,deadline):
     """
     stale=0
     while True:
-        remaining=deadline-time.monotonic()
+        if service is not None:service()
+        effective_deadline=min(deadline,deadline_provider()) if deadline_provider else deadline
+        remaining=effective_deadline-time.monotonic()
         if remaining<=0:raise TimeoutError("PX4 actuator absolute watchdog expired")
-        msg=wire.receive_until("HIL_ACTUATOR_CONTROLS",timeout=remaining)
+        # Opt-in telemetry monitoring must continue during lockstep receive.
+        # Legacy callers keep their original single absolute receive budget.
+        try:msg=wire.receive_until("HIL_ACTUATOR_CONTROLS",timeout=min(remaining,.008) if service else remaining)
+        except TimeoutError:
+            if service is None:raise
+            continue
+        if service is not None:
+            service()
+            effective_deadline=min(deadline,deadline_provider()) if deadline_provider else deadline
+            if time.monotonic()>effective_deadline:raise TimeoutError("late PX4 actuator after safety deadline")
         if msg.time_usec>=timestamp:return msg,stale
         if lockstep:raise ValueError("stale PX4 actuator after lockstep started")
         stale+=1
@@ -122,6 +133,11 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
             except OSError:break
             if not chunk:break
             console.append(chunk.decode("utf-8",errors="replace"))
+        if phase2 and hasattr(phase2,"on_console"):
+            phase2.on_console("".join(console),clock.time_usec,time.monotonic()-wall_start)
+    def service_telemetry():
+        read_console()
+        phase2.before_step(d,clock.time_usec,"".join(console),wall=time.monotonic()-wall_start)
     try:
         with LoopbackTransport(timeout=5.,mavlink=mv) as wire:
             env=os.environ.copy()
@@ -140,8 +156,11 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                 if time.monotonic()-wall_start>seconds+35:raise TimeoutError("finite wall-clock smoke budget")
                 if proc.poll() is not None:raise ConnectionError("owned PX4 exited")
                 sample=sensors.sample(d,clock.time_usec)
+                if phase2 and hasattr(phase2,"on_console"):
+                    read_console()
+                    phase2.before_step(d,clock.time_usec,"".join(console),wall=time.monotonic()-wall_start)
                 if offboard:
-                    if phase2:
+                    if phase2 and not hasattr(phase2,"on_console"):
                         read_console();phase2.before_step(d,clock.time_usec,"".join(console))
                     if int(d.time*20)>last_setpoint:
                         last_setpoint=int(d.time*20)
@@ -160,16 +179,21 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                 for msg in sensor_messages(sample,mv,include_gps=(clock.time_usec-1000000)%100000==0):wire.send(msg)
                 try:
                     # Startup freewheeling only until the first PX4 output.
-                    deadline=min(time.monotonic()+(5. if lockstep else .002),
+                    deadline=min(time.monotonic()+(getattr(phase2,"actuator_watchdog_s",5.) if lockstep else .002),
                                  wall_start+seconds+35,
                                  float("inf") if lockstep else bootstrap_deadline)
-                    msg,discarded=receive_current_actuator(wire,clock.time_usec,lockstep,deadline)
+                    monitored=phase2 is not None and hasattr(phase2,"monitor")
+                    msg,discarded=receive_current_actuator(wire,clock.time_usec,lockstep,deadline,
+                        service=service_telemetry if monitored else None,
+                        deadline_provider=(lambda:wall_start+phase2.monitor.next_wall_deadline()) if monitored else None)
                     stale+=discarded
                     if msg.time_usec!=clock.time_usec:raise ValueError("PX4 actuator/sensor clock mismatch")
                     if not msg.flags&1:raise ValueError("matching PX4 build must advertise lockstep")
                     armed=bool(msg.mode&128)
                     if armed and not flight_requested:raise ValueError("unexpected armed output")
                     previous=gate.last;gate.accept(msg.time_usec)
+                    if phase2 and hasattr(phase2,"on_actuator"):
+                        phase2.on_actuator(msg.time_usec,time.monotonic()-wall_start)
                     if previous>=0:intervals.append(msg.time_usec-previous)
                     d.ctrl[:]=a.apply(msg.controls,armed)
                     if not lockstep:first_actuator_at=float(d.time)
@@ -188,13 +212,18 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                 if int(d.time*log_hz)>last_log:
                     last_log=int(d.time*log_hz)
                     require_memory();min_memory=min(min_memory,available_memory());peak_px4=max(peak_px4,rss_bytes(proc.pid))
-                    result["records"].append({"time_s":float(d.time),"clock_usec":clock.time_usec,
+                    record={"time_s":float(d.time),"clock_usec":clock.time_usec,
                       "position_enu_m":d.qpos[:3].tolist(),"velocity_origin_enu_m_s":d.qvel[:3].tolist(),
                       "quaternion_enu_flu":d.qpos[3:].tolist(),"angular_velocity_flu_rad_s":d.qvel[3:].tolist(),
-                      "ctrl_omega_squared":d.ctrl.tolist(),"saturated":bool(np.any(d.ctrl>=a.u_max*(1-1e-6)))})
+                      "ctrl_omega_squared":d.ctrl.tolist(),"saturated":bool(np.any(d.ctrl>=a.u_max*(1-1e-6)))}
+                    if phase2 and hasattr(phase2,"last_decision"):record["telemetry_gate"]=phase2.last_decision
+                    result["records"].append(record)
                     read_console()
-                if offboard and phase2 and d.time>=6 and int(d.time*2)>last_query:
-                    last_query=int(d.time*2);os.write(master,phase2.queries().encode())
+                if phase2 and (offboard or hasattr(phase2,"query_requested")) and d.time>=6 and int(d.time*2)>last_query:
+                    last_query=int(d.time*2)
+                    if hasattr(phase2,"query_requested"):
+                        read_console();phase2.query_requested(clock.time_usec,time.monotonic()-wall_start,"".join(console))
+                    os.write(master,phase2.queries().encode())
                 if d.time>=(8 if offboard else seconds-3) and not requested:
                     commands="ver all\nsimulator_mavlink status\nekf2 status\nlistener sensor_combined 1\nlistener vehicle_local_position 1\nlistener vehicle_status 1\nlistener estimator_status_flags 1\nlistener actuator_outputs_sim 1\nlistener vehicle_air_data 1\nlistener vehicle_magnetometer 1\nparam show SENS_IMU_MODE\nparam show EKF2_MULTI_IMU\n"
                     os.write(master,commands.encode());requested=True

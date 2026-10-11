@@ -57,7 +57,7 @@ def latest_topics(console):
 def live_heading_ready(console,time_usec):
     return heading_topics_ready(latest_topics(console),time_usec)
 
-def heading_topics_ready(topics,time_usec):
+def heading_topics_ready(topics,time_usec,age_limits=None):
     requirements={"vehicle_local_position":{"xy_valid":True,"z_valid":True,
           "v_xy_valid":True,"v_z_valid":True,"heading_good_for_control":True},
        "estimator_status_flags":{"cs_tilt_align":True,"cs_yaw_align":True,
@@ -68,7 +68,8 @@ def heading_topics_ready(topics,time_usec):
     for name,flags in requirements.items():
         fields=topics.get(name,{})
         timestamp=fields.get("timestamp",float("nan"))
-        if not np.isfinite(timestamp) or not 0<=time_usec-timestamp<=1000000:return False
+        limit=1000000 if age_limits is None else age_limits[name]
+        if not np.isfinite(timestamp) or not 0<=time_usec-timestamp<=limit:return False
         if any(fields.get(key) is not value for key,value in flags.items()):return False
     local=topics["vehicle_local_position"];flags=topics["estimator_status_flags"];status=topics["vehicle_status"]
     return bool(np.isfinite(local.get("heading",float("nan")))
