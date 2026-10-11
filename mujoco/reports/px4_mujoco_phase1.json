@@ -1,0 +1,755 @@
+{
+  "experiment": "PX4\u2013MuJoCo SITL Integration Phase1",
+  "date": "2026-10-11",
+  "branch": "feat/px4-mujoco-sitl-integration",
+  "base_commit": "89df0fb3b5fc5bcd99db217d0a54c51613655a52",
+  "system": {
+    "ubuntu": "22.04.5 LTS",
+    "kernel": "6.8.0-138-generic",
+    "cpu": "AMD Ryzen9 7940HX,16cores/32threads",
+    "ram_gib": 14.83,
+    "swap_bytes": 0,
+    "python": "3.10.12",
+    "mujoco": "3.14.0",
+    "pymavlink": "2.4.49",
+    "system_installations": 0
+  },
+  "px4": {
+    "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+    "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+    "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+    "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+    "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+    "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+    "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+  },
+  "runs": {
+    "smoke_01": {
+      "complete": false,
+      "kind": "disarmed_communication_smoke",
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "history_hashes_before": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "initial_qpos": [
+        0.0,
+        0.0,
+        0.051,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "px4_environment": {
+        "PX4_SIM_MODEL": "mineuav",
+        "PX4_SIMULATOR": "mujoco",
+        "PX4_SYS_AUTOSTART": "10016",
+        "PX4_SIM_HOST_ADDR": "127.0.0.1",
+        "PX4_SIM_SPEED_FACTOR": "1",
+        "PX4_PARAM_CA_AIRFRAME": "0",
+        "PX4_PARAM_CA_ROTOR_COUNT": "4",
+        "PX4_PARAM_THR_MDL_FAC": "0",
+        "PX4_PARAM_CA_ROTOR0_PX": "-0.23409835757668374",
+        "PX4_PARAM_CA_ROTOR0_PY": "-0.219802750321446",
+        "PX4_PARAM_CA_ROTOR0_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR0_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR0_KM": "-0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC1": "101",
+        "PX4_PARAM_CA_ROTOR1_PX": "-0.23409835757668374",
+        "PX4_PARAM_CA_ROTOR1_PY": "0.219199249678554",
+        "PX4_PARAM_CA_ROTOR1_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR1_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR1_KM": "0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC2": "102",
+        "PX4_PARAM_CA_ROTOR2_PX": "0.20490464242331627",
+        "PX4_PARAM_CA_ROTOR2_PY": "0.219199249678554",
+        "PX4_PARAM_CA_ROTOR2_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR2_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR2_KM": "-0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC3": "103",
+        "PX4_PARAM_CA_ROTOR3_PX": "0.20490464242331627",
+        "PX4_PARAM_CA_ROTOR3_PY": "-0.219802750321446",
+        "PX4_PARAM_CA_ROTOR3_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR3_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR3_KM": "0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC4": "104",
+        "PX4_PARAM_SIM_GZ_EN": "0",
+        "PX4_PARAM_IMU_INTEG_RATE": "250",
+        "PX4_PARAM_EKF2_MULTI_IMU": "0",
+        "PX4_PARAM_SENS_IMU_MODE": "1"
+      },
+      "simulator_port": 4560,
+      "physics_hz": 500,
+      "sensor_hz": 250,
+      "gps_hz": 10,
+      "motor_assumption": "ideal normalized thrust; THR_MDL_FAC=0; no ESC lag",
+      "workers": 1,
+      "flight_command_sent": false,
+      "exception": {
+        "type": "TimeoutError",
+        "message": "timed out",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/simulation_runner.py\", line 103, in smoke\n    os.close(slave);wire.accept();wire.receive_until(\"HEARTBEAT\")\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/transport.py\", line 56, in accept\n    c,addr=self.socket.accept()\n  File \"/usr/lib/python3.10/socket.py\", line 293, in accept\n    fd, addr = self._accept()\nTimeoutError: timed out\n"
+      },
+      "px4_exit_code": 255,
+      "wall_seconds": 5.007336201000726,
+      "bridge_cpu_seconds": 0.0008624409999997695,
+      "bridge_peak_rss_bytes": 570597376,
+      "px4_sampled_peak_rss_bytes": 0,
+      "system_min_available_bytes": 11366137856,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_hashes_after": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "history_unchanged": true
+    },
+    "smoke_02": {
+      "complete": true,
+      "kind": "disarmed_communication_smoke",
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "history_hashes_before": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "initial_qpos": [
+        0.0,
+        0.0,
+        0.051,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "px4_environment": {
+        "PX4_SIM_MODEL": "mineuav",
+        "PX4_SIMULATOR": "mujoco",
+        "PX4_SYS_AUTOSTART": "10016",
+        "PX4_SIM_HOST_ADDR": "127.0.0.1",
+        "PX4_SIM_SPEED_FACTOR": "1",
+        "PX4_PARAM_CA_AIRFRAME": "0",
+        "PX4_PARAM_CA_ROTOR_COUNT": "4",
+        "PX4_PARAM_THR_MDL_FAC": "0",
+        "PX4_PARAM_CA_ROTOR0_PX": "-0.23409835757668374",
+        "PX4_PARAM_CA_ROTOR0_PY": "-0.219802750321446",
+        "PX4_PARAM_CA_ROTOR0_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR0_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR0_KM": "-0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC1": "101",
+        "PX4_PARAM_CA_ROTOR1_PX": "-0.23409835757668374",
+        "PX4_PARAM_CA_ROTOR1_PY": "0.219199249678554",
+        "PX4_PARAM_CA_ROTOR1_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR1_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR1_KM": "0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC2": "102",
+        "PX4_PARAM_CA_ROTOR2_PX": "0.20490464242331627",
+        "PX4_PARAM_CA_ROTOR2_PY": "0.219199249678554",
+        "PX4_PARAM_CA_ROTOR2_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR2_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR2_KM": "-0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC3": "103",
+        "PX4_PARAM_CA_ROTOR3_PX": "0.20490464242331627",
+        "PX4_PARAM_CA_ROTOR3_PY": "-0.219802750321446",
+        "PX4_PARAM_CA_ROTOR3_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR3_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR3_KM": "0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC4": "104",
+        "PX4_PARAM_SIM_GZ_EN": "0",
+        "PX4_PARAM_IMU_INTEG_RATE": "250",
+        "PX4_PARAM_EKF2_MULTI_IMU": "0",
+        "PX4_PARAM_SENS_IMU_MODE": "1"
+      },
+      "simulator_port": 4560,
+      "physics_hz": 500,
+      "sensor_hz": 250,
+      "gps_hz": 10,
+      "motor_assumption": "ideal normalized thrust; THR_MDL_FAC=0; no ESC lag",
+      "workers": 1,
+      "flight_command_sent": false,
+      "exception": null,
+      "simulation_seconds": 12.000000000000677,
+      "messages_received": {
+        "COMMAND_LONG": 1,
+        "HEARTBEAT": 1,
+        "HIL_ACTUATOR_CONTROLS": 2941
+      },
+      "messages_sent": {
+        "HIL_SENSOR": 3000,
+        "HIL_GPS": 120
+      },
+      "first_actuator_at_s": 0.23600000000000018,
+      "stale_bootstrap_messages_discarded": 0,
+      "actuator_interval_usec": {
+        "min": 4000,
+        "max": 4000,
+        "median": 4000.0
+      },
+      "px4_exit_code": 0,
+      "wall_seconds": 12.003541858000972,
+      "bridge_cpu_seconds": 0.8185504289999992,
+      "bridge_peak_rss_bytes": 572309504,
+      "px4_sampled_peak_rss_bytes": 20406272,
+      "system_min_available_bytes": 11324428288,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_hashes_after": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "history_unchanged": true
+    },
+    "smoke_03": {
+      "complete": true,
+      "kind": "disarmed_communication_smoke",
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "history_hashes_before": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "initial_qpos": [
+        0.0,
+        0.0,
+        0.051,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "px4_environment": {
+        "PX4_SIM_MODEL": "mineuav",
+        "PX4_SIMULATOR": "mujoco",
+        "PX4_SYS_AUTOSTART": "10016",
+        "PX4_SIM_HOST_ADDR": "127.0.0.1",
+        "PX4_SIM_SPEED_FACTOR": "1",
+        "PX4_PARAM_CA_AIRFRAME": "0",
+        "PX4_PARAM_CA_ROTOR_COUNT": "4",
+        "PX4_PARAM_THR_MDL_FAC": "0",
+        "PX4_PARAM_CA_ROTOR0_PX": "-0.23409835757668374",
+        "PX4_PARAM_CA_ROTOR0_PY": "-0.219802750321446",
+        "PX4_PARAM_CA_ROTOR0_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR0_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR0_KM": "-0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC1": "101",
+        "PX4_PARAM_CA_ROTOR1_PX": "-0.23409835757668374",
+        "PX4_PARAM_CA_ROTOR1_PY": "0.219199249678554",
+        "PX4_PARAM_CA_ROTOR1_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR1_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR1_KM": "0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC2": "102",
+        "PX4_PARAM_CA_ROTOR2_PX": "0.20490464242331627",
+        "PX4_PARAM_CA_ROTOR2_PY": "0.219199249678554",
+        "PX4_PARAM_CA_ROTOR2_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR2_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR2_KM": "-0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC3": "103",
+        "PX4_PARAM_CA_ROTOR3_PX": "0.20490464242331627",
+        "PX4_PARAM_CA_ROTOR3_PY": "-0.219802750321446",
+        "PX4_PARAM_CA_ROTOR3_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR3_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR3_KM": "0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC4": "104",
+        "PX4_PARAM_SIM_GZ_EN": "0",
+        "PX4_PARAM_IMU_INTEG_RATE": "250",
+        "PX4_PARAM_EKF2_MULTI_IMU": "0",
+        "PX4_PARAM_SENS_IMU_MODE": "1"
+      },
+      "simulator_port": 4560,
+      "physics_hz": 500,
+      "sensor_hz": 250,
+      "gps_hz": 10,
+      "motor_assumption": "ideal normalized thrust; THR_MDL_FAC=0; no ESC lag",
+      "synthetic_sensor_noise": {
+        "seed": 0,
+        "mag_std_gauss": 0.0002,
+        "baro_std_hpa": 0.01,
+        "imu_noise": 0
+      },
+      "workers": 1,
+      "flight_command_sent": false,
+      "exception": null,
+      "simulation_seconds": 16.00000000000201,
+      "messages_received": {
+        "COMMAND_LONG": 1,
+        "HEARTBEAT": 1,
+        "HIL_ACTUATOR_CONTROLS": 3942
+      },
+      "messages_sent": {
+        "HIL_SENSOR": 4000,
+        "HIL_GPS": 160
+      },
+      "first_actuator_at_s": 0.23200000000000018,
+      "stale_bootstrap_messages_discarded": 0,
+      "actuator_interval_usec": {
+        "min": 4000,
+        "max": 4000,
+        "median": 4000.0
+      },
+      "px4_exit_code": 0,
+      "wall_seconds": 16.003556905998266,
+      "bridge_cpu_seconds": 1.1299435180000001,
+      "bridge_peak_rss_bytes": 573960192,
+      "px4_sampled_peak_rss_bytes": 20123648,
+      "system_min_available_bytes": 11346788352,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_hashes_after": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "history_unchanged": true
+    },
+    "hover_01": {
+      "complete": true,
+      "kind": "bounded_offboard_hover",
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+      "history_hashes_before": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "initial_qpos": [
+        0.0,
+        0.0,
+        0.051,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "px4_environment": {
+        "PX4_SIM_MODEL": "mineuav",
+        "PX4_SIMULATOR": "mujoco",
+        "PX4_SYS_AUTOSTART": "10016",
+        "PX4_SIM_HOST_ADDR": "127.0.0.1",
+        "PX4_SIM_SPEED_FACTOR": "1",
+        "PX4_PARAM_CA_AIRFRAME": "0",
+        "PX4_PARAM_CA_ROTOR_COUNT": "4",
+        "PX4_PARAM_THR_MDL_FAC": "0",
+        "PX4_PARAM_CA_ROTOR0_PX": "-0.23409835757668374",
+        "PX4_PARAM_CA_ROTOR0_PY": "-0.219802750321446",
+        "PX4_PARAM_CA_ROTOR0_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR0_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR0_KM": "-0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC1": "101",
+        "PX4_PARAM_CA_ROTOR1_PX": "-0.23409835757668374",
+        "PX4_PARAM_CA_ROTOR1_PY": "0.219199249678554",
+        "PX4_PARAM_CA_ROTOR1_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR1_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR1_KM": "0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC2": "102",
+        "PX4_PARAM_CA_ROTOR2_PX": "0.20490464242331627",
+        "PX4_PARAM_CA_ROTOR2_PY": "0.219199249678554",
+        "PX4_PARAM_CA_ROTOR2_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR2_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR2_KM": "-0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC3": "103",
+        "PX4_PARAM_CA_ROTOR3_PX": "0.20490464242331627",
+        "PX4_PARAM_CA_ROTOR3_PY": "-0.219802750321446",
+        "PX4_PARAM_CA_ROTOR3_PZ": "0.061452885558382436",
+        "PX4_PARAM_CA_ROTOR3_CT": "1.0",
+        "PX4_PARAM_CA_ROTOR3_KM": "0.01720770778086437",
+        "PX4_PARAM_PWM_MAIN_FUNC4": "104",
+        "PX4_PARAM_SIM_GZ_EN": "0",
+        "PX4_PARAM_IMU_INTEG_RATE": "250",
+        "PX4_PARAM_EKF2_MULTI_IMU": "0",
+        "PX4_PARAM_SENS_IMU_MODE": "1"
+      },
+      "simulator_port": 4560,
+      "physics_hz": 500,
+      "sensor_hz": 250,
+      "gps_hz": 10,
+      "motor_assumption": "ideal normalized thrust; THR_MDL_FAC=0; no ESC lag",
+      "synthetic_sensor_noise": {
+        "seed": 0,
+        "mag_std_gauss": 0.0002,
+        "baro_std_hpa": 0.01,
+        "imu_noise": 0
+      },
+      "workers": 1,
+      "flight_command_sent": true,
+      "exception": null,
+      "arm_request_at_s": 11.000000000000343,
+      "simulation_seconds": 26.003999999996466,
+      "messages_received": {
+        "COMMAND_LONG": 1,
+        "HEARTBEAT": 1,
+        "HIL_ACTUATOR_CONTROLS": 6445
+      },
+      "messages_sent": {
+        "HIL_SENSOR": 6501,
+        "HIL_GPS": 261
+      },
+      "first_actuator_at_s": 0.22400000000000017,
+      "stale_bootstrap_messages_discarded": 0,
+      "actuator_interval_usec": {
+        "min": 4000,
+        "max": 4000,
+        "median": 4000.0
+      },
+      "final_physical_state": {
+        "time_s": 26.003999999996466,
+        "qpos": [
+          -0.007529613458805762,
+          -0.008398042898001204,
+          0.6388540703368674,
+          0.9999992954784079,
+          -0.0009566240075900907,
+          0.000700633862117411,
+          -5.500351528548027e-05
+        ],
+        "qvel": [
+          -0.002674795955309811,
+          0.004338095861044138,
+          0.0033866243518259525,
+          0.0010496305095886954,
+          0.0009466774466150529,
+          4.773699994447869e-05
+        ],
+        "ctrl": [
+          320201.9270839774,
+          321010.4959254726,
+          366899.8650376298,
+          366091.2961961344
+        ]
+      },
+      "command_acks": [
+        {
+          "command": 176,
+          "result": 0
+        },
+        {
+          "command": 400,
+          "result": 0
+        }
+      ],
+      "px4_exit_code": 0,
+      "wall_seconds": 26.00758093499462,
+      "bridge_cpu_seconds": 2.1443257339999997,
+      "bridge_peak_rss_bytes": 574103552,
+      "px4_sampled_peak_rss_bytes": 20393984,
+      "system_min_available_bytes": 11416043520,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_hashes_after": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "history_unchanged": true
+    }
+  },
+  "px4_console_evidence": {
+    "smoke_01": "INFO  [px4] instance: 0\nERROR [px4] Error opening startup file, does not exist: etc/init.d-posix/rcS",
+    "smoke_02": "INFO  [px4] instance: 0\n\n______  __   __    ___ \n| ___ \\ \\ \\ / /   /   |\n| |_/ /  \\ V /   / /| |\n|  __/   /   \\  / /_| |\n| |     / /^\\ \\ \\___  |\n\\_|     \\/   \\/     |_/\n\npx4 starting.\n\nINFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 0\nenv SYS_AUTOSTART: 10016\nINFO  [param] selected parameter default file parameters.bson\nINFO  [param] selected parameter backup file parameters_backup.bson\n  SYS_AUTOCONFIG: curr: 0 -> new: 1\n  SYS_AUTOSTART: curr: 0 -> new: 10016\nCOM_DL_LOSS_T set to 10\nCOM_RC_LOSS_T set to 1\n  COM_RC_LOSS_T: curr: 0.5000 -> new: 1.0000\nCOM_OF_LOSS_T set to 1\nCOM_DISARM_PRFLT set to 10\n  CA_ROTOR0_PX: curr: 0.1515 -> new: -0.2341\n  IMU_INTEG_RATE: curr: 200 -> new: 250\n  CA_ROTOR0_PY: curr: 0.2450 -> new: -0.2198\n  CA_ROTOR1_PX: curr: -0.1515 -> new: -0.2341\n  CA_ROTOR0_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR1_PY: curr: -0.1875 -> new: 0.2192\n  CA_ROTOR2_PX: curr: 0.1515 -> new: 0.2049\n  CA_ROTOR1_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR2_PY: curr: -0.2450 -> new: 0.2192\n  CA_ROTOR3_PX: curr: -0.1515 -> new: 0.2049\n  CA_ROTOR2_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR3_PY: curr: 0.1875 -> new: -0.2198\n  CA_ROTOR3_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR0_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR0_KM: curr: 0.0500 -> new: -0.0172\n  CA_ROTOR1_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR1_KM: curr: 0.0500 -> new: 0.0172\n  CA_ROTOR2_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR2_KM: curr: -0.0500 -> new: -0.0172\n  CA_ROTOR3_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR3_KM: curr: -0.0500 -> new: 0.0172\nINFO  [dataman] data manager file './dataman' size is 1208528 bytes\nINFO  [init] PX4_SIM_HOSTNAME: 127.0.0.1\nINFO  [simulator_mavlink] using TCP on remote host 127.0.0.1 port 4560\nWARN  [simulator_mavlink] Please ensure port 4560 is not blocked by a firewall.\nINFO  [simulator_mavlink] Waiting for simulator to accept connection on TCP port 4560\nINFO  [simulator_mavlink] Simulator connected on TCP port 4560.\nINFO  [lockstep_scheduler] setting initial absolute time to 1000000 us\nINFO  [commander] LED: open /dev/led0 failed (22)\nINFO  [vehicle_air_data] BARO #0 deselected, no barometer available\nINFO  [tone_alarm] home set\nINFO  [vision_target_estimator] VTE for static target init\nINFO  [uxrce_dds_client] init UDP agent IP:127.0.0.1, port:8888\nWARN  [health_and_arming_checks] Preflight Fail: no valid barometer data\nWARN  [health_and_arming_checks] Preflight Fail: no heading reference\nINFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18570 remote port 14550\nINFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540\nINFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14280 remote port 14030\nINFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13030 remote port 13280\nINFO  [logger] logger started (mode=all)\nWARN  [logger] Too many subscriptions, failed to add: ranging_beacon 0\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 2\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 3\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 4\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 5\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 6\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 7\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 8\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 9\nWARN  [logger] Too many subscriptions, failed to add: collision_constraints 0\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 2\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 3\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 4\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 5\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 6\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 7\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 8\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 9\nWARN  [logger] Too many subscriptions, failed to add: obstacle_distance_fused 0\nWARN  [logger] Too many subscriptions, failed to add: obstacle_distance 0\nWARN  [logger] Too many subscriptions, failed to add: vehicle_mocap_odometry 0\nINFO  [logger] Max log file size: 1024 MiB\nINFO  [logger] Start file log (type: full)\nINFO  [logger] [logger] ./log/2026-10-11/02_39_59.ulg\t\nINFO  [logger] Opened full log file: ./log/2026-10-11/02_39_59.ulg\nINFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)\nINFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)\nINFO  [px4] Startup script returned successfully\nWARN  [health_and_arming_checks] Preflight Fail: no heading reference\n\nHW arch: PX4_SITL\nPX4 git-hash: 8f9b91b2bdd3a65952601a084c3aa35e96fee59d\nPX4 version: 1.18.0 80 (17956992)\nPX4 git-branch: main\nOS: Linux\nOS version: Release 6.8.0 (101187839)\nBuild datetime: Sep  4 2026 10:51:18\nBuild uri: localhost\nBuild variant: default\nToolchain: GNU GCC, 11.4.0\nPX4GUID: 1006554d49534954414c44494e4f30303030\nUNKNOWN MCU\nINFO  [simulator_mavlink] running\nINFO  [ekf2] available instances: 1\nINFO  [ekf2] 0: ACC: 1310988, GYRO: 1310988, MAG: 197388, healthy, test ratio: 1.0000000 (0.00000) *\n\nekf2:0 EKF dt: 0.0080s, attitude: 1, local position: 0, global position: 0\nekf2: EKF update: 966 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nekf2:1 EKF dt: 0.0100s, attitude: 0, local position: 0, global position: 0\nekf2: EKF update: 0 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nekf2:2 EKF dt: 0.0100s, attitude: 0, local position: 0, global position: 0\nekf2: EKF update: 0 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nTOPIC: sensor_combined\n sensor_combined\n    timestamp: 10000000 (0.000000 seconds ago)\n    gyro_rad: [0.00000, 0.00000, 0.00000]\n    gyro_integral_dt: 4000\n    accelerometer_timestamp_relative: 0\n    accelerometer_m_s2: [0.00000, 0.00000, -9.80665]\n    accelerometer_integral_dt: 4000\n    accelerometer_clipping: 0\n    gyro_clipping: 0\n    accel_calibration_count: 0\n    gyro_calibration_count: 1\n\nTOPIC: vehicle_local_position\n vehicle_local_position\n    timestamp: 9996000 (0.004000 seconds ago)\n    timestamp_sample: 9996000 (0 us before timestamp)\n    ref_timestamp: 1692000\n    ref_lat: 47.397742\n    ref_lon: 8.545594\n    x: -0.00000\n    y: -0.00001\n    z: -0.00040\n    delta_xy: [0.00000, 0.00000]\n    delta_z: -488.08627\n    vx: -0.00000\n    vy: -0.00004\n    vz: 0.00014\n    z_deriv: 0.00001\n    delta_vxy: [-0.00000, 0.00002]\n    delta_vz: -0.00004\n    ax: -0.00000\n    ay: 0.00000\n    az: 0.00002\n    heading: 0.00043\n    heading_var: 0.00011\n    unaided_heading: 0.00000\n    delta_heading: 0.00000\n    tilt_var: 0.00060\n    ref_alt: 488.08600\n    dist_bottom: 0.01001\n    dist_bottom_var: 0.02130\n    delta_dist_bottom: -488.08627\n    eph: 0.01588\n    epv: 0.14561\n    evh: 0.04265\n    evv: 0.06087\n    vxy_max: inf\n    vz_max: inf\n    hagl_min: inf\n    hagl_max_z: inf\n    hagl_max_xy: inf\n    xy_valid: False\n    z_valid: True\n    v_xy_valid: False\n    v_z_valid: True\n    xy_reset_counter: 3\n    z_reset_counter: 2\n    vxy_reset_counter: 2\n    vz_reset_counter: 1\n    heading_reset_counter: 0\n    heading_good_for_control: False\n    xy_global: True\n    z_global: True\n    dist_bottom_valid: False\n    dist_bottom_reset_counter: 2\n    dist_bottom_sensor_bitfield: 0\n    dead_reckoning: True\n\nTOPIC: vehicle_status\n vehicle_status\n    timestamp: 9616000 (0.384000 seconds ago)\n    armed_time: 0\n    takeoff_time: 0\n    nav_state_timestamp: 1156000\n    valid_nav_states_mask: 2147415551\n    can_set_nav_states_mask: 8308223\n    arming_state: 1\n    latest_arming_reason: 0\n    latest_disarming_reason: 0\n    nav_state_user_intention: 4\n    nav_state: 4\n    executor_in_charge: 0\n    nav_state_display: 4\n    accepts_offboard_setpoints: False\n    hil_state: 0\n    vehicle_type: 1\n    failsafe: False\n    failsafe_and_user_took_over: False\n    failsafe_defer_state: 0\n    gcs_connection_lost: True\n    gcs_connection_lost_counter: 0\n    high_latency_data_link_lost: False\n    is_vtol: False\n    is_vtol_tailsitter: False\n    in_transition_mode: False\n    in_transition_to_fw: False\n    system_type: 2\n    system_id: 1\n    component_id: 1\n    safety_button_available: True\n    safety_off: True\n    power_input_valid: True\n    usb_connected: False\n    open_drone_id_system_present: False\n    open_drone_id_system_healthy: False\n    parachute_system_present: False\n    parachute_system_healthy: False\n    traffic_avoidance_system_present: False\n    rc_calibration_in_progress: False\n    calibration_enabled: False\n    pre_flight_checks_pass: False\n\n\nTOPIC: estimator_status_flags 3 instances\n\nInstance 0:\n estimator_status_flags\n    timestamp: 9348000 (0.652000 seconds ago)\n    timestamp_sample: 9196000 (152000 us before timestamp)\n    control_status_changes: 4\n    fault_status_changes: 0\n    cs_tilt_align: True\n    cs_yaw_align: False\n    cs_gnss_pos: False\n    cs_opt_flow: False\n    cs_mag_hdg: False\n    cs_mag_3d: False\n    cs_mag_dec: False\n    cs_in_air: False\n    cs_wind: False\n    cs_baro_hgt: False\n    cs_rng_hgt: False\n    cs_gps_hgt: True\n    cs_ev_pos: False\n    cs_ev_yaw: False\n    cs_ev_hgt: False\n    cs_fuse_beta: False\n    cs_mag_field_disturbed: False\n    cs_fixed_wing: False\n    cs_mag_fault: False\n    cs_fuse_aspd: False\n    cs_gnd_effect: False\n    cs_rng_stuck: False\n    cs_gnss_yaw: False\n    cs_mag_aligned_in_flight: False\n    cs_ev_vel: False\n    cs_synthetic_mag_z: False\n    cs_vehicle_at_rest: True\n    cs_gnss_yaw_fault: False\n    cs_rng_fault: False\n    cs_inertial_dead_reckoning: True\n    cs_wind_dead_reckoning: False\n    cs_rng_kin_consistent: False\n    cs_fake_pos: False\n    cs_fake_hgt: False\n    cs_gravity_vector: True\n    cs_mag: False\n    cs_ev_yaw_fault: False\n    cs_mag_heading_consistent: False\n    cs_aux_gpos: False\n    cs_rng_terrain: False\n    cs_opt_flow_terrain: False\n    cs_valid_fake_pos: True\n    cs_constant_pos: False\n    cs_baro_fault: False\n    cs_gnss_vel: False\n    cs_gnss_fault: False\n    cs_yaw_manual: False\n    cs_gnss_hgt_fault: False\n    cs_in_transition: False\n    cs_heading_observable: False\n    fs_bad_mag_x: False\n    fs_bad_mag_y: False\n    fs_bad_mag_z: False\n    fs_bad_hdg: False\n    fs_bad_mag_decl: False\n    fs_bad_airspeed: False\n    fs_bad_sideslip: False\n    fs_bad_optflow_x: False\n    fs_bad_optflow_y: False\n    fs_bad_acc_vertical: False\n    fs_bad_acc_clipping: False\n\n\nInstance 1:\n\nInstance 2:\n\nTOPIC: actuator_outputs_sim\n actuator_outputs_sim\n    timestamp: 10000000 (0.000000 seconds ago)\n    noutputs: 16\n    output: [0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000]\n\nExiting NOW.",
+    "smoke_03": "INFO  [px4] instance: 0\n\n______  __   __    ___ \n| ___ \\ \\ \\ / /   /   |\n| |_/ /  \\ V /   / /| |\n|  __/   /   \\  / /_| |\n| |     / /^\\ \\ \\___  |\n\\_|     \\/   \\/     |_/\n\npx4 starting.\n\nINFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 0\nenv SYS_AUTOSTART: 10016\nINFO  [param] selected parameter default file parameters.bson\nINFO  [param] selected parameter backup file parameters_backup.bson\n  SYS_AUTOCONFIG: curr: 0 -> new: 1\n  SYS_AUTOSTART: curr: 0 -> new: 10016\nCOM_DL_LOSS_T set to 10\nCOM_RC_LOSS_T set to 1\n  COM_RC_LOSS_T: curr: 0.5000 -> new: 1.0000\nCOM_OF_LOSS_T set to 1\nCOM_DISARM_PRFLT set to 10\n  CA_ROTOR0_PX: curr: 0.1515 -> new: -0.2341\n  IMU_INTEG_RATE: curr: 200 -> new: 250\n  CA_ROTOR0_PY: curr: 0.2450 -> new: -0.2198\n  CA_ROTOR1_PX: curr: -0.1515 -> new: -0.2341\n  CA_ROTOR0_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR1_PY: curr: -0.1875 -> new: 0.2192\n  CA_ROTOR2_PX: curr: 0.1515 -> new: 0.2049\n  CA_ROTOR1_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR2_PY: curr: -0.2450 -> new: 0.2192\n  CA_ROTOR3_PX: curr: -0.1515 -> new: 0.2049\n  CA_ROTOR2_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR3_PY: curr: 0.1875 -> new: -0.2198\n  CA_ROTOR3_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR0_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR0_KM: curr: 0.0500 -> new: -0.0172\n  CA_ROTOR1_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR1_KM: curr: 0.0500 -> new: 0.0172\n  CA_ROTOR2_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR2_KM: curr: -0.0500 -> new: -0.0172\n  CA_ROTOR3_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR3_KM: curr: -0.0500 -> new: 0.0172\nINFO  [dataman] data manager file './dataman' size is 1208528 bytes\nINFO  [init] PX4_SIM_HOSTNAME: 127.0.0.1\nINFO  [simulator_mavlink] using TCP on remote host 127.0.0.1 port 4560\nWARN  [simulator_mavlink] Please ensure port 4560 is not blocked by a firewall.\nINFO  [simulator_mavlink] Waiting for simulator to accept connection on TCP port 4560\nINFO  [simulator_mavlink] Simulator connected on TCP port 4560.\nINFO  [lockstep_scheduler] setting initial absolute time to 1000000 us\nINFO  [commander] LED: open /dev/led0 failed (22)\nINFO  [tone_alarm] home set\nINFO  [vision_target_estimator] VTE for static target init\nINFO  [uxrce_dds_client] init UDP agent IP:127.0.0.1, port:8888\nWARN  [health_and_arming_checks] Preflight Fail: no heading reference\nINFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18570 remote port 14550\nINFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540\nINFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14280 remote port 14030\nINFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13030 remote port 13280\nINFO  [logger] logger started (mode=all)\nWARN  [logger] Too many subscriptions, failed to add: ranging_beacon 0\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 2\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 3\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 4\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 5\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 6\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 7\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 8\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 9\nWARN  [logger] Too many subscriptions, failed to add: collision_constraints 0\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 2\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 3\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 4\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 5\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 6\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 7\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 8\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 9\nWARN  [logger] Too many subscriptions, failed to add: obstacle_distance_fused 0\nWARN  [logger] Too many subscriptions, failed to add: obstacle_distance 0\nWARN  [logger] Too many subscriptions, failed to add: vehicle_mocap_odometry 0\nINFO  [logger] Max log file size: 1024 MiB\nINFO  [logger] Start file log (type: full)\nINFO  [logger] [logger] ./log/2026-10-11/02_42_23.ulg\t\nINFO  [logger] Opened full log file: ./log/2026-10-11/02_42_23.ulg\nINFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)\nINFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)\nINFO  [px4] Startup script returned successfully\n\nHW arch: PX4_SITL\nPX4 git-hash: 8f9b91b2bdd3a65952601a084c3aa35e96fee59d\nPX4 version: 1.18.0 80 (17956992)\nPX4 git-branch: main\nOS: Linux\nOS version: Release 6.8.0 (101187839)\nBuild datetime: Sep  4 2026 10:51:18\nBuild uri: localhost\nBuild variant: default\nToolchain: GNU GCC, 11.4.0\nPX4GUID: 1006554d49534954414c44494e4f30303030\nUNKNOWN MCU\nINFO  [simulator_mavlink] running\nINFO  [ekf2] available instances: 1\nINFO  [ekf2] 0: ACC: 1310988, GYRO: 1310988, MAG: 197388, healthy, test ratio: 0.0008871 (0.00000) *\n\nekf2:0 EKF dt: 0.0080s, attitude: 1, local position: 1, global position: 1\nekf2: EKF update: 1468 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nekf2:1 EKF dt: 0.0100s, attitude: 0, local position: 0, global position: 0\nekf2: EKF update: 0 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nekf2:2 EKF dt: 0.0100s, attitude: 0, local position: 0, global position: 0\nekf2: EKF update: 0 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nTOPIC: sensor_combined\n sensor_combined\n    timestamp: 13996000 (0.000000 seconds ago)\n    gyro_rad: [0.00000, 0.00000, 0.00000]\n    gyro_integral_dt: 4000\n    accelerometer_timestamp_relative: 0\n    accelerometer_m_s2: [0.00000, 0.00000, -9.80665]\n    accelerometer_integral_dt: 4000\n    accelerometer_clipping: 0\n    gyro_clipping: 0\n    accel_calibration_count: 0\n    gyro_calibration_count: 1\n\nTOPIC: vehicle_local_position\n vehicle_local_position\n    timestamp: 13992000 (0.004000 seconds ago)\n    timestamp_sample: 13992000 (0 us before timestamp)\n    ref_timestamp: 1688000\n    ref_lat: 47.397742\n    ref_lon: 8.545594\n    x: -0.00000\n    y: -0.00026\n    z: -0.00092\n    delta_xy: [0.00000, 0.00000]\n    delta_z: -488.08636\n    vx: 0.00004\n    vy: -0.00039\n    vz: 0.00023\n    z_deriv: -0.00034\n    delta_vxy: [0.00010, 0.00011]\n    delta_vz: -0.00006\n    ax: 0.00003\n    ay: -0.00016\n    az: 0.00003\n    heading: 1.63021\n    heading_var: 0.03452\n    unaided_heading: 0.00000\n    delta_heading: 1.62996\n    tilt_var: 0.00007\n    ref_alt: 488.08600\n    dist_bottom: 0.01001\n    dist_bottom_var: 0.02519\n    delta_dist_bottom: -488.08636\n    eph: 0.16943\n    epv: 0.15839\n    evh: 0.11177\n    evv: 0.06351\n    vxy_max: inf\n    vz_max: inf\n    hagl_min: inf\n    hagl_max_z: inf\n    hagl_max_xy: inf\n    xy_valid: True\n    z_valid: True\n    v_xy_valid: True\n    v_z_valid: True\n    xy_reset_counter: 3\n    z_reset_counter: 2\n    vxy_reset_counter: 3\n    vz_reset_counter: 1\n    heading_reset_counter: 1\n    heading_good_for_control: False\n    xy_global: True\n    z_global: True\n    dist_bottom_valid: False\n    dist_bottom_reset_counter: 2\n    dist_bottom_sensor_bitfield: 0\n    dead_reckoning: False\n\nTOPIC: vehicle_status\n vehicle_status\n    timestamp: 13872000 (0.124000 seconds ago)\n    armed_time: 0\n    takeoff_time: 0\n    nav_state_timestamp: 1152000\n    valid_nav_states_mask: 2147415551\n    can_set_nav_states_mask: 8308223\n    arming_state: 1\n    latest_arming_reason: 0\n    latest_disarming_reason: 0\n    nav_state_user_intention: 4\n    nav_state: 4\n    executor_in_charge: 0\n    nav_state_display: 4\n    accepts_offboard_setpoints: False\n    hil_state: 0\n    vehicle_type: 1\n    failsafe: False\n    failsafe_and_user_took_over: False\n    failsafe_defer_state: 0\n    gcs_connection_lost: True\n    gcs_connection_lost_counter: 0\n    high_latency_data_link_lost: False\n    is_vtol: False\n    is_vtol_tailsitter: False\n    in_transition_mode: False\n    in_transition_to_fw: False\n    system_type: 2\n    system_id: 1\n    component_id: 1\n    safety_button_available: True\n    safety_off: True\n    power_input_valid: True\n    usb_connected: False\n    open_drone_id_system_present: False\n    open_drone_id_system_healthy: False\n    parachute_system_present: False\n    parachute_system_healthy: False\n    traffic_avoidance_system_present: False\n    rc_calibration_in_progress: False\n    calibration_enabled: False\n    pre_flight_checks_pass: True\n\n\nTOPIC: estimator_status_flags 3 instances\n\nInstance 0:\n estimator_status_flags\n    timestamp: 13456000 (0.540000 seconds ago)\n    timestamp_sample: 13304000 (152000 us before timestamp)\n    control_status_changes: 8\n    fault_status_changes: 0\n    cs_tilt_align: True\n    cs_yaw_align: True\n    cs_gnss_pos: True\n    cs_opt_flow: False\n    cs_mag_hdg: True\n    cs_mag_3d: False\n    cs_mag_dec: True\n    cs_in_air: False\n    cs_wind: False\n    cs_baro_hgt: True\n    cs_rng_hgt: False\n    cs_gps_hgt: True\n    cs_ev_pos: False\n    cs_ev_yaw: False\n    cs_ev_hgt: False\n    cs_fuse_beta: False\n    cs_mag_field_disturbed: False\n    cs_fixed_wing: False\n    cs_mag_fault: False\n    cs_fuse_aspd: False\n    cs_gnd_effect: False\n    cs_rng_stuck: False\n    cs_gnss_yaw: False\n    cs_mag_aligned_in_flight: False\n    cs_ev_vel: False\n    cs_synthetic_mag_z: False\n    cs_vehicle_at_rest: True\n    cs_gnss_yaw_fault: False\n    cs_rng_fault: False\n    cs_inertial_dead_reckoning: False\n    cs_wind_dead_reckoning: False\n    cs_rng_kin_consistent: False\n    cs_fake_pos: False\n    cs_fake_hgt: False\n    cs_gravity_vector: False\n    cs_mag: True\n    cs_ev_yaw_fault: False\n    cs_mag_heading_consistent: True\n    cs_aux_gpos: False\n    cs_rng_terrain: False\n    cs_opt_flow_terrain: False\n    cs_valid_fake_pos: False\n    cs_constant_pos: False\n    cs_baro_fault: False\n    cs_gnss_vel: True\n    cs_gnss_fault: False\n    cs_yaw_manual: False\n    cs_gnss_hgt_fault: False\n    cs_in_transition: False\n    cs_heading_observable: True\n    fs_bad_mag_x: False\n    fs_bad_mag_y: False\n    fs_bad_mag_z: False\n    fs_bad_hdg: False\n    fs_bad_mag_decl: False\n    fs_bad_airspeed: False\n    fs_bad_sideslip: False\n    fs_bad_optflow_x: False\n    fs_bad_optflow_y: False\n    fs_bad_acc_vertical: False\n    fs_bad_acc_clipping: False\n\n\nInstance 1:\n\nInstance 2:\n\nTOPIC: actuator_outputs_sim\n actuator_outputs_sim\n    timestamp: 13996000 (0.000000 seconds ago)\n    noutputs: 16\n    output: [0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000]\n\n\nTOPIC: vehicle_air_data\n vehicle_air_data\n    timestamp: 13928000 (0.068000 seconds ago)\n    timestamp_sample: 13928000 (0 us before timestamp)\n    baro_device_id: 6620172 (Type: 0x65, SIMULATION:1 (0x04))\n    baro_alt_meter: 487.93381\n    baro_pressure_pa: 95599.91406\n    ambient_temperature: 15.00000\n    rho: 1.15560\n    temperature_source: 0\n    calibration_count: 0\n\n\nTOPIC: vehicle_magnetometer\n vehicle_magnetometer\n    timestamp: 13912000 (0.084000 seconds ago)\n    timestamp_sample: 13912000 (0 us before timestamp)\n    device_id: 197388 (Type: 0x03, SIMULATION:1 (0x03))\n    magnetometer_ga: [0.00025, -0.21462, 0.42700]\n    calibration_count: 0\n\nSymbols: x = used, + = saved, * = unsaved, l = locked\nx     SENS_IMU_MODE [892,1435] : 0\n\n 980/2091 parameters used.\nSymbols: x = used, + = saved, * = unsaved, l = locked\nx     EKF2_MULTI_IMU [438,658] : 3\n\n 980/2091 parameters used.\nExiting NOW.",
+    "hover_01": "INFO  [px4] instance: 0\n\n______  __   __    ___ \n| ___ \\ \\ \\ / /   /   |\n| |_/ /  \\ V /   / /| |\n|  __/   /   \\  / /_| |\n| |     / /^\\ \\ \\___  |\n\\_|     \\/   \\/     |_/\n\npx4 starting.\n\nINFO  [px4] startup script: /bin/sh etc/init.d-posix/rcS 0\nenv SYS_AUTOSTART: 10016\nINFO  [param] selected parameter default file parameters.bson\nINFO  [param] selected parameter backup file parameters_backup.bson\n  SYS_AUTOCONFIG: curr: 0 -> new: 1\n  SYS_AUTOSTART: curr: 0 -> new: 10016\nCOM_DL_LOSS_T set to 10\nCOM_RC_LOSS_T set to 1\n  COM_RC_LOSS_T: curr: 0.5000 -> new: 1.0000\nCOM_OF_LOSS_T set to 1\nCOM_DISARM_PRFLT set to 10\n  CA_ROTOR0_PX: curr: 0.1515 -> new: -0.2341\n  IMU_INTEG_RATE: curr: 200 -> new: 250\n  CA_ROTOR0_PY: curr: 0.2450 -> new: -0.2198\n  CA_ROTOR1_PX: curr: -0.1515 -> new: -0.2341\n  CA_ROTOR0_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR1_PY: curr: -0.1875 -> new: 0.2192\n  CA_ROTOR2_PX: curr: 0.1515 -> new: 0.2049\n  CA_ROTOR1_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR2_PY: curr: -0.2450 -> new: 0.2192\n  CA_ROTOR3_PX: curr: -0.1515 -> new: 0.2049\n  CA_ROTOR2_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR3_PY: curr: 0.1875 -> new: -0.2198\n  CA_ROTOR3_PZ: curr: 0.0000 -> new: 0.0615\n  CA_ROTOR0_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR0_KM: curr: 0.0500 -> new: -0.0172\n  CA_ROTOR1_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR1_KM: curr: 0.0500 -> new: 0.0172\n  CA_ROTOR2_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR2_KM: curr: -0.0500 -> new: -0.0172\n  CA_ROTOR3_CT: curr: 6.5000 -> new: 1.0000\n  CA_ROTOR3_KM: curr: -0.0500 -> new: 0.0172\nINFO  [dataman] data manager file './dataman' size is 1208528 bytes\nINFO  [init] PX4_SIM_HOSTNAME: 127.0.0.1\nINFO  [simulator_mavlink] using TCP on remote host 127.0.0.1 port 4560\nWARN  [simulator_mavlink] Please ensure port 4560 is not blocked by a firewall.\nINFO  [simulator_mavlink] Waiting for simulator to accept connection on TCP port 4560\nINFO  [simulator_mavlink] Simulator connected on TCP port 4560.\nINFO  [lockstep_scheduler] setting initial absolute time to 1000000 us\nINFO  [commander] LED: open /dev/led0 failed (22)\nINFO  [tone_alarm] home set\nINFO  [vision_target_estimator] VTE for static target init\nINFO  [uxrce_dds_client] init UDP agent IP:127.0.0.1, port:8888\nWARN  [health_and_arming_checks] Preflight Fail: no heading reference\nINFO  [mavlink] mode: Normal, data rate: 4000000 B/s on udp port 18570 remote port 14550\nINFO  [mavlink] mode: Onboard, data rate: 4000000 B/s on udp port 14580 remote port 14540\nINFO  [mavlink] mode: Onboard, data rate: 4000 B/s on udp port 14280 remote port 14030\nINFO  [mavlink] mode: Gimbal, data rate: 400000 B/s on udp port 13030 remote port 13280\nINFO  [mavlink] partner IP: 127.0.0.1\nINFO  [logger] logger started (mode=all)\nWARN  [logger] Too many subscriptions, failed to add: ranging_beacon 0\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 2\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 3\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 4\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 5\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 6\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 7\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 8\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 9\nWARN  [logger] Too many subscriptions, failed to add: collision_constraints 0\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 2\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 3\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 4\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 5\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 6\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 7\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 8\nWARN  [logger] Too many subscriptions, failed to add: distance_sensor 9\nWARN  [logger] Too many subscriptions, failed to add: obstacle_distance_fused 0\nWARN  [logger] Too many subscriptions, failed to add: obstacle_distance 0\nWARN  [logger] Too many subscriptions, failed to add: vehicle_mocap_odometry 0\nINFO  [logger] Max log file size: 1024 MiB\nINFO  [logger] Start file log (type: full)\nINFO  [logger] [logger] ./log/2026-10-11/02_45_05.ulg\t\nINFO  [logger] Opened full log file: ./log/2026-10-11/02_45_05.ulg\nINFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)\nINFO  [mavlink] MAVLink only on localhost (set param MAV_{i}_BROADCAST = 1 to enable network)\nINFO  [px4] Startup script returned successfully\n\nHW arch: PX4_SITL\nPX4 git-hash: 8f9b91b2bdd3a65952601a084c3aa35e96fee59d\nPX4 version: 1.18.0 80 (17956992)\nPX4 git-branch: main\nOS: Linux\nOS version: Release 6.8.0 (101187839)\nBuild datetime: Sep  4 2026 10:51:18\nBuild uri: localhost\nBuild variant: default\nToolchain: GNU GCC, 11.4.0\nPX4GUID: 1006554d49534954414c44494e4f30303030\nUNKNOWN MCU\nINFO  [simulator_mavlink] running\nINFO  [ekf2] available instances: 1\nINFO  [ekf2] 0: ACC: 1310988, GYRO: 1310988, MAG: 197388, healthy, test ratio: 0.0003567 (0.00000) *\n\nekf2:0 EKF dt: 0.0080s, attitude: 1, local position: 1, global position: 1\nekf2: EKF update: 844 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nekf2:1 EKF dt: 0.0100s, attitude: 0, local position: 0, global position: 0\nekf2: EKF update: 0 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nekf2:2 EKF dt: 0.0100s, attitude: 0, local position: 0, global position: 0\nekf2: EKF update: 0 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nTOPIC: sensor_combined\n sensor_combined\n    timestamp: 9000000 (0.000000 seconds ago)\n    gyro_rad: [0.00000, 0.00000, 0.00000]\n    gyro_integral_dt: 4000\n    accelerometer_timestamp_relative: 0\n    accelerometer_m_s2: [0.00000, 0.00000, -9.80665]\n    accelerometer_integral_dt: 4000\n    accelerometer_clipping: 0\n    gyro_clipping: 0\n    accel_calibration_count: 0\n    gyro_calibration_count: 1\n\nTOPIC: vehicle_local_position\n vehicle_local_position\n    timestamp: 9000000 (0.000000 seconds ago)\n    timestamp_sample: 9000000 (0 us before timestamp)\n    ref_timestamp: 1688000\n    ref_lat: 47.397742\n    ref_lon: 8.545594\n    x: -0.00001\n    y: -0.00043\n    z: -0.00015\n    delta_xy: [0.00000, 0.00000]\n    delta_z: -488.08655\n    vx: -0.00005\n    vy: -0.00096\n    vz: 0.00052\n    z_deriv: 0.00019\n    delta_vxy: [0.00010, 0.00011]\n    delta_vz: -0.00008\n    ax: -0.00007\n    ay: -0.00063\n    az: 0.00007\n    heading: 1.63003\n    heading_var: 0.03502\n    unaided_heading: 0.00000\n    delta_heading: 1.62997\n    tilt_var: 0.00013\n    ref_alt: 488.08600\n    dist_bottom: 0.01001\n    dist_bottom_var: 0.02863\n    delta_dist_bottom: -488.08655\n    eph: 0.17134\n    epv: 0.16890\n    evh: 0.13204\n    evv: 0.07594\n    vxy_max: inf\n    vz_max: inf\n    hagl_min: inf\n    hagl_max_z: inf\n    hagl_max_xy: inf\n    xy_valid: True\n    z_valid: True\n    v_xy_valid: True\n    v_z_valid: True\n    xy_reset_counter: 3\n    z_reset_counter: 2\n    vxy_reset_counter: 3\n    vz_reset_counter: 1\n    heading_reset_counter: 1\n    heading_good_for_control: False\n    xy_global: True\n    z_global: True\n    dist_bottom_valid: False\n    dist_bottom_reset_counter: 2\n    dist_bottom_sensor_bitfield: 0\n    dead_reckoning: False\n\nTOPIC: vehicle_status\n vehicle_status\n    timestamp: 8828000 (0.172000 seconds ago)\n    armed_time: 0\n    takeoff_time: 0\n    nav_state_timestamp: 1148000\n    valid_nav_states_mask: 2147415551\n    can_set_nav_states_mask: 8308223\n    arming_state: 1\n    latest_arming_reason: 0\n    latest_disarming_reason: 0\n    nav_state_user_intention: 4\n    nav_state: 4\n    executor_in_charge: 0\n    nav_state_display: 4\n    accepts_offboard_setpoints: False\n    hil_state: 0\n    vehicle_type: 1\n    failsafe: False\n    failsafe_and_user_took_over: False\n    failsafe_defer_state: 0\n    gcs_connection_lost: False\n    gcs_connection_lost_counter: 0\n    high_latency_data_link_lost: False\n    is_vtol: False\n    is_vtol_tailsitter: False\n    in_transition_mode: False\n    in_transition_to_fw: False\n    system_type: 2\n    system_id: 1\n    component_id: 1\n    safety_button_available: True\n    safety_off: True\n    power_input_valid: True\n    usb_connected: False\n    open_drone_id_system_present: False\n    open_drone_id_system_healthy: False\n    parachute_system_present: False\n    parachute_system_healthy: False\n    traffic_avoidance_system_present: False\n    rc_calibration_in_progress: False\n    calibration_enabled: False\n    pre_flight_checks_pass: True\n\n\nTOPIC: estimator_status_flags 3 instances\n\nInstance 0:\n estimator_status_flags\n    timestamp: 8456000 (0.544000 seconds ago)\n    timestamp_sample: 8304000 (152000 us before timestamp)\n    control_status_changes: 8\n    fault_status_changes: 0\n    cs_tilt_align: True\n    cs_yaw_align: True\n    cs_gnss_pos: True\n    cs_opt_flow: False\n    cs_mag_hdg: True\n    cs_mag_3d: False\n    cs_mag_dec: True\n    cs_in_air: False\n    cs_wind: False\n    cs_baro_hgt: True\n    cs_rng_hgt: False\n    cs_gps_hgt: True\n    cs_ev_pos: False\n    cs_ev_yaw: False\n    cs_ev_hgt: False\n    cs_fuse_beta: False\n    cs_mag_field_disturbed: False\n    cs_fixed_wing: False\n    cs_mag_fault: False\n    cs_fuse_aspd: False\n    cs_gnd_effect: False\n    cs_rng_stuck: False\n    cs_gnss_yaw: False\n    cs_mag_aligned_in_flight: False\n    cs_ev_vel: False\n    cs_synthetic_mag_z: False\n    cs_vehicle_at_rest: True\n    cs_gnss_yaw_fault: False\n    cs_rng_fault: False\n    cs_inertial_dead_reckoning: False\n    cs_wind_dead_reckoning: False\n    cs_rng_kin_consistent: False\n    cs_fake_pos: False\n    cs_fake_hgt: False\n    cs_gravity_vector: False\n    cs_mag: True\n    cs_ev_yaw_fault: False\n    cs_mag_heading_consistent: True\n    cs_aux_gpos: False\n    cs_rng_terrain: False\n    cs_opt_flow_terrain: False\n    cs_valid_fake_pos: False\n    cs_constant_pos: False\n    cs_baro_fault: False\n    cs_gnss_vel: True\n    cs_gnss_fault: False\n    cs_yaw_manual: False\n    cs_gnss_hgt_fault: False\n    cs_in_transition: False\n    cs_heading_observable: True\n    fs_bad_mag_x: False\n    fs_bad_mag_y: False\n    fs_bad_mag_z: False\n    fs_bad_hdg: False\n    fs_bad_mag_decl: False\n    fs_bad_airspeed: False\n    fs_bad_sideslip: False\n    fs_bad_optflow_x: False\n    fs_bad_optflow_y: False\n    fs_bad_acc_vertical: False\n    fs_bad_acc_clipping: False\n\n\nInstance 1:\n\nInstance 2:\n\nTOPIC: actuator_outputs_sim\n actuator_outputs_sim\n    timestamp: 9000000 (0.000000 seconds ago)\n    noutputs: 16\n    output: [0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000]\n\n\nTOPIC: vehicle_air_data\n vehicle_air_data\n    timestamp: 8928000 (0.072000 seconds ago)\n    timestamp_sample: 8928000 (0 us before timestamp)\n    baro_device_id: 6620172 (Type: 0x65, SIMULATION:1 (0x04))\n    baro_alt_meter: 488.13568\n    baro_pressure_pa: 95597.60938\n    ambient_temperature: 15.00000\n    rho: 1.15557\n    temperature_source: 0\n    calibration_count: 0\n\n\nTOPIC: vehicle_magnetometer\n vehicle_magnetometer\n    timestamp: 8880000 (0.120000 seconds ago)\n    timestamp_sample: 8880000 (0 us before timestamp)\n    device_id: 197388 (Type: 0x03, SIMULATION:1 (0x03))\n    magnetometer_ga: [0.00031, -0.21512, 0.42718]\n    calibration_count: 0\n\nSymbols: x = used, + = saved, * = unsaved, l = locked\nx     SENS_IMU_MODE [892,1435] : 0\n\n 980/2091 parameters used.\nSymbols: x = used, + = saved, * = unsaved, l = locked\nx     EKF2_MULTI_IMU [438,658] : 3\n\n 980/2091 parameters used.\nINFO  [tone_alarm] arming warning\nINFO  [commander] Takeoff detected\t\n\nINFO  [ekf2] available instances: 1\nINFO  [ekf2] 0: ACC: 1310988, GYRO: 1310988, MAG: 197388, healthy, test ratio: 0.0025837 (0.00000) *\n\nekf2:0 EKF dt: 0.0080s, attitude: 1, local position: 1, global position: 1\nekf2: EKF update: 2719 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nekf2:1 EKF dt: 0.0100s, attitude: 0, local position: 0, global position: 0\nekf2: EKF update: 0 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nekf2:2 EKF dt: 0.0100s, attitude: 0, local position: 0, global position: 0\nekf2: EKF update: 0 events, 0us elapsed, 0.00us avg, min 0us max 0us 0.000us rms\nekf2: IMU message missed: 0 events\n\nTOPIC: vehicle_status\n vehicle_status\n    timestamp: 23600000 (0.400000 seconds ago)\n    armed_time: 12008000\n    takeoff_time: 13868000\n    nav_state_timestamp: 11012000\n    valid_nav_states_mask: 2147415551\n    can_set_nav_states_mask: 8308223\n    arming_state: 2\n    latest_arming_reason: 4\n    latest_disarming_reason: 0\n    nav_state_user_intention: 14\n    nav_state: 14\n    executor_in_charge: 0\n    nav_state_display: 14\n    accepts_offboard_setpoints: True\n    hil_state: 0\n    vehicle_type: 1\n    failsafe: False\n    failsafe_and_user_took_over: False\n    failsafe_defer_state: 0\n    gcs_connection_lost: False\n    gcs_connection_lost_counter: 0\n    high_latency_data_link_lost: False\n    is_vtol: False\n    is_vtol_tailsitter: False\n    in_transition_mode: False\n    in_transition_to_fw: False\n    system_type: 2\n    system_id: 1\n    component_id: 1\n    safety_button_available: True\n    safety_off: True\n    power_input_valid: True\n    usb_connected: False\n    open_drone_id_system_present: False\n    open_drone_id_system_healthy: False\n    parachute_system_present: False\n    parachute_system_healthy: False\n    traffic_avoidance_system_present: False\n    rc_calibration_in_progress: False\n    calibration_enabled: False\n    pre_flight_checks_pass: True\n\n\nTOPIC: vehicle_local_position\n vehicle_local_position\n    timestamp: 24000000 (0.000000 seconds ago)\n    timestamp_sample: 24000000 (0 us before timestamp)\n    ref_timestamp: 1688000\n    ref_lat: 47.397742\n    ref_lon: 8.545594\n    x: -0.00299\n    y: -0.00212\n    z: -0.58624\n    delta_xy: [0.00000, 0.00000]\n    delta_z: -488.08655\n    vx: 0.00854\n    vy: 0.00165\n    vz: -0.00804\n    z_deriv: -0.00421\n    delta_vxy: [0.00010, 0.00011]\n    delta_vz: -0.00008\n    ax: -0.00601\n    ay: 0.00291\n    az: 0.00043\n    heading: 1.63034\n    heading_var: 0.03456\n    unaided_heading: 0.00000\n    delta_heading: 1.62997\n    tilt_var: 0.00005\n    ref_alt: 488.08600\n    dist_bottom: 0.59320\n    dist_bottom_var: 2.02029\n    delta_dist_bottom: -488.08655\n    eph: 0.16729\n    epv: 0.15286\n    evh: 0.10133\n    evv: 0.05916\n    vxy_max: inf\n    vz_max: inf\n    hagl_min: inf\n    hagl_max_z: inf\n    hagl_max_xy: inf\n    xy_valid: True\n    z_valid: True\n    v_xy_valid: True\n    v_z_valid: True\n    xy_reset_counter: 3\n    z_reset_counter: 2\n    vxy_reset_counter: 3\n    vz_reset_counter: 1\n    heading_reset_counter: 1\n    heading_good_for_control: False\n    xy_global: True\n    z_global: True\n    dist_bottom_valid: False\n    dist_bottom_reset_counter: 2\n    dist_bottom_sensor_bitfield: 0\n    dead_reckoning: False\n\nTOPIC: vehicle_attitude\n vehicle_attitude\n    timestamp: 24000000 (0.000000 seconds ago)\n    timestamp_sample: 24000000 (0 us before timestamp)\n    q: [0.68575, 0.00032, 0.00005, 0.72784] (Roll: 0.0 deg, Pitch: -0.0 deg, Yaw: 93.4 deg)\n    delta_q_reset: [0.68588, 0.00000, -0.00000, 0.72771]\n    quat_reset_counter: 1\n\n\nTOPIC: actuator_outputs_sim\n actuator_outputs_sim\n    timestamp: 24000000 (0.000000 seconds ago)\n    noutputs: 16\n    output: [0.40415, 0.40543, 0.46297, 0.46169, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000]\n\nExiting NOW."
+  },
+  "raw_local_only_hashes": {
+    "mujoco/reports/px4_sitl_phase1_parts/smoke_01/smoke_summary.json": "3a6bd4d7b86f6a550e17b37fb82f5edd3df38eaafe3f883d8f3191b1001abe34",
+    "mujoco/reports/px4_sitl_phase1_parts/smoke_02/smoke_summary.json": "aa8cd332117da8525685293365f17bfedc4bd6edf935b7ccfdc7ed0924e47155",
+    "mujoco/reports/px4_sitl_phase1_parts/smoke_03/smoke_summary.json": "d0dd453a5282b8f2ee90c757c8f54d4af824591e4352aa77e578fc1b525c6e52",
+    "mujoco/reports/px4_sitl_phase1_parts/hover_01/smoke_summary.json": "70cecb00169ef4a6249a16094fe3fbae59cf2736529b603179a0645f2a429d5c",
+    "mujoco/reports/px4_sitl_phase1_parts/smoke_02/log/2026-10-11/02_39_59.ulg": "c073ed79a2ab4cb56ea1c16842493e57eeb9a961f97b1fac39eeebb4cb125812",
+    "mujoco/reports/px4_sitl_phase1_parts/smoke_03/log/2026-10-11/02_42_23.ulg": "cb10f1b89fc1443e14c65644bdc90faa4cf44c0750a71aadc8e58b221d1b6f5a",
+    "mujoco/reports/px4_sitl_phase1_parts/hover_01/log/2026-10-11/02_45_05.ulg": "47b1b6f5f6231e0260614c90c41a50f279e7f2fc8c99e0e103ae4263e3a1729c"
+  },
+  "historical_checkpoint_sha256": {
+    "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+    "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+    "joint_latent_world_model_v3_autonomous_consistency.pt": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9"
+  },
+  "historical_physics_hashes": {
+    "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+    "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+    "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+  },
+  "model": {
+    "mass_kg": 7.0,
+    "com_flu_m": [
+      0.015134357576683754,
+      8.124967855399744e-05,
+      0.03602788555838244
+    ],
+    "principal_inertia_kg_m2": [
+      0.25322068101036516,
+      0.1597361919168453,
+      0.14399324248650808
+    ],
+    "principal_inertia_orientation_wxyz": [
+      0.47969546094446686,
+      0.4535584996580636,
+      -0.5451235488245243,
+      0.5167371369024699
+    ],
+    "physics_timestep_s": 0.002,
+    "gravity_enu_m_s2": [
+      0.0,
+      0.0,
+      -9.81
+    ],
+    "kf": 4.9977603696661616e-05,
+    "km": 8.6e-07,
+    "rpm_max_assumption": 8500,
+    "u_max_omega_squared": 792309.908865229,
+    "max_total_static_thrust_n": 158.39100252081798,
+    "estimated_hover_fraction": 0.43354735374551606,
+    "reaction_torque_signs_flu_z": [
+      1.0,
+      -1.0,
+      1.0,
+      -1.0
+    ],
+    "allocation_parameters": {
+      "CA_AIRFRAME": 0,
+      "CA_ROTOR_COUNT": 4,
+      "THR_MDL_FAC": 0,
+      "CA_ROTOR0_PX": -0.23409835757668374,
+      "CA_ROTOR0_PY": -0.219802750321446,
+      "CA_ROTOR0_PZ": 0.061452885558382436,
+      "CA_ROTOR0_CT": 1.0,
+      "CA_ROTOR0_KM": -0.01720770778086437,
+      "PWM_MAIN_FUNC1": 101,
+      "CA_ROTOR1_PX": -0.23409835757668374,
+      "CA_ROTOR1_PY": 0.219199249678554,
+      "CA_ROTOR1_PZ": 0.061452885558382436,
+      "CA_ROTOR1_CT": 1.0,
+      "CA_ROTOR1_KM": 0.01720770778086437,
+      "PWM_MAIN_FUNC2": 102,
+      "CA_ROTOR2_PX": 0.20490464242331627,
+      "CA_ROTOR2_PY": 0.219199249678554,
+      "CA_ROTOR2_PZ": 0.061452885558382436,
+      "CA_ROTOR2_CT": 1.0,
+      "CA_ROTOR2_KM": -0.01720770778086437,
+      "PWM_MAIN_FUNC3": 103,
+      "CA_ROTOR3_PX": 0.20490464242331627,
+      "CA_ROTOR3_PY": -0.219802750321446,
+      "CA_ROTOR3_PZ": 0.061452885558382436,
+      "CA_ROTOR3_CT": 1.0,
+      "CA_ROTOR3_KM": 0.01720770778086437,
+      "PWM_MAIN_FUNC4": 104
+    }
+  },
+  "motor_mapping": [
+    {
+      "px4_channel": 1,
+      "px4_function": 101,
+      "mujoco_actuator": "motor_1_wrench",
+      "mujoco_ctrl_index": 0,
+      "arm_about_com_frd_m": [
+        -0.23409835757668374,
+        -0.219802750321446,
+        0.061452885558382436
+      ],
+      "flu_reaction_torque_sign": 1,
+      "cw_ccw_wiring": "UNVERIFIED; these are model reaction torque signs"
+    },
+    {
+      "px4_channel": 2,
+      "px4_function": 102,
+      "mujoco_actuator": "motor_2_wrench",
+      "mujoco_ctrl_index": 1,
+      "arm_about_com_frd_m": [
+        -0.23409835757668374,
+        0.219199249678554,
+        0.061452885558382436
+      ],
+      "flu_reaction_torque_sign": -1,
+      "cw_ccw_wiring": "UNVERIFIED; these are model reaction torque signs"
+    },
+    {
+      "px4_channel": 3,
+      "px4_function": 103,
+      "mujoco_actuator": "motor_3_wrench",
+      "mujoco_ctrl_index": 2,
+      "arm_about_com_frd_m": [
+        0.20490464242331627,
+        0.219199249678554,
+        0.061452885558382436
+      ],
+      "flu_reaction_torque_sign": 1,
+      "cw_ccw_wiring": "UNVERIFIED; these are model reaction torque signs"
+    },
+    {
+      "px4_channel": 4,
+      "px4_function": 104,
+      "mujoco_actuator": "motor_4_wrench",
+      "mujoco_ctrl_index": 3,
+      "arm_about_com_frd_m": [
+        0.20490464242331627,
+        -0.219802750321446,
+        0.061452885558382436
+      ],
+      "flu_reaction_torque_sign": -1,
+      "cw_ccw_wiring": "UNVERIFIED; these are model reaction torque signs"
+    }
+  ],
+  "protocol": {
+    "simulator": "MAVLink2 common,loopbackTCP",
+    "tcp_server": "127.0.0.1:4560 bridge",
+    "tcp_client": "PX4 simulator_mavlink",
+    "offboard": "loopbackUDP14540\u2192PX4 14580 (only opt-in flight)",
+    "source_system_component": [
+      42,
+      51
+    ],
+    "px4_system_component": [
+      1,
+      1
+    ],
+    "physics_hz": 500,
+    "HIL_SENSOR_hz": 250,
+    "HIL_GPS_hz": 10,
+    "actuator_hz_measured": 250,
+    "clock": "integer\u00b5s,1s epochoffset,2msphysics,4msIMU; bounded bootstrap then per-actuator lockstep",
+    "HIL_STATE_QUATERNION": "request received; not sent; pinned source publishes only _ground_truth topics, not estimator bypass",
+    "HIL_OPTICAL_FLOW": "pinned handler audited, not generated/no optical flow sensor in Phase1",
+    "effective_SENS_IMU_MODE": 0,
+    "effective_EKF2_MULTI_IMU": 3,
+    "healthy_IMU_EKF_instances": 1
+  },
+  "phase1c_physical_metrics": {
+    "samples": 261,
+    "height_min_m": 0.04978951029662131,
+    "height_max_m": 0.6388540703368674,
+    "peak_speed_m_s": 0.1943937154761338,
+    "max_horizontal_offset_m": 0.02485346760918536,
+    "peak_tilt_deg": 0.14187528549034803,
+    "final_origin_position_enu_m": [
+      -0.007529613458805762,
+      -0.008398042898001204,
+      0.6388540703368674
+    ],
+    "final_origin_velocity_enu_m_s": [
+      -0.002674795955309811,
+      0.004338095861044138,
+      0.0033866243518259525
+    ],
+    "final_speed_m_s": 0.006119054959920736,
+    "saturated_samples": 0
+  },
+  "hover_assessment": {
+    "pass": true,
+    "duration_s": 2,
+    "sampling_hz": 10,
+    "samples": 21,
+    "target_body_origin_z_m": 0.651,
+    "height_tolerance_m": 0.15,
+    "horizontal_tolerance_m": 0.2,
+    "speed_threshold_m_s": 0.2,
+    "tilt_threshold_deg": 10
+  },
+  "acceptance": {
+    "px4_version": "PASS",
+    "sitl_startup": "PASS",
+    "bidirectional_bridge": "PASS",
+    "px4_actuators_received_and_applied": "PASS",
+    "sensors_in_px4_uorb": "PASS",
+    "estimator": "PASS (idealGNSS/mag/baro limited test)",
+    "px4_controls_flight": "PASS",
+    "bounded_closed_loop": "PASS",
+    "basic_hover": "PASS",
+    "dedicated_attitude_step_test": "NOT TESTED",
+    "real_motor_identification": "NOT TESTED",
+    "ROS_MID360_FAST_LIO2": "NOT TESTED"
+  },
+  "resources": {
+    "mujoco_instances_max": 1,
+    "px4_instances_max": 1,
+    "parallel_builds": 0,
+    "oom_observed": false,
+    "max_bridge_hwm_bytes": 574103552,
+    "max_px4_sampled_rss_bytes": 20406272,
+    "lowest_sampled_system_available_bytes": 11324428288,
+    "cpu_ps_probe_percent_one_core": {
+      "bridge": 25.5,
+      "px4": 7.1
+    },
+    "cpu_probe_scope": "one startup/flight ps sample, not full-run peak",
+    "startup_available_memory_requirement_gib": 2.5,
+    "runtime_reserve_gib": 1.5
+  },
+  "verification": {
+    "scoped_bridge_tests_passed": 33,
+    "scoped_bridge_tests_failed": 0,
+    "independent_readonly_review": "0 Critical; 1 Important stale-stream watchdog finding fixed with three RED-to-GREEN pure regression tests",
+    "watchdog_fix": "single absolute bootstrap receive deadline; immediate stale-command rejection after lockstep; whole-run deadline bounds receives",
+    "no_additional_flights_after_fix": true,
+    "historical_training_fixtures_executed": false,
+    "orchestration_fault_test": "fake process/physics/transport proves cleanup and previous nonzero controls zeroed; no PX4 process launched"
+  },
+  "limitations": [
+    "One bounded position hold, not a comprehensive attitude/yaw/recovery flight validation.",
+    "No serial/hardware/Gazebo/legacyPI/training; existing checkpoints unchanged and not used by PX4.",
+    "Mass/inertia/rotorpositions engineering estimates; km estimated, CW/CCW wiring unverified; no ESC/motor lag, battery sag or drag identification.",
+    "SyntheticGNSS at47.397742/8.545594/488m, idealIMUatCOM, seededmag/baronoise engineering assumptions; no FAST-LIO2.",
+    "~3.4deg estimated heading bias versus physical NED attitude under syntheticfield/declination; no yaw tracking quality claim.",
+    "heading_good_for_control remained false: currentPX4 requires in-flight finalmag alignment; low0.6m hold did not establish that alignment.",
+    "PX4 logger subscription-capacity warnings; missing topics never treated as recorded. RawULG local-only.",
+    "Stock mavlinksim overrides requestedsingleIMU params; effectivevalues recorded; only one healthyEKFinstance.",
+    "No hard real-time guarantee; measured\u2248real-time single finite runs, resource samples not continuousOS proof."
+  ],
+  "next": "One separately scoped sensor-heading/alignment validation before yaw maneuvers or ROS external-vision integration; do not retune gains or connect hardware."
+}
