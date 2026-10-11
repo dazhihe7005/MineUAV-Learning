@@ -1,0 +1,927 @@
+{
+  "phase": "PX4-MuJoCo Phase2C yaw allocation compatibility",
+  "date": "2026-10-11",
+  "branch": "feat/px4-mujoco-yaw-allocation-fix",
+  "base_commit": "fbd273be0f7169f738f6c8024e7ec7be37e14941",
+  "status": {
+    "physical_mapping": "PASS",
+    "isolated_verified_binary": "PASS",
+    "disarmed_communication": "PASS",
+    "yaw_axis_retained": "PASS",
+    "physical_yaw_response": "NOT TESTED",
+    "settling": "NOT TESTED",
+    "flight_safety": "BLOCKED",
+    "safe_stop_cleanup": "PASS",
+    "flight_completion": "BLOCKED",
+    "heading_alignment": "BLOCKED",
+    "yaw_direction": "NOT TESTED",
+    "yaw_torque_allocated": "NOT TESTED",
+    "no_motor_saturation": "NOT TESTED",
+    "observed_no_motor_saturation": "PASS",
+    "phase3_entry": "BLOCKED"
+  },
+  "px4": {
+    "schema": 1,
+    "base_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+    "commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+    "build": "build/px4_sitl_mineuav_yaw",
+    "binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+    "build_version_header_sha256": "cc701c40eaf4840a56ad4d6f3d45290226c922931b6038afd6c1f12ed80bf5c0",
+    "patch_sha256": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa",
+    "rootfs_sha256": "7220bda770b2a41aa3f49873777e0eaa5b0a5fa5c91934895b39d8a682381881",
+    "boardconfig_sha256": "045ad6c4dae3ba1d24570a21a4a9fe01cc3215246f1d11d559d67b99bbc2f81d",
+    "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb",
+    "tag": "v1.18.0-beta1-580-g142c24cffb",
+    "custom_sitl": true,
+    "binary": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/bin/px4",
+    "rootfs": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/etc",
+    "manifest_sha256": "58a562cf99340786c6a58bd57040ebca21ea9437b213134fadca7f4fc6563375"
+  },
+  "physical_audit": {
+    "raw_px4_matrix": [
+      [
+        0.219802750321446,
+        -0.219199249678554,
+        -0.219199249678554,
+        0.219802750321446
+      ],
+      [
+        -0.23409835757668374,
+        -0.23409835757668374,
+        0.20490464242331627,
+        0.20490464242331627
+      ],
+      [
+        -0.01720770778086437,
+        0.01720770778086437,
+        -0.01720770778086437,
+        0.01720770778086437
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    ],
+    "old_filtered_matrix": [
+      [
+        0.219802750321446,
+        -0.219199249678554,
+        -0.219199249678554,
+        0.219802750321446
+      ],
+      [
+        -0.23409835757668374,
+        -0.23409835757668374,
+        0.20490464242331627,
+        0.20490464242331627
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    ],
+    "new_filtered_matrix": [
+      [
+        0.219802750321446,
+        -0.219199249678554,
+        -0.219199249678554,
+        0.219802750321446
+      ],
+      [
+        -0.23409835757668374,
+        -0.23409835757668374,
+        0.20490464242331627,
+        0.20490464242331627
+      ],
+      [
+        -0.01720770778086437,
+        0.01720770778086437,
+        -0.01720770778086437,
+        0.01720770778086437
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    ],
+    "physical_com_frd_matrix_per_normalized_motor": [
+      [
+        8.70369449506172,
+        -8.679797227099314,
+        -8.679797227099314,
+        8.70369449506172
+      ],
+      [
+        -9.269768386261966,
+        -9.269768386261966,
+        8.113762933649697,
+        8.113762933649697
+      ],
+      [
+        -0.6813865216240969,
+        0.6813865216240969,
+        -0.6813865216240969,
+        0.6813865216240969
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        -39.597750630204494,
+        -39.597750630204494,
+        -39.597750630204494,
+        -39.597750630204494
+      ]
+    ],
+    "axis_order": [
+      "Tx",
+      "Ty",
+      "Tz",
+      "Fx",
+      "Fy",
+      "Fz"
+    ],
+    "physical_units": "Nm/N; FRD at COM",
+    "original_rank": 3,
+    "new_rank": 4,
+    "row_normalized_condition_number": 1.0687239413283545,
+    "physical_condition_number_dimensionful_not_coordinate_invariant": 58.119999473112415,
+    "hover_controls": [
+      0.4041204371789902,
+      0.405312441346213,
+      0.4629742703120418,
+      0.46178226614481926
+    ],
+    "hover_wrench_fz_tx_ty_tz": [
+      -68.67,
+      -4.440892098500626e-16,
+      3.552713678800501e-15,
+      2.220446049250313e-16
+    ],
+    "maximum_motor_thrust_n": 39.597750630204494,
+    "maximum_motor_reaction_torque_nm": 0.681386521624097,
+    "zero_yaw_nominal_mix_delta_max": 1.1102230246251565e-15,
+    "physical_mapping_equivalence": "Exact B entries, adapter c\u2192omega\u00b2=u_max*c and box[0,1] unchanged; linear map equality on basis implies entire feasible motor box equality, not only hover.",
+    "scheme_a": "Uniform B'=sB requires c=s*v and v\u2208[0,1/s], not stock[0,1]. PX4 also normalizes mixer axes internally; no full allocator/range/saturation equivalence proved. Rejected for flight.",
+    "scheme_b": "SITL-only guarded retention of independent weak yaw row, with zero-moment interior trim; original PID/EKF/normalization/desaturation/min/max unchanged."
+  },
+  "preservation": {
+    "protected_files": {
+      "mujoco/models/mine_uav_dynamics_v2.xml": {
+        "base_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "current_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "unchanged": true
+      },
+      "mujoco/models/rotor_config.json": {
+        "base_sha256": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "current_sha256": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "unchanged": true
+      },
+      "mujoco/models/rotor_actuators.xml": {
+        "base_sha256": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44",
+        "current_sha256": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44",
+        "unchanged": true
+      },
+      "mujoco/px4_bridge/actuator_adapter.py": {
+        "base_sha256": "99bc0b9768782f2566c77adfa7159c081a0a2828225cf5638f4dec412212985a",
+        "current_sha256": "99bc0b9768782f2566c77adfa7159c081a0a2828225cf5638f4dec412212985a",
+        "unchanged": true
+      },
+      "mujoco/px4_bridge/sensor_adapter.py": {
+        "base_sha256": "a43c358ea2f3e2b1ce91746c119f10850bd978607e8ce8efd79f97a75a3e7df1",
+        "current_sha256": "a43c358ea2f3e2b1ce91746c119f10850bd978607e8ce8efd79f97a75a3e7df1",
+        "unchanged": true
+      },
+      "mujoco/px4_bridge/telemetry_freshness.py": {
+        "base_sha256": "6e731e7d1b6b234e230e9d1cc95484cb18cc1714c9088476b80776a68c69baa9",
+        "current_sha256": "6e731e7d1b6b234e230e9d1cc95484cb18cc1714c9088476b80776a68c69baa9",
+        "unchanged": true
+      },
+      "mujoco/px4_bridge/yaw_telemetry_runner.py": {
+        "base_sha256": "2d33a14e6a157dd8a7222630e85259dcad00e0e8e49a8aa6c6b21ad10675bee8",
+        "current_sha256": "2d33a14e6a157dd8a7222630e85259dcad00e0e8e49a8aa6c6b21ad10675bee8",
+        "unchanged": true
+      },
+      "mujoco/px4_bridge/closed_loop.py": {
+        "base_sha256": "dc8bf0394adbd757bb9f9951a4bbc3527a0e49da26bf5c7847db541f09563ba0",
+        "current_sha256": "dc8bf0394adbd757bb9f9951a4bbc3527a0e49da26bf5c7847db541f09563ba0",
+        "unchanged": true
+      },
+      "mujoco/rl/models/uav_bc_mlp_seed0.pt": {
+        "base_sha256": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+        "current_sha256": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+        "unchanged": true
+      },
+      "mujoco/rl/models/uav_bc_yaw_augmented_seed0.pt": {
+        "base_sha256": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+        "current_sha256": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+        "unchanged": true
+      },
+      "mujoco/rl/models/joint_latent_world_model_v3_autonomous_consistency.pt": {
+        "base_sha256": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+        "current_sha256": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+        "unchanged": true
+      },
+      "mujoco/reports/px4_mujoco_phase1.json": {
+        "base_sha256": "0ef399d4f8e66c4abc409e1e8bf0004a83a2effcd654692c51359b8b203fc974",
+        "current_sha256": "0ef399d4f8e66c4abc409e1e8bf0004a83a2effcd654692c51359b8b203fc974",
+        "unchanged": true
+      },
+      "mujoco/reports/px4_mujoco_yaw_validation.json": {
+        "base_sha256": "684b5c654ab205ea68b8f752e59025560f0f777cef3fb064de81a4d780dffc82",
+        "current_sha256": "684b5c654ab205ea68b8f752e59025560f0f777cef3fb064de81a4d780dffc82",
+        "unchanged": true
+      },
+      "mujoco/reports/px4_mujoco_yaw_telemetry_fix.json": {
+        "base_sha256": "42a3331c03e36c95ab81c4d590f53ad7022463d934f52a0c34e52a6cc4f24e16",
+        "current_sha256": "42a3331c03e36c95ab81c4d590f53ad7022463d934f52a0c34e52a6cc4f24e16",
+        "unchanged": true
+      }
+    },
+    "flight_runtime_freeze": {
+      "offline_tests": {
+        "passed": 147,
+        "skipped": 0,
+        "baseline_preserved": 109
+      },
+      "sitl_invocations_before_freeze": 1,
+      "parser_fix": "Only ANSI SGR color bytes removed; real preserved yaw row and complete disarmed proof validated from unchanged raw data, no repeat run.",
+      "runtime_hashes": {
+        "mujoco/px4_bridge/simulation_runner.py": "d30e0d1dc09f4d33538d84ea740ee253d7e2740eec6f5bd20e8b3bb72f204b97",
+        "mujoco/px4_bridge/allocation_runner.py": "7b550a82f6a2e487739be917bed8847738bbdbdef828ff16915cbec6a56e4f01",
+        "mujoco/px4_bridge/compatibility_identity.py": "943bc842ae8e39e9a85990981caf4bf3bfe762247d44cf483ac21cb589be40f9",
+        "mujoco/px4_bridge/compat/px4_yaw_build_identity.json": "58a562cf99340786c6a58bd57040ebca21ea9437b213134fadca7f4fc6563375",
+        "mujoco/px4_bridge/compat/px4_yaw_compat.patch": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa"
+      }
+    },
+    "runtime_unchanged_after_flight": {
+      "mujoco/px4_bridge/simulation_runner.py": true,
+      "mujoco/px4_bridge/allocation_runner.py": true,
+      "mujoco/px4_bridge/compatibility_identity.py": true,
+      "mujoco/px4_bridge/compat/px4_yaw_build_identity.json": true,
+      "mujoco/px4_bridge/compat/px4_yaw_compat.patch": true
+    },
+    "original_px4": {
+      "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+      "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+      "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+      "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+      "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+      "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+      "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+    }
+  },
+  "verification": {
+    "final_bridge_tests": {
+      "passed": 150,
+      "skipped": 0,
+      "baseline_preserved": 109,
+      "new": 41
+    },
+    "preflight_bridge_tests": {
+      "passed": 147,
+      "skipped": 0
+    },
+    "git_diff_check": {
+      "research_source_excluding_exact_patch_archive": "PASS",
+      "isolated_px4_source_diff": "PASS",
+      "archive_note": "Standard unified-diff context prefixes trigger whitespace warnings when the patch itself is added as text. Exact approved patch bytes retained; not an algorithm failure."
+    },
+    "full_repository_suite": {
+      "status": "BLOCKED",
+      "reason": "Unchanged CAD SciPy/NumPy ABI collection incompatibility; no installation or unrelated code changes."
+    },
+    "independent_review": {
+      "reviewer": "phase2c_safety_review",
+      "mode": "one fresh-context read-only preflight code review",
+      "independently_run_tests": 134,
+      "critical": 0,
+      "important": 4,
+      "minor": 0,
+      "findings": [
+        {
+          "issue": "Raw motor faults and stop-mask transitions might not revoke or refresh yaw retention",
+          "resolution": "Raw detector copy independent of failure handling, unknown fails closed, eligibility transitions force matrix update; native regression before flight."
+        },
+        {
+          "issue": "Disarmed proof insufficiently bound to full protocol and configuration",
+          "resolution": "Full custom identity/history/16s/message/healthy-complete-proof admission regression before flight."
+        },
+        {
+          "issue": "Analyzer could overstate PASS, launch/OOM evidence and Phase3 admission",
+          "resolution": "Strict identity binding and all-required-PASS admission; missing allocator evidence not successful, counts limited to owned recordings."
+        },
+        {
+          "issue": "Native test covered pseudoinverse rather than actually selected SequentialDesaturation",
+          "resolution": "Actual selected allocator linked to real parameter store with default airmode/method assertions; native bounds/hold/yaw regression before flight."
+        }
+      ],
+      "author_postreview_verification": "147 tests before flight; 150 final tests after analysis-only regressions. No second independent review; reviewer did not independently recheck final fixes/build.",
+      "failed_review_attempt": "Earlier frontier-model reviewer unavailable due quota before doing work; no review conclusion attributed to it.",
+      "declined_judgments": [
+        "Actual flight readiness/response awaited live evidence; now response BLOCKED",
+        "Hardware controllability/handedness/measured parameters outside scope",
+        "Full repository CAD ABI suite BLOCKED",
+        "Independent binary reconstruction not performed"
+      ]
+    },
+    "execution_integrity": {
+      "authorized_sitl_invocations": 2,
+      "observed_owned_sitl_invocations": 2,
+      "disarmed_invocations": 1,
+      "flight_invocations": 1,
+      "flight_retries": 0,
+      "disarmed_parser_disclosure": "CLI initially exit1 because ANSI SGR bytes were included in numeric yaw row; original completed raw data subsequently validated offline with RED\u2192GREEN parser correction, no re-run.",
+      "postflight_runtime_changes": false,
+      "postflight_changes": "Only offline analysis/tests/docs, including incomplete-response status and null prequery health handling. No safety/runtime/source rebuild after the one flight."
+    }
+  },
+  "previous_protocol_comparison": {
+    "explicit_protocol_identical": {
+      "px4_environment": true,
+      "initial_qpos": true,
+      "synthetic_sensor_noise": true,
+      "magnetic_field": true
+    },
+    "previous_summary_sha256": "5b2ae186bf63cec8f3e993d007309ea4f64074bb01534b578018d6bae6e22900",
+    "previous_ulog_sha256": "1bae0790a3adb0ccfff6976bbdab8b3ce6a2de49229f679d75e4cb9839c868a5",
+    "controller_ekf_allocator_parameters_compared": 388,
+    "ulog_parameter_differences": {
+      "EKF2_MAG_DECL": {
+        "previous": 3.4056053161621094,
+        "current": 0.0
+      }
+    },
+    "declination_difference_scope": "volatile EKF2_MAG_DECL is saved without notification by EKF2::UpdateMagCalibration; both builds have configured default0 and DECL_TYPE3, identical magnetic/GNSS inputs. Old log starts1.344s, new .304s; exact unlogged change time not observable. No gain/EKF tuning."
+  },
+  "flight_parameters_match": {
+    "CA_AIRFRAME": true,
+    "CA_ROTOR_COUNT": true,
+    "THR_MDL_FAC": true,
+    "CA_ROTOR0_PX": true,
+    "CA_ROTOR0_PY": true,
+    "CA_ROTOR0_PZ": true,
+    "CA_ROTOR0_CT": true,
+    "CA_ROTOR0_KM": true,
+    "PWM_MAIN_FUNC1": true,
+    "CA_ROTOR1_PX": true,
+    "CA_ROTOR1_PY": true,
+    "CA_ROTOR1_PZ": true,
+    "CA_ROTOR1_CT": true,
+    "CA_ROTOR1_KM": true,
+    "PWM_MAIN_FUNC2": true,
+    "CA_ROTOR2_PX": true,
+    "CA_ROTOR2_PY": true,
+    "CA_ROTOR2_PZ": true,
+    "CA_ROTOR2_CT": true,
+    "CA_ROTOR2_KM": true,
+    "PWM_MAIN_FUNC3": true,
+    "CA_ROTOR3_PX": true,
+    "CA_ROTOR3_PY": true,
+    "CA_ROTOR3_PZ": true,
+    "CA_ROTOR3_CT": true,
+    "CA_ROTOR3_KM": true,
+    "PWM_MAIN_FUNC4": true
+  },
+  "runs": {
+    "disarmed_01": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_allocation_parts/disarmed_01/smoke_summary.json",
+      "summary_sha256": "ac47e2a3673312007b1a0758dc6fc0cea497b80d351cb650d8fb7dee68a444af",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_allocation_parts/disarmed_01/log/2026-10-11/12_16_21.ulg",
+      "ulog_sha256": "67c21b97c9f38df1b0d3274b56011efb6d2426ff79f942812304dccfac6a067f",
+      "complete": true,
+      "simulation_end_s": 16.00000000000201,
+      "wall_s": 16.00458998100021,
+      "physical_samples": 801,
+      "exception": null,
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": {
+        "COMMAND_LONG": 1,
+        "HEARTBEAT": 1,
+        "HIL_ACTUATOR_CONTROLS": 3985
+      },
+      "messages_sent": {
+        "HIL_SENSOR": 4000,
+        "HIL_GPS": 160
+      },
+      "bridge_peak_rss_bytes": 771747840,
+      "px4_sampled_peak_rss_bytes": 9936896,
+      "system_min_available_bytes": 8817274880,
+      "px4": {
+        "schema": 1,
+        "base_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+        "build": "build/px4_sitl_mineuav_yaw",
+        "binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+        "build_version_header_sha256": "cc701c40eaf4840a56ad4d6f3d45290226c922931b6038afd6c1f12ed80bf5c0",
+        "patch_sha256": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa",
+        "rootfs_sha256": "7220bda770b2a41aa3f49873777e0eaa5b0a5fa5c91934895b39d8a682381881",
+        "boardconfig_sha256": "045ad6c4dae3ba1d24570a21a4a9fe01cc3215246f1d11d559d67b99bbc2f81d",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb",
+        "tag": "v1.18.0-beta1-580-g142c24cffb",
+        "custom_sitl": true,
+        "binary": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/bin/px4",
+        "rootfs": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/etc",
+        "manifest_sha256": "58a562cf99340786c6a58bd57040ebca21ea9437b213134fadca7f4fc6563375"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 0.0,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": null,
+        "first_final_heading_good_s": null,
+        "final_heading_good": false
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 249,
+        "mean": -0.0088757556375347,
+        "min": -0.0127612396141612,
+        "max": -0.005150288220498802,
+        "max_abs": 0.0127612396141612,
+        "rms": 0.009067611910560304
+      },
+      "poststep_estimate_minus_truth_deg": null,
+      "poststep_desired_minus_estimate_deg": null,
+      "poststep_desired_minus_truth_deg": null,
+      "poststep_requested_target_minus_truth_deg": null,
+      "poststep_observed_duration_s": null,
+      "actual_step_time_s": null,
+      "gate_evidence": null,
+      "settling_time_s": null,
+      "yaw_response_status": "NOT TESTED",
+      "console_final_topic_ages_s": {
+        "vehicle_local_position": 0.004,
+        "estimator_status_flags": 0.756,
+        "vehicle_status": 0.204
+      },
+      "maximum_xy_excursion_m": 5.45059751601145e-06,
+      "maximum_height_m": 0.050882279999999995,
+      "maximum_speed_m_s": 0.06597676536695751,
+      "motor_output_fraction": {
+        "n": 3204,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": null,
+      "actual_yaw_axis_retained": true,
+      "freshness": {
+        "query_response_wall_s": {
+          "n": 21,
+          "mean": 0.0036671323331185185,
+          "min": 0.0034921079995910986,
+          "max": 0.0038936399996600812,
+          "max_abs": 0.0038936399996600812,
+          "rms": 0.0036684165988436507,
+          "median": 0.0036631579996537766,
+          "p95": 0.003831061999335361
+        },
+        "source_age_s": {
+          "estimator_status_flags": {
+            "n": 500,
+            "mean": 0.763584,
+            "min": 0.272,
+            "max": 1.256,
+            "max_abs": 1.256,
+            "rms": 0.8163118227736261,
+            "median": 0.764,
+            "p95": 1.212
+          },
+          "vehicle_local_position": {
+            "n": 500,
+            "mean": 0.26198400000000005,
+            "min": 0.02,
+            "max": 0.504,
+            "max_abs": 0.504,
+            "rms": 0.29905247700027504,
+            "median": 0.262,
+            "p95": 0.484
+          },
+          "vehicle_status": {
+            "n": 500,
+            "mean": 0.503584,
+            "min": 0.224,
+            "max": 0.784,
+            "max_abs": 0.784,
+            "rms": 0.5244061326872522,
+            "median": 0.504,
+            "p95": 0.7281999999999998
+          }
+        },
+        "duplicate_receipts": 10,
+        "query_pending_samples": 0,
+        "safe_stop_samples": 0,
+        "sample_count": 500,
+        "receipt_source_age_s": {
+          "estimator_status_flags": {
+            "n": 21,
+            "mean": 0.5194285714285715,
+            "min": 0.256,
+            "max": 0.76,
+            "max_abs": 0.76,
+            "rms": 0.576308779669206,
+            "median": 0.756,
+            "p95": 0.76
+          },
+          "vehicle_local_position": {
+            "n": 21,
+            "mean": 0.005904761904761906,
+            "min": 0.004,
+            "max": 0.008,
+            "max_abs": 0.008,
+            "rms": 0.006233549779791837,
+            "median": 0.004,
+            "p95": 0.008
+          },
+          "vehicle_status": {
+            "n": 21,
+            "mean": 0.2455238095238095,
+            "min": 0.204,
+            "max": 0.288,
+            "max_abs": 0.288,
+            "rms": 0.24688381690102545,
+            "median": 0.244,
+            "p95": 0.284
+          }
+        }
+      }
+    },
+    "yaw_01": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_allocation_parts/yaw_01/smoke_summary.json",
+      "summary_sha256": "a6ac413e72c15b28678f56ef62b02e2832fdf32c0e0a9d2d98042a54c017fa96",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_allocation_parts/yaw_01/log/2026-10-11/12_18_18.ulg",
+      "ulog_sha256": "e9177f526afcea475bd5e7d24175bc1d9cc96ff687218b9a47f57236a58e3fb8",
+      "complete": false,
+      "simulation_end_s": 15.48400000000184,
+      "wall_s": 16.088307784999415,
+      "physical_samples": 775,
+      "exception": {
+        "type": "TimeoutError",
+        "message": "PX4 actuator absolute watchdog expired",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/simulation_runner.py\", line 190, in smoke\n    msg,discarded=receive_current_actuator(wire,clock.time_usec,lockstep,deadline,\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/simulation_runner.py\", line 49, in receive_current_actuator\n    if remaining<=0:raise TimeoutError(\"PX4 actuator absolute watchdog expired\")\nTimeoutError: PX4 actuator absolute watchdog expired\n"
+      },
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": null,
+      "messages_sent": null,
+      "bridge_peak_rss_bytes": 772112384,
+      "px4_sampled_peak_rss_bytes": 10018816,
+      "system_min_available_bytes": 8855027712,
+      "px4": {
+        "schema": 1,
+        "base_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+        "build": "build/px4_sitl_mineuav_yaw",
+        "binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+        "build_version_header_sha256": "cc701c40eaf4840a56ad4d6f3d45290226c922931b6038afd6c1f12ed80bf5c0",
+        "patch_sha256": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa",
+        "rootfs_sha256": "7220bda770b2a41aa3f49873777e0eaa5b0a5fa5c91934895b39d8a682381881",
+        "boardconfig_sha256": "045ad6c4dae3ba1d24570a21a4a9fe01cc3215246f1d11d559d67b99bbc2f81d",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb",
+        "tag": "v1.18.0-beta1-580-g142c24cffb",
+        "custom_sitl": true,
+        "binary": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/bin/px4",
+        "rootfs": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/etc",
+        "manifest_sha256": "58a562cf99340786c6a58bd57040ebca21ea9437b213134fadca7f4fc6563375"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 0.0,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": null,
+        "first_final_heading_good_s": null,
+        "final_heading_good": false
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 250,
+        "mean": -0.019778180806310122,
+        "min": -0.06738520854974561,
+        "max": -0.009011547884519518,
+        "max_abs": 0.06738520854974561,
+        "rms": 0.02543509652109
+      },
+      "poststep_estimate_minus_truth_deg": null,
+      "poststep_desired_minus_estimate_deg": null,
+      "poststep_desired_minus_truth_deg": null,
+      "poststep_requested_target_minus_truth_deg": null,
+      "poststep_observed_duration_s": null,
+      "actual_step_time_s": null,
+      "gate_evidence": null,
+      "settling_time_s": null,
+      "yaw_response_status": "NOT TESTED",
+      "console_final_topic_ages_s": {
+        "vehicle_local_position": 0.488,
+        "estimator_status_flags": 1.456,
+        "vehicle_status": 0.948
+      },
+      "maximum_xy_excursion_m": 0.011645635250646078,
+      "maximum_height_m": 1.4592962156889964,
+      "maximum_speed_m_s": 1.264570492884463,
+      "motor_output_fraction": {
+        "n": 3100,
+        "mean": 0.07111977797542368,
+        "min": 0.0,
+        "max": 0.5616368651390075,
+        "max_abs": 0.5616368651390075,
+        "rms": 0.16990723065158236
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": null,
+      "actual_yaw_axis_retained": true,
+      "freshness": {
+        "query_response_wall_s": {
+          "n": 19,
+          "mean": 0.00280028584213716,
+          "min": 0.0015341960006480804,
+          "max": 0.0037072400000397465,
+          "max_abs": 0.0037072400000397465,
+          "rms": 0.002912340715042262,
+          "median": 0.002517980999982683,
+          "p95": 0.0037032548004390263
+        },
+        "source_age_s": {
+          "estimator_status_flags": {
+            "n": 474,
+            "mean": 0.8209367088607595,
+            "min": 0.272,
+            "max": 1.468,
+            "max_abs": 1.468,
+            "rms": 0.8733488000691811,
+            "median": 0.832,
+            "p95": 1.256
+          },
+          "vehicle_local_position": {
+            "n": 474,
+            "mean": 0.2613755274261604,
+            "min": 0.02,
+            "max": 0.504,
+            "max_abs": 0.504,
+            "rms": 0.2983915814244412,
+            "median": 0.26,
+            "p95": 0.484
+          },
+          "vehicle_status": {
+            "n": 474,
+            "mean": 0.6363544303797468,
+            "min": 0.268,
+            "max": 0.988,
+            "max_abs": 0.988,
+            "rms": 0.6606659726565008,
+            "median": 0.638,
+            "p95": 0.9373999999999999
+          }
+        },
+        "duplicate_receipts": 9,
+        "query_pending_samples": 0,
+        "safe_stop_samples": 0,
+        "sample_count": 474,
+        "receipt_source_age_s": {
+          "estimator_status_flags": {
+            "n": 19,
+            "mean": 0.5663157894736842,
+            "min": 0.256,
+            "max": 0.972,
+            "max_abs": 0.972,
+            "rms": 0.624022941548584,
+            "median": 0.756,
+            "p95": 0.972
+          },
+          "vehicle_local_position": {
+            "n": 19,
+            "mean": 0.005894736842105264,
+            "min": 0.004,
+            "max": 0.008,
+            "max_abs": 0.008,
+            "rms": 0.006223892841723992,
+            "median": 0.004,
+            "p95": 0.008
+          },
+          "vehicle_status": {
+            "n": 19,
+            "mean": 0.38105263157894737,
+            "min": 0.252,
+            "max": 0.492,
+            "max_abs": 0.492,
+            "rms": 0.39508346886249374,
+            "median": 0.464,
+            "p95": 0.4884
+          }
+        }
+      },
+      "poststep_height_error_m": null,
+      "poststep_xy_excursion_m": null,
+      "maximum_tilt_deg": 0.0880469245805871,
+      "allocator_poststep_samples": 0,
+      "allocator_poststep_torque_achieved_count": 0,
+      "allocator_unallocated_yaw": null,
+      "allocator_active_motor_saturation_count": 0,
+      "allocator_observed_motor_saturation_count": 0,
+      "allocator_prearm_lower_limit_count": 20,
+      "allocator_observed_scope": "time after recorded non-force arm request; no poststep samples if step absent",
+      "vehicle_rates_setpoint_poststep": null,
+      "vehicle_torque_setpoint_poststep": null
+    }
+  },
+  "yaw_response": {
+    "status": "NOT TESTED",
+    "settling_time_s": null,
+    "settling_status": "NOT TESTED",
+    "max_target_error_deg": null,
+    "overshoot_deg": null,
+    "steady_state_error_deg": null,
+    "peak_body_z_rate_rad_s": null,
+    "poststep_observation_s": null,
+    "sampling_gap_max_s": null
+  },
+  "motor_response": {
+    "physical_yaw_torque_model_derived_not_measured": null,
+    "maximum_physical_yaw_torque_nm": null,
+    "first_positive_physical_torque_s": null,
+    "positive_differential_max": null,
+    "bounds_valid": true,
+    "motor_saturation_samples": 0,
+    "poststep_motor_ranges": [
+      null,
+      null,
+      null,
+      null
+    ]
+  },
+  "shutdown_diagnostics": {
+    "monitor_fault": "safety query service stopped",
+    "outer_exception": {
+      "type": "TimeoutError",
+      "message": "PX4 actuator absolute watchdog expired",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/simulation_runner.py\", line 190, in smoke\n    msg,discarded=receive_current_actuator(wire,clock.time_usec,lockstep,deadline,\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/simulation_runner.py\", line 49, in receive_current_actuator\n    if remaining<=0:raise TimeoutError(\"PX4 actuator absolute watchdog expired\")\nTimeoutError: PX4 actuator absolute watchdog expired\n"
+    },
+    "limiting_deadline": "query_service",
+    "deadline_wall_s": 16.085843422999822,
+    "candidate_deadlines_wall_s": {
+      "query_service": 16.085843422999822,
+      "actuator_communication": 16.333172827999988,
+      "receipt:vehicle_local_position": 16.088036303999978,
+      "receipt:estimator_status_flags": 16.088036303999978,
+      "receipt:vehicle_status": 16.088036303999978
+    },
+    "last_check_actuator_age_s": 0.0020775849998244666,
+    "scope": "last recorded monitor state; outer receive error names all minimum safety deadlines, not proof of actuator loss"
+  },
+  "post_run_parser_diagnostic": {
+    "console_characters": 265803,
+    "offline_100_checks_wall_s": 0.15248373600024934,
+    "mean_parser_ms": 1.5248373600024934,
+    "all_checks_true": true,
+    "last_5_query_wall_intervals_s": [
+      0.5367805019996013,
+      0.5597352800004955,
+      0.5878630649995102,
+      0.6097442880000017,
+      0.6416366530002051
+    ],
+    "scope": "full post-run console microbenchmark, not measured in-flight CPU attribution or unique cause"
+  },
+  "conclusions": {
+    "confirmed": [
+      "Pinned weak-row filter removes original yaw despite rank-four physical map",
+      "Custom live allocator retains unchanged yaw row with original motor bounds",
+      "Limited flight stopped before yaw request on host query-service deadline; cleanup zeros motors and exits PX4",
+      "No actual +10degree maneuver or settling result exists in this stage"
+    ],
+    "supported_hypothesis": [
+      "Full accumulated console parsing in the high-frequency added yaw-row gate contributes to increasing wall-clock query intervals; offline microbenchmark supports plausibility, not unique attribution"
+    ],
+    "unresolved": [
+      "Runtime scheduling/diagnostic overhead contribution versus other host load",
+      "Complete yaw tracking, coupled hover, and final EKF alignment in this custom run"
+    ],
+    "next_recommendation": "One separately authorized offline bounded/incremental allocator diagnostic and wall-versus-simulation query-scheduling audit, preserving fail-closed deadlines; no automatic new flight or Phase3."
+  },
+  "execution": {
+    "recorded_sitl_invocations": 2,
+    "disarmed_recordings": 1,
+    "flight_recordings": 1,
+    "workers_recorded": [
+      1,
+      1
+    ],
+    "scope": "counts are verified recorded runs, not an OS-wide proof of historical launches"
+  },
+  "resources": {
+    "build": {
+      "returncode": 0,
+      "stop_reason": null,
+      "parallel_jobs": 1,
+      "nested_parallel_jobs": 1,
+      "wall_s": 3.012291820000428,
+      "process_group_sampled_peak_rss_bytes": 36933632,
+      "largest_child_peak_rss_bytes": 406724608,
+      "min_available_bytes": 9610518528
+    },
+    "bridge_peak_rss_bytes": 772112384,
+    "px4_sampled_peak_rss_bytes": 10018816,
+    "min_available_bytes": 8817274880,
+    "offline_peak_rss_bytes": 643543040,
+    "oom_telemetry_available": false,
+    "oom_observed_during_owned_runs": false,
+    "swap_change_audit": "no swap command used in this stage; no system-wide monitoring"
+  },
+  "limitations": [
+    "Single bounded positive yaw step; no negative or aggressive flight test",
+    "SITL-only local source guard, not upstream PX4 or real flight approval",
+    "Ideal actuator without ESC/motor delay; km estimated, rotor handedness requires hardware verification",
+    "Physical force/torque model-derived, not independent measured hardware values",
+    "Unchanged normalized PX4 torque request units are not Nm; saturation may prioritize other axes",
+    "Console health polling is finite fail-closed, not hard-real-time or an observer of every transient"
+  ],
+  "figures": {
+    "px4_allocation_yaw_response.png": "16ad7897264513e9d8d762e4057088ebd683a6458771472538bffb9e47955230",
+    "px4_allocation_motor_and_torque.png": "6f1fa8e78a5b73b5115f7ae5a7d709f5603d22f73aab6da189359fa44f2a77b0",
+    "px4_allocation_position_and_health.png": "4b854678d3a2f75fe68ee63e4ce333670f5e96b497f35f2c41486d32a97004a2",
+    "px4_allocation_freshness_and_velocity.png": "3079f44be01991b6fd3a21fe7b513f3756c9310c4e06f497b8a23be310b9a269"
+  }
+}

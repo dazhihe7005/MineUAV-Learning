@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "base_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+  "commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+  "build": "build/px4_sitl_mineuav_yaw",
+  "binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+  "build_version_header_sha256": "cc701c40eaf4840a56ad4d6f3d45290226c922931b6038afd6c1f12ed80bf5c0",
+  "patch_sha256": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa",
+  "rootfs_sha256": "7220bda770b2a41aa3f49873777e0eaa5b0a5fa5c91934895b39d8a682381881",
+  "boardconfig_sha256": "045ad6c4dae3ba1d24570a21a4a9fe01cc3215246f1d11d559d67b99bbc2f81d",
+  "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+}

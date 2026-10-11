@@ -1,0 +1,218 @@
+diff --git a/boards/px4/sitl/mineuav_yaw.px4board b/boards/px4/sitl/mineuav_yaw.px4board
+new file mode 100644
+index 0000000000..887ffc25dd
+--- /dev/null
++++ b/boards/px4/sitl/mineuav_yaw.px4board
+@@ -0,0 +1,4 @@
++# Merge with default.px4board; MuJoCo is the sole physics engine.
++CONFIG_MODULES_SIMULATION_GZ_MSGS=n
++CONFIG_MODULES_SIMULATION_GZ_BRIDGE=n
++CONFIG_MODULES_SIMULATION_GZ_PLUGINS=n
+diff --git a/src/modules/control_allocator/CMakeLists.txt b/src/modules/control_allocator/CMakeLists.txt
+index 20ac64dc7d..3e2561e701 100644
+--- a/src/modules/control_allocator/CMakeLists.txt
++++ b/src/modules/control_allocator/CMakeLists.txt
+@@ -56,3 +56,9 @@ px4_add_module(
+ 		px4_work_queue
+ 		SlewRate
+ )
++
++# Deliberately local opt-in build; refuse to compile this patch for hardware.
++if(NOT PX4_BOARD STREQUAL "px4_sitl")
++    message(FATAL_ERROR "MineUAV yaw compatibility patch is SITL-only")
++endif()
++target_compile_definitions(modules__control_allocator PRIVATE MINEUAV_SITL_YAW_COMPAT=1)
+diff --git a/src/modules/control_allocator/ControlAllocator.cpp b/src/modules/control_allocator/ControlAllocator.cpp
+index 1e36b4c1dc..39ed33b12c 100644
+--- a/src/modules/control_allocator/ControlAllocator.cpp
++++ b/src/modules/control_allocator/ControlAllocator.cpp
+@@ -41,6 +41,9 @@
+ 
+ #include "ControlAllocator.hpp"
+ #include "VehicleActuatorEffectiveness/ActuatorEffectivenessMultirotor.hpp"
++#ifdef MINEUAV_SITL_YAW_COMPAT
++#include "MineUavSitlYawAuthority.hpp"
++#endif
+ 
+ #include <drivers/drv_hrt.h>
+ #include <circuit_breaker/circuit_breaker.h>
+@@ -400,6 +403,16 @@ ControlAllocator::Run()
+ 
+ 		check_for_motor_failures();
+ 
++#ifdef MINEUAV_SITL_YAW_COMPAT
++		// Observe raw detector state even when upstream failure handling is Ignore.
++		// Preserve original failure policy; only revoke/re-enable this local exception.
++		failure_detector_status_s compatibility_failure;
++		if (_failure_detector_status_sub.copy(&compatibility_failure)
++		    && _mineuav_motor_health.observe(compatibility_failure.fd_motor,
++			    compatibility_failure.motor_failure_mask, compatibility_failure.motor_stop_mask)) {
++			update_effectiveness_matrix_if_needed(EffectivenessUpdateReason::MOTOR_ACTIVATION_UPDATE);
++		}
++#endif
+ 		update_effectiveness_matrix_if_needed(EffectivenessUpdateReason::NO_EXTERNAL_UPDATE);
+ 
+ 		// Set control setpoint vector(s)
+@@ -582,6 +595,16 @@ ControlAllocator::update_effectiveness_matrix_if_needed(EffectivenessUpdateReaso
+ 
+ 			ActuatorEffectiveness::EffectivenessMatrix &matrix = config.effectiveness_matrices[i];
+ 
++#ifdef MINEUAV_SITL_YAW_COMPAT
++			// Local SITL-only exception: never alter physical matrix entries.
++			// Retain weak yaw only for an independent, feasible four-motor trim.
++			const bool retain_sitl_yaw = _num_control_allocation == 1 && i == 0
++						    && _effectiveness_source_id == EffectivenessSource::MULTIROTOR
++						    && _handled_motor_failure_bitmask == 0 && _motor_stop_mask == 0
++				&& _mineuav_motor_health.allowed()
++						    && mineuavSitlYawAuthority(matrix, config.num_actuators_matrix[i]);
++#endif
++
+ 			for (int n = 0; n < NUM_AXES; n++) {
+ 				bool all_entries_small = true;
+ 
+@@ -592,6 +615,9 @@ ControlAllocator::update_effectiveness_matrix_if_needed(EffectivenessUpdateReaso
+ 				}
+ 
+ 				if (all_entries_small) {
++#ifdef MINEUAV_SITL_YAW_COMPAT
++					if (n == 2 && retain_sitl_yaw) { continue; }
++#endif
+ 					matrix.row(n) = 0.f;
+ 				}
+ 			}
+@@ -922,6 +948,12 @@ int ControlAllocator::print_status()
+ 	// Print current effectiveness matrix
+ 	for (int i = 0; i < _num_control_allocation; ++i) {
+ 		const ActuatorEffectiveness::EffectivenessMatrix &effectiveness = _control_allocation[i]->getEffectivenessMatrix();
++#ifdef MINEUAV_SITL_YAW_COMPAT
++		if (i == 0 && _control_allocation[i]->numConfiguredActuators() == 4) {
++			PX4_INFO("MineUAV yaw axis: %.9f %.9f %.9f %.9f", (double)effectiveness(2, 0),
++				 (double)effectiveness(2, 1), (double)effectiveness(2, 2), (double)effectiveness(2, 3));
++		}
++#endif
+ 
+ 		if (_num_control_allocation > 1) {
+ 			PX4_INFO("Instance: %i", i);
+diff --git a/src/modules/control_allocator/ControlAllocator.hpp b/src/modules/control_allocator/ControlAllocator.hpp
+index b56b131f9c..ec313dda7f 100644
+--- a/src/modules/control_allocator/ControlAllocator.hpp
++++ b/src/modules/control_allocator/ControlAllocator.hpp
+@@ -55,6 +55,9 @@
+ #include <ActuatorEffectivenessSpacecraft.hpp>
+ 
+ #include "ActuatorGroupPreflightCheck.hpp"
++#ifdef MINEUAV_SITL_YAW_COMPAT
++#include "MineUavSitlYawAuthority.hpp"
++#endif
+ 
+ #include <ControlAllocation.hpp>
+ #include <ControlAllocationPseudoInverse.hpp>
+@@ -225,6 +228,9 @@ private:
+ 	// For example, the system might report two motor failures, but only the first one is handled by CA
+ 	uint16_t _handled_motor_failure_bitmask{0};
+ 	uint16_t _motor_stop_mask{0};
++#ifdef MINEUAV_SITL_YAW_COMPAT
++	MineUavSitlMotorHealth _mineuav_motor_health;
++#endif
+ 
+ 	// Motor-failure recovery: the geometric-opposite motor is made reversible at runtime to recover
+ 	// control authority after a motor failure.
+diff --git a/src/modules/control_allocator/MineUavSitlYawAuthority.hpp b/src/modules/control_allocator/MineUavSitlYawAuthority.hpp
+new file mode 100644
+index 0000000000..e9b43017ce
+--- /dev/null
++++ b/src/modules/control_allocator/MineUavSitlYawAuthority.hpp
+@@ -0,0 +1,93 @@
++// Local opt-in SITL compatibility guard. NOT an upstream/hardware controller.
++// Matrix entries and the [0,1] actuator box are never rescaled.
++#pragma once
++#include <cmath>
++
++// Passive compatibility eligibility, independent of CA_FAILURE_MODE handling.
++// Unknown detector state is fail-closed. A transition requests matrix rebuild.
++struct MineUavSitlMotorHealth {
++	bool known {false};
++	bool fault {true};
++	bool allowed() const { return known && !fault; }
++	bool observe(bool detected, unsigned failure_mask, unsigned stop_mask) {
++		const bool previous = allowed();
++		known = true;
++		fault = detected || failure_mask != 0u || stop_mask != 0u;
++		return previous != allowed();
++	}
++};
++
++template<typename Matrix>
++bool mineuavSitlYawAuthority(const Matrix &matrix, int count)
++{
++	if (count != 4) { return false; }
++	float yaw_min = 1.f, yaw_max = -1.f;
++	for (int col = 0; col < 4; ++col) {
++		for (int row = 0; row < 6; ++row) {
++			if (!std::isfinite(matrix(row, col))) { return false; }
++		}
++		// Restricted to the validated non-tilting CT=1 normalized motor model.
++		if (std::fabs(matrix(3, col)) > 1e-6f || std::fabs(matrix(4, col)) > 1e-6f
++		    || std::fabs(matrix(5, col) + 1.f) > 1e-6f) { return false; }
++		if (matrix(2, col) < yaw_min) { yaw_min = matrix(2, col); }
++		if (matrix(2, col) > yaw_max) { yaw_max = matrix(2, col); }
++	}
++	if (yaw_min > -.01f || yaw_max < .01f || yaw_min < -.05f || yaw_max > .05f) { return false; }
++	// RP must survive the unchanged legacy filter as well: do not certify
++	// independence against rows that ControlAllocator will subsequently erase.
++	for (int row = 0; row < 2; ++row) {
++		float maximum = 0.f;
++		for (int col = 0; col < 4; ++col) {
++			if (std::fabs(matrix(row, col)) > maximum) { maximum = std::fabs(matrix(row, col)); }
++		}
++		if (maximum <= .05f) { return false; }
++	}
++	const int axes[4] {5, 0, 1, 2};
++	double basis[4][4] {}, system[4][5] {};
++	for (int row = 0; row < 4; ++row) {
++		double norm2 = 0.;
++		for (int col = 0; col < 4; ++col) { norm2 += double(matrix(axes[row], col)) * double(matrix(axes[row], col)); }
++		if (norm2 < 1e-6) { return false; }
++		const double norm = std::sqrt(norm2);
++		for (int col = 0; col < 4; ++col) {
++			basis[row][col] = double(matrix(axes[row], col)) / norm;
++			system[row][col] = basis[row][col];
++		}
++		system[row][4] = row == 0 ? -1. / norm : 0.;
++		// Twice-modified Gram-Schmidt: independent, well-separated rows only.
++		for (int pass = 0; pass < 2; ++pass) {
++			for (int earlier = 0; earlier < row; ++earlier) {
++				double dot = 0.;
++				for (int col = 0; col < 4; ++col) { dot += basis[row][col] * basis[earlier][col]; }
++				for (int col = 0; col < 4; ++col) { basis[row][col] -= dot * basis[earlier][col]; }
++			}
++		}
++		double residual2 = 0.;
++		for (int col = 0; col < 4; ++col) { residual2 += basis[row][col] * basis[row][col]; }
++		if (residual2 < .25) { return false; }
++		for (int col = 0; col < 4; ++col) { basis[row][col] /= std::sqrt(residual2); }
++	}
++	// Zero-moment unit-collective solution must be interior to the motor box.
++	// Rank alone would not guarantee feasible trim for nonreversible motors.
++	for (int pivot = 0; pivot < 4; ++pivot) {
++		int best = pivot;
++		for (int row = pivot + 1; row < 4; ++row) {
++			if (std::fabs(system[row][pivot]) > std::fabs(system[best][pivot])) { best = row; }
++		}
++		for (int col = 0; col < 5; ++col) {
++			const double tmp = system[pivot][col]; system[pivot][col] = system[best][col]; system[best][col] = tmp;
++		}
++		const double divisor = system[pivot][pivot];
++		if (std::fabs(divisor) < 1e-6) { return false; }
++		for (int col = 0; col < 5; ++col) { system[pivot][col] /= divisor; }
++		for (int row = 0; row < 4; ++row) {
++			if (row == pivot) { continue; }
++			const double factor = system[row][pivot];
++			for (int col = 0; col < 5; ++col) { system[row][col] -= factor * system[pivot][col]; }
++		}
++	}
++	for (int row = 0; row < 4; ++row) {
++		if (!std::isfinite(system[row][4]) || system[row][4] <= .1 || system[row][4] >= .4) { return false; }
++	}
++	return true;
++}

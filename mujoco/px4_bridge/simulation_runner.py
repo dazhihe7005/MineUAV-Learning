@@ -77,7 +77,10 @@ def px4_environment(adapter):
     env.update({"PX4_PARAM_"+k:str(v) for k,v in params.items()})
     return env
 
-def source_identity(px4_root):
+def source_identity(px4_root,compatibility_manifest=None):
+    if compatibility_manifest is not None:
+        from .compatibility_identity import verified_identity
+        return verified_identity(px4_root,compatibility_manifest)
     root=Path(px4_root).resolve();build=root/"build/px4_sitl_default"
     commit=subprocess.check_output(["git","-C",str(root),"rev-parse","HEAD"],text=True).strip()
     dirty=subprocess.check_output(["git","-C",str(root),"diff","--name-only","HEAD"],text=True).strip()
@@ -91,9 +94,10 @@ def source_identity(px4_root):
             "rootfs":str(build/"etc"),
             "simulator_source_sha256":sha256(root/"src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp")}
 
-def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=None,phase2=None):
+def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=None,phase2=None,compatibility_manifest=None):
     if not np.isfinite(seconds) or not 8<=seconds<=(45 if phase2 else 30):raise ValueError("finite smoke duration exceeded")
-    require_startup_memory();identity=source_identity(px4_root)
+    require_startup_memory()
+    identity=source_identity(px4_root) if compatibility_manifest is None else source_identity(px4_root,compatibility_manifest)
     runtime=prepare_runtime(runtime)
     m=mujoco.MjModel.from_xml_path(str(MODEL));validate_model(m)
     d=mujoco.MjData(m)
