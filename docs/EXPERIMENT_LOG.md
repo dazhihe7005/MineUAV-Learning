@@ -804,3 +804,28 @@ Conclusion: PASS for version/startup/bidirectional real sensor-actuator path and
 Limitations: engineeringmass/inertia/rotorpositions, estimatedkm/unverifiedrotationwiring; ideal instantaneous motors/noESC,battery ordrag identification; syntheticearthfield/GNSS/noise. Estimatedheading≈3.4deg biased versusphysicalNED, heading_good_for_control false until required finalin-flightmagalignment (notestablished inlowhold); no yawtracking claim. Logger subscriptioncapacity warnings disclosed. Dedicated attitude-step test/ROS/MID360S/FAST-LIO2 NOTTESTED. Fourfinite runs, oneflight, no statisticalflightrobustness claim.
 
 Next: Only recommend one separately scoped synthetic geographic heading/finalalignment validation before yaw maneuvers orROS externalvision integration. Do notexecute, retune gains orconnecthardware; stopafterfeaturecommit/push.
+
+## 2026-10-11 — PX4–MuJoCo Heading and Yaw Validation
+
+Branch: feat/px4-mujoco-yaw-validation
+Base: feat/px4-mujoco-sitl-integration / 3b36e9d77f2f6b89699b1ebd065e1e38310999be
+
+Research Question: Is Phase1's ~3.4degree heading difference caused by sensor/reference inconsistency, can final in-flight EKF alignment be established without health spoofing, and can one independently gated small yaw step be verified?
+
+Setup: Actual pinned PX4 8f9b91b2/prebuilt binary and MuJoCo3.14.0; offline oldULog/math/frame audit; optional NED geomagnetic field from matchingPX4 WMM grid at synthetic47.397742/8.545594 GNSS reference. No gain/EKF-parameter/actuator/frame/model/reward/network changes. Corrected disarmed16s smoke, fixed2m alignment ascent, requested90→100deg NED yaw at32s only with actual fresh heading/health and physicalhold checks. Single MuJoCo/PX4, loopback only, no install/build/realhardware.
+
+Key Results:
+- Confirmed old field0declination versus actualEKF grid/parameter3.405605deg. CorrectedNEDfield[.217434407,.012939331,.430409260]gauss; pinnedWMM2020 table dated2024.41257, not2026measuredfield. Oldflight5s estimate-minus-truth+3.413907deg; correctedfinalflight prestep5s+.002979deg(maxabs.010692). Actualfinalinflightmagalignment15.848s/headinggood16.856s, retainedthroughflight. Groundstartupheadingtransient explicitlyexcluded.
+- Yawstep actuallyauthorized32.004s with allrealflags/physicalhold, but finalrunstopped32.196s: latestqueriedestimatorflags age1.004s exceededfixed1sgate. SourcePublishStatusFlags~1Hz andquery2Hz make gate publication/querysemantics incompatible; actualULogheading/alignmentremainhealthy. No thresholdrelaxation/no furtherflight.
+- Censored0.192s response,9alignedpoststepsamples. Maxobserveddesired-minus-truth10.002422deg reflectsinitialtransient; settlingnull/NOTTESTED. Noclaimyawcontrollergood/bad, yawactuatordynamics orPhase3readiness. Maximumheight2.052484m,XYexcursion.023690m,motorfraction.561665,0saturation.
+- FourPhase2invocations retained: disarmed01complete16s; yaw01nostep32.004s passive3instancesheaderparsingfault; yaw02interrupted23.556s aftertoolbatchlaunchedbeforefailedtestoutputread(no step,workflowviolationdisclosed); yaw03authorizedstepbutfreshnessabort. Allctrlzero/ownedPX4exit0/historicalhashesunchanged. Finiteinstrumentationbudgetrevision, no moreretry.
+- Initial59completebridge testsPASS; analysis includesclockoffset/sampletimestamps/circularinterpolation/causalsetpointhold/noextrapolation, missingstate/no fabricatedPASS, properprimaryEKFinstance, complete/stale/partialgate, correctedfieldproof, bounds/wirefields preserved. No tests concurrentwithSITL. Rawsummary/ULGidentities and7protectedbase/currenthasheschecked. Originalworktree87untracked/main/models/RL/control preserved.
+- NoOOM,1worker. BridgeHWM581996544bytes/PX4sampledpeak20418560bytes,minavailable11299450880bytes; runtime1.5GiB/systemreserve,startup2.5GiB,swapunchanged. Offlineanalysispeakseparatelylogged. Rawphysicalarrays/ULogs/consoles/parameters/processledger remainlocal-only.
+
+Conclusion: PASS for simulatedgeomagneticbias explanation/correction and genuine finalinflightEKFheadingalignment. CompleteyawresponseBLOCKED byconservative live-telemetry freshness mismatch, settling/fullactuatordynamicsNOTTESTED, externalOdometryphaseentryBLOCKED. Censoredyawrecord isnot evidenceofcontroller orEKFfailure. Do notbypasshealthchecks orretunecontrolgains basedonthisresult.
+
+Final Review: Fresh independentread-only review59/59PASS0skip, allraw/protected/figurehashes andactualmetrics/source/gateprefix independentlyreconstructed.0Critical/2Important edgecasefindings: partialnewtopicheadersretainedoldhealth; GNSSfusiontrue didnotrequireexplicitnofault. SingleofflineTDDpass10newtestsRED→GREEN, full69/69PASS0skip; rejecttruncatedheaders/unfinishedbodies, requireexplicitGNSSposition/yaw/heightfaultandvehiclefailsafeFalse. ActualSHA-matchedrecordedgateprefixstillpassesstrictfix; noextraSITL/no secondreview. Known1sfreshnessblocker retained/explicitBLOCKED, no fullphasecompletionclaim. DeferredMinor: lineplot slopes atdiscreteflag/setpointchanges (causalnumericscorrect). Unmeasuredhardware/generalflight/fullhistoricalregression/allcleanupfaults/unsampledresourceevents remainoutsideevidence.
+
+Limitations: boundednominalalignmentascent/one+10deg request; no completeflightresponse, multiseedrobustness orhardwaredeployment; pinnedsyntheticWMM/no calibratedmagnetometer; idealinstantaneousmotor/noESC/dragidentification; existing completebridge suiteonly, no historicaltrainingtests; diagnosticparser/workflowmistakesdisclosed.
+
+Next: Only recommend source-consistent livehealth telemetry publication/receipt timing and offline verification, then the same boundedyawprotocol before externalOdometry. Notexecuted; noPhase3.

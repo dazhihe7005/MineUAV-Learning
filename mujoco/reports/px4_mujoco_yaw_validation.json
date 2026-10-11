@@ -1,0 +1,648 @@
+{
+  "phase": "PX4-MuJoCo Phase2 heading/yaw validation",
+  "date": "2026-10-11",
+  "base_commit": "3b36e9d77f2f6b89699b1ebd065e1e38310999be",
+  "branch": "feat/px4-mujoco-yaw-validation",
+  "px4": {
+    "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+    "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+    "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+    "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+    "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+    "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+    "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+  },
+  "runs": {
+    "phase1_hover": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_sitl_phase1_parts/hover_01/smoke_summary.json",
+      "summary_sha256": "70cecb00169ef4a6249a16094fe3fbae59cf2736529b603179a0645f2a429d5c",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_sitl_phase1_parts/hover_01/log/2026-10-11/02_45_05.ulg",
+      "ulog_sha256": "47b1b6f5f6231e0260614c90c41a50f279e7f2fc8c99e0e103ae4263e3a1729c",
+      "complete": true,
+      "simulation_end_s": 26.003999999996466,
+      "wall_s": 26.00758093499462,
+      "physical_samples": 261,
+      "exception": null,
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": {
+        "COMMAND_LONG": 1,
+        "HEARTBEAT": 1,
+        "HIL_ACTUATOR_CONTROLS": 6445
+      },
+      "messages_sent": {
+        "HIL_SENSOR": 6501,
+        "HIL_GPS": 261
+      },
+      "bridge_peak_rss_bytes": 574103552,
+      "px4_sampled_peak_rss_bytes": 20393984,
+      "system_min_available_bytes": 11416043520,
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 3.4056053161621094,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": null,
+        "first_final_heading_good_s": null,
+        "final_heading_good": false
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 50,
+        "mean": 3.4139069338867234,
+        "min": 3.404261443582772,
+        "max": 3.4237377221762206,
+        "max_abs": 3.4237377221762206,
+        "rms": 3.413913914339565
+      },
+      "poststep_estimate_minus_truth_deg": null,
+      "poststep_desired_minus_estimate_deg": null,
+      "poststep_desired_minus_truth_deg": null,
+      "poststep_requested_target_minus_truth_deg": null,
+      "poststep_observed_duration_s": null,
+      "actual_step_time_s": null,
+      "gate_evidence": null,
+      "settling_time_s": null,
+      "yaw_response_status": "NOT TESTED",
+      "console_final_topic_ages_s": {
+        "sensor_combined": 18.004,
+        "vehicle_local_position": 3.004,
+        "vehicle_status": 3.404,
+        "estimator_status_flags": 18.548,
+        "actuator_outputs_sim": 3.004,
+        "vehicle_air_data": 18.076,
+        "vehicle_magnetometer": 18.124,
+        "vehicle_attitude": 3.004
+      },
+      "maximum_xy_excursion_m": 0.02485346760918536,
+      "maximum_height_m": 0.6388540703368674,
+      "maximum_speed_m_s": 0.1943937154761338,
+      "motor_output_fraction": {
+        "n": 1044,
+        "mean": 0.21667305721724728,
+        "min": 0.0,
+        "max": 0.48808851838111883,
+        "max_abs": 0.48808851838111883,
+        "rms": 0.3041537211699071
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": null
+    },
+    "disarmed_01": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_phase2_parts/disarmed_01/smoke_summary.json",
+      "summary_sha256": "d38ba4733e6188c56c49268435398f84dc07aa7d2a1d21aa7c5ed06b808f861c",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_phase2_parts/disarmed_01/log/2026-10-11/03_41_58.ulg",
+      "ulog_sha256": "549847ad3bfe09aa8baa1d1d1c1151df41891bd48afd72d97828ebfa37dc47ae",
+      "complete": true,
+      "simulation_end_s": 16.00000000000201,
+      "wall_s": 16.003628263999417,
+      "physical_samples": 801,
+      "exception": null,
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": {
+        "COMMAND_LONG": 1,
+        "HEARTBEAT": 1,
+        "HIL_ACTUATOR_CONTROLS": 3943
+      },
+      "messages_sent": {
+        "HIL_SENSOR": 4000,
+        "HIL_GPS": 160
+      },
+      "bridge_peak_rss_bytes": 575340544,
+      "px4_sampled_peak_rss_bytes": 20197376,
+      "system_min_available_bytes": 11303825408,
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 3.4056053161621094,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": null,
+        "first_final_heading_good_s": null,
+        "final_heading_good": false
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 249,
+        "mean": -0.004764804794298838,
+        "min": -0.008356976696423353,
+        "max": -0.002175301859752668,
+        "max_abs": 0.008356976696423353,
+        "rms": 0.0049859402288094795
+      },
+      "poststep_estimate_minus_truth_deg": null,
+      "poststep_desired_minus_estimate_deg": null,
+      "poststep_desired_minus_truth_deg": null,
+      "poststep_requested_target_minus_truth_deg": null,
+      "poststep_observed_duration_s": null,
+      "actual_step_time_s": null,
+      "gate_evidence": null,
+      "settling_time_s": null,
+      "yaw_response_status": "NOT TESTED",
+      "console_final_topic_ages_s": {
+        "sensor_combined": 3.004,
+        "vehicle_local_position": 3.004,
+        "vehicle_status": 3.132,
+        "estimator_status_flags": 3.548,
+        "actuator_outputs_sim": 3.004,
+        "vehicle_air_data": 3.076,
+        "vehicle_magnetometer": 3.092
+      },
+      "maximum_xy_excursion_m": 5.45059751601145e-06,
+      "maximum_height_m": 0.050882279999999995,
+      "maximum_speed_m_s": 0.06597676536695751,
+      "motor_output_fraction": {
+        "n": 3204,
+        "mean": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "max_abs": 0.0,
+        "rms": 0.0
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": null
+    },
+    "yaw_01": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_phase2_parts/yaw_01/smoke_summary.json",
+      "summary_sha256": "de66597354736ce214003146f4c004b78753543cffa0956e26dc644bf68e1e24",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_phase2_parts/yaw_01/log/2026-10-11/03_42_31.ulg",
+      "ulog_sha256": "3f3e3a881336f090439f2f93461958a6c95399780800bfee9a99e8b15875e7dd",
+      "complete": false,
+      "simulation_end_s": 32.00399999999315,
+      "wall_s": 32.01768686000287,
+      "physical_samples": 1601,
+      "exception": {
+        "type": "ValueError",
+        "message": "BLOCKED: fresh final EKF heading/alignment gate failed; no yaw maneuver",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/simulation_runner.py\", line 145, in smoke\n    read_console();phase2.before_step(d,clock.time_usec,\"\".join(console))\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/yaw_runner.py\", line 34, in before_step\n    raise ValueError(\"BLOCKED: fresh final EKF heading/alignment gate failed; no yaw maneuver\")\nValueError: BLOCKED: fresh final EKF heading/alignment gate failed; no yaw maneuver\n"
+      },
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": null,
+      "messages_sent": null,
+      "bridge_peak_rss_bytes": 581996544,
+      "px4_sampled_peak_rss_bytes": 20418560,
+      "system_min_available_bytes": 11371171840,
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 3.4056053161621094,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": 15.916,
+        "first_final_heading_good_s": 16.924,
+        "final_heading_good": true
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 250,
+        "mean": 0.008416459182913397,
+        "min": -0.0010274769643917926,
+        "max": 0.017651280480062384,
+        "max_abs": 0.017651280480062384,
+        "rms": 0.010125427137515278
+      },
+      "poststep_estimate_minus_truth_deg": null,
+      "poststep_desired_minus_estimate_deg": null,
+      "poststep_desired_minus_truth_deg": null,
+      "poststep_requested_target_minus_truth_deg": null,
+      "poststep_observed_duration_s": null,
+      "actual_step_time_s": null,
+      "gate_evidence": null,
+      "settling_time_s": null,
+      "yaw_response_status": "NOT TESTED",
+      "console_final_topic_ages_s": {
+        "vehicle_local_position": 0.008,
+        "estimator_status_flags": 0.808,
+        "vehicle_status": 0.332
+      },
+      "maximum_xy_excursion_m": 0.024846444917117877,
+      "maximum_height_m": 2.052080178000407,
+      "maximum_speed_m_s": 1.2638464263099063,
+      "motor_output_fraction": {
+        "n": 6404,
+        "mean": 0.2573679364761368,
+        "min": 0.0,
+        "max": 0.561769187450409,
+        "max_abs": 0.561769187450409,
+        "rms": 0.33278687243779687
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": null
+    },
+    "yaw_02": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_phase2_parts/yaw_02/smoke_summary.json",
+      "summary_sha256": "b4fc339c53364400d9712767a5ea7435ddf670638d4302aeb3c974c9ccafd572",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_phase2_parts/yaw_02/log/2026-10-11/03_45_49.ulg",
+      "ulog_sha256": "c1f25ac4852c1d4912bf5cf36c032b0059995e0da778cf6cef5b36d087203075",
+      "complete": false,
+      "simulation_end_s": 23.555999999997823,
+      "wall_s": 23.557924515000195,
+      "physical_samples": 1178,
+      "exception": null,
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": null,
+      "messages_sent": null,
+      "bridge_peak_rss_bytes": 576671744,
+      "px4_sampled_peak_rss_bytes": 20332544,
+      "system_min_available_bytes": 11299450880,
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 3.4056053161621094,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": 15.848,
+        "first_final_heading_good_s": 16.856,
+        "final_heading_good": true
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 249,
+        "mean": -0.007831804623671655,
+        "min": -0.016409144418273902,
+        "max": 0.006479068708169668,
+        "max_abs": 0.016409144418273902,
+        "rms": 0.010691718304687183
+      },
+      "poststep_estimate_minus_truth_deg": null,
+      "poststep_desired_minus_estimate_deg": null,
+      "poststep_desired_minus_truth_deg": null,
+      "poststep_requested_target_minus_truth_deg": null,
+      "poststep_observed_duration_s": null,
+      "actual_step_time_s": null,
+      "gate_evidence": null,
+      "settling_time_s": null,
+      "yaw_response_status": "NOT TESTED",
+      "console_final_topic_ages_s": {
+        "vehicle_local_position": 0.06,
+        "estimator_status_flags": 0.644,
+        "vehicle_status": 0.456
+      },
+      "maximum_xy_excursion_m": 0.023456293366321854,
+      "maximum_height_m": 2.029518560277142,
+      "maximum_speed_m_s": 1.2637815805145487,
+      "motor_output_fraction": {
+        "n": 4712,
+        "mean": 0.19403207547734283,
+        "min": 0.0,
+        "max": 0.5617600083351135,
+        "max_abs": 0.5617600083351135,
+        "rms": 0.2875621659574138
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": null
+    },
+    "yaw_03": {
+      "summary_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_phase2_parts/yaw_03/smoke_summary.json",
+      "summary_sha256": "d2d060521f618fba5e09caeceb9db06a8e1f96a2a8ee08ae002104b3f71579d0",
+      "ulog_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_yaw_phase2_parts/yaw_03/log/2026-10-11/03_51_49.ulg",
+      "ulog_sha256": "577d19a5188f8658bbdac2e223026a2accddbeccdad6638a5dcc1de236fd3ed5",
+      "complete": false,
+      "simulation_end_s": 32.19599999999338,
+      "wall_s": 32.199723617995915,
+      "physical_samples": 1610,
+      "exception": {
+        "type": "ValueError",
+        "message": "BLOCKED: fresh final EKF heading/alignment gate failed; no yaw maneuver",
+        "traceback": "Traceback (most recent call last):\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/simulation_runner.py\", line 145, in smoke\n    read_console();phase2.before_step(d,clock.time_usec,\"\".join(console))\n  File \"/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/px4_bridge/yaw_runner.py\", line 38, in before_step\n    raise ValueError(\"BLOCKED: fresh final EKF heading/alignment gate failed; no yaw maneuver\")\nValueError: BLOCKED: fresh final EKF heading/alignment gate failed; no yaw maneuver\n"
+      },
+      "px4_exit_code": 0,
+      "zero_control_on_stop": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "history_unchanged": true,
+      "history_hashes": {
+        "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+      },
+      "messages_received": null,
+      "messages_sent": null,
+      "bridge_peak_rss_bytes": 579145728,
+      "px4_sampled_peak_rss_bytes": 20385792,
+      "system_min_available_bytes": 11303710720,
+      "px4": {
+        "commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+        "tag": "v1.18.0-beta1-575-g8f9b91b2bd",
+        "binary": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/bin/px4",
+        "binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+        "build_version_header_sha256": "357b3839ef7404c9fbad41c6d6e83ef2b4c1eb65faaec1967443ec70f25dd218",
+        "rootfs": "/home/keyousuke/PX4-Autopilot/build/px4_sitl_default/etc",
+        "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb"
+      },
+      "mujoco_version": "3.14.0",
+      "declination_parameter_deg": 3.4056053161621094,
+      "declination_type": 3,
+      "mag_type": 0,
+      "alignment": {
+        "first_inflight_mag_alignment_s": 15.848,
+        "first_final_heading_good_s": 16.856,
+        "final_heading_good": true
+      },
+      "prestep_or_final_5s_estimate_minus_truth_deg": {
+        "n": 250,
+        "mean": 0.0029788117377471377,
+        "min": -0.010691601886955627,
+        "max": 0.008587148183146869,
+        "max_abs": 0.010691601886955627,
+        "rms": 0.006103821356181929
+      },
+      "poststep_estimate_minus_truth_deg": {
+        "n": 9,
+        "mean": 0.00871648994315453,
+        "min": 0.008627511975658383,
+        "max": 0.008863578825286267,
+        "max_abs": 0.008863578825286267,
+        "rms": 0.008716814553441801
+      },
+      "poststep_desired_minus_estimate_deg": {
+        "n": 9,
+        "mean": 7.7712602560532575,
+        "min": -0.0066918529172822865,
+        "max": 9.99355847911279,
+        "max_abs": 9.99355847911279,
+        "rms": 8.813461558161645
+      },
+      "poststep_desired_minus_truth_deg": {
+        "n": 9,
+        "mean": 7.7799767459964055,
+        "min": 0.001935659058376096,
+        "max": 10.002421672856846,
+        "max_abs": 10.002421672856846,
+        "rms": 8.82116698122422
+      },
+      "poststep_requested_target_minus_truth_deg": {
+        "n": 9,
+        "mean": 10.002189742862104,
+        "min": 10.001941729362208,
+        "max": 10.002408111221243,
+        "max_abs": 10.002408111221243,
+        "rms": 10.002189743963664
+      },
+      "poststep_observed_duration_s": 0.19200000000023465,
+      "actual_step_time_s": 32.00399999999315,
+      "gate_evidence": {
+        "decision_clock_usec": 33004000,
+        "topic_timestamps_usec": {
+          "vehicle_local_position": 33000000.0,
+          "estimator_status_flags": 32192000.0,
+          "vehicle_status": 32668000.0
+        },
+        "heading_good_for_control": true,
+        "cs_mag_aligned_in_flight": true,
+        "heading_estimated_rad": 1.57091,
+        "heading_true_rad": 1.5707624372243432,
+        "console_sha256": "9349219138b748a38ad30aa763c35b8a578cc591909d8515fdab3a49629a52cb"
+      },
+      "settling_time_s": null,
+      "yaw_response_status": "BLOCKED",
+      "console_final_topic_ages_s": {
+        "vehicle_local_position": 0.196,
+        "estimator_status_flags": 1.004,
+        "vehicle_status": 0.528
+      },
+      "maximum_xy_excursion_m": 0.023689854347905295,
+      "maximum_height_m": 2.0524836950362237,
+      "maximum_speed_m_s": 1.2627145062216194,
+      "motor_output_fraction": {
+        "n": 6440,
+        "mean": 0.25830504587341335,
+        "min": 0.0,
+        "max": 0.561665415763855,
+        "max_abs": 0.561665415763855,
+        "rms": 0.33340853656252983
+      },
+      "motor_saturation_samples": 0,
+      "poststep_true_yaw_change_deg": -0.0005175644632257591
+    }
+  },
+  "magnetic_reference": {
+    "reference_latitude_deg": 47.397742,
+    "reference_longitude_deg": 8.545594,
+    "declination_deg": 3.4056053057253655,
+    "inclination_deg": 63.157199845540624,
+    "strength_gauss": 0.482387063475136,
+    "field_ned_gauss": [
+      0.21743440698304717,
+      0.012939331084370323,
+      0.4304092603315878
+    ],
+    "table_sha256": "3e985cba6a1fd9b246d628bf1d24b843b306a5a6d60ec69900188ec535a3b8cb",
+    "lookup_source_sha256": "d8014b57ada04212633b83c4ed42d9649bca7eedbf78aa7238a655145c9fe292",
+    "assumption": "PX4-pinned WMM2020 grid dated2024.41257, not real2026 geomagnetic measurement"
+  },
+  "protected_identities": {
+    "mujoco/models/mine_uav_dynamics_v2.xml": {
+      "base_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "current_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "unchanged": true
+    },
+    "mujoco/models/rotor_actuators.xml": {
+      "base_sha256": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44",
+      "current_sha256": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44",
+      "unchanged": true
+    },
+    "mujoco/models/rotor_config.json": {
+      "base_sha256": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+      "current_sha256": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+      "unchanged": true
+    },
+    "mujoco/rl/models/uav_bc_mlp_seed0.pt": {
+      "base_sha256": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "current_sha256": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "unchanged": true
+    },
+    "mujoco/rl/models/uav_bc_yaw_augmented_seed0.pt": {
+      "base_sha256": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "current_sha256": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "unchanged": true
+    },
+    "mujoco/rl/models/joint_latent_world_model_v3_autonomous_consistency.pt": {
+      "base_sha256": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+      "current_sha256": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+      "unchanged": true
+    },
+    "mujoco/reports/px4_mujoco_phase1.json": {
+      "base_sha256": "0ef399d4f8e66c4abc409e1e8bf0004a83a2effcd654692c51359b8b203fc974",
+      "current_sha256": "0ef399d4f8e66c4abc409e1e8bf0004a83a2effcd654692c51359b8b203fc974",
+      "unchanged": true
+    }
+  },
+  "status": {
+    "declination_mismatch_source": "PASS",
+    "frame_unit_tests": "PASS",
+    "field_bias_correction": "PASS",
+    "inflight_final_heading_alignment": "PASS",
+    "yaw_step_authorized_with_real_health": "PASS",
+    "complete_yaw_response": "BLOCKED",
+    "settling_time": "NOT TESTED",
+    "actuator_mapping_offline": "PASS",
+    "yaw_actuator_dynamics_validation": "NOT TESTED",
+    "external_odometry_phase_entry": "BLOCKED",
+    "external_odometry_integration": "NOT TESTED"
+  },
+  "timing_method": "physical clock=t*1e6+1e6; EKF attitude uses timestamp_sample and circular-unwrapped interpolation; setpoint uses publication timestamp and causalzero-orderhold; no endpoint extrapolation",
+  "gate_abort_explanation": {
+    "confirmed": "At32.196s current clock33196000 minus most recent queried estimator_status_flags32192000 is1.004s, exceeding fixed1s gate. PX4 source publishes flags~1Hz, console queried2Hz. ULog final aligned/heading-good remaintrue; this is diagnostics freshness mismatch, not evidence of EKF or physical failure.",
+    "source": "PX4 src/modules/ekf2/EKF2.cpp::PublishStatusFlags (>=last+1_s or flag change)",
+    "no_gate_relaxation_or_rerun": true
+  },
+  "execution_integrity": {
+    "phase2_sitl_invocations": 4,
+    "complete_disarmed_runs": 1,
+    "complete_flight_runs": 0,
+    "workflow_error": "yaw02 launched in tool batch before failed regression result read; immediately interrupted at23.556s, no yawstep. Fixedprimaryinstance selection and51 tests verified in separate call beforefinalyaw03. All raw attempts retained.",
+    "yaw01": "stopped32.004s beforestep: listener title3instances notrecognized; passiveparser corrected",
+    "yaw02": "SIGINT exit130, incomplete summary; exceptionNone doesnot implysuccess",
+    "yaw03": "step32.004s, automaticzero/shutdown32.196s, incomplete response",
+    "budget_revision": "original singleflight expanded only for passiveinstrumentation faults to two incomplete attempts plusonefinal; no furtherflight afterfinalblock"
+  },
+  "verification": {
+    "independent_readonly_review": {
+      "bridge_tests_passed": 59,
+      "skipped": 0,
+      "critical": 0,
+      "important_gate_findings": 2,
+      "checked": "all5rawsummary/ULGhashpairs,7protectedidentities,3figures,bias/alignment/extrema,exactstepgateprefix/source"
+    },
+    "single_offline_fix_pass": {
+      "bridge_tests_passed": 69,
+      "skipped": 0,
+      "new_simulator_runs": 0,
+      "fixes": [
+        "failclosedpartialtopicheaders/bodies; no reuseofoldhealth",
+        "explicitGNSSposition/yaw/heightfaultandvehiclefailsafeFalse;missingflagsreject"
+      ],
+      "actual_recorded_gate_prefix_still_passes": true
+    },
+    "known_operational_blocker": "fixed1sfreshnessgate cannot support fullresponse with1Hzflags/query2Hz; kept failclosed andBLOCKED",
+    "deferred_minor": "boolean/heldsetpoint plottedaslines mayvisuallyslope discretechanges; numericalZOH iscausal",
+    "no_second_review_or_flight": true,
+    "source_sha256": {
+      "__init__.py": "12ce64c16d3d08e6146034a84d75edbfd08ec0ff6ed2242d2262a996039471c8",
+      "actuator_adapter.py": "99bc0b9768782f2566c77adfa7159c081a0a2828225cf5638f4dec412212985a",
+      "analyze_phase1.py": "7b09aa31803d6071d2190c23f7b994ccf3095e10d613e1595efa0082c2e7fa38",
+      "analyze_yaw.py": "18dac7435a2adc5ed1545817b1f564f18e63f0f2beb1fb466d38e3fdf98d4b89",
+      "closed_loop.py": "dc8bf0394adbd757bb9f9951a4bbc3527a0e49da26bf5c7847db541f09563ba0",
+      "diagnostics.py": "633ba6ba4763223cf5c2d59a72d72ea3365356fe78d0af403dc9ddf6fef40220",
+      "frame_conversions.py": "d9ee1d47b3518a16504086b96d413d2e483c5d30ed44755679afed80c592a3da",
+      "magnetic_model.py": "1edc003280d0f403f28ff7f4a8eecb4adc4c49d3aabe4d2919d13734d637550f",
+      "sensor_adapter.py": "a43c358ea2f3e2b1ce91746c119f10850bd978607e8ce8efd79f97a75a3e7df1",
+      "simulation_runner.py": "b893d02c820e1a60d0d5484e16014366fbda9e3c7d7c75d31b866c57e3d819bf",
+      "test_analysis.py": "e1a7e45061948c996c10a39e3ae007900f9eb0406d446683c4d8423e6bbcc31c",
+      "test_closed_loop.py": "9adfafdbf8cf1b326e9df753304c5a5054072c3dd41a13c8e41155fe285b8df1",
+      "test_interfaces.py": "6ebcc1c91eadfaed27618c58aba03046dc7c7be1e3da89b48138e20139094282",
+      "test_runner.py": "12f2fde93a660070cec9a06edd90719f6506b4ac7a26614a3cc0a477c3171cd6",
+      "test_transport.py": "c75943491867006c6ecf7c9130660a9069d69b2df0799e534a36cd4d14ef550b",
+      "test_yaw_analysis.py": "3cf98a2b19eca4ae87ebc860e4f0ae0a967bdb42ad94f724395e44d9e65f5210",
+      "test_yaw_validation.py": "78d8daa5acbc2dc87c889ddadf993568cdb15561479d9e2af839d535708b8a67",
+      "transport.py": "dc684975ea54a2066d077e5ad2231851b29a9afad82b99d8fbc99d3bc1ab92a5",
+      "yaw_runner.py": "0b52be425180fd1cd2719a9be5ddece4a30b39c630af5ef6de8cdb37dda91261",
+      "yaw_validation.py": "d3b26789d17af3107418f532d1418739db88aa1a578d997458c0a3938c96a503"
+    }
+  },
+  "resources": {
+    "workers": 1,
+    "simultaneous_px4_max": 1,
+    "oom_observed": false,
+    "swap_modified": false,
+    "runtime_reserve_bytes": 1610612736,
+    "startup_reserve_bytes": 2684354560,
+    "max_bridge_run_hwm_bytes": 581996544,
+    "max_px4_sampled_rss_bytes": 20418560,
+    "minimum_available_bytes": 11299450880,
+    "offline_analysis_peak_rss_bytes": 110874624
+  },
+  "limitations": [
+    "same nominal physical startup, one +10deg request, observation censored after0.192s",
+    "strict gate retained; cannot conclude yawtracking normal/abnormal or fullsettling",
+    "WMM2020 pinnedtable consistent withPX4, not contemporary measuredmagnetometer or2026truefield",
+    "ideal normalized-thrust adapter, no validatedESC/motorlag/no realhardware",
+    "historical fullRLtest suite notrun; completebridge suite only; dynamics/modelhashes verified"
+  ],
+  "next_recommendation": "Before Phase3, make live safety telemetry timestamp semantics source-consistent (periodic flags vs asynchronous query), retain genuine fault/heading checks, then repeat only this bounded yaw protocol after offline tests; notexecuted.",
+  "figures": {
+    "px4_yaw_heading_alignment.png": "2c1c15f2fcfe418b74248103b3b27d0af8178c66fd868c81cd7a80ec8f6b4d4c",
+    "px4_yaw_censored_step_response.png": "c106da5e144ffb91061c9257b92a45cd410b4181d0135dec190243d8566d6a81",
+    "px4_yaw_physical_envelope.png": "7e1ff2bffbc26c78b3d033dd124282252a975d2fba3224971ee8e7d73c226291"
+  }
+}

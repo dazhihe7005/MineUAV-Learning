@@ -80,8 +80,8 @@ def source_identity(px4_root):
             "rootfs":str(build/"etc"),
             "simulator_source_sha256":sha256(root/"src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp")}
 
-def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=None):
-    if not np.isfinite(seconds) or not 8<=seconds<=30:raise ValueError("finite smoke duration8..30s")
+def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=None,phase2=None):
+    if not np.isfinite(seconds) or not 8<=seconds<=(45 if phase2 else 30):raise ValueError("finite smoke duration exceeded")
     require_startup_memory();identity=source_identity(px4_root)
     runtime=prepare_runtime(runtime)
     m=mujoco.MjModel.from_xml_path(str(MODEL));validate_model(m)
@@ -92,7 +92,8 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
     initial_qpos=d.qpos.tolist();a=ActuatorAdapter(m,CONFIG)
     # Perfectly constant mag/baro trip PX4 DataValidator STALE_DATA at rest.
     # Fixed engineering noise assumptions, NOT measured sensor specifications.
-    sensors=SensorAdapter(m,noise_seed=0,mag_noise_gauss=.0002,baro_noise_hpa=.01)
+    sensor_options={"field_ned_gauss":phase2.sensor_field} if phase2 else {}
+    sensors=SensorAdapter(m,noise_seed=0,mag_noise_gauss=.0002,baro_noise_hpa=.01,**sensor_options)
     mv=load_mavlink(pymavlink_search_path);clock=SimClock();gate=CommandGate()
     history={"model_xml":sha256(MODEL),"rotor_config":sha256(CONFIG),
              "rotor_actuators":sha256(ROOT/"models/rotor_actuators.xml")}
@@ -102,12 +103,16 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                 and proof.get("history_hashes_after")==history and proof.get("px4",{}).get("binary_sha256")==identity["binary_sha256"]
                 and estimator_ready(proof.get("px4_console","")) and seconds>=22):
             raise ValueError("flight requires successful matching disarmed smoke + estimator evidence, duration22..30s")
+        if phase2:phase2.validate_proof(proof)
     result={"complete":False,"kind":"bounded_offboard_hover" if hover_proof else "disarmed_communication_smoke","px4":identity,
             "mujoco_version":mujoco.__version__,"python":os.sys.version,"history_hashes_before":history,
             "initial_qpos":initial_qpos,"px4_environment":px4_environment(a),"simulator_port":4560,
             "physics_hz":500,"sensor_hz":250,"gps_hz":10,"motor_assumption":"ideal normalized thrust; THR_MDL_FAC=0; no ESC lag",
             "synthetic_sensor_noise":{"seed":0,"mag_std_gauss":.0002,"baro_std_hpa":.01,"imu_noise":0},
             "workers":1,"flight_command_sent":False,"records":[],"exception":None}
+    if phase2:
+        result["phase2"]=phase2.metadata()
+        if hover_proof:result["kind"]="bounded_yaw_validation"
     proc=None;master=None;offboard=None;console=[];wall_start=time.monotonic();cpu_start=time.process_time()
     peak_px4=0;min_memory=available_memory();stale=0;intervals=[];first_actuator_at=None
     def read_console():
@@ -130,14 +135,18 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
             os.close(slave);wire.accept();wire.receive_until("HEARTBEAT")
             if hover_proof:offboard=OffboardLink(mv)
             bootstrap_deadline=time.monotonic()+10
-            lockstep=False;last_log=-1;requested=False;flight_requested=False;mode_requested=False;last_setpoint=-1;last_heartbeat=-1
+            lockstep=False;last_log=-1;requested=False;flight_requested=False;mode_requested=False;last_setpoint=-1;last_heartbeat=-1;last_query=-1
             while d.time<seconds:
                 if time.monotonic()-wall_start>seconds+35:raise TimeoutError("finite wall-clock smoke budget")
                 if proc.poll() is not None:raise ConnectionError("owned PX4 exited")
                 sample=sensors.sample(d,clock.time_usec)
                 if offboard:
+                    if phase2:
+                        read_console();phase2.before_step(d,clock.time_usec,"".join(console))
                     if int(d.time*20)>last_setpoint:
-                        last_setpoint=int(d.time*20);offboard.setpoint(clock.time_usec)
+                        last_setpoint=int(d.time*20)
+                        if phase2:phase2.setpoint(offboard,clock.time_usec)
+                        else:offboard.setpoint(clock.time_usec)
                     if int(d.time)>last_heartbeat:
                         last_heartbeat=int(d.time);offboard.heartbeat()
                     offboard.poll()
@@ -171,16 +180,21 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                 for _ in range(2):mujoco.mj_step(m,d)
                 clock.advance(2)
                 if not np.isfinite(d.qpos).all() or not np.isfinite(d.qvel).all():raise ValueError("invalid MuJoCo state")
-                if offboard:check_envelope(d)
+                if offboard:
+                    if phase2:phase2.check_envelope(d)
+                    else:check_envelope(d)
                 elif np.linalg.norm(d.qvel[:3])>2 or d.qpos[2]>1:raise ValueError("disarmed physical safety envelope exceeded")
-                if int(d.time*10)>last_log:
-                    last_log=int(d.time*10)
+                log_hz=50 if phase2 else 10
+                if int(d.time*log_hz)>last_log:
+                    last_log=int(d.time*log_hz)
                     require_memory();min_memory=min(min_memory,available_memory());peak_px4=max(peak_px4,rss_bytes(proc.pid))
                     result["records"].append({"time_s":float(d.time),"clock_usec":clock.time_usec,
                       "position_enu_m":d.qpos[:3].tolist(),"velocity_origin_enu_m_s":d.qvel[:3].tolist(),
                       "quaternion_enu_flu":d.qpos[3:].tolist(),"angular_velocity_flu_rad_s":d.qvel[3:].tolist(),
                       "ctrl_omega_squared":d.ctrl.tolist(),"saturated":bool(np.any(d.ctrl>=a.u_max*(1-1e-6)))})
                     read_console()
+                if offboard and phase2 and d.time>=6 and int(d.time*2)>last_query:
+                    last_query=int(d.time*2);os.write(master,phase2.queries().encode())
                 if d.time>=(8 if offboard else seconds-3) and not requested:
                     commands="ver all\nsimulator_mavlink status\nekf2 status\nlistener sensor_combined 1\nlistener vehicle_local_position 1\nlistener vehicle_status 1\nlistener estimator_status_flags 1\nlistener actuator_outputs_sim 1\nlistener vehicle_air_data 1\nlistener vehicle_magnetometer 1\nparam show SENS_IMU_MODE\nparam show EKF2_MULTI_IMU\n"
                     os.write(master,commands.encode());requested=True
@@ -220,7 +234,8 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                       px4_console="".join(console))
         result["history_hashes_after"]={"model_xml":sha256(MODEL),"rotor_config":sha256(CONFIG),"rotor_actuators":sha256(ROOT/"models/rotor_actuators.xml")}
         result["history_unchanged"]=result["history_hashes_after"]==history
-        if hover_proof:result["hover_assessment"]=assess_hover(result)
+        if phase2:result["phase2"]=phase2.metadata()
+        elif hover_proof:result["hover_assessment"]=assess_hover(result)
         atomic_json(runtime/"smoke_summary.json",result)
     return result
 

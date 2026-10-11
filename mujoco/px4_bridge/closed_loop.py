@@ -18,11 +18,11 @@ def estimator_ready(console):
         if not matches or (matches[-1]=="True")!=value:return False
     return True
 
-def check_envelope(data):
+def check_envelope(data,maximum_height=1.2):
     r=rotation(data.qpos[3:])
     tilt=np.arccos(np.clip(r[2,2],-1,1))
     if (not np.isfinite(data.qvel).all() or np.linalg.norm(data.qvel[:3])>1.5
-        or np.linalg.norm(data.qvel[3:])>2.5 or not -.01<=data.qpos[2]<=1.2
+        or np.linalg.norm(data.qvel[3:])>2.5 or not -.01<=data.qpos[2]<=maximum_height
         or np.linalg.norm(data.qpos[:2])>.5 or tilt>np.deg2rad(20)):
         raise ValueError("SITL flight safety envelope exceeded; stop, do not tune gains")
 
@@ -61,10 +61,12 @@ class OffboardLink:
         self.socket.sendto(msg.pack(self.encoder),self.remote);self.encoder.seq=(self.encoder.seq+1)%256
     def heartbeat(self):
         self.send(self.mv.MAVLink_heartbeat_message(self.mv.MAV_TYPE_GCS,self.mv.MAV_AUTOPILOT_INVALID,0,0,4,3))
-    def setpoint(self,time_usec):
+    def setpoint(self,time_usec,height=.6,yaw=np.pi/2):
+        if not np.isfinite([height,yaw]).all() or not 0<height<=2.6:
+            raise ValueError("finite bounded SITL position/yaw setpoint required")
         self.send(self.mv.MAVLink_set_position_target_local_ned_message(
             time_usec//1000,1,1,self.mv.MAV_FRAME_LOCAL_NED,2552,
-            0.,0.,-.6,0.,0.,0.,0.,0.,0.,np.pi/2,0.))
+            0.,0.,-height,0.,0.,0.,0.,0.,0.,yaw,0.))
     def command(self,command,*params):
         p=list(params)+[0.]*(7-len(params))
         self.send(self.mv.MAVLink_command_long_message(1,1,command,0,*p))

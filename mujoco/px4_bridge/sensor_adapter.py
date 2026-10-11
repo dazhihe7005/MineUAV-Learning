@@ -17,13 +17,15 @@ class SensorSample:
     altitude_m: float
 
 class SensorAdapter:
-    def __init__(self,model,noise_seed=0,mag_noise_gauss=0.,baro_noise_hpa=0.):
+    def __init__(self,model,noise_seed=0,mag_noise_gauss=0.,baro_noise_hpa=0.,field_ned_gauss=None):
         self.model=model
         self.body=model.body("mine_uav").id
         self.jp=np.empty((3,model.nv));self.jr=np.empty_like(self.jp)
         self.jpd=np.empty_like(self.jp)
         # Synthetic earth field, NED gauss, known to magnetometer only.
-        self.field_ned=np.array([.215,0.,.427])
+        self.field_ned=np.array([.215,0.,.427] if field_ned_gauss is None else field_ned_gauss,dtype=float)
+        if self.field_ned.shape!=(3,) or not np.isfinite(self.field_ned).all() or np.linalg.norm(self.field_ned)<=0:
+            raise ValueError("finite nonzero3D NED magnetic field required")
         if not np.isfinite([mag_noise_gauss,baro_noise_hpa]).all() or min(mag_noise_gauss,baro_noise_hpa)<0:
             raise ValueError("finite nonnegative synthetic noise scales required")
         self.rng=np.random.default_rng(noise_seed)
