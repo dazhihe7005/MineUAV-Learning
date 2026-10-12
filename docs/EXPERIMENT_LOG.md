@@ -925,3 +925,25 @@ Conclusion: PASS for the scoped real disarmed runtime integration. Query timeout
 Limitations: Single16s run, no active flight path, no long-duration stability or hard-real-time guarantee, no logged payload for one incoming PX4 COMMAND_LONG. Console includes a nonfatal `SIM_GZ_EN` parameter-not-found line and logger capacity warnings. No hardware connection. Raw ULog/console/trace remain local-only.
 
 Next: One separately authorized restricted yaw validation using the new matching disarmed proof, with in-flight EKF and safety gates intact. Not executed in Phase2E.
+
+## 2026-10-12 — PX4–MuJoCo Complete Yaw Closed-Loop Validation Phase2F
+
+Branch: feat/px4-mujoco-yaw-closed-loop-validation
+Base: feat/px4-mujoco-disarmed-verification / 10c70d0cfa53234d241d476b79002b675d9422b8
+
+Research Question: Can the pinned PX4 allocator, Bridge and unchanged MuJoCo physical model complete the original restricted +10° yaw response with healthy EKF, safety monitoring and physical-state limits?
+
+Setup: One authorized active SITL run only, using the SHA-verified Phase2E disarmed proof and isolated PX4 binary2f6bbc24…, MuJoCo3.14.0, 7kg model, 500Hz physics/250Hz sensors. Initial NED yaw90°, +10° command at or after32s, target100°, altitude2m, 45s maximum. Original settling condition: true yaw error<2°, absolute FRD body-z rate<0.05rad/s continuously≥2s, adjacent sample gaps≤0.15s. No runtime, PX4 gain, motor, model or safety-threshold changes after proof.
+
+Key Results:
+- Sole active run complete45.000s, step32.004s, exit0, zero four-motor controls at shutdown, no retry. True yaw90.0365°→99.9492°, positive9.9127° physical change; 4.2044° overshoot, 0.3227rad/s peak yaw rate, 3.360s strict settling time, final2s mean signed error−0.0259°.
+- Actual allocator yaw row ±0.017207708 in78/78 current queries; post-step torque achieved65/65 sampled statuses, unallocated yaw≤4.22e-8 PX4 normalized units, no allocator or motor saturation. Alternating motor differential and model-derived +0.2132/−0.1604N·m reaction yaw torque have physically correct signs; torque is not hardware-measured.
+- Post-step PX4 estimated yaw minus MuJoCo truth mean−0.0218°, max absolute0.1045°. Final magnetometer/heading alignment remained healthy; post-step maximum body-origin height error0.00835m, XY excursion0.02724m, tilt0.127°. No sampled flight-boundary violation.
+-78 safety queries, max response5.109ms<150ms, max start interval500.072ms, max actuator interval11.561ms<250ms; no 650ms service fault, monitor fault, backlog or unsafe gate continuation. Parser peak1,838chars. Bridge peakRSS773029888bytes, sampledPX4peak9973760bytes, min system available10897215488bytes; one worker, no owned-run OOM observed, swap unchanged.
+- Phase2E proof, ULog, console, summary, runtime/PX4/model hashes independently checked; raw evidence and flight ledger local-only. Preflight321 tests passed; final related Bridge suite336 passed, two existing nonfatal NaN-angle warnings. Independent read-only review found and offline RED→GREEN tests closed a truncated-physical-trace assessor gap; actual2,251-sample record covered0.004–45.000s with bounded gaps and exact final state. Three sole-run raw hashes now pinned in offline analysis; runtime was not changed or re-flown.
+
+Conclusion: PASS for the restricted single-run PX4→allocator→four motors→MuJoCo physical +10° yaw control chain, original settling criterion, EKF alignment and sampled safety/time budgets. Control-chain prerequisite for considering Phase3 is met; Phase3 Odometry/ROS integration itself is NOT TESTED. This is not a hardware or generalized robustness result.
+
+Limitations: one nominal positive yaw step; no negative yaw, disturbance, repeatability, real hardware, motor/ESC lag calibration or hard-real-time guarantee. PX4 torque requests are normalized and distinct from model-derived physical Nm. Query sampling may miss brief between-query transients. Whole-repository CAD ABI issue remains unrelated and unmodified.
+
+Next: Only recommend separately authorizing a Phase3 external-odometry interface preflight after review of this evidence. Not executed.

@@ -1,0 +1,530 @@
+{
+  "phase": "PX4-MuJoCo Phase2F Complete Yaw Closed-Loop Validation",
+  "date": "2026-10-12",
+  "branch": "feat/px4-mujoco-yaw-closed-loop-validation",
+  "base_commit": "10c70d0cfa53234d241d476b79002b675d9422b8",
+  "experiment": {
+    "sitl_runs": 1,
+    "armed_runs": 1,
+    "workers": 1,
+    "mode": "allocation_runner --mode yaw",
+    "simulation_seconds": 45.00000000000903,
+    "bridge_wall_seconds": 45.0019721499998,
+    "physics_hz": 500,
+    "sensor_hz": 250,
+    "initial_target_yaw_ned_deg": 90.0,
+    "final_target_yaw_ned_deg": 100.0,
+    "requested_step_not_before_s": 32.0,
+    "actual_step_s": 32.00399999999315,
+    "target_height_ned_m": -2.0,
+    "settling_rule": "truth |wrap(100deg-yaw)|<2deg AND |FRD body-z rate|<0.05rad/s continuously >=2s; sample gaps <=0.15s"
+  },
+  "status": {
+    "step_issued": "PASS",
+    "attitude_rate_request": "PASS",
+    "allocator_torque": "PASS",
+    "motor_differential": "PASS",
+    "physical_yaw_direction": "PASS",
+    "yaw_settling": "PASS",
+    "safety_monitor": "PASS",
+    "phase3_entry": "NOT TESTED",
+    "control_chain_prerequisite": "PASS",
+    "flight_safety": "PASS",
+    "final_ekf_heading_alignment": "PASS",
+    "yaw_allocator_row": "PASS",
+    "no_motor_saturation": "PASS",
+    "bounded_height_xy_coupling": "PASS"
+  },
+  "preflight": {
+    "phase2e_proof": "PASS",
+    "protocol_match": {
+      "px4_environment": true,
+      "initial_qpos": true,
+      "synthetic_sensor_noise": true,
+      "magnetic_field": true,
+      "model_history": true
+    },
+    "actual_ulog_allocator_parameters_match": {
+      "CA_AIRFRAME": true,
+      "CA_ROTOR_COUNT": true,
+      "THR_MDL_FAC": true,
+      "CA_ROTOR0_PX": true,
+      "CA_ROTOR0_PY": true,
+      "CA_ROTOR0_PZ": true,
+      "CA_ROTOR0_CT": true,
+      "CA_ROTOR0_KM": true,
+      "PWM_MAIN_FUNC1": true,
+      "CA_ROTOR1_PX": true,
+      "CA_ROTOR1_PY": true,
+      "CA_ROTOR1_PZ": true,
+      "CA_ROTOR1_CT": true,
+      "CA_ROTOR1_KM": true,
+      "PWM_MAIN_FUNC2": true,
+      "CA_ROTOR2_PX": true,
+      "CA_ROTOR2_PY": true,
+      "CA_ROTOR2_PZ": true,
+      "CA_ROTOR2_CT": true,
+      "CA_ROTOR2_KM": true,
+      "PWM_MAIN_FUNC3": true,
+      "CA_ROTOR3_PX": true,
+      "CA_ROTOR3_PY": true,
+      "CA_ROTOR3_PZ": true,
+      "CA_ROTOR3_CT": true,
+      "CA_ROTOR3_KM": true,
+      "PWM_MAIN_FUNC4": true
+    },
+    "mujoco_version": "3.14.0",
+    "vehicle_mass_kg": 7.0,
+    "protected_models_unchanged": true
+  },
+  "raw_evidence": {
+    "summary_path": "mujoco/reports/px4_yaw_closed_loop_parts/yaw_01/smoke_summary.json",
+    "summary_sha256": "edf5a709c307bc9972f28d27d94b23edc1e1aa08be540d7ede3be49be92278da",
+    "console_path": "mujoco/reports/px4_yaw_closed_loop_parts/yaw_01/px4_console.bin",
+    "console_sha256": "24efc147409a1c3855d4b4354c7cbb9c5c53ec579dd018a3e37a4dc3fb24e471",
+    "ulog_path": "mujoco/reports/px4_yaw_closed_loop_parts/yaw_01/log/2026-10-12/07_36_24.ulg",
+    "ulog_sha256": "a3bf79d84d4548eed3714f7f7ac45f1f73992aafad6bdafb6cd8dfed408fb754",
+    "phase2e_proof_sha256": "2dad70007c79d0753bed55eb8d9845f0e30878eb8f470dc0f704fe3245b11407",
+    "runtime_source_hashes": {
+      "simulation_runner.py": "3de06973e268b562201bcd64d895112f25e15e9d4438e4e84210bfbcd46f0069",
+      "query_scheduler.py": "ac34f9616d64fb307cb7b528c28ce5bb817612890bf0cc12c7e202b37ff03d56",
+      "runtime_measurements.py": "a08c9a4a5efee0b0576e938a580bd24a66b5df647e981685d851c0fd76082ef4",
+      "streaming_diagnostics.py": "fe3ebbd65492d6e8127de4306addc606e9453f07b88c7045f34f12984df58fdb",
+      "telemetry_freshness.py": "a33a6f908802ad7be6fdda5d99e6eea64ea65c616da9d0224a8ba9e35ad53bdf",
+      "yaw_telemetry_runner.py": "b9723038a1e26e2949cb7d1d9572b49c5bda4175139e4297b8eba8d6f6489c7f",
+      "allocation_runner.py": "f0acd782ed707b26d91d7b3f1db4bee476238f3f0e587fd7d9e93247b541e259",
+      "transport.py": "c2686821e5d44e9387bdfc6e2a711522a50f44742c706b0fbb0e3f0ed4ed4a1d",
+      "yaw_validation.py": "cabf737a3deeb6bda2652b54e1d75071fa7522ac1ef12d9ba01a031b5be96f78"
+    },
+    "px4": {
+      "schema": 1,
+      "base_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+      "commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+      "build": "build/px4_sitl_mineuav_yaw",
+      "binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+      "build_version_header_sha256": "cc701c40eaf4840a56ad4d6f3d45290226c922931b6038afd6c1f12ed80bf5c0",
+      "patch_sha256": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa",
+      "rootfs_sha256": "7220bda770b2a41aa3f49873777e0eaa5b0a5fa5c91934895b39d8a682381881",
+      "boardconfig_sha256": "045ad6c4dae3ba1d24570a21a4a9fe01cc3215246f1d11d559d67b99bbc2f81d",
+      "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb",
+      "tag": "v1.18.0-beta1-580-g142c24cffb",
+      "custom_sitl": true,
+      "binary": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/bin/px4",
+      "rootfs": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/etc",
+      "manifest_sha256": "58a562cf99340786c6a58bd57040ebca21ea9437b213134fadca7f4fc6563375"
+    },
+    "model_hashes": {
+      "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+      "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+    },
+    "raw_local_only": true
+  },
+  "yaw_response": {
+    "status": "PASS",
+    "settling_time_s": 3.3600000000041064,
+    "settling_status": "PASS",
+    "max_target_error_deg": 9.963471453138308,
+    "overshoot_deg": 4.204432989865623,
+    "steady_state_error_deg": -0.0259149796486674,
+    "peak_body_z_rate_rad_s": 0.32270885372638913,
+    "poststep_observation_s": 12.996000000015883,
+    "sampling_gap_max_s": 0.020000000000024443,
+    "true_yaw_at_step_deg": 90.03652854686169,
+    "true_yaw_final_deg": 99.94918313816969,
+    "actual_yaw_change_deg": 9.912654591307994,
+    "last_supported_estimated_yaw": {
+      "time_s": 44.96000000000898,
+      "value": 99.98411036759498
+    },
+    "last_supported_px4_desired_yaw": {
+      "time_s": 44.92000000000893,
+      "value": 100.00000705992872
+    },
+    "estimate_minus_truth_poststep_deg": {
+      "n": 647,
+      "mean": -0.02181577895636761,
+      "min": -0.10453475880402203,
+      "max": 0.030912692751110245,
+      "max_abs": 0.10453475880402203,
+      "rms": 0.03734712468358976
+    },
+    "response_onsets_s": {
+      "px4_attitude_setpoint": 32.032,
+      "px4_yaw_rate_setpoint": 32.024,
+      "px4_yaw_torque_request": 32.036,
+      "model_derived_motor_yaw_torque": 32.0439999999932,
+      "physical_yaw_rate": 32.123999999993295
+    },
+    "yaw_control_start_delay_s": 0.12000000000014666,
+    "onset_rules": "Two consecutive samples above: desired yaw change >2deg, requested/actual yaw rate >0.02rad/s, requested PX4 yaw torque >0.005 normalized, model-derived yaw torque >0.01Nm. Discrete first-crossing bounds include the source sample interval; they are not pure component latencies."
+  },
+  "control_allocation": {
+    "yaw_row_px4": [
+      -0.01720770778086437,
+      0.01720770778086437,
+      -0.01720770778086437,
+      0.01720770778086437
+    ],
+    "queried_row_records": 78,
+    "queried_rows_all_match": true,
+    "requested_yaw_torque_px4_units": {
+      "n": 649,
+      "mean": -1.7061511442805703e-05,
+      "min": -0.05885758623480797,
+      "max": 0.07824934273958206,
+      "max_abs": 0.07824934273958206,
+      "rms": 0.018430429746263487,
+      "median": -5.7349632697878405e-05,
+      "p95": 0.026978970319032677
+    },
+    "requested_yaw_rate_rad_s": {
+      "n": 649,
+      "mean": 0.01312195097536813,
+      "min": -0.20220297574996948,
+      "max": 0.48016536235809326,
+      "max_abs": 0.48016536235809326,
+      "rms": 0.09804948855019072,
+      "median": 7.718801498413086e-05,
+      "p95": 0.13244453668594403
+    },
+    "unallocated_yaw_torque_px4_units": {
+      "n": 65,
+      "mean": -1.2138508072194571e-08,
+      "min": -4.2171450331807137e-08,
+      "max": 9.080395102500916e-09,
+      "max_abs": 4.2171450331807137e-08,
+      "rms": 1.7736593271077517e-08,
+      "median": -1.1641532182693481e-08,
+      "p95": 7.450580596923828e-09
+    },
+    "torque_setpoint_achieved_count": 65,
+    "allocator_poststep_samples": 65,
+    "allocator_saturation_count_by_motor": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "px4_units_note": "PX4 normalized torque command/shortfall, not Nm."
+  },
+  "motors": {
+    "normalized_output_poststep": [
+      {
+        "n": 651,
+        "mean": 0.40414310307363577,
+        "min": 0.32626515626907354,
+        "max": 0.4627002179622649,
+        "max_abs": 0.4627002179622649,
+        "rms": 0.4045582520415232,
+        "median": 0.40422585606575007,
+        "p95": 0.44103878736495966
+      },
+      {
+        "n": 651,
+        "mean": 0.4052999981445834,
+        "min": 0.3466514945030213,
+        "max": 0.4832590520381927,
+        "max_abs": 0.4832590520381927,
+        "rms": 0.4057142517912631,
+        "median": 0.40533131361007696,
+        "p95": 0.43216608464717854
+      },
+      {
+        "n": 651,
+        "mean": 0.46299702872145926,
+        "min": 0.3845163881778717,
+        "max": 0.522195339202881,
+        "max_abs": 0.522195339202881,
+        "rms": 0.4633655062785845,
+        "median": 0.4630827903747557,
+        "p95": 0.5002604126930237
+      },
+      {
+        "n": 651,
+        "mean": 0.46177600953619236,
+        "min": 0.402751237154007,
+        "max": 0.5404145717620848,
+        "max_abs": 0.5404145717620848,
+        "rms": 0.46214599749309454,
+        "median": 0.4618150889873504,
+        "p95": 0.48886385560035706
+      }
+    ],
+    "model_derived_thrust_n_poststep": [
+      {
+        "n": 651,
+        "mean": 16.00315781442686,
+        "min": 12.919366297267475,
+        "max": 18.32188784741103,
+        "max_abs": 18.32188784741103,
+        "rms": 16.01959677973165,
+        "median": 16.006434646772504,
+        "p95": 17.464143920325455
+      },
+      {
+        "n": 651,
+        "mean": 16.048968256951554,
+        "min": 13.72661943491834,
+        "max": 19.135971432397373,
+        "max_abs": 19.135971432397373,
+        "rms": 16.065371769550435,
+        "median": 16.05020827894504,
+        "p95": 17.112804850690825
+      },
+      {
+        "n": 651,
+        "mean": 18.333640885837973,
+        "min": 15.225984052294276,
+        "max": 20.67776082201073,
+        "max_abs": 20.67776082201073,
+        "rms": 18.34823176825784,
+        "median": 18.33703685439884,
+        "p95": 19.80918707198154
+      },
+      {
+        "n": 651,
+        "mean": 18.285291272625077,
+        "min": 15.948043054830721,
+        "max": 21.399201449563787,
+        "max_abs": 21.399201449563787,
+        "rms": 18.29994196347867,
+        "median": 18.286838730986798,
+        "p95": 19.357909046183238
+      }
+    ],
+    "model_derived_reaction_torque_frd_nm_poststep": [
+      {
+        "n": 651,
+        "mean": -0.27537766324171353,
+        "min": -0.31527769207201917,
+        "max": -0.22231267995732645,
+        "max_abs": 0.31527769207201917,
+        "rms": 0.2756605401528982,
+        "median": -0.2754340500151643,
+        "p95": -0.2570465879499324
+      },
+      {
+        "n": 651,
+        "mean": 0.2761659559499906,
+        "min": 0.23620365605520846,
+        "max": 0.3292862045116626,
+        "max_abs": 0.3292862045116626,
+        "rms": 0.2764482228013718,
+        "median": 0.2761872938860963,
+        "p95": 0.29447214518164605
+      },
+      {
+        "n": 651,
+        "mean": -0.31547993492280724,
+        "min": -0.3558168657877665,
+        "max": -0.26200428424798106,
+        "max_abs": 0.3558168657877665,
+        "rms": 0.3157310105637533,
+        "median": -0.31553837175743565,
+        "p95": -0.29706715387990346
+      },
+      {
+        "n": 651,
+        "mean": 0.3146479489073219,
+        "min": 0.2744292645641706,
+        "max": 0.36823120528794295,
+        "max_abs": 0.36823120528794295,
+        "rms": 0.31490005371431834,
+        "median": 0.3146745771186135,
+        "p95": 0.3331052421152721
+      }
+    ],
+    "net_yaw_torque_frd_nm_poststep": {
+      "n": 651,
+      "mean": -4.3693307208249416e-05,
+      "min": -0.16041797740371233,
+      "max": 0.21320044559429785,
+      "max_abs": 0.21320044559429785,
+      "rms": 0.050160035050193924,
+      "median": -0.00012933465111908404,
+      "p95": 0.07346364546708228
+    },
+    "first_positive_model_yaw_torque_s": 32.0439999999932,
+    "positive_differential_max": 0.07822301983833307,
+    "command_saturation_samples": 0,
+    "rotation_signs_flu": [
+      1.0,
+      -1.0,
+      1.0,
+      -1.0
+    ],
+    "max_thrust_per_motor_n": 39.597750630204494,
+    "max_reaction_torque_per_motor_nm": 0.681386521624097,
+    "assumption": "No ESC lag. Forces and reaction torques are reconstructed from verified model kf/km and executed omega^2, not measured hardware forces."
+  },
+  "flight_state": {
+    "height_poststep_error_m": {
+      "n": 651,
+      "mean": -0.00012807518268870114,
+      "min": -0.005933653852886245,
+      "max": 0.00835059136826688,
+      "max_abs": 0.00835059136826688,
+      "rms": 0.004737384848195205,
+      "median": -0.0013904185781066225,
+      "p95": 0.008165394884656507
+    },
+    "max_abs_height_poststep_error_m": 0.00835059136826688,
+    "max_xy_poststep_m": 0.027243325155665823,
+    "max_xy_whole_episode_m": 0.027243325155665823,
+    "max_speed_whole_episode_m_s": 1.2639828418251198,
+    "max_tilt_poststep_deg": 0.1270109764650635,
+    "final_position_enu_m": [
+      0.009026730834204907,
+      0.00795015284316928,
+      2.0527763434593718
+    ],
+    "final_velocity_enu_m_s": [
+      -0.006715672650763906,
+      0.0006283084087715595,
+      0.004228981482872079
+    ],
+    "first_final_heading_good_s": 16.824,
+    "first_inflight_mag_alignment_s": 15.816,
+    "poststep_ekf_healthy": true,
+    "px4_estimator_source": "ULog timestamped uORB, not physical truth"
+  },
+  "safety": {
+    "checks": {
+      "complete_45s": "PASS",
+      "armed_only_after_request": "PASS",
+      "shutdown": "PASS",
+      "health": "PASS",
+      "sampled_flight_envelope": "PASS",
+      "physical_record_time_coverage": "PASS",
+      "query_coverage_and_deadlines": "PASS",
+      "actuator_watchdog": "PASS",
+      "bounded_parser": "PASS",
+      "identity_preserved": "PASS"
+    },
+    "overall": "PASS",
+    "last_gate_decision": {
+      "safe_stop": false,
+      "allow_new_maneuver": true,
+      "reason": "healthy source + live transport",
+      "query_pending": false,
+      "clock_usec": 45996000,
+      "wall_s": 44.99630650299969,
+      "last_query": [
+        45500000,
+        44.50016769700005
+      ],
+      "last_response": [
+        45504000,
+        44.504358881999906
+      ],
+      "last_actuator": [
+        45992000,
+        44.99240469000006
+      ],
+      "topics": {
+        "vehicle_local_position": {
+          "publication_usec": 45496000.0,
+          "sample_usec": 45496000.0,
+          "received_clock_usec": 45500000,
+          "received_wall_s": 44.50099453699977,
+          "source_age_s": 0.5
+        },
+        "estimator_status_flags": {
+          "publication_usec": 45200000.0,
+          "sample_usec": 45048000.0,
+          "received_clock_usec": 45500000,
+          "received_wall_s": 44.501547863999804,
+          "source_age_s": 0.796
+        },
+        "vehicle_status": {
+          "publication_usec": 45272000.0,
+          "sample_usec": null,
+          "received_clock_usec": 45500000,
+          "received_wall_s": 44.50182675699989,
+          "source_age_s": 0.724
+        }
+      }
+    },
+    "monitor_fault": null,
+    "query_count": 78,
+    "query_interval_wall_s": {
+      "n": 77,
+      "mean": 0.50000007922078,
+      "min": 0.4999276580001606,
+      "max": 0.5000719439999557,
+      "max_abs": 0.5000719439999557,
+      "rms": 0.5000000803743928,
+      "median": 0.4999997379995875,
+      "p95": 0.5000532351999937
+    },
+    "query_response_recomputed_wall_s": {
+      "n": 78,
+      "mean": 0.0029145360384716648,
+      "min": 0.0016131460001815867,
+      "max": 0.005109030999847164,
+      "max_abs": 0.005109030999847164,
+      "rms": 0.0031777102754587546,
+      "median": 0.0020901129998947,
+      "p95": 0.004848249399856284
+    },
+    "query_service_timeout_count_observed": 0,
+    "actuator_wall_interval_s": {
+      "n": 11235,
+      "mean": 0.003988308112327558,
+      "p50": 0.003996712000116531,
+      "p95": 0.004146407000143881,
+      "p99": 0.00430051838021427,
+      "max": 0.011561044999780279
+    },
+    "parser_peak_buffer_chars": 1838,
+    "query_pending_max": 1,
+    "telemetry_events_count": 312,
+    "message_counts_sent": {
+      "HIL_SENSOR": 11250,
+      "HIL_GPS": 450
+    },
+    "message_counts_received": {
+      "COMMAND_LONG": 1,
+      "HEARTBEAT": 1,
+      "HIL_ACTUATOR_CONTROLS": 11236
+    },
+    "px4_exit_code": 0,
+    "zero_motor_ctrl_on_stop": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "console_warnings": {
+      "SIM_GZ_EN_parameter_not_found": true,
+      "logger_subscription_capacity": true
+    }
+  },
+  "resources": {
+    "bridge_peak_rss_bytes": 773029888,
+    "external_peak_rss_bytes": 773029888,
+    "px4_sampled_peak_rss_bytes": 9973760,
+    "system_min_available_bytes": 10897215488,
+    "bridge_cpu_seconds": 5.044097138000001,
+    "px4_sampled_cpu_seconds": 2.65,
+    "oom_observed_in_owned_run": false,
+    "swap_changed": false
+  },
+  "limitations": [
+    "One nominal SITL positive yaw step, no negative-yaw or disturbed-flight replication.",
+    "Physical thrust/yaw torque are model-derived from ideal motor coefficients and executed controls, not hardware measurements.",
+    "PX4 ULog torque request units are normalized and cannot be numerically equated to physical Nm.",
+    "Finite console/source polling may miss a transient between queries; no hard real-time guarantee.",
+    "This verifies the control chain only. External Odometry, ROS and Phase3 integration were not tested."
+  ],
+  "next_recommendation": "Separately authorize Phase3 external odometry interface preflight only after reviewing this bounded control-chain evidence; not executed.",
+  "figures": {
+    "target_estimated_true_yaw.png": "6255a171e9adab6e2760cbd00d96bafc2ab0ea1edb2e4146f70d4568b5168409",
+    "yaw_rate_response.png": "a48eb77dff378e1b9b127e0afea97e7df62eba0b2995328ccf2f6c9aafda8838",
+    "requested_unallocated_yaw_torque.png": "6b95c37d3dc991afc6f1dce6ad798f8cf12fb8a04790c56b956c84d2b8c5c2ed",
+    "four_motor_outputs.png": "dd16a7de3c4e9411bd941806b024319bb905278bd51afab461dcb69adcd56ac4",
+    "height_xy_position.png": "064bd1566699c417193a17597fe9a3ca2807c6c31f269e01f966fb57c812a3d0",
+    "ekf_health_safety_query_timing.png": "38adf871ff1bc2edf20a1416ef9dc583b49f63a1f7513f47506af2736212cfe5"
+  }
+}
