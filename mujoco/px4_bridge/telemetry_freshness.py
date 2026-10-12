@@ -34,14 +34,63 @@ class TelemetryFreshness:
     RESPONSE_S=.15
     QUERY_S=.5
     ACTUATOR_S=.25
+    REQUIRED={
+        'vehicle_local_position':('xy_valid','z_valid','v_xy_valid','v_z_valid','heading_good_for_control','heading'),
+        'estimator_status_flags':('cs_tilt_align','cs_yaw_align','cs_mag_aligned_in_flight','cs_in_air','cs_gnss_pos','cs_mag_hdg','cs_mag_3d','cs_mag_fault','cs_baro_fault','cs_gnss_fault','cs_gnss_yaw_fault','cs_gnss_hgt_fault'),
+        'vehicle_status':('pre_flight_checks_pass','failsafe','arming_state','nav_state')}
 
     def __init__(self):
         self.topics={};self.receipts={};self.query=None;self.last_query=None
         self.last_response=None;self.last_actuator=None;self.last_clock=None
         self.last_wall=None;self.fault=None;self.events=[];self._seen={}
+        self.observed_source={} # max3 topics, ordering evidence NOT positive source leases
 
     def _fail(self,reason):
         if self.fault is None:self.fault=reason
+
+    def _event(self,event):
+        if len(self.events)>=8192:
+            self._fail('safety event memory bound exceeded');return
+        self.events.append(event)
+
+    def validate_source(self,name,fields,clock):
+        timestamp=fields.get('timestamp',float('nan'));sample=fields.get('timestamp_sample')
+        old=self.observed_source.get(name)
+        if (not isinstance(timestamp,(int,float)) or isinstance(timestamp,bool) or not math.isfinite(timestamp)
+                or not float(timestamp).is_integer() or timestamp<=0 or timestamp>clock
+                or (old and timestamp<old['timestamp'])):
+            self._fail('invalid/future/backwards publication: '+name);return False
+        if old and timestamp==old['timestamp'] and fields!=old:
+            self._fail('changed payload with duplicate publication: '+name);return False
+        if sample is not None and (not isinstance(sample,(int,float)) or isinstance(sample,bool) or not math.isfinite(sample)
+                or not float(sample).is_integer() or sample>timestamp or sample<0
+                or (old and 'timestamp_sample' in old and sample<old['timestamp_sample'])):
+            self._fail('invalid/backwards sample time: '+name);return False
+        self.observed_source[name]=dict(fields)
+        return True
+
+    def inspect_health(self,name,fields,required_values=None,require_mag_fusion=False,clock=None):
+        """Negative evidence latches even outside a query; never renews a lease."""
+        if clock is not None and not self.validate_source(name,fields,clock):return
+        old=self.topics.get(name)
+        for key in self.REQUIRED[name]:
+            value=fields.get(key)
+            if key in ('heading','arming_state','nav_state'):
+                if not isinstance(value,(int,float)) or isinstance(value,bool) or not math.isfinite(value):
+                    self._fail('incomplete/invalid safety field: '+name+'.'+key)
+            elif not isinstance(value,bool):self._fail('incomplete/invalid safety field: '+name+'.'+key)
+        asserted={'vehicle_local_position':('xy_valid','z_valid','v_xy_valid','v_z_valid','heading_good_for_control'),
+            'estimator_status_flags':('cs_tilt_align','cs_yaw_align','cs_mag_aligned_in_flight','cs_in_air','cs_gnss_pos'),
+            'vehicle_status':('pre_flight_checks_pass',)}
+        hazards={'estimator_status_flags':('cs_mag_fault','cs_baro_fault','cs_gnss_fault','cs_gnss_yaw_fault','cs_gnss_hgt_fault'),
+            'vehicle_status':('failsafe',)}
+        if any(fields.get(k) is True for k in hazards.get(name,())):self._fail('observed unsafe flag: '+name)
+        if old and any(old.get(k) is True and fields.get(k) is not True for k in asserted.get(name,())):
+            self._fail('observed healthy flag revoked: '+name)
+        if required_values and any((fields.get(k) is not value if isinstance(value,bool) else fields.get(k)!=value)
+                for k,value in required_values.get(name,{}).items()):self._fail('observed flight health lost: '+name)
+        if require_mag_fusion and name=='estimator_status_flags' and not (fields.get('cs_mag_hdg') is True or fields.get('cs_mag_3d') is True):
+            self._fail('observed magnetic heading fusion lost')
 
     def _check_expiry(self,clock,wall):
         # Check OLD deadlines before any receipt/actuator/query can renew them.
@@ -70,14 +119,18 @@ class TelemetryFreshness:
         self._check_expiry(clock,wall)
         if self.query is not None:self._fail("overlapping/incomplete safety query")
         self.query=(clock,wall);self.last_query=(clock,wall);self._seen={}
-        self.events.append({"kind":"query","clock_usec":clock,"wall_s":wall})
+        self._event({"kind":"query","clock_usec":clock,"wall_s":wall})
 
     def observe(self,response,clock,wall):
-        self._check_expiry(clock,wall)
-        if self.query is None:return
         # The runner passes only bytes received AFTER this query was issued.
         parsed=latest_topics(response)
         complete=completed_topics(response)
+        self.observe_topics(complete,clock,wall,finish=all(parsed.get(name) for name in self.SOURCE_LIMITS))
+
+    def observe_topics(self,complete,clock,wall,finish=False,required_values=None,require_mag_fusion=False):
+        """Same validation for bounded completed records; no receipt-time rewrite."""
+        self._check_expiry(clock,wall)
+        if self.query is None:return
         for name in self.SOURCE_LIMITS:
             fields=complete.get(name,{})
             if not fields or fields==self._seen.get(name):continue
@@ -85,26 +138,15 @@ class TelemetryFreshness:
             timestamp=fields.get("timestamp",float("nan"))
             sample=fields.get("timestamp_sample")
             old=self.topics.get(name)
-            if (not math.isfinite(timestamp) or timestamp<=0 or timestamp>clock
-                or (old is not None and timestamp<old["timestamp"])):
-                self._fail("invalid/future/backwards publication: "+name);continue
-            if old and timestamp==old["timestamp"] and fields!=old:
-                self._fail("changed payload with duplicate publication: "+name);continue
-            if sample is not None and (not math.isfinite(sample) or sample>timestamp or sample<0
-                    or (old and "timestamp_sample" in old and sample<old["timestamp_sample"])):
-                self._fail("invalid/backwards sample time: "+name);continue
+            if not self.validate_source(name,fields,clock):continue
+            self.inspect_health(name,fields,required_values,require_mag_fusion)
             self.topics[name]=dict(fields)
             self.receipts[name]=(clock,wall)
             # Validate completeness independently of temporary flight eligibility.
-            required={
-                "vehicle_local_position":("xy_valid","z_valid","v_xy_valid","v_z_valid","heading_good_for_control","heading"),
-                "estimator_status_flags":("cs_tilt_align","cs_yaw_align","cs_mag_aligned_in_flight","cs_in_air","cs_gnss_pos","cs_mag_hdg","cs_mag_3d","cs_mag_fault","cs_baro_fault","cs_gnss_fault","cs_gnss_yaw_fault","cs_gnss_hgt_fault"),
-                "vehicle_status":("pre_flight_checks_pass","failsafe","arming_state","nav_state")}
-            if any(key not in fields for key in required[name]):self._fail("incomplete safety fields: "+name)
-            self.events.append({"kind":"receipt","topic":name,"clock_usec":clock,"wall_s":wall,
+            self._event({"kind":"receipt","topic":name,"clock_usec":clock,"wall_s":wall,
                                 "publication_usec":timestamp,"sample_usec":sample,
                                 "duplicate":bool(old and timestamp==old["timestamp"])})
-        if all(parsed.get(name) for name in self.SOURCE_LIMITS):
+        if finish:
             self.last_response=(clock,wall);self.query=None
 
     def actuator(self,timestamp,wall):

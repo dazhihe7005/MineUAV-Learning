@@ -1,0 +1,1034 @@
+{
+  "phase": "2D offline only",
+  "base_commit": "26f3df6ed1417c9c9b90696809a2c80d99a43ff5",
+  "new_px4_processes": 0,
+  "new_mujoco_episodes": 0,
+  "limits_unchanged": {
+    "query_response_s": 0.15,
+    "actuator_watchdog_s": 0.25,
+    "query_service_s": 0.65,
+    "source_limits_usec": {
+      "vehicle_local_position": 650000,
+      "estimator_status_flags": 1650000,
+      "vehicle_status": 1150000
+    }
+  },
+  "log_identities": [
+    {
+      "path": "mujoco/reports/px4_yaw_telemetry_fix_parts/disarmed_01/smoke_summary.json",
+      "sha256": "7639adbed994fdd844e8f3ec10310436e6991201cfa959fb52200914ba8ef5db",
+      "console_chars": 256615,
+      "console_sha256": "7709f7642d78eb87edb96676fc1ca337742a786261c3d1f482d3af0fd151f750",
+      "primary_topic_records": 66,
+      "allocator_row_records": 0,
+      "parser_peak_chars": 1837,
+      "query_count": 21
+    },
+    {
+      "path": "mujoco/reports/px4_yaw_telemetry_fix_parts/disarmed_01/log/2026-10-11/07_30_50.ulg",
+      "sha256": "81c208ed93201ce20f321899f428004b77dc383b119a207035646555f5db839b"
+    },
+    {
+      "path": "mujoco/reports/px4_yaw_telemetry_fix_parts/yaw_01/smoke_summary.json",
+      "sha256": "5b2ae186bf63cec8f3e993d007309ea4f64074bb01534b578018d6bae6e22900",
+      "console_chars": 904121,
+      "console_sha256": "c954845675d6fe58708e3321d1f453b677aba78a38f653067a92f1f88f9ba4f6",
+      "primary_topic_records": 242,
+      "allocator_row_records": 0,
+      "parser_peak_chars": 1838,
+      "query_count": 79
+    },
+    {
+      "path": "mujoco/reports/px4_yaw_telemetry_fix_parts/yaw_01/log/2026-10-11/07_31_26.ulg",
+      "sha256": "1bae0790a3adb0ccfff6976bbdab8b3ce6a2de49229f679d75e4cb9839c868a5"
+    },
+    {
+      "path": "mujoco/reports/px4_yaw_allocation_parts/disarmed_01/smoke_summary.json",
+      "sha256": "ac47e2a3673312007b1a0758dc6fc0cea497b80d351cb650d8fb7dee68a444af",
+      "console_chars": 290650,
+      "console_sha256": "d5354cf9612c68b87de1b518d9e3265a0ca8197dcd05341cccfe8e8696e8ee01",
+      "primary_topic_records": 66,
+      "allocator_row_records": 21,
+      "parser_peak_chars": 1837,
+      "query_count": 21
+    },
+    {
+      "path": "mujoco/reports/px4_yaw_allocation_parts/disarmed_01/log/2026-10-11/12_16_21.ulg",
+      "sha256": "67c21b97c9f38df1b0d3274b56011efb6d2426ff79f942812304dccfac6a067f"
+    },
+    {
+      "path": "mujoco/reports/px4_yaw_allocation_parts/yaw_01/smoke_summary.json",
+      "sha256": "a6ac413e72c15b28678f56ef62b02e2832fdf32c0e0a9d2d98042a54c017fa96",
+      "console_chars": 265803,
+      "console_sha256": "ae675e191e798f86c54d4ccecea985367ec9b20ee5451ff5d4905e7ce8ef0ea5",
+      "primary_topic_records": 60,
+      "allocator_row_records": 19,
+      "parser_peak_chars": 1838,
+      "query_count": 19
+    },
+    {
+      "path": "mujoco/reports/px4_yaw_allocation_parts/yaw_01/log/2026-10-11/12_18_18.ulg",
+      "sha256": "e9177f526afcea475bd5e7d24175bc1d9cc96ff687218b9a47f57236a58e3fb8"
+    }
+  ],
+  "phase2c_stopping_evidence": {
+    "fault": "safety query service stopped",
+    "query_service_deadline_wall_s": 16.085843422999822,
+    "last_actuator_age_s": 0.0020775849998244666,
+    "actuator_deadline_wall_s": 16.333172827999988,
+    "last_five_query_intervals_s": [
+      0.5367805019996013,
+      0.5597352800004955,
+      0.5878630649995102,
+      0.6097442880000017,
+      0.6416366530002051
+    ],
+    "query_interval_s": {
+      "n": 18,
+      "mean": 0.5241822400555773,
+      "p95": 0.6145281427500322,
+      "p99": 0.6362149509501704,
+      "max": 0.6416366530002051,
+      "median": 0.5002223820001745
+    },
+    "step_sent": false,
+    "simulation_stop_s": 15.48400000000184,
+    "wall_end_s": 16.088307784999415,
+    "last_check_wall_s": 16.085250412999812
+  },
+  "preservation": {
+    "protected_artifacts": {
+      "mujoco/models/mine_uav_dynamics_v2.xml": {
+        "sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/models/rotor_config.json": {
+        "sha256": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/models/rotor_actuators.xml": {
+        "sha256": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/px4_bridge/actuator_adapter.py": {
+        "sha256": "99bc0b9768782f2566c77adfa7159c081a0a2828225cf5638f4dec412212985a",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/px4_bridge/sensor_adapter.py": {
+        "sha256": "a43c358ea2f3e2b1ce91746c119f10850bd978607e8ce8efd79f97a75a3e7df1",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/px4_bridge/closed_loop.py": {
+        "sha256": "dc8bf0394adbd757bb9f9951a4bbc3527a0e49da26bf5c7847db541f09563ba0",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/rl/models/uav_bc_mlp_seed0.pt": {
+        "sha256": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/rl/models/uav_bc_yaw_augmented_seed0.pt": {
+        "sha256": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/rl/models/joint_latent_world_model_v3_autonomous_consistency.pt": {
+        "sha256": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/reports/px4_mujoco_phase1.json": {
+        "sha256": "0ef399d4f8e66c4abc409e1e8bf0004a83a2effcd654692c51359b8b203fc974",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/reports/px4_mujoco_yaw_validation.json": {
+        "sha256": "684b5c654ab205ea68b8f752e59025560f0f777cef3fb064de81a4d780dffc82",
+        "unchanged_from_phase2c": true
+      },
+      "mujoco/reports/px4_mujoco_yaw_telemetry_fix.json": {
+        "sha256": "42a3331c03e36c95ab81c4d590f53ad7022463d934f52a0c34e52a6cc4f24e16",
+        "unchanged_from_phase2c": true
+      }
+    },
+    "new_runtime_sha256": {
+      "simulation_runner.py": "4350e1babdb971cb7313eba750783f5500b5e59f8a03292dee3bc36367c32ff5",
+      "query_scheduler.py": "d2623b68833b9822fcfe6c34334b82adc46949ead3d99c2c99d0abd8d8122cfe",
+      "streaming_diagnostics.py": "fe3ebbd65492d6e8127de4306addc606e9453f07b88c7045f34f12984df58fdb",
+      "telemetry_freshness.py": "a33a6f908802ad7be6fdda5d99e6eea64ea65c616da9d0224a8ba9e35ad53bdf",
+      "yaw_telemetry_runner.py": "b9723038a1e26e2949cb7d1d9572b49c5bda4175139e4297b8eba8d6f6489c7f",
+      "allocation_runner.py": "f0acd782ed707b26d91d7b3f1db4bee476238f3f0e587fd7d9e93247b541e259",
+      "transport.py": "c2686821e5d44e9387bdfc6e2a711522a50f44742c706b0fbb0e3f0ed4ed4a1d",
+      "yaw_validation.py": "cabf737a3deeb6bda2652b54e1d75071fa7522ac1ef12d9ba01a031b5be96f78"
+    },
+    "runtime_not_sitl_verified": true
+  },
+  "parsing_benchmark": [
+    {
+      "history_chars": 1024,
+      "delta_chars": 94,
+      "old_us": {
+        "n": 500,
+        "mean": 14.506874,
+        "p95": 16.70295,
+        "p99": 23.536809999999996,
+        "max": 134.123,
+        "median": 14.0465
+      },
+      "incremental_us": {
+        "n": 500,
+        "mean": 2.698916,
+        "p95": 2.8255,
+        "p99": 5.672109999999998,
+        "max": 8.616,
+        "median": 2.615
+      },
+      "batch_results": [
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 15.8524,
+            "p95": 16.248,
+            "p99": 26.078360000000558,
+            "max": 134.123,
+            "median": 14.332
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.7558000000000002,
+            "p95": 2.8914999999999997,
+            "p99": 5.28004000000001,
+            "max": 7.264,
+            "median": 2.66
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 14.080199999999998,
+            "p95": 18.159599999999998,
+            "p99": 25.869410000000006,
+            "max": 26.9,
+            "median": 13.526
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.68326,
+            "p95": 2.7564499999999996,
+            "p99": 4.301580000000023,
+            "max": 8.616,
+            "median": 2.595
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 13.661849999999998,
+            "p95": 14.994549999999998,
+            "p99": 18.38980000000003,
+            "max": 23.815,
+            "median": 13.375
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.67227,
+            "p95": 2.7855000000000003,
+            "p99": 5.672710000000001,
+            "max": 5.941,
+            "median": 2.5945
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 14.43376,
+            "p95": 16.802649999999996,
+            "p99": 21.09365000000001,
+            "max": 23.534,
+            "median": 14.102
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.63592,
+            "p95": 2.6979999999999995,
+            "p99": 4.554630000000008,
+            "max": 6.201,
+            "median": 2.575
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 14.506159999999998,
+            "p95": 17.991,
+            "p99": 20.10403000000001,
+            "max": 21.691,
+            "median": 14.096499999999999
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.74733,
+            "p95": 2.91555,
+            "p99": 3.8277400000000106,
+            "max": 5.881,
+            "median": 2.695
+          }
+        }
+      ],
+      "incremental_processed_chars": 47094,
+      "expected_delta_work_chars": 47094,
+      "peak_parser_chars": 1838,
+      "verified_fixed_delta_record_count": 1,
+      "tracemalloc_single_old_peak_bytes": 4563,
+      "tracemalloc_single_delta_peak_bytes": 1462
+    },
+    {
+      "history_chars": 10240,
+      "delta_chars": 94,
+      "old_us": {
+        "n": 500,
+        "mean": 59.184844,
+        "p95": 66.39604999999999,
+        "p99": 80.23736999999996,
+        "max": 93.335,
+        "median": 57.729
+      },
+      "incremental_us": {
+        "n": 500,
+        "mean": 2.7760860000000003,
+        "p95": 2.9164499999999993,
+        "p99": 6.566199999999997,
+        "max": 8.557,
+        "median": 2.675
+      },
+      "batch_results": [
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 59.52839,
+            "p95": 66.39605,
+            "p99": 75.53609000000009,
+            "max": 90.791,
+            "median": 58.0495
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.7354400000000005,
+            "p95": 2.77155,
+            "p99": 4.133160000000018,
+            "max": 7.614,
+            "median": 2.655
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 58.77590000000001,
+            "p95": 63.210049999999995,
+            "p99": 75.26856000000005,
+            "max": 83.838,
+            "median": 57.623000000000005
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8221100000000003,
+            "p95": 3.3905499999999984,
+            "p99": 6.430120000000004,
+            "max": 7.234,
+            "median": 2.675
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 58.25144,
+            "p95": 62.64704999999999,
+            "p99": 69.16835000000005,
+            "max": 76.925,
+            "median": 57.2275
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.70407,
+            "p95": 2.7550499999999998,
+            "p99": 3.6761600000000145,
+            "max": 6.563,
+            "median": 2.655
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 60.51384000000001,
+            "p95": 73.52865,
+            "p99": 92.72021000000001,
+            "max": 93.335,
+            "median": 57.814
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8274500000000002,
+            "p95": 2.933499999999999,
+            "p99": 6.978940000000009,
+            "max": 8.557,
+            "median": 2.685
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 58.85464999999999,
+            "p95": 64.2205,
+            "p99": 70.00499000000005,
+            "max": 80.201,
+            "median": 57.939
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.79136,
+            "p95": 2.9389999999999996,
+            "p99": 4.93963000000001,
+            "max": 6.883,
+            "median": 2.695
+          }
+        }
+      ],
+      "incremental_processed_chars": 47094,
+      "expected_delta_work_chars": 47094,
+      "peak_parser_chars": 1838,
+      "verified_fixed_delta_record_count": 1,
+      "tracemalloc_single_old_peak_bytes": 45643,
+      "tracemalloc_single_delta_peak_bytes": 1462
+    },
+    {
+      "history_chars": 102400,
+      "delta_chars": 94,
+      "old_us": {
+        "n": 500,
+        "mean": 580.5899860000001,
+        "p95": 595.5245,
+        "p99": 608.92928,
+        "max": 708.314,
+        "median": 579.5360000000001
+      },
+      "incremental_us": {
+        "n": 500,
+        "mean": 2.794218,
+        "p95": 2.875,
+        "p99": 7.100139999999985,
+        "max": 10.85,
+        "median": 2.685
+      },
+      "batch_results": [
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 586.2739,
+            "p95": 598.27355,
+            "p99": 606.9053300000005,
+            "max": 708.314,
+            "median": 583.9590000000001
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8436999999999997,
+            "p95": 3.0105999999999993,
+            "p99": 5.327270000000019,
+            "max": 9.017,
+            "median": 2.715
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 578.34892,
+            "p95": 592.1478,
+            "p99": 601.5597200000001,
+            "max": 613.214,
+            "median": 577.061
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.7692099999999993,
+            "p95": 2.8155,
+            "p99": 4.125190000000025,
+            "max": 8.797,
+            "median": 2.685
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 583.32975,
+            "p95": 595.9563499999999,
+            "p99": 615.52132,
+            "max": 621.691,
+            "median": 581.6804999999999
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.75509,
+            "p95": 2.8605499999999995,
+            "p99": 4.338800000000027,
+            "max": 9.368,
+            "median": 2.655
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 576.47958,
+            "p95": 592.5406999999999,
+            "p99": 608.4296099999999,
+            "max": 608.886,
+            "median": 574.732
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.7664699999999995,
+            "p95": 2.835,
+            "p99": 3.947710000000031,
+            "max": 9.958,
+            "median": 2.675
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 578.51778,
+            "p95": 595.41405,
+            "p99": 608.3203,
+            "max": 613.795,
+            "median": 577.247
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.83662,
+            "p95": 2.87805,
+            "p99": 7.120670000000019,
+            "max": 10.85,
+            "median": 2.6855
+          }
+        }
+      ],
+      "incremental_processed_chars": 47094,
+      "expected_delta_work_chars": 47094,
+      "peak_parser_chars": 1838,
+      "verified_fixed_delta_record_count": 1,
+      "tracemalloc_single_old_peak_bytes": 443671,
+      "tracemalloc_single_delta_peak_bytes": 1462
+    },
+    {
+      "history_chars": 265803,
+      "delta_chars": 94,
+      "old_us": {
+        "n": 500,
+        "mean": 1465.2253739999999,
+        "p95": 1558.20865,
+        "p99": 1988.90596,
+        "max": 2689.474,
+        "median": 1455.8455
+      },
+      "incremental_us": {
+        "n": 500,
+        "mean": 2.838212,
+        "p95": 2.8954999999999997,
+        "p99": 5.144839999999886,
+        "max": 24.295,
+        "median": 2.615
+      },
+      "batch_results": [
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 1499.8610500000002,
+            "p95": 1563.0322,
+            "p99": 1782.825580000001,
+            "max": 1997.02,
+            "median": 1497.274
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8812799999999994,
+            "p95": 2.8369999999999997,
+            "p99": 4.63590000000008,
+            "max": 20.268,
+            "median": 2.675
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 1433.5710899999997,
+            "p95": 1537.1945,
+            "p99": 1556.77573,
+            "max": 1574.173,
+            "median": 1450.145
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.85861,
+            "p95": 2.8185499999999997,
+            "p99": 4.577440000000092,
+            "max": 22.342,
+            "median": 2.635
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 1452.6189499999996,
+            "p95": 1551.9441,
+            "p99": 1583.66425,
+            "max": 1585.966,
+            "median": 1447.44
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8313699999999993,
+            "p95": 2.84895,
+            "p99": 4.470650000000068,
+            "max": 17.603,
+            "median": 2.635
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 1520.96777,
+            "p95": 1607.2750499999997,
+            "p99": 2252.6355100000023,
+            "max": 2689.474,
+            "median": 1476.5495
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.7582400000000002,
+            "p95": 2.7439999999999993,
+            "p99": 4.849260000000097,
+            "max": 23.685,
+            "median": 2.504
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 1419.1080099999997,
+            "p95": 1511.5622999999998,
+            "p99": 1990.495850000001,
+            "max": 2156.009,
+            "median": 1390.934
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.86156,
+            "p95": 3.0665499999999994,
+            "p99": 5.2117600000000985,
+            "max": 24.295,
+            "median": 2.554
+          }
+        }
+      ],
+      "incremental_processed_chars": 47094,
+      "expected_delta_work_chars": 47094,
+      "peak_parser_chars": 1838,
+      "verified_fixed_delta_record_count": 1,
+      "tracemalloc_single_old_peak_bytes": 1158607,
+      "tracemalloc_single_delta_peak_bytes": 1462
+    },
+    {
+      "history_chars": 1048576,
+      "delta_chars": 94,
+      "old_us": {
+        "n": 500,
+        "mean": 5847.946546,
+        "p95": 6082.204849999999,
+        "p99": 6560.762849999999,
+        "max": 7145.622,
+        "median": 5826.564
+      },
+      "incremental_us": {
+        "n": 500,
+        "mean": 2.8389360000000003,
+        "p95": 2.8964499999999993,
+        "p99": 9.198059999999872,
+        "max": 25.368,
+        "median": 2.555
+      },
+      "batch_results": [
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 5848.730280000001,
+            "p95": 6524.988549999999,
+            "p99": 6984.69156,
+            "max": 7145.622,
+            "median": 5770.549
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8432500000000003,
+            "p95": 2.9059999999999997,
+            "p99": 9.202480000000074,
+            "max": 23.605,
+            "median": 2.505
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 5842.96521,
+            "p95": 6104.24355,
+            "p99": 6396.547770000003,
+            "max": 6831.531,
+            "median": 5811.601000000001
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8662199999999998,
+            "p95": 2.992049999999999,
+            "p99": 6.56884000000009,
+            "max": 24.076,
+            "median": 2.565
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 5826.888829999999,
+            "p95": 5960.2916,
+            "p99": 6485.83576,
+            "max": 6510.166,
+            "median": 5837.550499999999
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.7608700000000006,
+            "p95": 2.7359999999999998,
+            "p99": 4.932150000000094,
+            "max": 23.163,
+            "median": 2.514
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 5805.03411,
+            "p95": 5882.45715,
+            "p99": 5943.6297600000025,
+            "max": 6467.316,
+            "median": 5819.761
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8400000000000007,
+            "p95": 2.80705,
+            "p99": 4.796790000000106,
+            "max": 25.368,
+            "median": 2.565
+          }
+        },
+        {
+          "old_us": {
+            "n": 100,
+            "mean": 5916.114299999999,
+            "p95": 6436.5962,
+            "p99": 6471.70371,
+            "max": 6498.504,
+            "median": 5884.508
+          },
+          "incremental_us": {
+            "n": 100,
+            "mean": 2.8843400000000003,
+            "p95": 2.90945,
+            "p99": 5.1588700000001015,
+            "max": 24.847,
+            "median": 2.605
+          }
+        }
+      ],
+      "incremental_processed_chars": 47094,
+      "expected_delta_work_chars": 47094,
+      "peak_parser_chars": 1838,
+      "verified_fixed_delta_record_count": 1,
+      "tracemalloc_single_old_peak_bytes": 4617114,
+      "tracemalloc_single_delta_peak_bytes": 1462
+    }
+  ],
+  "query_benchmark": {
+    "full_query_legacy_us": {
+      "n": 500,
+      "mean": 326.13543799999997,
+      "p95": 341.49,
+      "p99": 351.42613,
+      "max": 569.863,
+      "median": 323.254
+    },
+    "full_query_incremental_us": {
+      "n": 500,
+      "mean": 594.852794,
+      "p95": 610.65155,
+      "p99": 639.8496799999995,
+      "max": 762.846,
+      "median": 592.2955
+    },
+    "old_repeated_suffix_query_us": {
+      "n": 500,
+      "mean": 1109.625996,
+      "p95": 1161.2735500000001,
+      "p99": 1194.81074,
+      "max": 1232.671,
+      "median": 1117.7995
+    },
+    "single_new_allocator_record_us": {
+      "n": 500,
+      "mean": 2.904146,
+      "p95": 3.047949999999998,
+      "p99": 6.679549999999975,
+      "max": 13.967,
+      "median": 2.775
+    },
+    "query_chars": 4160,
+    "includes_parser_construction": true,
+    "not_actual_console_query_response_time": true,
+    "legacy_baseline_kind": "retained whole-response parsing path with current shared validation, not frozen base validator CPU cost"
+  },
+  "constructed_timing_simulation": {
+    "kind": "constructed offline timing simulation",
+    "sim_rate_wall_ratio": 0.8,
+    "queries": 25,
+    "query_interval_s": {
+      "n": 24,
+      "mean": 0.5,
+      "p95": 0.5,
+      "p99": 0.5,
+      "max": 0.5,
+      "median": 0.5
+    },
+    "fault": null,
+    "max_scheduling_lateness_s": 0.0,
+    "pending_queue_max": 1,
+    "not_a_live_px4_measurement": true
+  },
+  "constructed_fault_detection": {
+    "kind": "constructed causal fault-injection fixtures",
+    "check_period_s": 0.004,
+    "not_a_live_px4_measurement": true,
+    "cases": [
+      {
+        "scenario": "query_reply_stopped",
+        "deadline_s": 0.15,
+        "detected_wall_s": 0.152,
+        "overshoot_after_deadline_s": 0.0020000000000000018,
+        "reason": "query response timeout/truncated topic",
+        "simulation_progress_usec_per_check": 4000,
+        "detection_delay_after_received_record_s": null,
+        "late_health_cleared_fault": false
+      },
+      {
+        "scenario": "actuator_stopped_sim_stalled",
+        "deadline_s": 0.25,
+        "detected_wall_s": 0.252,
+        "overshoot_after_deadline_s": 0.0020000000000000018,
+        "reason": "actuator communication watchdog",
+        "simulation_progress_usec_per_check": 0,
+        "detection_delay_after_received_record_s": null,
+        "late_health_cleared_fault": false
+      },
+      {
+        "scenario": "query_service_stopped_sim_nearly_stalled",
+        "deadline_s": 0.65,
+        "detected_wall_s": 0.652,
+        "overshoot_after_deadline_s": 0.0020000000000000018,
+        "reason": "safety query service stopped",
+        "simulation_progress_usec_per_check": 1,
+        "detection_delay_after_received_record_s": null,
+        "late_health_cleared_fault": false
+      },
+      {
+        "scenario": "duplicate_publication",
+        "deadline_s": 0.65,
+        "detected_wall_s": 0.652,
+        "overshoot_after_deadline_s": 0.0020000000000000018,
+        "reason": "source publication expired: vehicle_local_position",
+        "simulation_progress_usec_per_check": 4000,
+        "detection_delay_after_received_record_s": null,
+        "late_health_cleared_fault": false
+      },
+      {
+        "scenario": "received_failsafe",
+        "deadline_s": 0.004,
+        "detected_wall_s": 0.004,
+        "overshoot_after_deadline_s": 0.0,
+        "reason": "observed unsafe flag: vehicle_status",
+        "simulation_progress_usec_per_check": 4000,
+        "detection_delay_after_received_record_s": 0.0,
+        "late_health_cleared_fault": false
+      }
+    ],
+    "host_descheduling_or_blocked_disk_not_bounded_by_this_fixture": true
+  },
+  "bounds": {
+    "line_chars": 8192,
+    "record_chars": 32768,
+    "slice_chars": 4096,
+    "recent_console_chars": 65536,
+    "final_archive_bytes": 16777216,
+    "event_count": 8192
+  },
+  "limitations": [
+    "Original PTY read boundaries/arrival times and per-query CPU/I/O timings were not recorded; cannot uniquely attribute live timeout.",
+    "Allocator console row has no PX4 source publication timestamp; it is a bounded host-received query snapshot, not a health heartbeat.",
+    "Offline benchmarks and synthetic timing are not live PX4 or hard-real-time certification. Changed runtime requires new authorized disarmed and bounded flight verification."
+  ],
+  "verification": {
+    "date": "2026-10-12",
+    "branch": "feat/px4-mujoco-query-scheduling-fix",
+    "base_branch": "feat/px4-mujoco-yaw-allocation-fix",
+    "base_commit": "26f3df6ed1417c9c9b90696809a2c80d99a43ff5",
+    "scope_tests": {
+      "status": "PASS",
+      "passed": 289,
+      "skipped": 0,
+      "retained_original": 150,
+      "new": 139,
+      "pytest_seconds": 7.91,
+      "maxrss_kib": 1045868
+    },
+    "repository_wide_tests": {
+      "status": "BLOCKED",
+      "reason": "Pre-existing system SciPy versus venv NumPy 2.2.6 ABI collection errors; no unrelated dependency repair authorized",
+      "collection_error_files": [
+        "cad_check/test_inspect_stl_assembly.py",
+        "mujoco/scripts/test_baseline.py",
+        "mujoco/scripts/test_dynamics_v2.py"
+      ]
+    },
+    "independent_final_review": {
+      "status": "PASS",
+      "scope": "Offline only, not SITL certification",
+      "model": "gpt-6-astra",
+      "reasoning_effort": "high",
+      "critical": 0,
+      "important": 0,
+      "minor": 0,
+      "suite_passed": 289,
+      "skipped": 0,
+      "suite_seconds": 6.89,
+      "additional_integrated_reproduction_cases": 144,
+      "raw_identities_verified": 8,
+      "protected_artifacts_verified": 12,
+      "reviewer_wrote_repository": false
+    },
+    "review_history": [
+      {
+        "round": 1,
+        "critical": 3,
+        "important": 2,
+        "minor": 0
+      },
+      {
+        "round": 2,
+        "critical": 1,
+        "important": 2,
+        "minor": 0
+      },
+      {
+        "round": 3,
+        "critical": 2,
+        "important": 1,
+        "minor": 0
+      },
+      {
+        "round": 4,
+        "critical": 1,
+        "important": 2,
+        "minor": 0
+      },
+      {
+        "round": 5,
+        "critical": 1,
+        "important": 1,
+        "minor": 0
+      },
+      {
+        "round": 6,
+        "status": "NOT TESTED",
+        "reason": "Session reset before final reviewer response"
+      },
+      {
+        "round": 7,
+        "critical": 0,
+        "important": 1,
+        "minor": 0,
+        "model": "gpt-6-astra",
+        "fix": "Existing UTF8 completion deadline checked after archive/decode before clearing; timer starts at actual byte receipt; four RED to GREEN regressions"
+      },
+      {
+        "round": 8,
+        "critical": 1,
+        "important": 0,
+        "minor": 0,
+        "fix": "Damaged or completed truncated topic boundaries cannot discard negative bodies; nine integrated RED to GREEN regressions"
+      },
+      {
+        "round": 9,
+        "critical": 0,
+        "important": 1,
+        "minor": 0,
+        "fix": "Every started primary record must validate or fault; strict body grammar prevents malformed field discard; nine integrated RED to GREEN regressions"
+      },
+      {
+        "round": 10,
+        "critical": 0,
+        "important": 0,
+        "minor": 0,
+        "status": "PASS",
+        "scope": "Final fresh offline-only review"
+      }
+    ],
+    "protected_px4": {
+      "original_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+      "original_binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+      "isolated_commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+      "isolated_binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+      "unchanged": true
+    },
+    "preserved_original_untracked_files": 87,
+    "resources": {
+      "analysis_workers": 1,
+      "new_px4_instances": 0,
+      "new_mujoco_episodes": 0,
+      "largest_recorded_author_command_maxrss_kib": 1188416,
+      "rss_scope": "Per-command /usr/bin/time high-water marks including native offline allocator test compiler subprocesses, not combined instantaneous tree RSS or kernel-wide OOM certification",
+      "oom_observed_in_owned_jobs": false,
+      "swap_modified": false,
+      "os_reserve_bytes": 1610612736
+    },
+    "acceptance": {
+      "unique_historical_timeout_cause": "BLOCKED",
+      "confirmed_cumulative_scan_and_sim_only_dispatch_defects": "PASS",
+      "incremental_parser": "PASS",
+      "bounded_hot_path_buffers": "PASS",
+      "offline_query_scheduling": "PASS",
+      "unchanged_deadlines": "PASS",
+      "no_unresolved_critical_or_important_in_offline_review": "PASS",
+      "no_unsafe_release_in_tested_adversarial_input_classes": "PASS",
+      "causal_fault_detection_fixtures": "PASS",
+      "raw_log_and_protected_hash_identity": "PASS",
+      "new_runtime_sitl_validation": "NOT TESTED",
+      "actual_px4_rtt": "NOT TESTED",
+      "bounded_yaw_admission": "BLOCKED",
+      "phase3_admission": "BLOCKED"
+    },
+    "limitations": [
+      "Live deadline compliance and new runtime flight safety remain NOT TESTED",
+      "No mathematical or empirical certificate for arbitrary unseen console schemas or every possible corruption",
+      "Native allocator evidence is a serialized trusted-loopback snapshot, not authenticated source publication timing",
+      "Observed resource high-water marks do not certify absence of kernel-wide OOM events"
+    ],
+    "next_recommendation_only": "Separately authorize a new matching disarmed SITL communication check before considering any bounded yaw flight; no such test performed here"
+  },
+  "resources": {
+    "workers": 1,
+    "analysis_peak_rss_bytes": 433184768,
+    "available_memory_bytes_at_end": 12171612160,
+    "oom_observed": false
+  }
+}

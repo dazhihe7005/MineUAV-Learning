@@ -58,8 +58,11 @@ class LoopbackTransport:
         c.setsockopt(socket.IPPROTO_TCP,socket.TCP_NODELAY,1);c.settimeout(self.timeout)
         self.connection=c
 
-    def send(self,msg):
+    def send(self,msg,timeout=None):
         if self.connection is None:raise ConnectionError("no PX4 connection")
+        if timeout is not None:
+            if not math.isfinite(timeout) or timeout<=0:raise ValueError('positive finite send budget required')
+            self.connection.settimeout(timeout)
         self.connection.sendall(msg.pack(self.encoder));self.encoder.seq=(self.encoder.seq+1)%256
         name=msg.get_type();self.sent[name]=self.sent.get(name,0)+1
 

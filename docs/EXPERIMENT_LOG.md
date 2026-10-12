@@ -878,3 +878,27 @@ Conclusion: PASS for physically unchanged allocation compatibility, exact build 
 Limitations: one truncated active run, no final custom-buildheadingalignment/hold/yawstep; fullconsole diagnostic overhead versushostload not causally isolated; SITL-only localpatch, idealESC/motor/no hardware identification; actualphysicaltorque model-derived ratherthanmeasured; no independentbinaryreconstruction; historicalCADsuiteblocked.
 
 Next: Only a separately authorized offline bounded/incremental allocator-diagnostic and wall-versus-simulation query-scheduling audit, preserving fail-closed deadlines. Notexecuted; no flightretry, Phase3, ROS or FAST-LIO2.
+
+## 2026-10-12 — PX4–MuJoCo Incremental Diagnostics and Query Scheduling Phase2D
+
+Branch: feat/px4-mujoco-query-scheduling-fix
+Base: feat/px4-mujoco-yaw-allocation-fix / 26f3df6ed1417c9c9b90696809a2c80d99a43ff5
+
+Research Question: Can bounded incremental diagnostics and causal dual-clock query scheduling remove cumulative hot-path work while preserving fail-closed safety deadlines?
+
+Setup: Offline only; zero new PX4 processes, live MuJoCo runner episodes, arming or yaw-step commands. Retained150 tests, original and isolated PX4 source/binary identities, physics/rotors/adapters/gains/models and immutable Phase2B/2C summaries/ULogs. New-chunk streaming parser, finite record/line/recent/archive/event bounds, nonblocking single-batch console writes, single-flight absolute wall/simulation scheduling serviced during actuator receive slices. No timeout relaxation:150ms response/fragment,250ms actuator,650ms query service/receipt; source leases650/1650/1150ms.
+
+Key Results:
+- Confirmed stopped query-service deadline16.085843s versus actuator deadline16.333173s; last actuator age.002078s. Old full-history joins/scans and simulation-only dispatch are source-confirmed defects; unique historical CPU/I/O cause remains unresolved because original PTY arrival/per-call timings were not recorded.
+- Five batches×100 calls at1KiB/10KiB/100KiB/265803chars/1MiB: historical yaw-row scan scales from~15us to~6–7ms; new fixed-record ingestion stays~2–3us. At265803chars mean1465.225us versus2.838us, P95 1558.209us versus2.895us. Whole query construction/validation595us versus retained legacy parsing326us; repeated legacy suffix processing1110us. Improvement is bounded incremental work, not universal end-to-end speedup. Query comparison shares the current validator and is not a frozen historical validator CPU measurement.
+- Constructed12s slow-simulation replay(.8sim/wall) schedules25 queries at.5s wall intervals, no fault/backlog. Causal4ms-check fixtures stop missing reply at152ms, actuator outage with stalled simulation at252ms, service stop/duplicate publication at652ms; received failsafe latches immediately, late health cannot clear faults. These are offline fixtures, not live RTT/hard-real-time guarantees.
+- Primary records and instances, partial bytes/lines, ANSI controls, duplicate fields, malformed bodies/headers, invalid source/sample timestamps and cross-read backlog are fail-closed in tested cases. An actual empty PTY is required before dispatch AND completion; expired timers checked after I/O before renewal. Raw bytes archived before decoding; old nonzero allocator text cannot perpetually renew authority. Native allocator row remains an unauthenticated query snapshot with no source timestamp.
+- Author289/289PASS0skip, old150unchanged/new139. Final fresh independent read-only review0Critical/0Important/0Minor,289PASS6.89s plus144 integrated actual-before_step malformed-lifecycle casesPASS. Every prior Important/Critical finding fixed with RED→GREEN and fresh re-review; incomplete interrupted review not accepted. No runtime change after final review.
+- Full-repository pytest attempted:3pre-existing collection errors in cad_check/test_inspect_stl_assembly.py, mujoco/scripts/test_baseline.py, mujoco/scripts/test_dynamics_v2.py, systemSciPy/venvNumPy2.2.6 ABI incompatibility. Global suite BLOCKED; no unrelated dependency installation/repair.
+- Eight raw identities/twelve protected artifacts hash-equal; both PX4 binaries unchanged;87 original-worktree untracked files preserved. Raw data/ULogs/local ledger preserved, not committed. One analysis worker, zero live instances, no OOM observed in owned jobs, no swap change; final analyzer RSS433184768bytes, recorded author-command maximum1188416KiB(~1.133GiB), final289-test MaxRSS1045868KiB. Per-command/native compiler accounting is not combined process-tree or kernel-wide OOM certification.
+
+Conclusion: PASS for scoped offline bounded parsing/scheduling and final independent review. Historical unique root cause remains BLOCKED; new runtime real RTT/disarmed/flight validation NOT TESTED. Full yaw response and Phase3 admission remain BLOCKED. Changed runtime requires a new matching disarmed proof; old smoke cannot authorize it.
+
+Limitations: Synthetic timing does not reconstruct missing PTY boundaries/host scheduling; no live deadline compliance or hard-real-time guarantee; native console has no authenticated allocation publication timestamp; current pinned log schemas only, unseen formats unverified; repository-wide CAD ABI remains blocked; no new flight or physical deployment evidence.
+
+Next: Only recommend separately authorizing a new matching disarmed SITL communication check before considering any bounded yaw flight. Not executed; no automatic flight, Phase3, ROS, MID360S or FAST-LIO2.

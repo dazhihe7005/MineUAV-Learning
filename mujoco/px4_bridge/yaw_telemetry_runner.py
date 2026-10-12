@@ -9,6 +9,7 @@ from .telemetry_freshness import TelemetryFreshness
 from .yaw_validation import angle_error,yaw_ned
 from .magnetic_model import field_from_px4
 from .simulation_runner import smoke,source_identity
+from .streaming_diagnostics import StreamingDiagnostics
 
 
 class TelemetryYawProtocol(YawProtocol):
@@ -18,10 +19,57 @@ class TelemetryYawProtocol(YawProtocol):
         super().__init__(field,active)
         self.monitor=TelemetryFreshness();self.query_offset=0;self.console_length=0
         self.last_decision=None
+        self.parser=StreamingDiagnostics();self.streaming=False;self.query_topics=set()
+        self.query_generation=0;self.query_needs_row=False;self.query_row=False
+        self.wall_now=None;self.transport_pending=False;self.console_backlog_pending=False
 
     def query_requested(self,clock,wall,console):
         self.query_offset=len(console);self.console_length=len(console)
         self.monitor.begin_query(clock,wall)
+        if self.streaming and (self.parser.pending or self.transport_pending or self.console_backlog_pending):self.monitor._fail('incomplete diagnostic at query boundary')
+        self.query_generation+=1;self.query_topics=set();self.query_row=False
+
+    def on_console_chunk(self,chunk,clock,wall):
+        self.streaming=True
+        if self.wall_now is not None:wall=self.wall_now()
+        self.monitor._check_expiry(clock,wall)
+        try:events=self.parser.feed(chunk)
+        except ValueError as error:
+            self.monitor._fail(str(error));return
+        # Parsing and archival time belongs inside the response budget.
+        if self.wall_now is not None:wall=self.wall_now()
+        self.monitor._check_expiry(clock,wall)
+        for event in events:
+            if event['kind']=='yaw_row':
+                self.on_yaw_row(event['value'],clock,wall)
+            else:
+                required=None
+                if self.active and clock>=13000000:
+                    required={'vehicle_local_position':{'xy_valid':True,'z_valid':True,'v_xy_valid':True,'v_z_valid':True},
+                        'estimator_status_flags':{'cs_tilt_align':True,'cs_yaw_align':True,'cs_gnss_pos':True},
+                        'vehicle_status':{'pre_flight_checks_pass':True,'failsafe':False}}
+                    if clock>=33000000:
+                        required['vehicle_local_position']['heading_good_for_control']=True
+                        required['estimator_status_flags'].update(cs_mag_aligned_in_flight=True,cs_in_air=True)
+                        required['vehicle_status'].update(arming_state=2,nav_state=14)
+                if self.monitor.query is not None:
+                    self.monitor.observe_topics({event['topic']:event['fields']},clock,wall,required_values=required,
+                        require_mag_fusion=self.active and clock>=33000000)
+                    self.query_topics.add(event['topic'])
+                else:self.monitor.inspect_health(event['topic'],event['fields'],required,self.active and clock>=33000000,clock=clock)
+        self.complete_query_if_ready(clock,wall)
+
+    def complete_query_if_ready(self,clock,wall):
+        if (not self.monitor.fault and self.monitor.query is not None and self.query_topics==set(self.monitor.SOURCE_LIMITS)
+                and (not self.query_needs_row or self.query_row) and not self.transport_pending
+                and not self.parser.pending and not self.console_backlog_pending):
+            if self.wall_now is not None:wall=self.wall_now()
+            self.monitor._check_expiry(clock,wall)
+            if self.monitor.fault:return
+            self.monitor.last_response=(clock,wall);self.monitor.query=None
+
+    def on_yaw_row(self,value,clock,wall):
+        pass # Original non-allocation protocol has no allocator-row admission.
 
     def on_console(self,console,clock,wall):
         if len(console)<self.console_length:self.monitor._fail("console stream truncated/reset")
@@ -33,10 +81,13 @@ class TelemetryYawProtocol(YawProtocol):
 
     def before_step(self,data,time_usec,console,wall=None):
         if wall is None:raise ValueError("explicit monotonic receipt/check time required")
-        self.on_console(console,time_usec,wall)
-        if self.monitor.last_query is None:return
+        if not self.streaming:self.on_console(console,time_usec,wall)
+        if self.monitor.last_query is None and not self.monitor.fault:return
         decision=self.monitor.decision(time_usec,wall,require_flight=self.active and data.time>=32)
         self.last_decision=decision
+        if self.streaming and (self.parser.pending or self.transport_pending or self.console_backlog_pending):
+            decision['allow_new_maneuver']=False
+            decision['reason']='incomplete stream record; no new maneuver'
         # Baseline safety prerequisites throughout controlled flight, while
         # final in-flight magnetic alignment is legitimately pending on ascent.
         if self.active and data.time>=12 and self.monitor.topics:

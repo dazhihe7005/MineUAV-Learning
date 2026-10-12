@@ -46,13 +46,32 @@ class AllocationYawProtocol(TelemetryYawProtocol):
     def __init__(self,field,expected,active=False,identity=None,history=None):
         super().__init__(field,active);self.expected_yaw=np.array(expected)
         self.identity=identity;self.history=history
+        self.query_needs_row=True;self.row_received_wall=None;self.row_received_clock=None
+        self.row_generation=None
 
     def queries(self):return super().queries()+"control_allocator status\n"
 
     def before_step(self,data,time_usec,console,wall=None):
+        if self.streaming and self.active and data.time>=10 and not self.row_ready(time_usec,wall):
+            raise ValueError('BLOCKED: actual yaw allocation snapshot expired/missing; safe stop')
         super().before_step(data,time_usec,console,wall)
-        if self.active and data.time>=10 and not allocation_status(console,self.expected_yaw):
+        if not self.streaming and self.active and data.time>=10 and not allocation_status(console,self.expected_yaw):
             raise ValueError("BLOCKED: actual yaw allocation row missing/changed; safe stop")
+
+    def on_yaw_row(self,value,clock,wall):
+        if not allocation_status('MineUAV yaw axis: '+value,self.expected_yaw):
+            self.monitor._fail('actual yaw allocation row missing/changed');return
+        # Only an outstanding query may furnish new authority. Unsolicited
+        # echoes and old diagnostics outside the request cannot renew leases.
+        if self.monitor.query is not None:
+            self.row_received_wall=wall;self.row_received_clock=clock
+            self.row_generation=self.query_generation;self.query_row=True
+
+    def row_ready(self,clock,wall):
+        if (self.row_received_wall is None or not 0<=wall-self.row_received_wall<=.65
+                or not 0<=clock-self.row_received_clock<=650000):
+            self.monitor._fail('yaw allocation query snapshot expired/missing');return False
+        return True
 
     def validate_proof(self,proof):
         super().validate_proof(proof)

@@ -21,11 +21,21 @@ from .transport import LoopbackTransport,load_mavlink,sensor_messages
 from .diagnostics import (SimClock,CommandGate,require_memory,require_startup_memory,available_memory,
                           rss_bytes,own_peak_rss_bytes,sha256,atomic_json)
 from .closed_loop import OffboardLink,estimator_ready,check_envelope,assess_hover
+from .query_scheduler import ConsoleArchive,ConsoleService
 
 ROOT=Path(__file__).resolve().parents[1]
 MODEL=ROOT/"models/mine_uav_dynamics_v2.xml"
 CONFIG=ROOT/"models/rotor_config.json"
 PX4_COMMIT="8f9b91b2bdd3a65952601a084c3aa35e96fee59d"
+
+def streaming_runtime_identity():
+    return {name:sha256(Path(__file__).with_name(name)) for name in
+        ('simulation_runner.py','query_scheduler.py','streaming_diagnostics.py','telemetry_freshness.py',
+         'yaw_telemetry_runner.py','allocation_runner.py','transport.py','yaw_validation.py')}
+
+def validate_streaming_proof(proof,identity):
+    if proof.get('streaming_runtime_hashes')!=identity:
+        raise ValueError('new matching disarmed proof required for changed streaming runtime; offline tests are not flight evidence')
 
 def validate_model(model):
     if abs(model.opt.timestep-.002)>1e-12 or model.nq!=7 or model.nv!=6 or model.nu!=4:
@@ -34,6 +44,12 @@ def validate_model(model):
 
 def safe_stop(data):
     data.ctrl[:]=0
+
+def send_sensor_bounded(wire,msg,deadline):
+    remaining=deadline-time.monotonic()
+    if remaining<=0:raise TimeoutError('sensor send after absolute safety deadline')
+    wire.send(msg,timeout=min(remaining,.008))
+    if time.monotonic()>deadline:raise TimeoutError('sensor send crossed absolute safety deadline')
 
 def receive_current_actuator(wire,timestamp,lockstep,deadline,service=None,deadline_provider=None):
     """Bootstrap may discard old outputs, but never renew its receive budget.
@@ -119,6 +135,8 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                 and estimator_ready(proof.get("px4_console","")) and seconds>=22):
             raise ValueError("flight requires successful matching disarmed smoke + estimator evidence, duration22..30s")
         if phase2:phase2.validate_proof(proof)
+        if phase2 is not None and hasattr(phase2,'on_console_chunk'):
+            validate_streaming_proof(proof,streaming_runtime_identity())
     result={"complete":False,"kind":"bounded_offboard_hover" if hover_proof else "disarmed_communication_smoke","px4":identity,
             "mujoco_version":mujoco.__version__,"python":os.sys.version,"history_hashes_before":history,
             "initial_qpos":initial_qpos,"px4_environment":px4_environment(a),"simulator_port":4560,
@@ -127,11 +145,17 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
             "workers":1,"flight_command_sent":False,"records":[],"exception":None}
     if phase2:
         result["phase2"]=phase2.metadata()
+        if hasattr(phase2,'on_console_chunk'):result['streaming_runtime_hashes']=streaming_runtime_identity()
         if hover_proof:result["kind"]="bounded_yaw_validation"
     proc=None;master=None;offboard=None;console=[];wall_start=time.monotonic();cpu_start=time.process_time()
+    streaming=phase2 is not None and hasattr(phase2,'on_console_chunk')
+    archive=ConsoleArchive(runtime/'px4_console.bin') if streaming else None
+    console_service=None
     peak_px4=0;min_memory=available_memory();stale=0;intervals=[];first_actuator_at=None
     def read_console():
         if master is None:return
+        if console_service is not None:
+            console_service.drain(clock.time_usec,time.monotonic()-wall_start);return
         while select.select([master],[],[],0)[0]:
             try:chunk=os.read(master,65536)
             except OSError:break
@@ -139,9 +163,18 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
             console.append(chunk.decode("utf-8",errors="replace"))
         if phase2 and hasattr(phase2,"on_console"):
             phase2.on_console("".join(console),clock.time_usec,time.monotonic()-wall_start)
+    def console_text():return archive.recent if streaming else ''.join(console)
+    def read_chunk():
+        if not select.select([master],[],[],0)[0]:return ''
+        try:return os.read(master,4096)
+        except BlockingIOError:return ''
+    def write_diagnostic(data):
+        if streaming:return console_service.diagnostic(data,time.monotonic()-wall_start)
+        os.write(master,data);return True
     def service_telemetry():
-        read_console()
-        phase2.before_step(d,clock.time_usec,"".join(console),wall=time.monotonic()-wall_start)
+        if streaming:console_service.service(clock.time_usec,time.monotonic()-wall_start)
+        else:read_console()
+        phase2.before_step(d,clock.time_usec,console_text(),wall=time.monotonic()-wall_start)
     try:
         with LoopbackTransport(timeout=5.,mavlink=mv) as wire:
             env=os.environ.copy()
@@ -153,6 +186,10 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
             proc=subprocess.Popen([identity["binary"],identity["rootfs"],"-w",str(runtime),"-i","0"],
                    cwd=runtime,env=env,stdin=slave,stdout=slave,stderr=slave,start_new_session=True)
             os.close(slave);wire.accept();wire.receive_until("HEARTBEAT")
+            if streaming:
+                os.set_blocking(master,False)
+                console_service=ConsoleService(phase2,archive,read_chunk,lambda data:os.write(master,data))
+                console_service.wall_now=lambda:time.monotonic()-wall_start
             if hover_proof:offboard=OffboardLink(mv)
             bootstrap_deadline=time.monotonic()+10
             lockstep=False;last_log=-1;requested=False;flight_requested=False;mode_requested=False;last_setpoint=-1;last_heartbeat=-1;last_query=-1
@@ -161,11 +198,10 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                 if proc.poll() is not None:raise ConnectionError("owned PX4 exited")
                 sample=sensors.sample(d,clock.time_usec)
                 if phase2 and hasattr(phase2,"on_console"):
-                    read_console()
-                    phase2.before_step(d,clock.time_usec,"".join(console),wall=time.monotonic()-wall_start)
+                    service_telemetry()
                 if offboard:
                     if phase2 and not hasattr(phase2,"on_console"):
-                        read_console();phase2.before_step(d,clock.time_usec,"".join(console))
+                        read_console();phase2.before_step(d,clock.time_usec,console_text())
                     if int(d.time*20)>last_setpoint:
                         last_setpoint=int(d.time*20)
                         if phase2:phase2.setpoint(offboard,clock.time_usec)
@@ -175,12 +211,15 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                     offboard.poll()
                     if d.time>=10 and not mode_requested:
                         read_console()
-                        if not estimator_ready("".join(console)):raise ValueError("current estimator/preflight gate failed; no arming")
+                        if not estimator_ready(console_text()):raise ValueError("current estimator/preflight gate failed; no arming")
                         offboard.command(mv.MAV_CMD_DO_SET_MODE,1,6);mode_requested=True
                     if d.time>=11 and not flight_requested:
                         offboard.command(mv.MAV_CMD_COMPONENT_ARM_DISARM,1);flight_requested=True
                         result["flight_command_sent"]=True;result["arm_request_at_s"]=float(d.time)
-                for msg in sensor_messages(sample,mv,include_gps=(clock.time_usec-1000000)%100000==0):wire.send(msg)
+                for msg in sensor_messages(sample,mv,include_gps=(clock.time_usec-1000000)%100000==0):
+                    if streaming:
+                        send_sensor_bounded(wire,msg,min(time.monotonic()+.008,wall_start+phase2.monitor.next_wall_deadline()))
+                    else:wire.send(msg)
                 try:
                     # Startup freewheeling only until the first PX4 output.
                     deadline=min(time.monotonic()+(getattr(phase2,"actuator_watchdog_s",5.) if lockstep else .002),
@@ -223,17 +262,21 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                     if phase2 and hasattr(phase2,"last_decision"):record["telemetry_gate"]=phase2.last_decision
                     result["records"].append(record)
                     read_console()
-                if phase2 and (offboard or hasattr(phase2,"query_requested")) and d.time>=6 and int(d.time*2)>last_query:
+                if not streaming and phase2 and (offboard or hasattr(phase2,"query_requested")) and d.time>=6 and int(d.time*2)>last_query:
                     last_query=int(d.time*2)
                     if hasattr(phase2,"query_requested"):
                         read_console();phase2.query_requested(clock.time_usec,time.monotonic()-wall_start,"".join(console))
                     os.write(master,phase2.queries().encode())
                 if d.time>=(8 if offboard else seconds-3) and not requested:
                     commands="ver all\nsimulator_mavlink status\nekf2 status\nlistener sensor_combined 1\nlistener vehicle_local_position 1\nlistener vehicle_status 1\nlistener estimator_status_flags 1\nlistener actuator_outputs_sim 1\nlistener vehicle_air_data 1\nlistener vehicle_magnetometer 1\nparam show SENS_IMU_MODE\nparam show EKF2_MULTI_IMU\n"
-                    os.write(master,commands.encode());requested=True
+                    # Safety topics are already queried through the single-flight
+                    # service; avoid interleaved duplicate safety listener batches.
+                    if streaming:
+                        commands=commands.replace('listener vehicle_local_position 1\n','').replace('listener vehicle_status 1\n','').replace('listener estimator_status_flags 1\n','')
+                    if write_diagnostic(commands.encode()):requested=True
                 if offboard and d.time>=seconds-3 and requested is True:
-                    os.write(master,b"ekf2 status\nlistener vehicle_status 1\nlistener vehicle_local_position 1\nlistener vehicle_attitude 1\nlistener actuator_outputs_sim 1\n")
-                    requested="final"
+                    commands=b"ekf2 status\nlistener vehicle_attitude 1\nlistener actuator_outputs_sim 1\n" if streaming else b"ekf2 status\nlistener vehicle_status 1\nlistener vehicle_local_position 1\nlistener vehicle_attitude 1\nlistener actuator_outputs_sim 1\n"
+                    if write_diagnostic(commands):requested="final"
                 # Approximately real-time, with lockstep slowing rather than skipping.
                 delay=wall_start+float(d.time)-time.monotonic()
                 if delay>0:time.sleep(min(delay,.004))
@@ -244,6 +287,7 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
     except Exception as e:
         result["exception"]={"type":type(e).__name__,"message":str(e),"traceback":traceback.format_exc()}
     finally:
+        if console_service is not None:console_service.monitoring=False # archival only after control ends
         result["final_physical_state"]={"time_s":float(d.time),"qpos":d.qpos.tolist(),"qvel":d.qvel.tolist(),"ctrl":d.ctrl.tolist()}
         if offboard:
             result["command_acks"]=offboard.acks
@@ -252,19 +296,26 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
             offboard.close()
         safe_stop(d)
         if proc is not None:
-            read_console()
+            try:read_console()
+            except (OSError,ValueError):pass # never prevent zero/cleanup on failed telemetry
             if proc.poll() is None:
                 try:os.write(master,b"shutdown\n");proc.wait(timeout=3)
                 except (OSError,subprocess.TimeoutExpired):
                     os.killpg(proc.pid,signal.SIGTERM)
                     try:proc.wait(timeout=3)
                     except subprocess.TimeoutExpired:os.killpg(proc.pid,signal.SIGKILL);proc.wait(timeout=3)
-            read_console();result["px4_exit_code"]=proc.returncode
+            try:read_console()
+            except (OSError,ValueError):pass
+            result["px4_exit_code"]=proc.returncode
         if master is not None:os.close(master)
         result.update(wall_seconds=time.monotonic()-wall_start,bridge_cpu_seconds=time.process_time()-cpu_start,
                       bridge_peak_rss_bytes=own_peak_rss_bytes(),px4_sampled_peak_rss_bytes=peak_px4,
                       system_min_available_bytes=min_memory,zero_control_on_stop=d.ctrl.tolist(),
-                      px4_console="".join(console))
+                      px4_console=archive.read_final() if streaming else "".join(console))
+        if archive is not None:
+            result['console_archive']={'total_chars':archive.total_chars,'recent_limit_chars':archive.RECENT_LIMIT,
+                'total_bytes':archive.total_bytes,'lifetime_limit_bytes':archive.TOTAL_LIMIT,'path':'px4_console.bin'}
+            archive.close()
         result["history_hashes_after"]={"model_xml":sha256(MODEL),"rotor_config":sha256(CONFIG),"rotor_actuators":sha256(ROOT/"models/rotor_actuators.xml")}
         result["history_unchanged"]=result["history_hashes_after"]==history
         if phase2:result["phase2"]=phase2.metadata()
