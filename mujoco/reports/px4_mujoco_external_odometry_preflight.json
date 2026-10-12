@@ -1,0 +1,94 @@
+{
+  "phase": "PX4-MuJoCo Phase 3A External Odometry Interface Preflight",
+  "date": "2026-10-12",
+  "branch": "feat/px4-mujoco-external-odom-preflight",
+  "base_commit": "fb3c82ea3a7fdb8b7becf1b0226a9b0b3a3462b0",
+  "scope": "source audit, offline adapter/tests and interface design only; no SITL, fusion, arming or flight",
+  "identities": {
+    "isolated_px4_source_commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+    "isolated_px4_binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+    "mujoco_version": "3.14.0",
+    "mujoco_model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+    "phase2f_ulog_sha256": "a3bf79d84d4548eed3714f7f7ac45f1f73992aafad6bdafb6cd8dfed408fb754"
+  },
+  "phase2f_logged_parameters": {
+    "EKF2_EV_CTRL": 0,
+    "EKF2_HGT_REF": 1,
+    "EKF2_GPS_CTRL": 7,
+    "EKF2_BARO_CTRL": 1,
+    "EKF2_EV_QMIN": 0,
+    "EKF2_EV_DELAY": 0.0,
+    "EKF2_EV_NOISE_MD": 0
+  },
+  "interface": {
+    "wire": "MAVLink2 ODOMETRY over existing simulator TCP link, offline encoded only",
+    "px4_receive_source": "src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp:862-1064",
+    "uorb_topic": "vehicle_visual_odometry",
+    "ekf_subscriber": "src/modules/ekf2/EKF2.hpp:341",
+    "frame_id": "MAV_FRAME_LOCAL_NED (1)",
+    "child_frame_id": "MAV_FRAME_BODY_FRD (12)",
+    "estimator_type": "MAV_ESTIMATOR_TYPE_UNKNOWN (0): simulated ground truth; not claimed VIO",
+    "time_usec": "MuJoCo sample capture time; simulator receiver currently ignores it and sets PX4 receive time as timestamp_sample",
+    "plan_hz": 50,
+    "bridge_max_sample_age_usec": 100000,
+    "bridge_max_source_gap_usec_exclusive": 200000,
+    "covariance": "Full 6x6 transformed and packed upper triangle; pinned PX4 uses only linear position, attitude and velocity diagonals",
+    "reset_counter": "Explicit event, increment modulo 256",
+    "quality": "Explicit synthetic source metadata; current EKF2_EV_QMIN=0 disables threshold"
+  },
+  "source_paths": {
+    "receiver": "src/modules/simulation/simulator_mavlink/SimulatorMavlink.cpp:862-1064",
+    "normal_mavlink_receiver_time_contrast": "src/modules/mavlink/mavlink_receiver.cpp:1525-1533",
+    "ekf_adapter": "src/modules/ekf2/EKF2.cpp:2399-2537",
+    "ekf_ev_control": "src/modules/ekf2/EKF/aid_sources/external_vision/ev_control.cpp:42-112",
+    "ev_parameters": "src/modules/ekf2/params_external_vision.yaml:5-52",
+    "gps_parameters": "src/modules/ekf2/params_gnss.yaml:5-19",
+    "height_reference": "src/modules/ekf2/module.yaml:87-108",
+    "status_and_aids": "src/modules/ekf2/EKF2.cpp:1139-1149,2087-2129",
+    "existing_gnss_safety_dependency": "mujoco/px4_bridge/telemetry_freshness.py:39,83; yaw_validation.py:64"
+  },
+  "acceptance": {
+    "pinned_source_and_binary_identity_checked": "PASS",
+    "px4_odometry_route_identified": "PASS",
+    "frame_and_wire_offline_tests": "PASS",
+    "timestamp_and_invalid_data_offline_tests": "PASS",
+    "inherited_bridge_tests": "PASS",
+    "px4_live_odometry_receipt": "NOT TESTED",
+    "ekf2_external_odometry_fusion": "NOT TESTED",
+    "gnss_removed_from_fusion": "NOT TESTED",
+    "gnss_denied_safety_gate_ready": "BLOCKED",
+    "source_capture_time_preserved_in_simulator_ekf": "FAIL",
+    "flight_or_fast_lio2_integration": "NOT TESTED",
+    "independent_review": "PASS"
+  },
+  "offline_tests": {
+    "inherited": 336,
+    "new": 20,
+    "total_passed": 356,
+    "failed": 0,
+    "existing_runtime_warnings": 2,
+    "sitl_runs": 0
+  },
+  "resources": {
+    "related_suite_peak_rss_kib": 1033652,
+    "related_suite_elapsed_seconds": 9.94,
+    "sitl_instances_started": 0,
+    "historical_untracked_files_in_original_checkout": 87,
+    "oom_observed_in_owned_commands": false
+  },
+  "independent_review": {
+    "critical": 0,
+    "important": 0,
+    "minor": 1,
+    "minor_limitation": "Covariance symmetry uses absolute 1e-10 tolerance; at tiny scale it can admit relative asymmetry. Pinned PX4 ignores off-diagonal entries; improve before real sensor covariance use.",
+    "independent_bridge_tests_passed": 356,
+    "sitl_runs": 0
+  },
+  "risks": [
+    "SimulatorMavlink stamps odometry with PX4 receipt time, so delayed source measurement timing cannot be faithfully represented yet",
+    "Current EV_CTRL=0; current GNSS aiding/height reference remain enabled",
+    "Current flight safety telemetry requires GNSS position, so GNSS-denied flight is blocked pending separately reviewed gate redesign",
+    "Covariance, quality, sensor calibration, transport latency and FAST-LIO2 reset semantics have no live validation"
+  ],
+  "next_stage": "Separately authorize a disarmed SITL ODOMETRY receipt/fusion and timestamp-path validation while GNSS remains available; do not fly or remove GNSS until evidence and safety-gate changes pass review"
+}

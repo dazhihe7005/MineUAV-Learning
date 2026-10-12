@@ -947,3 +947,21 @@ Conclusion: PASS for the restricted single-run PX4→allocator→four motors→M
 Limitations: one nominal positive yaw step; no negative yaw, disturbance, repeatability, real hardware, motor/ESC lag calibration or hard-real-time guarantee. PX4 torque requests are normalized and distinct from model-derived physical Nm. Query sampling may miss brief between-query transients. Whole-repository CAD ABI issue remains unrelated and unmodified.
 
 Next: Only recommend separately authorizing a Phase3 external-odometry interface preflight after review of this evidence. Not executed.
+
+## 2026-10-12 — PX4–MuJoCo External Odometry Interface Preflight Phase 3A
+
+Branch: `feat/px4-mujoco-external-odom-preflight`; base `fb3c82ea3a7fdb8b7becf1b0226a9b0b3a3462b0`.
+
+Research Question: What interface and safety evidence would be required to move MuJoCo truth-derived odometry through this exact PX4 SITL build toward EKF2, before reducing GNSS reliance?
+
+Setup: Source/ULog audit and isolated offline ODOMETRY adapter only. No SITL process, flight, arming, PX4 parameter/binary edit, physics change or model training. Pinned PX4 source `142c24cffb`, binary SHA256 `2f6bbc24…`, MuJoCo 3.14.0. Offline message: LOCAL_NED pose, BODY_FRD twist, full transformed covariance, explicit reset/quality, source-time monotonicity/freshness gate. Existing Bridge runtime remains unchanged.
+
+Key Results: Pinned simulator receiver publishes accepted ODOMETRY to `vehicle_visual_odometry`, EKF2 can consume it, but simulator path replaces MAVLink sample time with PX4 receive time; ordinary MAVLink receiver instead syncs `time_usec`. Phase 2F ULog had `EKF2_EV_CTRL=0`, `EKF2_GPS_CTRL=7`, `EKF2_HGT_REF=1`: no historical EV fusion claim. Existing safety monitor requires GNSS position. Offline MAVLink/frame/covariance/timestamp/reset/source-indicator/float32 range and strict EKF gap tests added; 336 inherited + 20 new = 356 related Bridge tests passed, 0 failed, 2 inherited nonfatal invalid-angle warnings. Zero new SITL runs. No raw flight artifacts changed.
+
+Conclusion: Offline interface preflight **PASS**; live PX4 receipt, actual EKF fusion and GNSS denial **NOT TESTED**. Source-time loss and GNSS-dependent safety gating **BLOCK** immediate latency-aware or GNSS-denied flight claims. Detailed evidence and staged verification design: `docs/PX4_MUJOCO_EXTERNAL_ODOMETRY_PREFLIGHT.md`; machine-readable report: `mujoco/reports/px4_mujoco_external_odometry_preflight.json`.
+
+Independent review: 0 Critical / 0 Important / 1 nonblocking Minor (absolute covariance symmetry tolerance at extremely small scale). Reviewer independently reran 356 related tests and checked pinned PX4/uORB source paths and protected hashes; no SITL launch.
+
+Limitations: Synthetic ground-truth odometry is not FAST-LIO2; quality/covariance not sensor-calibrated; no time-sync or delay verification inside PX4, no live messages or controlled flight in this phase. Offline tests do not establish a real estimator or safety outcome.
+
+Next: Separately authorize a disarmed ODOMETRY receipt/fusion and timestamp-path test with GNSS retained, before any GNSS-denied maneuver. Not executed.
