@@ -902,3 +902,26 @@ Conclusion: PASS for scoped offline bounded parsing/scheduling and final indepen
 Limitations: Synthetic timing does not reconstruct missing PTY boundaries/host scheduling; no live deadline compliance or hard-real-time guarantee; native console has no authenticated allocation publication timestamp; current pinned log schemas only, unseen formats unverified; repository-wide CAD ABI remains blocked; no new flight or physical deployment evidence.
 
 Next: Only recommend separately authorizing a new matching disarmed SITL communication check before considering any bounded yaw flight. Not executed; no automatic flight, Phase3, ROS, MID360S or FAST-LIO2.
+
+## 2026-10-12 — PX4–MuJoCo Disarmed Runtime Integration Phase2E
+
+Branch: feat/px4-mujoco-disarmed-verification
+Base: feat/px4-mujoco-query-scheduling-fix / c9174292e3e75cfab43706bc63b5b53b689a136c
+
+Research Question: Does the Phase2D Bridge maintain real PX4 SITL + MuJoCo communication, bounded diagnostics, and fail-closed safety queries through one complete16s disarmed run?
+
+Setup: One new empty runtime, one isolated verified PX4 binary2f6bbc24…, one MuJoCo3.14.0 instance, 500Hz physics/250Hz sensors. `allocation_runner --mode disarmed`, no smoke proof, OffboardLink, ARM, takeoff or yaw step. Existing150ms response/250ms actuator/650ms service limits, physical model, motor mapping, magnetic reference and protected models unchanged. Added bounded passive timing instrumentation and a strict offline assessor before the sole run.
+
+Key Results:
+- Complete16.000s simulation in16.002s Bridge wall time;4000HIL_SENSOR/160HIL_GPS sent,3986HIL_ACTUATOR_CONTROLS received.20/20 safety queries and20/20 actual allocator yaw rows complete; no monitor fault, watchdog or exception; PX4 exit0; all801 recorded motor vectors and shutdown controls zero. The Bridge sent no command message. PX4→Bridge received one COMMAND_LONG whose payload was not logged.
+- Live query start intervals P50/P95/P99/max500.000/500.068/500.093/500.099ms. Query response P50/P95/P99/max3.140/4.837/4.884/4.896ms, well inside150ms. Actuator wall intervals max6.078ms, below250ms. First/last ten query means2.60/3.80ms: some rise, no bound approach in this16s observation. No scheduled query accumulation.
+- 188 live parse+validation callbacks P50/P95/P99/max0.0967/0.453/0.570/0.625ms. Parser peak1,837chars; recent console cap65,536chars; raw archive267,090bytes under16MiB; no measurement truncation. Phase2D offline2.838µs incremental fixture is a different workload and not equated to live callback latency. Phase2C active-run query interval drift and early stop were absent from this *disarmed* session only.
+- Exact raw summary SHA2562dad70007c79d0753bed55eb8d9845f0e30878eb8f470dc0f704fe3245b11407, console SHA890d131c…, ULog SHAf8883269… kept local. Runtime hashes included newly executed measurement module and matched after the run; isolated PX4 binary, physical model, rotor config, historical neural models and original PX4 installation unchanged. Original checkout87 historical untracked files preserved.
+- Related Bridge tests: original289 passed before run; RED→GREEN new evidence/identity/clock/cleanup cases. Fresh final related suite321 passed, zero skipped (one existing runtime warning). Independent review found a truncated-query coverage flaw in the offline assessor, reproduced it RED and fixed it GREEN. Final independent re-review:0Critical/0Important/0Minor; scoped commit approved. Known unrelated CAD NumPy/SciPy ABI collection failure was not modified or re-run.
+- One worker/no OOM observed; Bridge peak RSS772816896bytes, sampledPX4 RSS9887744bytes, system minimum MemAvailable11145252864bytes, swap0; CPU Bridge1.685s/PX4sampled1.32s. PX4 CPU/RSS peaks between 50Hz samples are unobservable.
+
+Conclusion: PASS for the scoped real disarmed runtime integration. Query timeout did not recur; actual yaw allocation row remains valid. Communication prerequisites for a separately authorized restricted yaw test are met. Final in-flight EKF alignment, yaw response and hover remain NOT TESTED; this result does not authorize or verify Phase3.
+
+Limitations: Single16s run, no active flight path, no long-duration stability or hard-real-time guarantee, no logged payload for one incoming PX4 COMMAND_LONG. Console includes a nonfatal `SIM_GZ_EN` parameter-not-found line and logger capacity warnings. No hardware connection. Raw ULog/console/trace remain local-only.
+
+Next: One separately authorized restricted yaw validation using the new matching disarmed proof, with in-flight EKF and safety gates intact. Not executed in Phase2E.

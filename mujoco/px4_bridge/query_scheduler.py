@@ -1,7 +1,9 @@
 """Single-flight dual-clock query service and bounded nonblocking console I/O."""
 import math
 import codecs
+import time
 from pathlib import Path
+from .runtime_measurements import RuntimeMeasurements
 
 
 class BoundedQueryScheduler:
@@ -91,6 +93,7 @@ class ConsoleService:
         self.scheduler=BoundedQueryScheduler(protocol);self.writer=BoundedConsoleWriter()
         self.wall_now=None;self.fallback_wall=0.;self.monitoring=True
         self.decoder=codecs.getincrementaldecoder('utf-8')(errors='strict');self.fragment_since=None
+        self.measurements=RuntimeMeasurements()
         protocol.wall_now=lambda:self.now()
     def now(self):return self.wall_now() if self.wall_now is not None else self.fallback_wall
     def check_fragment_deadline(self,clock):
@@ -106,10 +109,12 @@ class ConsoleService:
                 if self.monitoring:
                     self.protocol.console_backlog_pending=False
                     self.protocol.complete_query_if_ready(clock,self.now())
+                    self.measurements.completion(self.protocol)
                 return not self.protocol.transport_pending # complete byte boundary as well as empty PTY
             if len(chunk)>4096:raise ValueError('console read slice bound exceeded')
             received_wall=self.now()
             self.archive.append(chunk)
+            self.measurements.recent_peak_chars=max(self.measurements.recent_peak_chars,len(self.archive.recent))
             if self.monitoring:
                 if not self.check_fragment_deadline(clock):return False
                 # A complete record is not proof that subsequent queued data
@@ -124,20 +129,30 @@ class ConsoleService:
                     if self.fragment_since is None:self.fragment_since=(clock,received_wall)
                     if not self.check_fragment_deadline(clock):return False
                 else:self.fragment_since=None
+                parse_start=time.perf_counter()
                 self.protocol.on_console_chunk(text,clock,self.now())
+                self.measurements.chunk(clock,received_wall,len(chunk),time.perf_counter()-parse_start)
         return False
     def service(self,clock,wall):
+        service_start=time.perf_counter()
         drained=self.drain(clock,wall)
         try:
             self.writer.flush(self.write,self.now())
             self.scheduler.service(clock,self.now(),lambda data:self.writer.enqueue(data,self.now()),dispatch_ready=drained)
+            self.measurements.write_peak_bytes=max(self.measurements.write_peak_bytes,self.writer.pending_bytes)
             self.writer.flush(self.write,self.now())
         except (OSError,ValueError,TimeoutError) as error:
             self.protocol.monitor._fail('bounded console service: '+str(error))
+        finally:
+            self.measurements.sample('console_service_seconds',time.perf_counter()-service_start)
+            self.measurements.pending_query_max=max(self.measurements.pending_query_max,int(self.protocol.monitor.query is not None))
+            self.measurements.write_peak_bytes=max(self.measurements.write_peak_bytes,self.writer.pending_bytes)
     def diagnostic(self,data,wall):
         # Defer, not enqueue: no diagnostic backlog behind safety queries.
         m=self.protocol.monitor
         if m.query is not None or self.writer.pending_bytes:return False
         if self.scheduler.next_wall is not None and self.scheduler.next_wall-wall<.15:return False
-        self.writer.enqueue(data,wall);self.writer.flush(self.write,wall)
+        self.writer.enqueue(data,wall)
+        self.measurements.write_peak_bytes=max(self.measurements.write_peak_bytes,self.writer.pending_bytes)
+        self.writer.flush(self.write,wall)
         return True

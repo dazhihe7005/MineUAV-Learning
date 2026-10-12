@@ -1,0 +1,408 @@
+{
+  "phase": "PX4-MuJoCo Phase2E Disarmed Runtime Integration Verification",
+  "date": "2026-10-12",
+  "branch": "feat/px4-mujoco-disarmed-verification",
+  "base_commit": "c9174292e3e75cfab43706bc63b5b53b689a136c",
+  "experiment": {
+    "authorized_sitl_runs": 1,
+    "armed_runs": 0,
+    "actual_sitl_runs": 1,
+    "mode": "allocation_runner --mode disarmed",
+    "simulation_duration_s": 16.00000000000201,
+    "bridge_wall_duration_s": 16.001637658000163,
+    "physics_hz": 500,
+    "sensor_hz": 250,
+    "workers": 1,
+    "fresh_runtime": true,
+    "no_flight_command": true
+  },
+  "acceptance": {
+    "checks": {
+      "duration": "PASS",
+      "bidirectional_communication": "PASS",
+      "no_arm": "PASS",
+      "zero_motors_on_exit": "PASS",
+      "px4_cleanup": "PASS",
+      "no_safety_fault": "PASS",
+      "history_preserved": "PASS",
+      "new_streaming_runtime": "PASS",
+      "query_count": "PASS",
+      "query_deadlines": "PASS",
+      "allocator_yaw_row": "PASS",
+      "actuator_watchdog": "PASS",
+      "incremental_parser": "PASS",
+      "instrumentation_complete": "PASS",
+      "simulation_boundaries": "PASS"
+    },
+    "overall": "PASS",
+    "query_interval_wall_s": {
+      "n": 19,
+      "mean": 0.5000026770000037,
+      "p50": 0.499999957,
+      "p95": 0.5000680789000853,
+      "p99": 0.5000926661800349,
+      "max": 0.5000988130000223,
+      "min": 0.4999397649999082
+    },
+    "query_response_recomputed_s": {
+      "n": 20,
+      "mean": 0.0031997981999893456,
+      "p50": 0.003140248499903464,
+      "p95": 0.004837427699999353,
+      "p99": 0.004884178340157632,
+      "max": 0.004895866000197202,
+      "min": 0.0017118910000135656
+    },
+    "query_count": 20,
+    "monitor_query_count": 20,
+    "first_failed_checks": []
+  },
+  "status": {
+    "bridge_disarmed_integration": "PASS",
+    "live_queries": "PASS",
+    "allocator_yaw_axis": "PASS",
+    "ekf_final_inflight_alignment": "NOT TESTED",
+    "yaw_flight_control": "NOT TESTED",
+    "next_restricted_yaw_test_communication_prerequisites": "PASS",
+    "phase3_entry": "NOT TESTED"
+  },
+  "px4": {
+    "schema": 1,
+    "base_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+    "commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+    "build": "build/px4_sitl_mineuav_yaw",
+    "binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+    "build_version_header_sha256": "cc701c40eaf4840a56ad4d6f3d45290226c922931b6038afd6c1f12ed80bf5c0",
+    "patch_sha256": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa",
+    "rootfs_sha256": "7220bda770b2a41aa3f49873777e0eaa5b0a5fa5c91934895b39d8a682381881",
+    "boardconfig_sha256": "045ad6c4dae3ba1d24570a21a4a9fe01cc3215246f1d11d559d67b99bbc2f81d",
+    "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb",
+    "tag": "v1.18.0-beta1-580-g142c24cffb",
+    "custom_sitl": true,
+    "binary": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/bin/px4",
+    "rootfs": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/etc",
+    "manifest_sha256": "58a562cf99340786c6a58bd57040ebca21ea9437b213134fadca7f4fc6563375"
+  },
+  "mujoco_version": "3.14.0",
+  "raw_evidence": {
+    "summary_path": "mujoco/reports/px4_disarmed_verification_parts/disarmed_01/smoke_summary.json",
+    "summary_sha256": "2dad70007c79d0753bed55eb8d9845f0e30878eb8f470dc0f704fe3245b11407",
+    "console_path": "mujoco/reports/px4_disarmed_verification_parts/disarmed_01/px4_console.bin",
+    "console_sha256": "890d131c2a892637d413d290d704cb56b4e8d2eb1d64c89ad5d78d59d06b5326",
+    "ulog_path": "mujoco/reports/px4_disarmed_verification_parts/disarmed_01/log/2026-10-12/07_13_46.ulg",
+    "ulog_sha256": "f8883269556ad1b3d30bd163295424eec610f5f996574ed3216e2b7c44153683",
+    "runtime_source_sha256": {
+      "simulation_runner.py": "3de06973e268b562201bcd64d895112f25e15e9d4438e4e84210bfbcd46f0069",
+      "query_scheduler.py": "ac34f9616d64fb307cb7b528c28ce5bb817612890bf0cc12c7e202b37ff03d56",
+      "runtime_measurements.py": "a08c9a4a5efee0b0576e938a580bd24a66b5df647e981685d851c0fd76082ef4",
+      "streaming_diagnostics.py": "fe3ebbd65492d6e8127de4306addc606e9453f07b88c7045f34f12984df58fdb",
+      "telemetry_freshness.py": "a33a6f908802ad7be6fdda5d99e6eea64ea65c616da9d0224a8ba9e35ad53bdf",
+      "yaw_telemetry_runner.py": "b9723038a1e26e2949cb7d1d9572b49c5bda4175139e4297b8eba8d6f6489c7f",
+      "allocation_runner.py": "f0acd782ed707b26d91d7b3f1db4bee476238f3f0e587fd7d9e93247b541e259",
+      "transport.py": "c2686821e5d44e9387bdfc6e2a711522a50f44742c706b0fbb0e3f0ed4ed4a1d",
+      "yaw_validation.py": "cabf737a3deeb6bda2652b54e1d75071fa7522ac1ef12d9ba01a031b5be96f78"
+    },
+    "raw_local_only": true
+  },
+  "communications": {
+    "sent": {
+      "HIL_SENSOR": 4000,
+      "HIL_GPS": 160
+    },
+    "received": {
+      "COMMAND_LONG": 1,
+      "HEARTBEAT": 1,
+      "HIL_ACTUATOR_CONTROLS": 3986
+    },
+    "stale_bootstrap_messages_discarded": 0,
+    "first_actuator_at_sim_s": 0.056000000000000036,
+    "actuator_interval_sim_usec": {
+      "min": 4000,
+      "max": 4000,
+      "median": 4000.0
+    },
+    "px4_source_publications": {
+      "vehicle_local_position": {
+        "receipts": 20,
+        "distinct_publications": 20,
+        "first_publication_usec": 6996000.0,
+        "last_publication_usec": 16500000.0,
+        "strictly_nondecreasing": true
+      },
+      "estimator_status_flags": {
+        "receipts": 20,
+        "distinct_publications": 11,
+        "first_publication_usec": 6244000.0,
+        "last_publication_usec": 16244000.0,
+        "strictly_nondecreasing": true
+      },
+      "vehicle_status": {
+        "receipts": 20,
+        "distinct_publications": 20,
+        "first_publication_usec": 6716000.0,
+        "last_publication_usec": 16292000.0,
+        "strictly_nondecreasing": true
+      }
+    },
+    "console": {
+      "console_chars": 267090,
+      "topic_record_counts": {
+        "vehicle_local_position": 20,
+        "estimator_status_flags": 20,
+        "vehicle_status": 20
+      },
+      "allocator_row_records": 20,
+      "allocator_row_all_match": true,
+      "sensor_combined_listener_seen": true,
+      "vehicle_magnetometer_listener_seen": true,
+      "px4_console_warnings": {
+        "SIM_GZ_EN_parameter_not_found": true,
+        "logger_subscription_capacity": true
+      },
+      "parser_replay_peak_chars": 1837
+    },
+    "incoming_px4_command_long_note": "One COMMAND_LONG was received from PX4 by the Bridge; Bridge sent only HIL_SENSOR and HIL_GPS. Incoming message payload was not logged."
+  },
+  "live_timing": {
+    "query_response_wall_s": {
+      "n": 20,
+      "mean": 0.0031997981999893456,
+      "p50": 0.003140248499903464,
+      "p95": 0.004837427699999353,
+      "p99": 0.004884178340157632,
+      "max": 0.004895866000197202
+    },
+    "query_start_interval_wall_s": {
+      "n": 19,
+      "mean": 0.5000026770000037,
+      "p50": 0.499999957,
+      "p95": 0.5000680789000853,
+      "p99": 0.5000926661800349,
+      "max": 0.5000988130000223,
+      "min": 0.4999397649999082
+    },
+    "actuator_receipt_interval_wall_s": {
+      "n": 3985,
+      "mean": 0.003967085396988703,
+      "p50": 0.0039995380000164005,
+      "p95": 0.004100471799938532,
+      "p99": 0.004263019919908401,
+      "max": 0.006078285000057804
+    },
+    "incremental_parse_and_validation_s": {
+      "n": 188,
+      "mean": 0.00016526403723499708,
+      "p50": 9.671099996921839e-05,
+      "p95": 0.0004530264999971224,
+      "p99": 0.0005704309100428871,
+      "max": 0.0006254279999211576
+    },
+    "console_service_s": {
+      "n": 12000,
+      "mean": 1.4472648667435805e-05,
+      "p50": 1.102000010178017e-05,
+      "p95": 1.879499995993683e-05,
+      "p99": 2.8050109929154288e-05,
+      "max": 0.0016316880000886158
+    },
+    "scheduler_max_lateness_s": 9.939200003827864e-05,
+    "scheduled_query_starts": 20,
+    "completed_queries": 20,
+    "row_valid_at_completions": 20,
+    "max_pending_queries": 1,
+    "monitor_fault": null,
+    "recording_dropped": {},
+    "hard_deadlines_s": {
+      "query_response": 0.15,
+      "actuator_watchdog": 0.25,
+      "query_service": 0.65
+    },
+    "parse_semantics": "host wall time; parse_validate includes streaming parse + safety validation, excludes raw archive I/O",
+    "query_latency_first_half_mean_s": 0.0026010949999999864,
+    "query_latency_second_half_mean_s": 0.0037985013999787044
+  },
+  "bounded_storage": {
+    "parser_processed_chars": 266958,
+    "parser_peak_buffer_chars": 1837,
+    "recent_console_peak_chars": 65536,
+    "console_archive_bytes": 267090,
+    "console_archive_limit_bytes": 16777216,
+    "max_queued_console_write_bytes": 215,
+    "measurement_sample_limit": 65536,
+    "measurement_query_limit": 128
+  },
+  "safety": {
+    "flight_command_sent": false,
+    "four_motor_ctrl_zero_on_exit": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "all_recorded_motor_ctrl_zero": true,
+    "px4_exit_code": 0,
+    "exception": null,
+    "last_telemetry_decision": {
+      "safe_stop": false,
+      "allow_new_maneuver": false,
+      "reason": "healthy source + live transport",
+      "query_pending": false,
+      "clock_usec": 16996000,
+      "wall_s": 15.99635933400009,
+      "last_query": [
+        16500000,
+        15.50021203900019
+      ],
+      "last_response": [
+        16504000,
+        15.504743075000079
+      ],
+      "last_actuator": [
+        16992000,
+        15.992488132000062
+      ],
+      "topics": {
+        "vehicle_local_position": {
+          "publication_usec": 16500000.0,
+          "sample_usec": 16500000.0,
+          "received_clock_usec": 16500000,
+          "received_wall_s": 15.501102334000052,
+          "source_age_s": 0.496
+        },
+        "estimator_status_flags": {
+          "publication_usec": 16244000.0,
+          "sample_usec": 16092000.0,
+          "received_clock_usec": 16500000,
+          "received_wall_s": 15.501535053999987,
+          "source_age_s": 0.752
+        },
+        "vehicle_status": {
+          "publication_usec": 16292000.0,
+          "sample_usec": null,
+          "received_clock_usec": 16504000,
+          "received_wall_s": 15.504682492000029,
+          "source_age_s": 0.704
+        }
+      }
+    },
+    "final_physical_state": {
+      "time_s": 16.00000000000201,
+      "qpos": [
+        5.450518925196889e-06,
+        2.925525863274777e-08,
+        0.04989231305797193,
+        0.9999999984834375,
+        -2.9552692438088585e-07,
+        5.5073028148397715e-05,
+        -8.851585782675022e-11
+      ],
+      "qvel": [
+        1.5080494882479042e-13,
+        -1.4952402300526109e-15,
+        -3.4842577168622588e-12,
+        -7.954930507541633e-14,
+        -7.459481649785035e-12,
+        -2.2600035376834518e-15
+      ],
+      "ctrl": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "no_watchdog_or_safety_stop": true
+  },
+  "resources": {
+    "bridge_peak_rss_bytes": 772816896,
+    "px4_sampled_peak_rss_bytes": 9887744,
+    "system_min_available_bytes": 11145252864,
+    "bridge_process_cpu_seconds": 1.685322599,
+    "px4_sampled_cpu_seconds": 1.32,
+    "px4_cpu_sample_count": 801,
+    "external_time_peak_rss_bytes": 772816896,
+    "oom_observed_in_owned_run": false,
+    "swap_changed": false
+  },
+  "historical_comparison": {
+    "phase2c_live_failed_query_service": {
+      "fault": "safety query service stopped",
+      "query_service_deadline_wall_s": 16.085843422999822,
+      "last_actuator_age_s": 0.0020775849998244666,
+      "actuator_deadline_wall_s": 16.333172827999988,
+      "last_five_query_intervals_s": [
+        0.5367805019996013,
+        0.5597352800004955,
+        0.5878630649995102,
+        0.6097442880000017,
+        0.6416366530002051
+      ],
+      "query_interval_s": {
+        "n": 18,
+        "mean": 0.5241822400555773,
+        "p95": 0.6145281427500322,
+        "p99": 0.6362149509501704,
+        "max": 0.6416366530002051,
+        "median": 0.5002223820001745
+      },
+      "step_sent": false,
+      "simulation_stop_s": 15.48400000000184,
+      "wall_end_s": 16.088307784999415,
+      "last_check_wall_s": 16.085250412999812
+    },
+    "phase2d_offline_incremental_265kb_us": {
+      "n": 500,
+      "mean": 2.838212,
+      "p95": 2.8954999999999997,
+      "p99": 5.144839999999886,
+      "max": 24.295,
+      "median": 2.615
+    },
+    "phase2d_offline_legacy_265kb_us": {
+      "n": 500,
+      "mean": 1465.2253739999999,
+      "p95": 1558.20865,
+      "p99": 1988.90596,
+      "max": 2689.474,
+      "median": 1455.8455
+    },
+    "comparison_boundary": "Phase2D microbenchmark used synthetic 94-character deltas; Phase2E live parse+validation includes different chunk sizes and scheduler load. Their latency numbers are not like-for-like."
+  },
+  "preservation": {
+    "history_hashes_before": {
+      "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+      "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+    },
+    "history_hashes_after": {
+      "model_xml": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "rotor_config": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+      "rotor_actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+    },
+    "unchanged": true,
+    "isolated_binary_hash_after": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+    "isolated_binary_unchanged_after": true,
+    "original_px4_binary_sha256": "4f491ce85d6c79fbd5713894112c8911903fcefd1bf45b7da3579cd1812beac4",
+    "original_px4_binary_unchanged": true,
+    "protected_models_sha256": {
+      "mujoco/rl/models/joint_latent_world_model_v3_autonomous_consistency.pt": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+      "mujoco/rl/models/uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "mujoco/rl/models/uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce"
+    },
+    "protected_models_unchanged": true
+  },
+  "limitations": [
+    "Single16s unarmed session; no takeoff, yaw step, or final inflight magnetic alignment.",
+    "QUERY and parse timings are sampled inside the Python Bridge, not PX4 internal profiler measurements.",
+    "PX4 CPU and RSS are sampled at50Hz; between-sample peaks are not observable.",
+    "Incoming PX4 COMMAND_LONG payload was not archived; direction is known from wire counters.",
+    "Console shows SIM_GZ_EN parameter-not-found and logger subscription-capacity warnings; no safety stop occurred.",
+    "Nominal local SITL only; no hard real-time or hardware claim."
+  ],
+  "figures": [
+    "mujoco/reports/figures/px4_disarmed_verification/live_query_response.png",
+    "mujoco/reports/figures/px4_disarmed_verification/live_query_interval.png",
+    "mujoco/reports/figures/px4_disarmed_verification/live_incremental_parse_cost.png",
+    "mujoco/reports/figures/px4_disarmed_verification/live_sim_vs_wall.png"
+  ]
+}

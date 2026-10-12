@@ -22,6 +22,7 @@ from .diagnostics import (SimClock,CommandGate,require_memory,require_startup_me
                           rss_bytes,own_peak_rss_bytes,sha256,atomic_json)
 from .closed_loop import OffboardLink,estimator_ready,check_envelope,assess_hover
 from .query_scheduler import ConsoleArchive,ConsoleService
+from .runtime_measurements import process_cpu_seconds
 
 ROOT=Path(__file__).resolve().parents[1]
 MODEL=ROOT/"models/mine_uav_dynamics_v2.xml"
@@ -30,7 +31,7 @@ PX4_COMMIT="8f9b91b2bdd3a65952601a084c3aa35e96fee59d"
 
 def streaming_runtime_identity():
     return {name:sha256(Path(__file__).with_name(name)) for name in
-        ('simulation_runner.py','query_scheduler.py','streaming_diagnostics.py','telemetry_freshness.py',
+        ('simulation_runner.py','query_scheduler.py','runtime_measurements.py','streaming_diagnostics.py','telemetry_freshness.py',
          'yaw_telemetry_runner.py','allocation_runner.py','transport.py','yaw_validation.py')}
 
 def validate_streaming_proof(proof,identity):
@@ -236,7 +237,9 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                     if armed and not flight_requested:raise ValueError("unexpected armed output")
                     previous=gate.last;gate.accept(msg.time_usec)
                     if phase2 and hasattr(phase2,"on_actuator"):
-                        phase2.on_actuator(msg.time_usec,time.monotonic()-wall_start)
+                        actuator_wall=time.monotonic()-wall_start
+                        phase2.on_actuator(msg.time_usec,actuator_wall)
+                        if console_service is not None:console_service.measurements.actuator(msg.time_usec,actuator_wall)
                     if previous>=0:intervals.append(msg.time_usec-previous)
                     d.ctrl[:]=a.apply(msg.controls,armed)
                     if not lockstep:first_actuator_at=float(d.time)
@@ -255,6 +258,8 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
                 if int(d.time*log_hz)>last_log:
                     last_log=int(d.time*log_hz)
                     require_memory();min_memory=min(min_memory,available_memory());peak_px4=max(peak_px4,rss_bytes(proc.pid))
+                    cpu_sample=process_cpu_seconds(proc.pid)
+                    if console_service is not None:console_service.measurements.process_cpu(cpu_sample)
                     record={"time_s":float(d.time),"clock_usec":clock.time_usec,
                       "position_enu_m":d.qpos[:3].tolist(),"velocity_origin_enu_m_s":d.qvel[:3].tolist(),
                       "quaternion_enu_flu":d.qpos[3:].tolist(),"angular_velocity_flu_rad_s":d.qvel[3:].tolist(),
@@ -295,6 +300,9 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
             except OSError:pass
             offboard.close()
         safe_stop(d)
+        # Preserve counters even when the exception exits the transport context.
+        if 'wire' in locals():result.update(messages_received=dict(wire.counts),messages_sent=dict(wire.sent),
+            stale_bootstrap_messages_discarded=stale)
         if proc is not None:
             try:read_console()
             except (OSError,ValueError):pass # never prevent zero/cleanup on failed telemetry
@@ -316,6 +324,11 @@ def smoke(px4_root,runtime,seconds=12.,pymavlink_search_path=None,hover_proof=No
             result['console_archive']={'total_chars':archive.total_chars,'recent_limit_chars':archive.RECENT_LIMIT,
                 'total_bytes':archive.total_bytes,'lifetime_limit_bytes':archive.TOTAL_LIMIT,'path':'px4_console.bin'}
             archive.close()
+        if console_service is not None:
+            result['runtime_measurements']=console_service.measurements.summary()
+            result['runtime_measurements'].update(parser_processed_chars=phase2.parser.processed_chars,
+                parser_peak_buffer_chars=phase2.parser.peak_buffer_chars,
+                scheduler={'starts':console_service.scheduler.starts,'max_lateness_s':console_service.scheduler.max_lateness_s})
         result["history_hashes_after"]={"model_xml":sha256(MODEL),"rotor_config":sha256(CONFIG),"rotor_actuators":sha256(ROOT/"models/rotor_actuators.xml")}
         result["history_unchanged"]=result["history_hashes_after"]==history
         if phase2:result["phase2"]=phase2.metadata()
