@@ -1023,3 +1023,25 @@ Conclusion: **PASS** for complete GNSS-retained, simulated-truth external-odomet
 Limitations: Single static/settling disarmed run, synthetic covariance/quality,985 retained logs versus1000 sends is not packet-loss measurement. PX4 overwrites source timestamp; exact lockstep-clock correspondence does not measure host physical transport delay or establish FAST-LIO2 time sync. Static local-origin offset retained; no flight authorization proof. Raw ULog/source arrays/private rootfs stay local-only; JSON,10 plots, code/tests/docs are versioned.
 
 Next: Only recommend a separately authorized disarmed GNSS-denied fusion-source verification before any external-odometry flight. Not executed.
+
+## 2026-10-13 — PX4–MuJoCo GNSS-Denied Disarmed EKF2 Fusion Phase 3D
+
+Branch: `feat/px4-mujoco-gnss-denied-disarmed`; base `8468dfac1137fb7f79ded1718c24eaace09df835`.
+
+Research Question: Can cold-start PX4 maintain valid local position/velocity using simulated IMU, magnetometer, barometer and external odometry with no GNSS input from startup?
+
+Setup: Exactly one unarmed SITL attempt; no retry/ARM/Offboard. Approved isolated PX4 binary SHA256 `2f6bbc24…`, source `142c24cffb`, MuJoCo3.14.0 and unchanged7kg model.500Hz physics/250Hz sensors/50Hz COM truth ODOMETRY; HIL_GPS entirely suppressed with an outgoing sensor/odometry-only whitelist. Actual ULog EV_CTRL5/GPS_CTRL0/HGT_REF0/BARO_CTRL1/MAG_TYPE0; no EVyaw. Private27-topic logger/profile0,21 actual topic instances including event; no overflow/dropout/corruption. Frozen protocol `4ae0b280ca9d98ead2cf9da7e9b0536b3068ed7cbeab041ac6807819e45f2296`. Independent disarmed mode preserves original flight gates and150/250/650ms watchdogs; fixed campaign lock prevents alternate-filename retries and no new flight proof is produced.
+
+Key Results: Physical endpoint19.999999999999794s, exactly5000 HIL_SENSOR/0 HIL_GPS/1000 ODOMETRY.984 direct visual-odometry records,20ms maximum gap,40ms terminal age;984 exact logical-clock pairs, maximum position discrepancy3.17e-9m. EVposition984 records/890 accepted, EVvelocity942/all accepted; final3 fusion timestamps20,756,000→20,780,000→20,796,000µs. GNSS pos/vel/height/yaw flags false throughout; all GNSS aids and sensor GPS records absent.975 local records show no global origin; xy/z/vxy/vz valid from first recorded1.1s and at endpoint. Barometer357/337 accepted and magnetometer270/245 accepted with final3 current accepted advancing fusion samples. A–N acceptance PASS.
+
+Negative/Boundary Findings:25 early magnetic innovation rejections at publication0.244–2.084s retained; ground magnetic heading later fuses correctly. Final heading_good_for_control and mag_aligned_in_flight remain false; inflight readiness NOT TESTED. Local position RMSE0.01139m and velocity0.001417m/s describe a static/settling run with retained origin offset, not flight accuracy. True source latency, FAST-LIO2, policy control and GNSS-denied flight remain NOT TESTED.
+
+Safety/Resources:28 queries; P50/P95/P99/max1.965/5.019/5.136/5.154ms; maximum query interval500.065ms, actuator wall gap10.790ms, parser peak1838chars. No fault, no instrumentation drops, no queue beyond1. Zero physical and recorded motor outputs, DISARMED, PX4exit0. Single worker; Bridge735.58MiB peakRSS, PX4 sampled9.38MiB, system minimum8.71GiB available, no observed OOM. Host20.00391s is separate from physical20s maximum.
+
+Verification: Pre-run510 Bridge tests (437 inherited+73 new) and30 Shadow tests PASS; final514 Bridge (437+77) and30 Shadow PASS, inherited warnings only. RED→GREEN covered missing GPS-counter evidence, alternate protocol filename attempts, zero GPS metadata and incomplete safety evidence. Independent pre-review GO after fixes; final independent source/raw/report review GO,0 Critical/Important,77 package tests independently passed and all A–N results recomputed. Reviewer did not independently rerun full514+30 or certify87-file inventory. Operational hashes unchanged after run; all old runtime sources, binary, dynamics,8 checkpoints and old raw evidence preserved. Original87 untracked files preserved; raw run artifacts local-only.
+
+Conclusion: Cold-start GNSS-denied **disarmed local fusion PASS**. This supplies estimator interface evidence, not permission or readiness for flight.
+
+Limitations: One static ground run; ideal/synthetic truth/covariance; PX4 replaces source capture timestamps; no moving-state, delay/dropout or aircraft-control validation. No controller/model retraining or tuning.
+
+Next: Only recommend reviewing a separately authorized GNSS-denied flight-safety and estimator-readiness protocol before any flight. Not executed.

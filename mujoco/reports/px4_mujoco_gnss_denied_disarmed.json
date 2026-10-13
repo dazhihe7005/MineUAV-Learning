@@ -1,0 +1,992 @@
+{
+  "phase": "Phase3D GNSS-Denied Disarmed EKF2 Fusion Verification",
+  "date": "2026-10-13",
+  "branch": "feat/px4-mujoco-gnss-denied-disarmed",
+  "base_commit": "8468dfac1137fb7f79ded1718c24eaace09df835",
+  "overall": "PASS",
+  "status": {
+    "A": "PASS",
+    "B": "PASS",
+    "C": "PASS",
+    "D": "PASS",
+    "E": "PASS",
+    "F": "PASS",
+    "G": "PASS",
+    "H": "PASS",
+    "I": "PASS",
+    "J": "PASS",
+    "K": "PASS",
+    "L": "PASS",
+    "M": "PASS",
+    "N": "PASS"
+  },
+  "status_meaning": {
+    "A": "cold start without GNSS or global origin",
+    "B": "zero HIL_GPS",
+    "C": "actual GPS_CTRL0",
+    "D": "direct visual odometry receipt",
+    "E": "EV position fusion",
+    "F": "EV velocity fusion",
+    "G": "GNSS position/velocity absent",
+    "H": "GNSS height/yaw absent",
+    "I": "local position/velocity valid",
+    "J": "non-GNSS height/heading sources",
+    "K": "safe communication",
+    "L": "disarmed zero motor outputs",
+    "M": "strict20s boundary",
+    "N": "log/runtime identity/exit/history"
+  },
+  "identity": {
+    "protocol_sha256": "4ae0b280ca9d98ead2cf9da7e9b0536b3068ed7cbeab041ac6807819e45f2296",
+    "px4": {
+      "schema": 1,
+      "base_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+      "commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+      "build": "build/px4_sitl_mineuav_yaw",
+      "binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+      "build_version_header_sha256": "cc701c40eaf4840a56ad4d6f3d45290226c922931b6038afd6c1f12ed80bf5c0",
+      "patch_sha256": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa",
+      "rootfs_sha256": "7220bda770b2a41aa3f49873777e0eaa5b0a5fa5c91934895b39d8a682381881",
+      "boardconfig_sha256": "045ad6c4dae3ba1d24570a21a4a9fe01cc3215246f1d11d559d67b99bbc2f81d",
+      "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb",
+      "tag": "v1.18.0-beta1-580-g142c24cffb",
+      "custom_sitl": true,
+      "binary": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/bin/px4",
+      "rootfs": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/etc",
+      "manifest_sha256": "58a562cf99340786c6a58bd57040ebca21ea9437b213134fadca7f4fc6563375"
+    },
+    "mujoco_version": "3.14.0",
+    "runtime_hashes": {
+      "__init__.py": "12ce64c16d3d08e6146034a84d75edbfd08ec0ff6ed2242d2262a996039471c8",
+      "actuator_adapter.py": "99bc0b9768782f2566c77adfa7159c081a0a2828225cf5638f4dec412212985a",
+      "allocation_math.py": "527668a49dc746476becbce8d1c7a1b77439eeaba299507ae69fd9b9c0c7d075",
+      "allocation_runner.py": "f0acd782ed707b26d91d7b3f1db4bee476238f3f0e587fd7d9e93247b541e259",
+      "closed_loop.py": "dc8bf0394adbd757bb9f9951a4bbc3527a0e49da26bf5c7847db541f09563ba0",
+      "compatibility_identity.py": "943bc842ae8e39e9a85990981caf4bf3bfe762247d44cf483ac21cb589be40f9",
+      "diagnostics.py": "633ba6ba4763223cf5c2d59a72d72ea3365356fe78d0af403dc9ddf6fef40220",
+      "external_odometry.py": "5b26fc466c95cccf6d39ab59cb6b495861b72449b752eb2c61b6ccf994e3a907",
+      "frame_conversions.py": "d9ee1d47b3518a16504086b96d413d2e483c5d30ed44755679afed80c592a3da",
+      "logger_configuration.py": "edebe6475d75b063d716eb9364cf92725cb6bc43db120ae7f5f7a72fbac1a619",
+      "magnetic_model.py": "1edc003280d0f403f28ff7f4a8eecb4adc4c49d3aabe4d2919d13734d637550f",
+      "odometry_fusion_runner.py": "8c886776bb1b1d328c0e84883325c995a28a34fc8757bfcbbbf2f52685796957",
+      "odometry_producer.py": "8d1df3292686283e257b88ae1c3af6c2065f2f7a308bf9567997167eb5eca6e0",
+      "odometry_reverification_evidence.py": "e232150a427d646a24875a602bb2a4f8b5d743b7b34efe2d96184978f4c4f83d",
+      "odometry_reverification_runner.py": "29938098c30aff1610735f16f4977dc5bb25cfb24fdef379f1183043ae97c3a6",
+      "query_scheduler.py": "ac34f9616d64fb307cb7b528c28ce5bb817612890bf0cc12c7e202b37ff03d56",
+      "report_disarmed_verification.py": "6fa1f6bfd73a6a6a507fd7d8b0d9b187f990f09855157086a45eda5eb648e4b8",
+      "runtime_measurements.py": "a08c9a4a5efee0b0576e938a580bd24a66b5df647e981685d851c0fd76082ef4",
+      "sensor_adapter.py": "a43c358ea2f3e2b1ce91746c119f10850bd978607e8ce8efd79f97a75a3e7df1",
+      "simulation_runner.py": "3de06973e268b562201bcd64d895112f25e15e9d4438e4e84210bfbcd46f0069",
+      "streaming_diagnostics.py": "fe3ebbd65492d6e8127de4306addc606e9453f07b88c7045f34f12984df58fdb",
+      "telemetry_freshness.py": "a33a6f908802ad7be6fdda5d99e6eea64ea65c616da9d0224a8ba9e35ad53bdf",
+      "transport.py": "c2686821e5d44e9387bdfc6e2a711522a50f44742c706b0fbb0e3f0ed4ed4a1d",
+      "yaw_closed_loop_figures.py": "a98f0dad3fecee684e0c143fb8a905a5efa8ff6e6e5260b0d0d1e8c4ef59a59e",
+      "yaw_runner.py": "0b52be425180fd1cd2719a9be5ddece4a30b39c630af5ef6de8cdb37dda91261",
+      "yaw_telemetry_runner.py": "b9723038a1e26e2949cb7d1d9572b49c5bda4175139e4297b8eba8d6f6489c7f",
+      "yaw_validation.py": "cabf737a3deeb6bda2652b54e1d75071fa7522ac1ef12d9ba01a031b5be96f78",
+      "gnss_denied/__init__.py": "06310995c7c6977de9fa87c4e063e73c2c64c302551512cca5f520b217ad50c0",
+      "gnss_denied/evidence.py": "6329c97f8674bbe1d515d24fa64bed88eaff6b09b2890f93e20c2ee0172f67a5",
+      "gnss_denied/protocol.py": "e533f3200e2f659e762a9808946e6544b090a6826e1ae597cf028b59eef26e0a",
+      "gnss_denied/runner.py": "bc8389718a68a40db284fe965bba5cd340ebea2b923f119affd2a2841e327fe1"
+    },
+    "final_runtime_hashes": {
+      "__init__.py": "12ce64c16d3d08e6146034a84d75edbfd08ec0ff6ed2242d2262a996039471c8",
+      "actuator_adapter.py": "99bc0b9768782f2566c77adfa7159c081a0a2828225cf5638f4dec412212985a",
+      "allocation_math.py": "527668a49dc746476becbce8d1c7a1b77439eeaba299507ae69fd9b9c0c7d075",
+      "allocation_runner.py": "f0acd782ed707b26d91d7b3f1db4bee476238f3f0e587fd7d9e93247b541e259",
+      "closed_loop.py": "dc8bf0394adbd757bb9f9951a4bbc3527a0e49da26bf5c7847db541f09563ba0",
+      "compatibility_identity.py": "943bc842ae8e39e9a85990981caf4bf3bfe762247d44cf483ac21cb589be40f9",
+      "diagnostics.py": "633ba6ba4763223cf5c2d59a72d72ea3365356fe78d0af403dc9ddf6fef40220",
+      "external_odometry.py": "5b26fc466c95cccf6d39ab59cb6b495861b72449b752eb2c61b6ccf994e3a907",
+      "frame_conversions.py": "d9ee1d47b3518a16504086b96d413d2e483c5d30ed44755679afed80c592a3da",
+      "logger_configuration.py": "edebe6475d75b063d716eb9364cf92725cb6bc43db120ae7f5f7a72fbac1a619",
+      "magnetic_model.py": "1edc003280d0f403f28ff7f4a8eecb4adc4c49d3aabe4d2919d13734d637550f",
+      "odometry_fusion_runner.py": "8c886776bb1b1d328c0e84883325c995a28a34fc8757bfcbbbf2f52685796957",
+      "odometry_producer.py": "8d1df3292686283e257b88ae1c3af6c2065f2f7a308bf9567997167eb5eca6e0",
+      "odometry_reverification_evidence.py": "e232150a427d646a24875a602bb2a4f8b5d743b7b34efe2d96184978f4c4f83d",
+      "odometry_reverification_runner.py": "29938098c30aff1610735f16f4977dc5bb25cfb24fdef379f1183043ae97c3a6",
+      "query_scheduler.py": "ac34f9616d64fb307cb7b528c28ce5bb817612890bf0cc12c7e202b37ff03d56",
+      "report_disarmed_verification.py": "6fa1f6bfd73a6a6a507fd7d8b0d9b187f990f09855157086a45eda5eb648e4b8",
+      "runtime_measurements.py": "a08c9a4a5efee0b0576e938a580bd24a66b5df647e981685d851c0fd76082ef4",
+      "sensor_adapter.py": "a43c358ea2f3e2b1ce91746c119f10850bd978607e8ce8efd79f97a75a3e7df1",
+      "simulation_runner.py": "3de06973e268b562201bcd64d895112f25e15e9d4438e4e84210bfbcd46f0069",
+      "streaming_diagnostics.py": "fe3ebbd65492d6e8127de4306addc606e9453f07b88c7045f34f12984df58fdb",
+      "telemetry_freshness.py": "a33a6f908802ad7be6fdda5d99e6eea64ea65c616da9d0224a8ba9e35ad53bdf",
+      "transport.py": "c2686821e5d44e9387bdfc6e2a711522a50f44742c706b0fbb0e3f0ed4ed4a1d",
+      "yaw_closed_loop_figures.py": "a98f0dad3fecee684e0c143fb8a905a5efa8ff6e6e5260b0d0d1e8c4ef59a59e",
+      "yaw_runner.py": "0b52be425180fd1cd2719a9be5ddece4a30b39c630af5ef6de8cdb37dda91261",
+      "yaw_telemetry_runner.py": "b9723038a1e26e2949cb7d1d9572b49c5bda4175139e4297b8eba8d6f6489c7f",
+      "yaw_validation.py": "cabf737a3deeb6bda2652b54e1d75071fa7522ac1ef12d9ba01a031b5be96f78",
+      "gnss_denied/__init__.py": "06310995c7c6977de9fa87c4e063e73c2c64c302551512cca5f520b217ad50c0",
+      "gnss_denied/evidence.py": "6329c97f8674bbe1d515d24fa64bed88eaff6b09b2890f93e20c2ee0172f67a5",
+      "gnss_denied/protocol.py": "e533f3200e2f659e762a9808946e6544b090a6826e1ae597cf028b59eef26e0a",
+      "gnss_denied/runner.py": "bc8389718a68a40db284fe965bba5cd340ebea2b923f119affd2a2841e327fe1"
+    },
+    "final_matches_executed": true,
+    "identity_error": null,
+    "model_hashes": {
+      "model": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "rotors": "f802a4eb0838216137dbd40f2cd0f122f8df039665cd2cadc7b1f686f102b8d1",
+      "actuators": "5c6126e403fa9c912ed120d93c39d2ebb46d82ed17ef34927b2fb71ea93b7f44"
+    },
+    "checkpoint_hashes": {
+      "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "joint_latent_world_model_v3_autonomous_consistency.pt": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+      "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+      "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+      "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+      "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+      "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+    },
+    "history_hashes": {
+      "reports/px4_odometry_fusion_parts/disarmed_01/smoke_summary.json": "35877f9117c836f13563530659eb9964d2c9ed33fea987f401c6ce71d5ffb84d",
+      "reports/px4_odometry_fusion_parts/disarmed_01/odometry_source.json": "00e245c37c2e4265364f3c129da7fb6b8d70ae72c49392fa6709df71aa0f96ce",
+      "reports/px4_odometry_fusion_parts/disarmed_01/px4_console.bin": "136efc4a80b63f4bde0541784517789766707ac8bf64a094c4a12caf0b003ea4",
+      "reports/px4_odometry_fusion_parts/disarmed_01/log/2026-10-13/11_07_43.ulg": "40f159beaec05c69a7ef0a4b2839a05f02f9278a5554d5be0dee81e7b9b0930a",
+      "reports/px4_odometry_reverification_parts/disarmed_01/smoke_summary.json": "b03fd4e09ed79794f91e7d9923c4e714690139fb6a6911791a697a4ae134aeae",
+      "reports/px4_odometry_reverification_parts/disarmed_01/odometry_source.json": "08864cc3e9e9230de884ae1d4d300d0510576a0e1422998ad9a87c4f6e3dc3dd",
+      "reports/px4_odometry_reverification_parts/disarmed_01/px4_console.bin": "33103ea0baaff23b307a658d0c6b7130106eb7ef02691623d18fa51f8f703966",
+      "reports/px4_odometry_reverification_parts/disarmed_01/log/2026-10-13/12_07_54.ulg": "50b27ccb530737ee4e9f7de7c09289853b226a9a19f81a73a4683a1de8c3df3b"
+    },
+    "summary_sha256": "1fa07e435595251d085f222b325fdb9e9ec91d86cc8b9755253c8f49f99d9934",
+    "source_sha256": "e20929e183c8e1bef5e52b344939eefb1d15e88bd659fbf5e256d54e49469a92",
+    "raw_hashes": {
+      "log/2026-10-13/13_14_13.ulg": "34363cf0d5ddfdbc880e47b096497971ef8db577f76148092886346d47c7f485",
+      "px4_console.bin": "1fa845b86781cab4f967768ec177a8ec1787495946917613b24ff79fa97508c6"
+    },
+    "analysis_sha256": "6db0f21c809988240db9e25d054ca89e531e2fcf6033db60f975f078a524c034",
+    "source_definition_files_sha256": {
+      "params_external_vision.yaml": "e85466034a5b36b30446de7b24fc00df5a19ed56419887701c4634b5a9fab8f1",
+      "params_gnss.yaml": "0be004b4052423816318d77cd11e1ca6e95196f2d461b8077778446390350071",
+      "params_barometer.yaml": "f64ca52d7b9e5938ab21cb83c91485a8b3d896d58e9869c067640ec554736cee",
+      "params_magnetometer.yaml": "d605bd82774c51b218c7d7757e614d35ee5eb8582f260097f3afc64e05b9f465",
+      "module.yaml": "c40f850ea9348ff4b0a8bc99b22cab0e2773ab59505f8490d6802c6ea6a0042b"
+    }
+  },
+  "parameters": {
+    "actual": {
+      "EKF2_EV_CTRL": 5,
+      "EKF2_GPS_CTRL": 0,
+      "EKF2_HGT_REF": 0,
+      "SDLOG_PROFILE": 0,
+      "SDLOG_MISSION": 0,
+      "EKF2_BARO_CTRL": 1,
+      "EKF2_MAG_TYPE": 0
+    },
+    "matched": true
+  },
+  "logger": {
+    "configuration": {
+      "subscriptions": 27,
+      "instances": [
+        0
+      ],
+      "topics": [
+        "vehicle_visual_odometry",
+        "estimator_status_flags",
+        "estimator_aid_src_ev_pos",
+        "estimator_aid_src_ev_vel",
+        "estimator_aid_src_gnss_pos",
+        "estimator_aid_src_gnss_vel",
+        "vehicle_status",
+        "vehicle_gps_position",
+        "vehicle_local_position",
+        "actuator_outputs_sim",
+        "actuator_motors",
+        "control_allocator_status",
+        "vehicle_command",
+        "vehicle_control_mode",
+        "failsafe_flags",
+        "sensor_combined",
+        "vehicle_attitude",
+        "logger_status",
+        "cpuload",
+        "estimator_aid_src_gnss_hgt",
+        "estimator_aid_src_gnss_yaw",
+        "estimator_aid_src_baro_hgt",
+        "estimator_aid_src_mag",
+        "vehicle_air_data",
+        "vehicle_magnetometer",
+        "vehicle_global_position",
+        "sensor_gps"
+      ],
+      "entries": [
+        {
+          "topic": "vehicle_visual_odometry",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_status_flags",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_aid_src_ev_pos",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_aid_src_ev_vel",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_aid_src_gnss_pos",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_aid_src_gnss_vel",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_status",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_gps_position",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_local_position",
+          "interval_ms": 20,
+          "instance": 0
+        },
+        {
+          "topic": "actuator_outputs_sim",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "actuator_motors",
+          "interval_ms": 20,
+          "instance": 0
+        },
+        {
+          "topic": "control_allocator_status",
+          "interval_ms": 20,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_command",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_control_mode",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "failsafe_flags",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "sensor_combined",
+          "interval_ms": 20,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_attitude",
+          "interval_ms": 20,
+          "instance": 0
+        },
+        {
+          "topic": "logger_status",
+          "interval_ms": 100,
+          "instance": 0
+        },
+        {
+          "topic": "cpuload",
+          "interval_ms": 100,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_aid_src_gnss_hgt",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_aid_src_gnss_yaw",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_aid_src_baro_hgt",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "estimator_aid_src_mag",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_air_data",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_magnetometer",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "vehicle_global_position",
+          "interval_ms": 0,
+          "instance": 0
+        },
+        {
+          "topic": "sensor_gps",
+          "interval_ms": 0,
+          "instance": 0
+        }
+      ],
+      "text_sha256": "ef87a6c0b199d7bf8cdf3ded6528ac7893a016d2a0676c40cf7846bf0e36be5f",
+      "profile": 0,
+      "mission_profile": 0,
+      "limit": 255
+    },
+    "metadata": {
+      "topic_instances": [
+        {
+          "name": "actuator_motors",
+          "instance": 0,
+          "samples": 985
+        },
+        {
+          "name": "actuator_outputs_sim",
+          "instance": 0,
+          "samples": 4344
+        },
+        {
+          "name": "control_allocator_status",
+          "instance": 0,
+          "samples": 985
+        },
+        {
+          "name": "cpuload",
+          "instance": 0,
+          "samples": 39
+        },
+        {
+          "name": "estimator_aid_src_baro_hgt",
+          "instance": 0,
+          "samples": 357
+        },
+        {
+          "name": "estimator_aid_src_ev_pos",
+          "instance": 0,
+          "samples": 984
+        },
+        {
+          "name": "estimator_aid_src_ev_vel",
+          "instance": 0,
+          "samples": 942
+        },
+        {
+          "name": "estimator_aid_src_mag",
+          "instance": 0,
+          "samples": 270
+        },
+        {
+          "name": "estimator_status_flags",
+          "instance": 0,
+          "samples": 26
+        },
+        {
+          "name": "event",
+          "instance": 0,
+          "samples": 20
+        },
+        {
+          "name": "failsafe_flags",
+          "instance": 0,
+          "samples": 39
+        },
+        {
+          "name": "logger_status",
+          "instance": 0,
+          "samples": 20
+        },
+        {
+          "name": "sensor_combined",
+          "instance": 0,
+          "samples": 985
+        },
+        {
+          "name": "vehicle_air_data",
+          "instance": 0,
+          "samples": 385
+        },
+        {
+          "name": "vehicle_attitude",
+          "instance": 0,
+          "samples": 946
+        },
+        {
+          "name": "vehicle_command",
+          "instance": 0,
+          "samples": 1
+        },
+        {
+          "name": "vehicle_control_mode",
+          "instance": 0,
+          "samples": 40
+        },
+        {
+          "name": "vehicle_local_position",
+          "instance": 0,
+          "samples": 975
+        },
+        {
+          "name": "vehicle_magnetometer",
+          "instance": 0,
+          "samples": 280
+        },
+        {
+          "name": "vehicle_status",
+          "instance": 0,
+          "samples": 40
+        },
+        {
+          "name": "vehicle_visual_odometry",
+          "instance": 0,
+          "samples": 984
+        }
+      ],
+      "topic_instances_count": 21,
+      "dropouts": 0,
+      "file_corruption": false,
+      "framing": {
+        "complete": true,
+        "records": 15091,
+        "bytes": 1276596,
+        "max_record_bytes": 65535
+      },
+      "logging_start_timestamp": 1300000,
+      "logging_end_timestamp": 20964000,
+      "parameters_in_ulog_header": true
+    },
+    "error": null,
+    "valid": true
+  },
+  "evidence": {
+    "fusion": {
+      "direct": {
+        "status": "PASS",
+        "samples": 984,
+        "reason": null,
+        "minimum_samples": 900,
+        "maximum_gap_usec": 250000,
+        "first_publication_usec": 1300000,
+        "last_publication_usec": 20960000,
+        "last_sample_usec": 20960000,
+        "max_publication_gap_usec": 20000,
+        "pose_frame": "NED (1)",
+        "velocity_frame": "BODY_FRD (3)",
+        "covariance": "receiver retains three diagonal variances per block, not all MAVLink cross-covariances"
+      },
+      "source_vs_received": {
+        "status": "PASS",
+        "paired_samples": 984,
+        "host_transport_latency": "NOT TESTED",
+        "clock_semantics": "exact source/HIL_SENSOR logical time matched to receiver timestamp_sample; no host-to-PX4 delay claim",
+        "max_absolute_errors": {
+          "position": 3.1686371027017657e-09,
+          "velocity": 6.22356496612702e-14,
+          "angular_velocity": 1.0988905327073586e-13,
+          "quaternion": 1.1094234753095122e-08,
+          "position_variance": 2.2351741811588166e-10,
+          "orientation_variance": 2.2351741811588166e-10,
+          "velocity_variance": 2.2351744934090423e-10
+        },
+        "field_tolerance": 2e-06,
+        "publication_minus_receipt_usec": {
+          "median": 0.0,
+          "max": 0
+        }
+      },
+      "aid_sources": {
+        "ev_pos": {
+          "pass": true,
+          "status": "PASS",
+          "samples": 984,
+          "accepted_samples": 890,
+          "nonfused_samples": 94,
+          "innovation_rejected_samples": 0,
+          "distinct_fuse_times": 891,
+          "last_fuse_usec": 20796000,
+          "final_three_fuse_times_usec": [
+            20756000,
+            20780000,
+            20796000
+          ],
+          "final_three_publication_times_usec": [
+            20908000,
+            20932000,
+            20948000
+          ],
+          "final_three_test_ratio_max": 3.5164761727490834e-12,
+          "sample_time_first_last_usec": [
+            1136000,
+            20796000
+          ],
+          "reason": null
+        },
+        "ev_vel": {
+          "pass": true,
+          "status": "PASS",
+          "samples": 942,
+          "accepted_samples": 942,
+          "nonfused_samples": 0,
+          "innovation_rejected_samples": 0,
+          "distinct_fuse_times": 942,
+          "last_fuse_usec": 20796000,
+          "final_three_fuse_times_usec": [
+            20756000,
+            20780000,
+            20796000
+          ],
+          "final_three_publication_times_usec": [
+            20908000,
+            20932000,
+            20948000
+          ],
+          "final_three_test_ratio_max": 1.6313939088519192e-10,
+          "sample_time_first_last_usec": [
+            1956000,
+            20796000
+          ],
+          "reason": null
+        }
+      },
+      "local_status": "PASS",
+      "direct_status": "PASS",
+      "ev_pos_status": "PASS",
+      "ev_vel_status": "PASS"
+    },
+    "gnss_absence": {
+      "status": "PASS",
+      "flags": {
+        "cs_gnss_pos": {
+          "all_false": true,
+          "true_samples": 0
+        },
+        "cs_gnss_vel": {
+          "all_false": true,
+          "true_samples": 0
+        },
+        "cs_gps_hgt": {
+          "all_false": true,
+          "true_samples": 0
+        },
+        "cs_gnss_yaw": {
+          "all_false": true,
+          "true_samples": 0
+        }
+      },
+      "aid_sources": {
+        "pos": {
+          "status": "ABSENT",
+          "samples": 0
+        },
+        "vel": {
+          "status": "ABSENT",
+          "samples": 0
+        },
+        "hgt": {
+          "status": "ABSENT",
+          "samples": 0
+        },
+        "yaw": {
+          "status": "ABSENT",
+          "samples": 0
+        }
+      },
+      "gps_input_records": {
+        "vehicle_gps_position": 0,
+        "sensor_gps": 0
+      },
+      "parameters_disabled": true,
+      "hil_gps_count": 0,
+      "reason": null
+    },
+    "non_gnss_sources": {
+      "status": "PASS",
+      "aid_sources": {
+        "baro_hgt": {
+          "pass": true,
+          "status": "PASS",
+          "samples": 357,
+          "accepted_samples": 337,
+          "nonfused_samples": 20,
+          "innovation_rejected_samples": 0,
+          "distinct_fuse_times": 337,
+          "last_fuse_usec": 20780000,
+          "final_three_fuse_times_usec": [
+            20676000,
+            20724000,
+            20780000
+          ],
+          "final_three_publication_times_usec": [
+            20828000,
+            20876000,
+            20932000
+          ],
+          "final_three_test_ratio_max": null,
+          "sample_time_first_last_usec": [
+            1124000,
+            20774000
+          ],
+          "reason": null
+        },
+        "mag": {
+          "pass": true,
+          "status": "PASS",
+          "samples": 270,
+          "accepted_samples": 245,
+          "nonfused_samples": 25,
+          "innovation_rejected_samples": 25,
+          "distinct_fuse_times": 245,
+          "last_fuse_usec": 20812000,
+          "final_three_fuse_times_usec": [
+            20676000,
+            20748000,
+            20812000
+          ],
+          "final_three_publication_times_usec": [
+            20828000,
+            20900000,
+            20964000
+          ],
+          "final_three_test_ratio_max": 1.3215249055065215e-06,
+          "sample_time_first_last_usec": [
+            1092000,
+            20812000
+          ],
+          "reason": null
+        }
+      },
+      "configured": true,
+      "ground_alignment_and_baro_flags_valid": true,
+      "magnetic_heading_flags_valid": true,
+      "flight_heading_readiness": "NOT TESTED"
+    },
+    "global_origin": {
+      "fields": {
+        "ref_timestamp": {
+          "samples": 975,
+          "nonzero_samples": 0
+        },
+        "xy_global": {
+          "samples": 975,
+          "nonzero_samples": 0
+        },
+        "z_global": {
+          "samples": 975,
+          "nonzero_samples": 0
+        }
+      },
+      "global_position_records": 0,
+      "status": "PASS",
+      "meaning": "No observed global origin; any nonzero origin requires source explanation, not assumed GNSS."
+    },
+    "local_estimate_vs_com": {
+      "status": "PASS",
+      "paired_samples": 975,
+      "initial_origin_offset_ned_m": [
+        0.00013611176224015957,
+        -0.015143776320703366,
+        0.0825155430943821
+      ],
+      "raw_position_rmse_m": 0.011392643337896254,
+      "relative_displacement_rmse_m": 0.046813534878043794,
+      "velocity_ned_rmse_m_s": 0.0014169620821668646,
+      "limitation": "Static disarmed state, nearest-prior PX4 sample-time pairing; local origin offset retained. No moving-state or source-clock synchronization validation."
+    },
+    "producer_valid": true,
+    "source_samples": 1000,
+    "sent_samples": 1000,
+    "final_estimator_flags": {
+      "cs_tilt_align": true,
+      "cs_yaw_align": true,
+      "cs_ev_pos": true,
+      "cs_ev_vel": true,
+      "cs_ev_yaw": false,
+      "cs_baro_hgt": true,
+      "cs_mag_hdg": true,
+      "cs_mag_3d": false,
+      "cs_in_air": false,
+      "cs_mag_aligned_in_flight": false
+    },
+    "first_recorded_local_valid_simulation_s": {
+      "xy_valid": 1.1,
+      "z_valid": 1.1,
+      "v_xy_valid": 1.1,
+      "v_z_valid": 1.1
+    },
+    "final_heading_good_for_control": false,
+    "arm_commands": 0,
+    "global_origin_commands": 0,
+    "commands": [
+      211
+    ],
+    "physical_controls_zero": true,
+    "px4_outputs_zero": true,
+    "single_attempt_manifest": {
+      "attempt": 1,
+      "authorized_maximum": 1,
+      "runtime": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_gnss_denied_disarmed_parts/disarmed_01",
+      "protocol_path": "/home/keyousuke/MineUAV-Learning-px4-sitl/mujoco/reports/px4_gnss_denied_disarmed_parts/protocol.json",
+      "protocol_sha256": "4ae0b280ca9d98ead2cf9da7e9b0536b3068ed7cbeab041ac6807819e45f2296"
+    },
+    "safety": {
+      "status": "PASS",
+      "checks": {
+        "no_safety_fault": "PASS",
+        "new_streaming_runtime": "PASS",
+        "query_count": "PASS",
+        "query_deadlines": "PASS",
+        "allocator_yaw_row": "PASS",
+        "actuator_watchdog": "PASS",
+        "incremental_parser": "PASS",
+        "instrumentation_complete": "PASS",
+        "simulation_boundaries": "PASS",
+        "final_source_leases": "PASS",
+        "no_flight_authority": "PASS"
+      },
+      "query_count": 28,
+      "monitor_query_count": 28
+    },
+    "shutdown_publications_excluded": {
+      "actuator_motors": 0,
+      "actuator_outputs_sim": 0,
+      "control_allocator_status": 0,
+      "cpuload": 0,
+      "estimator_aid_src_baro_hgt": 0,
+      "estimator_aid_src_ev_pos": 0,
+      "estimator_aid_src_ev_vel": 0,
+      "estimator_aid_src_mag": 0,
+      "estimator_status_flags": 0,
+      "event": 0,
+      "failsafe_flags": 0,
+      "logger_status": 0,
+      "sensor_combined": 0,
+      "vehicle_air_data": 0,
+      "vehicle_attitude": 0,
+      "vehicle_command": 0,
+      "vehicle_control_mode": 0,
+      "vehicle_local_position": 0,
+      "vehicle_magnetometer": 0,
+      "vehicle_status": 0,
+      "vehicle_visual_odometry": 0
+    },
+    "source_interval_usec": {
+      "n": 999,
+      "mean": 20000.0,
+      "p50": 20000.0,
+      "p95": 20000.0,
+      "p99": 20000.0,
+      "max": 20000.0
+    },
+    "send_wall_interval_seconds": {
+      "n": 999,
+      "mean": 0.01984117663963847,
+      "p50": 0.01999972400153638,
+      "p95": 0.020184181200056626,
+      "p99": 0.020255251439339192,
+      "max": 0.020659392001107335
+    },
+    "time_mapping": "SimulatorMavlink replaces sample time with PX4 receipt time. Exact logical HIL_SENSOR epoch pairing tested; host/PX4 transport latency NOT TESTED."
+  },
+  "boundary": {
+    "status": "PASS",
+    "simulation_seconds": 19.999999999999794,
+    "physical_seconds": 19.999999999999794,
+    "expected_counts": {
+      "HIL_SENSOR": 5000,
+      "HIL_GPS": 0,
+      "ODOMETRY": 1000
+    },
+    "actual_counts": {
+      "HIL_GPS": 0,
+      "HIL_SENSOR": 5000,
+      "ODOMETRY": 1000
+    },
+    "sensor_cycles": 5000,
+    "comparison_guard_s": 1e-06
+  },
+  "runtime": {
+    "attempts": 1,
+    "workers": 1,
+    "armed_runs": 0,
+    "simulation_seconds": 19.999999999999794,
+    "wall_seconds": 20.00391091399979,
+    "messages_sent": {
+      "HIL_GPS": 0,
+      "HIL_SENSOR": 5000,
+      "ODOMETRY": 1000
+    },
+    "messages_received": {
+      "COMMAND_LONG": 1,
+      "HEARTBEAT": 1,
+      "HIL_ACTUATOR_CONTROLS": 4985
+    },
+    "exception": null,
+    "fault": null,
+    "query_count": 28,
+    "query_response_seconds": {
+      "n": 28,
+      "mean": 0.002636294035645343,
+      "p50": 0.0019648595007311087,
+      "p95": 0.005019364399231563,
+      "p99": 0.005135651129003236,
+      "max": 0.005153951999091078
+    },
+    "query_intervals_seconds": {
+      "n": 27,
+      "mean": 0.49999888559257133,
+      "p50": 0.49999845099955564,
+      "p95": 0.5000514945008036,
+      "p99": 0.5000621974795285,
+      "max": 0.500065148999056
+    },
+    "bridge_peak_rss_bytes": 771309568,
+    "px4_peak_rss_bytes": 9838592,
+    "minimum_available_memory_bytes": 9348911104,
+    "bridge_cpu_seconds": 2.197404195,
+    "px4_cpu_seconds_sampled": 1.27,
+    "px4_exit_code": 0,
+    "zero_control_on_stop": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "measurements": {
+      "samples": {
+        "parse_validate_seconds": {
+          "n": 178,
+          "mean": 0.0002153909213478308,
+          "p50": 0.00022352050018525915,
+          "p95": 0.0004644749496947043,
+          "p99": 0.0006082392607277142,
+          "max": 0.0007562899991171435
+        },
+        "console_service_seconds": {
+          "n": 15000,
+          "mean": 1.332623246004611e-05,
+          "p50": 9.968499398382846e-06,
+          "p95": 1.7250999098905596e-05,
+          "p99": 2.628910029670808e-05,
+          "max": 0.002091300000756746
+        },
+        "actuator_interval_wall_seconds": {
+          "n": 4984,
+          "mean": 0.003973101954855383,
+          "p50": 0.003984803500316048,
+          "p95": 0.004372677199535246,
+          "p99": 0.00450179053019383,
+          "max": 0.010789662999741267
+        },
+        "actuator_interval_sim_seconds": {
+          "n": 4984,
+          "mean": 0.004000000000000001,
+          "p50": 0.004,
+          "p95": 0.004,
+          "p99": 0.004,
+          "max": 0.004
+        },
+        "query_response_seconds": {
+          "n": 28,
+          "mean": 0.002636294035645343,
+          "p50": 0.0019648595007311087,
+          "p95": 0.005019364399231563,
+          "p99": 0.005135651129003236,
+          "max": 0.005153951999091078
+        }
+      },
+      "dropped": {},
+      "row_valid_at_completions": 28,
+      "actuator_receipts": 4985,
+      "recent_peak_chars": 65536,
+      "pending_query_max": 1,
+      "write_peak_bytes": 215,
+      "px4_sampled_cpu_seconds": 1.27,
+      "px4_cpu_sample_count": 1000,
+      "sample_limit": 65536,
+      "query_limit": 128,
+      "measurement_semantics": "host wall time; parse_validate includes streaming parse + safety validation, excludes raw archive I/O",
+      "parser_processed_chars": 365878,
+      "parser_peak_buffer_chars": 1838,
+      "scheduler": {
+        "starts": 28,
+        "max_lateness_s": 8.014500053832307e-05
+      }
+    }
+  },
+  "limitations": [
+    "SIMULATED GROUND TRUTH ODOMETRY, synthetic covariance; no FAST-LIO2/SLAM.",
+    "Single static disarmed run; no GNSS-denied flight or policy control authorization.",
+    "Inflight mag alignment, heading_good_for_control and flight prechecks NOT TESTED.",
+    "Actual source-to-PX4 transport latency and moving-state estimator quality NOT TESTED."
+  ],
+  "next_recommendation": "Review a separately authorized GNSS-denied flight safety and estimator-readiness protocol before any flight; no further execution in this phase.",
+  "verification": {
+    "bridge_inherited_passed": 437,
+    "bridge_new_passed": 77,
+    "bridge_total_passed": 514,
+    "pre_run_bridge_passed": 510,
+    "shadow_passed": 30,
+    "bridge_inherited_warnings": 2,
+    "shadow_inherited_package_warnings": 3,
+    "failed_tests": 0,
+    "preflight_suite_peak_rss_kib": 1264140,
+    "final_bridge_suite_peak_rss_kib": 1115608,
+    "oom_observed": false,
+    "historical_untracked_files_preserved": 87,
+    "post_run_operational_code_changes": false,
+    "post_run_changes": "Read-only analysis, evidence-recomputation tests, report, figures and documentation only",
+    "red_to_green": [
+      "Cold-start packet suppression and disarmed monitor interface",
+      "Missing HIL_GPS counter cannot imply zero input",
+      "Alternative protocol filename cannot bypass fixed campaign attempt guard",
+      "Immutable summary records gps_hz=0",
+      "Missing fault/final decision, truncated queries, logical-clock lateness, dropped instrumentation and expired sources reject safety PASS",
+      "Direct receipt and advancing EV aid-source evidence required"
+    ],
+    "independent_review": {
+      "pre_run": "GO after offline corrections; no pending Critical/Important",
+      "resolved_important": [
+        "Protocol-filename-dependent single-attempt lock",
+        "Safety evidence predicate lacked complete final coverage and clock/source checks"
+      ],
+      "resolved_minor": ["Inherited GPS frequency metadata", "Final verification section absent"],
+      "final": "GO: source, raw ULog, immutable manifests, report and documentation independently reviewed",
+      "remaining_critical": 0,
+      "remaining_important": 0,
+      "independent_package_tests_passed": 77,
+      "all_saved_acceptance_items_recomputed": true,
+      "independent_full_bridge_shadow_rerun": false,
+      "historical_87_file_inventory_independently_certified": false
+    },
+    "whole_repository_tests": "NOT RUN: unrelated CAD NumPy/SciPy ABI untouched",
+    "metadata_note": "Workflow verification facts added after read-only analysis; recomputation regenerates measured report fields, not this workflow record"
+  },
+  "figures": [
+    "ev_position_velocity_fusion.png",
+    "gnss_fusion_state.png",
+    "local_position_validity.png",
+    "local_velocity_validity.png",
+    "height_heading_sources.png",
+    "safety_query_timing.png",
+    "strict_stop_boundary.png"
+  ]
+}
