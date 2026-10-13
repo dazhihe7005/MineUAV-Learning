@@ -1003,3 +1003,23 @@ Conclusion: EV/GNSS actual aid-source fusion PASS; complete three-layer interfac
 Limitations: Single static unarmed state; synthetic noise/quality; PX4 receiver replaces source capture time with receive time; direct visual topic not recorded; one post-run offline boundary fix not revalidated live. Static local-origin offset is reported separately from displacement/velocity error; no moving-state accuracy, packet-loss or hardware claim.
 
 Next: Only recommend a separately authorized unarmed verification with an explicit bounded ULog topic list and the offline-fixed20s boundary, keeping GNSS enabled. Not executed.
+
+## 2026-10-13 — PX4–MuJoCo External Odometry Evidence Reverification Phase 3C-R
+
+Branch: `feat/px4-mujoco-odom-fusion-reverification`; base `f09264edaffb25c4e59e33cb8be4c01326fb2c33`.
+
+Research Question: Can a finite Logger configuration and the offline-fixed stop boundary supply direct visual-odometry receipt and actual EV/GNSS fusion evidence in one strictly <=20-second unarmed run, with the final operational code unchanged?
+
+Setup: Exactly one new disarmed SITL attempt, no retry/ARM/Offboard. Same approved isolated PX4 binary SHA256 `2f6bbc24…`, source `142c24cffb`, MuJoCo3.14.0 and unchanged7kg dynamics. Reused500Hz physics/250Hz sensors/50Hz COM truth ODOMETRY/10Hz GNSS, EV_CTRL5/GPS_CTRL7/HGT_REF1, no EV yaw. Verified current Logger API: profile0 plus private runtime logger_topics.txt,19 explicit instance0 topics, mission0; binary and startup files unchanged. Actual ULog has20 instances including separate built-in event. Frozen protocol SHA256 `0164d294df0d15d043c749b62172af49f5906b1d041bea2525d2b5d9825bb47b`. Exclusive attempt record prevents reuse; summary explicitly not a flight smoke proof.
+
+Key Results: Actual physical time19.999999999999794s; counts5000 HIL_SENSOR/200 HIL_GPS/1000 ODOMETRY exactly. Direct `vehicle_visual_odometry`985 records,20ms intervals, final receipt40ms before endpoint; all mandatory fields finite, NED pose/BODY_FRD velocity, valid quaternions/covariance.985 exact logical-clock send/receive pairs, maximum position discrepancy3.51e-9m. EV position984 records (889 accepted), EV velocity942 (all accepted); final3 accepted/unrejected advancing fuse times20,756,000→20,780,000→20,796,000µs. GNSS sources198 each with current final fusion; five early GNSS-position rejected innovations disclosed and retained. Local position/velocity valid. All A–L verdicts PASS; no old evidence substituted, no raw duration truncation.
+
+Safety/Resources:28 healthy queries, P50/P95/P99/max2.116/5.032/5.114/5.138ms; max query interval500.076ms; max actuator wall gap12.998ms.150/250/650ms safety deadlines unchanged. No queue beyond1, parser peak1836chars, no fault. DISARMED and no-Offboard flags, zero physical motor controls throughout and at stop, PX4exit0. One worker; Bridge738.00MiB peak RSS, PX4 sampled9.52MiB, sampled minimum available8.95GiB; no observed OOM, swap unchanged. Original87 untracked files and protected models/raw evidence remain unchanged.
+
+Verification:371 inherited+66 new=437 Bridge tests PASS and30 Shadow tests PASS, inherited warnings only. Bridge suite peak RSS1,146,308KiB. RED→GREEN for finite logger, invalid evidence, exact stop counts, corruption/truncation/hash checks and passive-control corroboration. Independent pre-run review GO after evidence-integrity and final-model identity fixes. Final independent read-only source/raw-evidence/report review GO,0 Critical/Important;65 targeted tests passed independently,1 physical-schedule test excluded, no additional simulation. Minor disarmed-scope wording corrected. Operational source hashes exactly match the sole SITL run; post-run changes are analysis/tests/docs only.
+
+Conclusion: **PASS** for complete GNSS-retained, simulated-truth external-odometry receipt/fusion and corrected final-runtime/20-second evidence. This does not validate GNSS-denied positioning, moving-state odometry, FAST-LIO2, or BC/PPO PX4 control. Previous Phase3C report/raw logs remain unchanged.
+
+Limitations: Single static/settling disarmed run, synthetic covariance/quality,985 retained logs versus1000 sends is not packet-loss measurement. PX4 overwrites source timestamp; exact lockstep-clock correspondence does not measure host physical transport delay or establish FAST-LIO2 time sync. Static local-origin offset retained; no flight authorization proof. Raw ULog/source arrays/private rootfs stay local-only; JSON,10 plots, code/tests/docs are versioned.
+
+Next: Only recommend a separately authorized disarmed GNSS-denied fusion-source verification before any external-odometry flight. Not executed.
