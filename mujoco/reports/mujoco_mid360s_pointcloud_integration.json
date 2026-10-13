@@ -1,0 +1,202 @@
+{
+  "acceptance": {
+    "dynamic_motion_distortion": "NOT TESTED",
+    "fast_lio2_compatibility": "NOT TESTED",
+    "full_24000_ray_static_10hz_budget": "PASS",
+    "historical_physics_file_unchanged": "PASS",
+    "known_geometry_distance": "PASS",
+    "local_world_transform": "PASS",
+    "no_return_mask": "PASS",
+    "px4_sitl": "NOT TESTED",
+    "real_mid360s_fidelity": "NOT TESTED",
+    "real_mujoco_ray_cloud": "PASS"
+  },
+  "actual_scans": 37,
+  "coordinate_checks": {
+    "world_local_roundtrip_max_error_m": 2.220446049250313e-16,
+    "yaw90_front_range_error_m": 1.4901162526115286e-09
+  },
+  "environment": {
+    "flight_runs": 0,
+    "mujoco_module": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/mujoco/__init__.py",
+    "mujoco_version": "3.14.0",
+    "numpy_version": "2.2.6",
+    "physics_timestep_s": 0.002,
+    "pose_mode": "static frozen body pose, simulation clock advanced 0.1 s per frame",
+    "px4_runs": 0,
+    "scan_frequency_hz_configured": 10,
+    "worker_count": 1
+  },
+  "extrinsic": {
+    "T_body_lidar_rpy_rad": [
+      0,
+      0,
+      0
+    ],
+    "T_body_lidar_translation_m": [
+      0.1,
+      0,
+      0.1
+    ],
+    "body_frame": "FLU",
+    "provenance": "SIM_CONFIG",
+    "world_frame": "ENU"
+  },
+  "geometry_checks": {
+    "actual_range_m": [
+      2.899999998509884,
+      1.9999999999999998,
+      1.9999999999999998,
+      0.800000011920929
+    ],
+    "box_range_error_m": 1.5822976262569455e-09,
+    "expected_wall_side_ground_range_m": [
+      2.9,
+      2.0,
+      2.0,
+      0.8
+    ],
+    "max_abs_range_error_m": 1.1920928910669204e-08,
+    "no_return_point_all_nan": true,
+    "no_return_raw_range": -1.0,
+    "no_return_valid": false,
+    "z_extent_m": 2.581581233828949
+  },
+  "initialization_ms": {
+    "model_compile": 564.7707859989168,
+    "pattern_and_adapter": 8.428518998698564
+  },
+  "local_npz_sha256": "eeddfadacb6b8c7b5e716e3295b520b5577193ae8a8de5a099f486c339d63e17",
+  "memory": {
+    "final_mem_available_mib": 9889.703125,
+    "initial_mem_available_mib": 10630.6640625,
+    "oom_observed": false,
+    "peak_rss_mib": 845.5
+  },
+  "model_preservation": {
+    "base_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+    "base_sha256_unchanged": true
+  },
+  "plot_ms": {
+    "box_pointcloud.png": 52.931618000002345,
+    "pointcloud_height_profile.png": 67.91168699965056,
+    "rotated_pointcloud_comparison.png": 80.83171399994171,
+    "wall_pointcloud.png": 60.44340399967041
+  },
+  "save_npz_ms": 27.063671999712824,
+  "scales": {
+    "1000": {
+      "downsample_factor": 24,
+      "frame_total_ms": {
+        "max": 0.833578998935991,
+        "mean": 0.4683081666977766,
+        "p50": 0.41793150012381375,
+        "p95": 0.6870985993373322,
+        "p99": 0.8042829190162594
+      },
+      "measured_10hz_scan_budget_pass": true,
+      "point_conversion_ms": {
+        "max": 0.37447999966389034,
+        "mean": 0.24715874966811194,
+        "p50": 0.21808300061820773,
+        "p95": 0.369923249581916,
+        "p99": 0.3735686496474955
+      },
+      "ray_count": 1000,
+      "repetitions": 12,
+      "trace_ms": {
+        "max": 0.31714299984741956,
+        "mean": 0.19383841693828194,
+        "p50": 0.18188000012742123,
+        "p95": 0.24866690018825457,
+        "p99": 0.30344777991558664
+      },
+      "valid_count_max": 713,
+      "valid_count_mean": 686.3333333333334,
+      "valid_count_min": 652,
+      "valid_fraction_mean": 0.6863333333333334
+    },
+    "24000": {
+      "downsample_factor": 1,
+      "frame_total_ms": {
+        "max": 6.630357000176446,
+        "mean": 5.994054750014281,
+        "p50": 5.906338500608399,
+        "p95": 6.5445889003058255,
+        "p99": 6.613203380202322
+      },
+      "measured_10hz_scan_budget_pass": true,
+      "point_conversion_ms": {
+        "max": 2.5897220002661925,
+        "mean": 2.445323999836546,
+        "p50": 2.4319874992215773,
+        "p95": 2.532954850084934,
+        "p99": 2.578368570229941
+      },
+      "ray_count": 24000,
+      "repetitions": 12,
+      "trace_ms": {
+        "max": 3.997555000751163,
+        "mean": 3.5041543334652183,
+        "p50": 3.4345265003139502,
+        "p95": 3.972113649433595,
+        "p99": 3.9924667304876493
+      },
+      "valid_count_max": 17068,
+      "valid_count_mean": 16395.75,
+      "valid_count_min": 15650,
+      "valid_fraction_mean": 0.68315625
+    },
+    "4000": {
+      "downsample_factor": 6,
+      "frame_total_ms": {
+        "max": 1.2570599992614007,
+        "mean": 1.162236333433005,
+        "p50": 1.1545990000740858,
+        "p95": 1.212757499069994,
+        "p99": 1.2481994992231193
+      },
+      "measured_10hz_scan_budget_pass": true,
+      "point_conversion_ms": {
+        "max": 0.5537750002986286,
+        "mean": 0.5236106670357307,
+        "p50": 0.5176080003366224,
+        "p95": 0.5478514994138095,
+        "p99": 0.5525903001216648
+      },
+      "ray_count": 4000,
+      "repetitions": 12,
+      "trace_ms": {
+        "max": 0.6784090001019649,
+        "mean": 0.6157921661724686,
+        "p50": 0.6098654994275421,
+        "p95": 0.6456389000049967,
+        "p99": 0.6718549800825713
+      },
+      "valid_count_max": 2849,
+      "valid_count_mean": 2770.3333333333335,
+      "valid_count_min": 2605,
+      "valid_fraction_mean": 0.6925833333333333
+    }
+  },
+  "sensor_truth_limit": "MID360 pattern approximation; not MID360S hardware validation",
+  "source_identity": "MUJOCO_RAYCAST_APPROX_MID360",
+  "status": "PASS",
+  "verification": {
+    "new_real_mujoco_tests": {"passed": 31, "status": "PASS"},
+    "existing_bridge_and_l1_tests": {"passed": 520, "status": "PASS", "warnings": 1},
+    "independent_readonly_review": {
+      "status": "GO",
+      "critical": 0,
+      "important": 0,
+      "independent_tests_passed_before_final_package_identity_test": 30
+    }
+  },
+  "upstream": {
+    "backend": "cpu",
+    "license": "MIT",
+    "pattern_rays": 24000,
+    "pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3",
+    "repo_commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b"
+  }
+}

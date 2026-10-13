@@ -1061,3 +1061,21 @@ Conclusion: Source/interface audit and design PASS; implementation/physics fidel
 Verification/Review: Six new stdlib-only offline tests PASS; original MuJoCo XML SHA unchanged. Independent read-only review GO after narrowing the real-extrinsic evidence claim and clarifying transform directions/tag-line gates; no remaining Critical/Important. Existing MuJoCo-dependent Bridge tests could not be fully run here because Python MuJoCo is not installed; combined invocation showed9 dependency failures/9 passes, not a code-regression claim.
 
 Limitations: No live NUC, installed driver/FAST-LIO2 build identity, verifiable real calibration, wire capture or actual LiDAR scan; historical frequencies are not current-state evidence. The apparent CustomMsg package mismatch is unresolved. No Gazebo dependency introduced.
+
+## 2026-10-13 — MuJoCo MID360-like Point Cloud Integration Phase 3E-L2
+
+Branch: `feat/mujoco-mid360s-pointcloud-integration`; base `5ffd67922eab7e1549ee87bc94184e37b8194700`.
+
+Research Question: Can fixed open-source MuJoCo-LiDAR CPU raycasting produce verifiable 3D point clouds from an isolated UAV scene without touching historical dynamics, and what are the actual local scan costs?
+
+Setup: Reused historical real MuJoCo3.14.0 Python venv, pinned MIT `discoverse-dev/MuJoCo-LiDAR` commit `e6b879df` and exact `mid360.npy` SHA256 `9fa01655…`. In-memory MJCF copy adds a SIM_CONFIG LiDAR site at body FLU `(0.10,0,0.10)m`, walls and box; 7kg original model SHA256 `cde862f4…` unchanged. Single frozen pose per frame, 10Hz simulation timestamp spacing, CPU backend;12 frames each at1k/4k/24k rays plus one rotated frame. No PX4, ROS, flight, training or hardware communication.
+
+Key Results: Actual MuJoCo ray clouds PASS, full24k frame gives15,650–17,068 valid points across repeated pattern phases; vertical extent2.58m. Front/side/ground known-distance max error1.19e-8m, box error1.58e-9m; no-return masked, self-body excluded without removing exterior wall. Yaw+90° range error1.49e-9m; local/world roundtrip2.22e-16m. Full24k static frame CPU total P50/P95/P99/max5.906/6.545/6.613/6.630ms, separately trace P50/P953.435/3.972ms; within this static 10Hz scan-only budget. Explicitly downsampled1k and4k are reported separately. NPZ and four actual-ray evidence figures produced; raw NPZ local-only.
+
+Verification/Resources:31 new real-MuJoCo integration tests PASS; existing Bridge + L1 audit suite520 PASS (one inherited Matplotlib Axes3D warning). One worker, peakRSS845.5MiB, no observed OOM. Historical physical model hash and data retained. Independent read-only review GO,0 Critical/Important; reviewer independently ran the 30 tests present before the final additional package-identity test and matched hashes/report. Minor future hardening: extend upstream source integrity coverage; fixed checkout currently clean.
+
+Conclusion: CPU MuJoCo geometry-to-point-cloud interface **PASS** for static isolated scenes and future PPO observation prototyping. MID360S physical fidelity, true per-point timing, motion distortion, synchronized IMU, Livox CustomMsg, FAST-LIO2, ROS and PX4/SITL **NOT TESTED**; no localization or flying claim follows.
+
+Limitations: Small static scene and12 scan samples per scale; no complex mine, moving targets, full simulation+policy timing or real device calibration. `mid360` is an upstream approximate mode, not validated MID360S truth. Plotting/saving time is separate from scan timing.
+
+Next: Only recommend a separately authorized dynamic-scan/IMU timing and measured-extrinsic validation before any FAST-LIO2 claim. Not executed.
