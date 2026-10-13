@@ -1045,3 +1045,19 @@ Conclusion: Cold-start GNSS-denied **disarmed local fusion PASS**. This supplies
 Limitations: One static ground run; ideal/synthetic truth/covariance; PX4 replaces source capture timestamps; no moving-state, delay/dropout or aircraft-control validation. No controller/model retraining or tuning.
 
 Next: Only recommend reviewing a separately authorized GNSS-denied flight-safety and estimator-readiness protocol before any flight. Not executed.
+
+## 2026-10-13 — Real MID360S Interface Audit and MuJoCo LiDAR Design Phase 3E-L1
+
+Branch: `feat/mujoco-mid360s-interface-audit`; base `ebbe6ed2c69ef00d0bb37466f5d8278c9f2dd652`.
+
+Research Question: Which MID360S network, ROS, timing, extrinsic, FAST-LIO2 and simulation interfaces are actually evidenced by the fixed real-project source, and what can be safely reused for future MuJoCo-only LiDAR work?
+
+Setup: Read-only fixed `-frontier-` commit `db897c4e3a1607f5852b484afd0a01523cb08c6b`; fixed upstream reference snapshots for `livox_ros_driver2` (`21445540`), FAST_LIO (`7cc4175d`) and MuJoCo-LiDAR (`e6b879df`). Current MuJoCo model retained SHA256 `cde862f4…`. No PX4/SITL/flight/ROS run, LiDAR scan, or training; no historical model, sensor, dynamics, or controller changes.
+
+Key Results: Historical MID360S type35 and NUC/radar `192.168.1.10`/`192.168.1.157` with `/livox/lidar` ~10Hz and `/livox/imu` ~200Hz. Pinned patch explicitly configures host command/push/point receive UDP ports 56101/56201/56301. Reference ROS1 driver uses `livox_ros_driver2/CustomMsg` (XYZ, reflectivity, tag, line, per-point offset) and `sensor_msgs/Imu`; reference FAST-LIO uses `livox_ros_driver/CustomMsg`, so deployed subscriber compatibility is not proven. The old Gazebo mount pose is not a real calibrated extrinsic. Current MuJoCo `lidar_visual` is only a mesh, not a sensor. Newly found open-source MuJoCo-LiDAR already provides `mid360` angle data and native raycasting; it is a useful reuse candidate, **not** a validated MID360S or FAST-LIO2 emulator. Its ROS1 example emits ordinary PointCloud2 with synthetic constant intensity.
+
+Conclusion: Source/interface audit and design PASS; implementation/physics fidelity/FAST-LIO2/PX4 integration NOT TESTED. The next implementation should evaluate the pinned MuJoCo-LiDAR CPU backend first, then separately validate MID360S scan/timing/IMU/message compatibility and measured installation extrinsics before any localization claim.
+
+Verification/Review: Six new stdlib-only offline tests PASS; original MuJoCo XML SHA unchanged. Independent read-only review GO after narrowing the real-extrinsic evidence claim and clarifying transform directions/tag-line gates; no remaining Critical/Important. Existing MuJoCo-dependent Bridge tests could not be fully run here because Python MuJoCo is not installed; combined invocation showed9 dependency failures/9 passes, not a code-regression claim.
+
+Limitations: No live NUC, installed driver/FAST-LIO2 build identity, verifiable real calibration, wire capture or actual LiDAR scan; historical frequencies are not current-state evidence. The apparent CustomMsg package mismatch is unresolved. No Gazebo dependency introduced.

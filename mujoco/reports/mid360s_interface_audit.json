@@ -1,0 +1,122 @@
+{
+  "title": "Phase 3E-L1 real MID360S interface audit and MuJoCo LiDAR design",
+  "date": "2026-10-13",
+  "branch": "feat/mujoco-mid360s-interface-audit",
+  "base_commit": "ebbe6ed2c69ef00d0bb37466f5d8278c9f2dd652",
+  "evidence_legend": ["VERIFIED_FROM_SOURCE", "HISTORICALLY_OBSERVED", "CONFIGURED_ONLY", "UNVERIFIED"],
+  "sources": {
+    "frontier": {
+      "repository": "dazhihe7005/-frontier-",
+      "commit": "db897c4e3a1607f5852b484afd0a01523cb08c6b",
+      "deployed_version_verified": false,
+      "status": "VERIFIED_FROM_SOURCE",
+      "scope": "Pinned project configuration and historical bench records; not current device state"
+    },
+    "driver_reference": {
+      "repository": "Livox-SDK/livox_ros_driver2",
+      "commit": "21445540f0d100dc86a7e6df312dd70bbdb4afdf",
+      "deployed_version_verified": false,
+      "status": "VERIFIED_FROM_SOURCE",
+      "scope": "Upstream reference; installed NUC source/build identity unavailable"
+    },
+    "fast_lio_reference": {
+      "repository": "hku-mars/FAST_LIO",
+      "commit": "7cc4175de6f8ba2edf34bab02a42195b141027e9",
+      "deployed_version_verified": false,
+      "status": "VERIFIED_FROM_SOURCE",
+      "scope": "Upstream reference; patched installed FAST-LIO2 source/build identity unavailable"
+    },
+    "mujoco_lidar_candidate": {
+      "repository": "discoverse-dev/MuJoCo-LiDAR",
+      "commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+      "deployed_version_verified": false,
+      "status": "VERIFIED_FROM_SOURCE",
+      "scope": "Potential reusable implementation; no integration or runtime performance test"
+    },
+    "mineuav": {
+      "repository": "dazhihe7005/MineUAV-Learning",
+      "commit": "ebbe6ed2c69ef00d0bb37466f5d8278c9f2dd652",
+      "model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "status": "VERIFIED_FROM_SOURCE"
+    }
+  },
+  "real_hardware": {
+    "identity": {"name": "MID360S", "discovery_type": 35, "status": "HISTORICALLY_OBSERVED", "source": "-frontier- README.md:282-290"},
+    "network": {"radar_ip": "192.168.1.157", "nuc_ip": "192.168.1.10", "prefix": 24, "interface": "enp89s0", "status": "HISTORICALLY_OBSERVED", "source": "-frontier- README.md:116-125"},
+    "historic_topics_hz": {"/livox/lidar": 10, "/livox/imu": 200, "/Odometry": 10},
+    "historic_topics_status": "HISTORICALLY_OBSERVED",
+    "sdk2_version_claim": {"value": "1.4.3", "status": "HISTORICALLY_OBSERVED", "installed_binary_verified": false},
+    "real_mount_calibration_verified": false
+  },
+  "configured_network": {
+    "source": "-frontier- patches/livox_ros_driver2_mid360s_reconnect.patch:1-16 plus upstream reference config/MID360s_config.json:1-36",
+    "status": "CONFIGURED_ONLY",
+    "device_ip": "192.168.1.157",
+    "host_ip": "192.168.1.10",
+    "host_receive_udp_ports_confirmed_in_patch": {"command_data": 56101, "push_message": 56201, "point_data": 56301},
+    "reference_host_receive_udp_ports_not_pinned_to_deployment": {"imu_data": 56401, "log_data": 56501},
+    "reference_device_udp_ports_not_pinned_to_deployment": {"command_data": 56100, "push_message": 56200, "point_data": 56300, "imu_data": 56400, "log_data": 56500},
+    "wire_packet_layout_verified_for_deployed_sdk": false
+  },
+  "interfaces": {
+    "real_launch_include": {"path": "livox_ros_driver2/launch_ROS1/msg_MID360s.launch", "status": "CONFIGURED_ONLY", "source": "-frontier- launch/task1_real.launch:15-23"},
+    "ros_lidar_reference": {"topic": "/livox/lidar", "type": "livox_ros_driver2/CustomMsg", "fields": ["header", "timebase", "point_num", "lidar_id", "points[].offset_time", "points[].x", "points[].y", "points[].z", "points[].reflectivity", "points[].tag", "points[].line"], "frame_id_default": "livox_frame", "status": "VERIFIED_FROM_SOURCE", "source": "livox_ros_driver2 launch_ROS1/msg_MID360s.launch:6-27; src/lddc.cpp:573-596; msg/CustomMsg.msg; msg/CustomPoint.msg"},
+    "ros_imu_reference": {"topic": "/livox/imu", "type": "sensor_msgs/Imu", "fields_written": ["header.stamp", "header.frame_id", "angular_velocity", "linear_acceleration"], "frame_id": "livox_frame", "status": "VERIFIED_FROM_SOURCE", "source": "livox_ros_driver2 src/lddc.cpp:480-496,623-635"},
+    "fast_lio_reference_custom_subscription": "livox_ros_driver/CustomMsg",
+    "deployed_fast_lio_message_compatibility_verified": false,
+    "fast_lio_output_reference": {"odometry": "/Odometry nav_msgs/Odometry", "registered_cloud": "/cloud_registered sensor_msgs/PointCloud2", "status": "VERIFIED_FROM_SOURCE", "source": "FAST_LIO src/laserMapping.cpp:845-859"},
+    "udp_packet_layout": {"status": "UNVERIFIED", "reason": "Pinned deployed SDK2 source/build and wire captures unavailable; do not infer packet byte fields from ROS messages"}
+  },
+  "fast_lio_requirements": {
+    "per_point_offset_time": {"status": "VERIFIED_FROM_SOURCE", "source": "FAST_LIO src/preprocess.cpp:92-123; src/laserMapping.cpp:382-399; src/IMU_Processing.hpp:310-325"},
+    "point_tag_and_line": {"status": "VERIFIED_FROM_SOURCE", "source": "FAST_LIO src/preprocess.cpp:92-123"},
+    "synchronized_imu": {"status": "VERIFIED_FROM_SOURCE", "source": "FAST_LIO config/mid360.yaml:1-8; src/laserMapping.cpp:302-344"},
+    "deployed_custom_message_type": {"status": "UNVERIFIED", "reason": "Pinned -frontier- patch retains livox_ros_driver/CustomMsg while upstream driver2 advertises livox_ros_driver2/CustomMsg; installed patched source and rostopic type unavailable"},
+    "frame_identity": {"status": "HISTORICALLY_OBSERVED", "frame": "camera_init", "source": "-frontier- docs/task1_live_mid360_decider_2026-09-18.md:7-8"}
+  },
+  "extrinsics": {
+    "real_aircraft_calibration_verified": false,
+    "legacy_sdf_source_status": "CONFIGURED_ONLY",
+    "legacy_sdf_body_relative_pose_xyz_m_rpy_rad": [0.1315, 0.0, 0.223, 0.0, 0.436332313, 0.0],
+    "legacy_source": "-frontier- models/iris_mid360/iris_mid360.sdf:12-15",
+    "mujoco_lidar_visual_is_sensor": false,
+    "mujoco_lidar_site_present": false,
+    "required_real_measurements": ["body_to_lidar translation XYZ", "body_to_lidar roll/pitch/yaw", "body FLU/FRD convention", "LiDAR-to-IMU extrinsic", "LiDAR/IMU temporal offset"],
+    "verification_scope": "No verifiable calibration values found in pinned source; this does not prove none exist elsewhere"
+  },
+  "reuse_candidate": {
+    "name": "MuJoCo-LiDAR",
+    "backend": "MuJoCo",
+    "license": "MIT",
+    "scan_pattern_name": "mid360",
+    "scan_pattern_file_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3",
+    "scan_pattern_shape": [800000, 2],
+    "rays_per_sample_call": 24000,
+    "mid360s_equivalence_verified": false,
+    "per_point_timing_verified": false,
+    "imu_simulation_verified": false,
+    "direct_fast_lio2_compatibility_verified": false,
+    "status": "VERIFIED_FROM_SOURCE",
+    "source": "discoverse-dev/MuJoCo-LiDAR src/mujoco_lidar/scan_gen.py:15-91; src/mujoco_lidar/scan_mode/mid360.npy; examples/lidar_vis_ros1_wrapper.py:46-78; LICENSE",
+    "boundary": "Reusable approximate MuJoCo ray/pattern base, not a validated MID360S or FAST-LIO2 sensor emulator"
+  },
+  "integration_plan": {
+    "core": {"status": "DESIGN_ONLY", "data": ["source identity", "frame timestamp and clock domain", "sensor frame", "N x 3 XYZ", "valid mask", "optional reflectivity/tag/line", "optional per-point sample offset", "sensor extrinsic with provenance", "scan configuration"]},
+    "rl_path": {"status": "NOT TESTED", "input": "MuJoCo raycast points; approximate mid360 scan candidate", "output": "NumPy features or ROS PointCloud2 when requested", "quality": "Simplified geometry suitable only after domain validation"},
+    "fast_lio2_path": {"status": "NOT TESTED", "entry_gates": ["per_point_time", "synchronized_imu", "measured_extrinsics", "deployed_message_type_check", "clock_domain_check", "tag_line_semantics", "scan_pattern_validation", "frame_id_validation"], "output": "Only after gates: ROS1 custom message/IMU adapter, then FAST-LIO2, Odometry and PX4"},
+    "gazebo_dependency": false,
+    "runtime_sensor_implemented": false
+  },
+  "execution": {"sitl_runs": 0, "px4_runs": 0, "flights": 0, "training_runs": 0, "lidar_scan_runs": 0},
+  "verification": {
+    "new_offline_unittest_count": 6,
+    "new_offline_unittest_result": "PASS",
+    "source_identity_and_static_field_checks": "PASS",
+    "pinned_mujoco_model_sha256_rechecked": "PASS",
+    "independent_read_only_review": "GO; 0 Critical and 0 Important after correction",
+    "existing_bridge_mujoco_interface_tests": "NOT TESTED in installed environment: Python MuJoCo package absent; a combined pytest invocation reported 9 dependency-related failures and 9 passes. No historical source was modified.",
+    "device_or_simulation_validation": "NOT TESTED"
+  },
+  "unknowns": ["Installed NUC livox_ros_driver2 and FAST-LIO2 exact commits/build hashes", "Actual /livox/lidar type and Fast-LIO2 subscriber type on NUC", "Installed SDK2 exact binary version and deployed full UDP config", "Real MID360S scan pattern and point-rate equivalence to open-source mid360 pattern", "Real rigid body-to-LiDAR and LiDAR-to-IMU extrinsics", "Point/IMU clock synchronization and timestamp semantics", "Intensity/noise/dropout fidelity", "Future MuJoCo-LiDAR performance in project scene"],
+  "overall": {"status": "PASS", "scope": "Source/interface audit and offline-only design; actual MID360S simulation/SLAM integration NOT TESTED"}
+}
