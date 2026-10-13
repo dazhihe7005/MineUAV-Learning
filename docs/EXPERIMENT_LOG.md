@@ -983,3 +983,23 @@ Independent review: Two Important findings were fixed (public Shadow gate bypass
 Limitations: Fixed 25 nominal scripted trajectories only; local raw traces are required to reproduce; synthetic yaw probes change one scalar without physical replay; isolated CPU timing is not a scheduling or hard-real-time guarantee; no SLAM/EV fusion evidence or flight-safety claim. Historical checkpoints and training reports unchanged.
 
 Next: Only recommend a separately authorized disarmed end-to-end estimator-observation and Offboard command-path verification after Phase3A external-odometry fusion prerequisites are met; not executed.
+
+## 2026-10-13 — PX4–MuJoCo GNSS-Retained External Odometry Fusion Phase 3C
+
+Branch: `feat/px4-mujoco-odom-fusion-verification`; base `f202d9d2985312e80cf180a2f239077e3734aa81`.
+
+Research Question: Does simulated MuJoCo COM odometry pass through MAVLink/SimulatorMavlink to real PX4 EKF2 EV position and velocity fusion while GNSS remains enabled?
+
+Setup: One unarmed SITL run, no retry, one MuJoCo/one PX4 process. Pinned isolated PX4 source `142c24cffb`, binary SHA256 `2f6bbc24…`, MuJoCo3.14.0, unchanged7kg model. Reused Phase3A adapter/frame conversions and historical safety loop;50Hz COM truth ODOMETRY,250Hz HIL_SENSOR,10Hz HIL_GPS,500Hz physics. Synthetic covariance diagonal0.01; no EV yaw. Actual ULog params: EV_CTRL5/GPS_CTRL7/HGT_REF1/SDLOG_PROFILE131. Source is SIMULATED GROUND TRUTH ODOMETRY, not FAST-LIO2/SLAM.
+
+Key Results: EKF EV-position985 records (891 accepted) and EV-velocity944 records (944 accepted), final3 samples fused/unrejected with advancing fuse timestamps20,796,000→20,820,000→20,836,000µs. GNSS position/velocity198 records each, final fusion flags and aid timestamps active; local position/velocity valid. Actual ODOMETRY1001/HIL_SENSOR5001/GPS201. Runtime remained unarmed; four motor commands zero on exit, PX4exit0, safety fault null.29 queries: P50/P95/P99/max1.947/4.780/4.842/4.865ms; max start interval500.096ms; max actuator wall gap10.518ms. Bridge peakRSS771653632bytes, PX4 sampled peak9863168bytes, system minimum available10549301248bytes, no observed OOM.
+
+Negative/Incomplete Results: Direct `vehicle_visual_odometry` ULog evidence is BLOCKED: fixed PX4 logger reached its255-subscription capacity and explicitly failed to add the topic twice. Aid-source records prove actual EV fusion but cannot replace the missing direct receiver publication/frame/timestamp trace. The sole run advanced20.004s, violating the20s cap by one4ms cycle: accumulated floating `d.time` remained19.99999999999979 after5000cycles. Raw files remain immutable. The new Phase3C runner stop comparison was fixed offline with a1µs guard; RED→GREEN verifies5000cycles. Final modified runner SITL validation is NOT TESTED; no extra SITL occurred.
+
+Verification:356 inherited+15 new=371 Bridge tests pass, two inherited invalid-angle warnings;30 Phase3B Shadow tests pass in preflight with its package warnings. Suite peakRSS1080576KiB. Independent pre-run review findings (proof-kind reuse, stale/future/empty state evidence) were fixed before GO. Independent result review confirmed EV/GNSS fusion, logger evidence gap and stop-boundary error. Protected runtime/checkpoint/model/PX4 hashes recorded; original checkout retains87 historical untracked files. Historical runtime and experiment reports were not rewritten.
+
+Conclusion: EV/GNSS actual aid-source fusion PASS; complete three-layer interface acceptance BLOCKED; strict duration compliance FAIL. GNSS-denied, FAST-LIO2 timing and learned-policy PX4 flight remain NOT TESTED/BLOCKED. Reports: `mujoco/reports/px4_mujoco_odometry_fusion.json`, `docs/PX4_MUJOCO_ODOMETRY_FUSION.md`.
+
+Limitations: Single static unarmed state; synthetic noise/quality; PX4 receiver replaces source capture time with receive time; direct visual topic not recorded; one post-run offline boundary fix not revalidated live. Static local-origin offset is reported separately from displacement/velocity error; no moving-state accuracy, packet-loss or hardware claim.
+
+Next: Only recommend a separately authorized unarmed verification with an explicit bounded ULog topic list and the offline-fixed20s boundary, keeping GNSS enabled. Not executed.

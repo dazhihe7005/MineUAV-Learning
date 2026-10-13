@@ -45,8 +45,11 @@ def _covariance(value, name):
     c = np.asarray(value, dtype=float)
     if c.shape != (6, 6) or not np.isfinite(c).all():
         raise ValueError(f"invalid {name} shape/finite values")
-    if not np.allclose(c, c.T, rtol=0, atol=1e-10):
+    # An absolute 1e-10 tolerance silently accepted strongly asymmetric
+    # covariances when the declared variances were much smaller than that.
+    if not np.allclose(c, c.T, rtol=1e-9, atol=0):
         raise ValueError(f"asymmetric {name}")
+    c = (c + c.T) * .5
     scale = np.max(np.abs(c))
     eig_tolerance = 16 * np.finfo(float).eps * scale
     if (np.min(np.diag(c)) < np.finfo(np.float32).tiny

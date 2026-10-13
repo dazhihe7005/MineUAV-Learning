@@ -1,0 +1,406 @@
+{
+  "phase": "PX4\u2013MuJoCo Phase 3C GNSS-Retained External Odometry Fusion Verification",
+  "date": "2026-10-13",
+  "branch": "feat/px4-mujoco-odom-fusion-verification",
+  "base_commit": "f202d9d2985312e80cf180a2f239077e3734aa81",
+  "status": {
+    "A_producer": "PASS",
+    "B_mavlink_send": "PASS",
+    "C_px4_visual_odometry": "BLOCKED",
+    "D_ev_position_fusion": "PASS",
+    "E_ev_velocity_fusion": "PASS",
+    "F_gnss_retained": "PASS",
+    "G_disarmed": "PASS",
+    "H_safety_query": "PASS",
+    "I_zero_motors": "PASS",
+    "J_cleanup_history": "PASS",
+    "K_authorized_duration": "FAIL",
+    "L_yaw_allocation_row": "PASS"
+  },
+  "overall_fusion": "BLOCKED",
+  "overall_protocol": "FAIL",
+  "ekf_ev_aid_evidence": "PASS",
+  "identity": {
+    "px4": {
+      "schema": 1,
+      "base_commit": "8f9b91b2bdd3a65952601a084c3aa35e96fee59d",
+      "commit": "142c24cffb0cdfd57ab0a9f2506d3203610ce737",
+      "build": "build/px4_sitl_mineuav_yaw",
+      "binary_sha256": "2f6bbc24252577513ffb7f078bcb1048e258744f6c482918d3ea29c411e17004",
+      "build_version_header_sha256": "cc701c40eaf4840a56ad4d6f3d45290226c922931b6038afd6c1f12ed80bf5c0",
+      "patch_sha256": "09ec92476899e0bd997819ee3e840844c24009f669b42ee876dd33cc44e0bfaa",
+      "rootfs_sha256": "7220bda770b2a41aa3f49873777e0eaa5b0a5fa5c91934895b39d8a682381881",
+      "boardconfig_sha256": "045ad6c4dae3ba1d24570a21a4a9fe01cc3215246f1d11d559d67b99bbc2f81d",
+      "simulator_source_sha256": "b098c9df09a0e015ef67c83c8ce77f17cb681f763d944bbeee356491fbead6fb",
+      "tag": "v1.18.0-beta1-580-g142c24cffb",
+      "custom_sitl": true,
+      "binary": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/bin/px4",
+      "rootfs": "/home/keyousuke/PX4-Autopilot-mineuav-yaw/build/px4_sitl_mineuav_yaw/etc",
+      "manifest_sha256": "58a562cf99340786c6a58bd57040ebca21ea9437b213134fadca7f4fc6563375"
+    },
+    "model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+    "summary_sha256": "35877f9117c836f13563530659eb9964d2c9ed33fea987f401c6ce71d5ffb84d",
+    "source_manifest_sha256": "00e245c37c2e4265364f3c129da7fb6b8d70ae72c49392fa6709df71aa0f96ce",
+    "runtime_source_sha256": {
+      "odometry_fusion_runner.py": "e0a0aa6bd0b2701023cc72384d6a77fc2878715ce4b94a57b125e2df11b05325",
+      "odometry_producer.py": "8d1df3292686283e257b88ae1c3af6c2065f2f7a308bf9567997167eb5eca6e0",
+      "external_odometry.py": "5b26fc466c95cccf6d39ab59cb6b495861b72449b752eb2c61b6ccf994e3a907",
+      "frame_conversions.py": "d9ee1d47b3518a16504086b96d413d2e483c5d30ed44755679afed80c592a3da",
+      "simulation_runner.py": "3de06973e268b562201bcd64d895112f25e15e9d4438e4e84210bfbcd46f0069"
+    },
+    "final_runtime_source_sha256": {
+      "odometry_fusion_runner.py": "8c886776bb1b1d328c0e84883325c995a28a34fc8757bfcbbbf2f52685796957",
+      "odometry_producer.py": "8d1df3292686283e257b88ae1c3af6c2065f2f7a308bf9567997167eb5eca6e0",
+      "external_odometry.py": "5b26fc466c95cccf6d39ab59cb6b495861b72449b752eb2c61b6ccf994e3a907",
+      "frame_conversions.py": "d9ee1d47b3518a16504086b96d413d2e483c5d30ed44755679afed80c592a3da",
+      "simulation_runner.py": "3de06973e268b562201bcd64d895112f25e15e9d4438e4e84210bfbcd46f0069"
+    },
+    "final_runtime_matches_executed": false,
+    "final_code_sitl_validation": "NOT TESTED",
+    "runtime_source_unchanged": true,
+    "checkpoint_hashes": {
+      "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "joint_latent_world_model_v3_autonomous_consistency.pt": "42571249195a7ab396dbbcdec9764127ac4aae47eb069efb88e3465168790fa9",
+      "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+      "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+      "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+      "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+      "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+    },
+    "checkpoints_unchanged": true,
+    "ulog_sha256": "40f159beaec05c69a7ef0a4b2839a05f02f9278a5554d5be0dee81e7b9b0930a",
+    "console_sha256": "136efc4a80b63f4bde0541784517789766707ac8bf64a094c4a12caf0b003ea4"
+  },
+  "runtime": {
+    "simulation_seconds": 20.00399999999979,
+    "wall_seconds": 20.005620909999834,
+    "sitl_runs": 1,
+    "workers": 1,
+    "oom_observed": false,
+    "armed_runs": 0,
+    "bridge_peak_rss_bytes": 771653632,
+    "px4_peak_rss_bytes": 9863168,
+    "minimum_system_available_bytes": 10549301248,
+    "bridge_cpu_seconds": 2.239340651,
+    "runtime_measurements": {
+      "samples": {
+        "parse_validate_seconds": {
+          "n": 177,
+          "mean": 0.0002209880395526585,
+          "p50": 0.00022144399986245844,
+          "p95": 0.000488741800063508,
+          "p99": 0.0006136541199884965,
+          "max": 0.0007977309999205318
+        },
+        "console_service_seconds": {
+          "n": 15003,
+          "mean": 1.357122475390738e-05,
+          "p50": 9.63100001172279e-06,
+          "p95": 2.035299987710459e-05,
+          "p99": 2.8668799873230385e-05,
+          "max": 0.002170620000015333
+        },
+        "actuator_interval_wall_seconds": {
+          "n": 4985,
+          "mean": 0.0039724817747241676,
+          "p50": 0.003993541999989247,
+          "p95": 0.004310431199883169,
+          "p99": 0.0044405735199325135,
+          "max": 0.010517755000137186
+        },
+        "actuator_interval_sim_seconds": {
+          "n": 4985,
+          "mean": 0.004000000000000001,
+          "p50": 0.004,
+          "p95": 0.004,
+          "p99": 0.004,
+          "max": 0.004
+        },
+        "query_response_seconds": {
+          "n": 29,
+          "mean": 0.0025853594483013975,
+          "p50": 0.0019469620001473231,
+          "p95": 0.0047797571999581125,
+          "p99": 0.004842488640097144,
+          "max": 0.004864822000172353
+        }
+      },
+      "dropped": {},
+      "row_valid_at_completions": 29,
+      "actuator_receipts": 4986,
+      "recent_peak_chars": 65536,
+      "pending_query_max": 1,
+      "write_peak_bytes": 215,
+      "px4_sampled_cpu_seconds": 1.23,
+      "px4_cpu_sample_count": 1001,
+      "sample_limit": 65536,
+      "query_limit": 128,
+      "measurement_semantics": "host wall time; parse_validate includes streaming parse + safety validation, excludes raw archive I/O",
+      "parser_processed_chars": 416021,
+      "parser_peak_buffer_chars": 1836,
+      "scheduler": {
+        "starts": 29,
+        "max_lateness_s": 0.00011399300001357915
+      }
+    },
+    "messages_sent": {
+      "HIL_SENSOR": 5001,
+      "HIL_GPS": 201,
+      "ODOMETRY": 1001
+    },
+    "messages_received": {
+      "COMMAND_LONG": 1,
+      "HEARTBEAT": 1,
+      "HIL_ACTUATOR_CONTROLS": 4986
+    },
+    "exception": null,
+    "safety_fault": null,
+    "query_count": 29,
+    "query_start_interval_s": {
+      "p50": 0.500001399499979,
+      "p95": 0.5000683689500647,
+      "max": 0.5000957620000008
+    },
+    "query_response_ms": {
+      "p50": 1.9469620001473231,
+      "p95": 4.779757199958112,
+      "p99": 4.8424886400971445,
+      "max": 4.864822000172353
+    }
+  },
+  "actual_px4_parameters": {
+    "EKF2_EV_CTRL": 5,
+    "EKF2_GPS_CTRL": 7,
+    "EKF2_HGT_REF": 1,
+    "SDLOG_PROFILE": 131
+  },
+  "actual_ekf_noise_parameters": {
+    "EKF2_EV_QMIN": 0,
+    "EKF2_EV_DELAY": 0.0,
+    "EKF2_EV_NOISE_MD": 0,
+    "EKF2_EVP_NOISE": 0.10000000149011612,
+    "EKF2_EVV_NOISE": 0.10000000149011612
+  },
+  "parameter_identity_pass": true,
+  "evidence": {
+    "visual": {
+      "pass": false,
+      "status": "BLOCKED",
+      "reason": "missing visual odometry topic or fields",
+      "samples": 0
+    },
+    "aid_sources": {
+      "ev_pos": {
+        "pass": true,
+        "status": "PASS",
+        "samples": 985,
+        "accepted_samples": 891,
+        "nonfused_samples": 94,
+        "innovation_rejected_samples": 0,
+        "distinct_fuse_times": 893,
+        "last_fuse_usec": 20836000,
+        "final_three_fuse_times_usec": [
+          20796000,
+          20820000,
+          20836000
+        ],
+        "final_three_publication_times_usec": [
+          20948000,
+          20972000,
+          20988000
+        ],
+        "final_three_test_ratio_max": 3.939312875900214e-09,
+        "sample_time_first_last_usec": [
+          1156000,
+          20836000
+        ],
+        "reason": null
+      },
+      "ev_vel": {
+        "pass": true,
+        "status": "PASS",
+        "samples": 944,
+        "accepted_samples": 944,
+        "nonfused_samples": 0,
+        "innovation_rejected_samples": 0,
+        "distinct_fuse_times": 944,
+        "last_fuse_usec": 20836000,
+        "final_three_fuse_times_usec": [
+          20796000,
+          20820000,
+          20836000
+        ],
+        "final_three_publication_times_usec": [
+          20948000,
+          20972000,
+          20988000
+        ],
+        "final_three_test_ratio_max": 1.4515982194041044e-08,
+        "sample_time_first_last_usec": [
+          1956000,
+          20836000
+        ],
+        "reason": null
+      },
+      "gnss_pos": {
+        "pass": true,
+        "status": "PASS",
+        "samples": 198,
+        "accepted_samples": 179,
+        "nonfused_samples": 19,
+        "innovation_rejected_samples": 5,
+        "distinct_fuse_times": 179,
+        "last_fuse_usec": 20788000,
+        "final_three_fuse_times_usec": [
+          20588000,
+          20692000,
+          20788000
+        ],
+        "final_three_publication_times_usec": [
+          20740000,
+          20844000,
+          20940000
+        ],
+        "final_three_test_ratio_max": 9.963134289137088e-06,
+        "sample_time_first_last_usec": [
+          1086000,
+          20786000
+        ],
+        "reason": null
+      },
+      "gnss_vel": {
+        "pass": true,
+        "status": "PASS",
+        "samples": 198,
+        "accepted_samples": 178,
+        "nonfused_samples": 20,
+        "innovation_rejected_samples": 0,
+        "distinct_fuse_times": 178,
+        "last_fuse_usec": 20788000,
+        "final_three_fuse_times_usec": [
+          20588000,
+          20692000,
+          20788000
+        ],
+        "final_three_publication_times_usec": [
+          20740000,
+          20844000,
+          20940000
+        ],
+        "final_three_test_ratio_max": 4.4494458117938507e-10,
+        "sample_time_first_last_usec": [
+          1086000,
+          20786000
+        ],
+        "reason": null
+      }
+    },
+    "post_end_publications_excluded": {
+      "estimator_aid_src_ev_pos": 0,
+      "estimator_aid_src_ev_vel": 0,
+      "estimator_aid_src_gnss_pos": 0,
+      "estimator_aid_src_gnss_vel": 0,
+      "estimator_status_flags": 0,
+      "vehicle_gps_position": 0,
+      "vehicle_local_position": 0,
+      "vehicle_status": 0
+    },
+    "final_flags": {
+      "cs_ev_pos": true,
+      "cs_ev_vel": true,
+      "cs_gnss_pos": true,
+      "cs_gnss_vel": true
+    },
+    "local_valid": true,
+    "source_vs_received": {
+      "paired_samples": 0,
+      "reason": "source or PX4 visual odometry unavailable"
+    },
+    "local_estimate_vs_com": {
+      "status": "PASS",
+      "paired_samples": 2436,
+      "initial_origin_offset_ned_m": [
+        0.00013611176224015957,
+        -0.015143776320703366,
+        0.0825155430943821
+      ],
+      "raw_position_rmse_m": 0.04910326049593134,
+      "relative_displacement_rmse_m": 0.0062277050470872525,
+      "velocity_ned_rmse_m_s": 0.0013754801088936646,
+      "limitation": "Static disarmed state, nearest-prior PX4 sample-time pairing; local origin offset retained. No moving-state or source-clock synchronization validation."
+    },
+    "source_sent_count": 1001,
+    "source_sample_count": 1001,
+    "source_sampling_interval_usec": {
+      "min": 20000,
+      "max": 20000
+    },
+    "send_interval_wall_s": {
+      "p50": 0.019995436500039432,
+      "p95": 0.020179853450088103,
+      "max": 0.02046319099986249
+    },
+    "mavlink_send_errors": 0,
+    "odometry_transport_drop_count": "NOT OBSERVABLE: no direct receiver packet accounting; EKF/log sampling is not packet-loss accounting",
+    "source_time_first_last_usec": [
+      1000000,
+      21000000
+    ],
+    "odometry_inside_authorized_window": 1000,
+    "odometry_at_or_after_window_end": 1,
+    "visual_logging_subscription_failure": true,
+    "logger_subscription_failure_count": 369,
+    "receiver_timestamp_semantics": "PX4 SimulatorMavlink replaces MAVLink time_usec with receive-time hrt_absolute_time; source time synchronization NOT TESTED"
+  },
+  "protocol_deviation": {
+    "requested_maximum_seconds": 20.0,
+    "actual_simulation_seconds": 20.00399999999979,
+    "extra_sensor_cycles": 1,
+    "cause": "Historical smoke compares accumulated floating d.time<20; after5000cycles d.time was19.9999999999998, so one4ms cycle ran",
+    "post_run_fix": "Phase3C runner uses a1us comparison guard; offline cycle regression passes; final modified runtime has not been run in SITL"
+  },
+  "limitations": [
+    "SIMULATED GROUND TRUTH ODOMETRY, not FAST-LIO2/SLAM",
+    "GNSS retained; GNSS-denied localization NOT TESTED",
+    "No arming or policy closed-loop evaluation",
+    "Synthetic covariance and quality are declared assumptions, not sensor characterization"
+  ],
+  "verification": {
+    "bridge_inherited": 356,
+    "bridge_new": 15,
+    "bridge_total_passed": 371,
+    "shadow_tests_passed": 30,
+    "failed_tests": 0,
+    "bridge_inherited_warnings": 2,
+    "shadow_package_warnings": 3,
+    "bridge_suite_peak_rss_kib": 1080576,
+    "historical_untracked_files_preserved": 87,
+    "independent_review": {
+      "pre_run": "GO after offline fixes",
+      "final_code_and_results": "PASS for truthful code/result delivery; experiment remains non-PASS",
+      "remaining_critical": 0,
+      "remaining_important": 0,
+      "reviewer_bridge_tests_passed": 371,
+      "reviewer_targeted_tests_passed": 35
+    },
+    "whole_repository_tests": "NOT RUN; unrelated CAD NumPy/SciPy ABI untouched"
+  },
+  "unavailable_figures": {
+    "px4_receive_time.png": "BLOCKED: vehicle_visual_odometry logger subscription failed",
+    "direct_visual_position_velocity_comparison": "BLOCKED: no recorded vehicle_visual_odometry data"
+  },
+  "next_stage": {
+    "gnss_denied_entry": "BLOCKED",
+    "fast_lio2_time_sync": "NOT TESTED",
+    "bc_ppo_px4_flight": "NOT TESTED",
+    "single_recommendation": "A separately authorized disarmed verification with a bounded explicit ULog topic list and the offline-fixed20s stop boundary; retain GNSS until direct visual-odometry evidence and final-runtime validation pass"
+  },
+  "figures": [
+    "odometry_send_time.png",
+    "ekf_fusion_state.png",
+    "aid_source_last_fuse.png",
+    "local_position_velocity_vs_com.png",
+    "safety_query_timing.png"
+  ]
+}

@@ -78,6 +78,16 @@ def test_invalid_sample_never_emitted(change):
             module("transport").load_mavlink(str(SEARCH)), now_usec=1_000_000)
 
 
+def test_tiny_covariance_asymmetry_cannot_hide_behind_absolute_tolerance():
+    covariance = np.eye(6) * 1e-12
+    covariance[0, 1] = 2e-13
+    covariance[1, 0] = 3e-13
+    with pytest.raises(ValueError, match="asymmetric"):
+        module("external_odometry").OdometryAdapter().make_message(
+            sample(pose_covariance=covariance),
+            module("transport").load_mavlink(str(SEARCH)), now_usec=1_000_000)
+
+
 def test_sample_clock_duplicate_backwards_stale_future_and_outage_latch():
     o = module("external_odometry")
     mv = module("transport").load_mavlink(str(SEARCH))
