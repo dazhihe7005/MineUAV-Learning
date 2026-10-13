@@ -1,0 +1,848 @@
+{
+  "acceptance": {
+    "closed_loop_px4_success": "NOT TESTED",
+    "cpu_25hz_single_inference": "PASS",
+    "model_load_identity": "PASS",
+    "multi_model_simultaneous_deadline": "NOT TESTED",
+    "observation_action_mapping": "PASS",
+    "px4_offboard_control": "NOT TESTED",
+    "real_slam_odometry": "NOT TESTED",
+    "shadow_inference_no_transmission": "PASS"
+  },
+  "action_contract": "normalized [-1,1]^4, scales [1.5,1.5,1.0] m/s and 1rad/s; ENU velocity to NED, NED yaw-rate sign reversed",
+  "base_commit": "63e504eb1835a53a08d975476ba2dc10cc503d5d",
+  "figures": [
+    "mujoco/reports/px4_mujoco_policy_shadow_figures/latency_and_near_target_speed.png",
+    "mujoco/reports/px4_mujoco_policy_shadow_figures/yaw_response_offline.png"
+  ],
+  "limits": [
+    "No PX4 SITL run or command sent",
+    "Only recorded nominal scripted states; no offboard state-estimation validation",
+    "Yaw \u00b110/30 probes modify input scalar only; not physically replayed",
+    "40ms deadline assessed per model, not seven-model parallel runtime",
+    "Elementwise limits are not a PX4 flight-safety envelope"
+  ],
+  "models": {
+    "original_bc": {
+      "25hz_single_inference_budget_pass": true,
+      "approximate_rss_load_delta_mib": 3.015625,
+      "architecture": "7-128ReLU-128ReLU-4",
+      "checkpoint": "uav_bc_mlp_seed0.pt",
+      "checkpoint_sha256_before_after": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "checkpoint_statistics": {
+        "action": {
+          "mean": [
+            0.007569675036485264,
+            0.013826061337377071,
+            0.016322284022878872,
+            -9.752519125536777e-06
+          ],
+          "std": [
+            0.11961550740442958,
+            0.1254686234806743,
+            0.04393197292486685,
+            0.0009054505910512786
+          ]
+        },
+        "obs": {
+          "mean": [
+            0.034063536398707614,
+            0.062217274106405714,
+            0.04896685070556209,
+            0.012070392730195901,
+            0.022482771385162602,
+            0.017331877362893888,
+            -9.752519125536777e-06
+          ],
+          "std": [
+            0.538269767826172,
+            0.5646087876553805,
+            0.13179591493227547,
+            0.2577956850074399,
+            0.26967576373008756,
+            0.04453969313588551,
+            0.0009054505910512786
+          ]
+        }
+      },
+      "converted_ned_velocity_mean_m_s": [
+        -0.020413927895893913,
+        -0.00998626063479638,
+        -0.024810385689396405
+      ],
+      "inference_ms_cpu": {
+        "max": 0.068619,
+        "mean": 0.04291522,
+        "median": 0.042065,
+        "p95": 0.048709,
+        "p99": 0.05411521
+      },
+      "kind": "bc",
+      "load_ms": 2.1007880000070145,
+      "mean_abs_difference_from_recorded_scripted_action": [
+        0.002891148440539837,
+        0.0025370647199451923,
+        0.0009164675138890743,
+        1.9249999240855686e-05
+      ],
+      "near_target": {
+        "braking_fraction_when_moving": 0.32926829268292684,
+        "count": 961,
+        "mean_command_speed_m_s": 0.03999166865619848
+      },
+      "normalized_action_max": [
+        0.44809961318969727,
+        0.4390859305858612,
+        0.15520010888576508,
+        0.0033012700732797384
+      ],
+      "normalized_action_mean": [
+        -0.006657484453171492,
+        -0.013609283603727818,
+        0.02481035701930523,
+        1.8217448086943477e-05
+      ],
+      "normalized_action_min": [
+        -0.4391275644302368,
+        -0.41181790828704834,
+        -0.08017604798078537,
+        -0.0028786438051611185
+      ],
+      "output_repeated_exact": true,
+      "parameter_count": 18052,
+      "parameter_sha256_before_after": "771382758078def13665abef25ec5a9b3702b7938f265f55294605bcc5b60cfa",
+      "preprocessing": "checkpoint Train-only observation z-score and output action de-normalization",
+      "process_rss_mib_after_inference": 268.4296875,
+      "process_rss_mib_after_load": 264.125,
+      "process_rss_mib_before_load": 261.109375,
+      "saturated_command_fraction_any_abs_ge_095": 0.0,
+      "saturated_element_fraction_abs_ge_095": 0.0,
+      "status": "PASS",
+      "synthetic_yaw_error_probe_normalized_actions": {
+        "-10": [
+          0.09805184602737427,
+          0.5075975656509399,
+          0.13441888988018036,
+          -0.1721261590719223
+        ],
+        "-30": [
+          0.5620039105415344,
+          1.0,
+          0.13612572848796844,
+          -0.5162063241004944
+        ],
+        "0": [
+          -0.1709553450345993,
+          -0.06955822557210922,
+          0.1507778912782669,
+          -2.1371693947003223e-05
+        ],
+        "10": [
+          0.05700497329235077,
+          -0.05323315039277077,
+          0.1917988508939743,
+          0.17156916856765747
+        ],
+        "30": [
+          0.5510751008987427,
+          -0.01774653233587742,
+          0.31486791372299194,
+          0.5149102210998535
+        ]
+      },
+      "synthetic_yaw_plus30_minus30_yaw_rate_slope": 1.031116545200348,
+      "training_seed": 0,
+      "training_timesteps": null,
+      "within_episode_action_delta_l2": {
+        "max": 0.011309743858873844,
+        "mean": 0.00306336540562017,
+        "median": 0.0024869313929229975,
+        "p95": 0.007923062704503533,
+        "p99": 0.009349461644887922
+      }
+    },
+    "ppo_seed0": {
+      "25hz_single_inference_budget_pass": true,
+      "approximate_rss_load_delta_mib": 77.73828125,
+      "architecture": "separate 7-64Tanh-64Tanh actor/critic, diagonal Gaussian policy",
+      "checkpoint": "uav_ppo_fixed_protocol_seed0.zip",
+      "checkpoint_sha256_before_after": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+      "checkpoint_statistics": null,
+      "converted_ned_velocity_mean_m_s": [
+        -0.07409619240480017,
+        0.005953716548453651,
+        0.0009560743595720449
+      ],
+      "inference_ms_cpu": {
+        "max": 0.134804,
+        "mean": 0.10447059200000001,
+        "median": 0.10312,
+        "p95": 0.11180504999999998,
+        "p99": 0.12203142999999998
+      },
+      "kind": "ppo",
+      "load_ms": 576.0625929999605,
+      "mean_abs_difference_from_recorded_scripted_action": [
+        0.04629901796579361,
+        0.11264044791460037,
+        0.046298425644636154,
+        0.04471041262149811
+      ],
+      "near_target": {
+        "braking_fraction_when_moving": 0.7605321507760532,
+        "count": 961,
+        "mean_command_speed_m_s": 0.1139492525267179
+      },
+      "normalized_action_max": [
+        0.39732053875923157,
+        0.3163536489009857,
+        0.1988816261291504,
+        0.14472362399101257
+      ],
+      "normalized_action_mean": [
+        0.003969141747802496,
+        -0.04939750209450722,
+        -0.0009560835314914584,
+        0.02106262743473053
+      ],
+      "normalized_action_min": [
+        -0.38063088059425354,
+        -0.39956536889076233,
+        -0.1832772046327591,
+        -0.11699334532022476
+      ],
+      "output_repeated_exact": true,
+      "parameter_count": 9673,
+      "parameter_sha256_before_after": "b1a949caa90b273e8d9b18c1cdf25b8eb748d2d6110283680ab1e73e2c3962a2",
+      "preprocessing": "raw 7D float32, no VecNormalize; deterministic SB3 clipped policy mean",
+      "process_rss_mib_after_inference": 349.30078125,
+      "process_rss_mib_after_load": 347.171875,
+      "process_rss_mib_before_load": 269.43359375,
+      "saturated_command_fraction_any_abs_ge_095": 0.0,
+      "saturated_element_fraction_abs_ge_095": 0.0,
+      "status": "PASS",
+      "synthetic_yaw_error_probe_normalized_actions": {
+        "-10": [
+          -0.11072849482297897,
+          -0.1971244364976883,
+          0.14038246870040894,
+          0.0878426656126976
+        ],
+        "-30": [
+          -0.09509985893964767,
+          -0.29815730452537537,
+          0.13012567162513733,
+          0.09819719940423965
+        ],
+        "0": [
+          -0.11769253760576248,
+          -0.14272156357765198,
+          0.14419259130954742,
+          0.08158666640520096
+        ],
+        "10": [
+          -0.12394466251134872,
+          -0.08664587885141373,
+          0.14706695079803467,
+          0.07468701899051666
+        ],
+        "30": [
+          -0.1340867429971695,
+          0.0269926805049181,
+          0.15012657642364502,
+          0.05942286550998688
+        ]
+      },
+      "synthetic_yaw_plus30_minus30_yaw_rate_slope": -0.03877433389425278,
+      "training_seed": 0,
+      "training_timesteps": 100352,
+      "within_episode_action_delta_l2": {
+        "max": 0.018248535692691803,
+        "mean": 0.006479033325807391,
+        "median": 0.005802800413221121,
+        "p95": 0.013863905984908324,
+        "p99": 0.01730032719671726
+      }
+    },
+    "ppo_seed1": {
+      "25hz_single_inference_budget_pass": true,
+      "approximate_rss_load_delta_mib": 0.0390625,
+      "architecture": "separate 7-64Tanh-64Tanh actor/critic, diagonal Gaussian policy",
+      "checkpoint": "uav_ppo_fixed_protocol_seed1.zip",
+      "checkpoint_sha256_before_after": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+      "checkpoint_statistics": null,
+      "converted_ned_velocity_mean_m_s": [
+        0.027166633084011186,
+        0.0038607325358573576,
+        -0.01843097456793612
+      ],
+      "inference_ms_cpu": {
+        "max": 0.141097,
+        "mean": 0.105953612,
+        "median": 0.104142,
+        "p95": 0.11487404999999999,
+        "p99": 0.12686501
+      },
+      "kind": "ppo",
+      "load_ms": 6.433818999994401,
+      "mean_abs_difference_from_recorded_scripted_action": [
+        0.09212992340326309,
+        0.06464596837759018,
+        0.05719315633177757,
+        0.04028927534818649
+      ],
+      "near_target": {
+        "braking_fraction_when_moving": 0.8891352549889135,
+        "count": 961,
+        "mean_command_speed_m_s": 0.12253527923788426
+      },
+      "normalized_action_max": [
+        0.3365381956100464,
+        0.42938151955604553,
+        0.4097304046154022,
+        0.08620065450668335
+      ],
+      "normalized_action_mean": [
+        0.0025738151744008064,
+        0.018111083656549454,
+        0.018430935218930244,
+        -0.029398154467344284
+      ],
+      "normalized_action_min": [
+        -0.3891576826572418,
+        -0.3678375780582428,
+        -0.31412696838378906,
+        -0.1477276235818863
+      ],
+      "output_repeated_exact": true,
+      "parameter_count": 9673,
+      "parameter_sha256_before_after": "963b5c5527a93cc650f650f235004c99ec26d42c05e67bf6a17835fa368eafac",
+      "preprocessing": "raw 7D float32, no VecNormalize; deterministic SB3 clipped policy mean",
+      "process_rss_mib_after_inference": 349.57421875,
+      "process_rss_mib_after_load": 349.33984375,
+      "process_rss_mib_before_load": 349.30078125,
+      "saturated_command_fraction_any_abs_ge_095": 0.0,
+      "saturated_element_fraction_abs_ge_095": 0.0,
+      "status": "PASS",
+      "synthetic_yaw_error_probe_normalized_actions": {
+        "-10": [
+          -0.2488192468881607,
+          0.005134158302098513,
+          0.28548532724380493,
+          -0.061667200177907944
+        ],
+        "-30": [
+          -0.23632113635540009,
+          0.08597113937139511,
+          0.18329720199108124,
+          -0.08389683067798615
+        ],
+        "0": [
+          -0.25321075320243835,
+          -0.035703692585229874,
+          0.335667222738266,
+          -0.05010076239705086
+        ],
+        "10": [
+          -0.2563725709915161,
+          -0.07575178146362305,
+          0.38388150930404663,
+          -0.03855087608098984
+        ],
+        "30": [
+          -0.25934749841690063,
+          -0.15068194270133972,
+          0.4710220992565155,
+          -0.016381360590457916
+        ]
+      },
+      "synthetic_yaw_plus30_minus30_yaw_rate_slope": 0.06751547008752823,
+      "training_seed": 1,
+      "training_timesteps": 100352,
+      "within_episode_action_delta_l2": {
+        "max": 0.018148640170693398,
+        "mean": 0.007059452742621042,
+        "median": 0.006250970531255007,
+        "p95": 0.01486176550388336,
+        "p99": 0.016657449789345264
+      }
+    },
+    "ppo_seed2": {
+      "25hz_single_inference_budget_pass": true,
+      "approximate_rss_load_delta_mib": 0.00390625,
+      "architecture": "separate 7-64Tanh-64Tanh actor/critic, diagonal Gaussian policy",
+      "checkpoint": "uav_ppo_fixed_protocol_seed2.zip",
+      "checkpoint_sha256_before_after": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+      "checkpoint_statistics": null,
+      "converted_ned_velocity_mean_m_s": [
+        -0.0067814496731082,
+        0.02634527009216559,
+        -0.05432082531505485
+      ],
+      "inference_ms_cpu": {
+        "max": 0.139744,
+        "mean": 0.106934976,
+        "median": 0.104843,
+        "p95": 0.11816694999999999,
+        "p99": 0.13051701
+      },
+      "kind": "ppo",
+      "load_ms": 6.255760999920312,
+      "mean_abs_difference_from_recorded_scripted_action": [
+        0.05259717255830765,
+        0.08956125378608704,
+        0.04551870748400688,
+        0.03456200286746025
+      ],
+      "near_target": {
+        "braking_fraction_when_moving": 0.8325942350332595,
+        "count": 961,
+        "mean_command_speed_m_s": 0.10755974848924972
+      },
+      "normalized_action_max": [
+        0.414682000875473,
+        0.47723376750946045,
+        0.24807696044445038,
+        0.14437136054039001
+      ],
+      "normalized_action_mean": [
+        0.017563505098223686,
+        -0.004520964343100786,
+        0.054320815950632095,
+        0.0047691697254776955
+      ],
+      "normalized_action_min": [
+        -0.40208297967910767,
+        -0.4611428678035736,
+        -0.11800049990415573,
+        -0.1350938230752945
+      ],
+      "output_repeated_exact": true,
+      "parameter_count": 9673,
+      "parameter_sha256_before_after": "b480a877ebcc30a27127dfc9197b26bd8950a2ed3c8016d4645a890c46c9a60d",
+      "preprocessing": "raw 7D float32, no VecNormalize; deterministic SB3 clipped policy mean",
+      "process_rss_mib_after_inference": 349.59375,
+      "process_rss_mib_after_load": 349.578125,
+      "process_rss_mib_before_load": 349.57421875,
+      "saturated_command_fraction_any_abs_ge_095": 0.0,
+      "saturated_element_fraction_abs_ge_095": 0.0,
+      "status": "PASS",
+      "synthetic_yaw_error_probe_normalized_actions": {
+        "-10": [
+          -0.1860615313053131,
+          -0.2078714370727539,
+          0.22432111203670502,
+          -0.021556951105594635
+        ],
+        "-30": [
+          -0.1419427990913391,
+          -0.1944262683391571,
+          0.2331109642982483,
+          -0.008726540952920914
+        ],
+        "0": [
+          -0.2074211835861206,
+          -0.21254059672355652,
+          0.21837610006332397,
+          -0.027936644852161407
+        ],
+        "10": [
+          -0.22792460024356842,
+          -0.21590736508369446,
+          0.21148385107517242,
+          -0.03411154821515083
+        ],
+        "30": [
+          -0.2653455436229706,
+          -0.21938006579875946,
+          0.19532576203346252,
+          -0.04532601684331894
+        ]
+      },
+      "synthetic_yaw_plus30_minus30_yaw_rate_slope": -0.036599475890398026,
+      "training_seed": 2,
+      "training_timesteps": 100352,
+      "within_episode_action_delta_l2": {
+        "max": 0.019027050584554672,
+        "mean": 0.005817195017732549,
+        "median": 0.0049192835576832294,
+        "p95": 0.013207076769322153,
+        "p99": 0.016584370695054532
+      }
+    },
+    "ppo_seed3": {
+      "25hz_single_inference_budget_pass": true,
+      "approximate_rss_load_delta_mib": 0.0,
+      "architecture": "separate 7-64Tanh-64Tanh actor/critic, diagonal Gaussian policy",
+      "checkpoint": "uav_ppo_fixed_protocol_seed3.zip",
+      "checkpoint_sha256_before_after": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+      "checkpoint_statistics": null,
+      "converted_ned_velocity_mean_m_s": [
+        0.002098220235987139,
+        -0.004351522360229865,
+        -0.01185893755584945
+      ],
+      "inference_ms_cpu": {
+        "max": 0.143542,
+        "mean": 0.106571578,
+        "median": 0.104512,
+        "p95": 0.11895049999999997,
+        "p99": 0.12718331
+      },
+      "kind": "ppo",
+      "load_ms": 6.243961000109266,
+      "mean_abs_difference_from_recorded_scripted_action": [
+        0.11159200221300125,
+        0.06236793100833893,
+        0.025611797347664833,
+        0.03325247764587402
+      ],
+      "near_target": {
+        "braking_fraction_when_moving": 0.7926829268292683,
+        "count": 961,
+        "mean_command_speed_m_s": 0.11390476434002836
+      },
+      "normalized_action_max": [
+        0.346341073513031,
+        0.2660348415374756,
+        0.1936705857515335,
+        0.141278475522995
+      ],
+      "normalized_action_mean": [
+        -0.0029010071884840727,
+        0.0013988242717459798,
+        0.011858955025672913,
+        -0.0034837701823562384
+      ],
+      "normalized_action_min": [
+        -0.3584188222885132,
+        -0.24317999184131622,
+        -0.13063795864582062,
+        -0.12334274500608444
+      ],
+      "output_repeated_exact": true,
+      "parameter_count": 9673,
+      "parameter_sha256_before_after": "a58c48b3c45fb0907ae1c8d10867d5e55d76657619a4cba89270ccf60b4e3b82",
+      "preprocessing": "raw 7D float32, no VecNormalize; deterministic SB3 clipped policy mean",
+      "process_rss_mib_after_inference": 349.609375,
+      "process_rss_mib_after_load": 349.59375,
+      "process_rss_mib_before_load": 349.59375,
+      "saturated_command_fraction_any_abs_ge_095": 0.0,
+      "saturated_element_fraction_abs_ge_095": 0.0,
+      "status": "PASS",
+      "synthetic_yaw_error_probe_normalized_actions": {
+        "-10": [
+          -0.21408973634243011,
+          0.009602992795407772,
+          0.18888001143932343,
+          0.12275252491235733
+        ],
+        "-30": [
+          -0.20451897382736206,
+          -0.01246501225978136,
+          0.17610491812229156,
+          0.18754220008850098
+        ],
+        "0": [
+          -0.21789410710334778,
+          0.020450234413146973,
+          0.1936705857515335,
+          0.0884089544415474
+        ],
+        "10": [
+          -0.22090600430965424,
+          0.03090439736843109,
+          0.19721131026744843,
+          0.05342184752225876
+        ],
+        "30": [
+          -0.2242852747440338,
+          0.04994405061006546,
+          0.20040570199489594,
+          -0.016294391825795174
+        ]
+      },
+      "synthetic_yaw_plus30_minus30_yaw_rate_slope": -0.20383659191429615,
+      "training_seed": 3,
+      "training_timesteps": 100352,
+      "within_episode_action_delta_l2": {
+        "max": 0.01932140812277794,
+        "mean": 0.006002100844808955,
+        "median": 0.004786042496562004,
+        "p95": 0.014707761071622371,
+        "p99": 0.017701100446283816
+      }
+    },
+    "ppo_seed4": {
+      "25hz_single_inference_budget_pass": true,
+      "approximate_rss_load_delta_mib": 0.0,
+      "architecture": "separate 7-64Tanh-64Tanh actor/critic, diagonal Gaussian policy",
+      "checkpoint": "uav_ppo_fixed_protocol_seed4.zip",
+      "checkpoint_sha256_before_after": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125",
+      "checkpoint_statistics": null,
+      "converted_ned_velocity_mean_m_s": [
+        -0.047296849267206086,
+        -0.04266325070931787,
+        -0.018323359577993744
+      ],
+      "inference_ms_cpu": {
+        "max": 0.166588,
+        "mean": 0.10575410400000002,
+        "median": 0.10338,
+        "p95": 0.11984204999999999,
+        "p99": 0.12929851999999997
+      },
+      "kind": "ppo",
+      "load_ms": 6.192750000082015,
+      "mean_abs_difference_from_recorded_scripted_action": [
+        0.05232137441635132,
+        0.06900101155042648,
+        0.08058340847492218,
+        0.03859112411737442
+      ],
+      "near_target": {
+        "braking_fraction_when_moving": 0.49223946784922396,
+        "count": 961,
+        "mean_command_speed_m_s": 0.10203665706122593
+      },
+      "normalized_action_max": [
+        0.2289007008075714,
+        0.44837686419487,
+        0.3196384906768799,
+        0.16239963471889496
+      ],
+      "normalized_action_mean": [
+        -0.028442194685339928,
+        -0.031531237065792084,
+        0.018323395401239395,
+        -0.01380190160125494
+      ],
+      "normalized_action_min": [
+        -0.3138532340526581,
+        -0.4780682921409607,
+        -0.34355801343917847,
+        -0.20842692255973816
+      ],
+      "output_repeated_exact": true,
+      "parameter_count": 9673,
+      "parameter_sha256_before_after": "afc62368920f10b500e238b29a5e4356860c9c8b09b1a67b55c0b1efafeac45e",
+      "preprocessing": "raw 7D float32, no VecNormalize; deterministic SB3 clipped policy mean",
+      "process_rss_mib_after_inference": 349.609375,
+      "process_rss_mib_after_load": 349.609375,
+      "process_rss_mib_before_load": 349.609375,
+      "saturated_command_fraction_any_abs_ge_095": 0.0,
+      "saturated_element_fraction_abs_ge_095": 0.0,
+      "status": "PASS",
+      "synthetic_yaw_error_probe_normalized_actions": {
+        "-10": [
+          -0.1950150728225708,
+          -0.1924191564321518,
+          0.1492806226015091,
+          -0.08897600322961807
+        ],
+        "-30": [
+          -0.23302125930786133,
+          -0.1589983105659485,
+          0.11146967858076096,
+          -0.02071443200111389
+        ],
+        "0": [
+          -0.17427219450473785,
+          -0.2080695480108261,
+          0.16713987290859222,
+          -0.12307203561067581
+        ],
+        "10": [
+          -0.15248271822929382,
+          -0.22281473875045776,
+          0.18419696390628815,
+          -0.15676039457321167
+        ],
+        "30": [
+          -0.1063532903790474,
+          -0.24916256964206696,
+          0.2157617062330246,
+          -0.22182312607765198
+        ]
+      },
+      "synthetic_yaw_plus30_minus30_yaw_rate_slope": -0.20110869407653809,
+      "training_seed": 4,
+      "training_timesteps": 100352,
+      "within_episode_action_delta_l2": {
+        "max": 0.02252788469195366,
+        "mean": 0.006452000282310532,
+        "median": 0.005335113033652306,
+        "p95": 0.015450895298272366,
+        "p99": 0.018907370790839192
+      }
+    },
+    "yaw_bc": {
+      "25hz_single_inference_budget_pass": true,
+      "approximate_rss_load_delta_mib": 0.00390625,
+      "architecture": "7-128ReLU-128ReLU-4",
+      "checkpoint": "uav_bc_yaw_augmented_seed0.pt",
+      "checkpoint_sha256_before_after": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "checkpoint_statistics": {
+        "action": {
+          "mean": [
+            0.007569675036485264,
+            0.013826061337377071,
+            0.016322284022878872,
+            -9.752519125536777e-06
+          ],
+          "std": [
+            0.11961550740442958,
+            0.1254686234806743,
+            0.04393197292486685,
+            0.0009054505910512786
+          ]
+        },
+        "obs": {
+          "mean": [
+            0.034063536398707614,
+            0.062217274106405714,
+            0.04896685070556209,
+            0.012070392730195901,
+            0.022482771385162602,
+            0.017331877362893888,
+            -9.752519125536777e-06
+          ],
+          "std": [
+            0.538269767826172,
+            0.5646087876553805,
+            0.13179591493227547,
+            0.2577956850074399,
+            0.26967576373008756,
+            0.04453969313588551,
+            0.0009054505910512786
+          ]
+        }
+      },
+      "converted_ned_velocity_mean_m_s": [
+        -0.02122742490275303,
+        -0.010655254670676875,
+        -0.02496884699640302
+      ],
+      "inference_ms_cpu": {
+        "max": 0.063519,
+        "mean": 0.042848498,
+        "median": 0.042066,
+        "p95": 0.04825,
+        "p99": 0.05169491999999999
+      },
+      "kind": "bc",
+      "load_ms": 0.8556230000067444,
+      "mean_abs_difference_from_recorded_scripted_action": [
+        0.005080563016235828,
+        0.004709359724074602,
+        0.001990417018532753,
+        5.15277570229955e-05
+      ],
+      "near_target": {
+        "braking_fraction_when_moving": 0.3303769401330377,
+        "count": 961,
+        "mean_command_speed_m_s": 0.041894190311861736
+      },
+      "normalized_action_max": [
+        0.47449827194213867,
+        0.44246235489845276,
+        0.17007015645503998,
+        0.0034548307303339243
+      ],
+      "normalized_action_mean": [
+        -0.007103506475687027,
+        -0.014151599258184433,
+        0.024968823418021202,
+        1.6309611964970827e-05
+      ],
+      "normalized_action_min": [
+        -0.4184646010398865,
+        -0.399465948343277,
+        -0.07484543323516846,
+        -0.0028622974641621113
+      ],
+      "output_repeated_exact": true,
+      "parameter_count": 18052,
+      "parameter_sha256_before_after": "b1cdac0dd564baaee225b2c13e8e19a0540a842b5764da47212ebba8efffa5f5",
+      "preprocessing": "checkpoint Train-only observation z-score and output action de-normalization",
+      "process_rss_mib_after_inference": 269.43359375,
+      "process_rss_mib_after_load": 268.5,
+      "process_rss_mib_before_load": 268.49609375,
+      "saturated_command_fraction_any_abs_ge_095": 0.0,
+      "saturated_element_fraction_abs_ge_095": 0.0,
+      "status": "PASS",
+      "synthetic_yaw_error_probe_normalized_actions": {
+        "-10": [
+          -0.164369136095047,
+          -0.0754421204328537,
+          0.14345143735408783,
+          -0.17454203963279724
+        ],
+        "-30": [
+          -0.15272408723831177,
+          -0.08309019356966019,
+          0.14886020123958588,
+          -0.5236055850982666
+        ],
+        "0": [
+          -0.16531755030155182,
+          -0.062127090990543365,
+          0.15385913848876953,
+          6.586459494428709e-05
+        ],
+        "10": [
+          -0.17196978628635406,
+          -0.07067843526601791,
+          0.14330652356147766,
+          0.17454646527767181
+        ],
+        "30": [
+          -0.16215072572231293,
+          -0.10368996113538742,
+          0.15159262716770172,
+          0.5235840082168579
+        ]
+      },
+      "synthetic_yaw_plus30_minus30_yaw_rate_slope": 1.0471895933151245,
+      "training_seed": 0,
+      "training_timesteps": null,
+      "within_episode_action_delta_l2": {
+        "max": 0.010272681713104248,
+        "mean": 0.003063422998979774,
+        "median": 0.002430675784125924,
+        "p95": 0.007954198308289048,
+        "p99": 0.009269193280488251
+      }
+    }
+  },
+  "observation_contract": "7D target minus position ENU m; world ENU velocity m/s; wrapped target-minus-current ENU yaw rad",
+  "phase": "3B offline policy shadow preflight",
+  "resource": {
+    "cpu_threads_torch": 1,
+    "minimum_system_available_mib_sampled": 9945.02734375,
+    "per_model_rss_delta_warning": "process allocator may retain prior model memory; deltas are not isolated model footprint",
+    "rss_peak_mib": 461.9140625,
+    "workers": 1
+  },
+  "source": {
+    "accepted": 3620,
+    "all_policy_samples": 3620,
+    "episodes": 25,
+    "gate_rejected": 0,
+    "kind": "recorded nominal PI-environment scripted trajectories, not SLAM/PX4",
+    "local_only_path": "/home/keyousuke/MineUAV-Learning/mujoco/reports/uav_ppo_bc_nominal_comparison_parts",
+    "physical_invalid": 0,
+    "pinned_historical_cohort_verified": true,
+    "selection": "fresh_000 through fresh_024 scripted; fixed before inference",
+    "trace_hash_list_sha256": "927cdd8705f58fb3fccf34cf5f9ed9fec1bc380cf5e8faef1082ec3f7cb3b2ac"
+  },
+  "status": "PASS",
+  "verification_record": {
+    "final_independent_readonly_review": "0 Critical / 0 Important remaining; reviewer did not rerun tests",
+    "inherited_bridge_tests_passed": 356,
+    "known_nonfatal_warnings_bridge_tests": 2,
+    "known_nonfatal_warnings_new_tests": 3,
+    "new_offline_policy_tests_passed": 30,
+    "scope": "Separate manual verification on 2026-10-13; not run by this replay script"
+  }
+}

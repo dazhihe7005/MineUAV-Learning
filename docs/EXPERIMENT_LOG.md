@@ -965,3 +965,21 @@ Independent review: 0 Critical / 0 Important / 1 nonblocking Minor (absolute cov
 Limitations: Synthetic ground-truth odometry is not FAST-LIO2; quality/covariance not sensor-calibrated; no time-sync or delay verification inside PX4, no live messages or controlled flight in this phase. Offline tests do not establish a real estimator or safety outcome.
 
 Next: Separately authorize a disarmed ODOMETRY receipt/fusion and timestamp-path test with GNSS retained, before any GNSS-denied maneuver. Not executed.
+
+## 2026-10-13 — PX4–MuJoCo BC/PPO Policy Shadow Preflight Phase 3B
+
+Branch: `feat/px4-mujoco-policy-shadow-preflight`; base `63e504eb1835a53a08d975476ba2dc10cc503d5d`.
+
+Research Question: Can the frozen Original BC, yaw-augmented BC and five fixed-protocol PPO checkpoints be identity-verified and mapped from their actual 7D/4D PI-training interface to a non-transmitted PX4-format NED velocity/yaw-rate action?
+
+Setup: Offline-only, one process, one Torch thread. Fixed preselected first 25 historical scripted nominal evaluation traces (3,620 valid observations; all raw trace hashes verified), seven frozen models loaded sequentially. No SITL, Offboard message, new MuJoCo episode, training, parameter change or closed-loop policy test. BC checkpoint Train-only z-score/action de-normalization preserved; PPO uses raw 7D without VecNormalize and deterministic SB3 inference.
+
+Key Results: All seven checkpoint hashes and parameter hashes stable; ENU/NED and yaw-rate sign tests pass; repeated outputs exact and finite. Isolated CPU single-model P95 inference about0.05ms for BC and0.11–0.12ms for PPO, all maxima<0.2ms against the 40ms policy period; peak RSS462MiB, sampled minimum system available around10GiB, no observed OOM. The 961 near-target scripted states show BC mean command speed≈0.04m/s versus PPO≈0.10–0.12m/s, but these are off-policy commands. Synthetic ±30° yaw-error input probes show yaw-rate response slope positive for both BC models and negative for four of five PPO seeds; these probes are not physically replayed trajectories. Nominal replay command saturation at `|a|≥.95` was 0% for all seven models. Per-model details: `mujoco/reports/px4_mujoco_policy_shadow_preflight.json` and `docs/PX4_MUJOCO_POLICY_SHADOW_PREFLIGHT.md`. Separate verification:30 new offline tests and356 existing Bridge tests passed; two inherited Bridge warnings and three package-import warnings in the new suite, no failures.
+
+Conclusion: **PASS** for scoped offline policy inference, identity and interface conversion; PX4 estimator-fed 7D construction, Offboard delivery and closed-loop performance remain **NOT TESTED**. The PI control environment is not equivalent to the PX4 control chain.
+
+Independent review: Two Important findings were fixed (public Shadow gate bypass and local-only replay identity), then final read-only re-review found 0 Critical / 0 Important remaining. Reviewer did not rerun tests.
+
+Limitations: Fixed 25 nominal scripted trajectories only; local raw traces are required to reproduce; synthetic yaw probes change one scalar without physical replay; isolated CPU timing is not a scheduling or hard-real-time guarantee; no SLAM/EV fusion evidence or flight-safety claim. Historical checkpoints and training reports unchanged.
+
+Next: Only recommend a separately authorized disarmed end-to-end estimator-observation and Offboard command-path verification after Phase3A external-odometry fusion prerequisites are met; not executed.
