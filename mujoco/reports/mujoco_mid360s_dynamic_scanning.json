@@ -1,0 +1,5953 @@
+{
+  "acceptance": {
+    "dynamic_scan_24k": "PASS",
+    "fast_lio2": "NOT TESTED",
+    "full_24k_10hz_scan_only_budget": "PASS",
+    "geometry_numeric": "PASS",
+    "historical_model_unchanged": "PASS",
+    "physics_consistent_imu": "NOT TESTED",
+    "px4_sitl": "NOT TESTED",
+    "real_mid360s_point_timing": "NOT TESTED",
+    "ten_hz_sim_timestamps": "PASS"
+  },
+  "actual_pattern_scans": 99,
+  "benchmark": {
+    "1000": {
+      "conversion_ms": {
+        "max": 0.39071599894668907,
+        "mean": 0.25278272766048426,
+        "p50": 0.2301339991390705,
+        "p95": 0.35343100171303377,
+        "p99": 0.383258999499958
+      },
+      "downsample_factor": 24,
+      "frames": 11,
+      "per_frame_total_ms": [
+        0.7008600005065091,
+        0.46731100155739114,
+        0.45244300417834893,
+        0.445739999122452,
+        0.44157199590699747,
+        0.4306620030547492,
+        0.44553000043379143,
+        0.4425939987413585,
+        0.4398989985929802,
+        0.43459900189191103,
+        0.7371789979515597
+      ],
+      "ray_count": 1000,
+      "sample_sim_time_s": [
+        0.0,
+        0.10000000000000007,
+        0.20000000000000015,
+        0.3000000000000002,
+        0.4000000000000003,
+        0.5000000000000003,
+        0.6000000000000004,
+        0.7000000000000005,
+        0.8000000000000006,
+        0.9000000000000007,
+        1.0000000000000007
+      ],
+      "total_ms": {
+        "max": 0.7371789979515597,
+        "mean": 0.49439900017618627,
+        "p50": 0.44553000043379143,
+        "p95": 0.7190194992290344,
+        "p99": 0.7335470982070547
+      },
+      "trace_ms": {
+        "max": 0.34537099418230355,
+        "mean": 0.22010572601257908,
+        "p50": 0.19628000154625624,
+        "p95": 0.32956099676084705,
+        "p99": 0.34220899469801225
+      },
+      "valid_count_max": 712,
+      "valid_count_min": 645,
+      "within_static_10hz_budget": true
+    },
+    "24000": {
+      "conversion_ms": {
+        "max": 2.803843999572564,
+        "mean": 2.614624819464304,
+        "p50": 2.6000299985753372,
+        "p95": 2.7978780017292593,
+        "p99": 2.802650800003903
+      },
+      "downsample_factor": 1,
+      "frames": 11,
+      "per_frame_total_ms": [
+        7.035709000774659,
+        6.503345997771248,
+        6.491092994110659,
+        6.050443000276573,
+        5.990830999508034,
+        5.960662994766608,
+        6.149720000394154,
+        6.104864994995296,
+        6.802690993936267,
+        6.333927005471196,
+        5.885983002372086
+      ],
+      "ray_count": 24000,
+      "sample_sim_time_s": [
+        0.0,
+        0.10000000000000007,
+        0.20000000000000015,
+        0.3000000000000002,
+        0.4000000000000003,
+        0.5000000000000003,
+        0.6000000000000004,
+        0.7000000000000005,
+        0.8000000000000006,
+        0.9000000000000007,
+        1.0000000000000007
+      ],
+      "total_ms": {
+        "max": 7.035709000774659,
+        "mean": 6.300842816761525,
+        "p50": 6.149720000394154,
+        "p95": 6.919199997355463,
+        "p99": 7.01240720009082
+      },
+      "trace_ms": {
+        "max": 4.156664006586652,
+        "mean": 3.632967908660331,
+        "p50": 3.501398998196237,
+        "p95": 4.109254503418924,
+        "p99": 4.147182105953107
+      },
+      "valid_count_max": 17034,
+      "valid_count_min": 15530,
+      "within_static_10hz_budget": true
+    },
+    "4000": {
+      "conversion_ms": {
+        "max": 0.6136570009402931,
+        "mean": 0.5409530898429115,
+        "p50": 0.535007995495107,
+        "p95": 0.5940945011388976,
+        "p99": 0.609744500980014
+      },
+      "downsample_factor": 6,
+      "frames": 11,
+      "per_frame_total_ms": [
+        1.3037070020800456,
+        1.200933002110105,
+        1.297825998335611,
+        1.193008996779099,
+        1.1878080040332861,
+        1.1847429996123537,
+        1.1774390004575253,
+        1.1927180021302775,
+        1.1899230012204498,
+        1.1637729985523038,
+        1.1665280035231262
+      ],
+      "ray_count": 4000,
+      "sample_sim_time_s": [
+        0.0,
+        0.10000000000000007,
+        0.20000000000000015,
+        0.3000000000000002,
+        0.4000000000000003,
+        0.5000000000000003,
+        0.6000000000000004,
+        0.7000000000000005,
+        0.8000000000000006,
+        0.9000000000000007,
+        1.0000000000000007
+      ],
+      "total_ms": {
+        "max": 1.3037070020800456,
+        "mean": 1.205309728075835,
+        "p50": 1.1899230012204498,
+        "p95": 1.3007665002078284,
+        "p99": 1.3031189017056022
+      },
+      "trace_ms": {
+        "max": 0.6849310011602938,
+        "mean": 0.6381435463977554,
+        "p50": 0.6340750041999854,
+        "p95": 0.6715855015499983,
+        "p99": 0.6822619012382347
+      },
+      "valid_count_max": 2846,
+      "valid_count_min": 2589,
+      "within_static_10hz_budget": true
+    }
+  },
+  "environment": {
+    "flight_runs": 0,
+    "mujoco_module": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/mujoco/__init__.py",
+    "mujoco_version": "3.14.0",
+    "numpy_version": "2.2.6",
+    "px4_runs": 0,
+    "training_runs": 0,
+    "worker_count": 1
+  },
+  "historical_model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+  "imu_audit": {
+    "existing_method": "mj_forward; COM Jacobian and jacDot with qacc/qvel; gravity subtraction; FLU to FRD",
+    "existing_sitl_sample_hz": 250,
+    "fast_lio2_synchronization": "NOT TESTED",
+    "historical_clock_source": "mujoco/px4_bridge/diagnostics.py:SimClock",
+    "historical_px4_boot_offset_usec": 1000000,
+    "lidar_imu_extrinsic_measured": "NOT TESTED",
+    "physics_consistent_imu_from_kinematic_replay": "NOT TESTED",
+    "reason": "direct qpos/qvel overwrite has no physically consistent acceleration",
+    "shared_sim_clock_schedule": "500Hz integer ticks; IMU schedule every 2, LiDAR every 50 ticks",
+    "source": "mujoco/px4_bridge/sensor_adapter.py:SensorAdapter.sample",
+    "this_experiment_timestamp_usec": "relative simulation microseconds beginning at 0; not PX4 boot time"
+  },
+  "memory": {
+    "final_mem_available_mib": 9332.02734375,
+    "initial_mem_available_mib": 10266.56640625,
+    "oom_observed": false,
+    "peak_rss_mib": 1193.390625
+  },
+  "motion_provenance": "KINEMATIC_POSE_REPLAY",
+  "plot_ms": {
+    "continuous_pointclouds.png": 163.4437939937925,
+    "dynamic_trajectory.png": 118.82352099928539,
+    "local_vs_world_pointcloud.png": 114.10232199705206,
+    "scan_timing.png": 64.1996830017888,
+    "shaft_vertical_geometry.png": 437.18003500544,
+    "wall_distance_vs_time.png": 82.79937600309495
+  },
+  "sampling": {
+    "clock_domain": "MUJOCO_SIM_TIME",
+    "frame_pose_model": "whole frame frozen at sample tick; no motion distortion",
+    "imu_samples_generated": 0,
+    "imu_schedule_hz": 250,
+    "lidar_hz": 10,
+    "per_point_time_offset": "UNSUPPORTED",
+    "physics_hz": 500
+  },
+  "sensor_extrinsic": {
+    "provenance": "SIM_CONFIG",
+    "rpy_body_rad": [
+      0,
+      0,
+      0
+    ],
+    "translation_body_flu_m": [
+      0.1,
+      0,
+      0.1
+    ]
+  },
+  "source_identity": "MUJOCO_RAYCAST_APPROX_MID360",
+  "status": "PASS",
+  "trajectories": {
+    "combined": {
+      "end_sim_time_s": 1.0000000000000007,
+      "frames": [
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.6099130011280067,
+          "invalid_count": 8235,
+          "point_conversion_ms": 2.82457400317071,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_00.npz",
+          "raw_npz_sha256": "ca982c4f553a853bc65115cac1dcd4f1f425f58758404b30e7006bde3e408ddf",
+          "ray_count": 24000,
+          "scan_total_ms": 6.508557002234738,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.0,
+          "time_usec_scheduled": 0,
+          "valid_count": 15765
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.025,
+            0.010000000000000002,
+            0.71
+          ],
+          "body_quaternion_wxyz": [
+            0.9986295347545738,
+            0.0,
+            0.0,
+            0.05233595624294383
+          ],
+          "cpu_trace_ms": 3.5375070001464337,
+          "invalid_count": 6973,
+          "point_conversion_ms": 2.522062997741159,
+          "probe_ranges_m": {
+            "down": 0.8100000023841858,
+            "front": 2.891387132315006,
+            "left": 1.990451053074154,
+            "right": 2.031582064738463,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_01.npz",
+          "raw_npz_sha256": "dbd2a1d2a1e8ed198983568bd7f177c26fab1d3c73744b324dcaf97062aea858",
+          "ray_count": 24000,
+          "scan_total_ms": 6.109453999670222,
+          "sensor_pose_world_enu": [
+            [
+              0.9945219159126282,
+              -0.10452846437692642,
+              0.0,
+              0.12445218861103058
+            ],
+            [
+              0.10452846437692642,
+              0.9945219159126282,
+              0.0,
+              0.020452845841646194
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.10000000000000007,
+          "time_usec_scheduled": 100000,
+          "valid_count": 17027
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.05,
+            0.020000000000000004,
+            0.72
+          ],
+          "body_quaternion_wxyz": [
+            0.9945218953682733,
+            0.0,
+            0.0,
+            0.10452846326765346
+          ],
+          "cpu_trace_ms": 3.503763997287024,
+          "invalid_count": 6969,
+          "point_conversion_ms": 2.5102810031967238,
+          "probe_ranges_m": {
+            "down": 0.8199999928474426,
+            "front": 1.1268087056242608,
+            "left": 2.0029787173376747,
+            "right": 2.086383652716574,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_02.npz",
+          "raw_npz_sha256": "52ab5cb4665d100575beecc963c66bacb5879d0e48e25f4d867aa26c8d204100",
+          "ray_count": 24000,
+          "scan_total_ms": 6.057487000362016,
+          "sensor_pose_world_enu": [
+            [
+              0.9781476259231567,
+              -0.2079116851091385,
+              0.0,
+              0.1478147655725479
+            ],
+            [
+              0.2079116851091385,
+              0.9781476259231567,
+              0.0,
+              0.04079116880893707
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8199999928474426
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.20000000000000015,
+          "time_usec_scheduled": 200000,
+          "valid_count": 17031
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.075,
+            0.03,
+            0.73
+          ],
+          "body_quaternion_wxyz": [
+            0.9876883405951378,
+            0.0,
+            0.0,
+            0.15643446504023084
+          ],
+          "cpu_trace_ms": 3.640820999862626,
+          "invalid_count": 6985,
+          "point_conversion_ms": 2.744582998275291,
+          "probe_ranges_m": {
+            "down": 0.8299999833106995,
+            "front": 1.135468114295727,
+            "left": 2.038888614242576,
+            "right": 2.1669602833621715,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_03.npz",
+          "raw_npz_sha256": "13b4efcef1bf00f5e327a28c8c7e54dc92cb34524174661944f0609b76a36d8c",
+          "ray_count": 24000,
+          "scan_total_ms": 6.42869600414997,
+          "sensor_pose_world_enu": [
+            [
+              0.9510565400123596,
+              -0.30901700258255005,
+              0.0,
+              0.17010565102100372
+            ],
+            [
+              0.30901700258255005,
+              0.9510565400123596,
+              0.0,
+              0.0609016977250576
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8299999833106995
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.3000000000000002,
+          "time_usec_scheduled": 300000,
+          "valid_count": 17015
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.1,
+            0.04000000000000001,
+            0.74
+          ],
+          "body_quaternion_wxyz": [
+            0.9781476007338057,
+            0.0,
+            0.0,
+            0.20791169081775931
+          ],
+          "cpu_trace_ms": 3.5388090036576614,
+          "invalid_count": 8293,
+          "point_conversion_ms": 2.651356997375842,
+          "probe_ranges_m": {
+            "down": 0.8399999737739563,
+            "front": 1.158831728752977,
+            "left": 2.100964246606781,
+            "right": 2.2775808878701245,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_04.npz",
+          "raw_npz_sha256": "aa3c30d0f2908c6333c308d973ab24cd7626ad6c40185e60e69cad11c99fe69d",
+          "ray_count": 24000,
+          "scan_total_ms": 6.233036998310126,
+          "sensor_pose_world_enu": [
+            [
+              0.9135454297065735,
+              -0.4067366421222687,
+              0.0,
+              0.19135454297065735
+            ],
+            [
+              0.4067366421222687,
+              0.9135454297065735,
+              0.0,
+              0.08067366480827332
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8399999737739563
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.4000000000000003,
+          "time_usec_scheduled": 400000,
+          "valid_count": 15707
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.125,
+            0.05,
+            0.75
+          ],
+          "body_quaternion_wxyz": [
+            0.9659258262890683,
+            0.0,
+            0.0,
+            0.25881904510252074
+          ],
+          "cpu_trace_ms": 3.6445189980440773,
+          "invalid_count": 8249,
+          "point_conversion_ms": 2.620318002300337,
+          "probe_ranges_m": {
+            "down": 0.8500000238418579,
+            "front": 1.1990381128516348,
+            "left": 2.1939310310442357,
+            "right": 2.4248711431976036,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_05.npz",
+          "raw_npz_sha256": "65252f5ec27a07ed4bd9729f266e09e12555781c4e78556d1844403aacf72d4b",
+          "ray_count": 24000,
+          "scan_total_ms": 6.308819996775128,
+          "sensor_pose_world_enu": [
+            [
+              0.8660253882408142,
+              -0.5,
+              0.0,
+              0.21160253882408142
+            ],
+            [
+              0.5,
+              0.8660253882408142,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8500000238418579
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.5000000000000003,
+          "time_usec_scheduled": 500000,
+          "valid_count": 15751
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.15,
+            0.06,
+            0.76
+          ],
+          "body_quaternion_wxyz": [
+            0.9510565162951536,
+            0.0,
+            0.0,
+            0.30901699437494734
+          ],
+          "cpu_trace_ms": 3.7123069996596314,
+          "invalid_count": 6966,
+          "point_conversion_ms": 2.823842005454935,
+          "probe_ranges_m": {
+            "down": 0.8600000143051147,
+            "front": 3.2005251846099636,
+            "left": 2.3253176021277375,
+            "right": 2.6189542664073246,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_06.npz",
+          "raw_npz_sha256": "f095b3578fc970fba15720d144b8fee88df58ee2edc891ed4a16aeab86b0cab1",
+          "ray_count": 24000,
+          "scan_total_ms": 6.579730004887097,
+          "sensor_pose_world_enu": [
+            [
+              0.80901700258255,
+              -0.5877852439880371,
+              0.0,
+              0.23090170323848724
+            ],
+            [
+              0.5877852439880371,
+              0.80901700258255,
+              0.0,
+              0.1187785267829895
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8600000143051147
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.6000000000000004,
+          "time_usec_scheduled": 600000,
+          "valid_count": 17034
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.175,
+            0.06999999999999999,
+            0.7699999999999999
+          ],
+          "body_quaternion_wxyz": [
+            0.9335804264972017,
+            0.0,
+            0.0,
+            0.3583679495453002
+          ],
+          "cpu_trace_ms": 3.8892600059625693,
+          "invalid_count": 6968,
+          "point_conversion_ms": 3.4314369986532256,
+          "probe_ranges_m": {
+            "down": 0.8700000047683716,
+            "front": 2.784339669845539,
+            "left": 2.5070308145931564,
+            "right": 2.8755002145381536,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_07.npz",
+          "raw_npz_sha256": "9d5c0cbd9e554e702d9d1d49ee04cd6d7dbe48eb756ad50b5b11ef95959f811c",
+          "ray_count": 24000,
+          "scan_total_ms": 7.3660229973029345,
+          "sensor_pose_world_enu": [
+            [
+              0.7431448101997375,
+              -0.6691306233406067,
+              0.0,
+              0.24931448698043823
+            ],
+            [
+              0.6691306233406067,
+              0.7431448101997375,
+              0.0,
+              0.13691306114196777
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8700000047683716
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.7000000000000005,
+          "time_usec_scheduled": 700000,
+          "valid_count": 17032
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.2,
+            0.08000000000000002,
+            0.78
+          ],
+          "body_quaternion_wxyz": [
+            0.9135454576426009,
+            0.0,
+            0.0,
+            0.40673664307580015
+          ],
+          "cpu_trace_ms": 3.461322994553484,
+          "invalid_count": 6998,
+          "point_conversion_ms": 2.4733310056035407,
+          "probe_ranges_m": {
+            "down": 0.8799999952316284,
+            "front": 2.4836148843573636,
+            "left": 2.7583336458739374,
+            "right": 3.219572401929035,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_08.npz",
+          "raw_npz_sha256": "ee60af8275e83b5d1c984aaa8ac14d0b9f816381e52ad8dbc7da5ede5898da4b",
+          "ray_count": 24000,
+          "scan_total_ms": 6.012721998558845,
+          "sensor_pose_world_enu": [
+            [
+              0.6691306233406067,
+              -0.7431448101997375,
+              0.0,
+              0.2669130563735962
+            ],
+            [
+              0.7431448101997375,
+              0.6691306233406067,
+              0.0,
+              0.15431448817253113
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8799999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.8000000000000006,
+          "time_usec_scheduled": 800000,
+          "valid_count": 17002
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.225,
+            0.09000000000000001,
+            0.7899999999999999
+          ],
+          "body_quaternion_wxyz": [
+            0.8910065241883679,
+            0.0,
+            0.0,
+            0.45399049973954675
+          ],
+          "cpu_trace_ms": 3.571661000023596,
+          "invalid_count": 8383,
+          "point_conversion_ms": 2.446942002279684,
+          "probe_ranges_m": {
+            "down": 0.8899999856948853,
+            "front": 2.2608898163128517,
+            "left": 3.111847942885858,
+            "right": 3.357434364998987,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_09.npz",
+          "raw_npz_sha256": "e84eafbb0b6eeb4456c81d0b788eae73db4436f3635d1e135ea15c74399900c0",
+          "ray_count": 24000,
+          "scan_total_ms": 6.0681770046358,
+          "sensor_pose_world_enu": [
+            [
+              0.5877852439880371,
+              -0.80901700258255,
+              0.0,
+              0.28377851843833923
+            ],
+            [
+              0.80901700258255,
+              0.5877852439880371,
+              0.0,
+              0.17090170085430145
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8899999856948853
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.9000000000000007,
+          "time_usec_scheduled": 900000,
+          "valid_count": 15617
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.25,
+            0.1,
+            0.7999999999999999
+          ],
+          "body_quaternion_wxyz": [
+            0.8660254037844387,
+            0.0,
+            0.0,
+            0.49999999999999994
+          ],
+          "cpu_trace_ms": 3.523249994032085,
+          "invalid_count": 8470,
+          "point_conversion_ms": 2.4743340036366135,
+          "probe_ranges_m": {
+            "down": 0.8999999761581421,
+            "front": 2.0939310237871633,
+            "left": 3.6267948556495275,
+            "right": 3.1176914538481384,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "combined/frame_10.npz",
+          "raw_npz_sha256": "9139df45244a1601695b107845a19141fc93879357e278e39724ee0acb3af247",
+          "ray_count": 24000,
+          "scan_total_ms": 6.046786002116278,
+          "sensor_pose_world_enu": [
+            [
+              0.5,
+              -0.8660253882408142,
+              0.0,
+              0.30000001192092896
+            ],
+            [
+              0.8660253882408142,
+              0.5,
+              0.0,
+              0.18660254776477814
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8999999761581421
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 1.0000000000000007,
+          "time_usec_scheduled": 1000000,
+          "valid_count": 15530
+        }
+      ],
+      "physics_steps": 500,
+      "replay_wall_ms_excluding_save_plot": 77.79760300036287,
+      "scan_count": 11,
+      "scan_period_error_max_s": 8.326672684688674e-17,
+      "scan_total_ms": {
+        "max": 7.3660229973029345,
+        "mean": 6.338135364454832,
+        "p50": 6.233036998310126,
+        "p95": 6.9728765010950156,
+        "p99": 7.287393698061351
+      },
+      "scene_and_mode_init_ms": 139.1172200019355,
+      "sensor_extrinsic_delta_max": 0.0,
+      "valid_count_max": 17034,
+      "valid_count_min": 15530,
+      "world_front_wall_hit_count_min": 2434,
+      "world_front_wall_max_error_m": 7.276826030633288e-08
+    },
+    "shaft_vertical": {
+      "end_sim_time_s": 1.0000000000000007,
+      "frames": [
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 6.299773005594034,
+          "invalid_count": 0,
+          "point_conversion_ms": 3.4034639975288883,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_00.npz",
+          "raw_npz_sha256": "45a3b636ba48ee4bda3089ed26aed12bb4121b10a3d767da3f16a7e36dee7573",
+          "ray_count": 24000,
+          "scan_total_ms": 9.775423000974115,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.0,
+          "time_usec_scheduled": 0,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7999999999999999
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 6.48890899901744,
+          "invalid_count": 0,
+          "point_conversion_ms": 2.831716999935452,
+          "probe_ranges_m": {
+            "down": 0.8999999761581421,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_01.npz",
+          "raw_npz_sha256": "cdd1eae4e03208b90c0905188c2910e4747e068bfb099c53db66df7d877294f4",
+          "ray_count": 24000,
+          "scan_total_ms": 9.369639003125485,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8999999761581421
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.10000000000000007,
+          "time_usec_scheduled": 100000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.8999999999999999
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 6.2300419958774,
+          "invalid_count": 0,
+          "point_conversion_ms": 2.891809999709949,
+          "probe_ranges_m": {
+            "down": 1.0,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_02.npz",
+          "raw_npz_sha256": "f751cb8f1ffc6b7adf7a49869c0d33b5c463e07eb3f3bbf589360a47b23a65d6",
+          "ray_count": 24000,
+          "scan_total_ms": 9.164471994154155,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.20000000000000015,
+          "time_usec_scheduled": 200000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 6.298088999756146,
+          "invalid_count": 0,
+          "point_conversion_ms": 2.9058769941912033,
+          "probe_ranges_m": {
+            "down": 1.100000023841858,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_03.npz",
+          "raw_npz_sha256": "2c7993b77f4f2161f869b2e4348c1341d813d756e4bdc6b9481fe4609877ccf8",
+          "ray_count": 24000,
+          "scan_total_ms": 9.249321999959648,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.100000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.3000000000000002,
+          "time_usec_scheduled": 300000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            1.1
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 6.276469001022633,
+          "invalid_count": 0,
+          "point_conversion_ms": 2.840063003532123,
+          "probe_ranges_m": {
+            "down": 1.2000000476837158,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_04.npz",
+          "raw_npz_sha256": "177371d04342c56b9122507c344bdadb43d200374f440fdf024885d3b5e978c9",
+          "ray_count": 24000,
+          "scan_total_ms": 9.16072399559198,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.2000000476837158
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.4000000000000003,
+          "time_usec_scheduled": 400000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            1.2
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 8.005468000192195,
+          "invalid_count": 0,
+          "point_conversion_ms": 2.8606010018847883,
+          "probe_ranges_m": {
+            "down": 1.2999999523162842,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_05.npz",
+          "raw_npz_sha256": "c63d31efa2892fab2c169c6e04014f8b0b63dc0c768e1ff8d6e51ce970e383e7",
+          "ray_count": 24000,
+          "scan_total_ms": 10.911844998190645,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.2999999523162842
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.5000000000000003,
+          "time_usec_scheduled": 500000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            1.2999999999999998
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 9.523889006231911,
+          "invalid_count": 0,
+          "point_conversion_ms": 3.8708149950252846,
+          "probe_ranges_m": {
+            "down": 1.399999976158142,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_06.npz",
+          "raw_npz_sha256": "867faf90c48993b944fc977c4a2f6a5bfdf7a52804ea21c1daf1b35c1da58f60",
+          "ray_count": 24000,
+          "scan_total_ms": 13.438577996566892,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.399999976158142
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.6000000000000004,
+          "time_usec_scheduled": 600000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            1.4
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 10.150350004551001,
+          "invalid_count": 0,
+          "point_conversion_ms": 3.115701998467557,
+          "probe_ranges_m": {
+            "down": 1.5,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_07.npz",
+          "raw_npz_sha256": "592c90aefe87f7c7ee728b1e97b187f675cf665f292e6462726e910ed40bdae3",
+          "ray_count": 24000,
+          "scan_total_ms": 13.36671199533157,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.5
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.7000000000000005,
+          "time_usec_scheduled": 700000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            1.5
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 11.675433997879736,
+          "invalid_count": 0,
+          "point_conversion_ms": 3.086607001023367,
+          "probe_ranges_m": {
+            "down": 1.600000023841858,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_08.npz",
+          "raw_npz_sha256": "b0feeef52358e5344ff8a9a96d9a2e8ba82b22c984ef71afc6f652b713864e03",
+          "ray_count": 24000,
+          "scan_total_ms": 14.812456000072416,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.600000023841858
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.8000000000000006,
+          "time_usec_scheduled": 800000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            1.6
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 11.544357003003825,
+          "invalid_count": 0,
+          "point_conversion_ms": 3.106664997176267,
+          "probe_ranges_m": {
+            "down": 1.7000000476837158,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_09.npz",
+          "raw_npz_sha256": "5708dbd8d92db55f400534224019e036d4902f1f31d87c3e944785190d45892e",
+          "ray_count": 24000,
+          "scan_total_ms": 14.700224994157907,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.7000000476837158
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.9000000000000007,
+          "time_usec_scheduled": 900000,
+          "valid_count": 24000
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            1.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 11.625159997493029,
+          "invalid_count": 0,
+          "point_conversion_ms": 3.1903830022201873,
+          "probe_ranges_m": {
+            "down": 1.7999999523162842,
+            "front": 2.399999998509884,
+            "left": 2.5,
+            "right": 2.5,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "shaft_vertical/frame_10.npz",
+          "raw_npz_sha256": "7858c5235c93ff0508fb8930053b1e6b02e32d7e652e722eb5247184e6ae52ea",
+          "ray_count": 24000,
+          "scan_total_ms": 14.860065995890182,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.7999999523162842
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 1.0000000000000007,
+          "time_usec_scheduled": 1000000,
+          "valid_count": 24000
+        }
+      ],
+      "geometry_scope": "24-sided uniform vertical walls; horizontal-ray Z invariance only",
+      "horizontal_range_expected_m": [
+        2.4,
+        2.5,
+        2.5
+      ],
+      "horizontal_range_spread_m": 0.0,
+      "physics_steps": 500,
+      "replay_wall_ms_excluding_save_plot": 137.09078000101727,
+      "scan_count": 11,
+      "scan_period_error_max_s": 8.326672684688674e-17,
+      "scan_total_ms": {
+        "max": 14.860065995890182,
+        "mean": 11.709951088546818,
+        "p50": 10.911844998190645,
+        "p95": 14.836260997981299,
+        "p99": 14.855304996308405
+      },
+      "scene_and_mode_init_ms": 88.6260300030699,
+      "sensor_extrinsic_delta_max": 0.0,
+      "valid_count_max": 24000,
+      "valid_count_min": 24000,
+      "world_front_wall_hit_count_min": null,
+      "world_front_wall_max_error_m": null
+    },
+    "x_line": {
+      "end_sim_time_s": 1.0000000000000007,
+      "frames": [
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 4.144020000239834,
+          "invalid_count": 8235,
+          "point_conversion_ms": 2.8334400049061514,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_00.npz",
+          "raw_npz_sha256": "ca982c4f553a853bc65115cac1dcd4f1f425f58758404b30e7006bde3e408ddf",
+          "ray_count": 24000,
+          "scan_total_ms": 7.049927000480238,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.0,
+          "time_usec_scheduled": 0,
+          "valid_count": 15765
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.04000000000000001,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.678963999846019,
+          "invalid_count": 6939,
+          "point_conversion_ms": 2.8830939991166815,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.8599999994039536,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_01.npz",
+          "raw_npz_sha256": "a0f0810d0c764caa56773dcb53cddf5778ade3df93596ea10326388b1de525ef",
+          "ray_count": 24000,
+          "scan_total_ms": 6.606801005546004,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.14000000059604645
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.10000000000000007,
+          "time_usec_scheduled": 100000,
+          "valid_count": 17061
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.08000000000000002,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5428970004431903,
+          "invalid_count": 6823,
+          "point_conversion_ms": 2.7158179946127348,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.8199999928474426,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_02.npz",
+          "raw_npz_sha256": "2f4e0e1be93b06c9429dfc871ac86d24fe893fe1ac0e419e392e2114828fa436",
+          "ray_count": 24000,
+          "scan_total_ms": 6.302667999989353,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.18000000715255737
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.20000000000000015,
+          "time_usec_scheduled": 200000,
+          "valid_count": 17177
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.12,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5635960011859424,
+          "invalid_count": 6837,
+          "point_conversion_ms": 2.7348549992893822,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.780000001192093,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_03.npz",
+          "raw_npz_sha256": "d1c54a1fc070b4638ae2718d2cafe8860672a17b781a1f890096c77d141a47bd",
+          "ray_count": 24000,
+          "scan_total_ms": 6.3426440028706565,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.2199999988079071
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.3000000000000002,
+          "time_usec_scheduled": 300000,
+          "valid_count": 17163
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.16000000000000003,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.7425139962579124,
+          "invalid_count": 8016,
+          "point_conversion_ms": 2.391998001257889,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.740000009536743,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_04.npz",
+          "raw_npz_sha256": "df4a3b24c81c390852dd173c1ee43a69916b0ce22536c72f72d6582e179faff4",
+          "ray_count": 24000,
+          "scan_total_ms": 6.178594994707964,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.25999999046325684
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.4000000000000003,
+          "time_usec_scheduled": 400000,
+          "valid_count": 15984
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.2,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.715894003107678,
+          "invalid_count": 7931,
+          "point_conversion_ms": 2.6648319981177337,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.699999988079071,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_05.npz",
+          "raw_npz_sha256": "62c5cab4ad7eaf2779274e6c0555cf38a6e734c2cb65884fb5d188d77c5f2a82",
+          "ray_count": 24000,
+          "scan_total_ms": 6.439315999159589,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.30000001192092896
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.5000000000000003,
+          "time_usec_scheduled": 500000,
+          "valid_count": 16069
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.24,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.6350410009617917,
+          "invalid_count": 6567,
+          "point_conversion_ms": 2.714766997087281,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.6599999964237213,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_06.npz",
+          "raw_npz_sha256": "1d310e5be983996314ff133f15b834b2e522da8d4a871a7c42828ef72d5675df",
+          "ray_count": 24000,
+          "scan_total_ms": 6.393509996996727,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.3400000035762787
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.6000000000000004,
+          "time_usec_scheduled": 600000,
+          "valid_count": 17433
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.27999999999999997,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5484580002957955,
+          "invalid_count": 6595,
+          "point_conversion_ms": 2.7693599986378103,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.6200000047683716,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_07.npz",
+          "raw_npz_sha256": "f1f643a0ae7b89332213ed3dbc5ec7de7c63bc0c9455e540efc9f2b0ac4a9981",
+          "ray_count": 24000,
+          "scan_total_ms": 6.362261003232561,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.3799999952316284
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.7000000000000005,
+          "time_usec_scheduled": 700000,
+          "valid_count": 17405
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.32000000000000006,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.6154240005998872,
+          "invalid_count": 6547,
+          "point_conversion_ms": 2.7323789981892332,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.580000013113022,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_08.npz",
+          "raw_npz_sha256": "265609210997e811dcf5b887e7f3ea8021016d78b2191ffc75c783f2e59b1618",
+          "ray_count": 24000,
+          "scan_total_ms": 6.390664006175939,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.41999998688697815
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.8000000000000006,
+          "time_usec_scheduled": 800000,
+          "valid_count": 17453
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.36000000000000004,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5812400019494817,
+          "invalid_count": 7755,
+          "point_conversion_ms": 2.661185004399158,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.5399999916553497,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_09.npz",
+          "raw_npz_sha256": "ae6e1d79583e474bd42804bcd130a9b5895c33dafb9eb0da16208a61146880ee",
+          "ray_count": 24000,
+          "scan_total_ms": 6.286097996053286,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.46000000834465027
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.9000000000000007,
+          "time_usec_scheduled": 900000,
+          "valid_count": 16245
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.4,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.6321959996712394,
+          "invalid_count": 7639,
+          "point_conversion_ms": 2.6562659986666404,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.5,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "x_line/frame_10.npz",
+          "raw_npz_sha256": "b86b465cef321c7c8221676b6358a0f95a78d3c86a717285705f2768a39e7c23",
+          "ray_count": 24000,
+          "scan_total_ms": 6.332314995233901,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.5
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 1.0000000000000007,
+          "time_usec_scheduled": 1000000,
+          "valid_count": 16361
+        }
+      ],
+      "physics_steps": 500,
+      "replay_wall_ms_excluding_save_plot": 78.41912600270007,
+      "scan_count": 11,
+      "scan_period_error_max_s": 8.326672684688674e-17,
+      "scan_total_ms": {
+        "max": 7.049927000480238,
+        "mean": 6.425890818222384,
+        "p50": 6.362261003232561,
+        "p95": 6.828364003013121,
+        "p99": 7.005614400986815
+      },
+      "scene_and_mode_init_ms": 577.2411300058593,
+      "sensor_extrinsic_delta_max": 0.0,
+      "valid_count_max": 17453,
+      "valid_count_min": 15765,
+      "wall_range_max_error_m": 1.3113022223620874e-08,
+      "world_front_wall_hit_count_min": 2500,
+      "world_front_wall_max_error_m": 8.881784197001252e-16
+    },
+    "y_line": {
+      "end_sim_time_s": 1.0000000000000007,
+      "frames": [
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.8660360005451366,
+          "invalid_count": 8235,
+          "point_conversion_ms": 2.871721997507848,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_00.npz",
+          "raw_npz_sha256": "ca982c4f553a853bc65115cac1dcd4f1f425f58758404b30e7006bde3e408ddf",
+          "ray_count": 24000,
+          "scan_total_ms": 6.812990002799779,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.0,
+          "time_usec_scheduled": 0,
+          "valid_count": 15765
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.03,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.545040999597404,
+          "invalid_count": 6978,
+          "point_conversion_ms": 2.8647889994317666,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.970000000670552,
+            "right": 2.0299999993294477,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_01.npz",
+          "raw_npz_sha256": "0bdf507df4bf1be54b3f1a0b030ac4c2bb13e70c4a9261eb95a96f80383d015d",
+          "ray_count": 24000,
+          "scan_total_ms": 6.453351998061407,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.029999999329447746
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.10000000000000007,
+          "time_usec_scheduled": 100000,
+          "valid_count": 17022
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.06,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.4344929954386316,
+          "invalid_count": 6996,
+          "point_conversion_ms": 2.475585999491159,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.9400000013411043,
+            "right": 2.0599999986588955,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_02.npz",
+          "raw_npz_sha256": "98414508bf5b55e0d9f024101dcb02303b36c47bfe89788de969dac4d7f094ea",
+          "ray_count": 24000,
+          "scan_total_ms": 5.952988998615183,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.05999999865889549
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.20000000000000015,
+          "time_usec_scheduled": 200000,
+          "valid_count": 17004
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.09,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.3889870028360747,
+          "invalid_count": 6965,
+          "point_conversion_ms": 2.475314999173861,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.909999996423721,
+            "right": 2.0900000035762787,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_03.npz",
+          "raw_npz_sha256": "e7f31dcd9849cd2935fbd3e7ce816d1bde649d1fe35527bf183f7dfc747d690e",
+          "ray_count": 24000,
+          "scan_total_ms": 5.9072040021419525,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.09000000357627869
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.3000000000000002,
+          "time_usec_scheduled": 300000,
+          "valid_count": 17035
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.12,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5286999991512857,
+          "invalid_count": 8218,
+          "point_conversion_ms": 2.4756660059210844,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.8800000026822088,
+            "right": 2.119999997317791,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_04.npz",
+          "raw_npz_sha256": "f39665136182f2fcd89fc6b3aad5c304c759b7d03bc7dbc8cd9fe0951deac672",
+          "ray_count": 24000,
+          "scan_total_ms": 6.045643996912986,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.11999999731779099
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.4000000000000003,
+          "time_usec_scheduled": 400000,
+          "valid_count": 15782
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.15,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5532670008251444,
+          "invalid_count": 8232,
+          "point_conversion_ms": 2.6824149972526357,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.8499999940395353,
+            "right": 2.1500000059604645,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_05.npz",
+          "raw_npz_sha256": "02637354b8eaef0cdcc2e8562575cc3d22c424dbf5f73a534a41178d93fc6c7c",
+          "ray_count": 24000,
+          "scan_total_ms": 6.279765002545901,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.15000000596046448
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.5000000000000003,
+          "time_usec_scheduled": 500000,
+          "valid_count": 15768
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.18,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.99875600123778,
+          "invalid_count": 6907,
+          "point_conversion_ms": 3.291803994216025,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.8199999928474424,
+            "right": 2.1800000071525574,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_06.npz",
+          "raw_npz_sha256": "a42ab1c48e1af4af97c1d9ff468b6d60a714367a6bc777931ba4a238ba22b63a",
+          "ray_count": 24000,
+          "scan_total_ms": 7.33357200078899,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.18000000715255737
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.6000000000000004,
+          "time_usec_scheduled": 600000,
+          "valid_count": 17093
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.21,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.960714995628223,
+          "invalid_count": 6884,
+          "point_conversion_ms": 2.7504640020197257,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.7900000065565107,
+            "right": 2.209999993443489,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_07.npz",
+          "raw_npz_sha256": "a87ebc13417ada58dfc780995c853d026e0ed2ee63314b888a21ec3789d4b972",
+          "ray_count": 24000,
+          "scan_total_ms": 6.797720998292789,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.20999999344348907
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.7000000000000005,
+          "time_usec_scheduled": 700000,
+          "valid_count": 17116
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.24,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.469407994998619,
+          "invalid_count": 6905,
+          "point_conversion_ms": 2.693296002689749,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.7600000053644178,
+            "right": 2.239999994635582,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_08.npz",
+          "raw_npz_sha256": "e01ff41c02e962caee7332f66beb623fc62cbb8fa318874887b21ea36be3651f",
+          "ray_count": 24000,
+          "scan_total_ms": 6.207309001183603,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.23999999463558197
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.8000000000000006,
+          "time_usec_scheduled": 800000,
+          "valid_count": 17095
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.27,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.559808996214997,
+          "invalid_count": 8233,
+          "point_conversion_ms": 2.6234039978589863,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 1.1499999985098839,
+            "left": 1.7299999892711637,
+            "right": 2.270000010728836,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_09.npz",
+          "raw_npz_sha256": "106ecf2d722e5d8da7bc27a6dd881437a0e4f6a6ac5e927f92909b2c750cf118",
+          "ray_count": 24000,
+          "scan_total_ms": 6.231755003682338,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.27000001072883606
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.9000000000000007,
+          "time_usec_scheduled": 900000,
+          "valid_count": 15767
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.3,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.557744996214751,
+          "invalid_count": 8236,
+          "point_conversion_ms": 2.570103999460116,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 1.1499999985098839,
+            "left": 1.6999999880790708,
+            "right": 2.300000011920929,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "y_line/frame_10.npz",
+          "raw_npz_sha256": "c985f8d0b6971d8b760f43d08fbf617443d5af4055da19ca7d623fc1cba37c68",
+          "ray_count": 24000,
+          "scan_total_ms": 6.174948000989389,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.30000001192092896
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 1.0000000000000007,
+          "time_usec_scheduled": 1000000,
+          "valid_count": 15764
+        }
+      ],
+      "physics_steps": 500,
+      "replay_wall_ms_excluding_save_plot": 77.81234199501341,
+      "scan_count": 11,
+      "scan_period_error_max_s": 8.326672684688674e-17,
+      "scan_total_ms": {
+        "max": 7.33357200078899,
+        "mean": 6.381568091455847,
+        "p50": 6.231755003682338,
+        "p95": 7.073281001794385,
+        "p99": 7.281513800990069
+      },
+      "scene_and_mode_init_ms": 134.730325997225,
+      "sensor_extrinsic_delta_max": 0.0,
+      "valid_count_max": 17116,
+      "valid_count_min": 15764,
+      "wall_range_max_error_m": 1.1920928910669204e-08,
+      "world_front_wall_hit_count_min": 2206,
+      "world_front_wall_max_error_m": 8.881784197001252e-16
+    },
+    "yaw_spin": {
+      "end_sim_time_s": 1.0000000000000007,
+      "frames": [
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5199340054532513,
+          "invalid_count": 8235,
+          "point_conversion_ms": 2.5422919934499077,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_00.npz",
+          "raw_npz_sha256": "ca982c4f553a853bc65115cac1dcd4f1f425f58758404b30e7006bde3e408ddf",
+          "ray_count": 24000,
+          "scan_total_ms": 6.150451001303736,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.0,
+          "time_usec_scheduled": 0,
+          "valid_count": 15765
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.996917333733128,
+            0.0,
+            0.0,
+            0.07845909572784494
+          ],
+          "cpu_trace_ms": 3.5275480040581897,
+          "invalid_count": 6979,
+          "point_conversion_ms": 2.5687209999887273,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 1.4981133759060492,
+            "left": 2.0090918060657494,
+            "right": 2.0407686926193205,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_01.npz",
+          "raw_npz_sha256": "021852c36aaf7f3cf20de058d9a3850ec443100e5eb3cf85e912239e68c579d2",
+          "ray_count": 24000,
+          "scan_total_ms": 6.140974001027644,
+          "sensor_pose_world_enu": [
+            [
+              0.9876883625984192,
+              -0.15643446147441864,
+              0.0,
+              0.09876883774995804
+            ],
+            [
+              0.15643446147441864,
+              0.9876883625984192,
+              0.0,
+              0.015643445774912834
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.10000000000000007,
+          "time_usec_scheduled": 100000,
+          "valid_count": 17021
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.9876883405951378,
+            0.0,
+            0.0,
+            0.15643446504023087
+          ],
+          "cpu_trace_ms": 3.9175130004878156,
+          "invalid_count": 7017,
+          "point_conversion_ms": 2.8929319960298017,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 1.2143277842594178,
+            "left": 2.07043247831105,
+            "right": 2.1354164192936973,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_02.npz",
+          "raw_npz_sha256": "740f1c3a46d510d747a44c71ec9cf35c299875dc332946f4cff3b4f4e1f270d5",
+          "ray_count": 24000,
+          "scan_total_ms": 6.855771003756672,
+          "sensor_pose_world_enu": [
+            [
+              0.9510565400123596,
+              -0.30901700258255005,
+              0.0,
+              0.09510564804077148
+            ],
+            [
+              0.30901700258255005,
+              0.9510565400123596,
+              0.0,
+              0.030901700258255005
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.20000000000000015,
+          "time_usec_scheduled": 200000,
+          "valid_count": 16983
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.9723699203976766,
+            0.0,
+            0.0,
+            0.2334453638559054
+          ],
+          "cpu_trace_ms": 3.4409849977237172,
+          "invalid_count": 6966,
+          "point_conversion_ms": 2.472520005539991,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 1.302907790380237,
+            "left": 2.193699915926607,
+            "right": 2.295605007880126,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_03.npz",
+          "raw_npz_sha256": "9bc5286f684499dbe912b33e40c940f7a5c5614c211491f9ec9d845807cc1de9",
+          "ray_count": 24000,
+          "scan_total_ms": 6.01005699718371,
+          "sensor_pose_world_enu": [
+            [
+              0.8910065293312073,
+              -0.45399048924446106,
+              0.0,
+              0.08910065144300461
+            ],
+            [
+              0.45399048924446106,
+              0.8910065293312073,
+              0.0,
+              0.045399051159620285
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.3000000000000002,
+          "time_usec_scheduled": 300000,
+          "valid_count": 17034
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.9510565162951535,
+            0.0,
+            0.0,
+            0.3090169943749474
+          ],
+          "cpu_trace_ms": 3.4312770003452897,
+          "invalid_count": 8197,
+          "point_conversion_ms": 2.3904859990580007,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 3.302603287290164,
+            "left": 2.3994816831027794,
+            "right": 2.544790185432283,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_04.npz",
+          "raw_npz_sha256": "c974c7d9c4b6e5ac8dfd0a3e28acc5ffd918fa02552b4d80f1cc5b0d54ccf1bf",
+          "ray_count": 24000,
+          "scan_total_ms": 5.870814005902503,
+          "sensor_pose_world_enu": [
+            [
+              0.80901700258255,
+              -0.5877852439880371,
+              0.0,
+              0.08090169727802277
+            ],
+            [
+              0.5877852439880371,
+              0.80901700258255,
+              0.0,
+              0.05877852439880371
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.4000000000000003,
+          "time_usec_scheduled": 400000,
+          "valid_count": 15803
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.9238795325112867,
+            0.0,
+            0.0,
+            0.3826834323650898
+          ],
+          "cpu_trace_ms": 3.4532490026322193,
+          "invalid_count": 8198,
+          "point_conversion_ms": 2.3452699970221147,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.72842712013559,
+            "left": 2.72842712013559,
+            "right": 2.9284271293567907,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_05.npz",
+          "raw_npz_sha256": "55c6dc476d5cd8b227849d74cc1b4b0b3d2cfdb12037d4d7347c6922634d60e4",
+          "ray_count": 24000,
+          "scan_total_ms": 5.844655002874788,
+          "sensor_pose_world_enu": [
+            [
+              0.7071067690849304,
+              -0.7071067690849304,
+              0.0,
+              0.0707106813788414
+            ],
+            [
+              0.7071067690849304,
+              0.7071067690849304,
+              0.0,
+              0.0707106813788414
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.5000000000000003,
+          "time_usec_scheduled": 500000,
+          "valid_count": 15802
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.8910065241883679,
+            0.0,
+            0.0,
+            0.45399049973954675
+          ],
+          "cpu_trace_ms": 3.468326998699922,
+          "invalid_count": 7007,
+          "point_conversion_ms": 2.5309199991170317,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.3721359377754143,
+            "left": 3.264965096906159,
+            "right": 3.540241478025943,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_06.npz",
+          "raw_npz_sha256": "30cb03228ae8285ff3e140e67f0509334c7b14cc72594c63061820492c0f55f1",
+          "ray_count": 24000,
+          "scan_total_ms": 6.0470359967439435,
+          "sensor_pose_world_enu": [
+            [
+              0.5877852439880371,
+              -0.80901700258255,
+              0.0,
+              0.05877852439880371
+            ],
+            [
+              0.80901700258255,
+              0.5877852439880371,
+              0.0,
+              0.08090169727802277
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.6000000000000004,
+          "time_usec_scheduled": 600000,
+          "valid_count": 16993
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.8526401643540922,
+            0.0,
+            0.0,
+            0.5224985647159488
+          ],
+          "cpu_trace_ms": 3.500516999338288,
+          "invalid_count": 6958,
+          "point_conversion_ms": 2.449116000207141,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.1446524635939994,
+            "left": -1.0,
+            "right": 3.316026146878291,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_07.npz",
+          "raw_npz_sha256": "110d50cd0372b8c67ace7932f13184bd9d99f4d02a60fc20ad57f7a2c5546ed4",
+          "ray_count": 24000,
+          "scan_total_ms": 5.994428000121843,
+          "sensor_pose_world_enu": [
+            [
+              0.45399048924446106,
+              -0.8910065293312073,
+              0.0,
+              0.045399051159620285
+            ],
+            [
+              0.8910065293312073,
+              0.45399048924446106,
+              0.0,
+              0.08910065144300461
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.7000000000000005,
+          "time_usec_scheduled": 700000,
+          "valid_count": 17042
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.8090169943749475,
+            0.0,
+            0.0,
+            0.5877852522924731
+          ],
+          "cpu_trace_ms": 3.3701520005706698,
+          "invalid_count": 6980,
+          "point_conversion_ms": 2.4328450017492287,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.0029244525603076,
+            "left": -1.0,
+            "right": 3.1218947027122375,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_08.npz",
+          "raw_npz_sha256": "eb340a0d2f4099f7b4ba8b8723317c3ba42757b62273917b5b23074d5ab407cf",
+          "ray_count": 24000,
+          "scan_total_ms": 5.846998996275943,
+          "sensor_pose_world_enu": [
+            [
+              0.30901700258255005,
+              -0.9510565400123596,
+              0.0,
+              0.030901700258255005
+            ],
+            [
+              0.9510565400123596,
+              0.30901700258255005,
+              0.0,
+              0.09510564804077148
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.8000000000000006,
+          "time_usec_scheduled": 800000,
+          "valid_count": 17020
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.7604059656000309,
+            0.0,
+            0.0,
+            0.6494480483301837
+          ],
+          "cpu_trace_ms": 3.385240001080092,
+          "invalid_count": 8315,
+          "point_conversion_ms": 2.390856003330555,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 1.9249302457163873,
+            "left": -1.0,
+            "right": 3.021556930737017,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_09.npz",
+          "raw_npz_sha256": "c6e27b084b78cb68874b089dfc2aa1f1ceb4e18c73b6f401acebe519c6a07870",
+          "ray_count": 24000,
+          "scan_total_ms": 5.8197789985570125,
+          "sensor_pose_world_enu": [
+            [
+              0.15643446147441864,
+              -0.9876883625984192,
+              0.0,
+              0.015643445774912834
+            ],
+            [
+              0.9876883625984192,
+              0.15643446147441864,
+              0.0,
+              0.09876883774995804
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.9000000000000007,
+          "time_usec_scheduled": 900000,
+          "valid_count": 15685
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            0.7071067811865476,
+            0.0,
+            0.0,
+            0.7071067811865475
+          ],
+          "cpu_trace_ms": 3.3555539994267747,
+          "invalid_count": 8436,
+          "point_conversion_ms": 2.418228003080003,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 1.8999999985098837,
+            "left": -1.0,
+            "right": 3.0,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "yaw_spin/frame_10.npz",
+          "raw_npz_sha256": "d41a18edbf7a459ccbe4338a688613aa4b560e25f53d76d6281af695971f041b",
+          "ray_count": 24000,
+          "scan_total_ms": 5.817664998176042,
+          "sensor_pose_world_enu": [
+            [
+              2.220446049250313e-16,
+              -1.0,
+              0.0,
+              2.2204460823375376e-17
+            ],
+            [
+              1.0,
+              2.220446049250313e-16,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 1.0000000000000007,
+          "time_usec_scheduled": 1000000,
+          "valid_count": 15564
+        }
+      ],
+      "physics_steps": 500,
+      "replay_wall_ms_excluding_save_plot": 74.25463599793147,
+      "scan_count": 11,
+      "scan_period_error_max_s": 8.326672684688674e-17,
+      "scan_total_ms": {
+        "max": 6.855771003756672,
+        "mean": 6.036239000174894,
+        "p50": 5.994428000121843,
+        "p95": 6.503111002530204,
+        "p99": 6.7852390035113785
+      },
+      "scene_and_mode_init_ms": 104.4572680038982,
+      "sensor_extrinsic_delta_max": 0.0,
+      "valid_count_max": 17042,
+      "valid_count_min": 15564,
+      "world_front_wall_hit_count_min": 2184,
+      "world_front_wall_max_error_m": 7.45026689230599e-08
+    },
+    "z_triangle": {
+      "end_sim_time_s": 1.0000000000000007,
+      "frames": [
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.9645309952902608,
+          "invalid_count": 8235,
+          "point_conversion_ms": 2.5533830048516393,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_00.npz",
+          "raw_npz_sha256": "ca982c4f553a853bc65115cac1dcd4f1f425f58758404b30e7006bde3e408ddf",
+          "ray_count": 24000,
+          "scan_total_ms": 6.59196399647044,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.0,
+          "time_usec_scheduled": 0,
+          "valid_count": 15765
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.74
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.514684001856949,
+          "invalid_count": 7091,
+          "point_conversion_ms": 2.512446000764612,
+          "probe_ranges_m": {
+            "down": 0.8399999737739563,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_01.npz",
+          "raw_npz_sha256": "aca37c5f46c3bf02f0a228566fd4fccddf3ed1872c27f17a43d9daa486bad396",
+          "ray_count": 24000,
+          "scan_total_ms": 6.0712420017807744,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8399999737739563
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.10000000000000007,
+          "time_usec_scheduled": 100000,
+          "valid_count": 16909
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.78
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.8495350017910823,
+          "invalid_count": 7275,
+          "point_conversion_ms": 2.578419997007586,
+          "probe_ranges_m": {
+            "down": 0.8799999952316284,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_02.npz",
+          "raw_npz_sha256": "5016c0e99822dbd4c25cbd55322cf7b26ebe9dd9cd3297f017be3ea51ee769cb",
+          "ray_count": 24000,
+          "scan_total_ms": 6.471456996223424,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8799999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.20000000000000015,
+          "time_usec_scheduled": 200000,
+          "valid_count": 16725
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.82
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.364311000041198,
+          "invalid_count": 7346,
+          "point_conversion_ms": 3.2697319984436035,
+          "probe_ranges_m": {
+            "down": 0.9200000166893005,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_03.npz",
+          "raw_npz_sha256": "c0879cb94a33902eabd8effe7f6218930bafcebbcab9a1b46e43412b37873881",
+          "ray_count": 24000,
+          "scan_total_ms": 6.679218000499532,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.9200000166893005
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.3000000000000002,
+          "time_usec_scheduled": 300000,
+          "valid_count": 16654
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.86
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5267160055809654,
+          "invalid_count": 8975,
+          "point_conversion_ms": 2.476487999956589,
+          "probe_ranges_m": {
+            "down": 0.9599999785423279,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_04.npz",
+          "raw_npz_sha256": "3650cf80de3fd2cf9df87ecedd621a107b5185d9f95941755017b449d84a8941",
+          "ray_count": 24000,
+          "scan_total_ms": 6.093563999456819,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.9599999785423279
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.4000000000000003,
+          "time_usec_scheduled": 400000,
+          "valid_count": 15025
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.8999999999999999
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.4752889987430535,
+          "invalid_count": 9331,
+          "point_conversion_ms": 2.4113850013236515,
+          "probe_ranges_m": {
+            "down": 1.0,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_05.npz",
+          "raw_npz_sha256": "88bb0a24595b1bc75dfe5c816c4fd234ff66e51f4564e0dc1fb3d347aec4ed20",
+          "ray_count": 24000,
+          "scan_total_ms": 5.933573003858328,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.5000000000000003,
+          "time_usec_scheduled": 500000,
+          "valid_count": 14669
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.86
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.484847999061458,
+          "invalid_count": 7435,
+          "point_conversion_ms": 2.486525998392608,
+          "probe_ranges_m": {
+            "down": 0.9599999785423279,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_06.npz",
+          "raw_npz_sha256": "68dc666f1de60a6bbb4bc8cdf93cbc9ec1330f909b51c91222c345f6ed8f1733",
+          "ray_count": 24000,
+          "scan_total_ms": 6.017830994096585,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.9599999785423279
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.6000000000000004,
+          "time_usec_scheduled": 600000,
+          "valid_count": 16565
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.82
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.5051559971179813,
+          "invalid_count": 7307,
+          "point_conversion_ms": 2.8667630031122826,
+          "probe_ranges_m": {
+            "down": 0.9200000166893005,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_07.npz",
+          "raw_npz_sha256": "a4dd9fbf8f9cccd9caaa6808ea02e16adac713f9f0587ca12b81c3471c42d725",
+          "ray_count": 24000,
+          "scan_total_ms": 6.420680998417083,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.9200000166893005
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.7000000000000005,
+          "time_usec_scheduled": 700000,
+          "valid_count": 16693
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7799999999999999
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.40095999854384,
+          "invalid_count": 7188,
+          "point_conversion_ms": 2.4273550006910227,
+          "probe_ranges_m": {
+            "down": 0.8799999952316284,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_08.npz",
+          "raw_npz_sha256": "611b5b805a31a23bdd76a386e0fe01fdf519ea495389343faa4fb7821b4c4ea6",
+          "ray_count": 24000,
+          "scan_total_ms": 5.8763349952641875,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8799999952316284
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.8000000000000006,
+          "time_usec_scheduled": 800000,
+          "valid_count": 16812
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.74
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.383155999472365,
+          "invalid_count": 8524,
+          "point_conversion_ms": 2.4035000024014153,
+          "probe_ranges_m": {
+            "down": 0.8399999737739563,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_09.npz",
+          "raw_npz_sha256": "ef14520587e6091ef0ccb8bfe7a6aa9d1a055ccb971bef1976adb8728983b85f",
+          "ray_count": 24000,
+          "scan_total_ms": 5.833493996760808,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.8399999737739563
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 0.9000000000000007,
+          "time_usec_scheduled": 900000,
+          "valid_count": 15476
+        },
+        {
+          "T_body_lidar": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.1
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.1
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "array_bytes": 1368256,
+          "body_position_enu_m": [
+            0.0,
+            0.0,
+            0.7
+          ],
+          "body_quaternion_wxyz": [
+            1.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "cpu_trace_ms": 3.44654600485228,
+          "invalid_count": 8249,
+          "point_conversion_ms": 2.3764989964547567,
+          "probe_ranges_m": {
+            "down": 0.800000011920929,
+            "front": 2.899999998509884,
+            "left": 1.9999999999999998,
+            "right": 1.9999999999999998,
+            "up": -1.0
+          },
+          "provenance": "KINEMATIC_POSE_REPLAY",
+          "raw_npz_local_only": "z_triangle/frame_10.npz",
+          "raw_npz_sha256": "b76edda14d43c29ceadaf956476d0f92f941e5f8c79d9961bf91206f7160dd23",
+          "ray_count": 24000,
+          "scan_total_ms": 5.876946001080796,
+          "sensor_pose_world_enu": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.10000000149011612
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0,
+              0.800000011920929
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "time_s": 1.0000000000000007,
+          "time_usec_scheduled": 1000000,
+          "valid_count": 15751
+        }
+      ],
+      "physics_steps": 500,
+      "replay_wall_ms_excluding_save_plot": 75.71986800030572,
+      "scan_count": 11,
+      "scan_period_error_max_s": 8.326672684688674e-17,
+      "scan_total_ms": {
+        "max": 6.679218000499532,
+        "mean": 6.169664089446252,
+        "p50": 6.0712420017807744,
+        "p95": 6.635590998484986,
+        "p99": 6.6704926000966225
+      },
+      "scene_and_mode_init_ms": 132.7327789986157,
+      "sensor_extrinsic_delta_max": 0.0,
+      "valid_count_max": 16909,
+      "valid_count_min": 14669,
+      "world_front_wall_hit_count_min": 2288,
+      "world_front_wall_max_error_m": 8.881784197001252e-16
+    }
+  },
+  "upstream": {
+    "backend": "cpu",
+    "commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+    "license": "MIT",
+    "mode": "mid360",
+    "pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3"
+  },
+  "verification": {
+    "related_tests": {
+      "status": "PASS",
+      "total_passed": 575,
+      "inherited_passed": 551,
+      "new_passed": 24,
+      "warnings": 1,
+      "warning_scope": "Inherited Matplotlib Axes3D import warning; generated figures are 2D projections"
+    },
+    "raw_npz_identity": "PASS: all 66 frame files independently rehashed against the per-frame report entries",
+    "upstream_and_historical_model_identity": "PASS",
+    "formal_output_overwrite_guard": "PASS: RED-to-GREEN test rejects existing report and nonempty figures before raw creation",
+    "independent_read_only_review": "GO: 0 Critical, 0 Important; reviewer independently reran 575 related tests and checked all 66 NPZ identities, geometry, timing, figures and output overwrite guards",
+    "runtime_code_changed_after_scanning": "Only formal-output overwrite preflight guard; no raycast, trajectory, timing, physics or report metric computation changed",
+    "px4_sitl_training_imu_runs": 0
+  }
+}

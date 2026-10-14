@@ -1079,3 +1079,21 @@ Conclusion: CPU MuJoCo geometry-to-point-cloud interface **PASS** for static iso
 Limitations: Small static scene and12 scan samples per scale; no complex mine, moving targets, full simulation+policy timing or real device calibration. `mid360` is an upstream approximate mode, not validated MID360S truth. Plotting/saving time is separate from scan timing.
 
 Next: Only recommend a separately authorized dynamic-scan/IMU timing and measured-extrinsic validation before any FAST-LIO2 claim. Not executed.
+
+## 2026-10-14 — MuJoCo MID360-like Dynamic Scanning Phase 3E-L3
+
+Branch: `feat/mujoco-mid360s-dynamic-scanning`; base `afd7d0fda3431dedcf180f49e59f0a01dbd940de`.
+
+Research Question: Can the fixed MuJoCo-LiDAR CPU scanner follow deterministic moving UAV poses with 10Hz simulation-time samples, numerically correct world/local geometry and bounded local CPU cost, without suggesting physics-consistent IMU or FAST-LIO2 performance?
+
+Setup: MuJoCo3.14.0, fixed MIT upstream commit `e6b879df` and `mid360.npy` SHA `9fa01655…`; unchanged 7kg historical MJCF SHA `cde862f4…`. Six pre-registered one-second KINEMATIC_POSE_REPLAY paths (X, Y, Z up/down, yaw, combined, uniform shaft). Pose prescribed every 500Hz MuJoCo tick; full 24k rays at 10Hz; 1k/4k/24k additional matched CPU benchmark. Raw 66 trajectory frames local-only, six actual-ray figures tracked. No PX4/ROS/FAST-LIO2/training/flight.
+
+Key Results: 99 real CPU pattern scans in total. Frame times0..1s at0.1s intervals (maximum period error8.33e-17s), all trajectories end after500 actual `mj_step` calls. Measured X/Y wall range maximum errors1.31e-8/1.19e-8m; static world wall point error max7.45e-8m. Uniform shaft front/side horizontal rays invariant with Z over1m motion (range spread0m), a limited geometric observation, not a FAST-LIO2 outcome. Full24k combined-path scan P50/P95/P99/max6.150/6.919/7.012/7.036ms;1k and4k timings reported separately. Peak RSS1193.4MiB, no observed OOM.
+
+Verification: Related suite **575 PASS** (551 inherited, 24 new), one inherited Matplotlib Axes3D import warning; all six figures are 2D. RED→GREEN verified an evidence guard refusing to overwrite existing formal JSON or nonempty figure directories before creating raw output. All 66 local raw NPZ were independently rehashed against their report entries; ray counts, valid masks, timestamps and sensor poses matched. Upstream mode and original physical-model hashes unchanged. Independent read-only final review **GO**, 0 Critical/Important; reviewer also independently reran all 575 tests, checked raw rays and recomputed wall geometry against the JSON. The post-scan guard changes output-file preflight only, not raycasting, trajectory, physical timing or metric computation.
+
+Conclusion: Dynamic-pose MuJoCo CPU raycasting and 10Hz simulation clock PASS for the fixed isolated replay. This is not closed-loop flight or a physics-consistent sensor simulation. Existing 250Hz SITL SensorAdapter depends on qacc/qvel and cannot be treated as an IMU sampled from directly overwritten qpos/qvel; no IMU data were generated. LiDAR per-point timing, motion distortion, measured LiDAR–IMU extrinsic, FAST-LIO2 and PX4 NOT TESTED.
+
+Limitations: Small static geometry and11 frames/path; horizontal-only shaft degeneracy does not encompass floor/oblique rays or estimator observability. Scan-only CPU timing excludes data save/plot and full PX4 workload. `mid360` approximate mode not validated as real MID360S.
+
+Next: Only recommend a separately authorized physically consistent moving-state LiDAR+IMU timing study before FAST-LIO2 integration. Not executed.
