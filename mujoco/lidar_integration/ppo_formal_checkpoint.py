@@ -41,13 +41,18 @@ def _sha(path: Path) -> str:
 class CheckpointManager:
     """Save model+sidecar atomically; no claim of bitwise rollout continuity."""
 
-    def __init__(self, directory: Path, prereg: dict):
+    def __init__(self, directory: Path, prereg: dict,
+                 execution_protocol_sha256: str | None = None):
         verify_l6_runtime_sources(prereg)
         self.directory = Path(directory)
         self.prereg = prereg
         self.protocol = formal_readiness_protocol(prereg)
         self.protocol_sha256 = protocol_hash(self.protocol)
         self.manifest_sha256 = L6_MANIFEST_SHA256
+        if (execution_protocol_sha256 is not None and
+                not re.fullmatch(r"[0-9a-f]{64}", execution_protocol_sha256)):
+            raise ValueError("invalid execution protocol hash")
+        self.execution_protocol_sha256 = execution_protocol_sha256
 
     @staticmethod
     def _paths(directory: Path, run_id: str) -> tuple[Path, Path]:
@@ -83,6 +88,7 @@ class CheckpointManager:
                 "l6_manifest_sha256": self.manifest_sha256,
                 "l6_formal_proposal_sha256": L6_FORMAL_PROPOSAL_SHA256,
                 "l7_formal_protocol_sha256": self.protocol_sha256,
+                "execution_protocol_sha256": self.execution_protocol_sha256,
                 "reward_version": self.protocol["reward_version"],
                 "network_implementation_sha256": self.prereg["network_implementation_sha256"],
                 "historical_checkpoint_sha256": historical,
@@ -120,11 +126,12 @@ class CheckpointManager:
         if (_sha(archive) != record["checkpoint_sha256"]
                 or record["l6_manifest_sha256"] != self.manifest_sha256
                 or record["l7_formal_protocol_sha256"] != self.protocol_sha256
+                or record.get("execution_protocol_sha256") != self.execution_protocol_sha256
                 or record["reward_version"] != self.protocol["reward_version"]
                 or record["network_implementation_sha256"] !=
                 self.prereg["network_implementation_sha256"]
                 or record["historical_checkpoint_sha256"] != _historical_model_hashes()):
-            raise ValueError("checkpoint, protocol, network or historical model identity mismatch")
+            raise ValueError("checkpoint, execution protocol, network or historical model identity mismatch")
         with zipfile.ZipFile(archive) as zipped:
             if "policy.optimizer.pth" not in zipped.namelist():
                 raise ValueError("optimizer state missing from SB3 checkpoint")

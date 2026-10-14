@@ -1,0 +1,866 @@
+{
+  "FORMAL_SEED0_READY": "YES",
+  "LONG_RUN_MEMORY_PROVEN": "NO",
+  "TRAINING_DRIVER_READY": "YES",
+  "formal_training_executed": false,
+  "l6_formal_proposal_sha256": "f12cee995d003cbd502b3bd5477d142d658f1362dae368e5286ee1ddafc49bf4",
+  "l7_formal_protocol_sha256": "7c0c032002a5ea04b3400a5d939215cb10996a40fc5ff2f008c076ec51f55e33",
+  "l8_formal_execution_protocol_sha256": "fe07816f48bd4183165db482d8c93de50c637a32d13d86eccb47667d85e8cef6",
+  "limitations": [
+    "The 8192-step Pilot is training-mechanics evidence, not obstacle-navigation success.",
+    "The Pilot ended 42 Train collisions and 4 timeouts; Validation ended 6 collisions and no successes.",
+    "Finite Pilot RSS cannot prove 1M-step memory stability; MemAvailable was guarded at 1.5 GiB.",
+    "ZIP and sidecar are individually atomic but not a cross-file transaction; incomplete pairs fail closed.",
+    "WARM_START is not lossless; interrupted formal runs are RESTART_REQUIRED.",
+    "System OpenCV/NumPy ABI warning remains nonfatal in tested code path, but needs isolated environment cleanup.",
+    "MuJoCo-LiDAR uses approximate geometry and SIM ground truth, not FAST-LIO2 or real MID360S."
+  ],
+  "pilot": {
+    "actor_sha256_after": "e007b35dc7bb678397c85e3d6dff8ae38e28f5b01899485006a6f20f37f1c594",
+    "actor_sha256_before": "bb267b4d10796a33501a0511820dced74c8ea95a5b3625b45e41e426f5a1fa7e",
+    "critic_sha256_after": "ff3de88b66baa431474c9e2f949352d178ce289bbe0dfacb6116f242a1d7134a",
+    "critic_sha256_before": "c8eb88d063c5a2b4ec9545c8e5228322dc42d19e876ac78f3549624606e44539",
+    "environment_step_ms": {
+      "count": 8192,
+      "max": 13.601853992440738,
+      "p50": 1.1498675085022114,
+      "p95": 11.806123003771063,
+      "p99": 12.157169217971386
+    },
+    "episode_count": 46,
+    "episode_reset_rss_mib": [
+      1172.3359375,
+      1214.96875,
+      1255.5625,
+      1188.2265625,
+      1194.34375,
+      1194.80078125,
+      1200.8984375,
+      1200.8984375,
+      1162.234375,
+      1210.80859375,
+      1218.1484375,
+      1165.88671875,
+      1165.91015625,
+      1308.6875,
+      1207.81640625,
+      1136.86328125,
+      1248.8203125,
+      1253.50390625,
+      1253.50390625,
+      1254.88671875,
+      1164.08984375,
+      1186.04296875,
+      1287.5859375,
+      1160.5703125,
+      1221.00390625,
+      1224.59375,
+      1244.48046875,
+      1198.9296875,
+      1304.87890625,
+      1198.66015625,
+      1175.75,
+      1334.30078125,
+      1334.30859375,
+      1286.7265625,
+      1195.03515625,
+      1305.9375,
+      1280.2265625,
+      1204.0625,
+      1148.015625,
+      1148.015625,
+      1245.765625,
+      1224.89453125,
+      1099.15234375,
+      1323.35546875,
+      1264.46484375,
+      1154.48046875,
+      1130.20703125
+    ],
+    "event_count": 1,
+    "events": [
+      {
+        "actual_execution_step": 8192,
+        "checkpoint": {
+          "checkpoint_sha256": "c0a11c85e038a312968bf806b040dd64d1007a3e8b8204e2a8d78b237de7aa20",
+          "continuation_class": "WARM_START",
+          "execution_protocol_sha256": "fe07816f48bd4183165db482d8c93de50c637a32d13d86eccb47667d85e8cef6",
+          "historical_checkpoint_sha256": {
+            "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+            "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+            "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+            "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+            "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+            "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+            "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+          },
+          "interrupted_formal_run_policy": "RESTART_REQUIRED",
+          "l6_formal_proposal_sha256": "f12cee995d003cbd502b3bd5477d142d658f1362dae368e5286ee1ddafc49bf4",
+          "l6_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "l7_formal_protocol_sha256": "7c0c032002a5ea04b3400a5d939215cb10996a40fc5ff2f008c076ec51f55e33",
+          "missing_exact_resume_state": [
+            "active MuJoCo MjData",
+            "PI state",
+            "LiDAR buffer",
+            "partial PPO rollout"
+          ],
+          "network_implementation_sha256": "8accaf532c852bf504a884249ee604752ae9367be6e7102b51a2cd2877219f57",
+          "optimizer_state_in_sb3_zip": true,
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "rng_fingerprints": {
+            "note": "fingerprints are audit evidence, not restorable RNG snapshots",
+            "numpy_global": "608474903bd1cd5591a68799cc5e4b422c556b6bb877f18194b8eb768b69da11",
+            "python_random": "46f264538534643a886ab78f16bc37e702ec6d58f1c40cc2c2c5607abc7b3900",
+            "scheduler_full_state_saved": true,
+            "torch": "cb9dc148021af81516ae684e9c459c24fb6d344e233ee618d7d3a1daffa563ec"
+          },
+          "run_id": "L8_SEED0_STEP0008192",
+          "scheduler_state": {
+            "current_identity": "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+            "rng_state": {
+              "bit_generator": "PCG64",
+              "has_uint32": 1,
+              "state": {
+                "inc": 87136372517582989555478159403783844777,
+                "state": 30478565653688201710865670762444828011
+              },
+              "uinteger": 2779657786
+            },
+            "seed": 0,
+            "selected_identities": [
+              "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+              "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+              "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+              "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+              "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+              "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+              "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+              "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+              "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+              "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+              "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+              "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+              "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+              "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+              "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+              "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+              "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+              "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+              "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+              "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+              "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+              "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+              "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+              "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+              "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+              "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+              "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+              "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+              "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+              "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+              "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d"
+            ],
+            "visit_counts": {
+              "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 10,
+              "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 7,
+              "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 4,
+              "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 4,
+              "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 4,
+              "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 2,
+              "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 2,
+              "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 2,
+              "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 2,
+              "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 5,
+              "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 2,
+              "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 3
+            }
+          },
+          "sidecar_payload_sha256": "c41f2cc5450dfefc85c97f3d8543c51e1df42dc3f1cca7d54a091b132b462ebf",
+          "training_seed": 0,
+          "training_timesteps": 8192
+        },
+        "event_after_optimizer_updates": 128,
+        "nominal_step": 8192,
+        "test_episode_count": 0,
+        "train_rng_unchanged_during_validation": true,
+        "validation": {
+          "episodes": [
+            {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_wall_x_pos",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -29.27924079304642,
+              "final_target_error_m": 1.7713167636959204,
+              "inference_ms": {
+                "count": 213,
+                "max": 0.6332719931378961,
+                "p50": 0.26385100500192493,
+                "p95": 0.2912224066676572,
+                "p99": 0.31127480033319443
+              },
+              "last_sim_time_s": 8.493999999999506,
+              "layout": "empty",
+              "mean_lidar_age_s": 0.04044131455398848,
+              "minimum_valid_lidar_range_m": 0.2731645759428319,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 213,
+              "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 3.4005730000706573
+            },
+            {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -27.487084095501693,
+              "final_target_error_m": 1.6009427936775207,
+              "inference_ms": {
+                "count": 41,
+                "max": 0.6589100084966049,
+                "p50": 0.26636599795892835,
+                "p95": 0.30341598903760314,
+                "p99": 0.6156720017315821
+              },
+              "last_sim_time_s": 1.6400000000000012,
+              "layout": "front_box",
+              "mean_lidar_age_s": 0.040000000000000036,
+              "minimum_valid_lidar_range_m": 0.25367770319826644,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 41,
+              "scenario_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 0.3333069698656626
+            },
+            {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_1",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -26.696160353655447,
+              "final_target_error_m": 1.5328650066463227,
+              "inference_ms": {
+                "count": 51,
+                "max": 0.6021930021233857,
+                "p50": 0.26346000959165394,
+                "p95": 0.29171349888201803,
+                "p99": 0.4809680031030439
+              },
+              "last_sim_time_s": 2.0239999999999987,
+              "layout": "side_pair",
+              "mean_lidar_age_s": 0.03968627450980391,
+              "minimum_valid_lidar_range_m": 0.10000853847647515,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 51,
+              "scenario_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 0.5716351496998086
+            },
+            {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -26.010902101392507,
+              "final_target_error_m": 1.6504696755081723,
+              "inference_ms": {
+                "count": 49,
+                "max": 0.6055889971321449,
+                "p50": 0.2657040022313595,
+                "p95": 0.29109660536050797,
+                "p99": 0.4565446841297659
+              },
+              "last_sim_time_s": 1.9400000000000015,
+              "layout": "detour",
+              "mean_lidar_age_s": 0.040408163265306156,
+              "minimum_valid_lidar_range_m": 0.14173606514762108,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 49,
+              "scenario_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 0.5244857425028019
+            },
+            {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_1",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -26.638589285880126,
+              "final_target_error_m": 1.5378680276660668,
+              "inference_ms": {
+                "count": 49,
+                "max": 0.6360369879985228,
+                "p50": 0.2638509904500097,
+                "p95": 0.37882260221522235,
+                "p99": 0.5965829087654125
+              },
+              "last_sim_time_s": 1.9400000000000015,
+              "layout": "channel",
+              "mean_lidar_age_s": 0.040408163265306156,
+              "minimum_valid_lidar_range_m": 0.11070973964404074,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 49,
+              "scenario_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 0.5279248051882106
+            },
+            {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_wall_x_pos",
+                  "coarse_collision"
+                ],
+                [
+                  "nav_wall_x_pos",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -34.17073524878235,
+              "final_target_error_m": 2.315602274082538,
+              "inference_ms": {
+                "count": 225,
+                "max": 0.6209979910636321,
+                "p50": 0.267217998043634,
+                "p95": 0.28382100572343916,
+                "p99": 0.3028588404413312
+              },
+              "last_sim_time_s": 8.961999999999662,
+              "layout": "empty",
+              "mean_lidar_age_s": 0.040275555555554204,
+              "minimum_valid_lidar_range_m": 0.24239895516489993,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 225,
+              "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 3.638659388617101
+            }
+          ],
+          "model_status": "FROZEN_MODEL_DIAGNOSTIC",
+          "optimizer_unchanged": true,
+          "overall": {
+            "collision": 6,
+            "collision_rate": 1.0,
+            "mean_return": -28.38045197970975,
+            "mean_time_to_goal_s": null,
+            "mean_trajectory_length_m": 1.4994308426573735,
+            "navigation_success_rate": 0.0,
+            "physical_failure": 0,
+            "physical_failure_rate": 0.0,
+            "probe_cutoff": 0,
+            "sensor_failure": 0,
+            "sensor_failure_rate": 0.0,
+            "success": 0,
+            "time_limit": 0,
+            "timeout_rate": 0.0,
+            "total": 6
+          },
+          "per_scene": {
+            "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd": {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_wall_x_pos",
+                  "coarse_collision"
+                ],
+                [
+                  "nav_wall_x_pos",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -34.17073524878235,
+              "final_target_error_m": 2.315602274082538,
+              "inference_ms": {
+                "count": 225,
+                "max": 0.6209979910636321,
+                "p50": 0.267217998043634,
+                "p95": 0.28382100572343916,
+                "p99": 0.3028588404413312
+              },
+              "last_sim_time_s": 8.961999999999662,
+              "layout": "empty",
+              "mean_lidar_age_s": 0.040275555555554204,
+              "minimum_valid_lidar_range_m": 0.24239895516489993,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 225,
+              "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 3.638659388617101
+            },
+            "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079": {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -26.010902101392507,
+              "final_target_error_m": 1.6504696755081723,
+              "inference_ms": {
+                "count": 49,
+                "max": 0.6055889971321449,
+                "p50": 0.2657040022313595,
+                "p95": 0.29109660536050797,
+                "p99": 0.4565446841297659
+              },
+              "last_sim_time_s": 1.9400000000000015,
+              "layout": "detour",
+              "mean_lidar_age_s": 0.040408163265306156,
+              "minimum_valid_lidar_range_m": 0.14173606514762108,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 49,
+              "scenario_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 0.5244857425028019
+            },
+            "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277": {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -27.487084095501693,
+              "final_target_error_m": 1.6009427936775207,
+              "inference_ms": {
+                "count": 41,
+                "max": 0.6589100084966049,
+                "p50": 0.26636599795892835,
+                "p95": 0.30341598903760314,
+                "p99": 0.6156720017315821
+              },
+              "last_sim_time_s": 1.6400000000000012,
+              "layout": "front_box",
+              "mean_lidar_age_s": 0.040000000000000036,
+              "minimum_valid_lidar_range_m": 0.25367770319826644,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 41,
+              "scenario_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 0.3333069698656626
+            },
+            "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1": {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_1",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -26.638589285880126,
+              "final_target_error_m": 1.5378680276660668,
+              "inference_ms": {
+                "count": 49,
+                "max": 0.6360369879985228,
+                "p50": 0.2638509904500097,
+                "p95": 0.37882260221522235,
+                "p99": 0.5965829087654125
+              },
+              "last_sim_time_s": 1.9400000000000015,
+              "layout": "channel",
+              "mean_lidar_age_s": 0.040408163265306156,
+              "minimum_valid_lidar_range_m": 0.11070973964404074,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 49,
+              "scenario_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 0.5279248051882106
+            },
+            "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c": {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_1",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -26.696160353655447,
+              "final_target_error_m": 1.5328650066463227,
+              "inference_ms": {
+                "count": 51,
+                "max": 0.6021930021233857,
+                "p50": 0.26346000959165394,
+                "p95": 0.29171349888201803,
+                "p99": 0.4809680031030439
+              },
+              "last_sim_time_s": 2.0239999999999987,
+              "layout": "side_pair",
+              "mean_lidar_age_s": 0.03968627450980391,
+              "minimum_valid_lidar_range_m": 0.10000853847647515,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 51,
+              "scenario_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 0.5716351496998086
+            },
+            "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f": {
+              "collision": true,
+              "collision_contact_pairs": [
+                [
+                  "nav_wall_x_pos",
+                  "coarse_collision"
+                ]
+              ],
+              "completion_time_s": null,
+              "episode_return": -29.27924079304642,
+              "final_target_error_m": 1.7713167636959204,
+              "inference_ms": {
+                "count": 213,
+                "max": 0.6332719931378961,
+                "p50": 0.26385100500192493,
+                "p95": 0.2912224066676572,
+                "p99": 0.31127480033319443
+              },
+              "last_sim_time_s": 8.493999999999506,
+              "layout": "empty",
+              "mean_lidar_age_s": 0.04044131455398848,
+              "minimum_valid_lidar_range_m": 0.2731645759428319,
+              "outcome": "collision",
+              "physical_failure": false,
+              "policy_steps": 213,
+              "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+              "sensor_failure": false,
+              "success": false,
+              "timeout": false,
+              "trajectory_length_m": 3.4005730000706573
+            }
+          },
+          "policy_sha256_before_after": "9664eaf09dfe503594e48078f1cc8cb1df66e7a80df8a64364d676cd3bca23fb",
+          "probe_only": false,
+          "split": "validation",
+          "training_timesteps_before_after": 8192,
+          "wall_seconds": 5.095684739004355
+        }
+      }
+    ],
+    "experiment_id": "LIDAR_PPO_PILOT_ONLY_L8_SEED0",
+    "finite_policy_and_gradients": true,
+    "historical_checkpoint_sha256": {
+      "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+      "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+      "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+      "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+      "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+    },
+    "l6_formal_proposal_sha256": "f12cee995d003cbd502b3bd5477d142d658f1362dae368e5286ee1ddafc49bf4",
+    "l6_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+    "l7_protocol_sha256": "7c0c032002a5ea04b3400a5d939215cb10996a40fc5ff2f008c076ec51f55e33",
+    "l8_protocol_sha256": "fe07816f48bd4183165db482d8c93de50c637a32d13d86eccb47667d85e8cef6",
+    "lidar_encoding_ms": {
+      "count": 3247,
+      "max": 5.799720005597919,
+      "p50": 4.018696999992244,
+      "p95": 4.233393499453086,
+      "p99": 4.501660758105572
+    },
+    "lidar_scan_ms": {
+      "count": 3247,
+      "max": 7.843850995413959,
+      "p50": 6.212970998603851,
+      "p95": 6.645957790897228,
+      "p99": 6.94039565481944
+    },
+    "mean_completed_episode_return": -25.968805049625526,
+    "mode": "pilot",
+    "optimizer_step_count": 256,
+    "out_of_memory": false,
+    "ppo_n_updates": 128,
+    "ppo_train_update_ms": {
+      "count": 64,
+      "max": 22.389772988390177,
+      "p50": 16.49136200285284,
+      "p95": 18.714483902294884,
+      "p99": 21.8880926600832
+    },
+    "reset_compile_ms": {
+      "count": 47,
+      "max": 456.4218279992929,
+      "p50": 331.126413992024,
+      "p95": 393.84776689985296,
+      "p99": 452.26433189876843
+    },
+    "rollout_count": 64,
+    "rss_peak_mib": 1728.76953125,
+    "runtime_source_sha256": {
+      "ppo_formal_checkpoint.py": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4",
+      "ppo_formal_scheduler.py": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d",
+      "ppo_formal_validation.py": "bbdf18e9e9ae2b7a82dcd49ceb9969994fb3b160c402ef613f0c991ed3d05156",
+      "ppo_training_orchestration.py": "4202ba5bb519d15b973bf95d2a4fc7ab07bec9c25c7bada070d7ff15f4078801"
+    },
+    "seed": 0,
+    "software_versions": {
+      "gymnasium": "1.3.0",
+      "mujoco": "3.14.0",
+      "numpy": "2.2.6",
+      "stable-baselines3": "2.9.0",
+      "torch": "2.14.0+cpu"
+    },
+    "system_min_available_mib": 9245.7421875,
+    "terminal_counts": {
+      "collision": 42,
+      "physical_failure": 0,
+      "sensor_failure": 0,
+      "success": 0,
+      "time_limit": 4
+    },
+    "test_episode_count": 0,
+    "train_scenario_selected_identities": [
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+      "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+      "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+      "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+      "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+      "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+      "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+      "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+      "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+      "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+      "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+      "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+      "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+      "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+      "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+      "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+      "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d"
+    ],
+    "train_scenario_visit_counts": {
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 10,
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 7,
+      "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 4,
+      "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 4,
+      "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 4,
+      "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 2,
+      "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 2,
+      "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 2,
+      "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 2,
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 5,
+      "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 2,
+      "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 3
+    },
+    "training_actual_timesteps": 8192,
+    "training_physics_ticks": 163440,
+    "wall_seconds": 67.67157333200157,
+    "workers": 1
+  },
+  "pilot_checkpoint_local_only": true,
+  "pilot_is_not_navigation_performance_claim": true,
+  "protocol_revision": {
+    "actual_final_step": 1000064,
+    "continuation": "RESTART_REQUIRED for interrupted formal runs",
+    "event_phase": "after complete SB3 2.9.0 rollout and corresponding PPO optimizer update",
+    "milestones": [
+      {
+        "actual_step": 100096,
+        "nominal_step": 100000
+      },
+      {
+        "actual_step": 200064,
+        "nominal_step": 200000
+      },
+      {
+        "actual_step": 300032,
+        "nominal_step": 300000
+      },
+      {
+        "actual_step": 400000,
+        "nominal_step": 400000
+      },
+      {
+        "actual_step": 500096,
+        "nominal_step": 500000
+      },
+      {
+        "actual_step": 600064,
+        "nominal_step": 600000
+      },
+      {
+        "actual_step": 700032,
+        "nominal_step": 700000
+      },
+      {
+        "actual_step": 800000,
+        "nominal_step": 800000
+      },
+      {
+        "actual_step": 900096,
+        "nominal_step": 900000
+      },
+      {
+        "actual_step": 1000064,
+        "nominal_step": 1000000
+      }
+    ],
+    "nominal_final_step": 1000000,
+    "selection": "Final checkpoint; Validation diagnostic only; Test sealed"
+  },
+  "raw_evidence": {
+    "checkpoint_sha256": "c0a11c85e038a312968bf806b040dd64d1007a3e8b8204e2a8d78b237de7aa20",
+    "milestone_event_sha256": "bebbab10e89400a1f7b7ffc9e6ff02792f09c3f8f7d5d993ac72f9ad652d964f",
+    "preflight_identity_sha256": "4fbc92d063eb16d2d6f692f638d7fcc0adc723e3002300aa3a222ea550d0aac1",
+    "runtime_source_sha256": {
+      "ppo_formal_checkpoint.py": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4",
+      "ppo_formal_scheduler.py": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d",
+      "ppo_formal_validation.py": "bbdf18e9e9ae2b7a82dcd49ceb9969994fb3b160c402ef613f0c991ed3d05156",
+      "ppo_training_orchestration.py": "4202ba5bb519d15b973bf95d2a4fc7ab07bec9c25c7bada070d7ff15f4078801"
+    },
+    "summary_sha256": "f0e61b8815a625d769680f128999166362efee041322ed34147def38cd781bd6"
+  },
+  "scenario_split_counts": {
+    "test": 6,
+    "train": 12,
+    "validation": 6
+  },
+  "scenario_visits_by_layout": {
+    "channel:a7a049fb7f73": 2,
+    "channel:c978c3c52773": 3,
+    "detour:486841efec6a": 4,
+    "detour:859eac9c3e0d": 4,
+    "empty:0f905943b41c": 10,
+    "empty:9cac892ba183": 2,
+    "empty:adeeeb0d5144": 5,
+    "front_box:1c0bc54406be": 7,
+    "front_box:8a67d03b5299": 2,
+    "front_box:bdc2c92fc75d": 2,
+    "side_pair:22caef01f8b9": 4,
+    "side_pair:a77a46d59509": 2
+  },
+  "status": {
+    "formal_1m_training": "NOT TESTED",
+    "frozen_protocol_and_source_identity": "PASS",
+    "independent_validation_execution": "PASS",
+    "long_run_memory_stability": "NOT TESTED",
+    "multi_scenario_train_execution": "PASS",
+    "one_shot_8192_step_pilot": "PASS",
+    "pilot_checkpoint_save_reload": "PASS",
+    "px4_or_real_sensor": "NOT TESTED",
+    "rollout_aligned_post_update_milestones": "PASS",
+    "sealed_test_untouched": "PASS",
+    "trained_navigation_success": "NOT TESTED"
+  },
+  "task": "Phase 3E-L8 Multi-Scenario PPO Training Orchestration and Bounded Pilot",
+  "verification": {
+    "independent_review": "GO",
+    "pilot_attempts": 1,
+    "review_critical": 0,
+    "review_important": 0,
+    "review_minor": "Raw per-Train-episode trajectories unavailable for independent return/contact recomputation; Pilot duration cannot prove million-step memory stability.",
+    "tests": {
+      "failed": 0,
+      "inherited": 679,
+      "new": 19,
+      "passed": 698,
+      "skipped": 0,
+      "warnings": 2
+    }
+  }
+}
