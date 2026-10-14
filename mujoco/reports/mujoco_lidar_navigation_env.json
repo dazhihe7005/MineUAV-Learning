@@ -1,0 +1,510 @@
+{
+  "acceptance": {
+    "actual_lidar_rays": "PASS",
+    "causal_async_input": "PASS",
+    "contact_failure": "PASS",
+    "gymnasium_reset_step": "PASS",
+    "ppo_training": "NOT TESTED",
+    "px4_execution": "NOT TESTED",
+    "real_mid360s_collision_safety": "NOT TESTED",
+    "real_physics": "PASS",
+    "reward_accounting": "PASS"
+  },
+  "action": {
+    "bounds": [
+      -1,
+      1
+    ],
+    "normalized_shape": [
+      4
+    ],
+    "world_velocity_scale_m_s": [
+      1.5,
+      1.5,
+      1.0
+    ],
+    "yaw_rate_scale_rad_s": 1.0
+  },
+  "controller_updates_total": 898,
+  "episode_count": 3,
+  "episodes": [
+    {
+      "allocator_saturation_updates": 0,
+      "collision": false,
+      "collision_kind": null,
+      "contact_pairs": [],
+      "controller_updates": 364,
+      "elapsed_sim_s": 3.6399999999998207,
+      "final_distance_m": 0.09067032331914454,
+      "initial_distance_m": 1.8148815273818597,
+      "initial_encode_ms": 4.060242004925385,
+      "initial_scan_ms": 6.80880499567138,
+      "layout": "empty",
+      "lidar_frames": 37,
+      "max_translational_speed_m_s": 0.9128503732411083,
+      "obstacle_configuration_hash": "d2b367c10fe7b8211c4c523aeec0e8a6d6fde71d2d4c17381eee176342aea286",
+      "physical_failure": false,
+      "physics_ticks": 1820,
+      "policy": "STATE_ONLY_SCRIPTED_NO_LIDAR_INPUT",
+      "ray_count_per_frame": 24000,
+      "return": 25.151430566373307,
+      "reward_component_sums": {
+        "action": -0.03564668909302942,
+        "brake": -1.145034785160817,
+        "collision": 0.0,
+        "physical_failure": 0.0,
+        "progress": 17.242112040627156,
+        "sensor_failure": 0.0,
+        "success": 10.0,
+        "timeout_or_time_cost": -0.9100000000000006,
+        "total": 25.1514305663733
+      },
+      "scan_sample_times_s": [
+        0.0,
+        0.10000000000000007,
+        0.20000000000000015,
+        0.3000000000000002,
+        0.4000000000000003,
+        0.5000000000000003,
+        0.6000000000000004,
+        0.7000000000000005,
+        0.8000000000000006,
+        0.9000000000000007,
+        1.0000000000000007,
+        1.1000000000000008,
+        1.2000000000000008,
+        1.300000000000001,
+        1.400000000000001,
+        1.500000000000001,
+        1.6000000000000012,
+        1.7000000000000013,
+        1.8000000000000014,
+        1.9000000000000015,
+        2.0000000000000013,
+        2.0999999999999903,
+        2.1999999999999793,
+        2.2999999999999683,
+        2.3999999999999573,
+        2.4999999999999463,
+        2.5999999999999353,
+        2.6999999999999242,
+        2.7999999999999132,
+        2.899999999999902,
+        2.999999999999891,
+        3.09999999999988,
+        3.199999999999869,
+        3.299999999999858,
+        3.399999999999847,
+        3.499999999999836,
+        3.599999999999825
+      ],
+      "scene_seed": 1001,
+      "sensor_failure": false,
+      "start_seed": 1101,
+      "step_ms": {
+        "max": 12.212305002321955,
+        "mean": 5.205480407032435,
+        "p50": 1.093702005164232,
+        "p95": 11.898037999344524,
+        "p99": 12.050795504910637
+      },
+      "steps": 91,
+      "success": true,
+      "target_seed": 1201,
+      "termination_reason": "success",
+      "timeout": false
+    },
+    {
+      "allocator_saturation_updates": 0,
+      "collision": true,
+      "collision_kind": "obstacle",
+      "contact_pairs": [
+        [
+          "nav_obstacle_0",
+          "coarse_collision"
+        ]
+      ],
+      "controller_updates": 170,
+      "elapsed_sim_s": 1.6960000000000013,
+      "final_distance_m": 1.2830763350021062,
+      "initial_distance_m": 1.810931517292948,
+      "initial_encode_ms": 3.992124999058433,
+      "initial_scan_ms": 6.826248005381785,
+      "layout": "front_box",
+      "lidar_frames": 17,
+      "max_translational_speed_m_s": 0.8079833154060376,
+      "obstacle_configuration_hash": "54c2e1bcfd2c91f44673735608aeca320d420fa03e06a02498819e92f5cd6b9b",
+      "physical_failure": false,
+      "physics_ticks": 848,
+      "policy": "STATE_ONLY_SCRIPTED_NO_LIDAR_INPUT",
+      "ray_count_per_frame": 24000,
+      "return": -25.30922798442316,
+      "reward_component_sums": {
+        "action": -0.030237354287920352,
+        "brake": 0.0,
+        "collision": -30.0,
+        "physical_failure": 0.0,
+        "progress": 5.151009369864761,
+        "sensor_failure": 0.0,
+        "success": 0.0,
+        "timeout_or_time_cost": -0.4300000000000002,
+        "total": -25.30922798442316
+      },
+      "scan_sample_times_s": [
+        0.0,
+        0.10000000000000007,
+        0.20000000000000015,
+        0.3000000000000002,
+        0.4000000000000003,
+        0.5000000000000003,
+        0.6000000000000004,
+        0.7000000000000005,
+        0.8000000000000006,
+        0.9000000000000007,
+        1.0000000000000007,
+        1.1000000000000008,
+        1.2000000000000008,
+        1.300000000000001,
+        1.400000000000001,
+        1.500000000000001,
+        1.6000000000000012
+      ],
+      "scene_seed": 1002,
+      "sensor_failure": false,
+      "start_seed": 1102,
+      "step_ms": {
+        "max": 12.313293998886365,
+        "mean": 5.041029000367839,
+        "p50": 1.093450999178458,
+        "p95": 11.924215702310903,
+        "p99": 12.189170558267506
+      },
+      "steps": 43,
+      "success": false,
+      "target_seed": 1202,
+      "termination_reason": "collision",
+      "timeout": false
+    },
+    {
+      "allocator_saturation_updates": 0,
+      "collision": false,
+      "collision_kind": null,
+      "contact_pairs": [],
+      "controller_updates": 364,
+      "elapsed_sim_s": 3.6399999999998207,
+      "final_distance_m": 0.09167389394861737,
+      "initial_distance_m": 1.8623834026609472,
+      "initial_encode_ms": 4.062004998559132,
+      "initial_scan_ms": 6.93441899784375,
+      "layout": "channel",
+      "lidar_frames": 37,
+      "max_translational_speed_m_s": 0.9363710954334213,
+      "obstacle_configuration_hash": "dcb446b200e5b4ad2a3ba75d71a5b511b21d85717933ceb8c955aca6d6f2b9cf",
+      "physical_failure": false,
+      "physics_ticks": 1820,
+      "policy": "STATE_ONLY_SCRIPTED_NO_LIDAR_INPUT",
+      "ray_count_per_frame": 24000,
+      "return": 25.610684669905062,
+      "reward_component_sums": {
+        "action": -0.03725780104758393,
+        "brake": -1.1491526161706487,
+        "collision": 0.0,
+        "physical_failure": 0.0,
+        "progress": 17.7070950871233,
+        "sensor_failure": 0.0,
+        "success": 10.0,
+        "timeout_or_time_cost": -0.9100000000000006,
+        "total": 25.610684669905066
+      },
+      "scan_sample_times_s": [
+        0.0,
+        0.10000000000000007,
+        0.20000000000000015,
+        0.3000000000000002,
+        0.4000000000000003,
+        0.5000000000000003,
+        0.6000000000000004,
+        0.7000000000000005,
+        0.8000000000000006,
+        0.9000000000000007,
+        1.0000000000000007,
+        1.1000000000000008,
+        1.2000000000000008,
+        1.300000000000001,
+        1.400000000000001,
+        1.500000000000001,
+        1.6000000000000012,
+        1.7000000000000013,
+        1.8000000000000014,
+        1.9000000000000015,
+        2.0000000000000013,
+        2.0999999999999903,
+        2.1999999999999793,
+        2.2999999999999683,
+        2.3999999999999573,
+        2.4999999999999463,
+        2.5999999999999353,
+        2.6999999999999242,
+        2.7999999999999132,
+        2.899999999999902,
+        2.999999999999891,
+        3.09999999999988,
+        3.199999999999869,
+        3.299999999999858,
+        3.399999999999847,
+        3.499999999999836,
+        3.599999999999825
+      ],
+      "scene_seed": 1005,
+      "sensor_failure": false,
+      "start_seed": 1105,
+      "step_ms": {
+        "max": 12.531470994872507,
+        "mean": 5.439803879378634,
+        "p50": 1.0887430034927092,
+        "p95": 12.390061998303281,
+        "p99": 12.5234736049606
+      },
+      "steps": 91,
+      "success": true,
+      "target_seed": 1205,
+      "termination_reason": "success",
+      "timeout": false
+    }
+  ],
+  "frequencies_hz": {
+    "lidar": 10,
+    "physics": 500,
+    "pi": 100,
+    "policy": 25
+  },
+  "historical_model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+  "lidar_frames_total": 91,
+  "observation": {
+    "lidar_age_shape": [
+      1
+    ],
+    "lidar_shape": [
+      3,
+      12,
+      24
+    ],
+    "stale_after_s": 0.15,
+    "state_shape": [
+      7
+    ],
+    "state_source": "SIM_GROUND_TRUTH_STATE"
+  },
+  "performance": {
+    "frame_samples": 91,
+    "lidar_encode_ms": {
+      "max": 4.431626002769917,
+      "mean": 4.149520768835798,
+      "p50": 4.166840997640975,
+      "p95": 4.374018499220256,
+      "p99": 4.417162996105617
+    },
+    "lidar_scan_ms": {
+      "max": 7.168104995798785,
+      "mean": 6.598442296048494,
+      "p50": 6.627575996390078,
+      "p95": 7.020855995506281,
+      "p99": 7.069145503191975
+    },
+    "step_samples": 225,
+    "whole_step_ms": {
+      "max": 12.531470994872507,
+      "mean": 5.268822742574331,
+      "p50": 1.0904270020546392,
+      "p95": 12.274745995819103,
+      "p99": 12.48429215949727
+    }
+  },
+  "physics_ticks_total": 4488,
+  "raw_local_only": [
+    {
+      "local_only_path": "mujoco_lidar_navigation_env_parts/preflight_run_01/empty.npz",
+      "sha256": "cde1773f31fbb1b2bd57e57d825ce91b87870ea44717fa32cd7195d2ceface4e"
+    },
+    {
+      "local_only_path": "mujoco_lidar_navigation_env_parts/preflight_run_01/front_box.npz",
+      "sha256": "121ce01732948e93a04ad94200aadd3be4f5e2e18e85db425c88258b259a691a"
+    },
+    {
+      "local_only_path": "mujoco_lidar_navigation_env_parts/preflight_run_01/channel.npz",
+      "sha256": "65ba235329a7ebfe4628eeb9fcf0978ed4f4c572179b5f556ee731ba86092002"
+    },
+    {
+      "local_only_path": "mujoco_lidar_navigation_env_parts/preflight_run_01/evidence_cloud.npz",
+      "sha256": "48de0a7aa071cbec320fc4e216783e8d7cc3d43bd2841fd72c110ff20600dda9"
+    }
+  ],
+  "resource": {
+    "fast_lio2_runs": 0,
+    "min_mem_available_mib": 8769.36328125,
+    "oom_observed": false,
+    "peak_rss_mib": 1172.5234375,
+    "px4_runs": 0,
+    "rss_end_mib": 1105.48046875,
+    "rss_start_mib": 56.83203125,
+    "training_updates": 0,
+    "worker_count": 1
+  },
+  "reward": {
+    "collision_progress_credit": false,
+    "formula": "10*(d_prev-d_next) [0 on failure] - 0.005*||a||\u00b2 - 0.5*clip((0.5-d)/0.4,0,1)*||v||\u00b2 + 10*success - 30*collision - 30*physical_failure - 10*sensor_failure - 0.01*executed_policy_step - 2*timeout",
+    "units": "dimensionless per policy step",
+    "version": "NAV_V2_COLLISION_PREFLIGHT_V1"
+  },
+  "scene_split_manifest": {
+    "test": [
+      {
+        "layout": "empty",
+        "obstacle_configuration_hash": "5fc2b5b6ab4abf0b9a037a4cbfe8fdf338f8ccd5186c56078470c9c65ebed0d7",
+        "scene_seed": 3001,
+        "split": "test",
+        "start_seed": 3101,
+        "target_seed": 3201
+      },
+      {
+        "layout": "front_box",
+        "obstacle_configuration_hash": "9025a907a1fc98234e3d9648e7b8c8f7939b9c594e520a39f64a011ac355c49b",
+        "scene_seed": 3002,
+        "split": "test",
+        "start_seed": 3102,
+        "target_seed": 3202
+      },
+      {
+        "layout": "side_pair",
+        "obstacle_configuration_hash": "8d4bd9c15cdb75ae58fea098f4ba3e5680499f7c19a690668ae05bfa4ac2ecdb",
+        "scene_seed": 3003,
+        "split": "test",
+        "start_seed": 3103,
+        "target_seed": 3203
+      },
+      {
+        "layout": "detour",
+        "obstacle_configuration_hash": "e8af3800922d481721cec51eae5d12c468279927203c7c6b3b18f49556e58a9d",
+        "scene_seed": 3004,
+        "split": "test",
+        "start_seed": 3104,
+        "target_seed": 3204
+      },
+      {
+        "layout": "channel",
+        "obstacle_configuration_hash": "5adb09881044edf08c15be01bf3af845e3fa5b414e1f7354a93cee7f77f0a935",
+        "scene_seed": 3005,
+        "split": "test",
+        "start_seed": 3105,
+        "target_seed": 3205
+      }
+    ],
+    "train": [
+      {
+        "layout": "empty",
+        "obstacle_configuration_hash": "d2b367c10fe7b8211c4c523aeec0e8a6d6fde71d2d4c17381eee176342aea286",
+        "scene_seed": 1001,
+        "split": "train",
+        "start_seed": 1101,
+        "target_seed": 1201
+      },
+      {
+        "layout": "front_box",
+        "obstacle_configuration_hash": "54c2e1bcfd2c91f44673735608aeca320d420fa03e06a02498819e92f5cd6b9b",
+        "scene_seed": 1002,
+        "split": "train",
+        "start_seed": 1102,
+        "target_seed": 1202
+      },
+      {
+        "layout": "side_pair",
+        "obstacle_configuration_hash": "1783c51f63c615f5ffc810da22a0696e129e0c1e04fd38277aae84e86d6fdd08",
+        "scene_seed": 1003,
+        "split": "train",
+        "start_seed": 1103,
+        "target_seed": 1203
+      },
+      {
+        "layout": "detour",
+        "obstacle_configuration_hash": "b989ac7c9657e636a1d0fa2eaa02a5fad4c5abef767a07b14a0700d6b4ca571f",
+        "scene_seed": 1004,
+        "split": "train",
+        "start_seed": 1104,
+        "target_seed": 1204
+      },
+      {
+        "layout": "channel",
+        "obstacle_configuration_hash": "dcb446b200e5b4ad2a3ba75d71a5b511b21d85717933ceb8c955aca6d6f2b9cf",
+        "scene_seed": 1005,
+        "split": "train",
+        "start_seed": 1105,
+        "target_seed": 1205
+      }
+    ],
+    "validation": [
+      {
+        "layout": "empty",
+        "obstacle_configuration_hash": "b470402c596924ff20875d8c7cd37dd71ebcaf2c7c4e8eb59514647a63c60312",
+        "scene_seed": 2001,
+        "split": "validation",
+        "start_seed": 2101,
+        "target_seed": 2201
+      },
+      {
+        "layout": "front_box",
+        "obstacle_configuration_hash": "b0557d1dce6211d9c8acdf2a26adc5fc65739442ce164260a5ba86e28b0a5438",
+        "scene_seed": 2002,
+        "split": "validation",
+        "start_seed": 2102,
+        "target_seed": 2202
+      },
+      {
+        "layout": "side_pair",
+        "obstacle_configuration_hash": "bcbbce19d61118e344805ecb992cf5317794100f7eae904b22e47e05d437aafa",
+        "scene_seed": 2003,
+        "split": "validation",
+        "start_seed": 2103,
+        "target_seed": 2203
+      },
+      {
+        "layout": "detour",
+        "obstacle_configuration_hash": "829869c1bddf8660bb8cbf7b6a736768b3fd3cb72f57785cfc498ed9e15f4e22",
+        "scene_seed": 2004,
+        "split": "validation",
+        "start_seed": 2104,
+        "target_seed": 2204
+      },
+      {
+        "layout": "channel",
+        "obstacle_configuration_hash": "79613e01a15d0586b903651a9560ba08712bd2c837cf26433f4b480f913a1e53",
+        "scene_seed": 2005,
+        "split": "validation",
+        "start_seed": 2105,
+        "target_seed": 2205
+      }
+    ]
+  },
+  "post_run_verification": {
+    "added_after_runtime_capture": true,
+    "related_tests": {"passed": 627, "failed": 0, "skipped": 0},
+    "historical_plant_controller_reward_tests": {"passed": 25, "failed": 0},
+    "independent_read_only_review": {
+      "decision": "GO_FOR_ENVIRONMENT_PREFLIGHT_ONLY",
+      "critical": 0,
+      "important": 0,
+      "full_test_suite_independently_rerun": false,
+      "raw_sha_and_aggregate_metrics_independently_recomputed": true
+    },
+    "warnings": ["Inherited Matplotlib Axes3D import warning; figures use 2D only",
+                 "Gymnasium check_env cannot test alternate render modes without a registered spec"]
+  },
+  "scope": "REAL_MUJOCO_NAVIGATION_ENV_PREFLIGHT_ONLY",
+  "status": "PASS",
+  "upstream": {
+    "backend": "cpu",
+    "commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+    "lidar_extrinsic_provenance": "SIM_CONFIG",
+    "pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3",
+    "ray_count_per_frame": 24000
+  }
+}
