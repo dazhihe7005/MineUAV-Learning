@@ -1097,3 +1097,21 @@ Conclusion: Dynamic-pose MuJoCo CPU raycasting and 10Hz simulation clock PASS fo
 Limitations: Small static geometry and11 frames/path; horizontal-only shaft degeneracy does not encompass floor/oblique rays or estimator observability. Scan-only CPU timing excludes data save/plot and full PX4 workload. `mid360` approximate mode not validated as real MID360S.
 
 Next: Only recommend a separately authorized physically consistent moving-state LiDAR+IMU timing study before FAST-LIO2 integration. Not executed.
+
+## 2026-10-14 — MuJoCo LiDAR Policy Observation Preflight Phase 3E-L4
+
+Branch: `feat/mujoco-lidar-policy-observation`; base `d95552c86c87c4e749a238752082d5ffe00a3e0c`.
+
+Research Question: Can the 66 real MuJoCo ray frames from Phase3E-L3 become finite fixed-size LiDAR inputs, and can 10Hz source observations be read causally by a future 25Hz policy without mistaking old or future frames for new data?
+
+Setup: Read-only SHA256 verification of all 66 local 24k-ray NPZ from the pinned upstream `mid360` approximate mode; the formal analysis used no new raycast, while a separate Roll/Pitch regression test used two fresh 1k-ray MuJoCo scans. No PX4, SITL, ROS, FAST-LIO2 or training. Fixed 24-azimuth ×12-elevation grid over `[0,360)° × [-10,55]°`, chosen to enclose measured `[-7.2075,52.1640]°` elevations; three finite float32 channels: range, sampled mask, hit mask. Offline 10Hz source/25Hz policy schedules, bounded four-frame cache and 150ms *experimental* stale threshold. SIM truth, PX4 estimate and target remain separate typed inputs.
+
+Key Results: 66/66 NPZ hashes matched the prior report; 1,584,000 source rays encoded. Network tensor `[3,12,24]` is 3456 bytes; all per-observation arrays 7488 bytes, maximum four-frame cache 29,952 bytes. Across 66 frames, 438 unscanned-bin instances and 4322 sampled-but-no-hit instances remain distinguishable; four angular bins never sampled. In 156 zero-delay offline policy reads: zero future/stale/missing, 90 repeated-but-not-new valid reads. With explicitly artificial +20ms arrival delay: six initial missing reads, zero future. Data source timestamps remain unchanged. Final-code encoding CPU P50/P95/P99/max `3.483/4.032/4.293/4.375ms`; NPZ load `5.848/7.141/8.340/10.228ms`; isolated cache-read P95 `0.00170ms`. Peak RSS `563.8MiB`, no observed OOM.
+
+Verification/Review: Related suite **603 PASS, 0 FAIL, 0 SKIP** (575 inherited, 28 new), one inherited Matplotlib Axes3D import warning. Independent final read-only review **GO**, 0 Critical/Important. RED→GREEN caught backdated arrival, re-enableable array mutation and the checked-file/reopened-file identity gap; final report was rerun with verified-byte decoding and immutable snapshots. All 66 raw NPZ were hashed against the prior manifest; source pattern and historical physical-model SHA256 unchanged. Six figures are from actual encoded ray frames and measured policy-source times, not analytic point replacement. Cryptographic identity applies to the verified file path, not arbitrary direct `encode_frame` labels.
+
+Conclusion: Offline fixed-size LiDAR observation and causal asynchronous handoff **PASS**. This does not modify the legacy 7D BC/PPO checkpoints, establish PX4-estimated observations, run a learned policy, or validate a real MID360S.
+
+Limitations: Whole-frame frozen-pose rays with no physical per-point timing/IMU sync; fixed small static scenes and only 66 frames; artificial delay is not measured transport latency; no combined scan+encoder+policy+PX4 real-time test. `SIM_CONFIG` extrinsic is not real calibration.
+
+Next: Only recommend a separately authorized physically consistent LiDAR+IMU timing and estimator-state adaptation audit before any LiDAR-policy training. Not executed.
