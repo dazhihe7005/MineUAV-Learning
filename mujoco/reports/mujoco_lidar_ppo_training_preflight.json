@@ -1,0 +1,308 @@
+{
+  "action": {
+    "normalized_bounds": [
+      -1,
+      1
+    ],
+    "physical_scaling_location": "inherited MineUAVEnv.step/map_normalized_action",
+    "shape": [
+      4
+    ],
+    "world_velocity_scale_m_s": [
+      1.5,
+      1.5,
+      1.0
+    ],
+    "yaw_rate_scale_rad_s": 1.0
+  },
+  "complete_prereg_sha256": "2f12230b340691d14a5237697349e001a3519a5c979d4b2c02588912d27ee75b",
+  "formal_protocol_proposal_not_run": {
+    "batch_size": 64,
+    "checkpoint_every_steps": 100000,
+    "clip_range": 0.2,
+    "ent_coef": 0.0,
+    "experiment_id": "LIDAR_PPO_FORMAL_PROPOSAL_NOT_RUN_V1",
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "learning_rate": 0.0003,
+    "lidar_hz": 10,
+    "max_grad_norm": 0.5,
+    "n_epochs": 2,
+    "n_steps": 128,
+    "network": "Conv(3,16,3,p1)-Conv(16,32,3,s2,p1)-FC64+state7+heading2+age1; pi/vf64x64",
+    "normalize_images": false,
+    "physics_hz": 500,
+    "pi_hz": 100,
+    "policy": "MultiInputPolicy",
+    "policy_hz": 25,
+    "ray_count": 24000,
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "sealed_test_scenario_count": 6,
+    "seed": 0,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "selection_rule": "final checkpoint, not test-selected",
+    "total_timesteps_per_seed": 1000000,
+    "train_scene_scheduler": "uniform among 12 Train identities at episode reset; NOT IMPLEMENTED",
+    "training_scenario_count": 12,
+    "validation_every_steps": 100000,
+    "validation_scenario_count": 6,
+    "vf_coef": 0.5,
+    "workers": 1
+  },
+  "formal_protocol_sha256": "f12cee995d003cbd502b3bd5477d142d658f1362dae368e5286ee1ddafc49bf4",
+  "historical_checkpoint_sha256": {
+    "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+    "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+    "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+    "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+    "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+    "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+    "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+  },
+  "historical_model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+  "limitations": [
+    "One 512-step smoke is a pipeline check, not obstacle-learning evidence.",
+    "Only front_box Train[1] was sampled; uniform 12-scene formal scheduler is not implemented.",
+    "The 12/6/6 layouts are small synthetic configurations, not mine generalization proof.",
+    "Same-scene post-smoke Reward ordering uses a privileged geometry-waypoint controller for C; it does not prove LiDAR-policy reward alignment.",
+    "The body contact geom and LiDAR pattern/extrinsic are simulation approximations.",
+    "State and heading are MuJoCo truth, not PX4 EKF or SLAM outputs.",
+    "No mid-scan timing, motion distortion, real MID360S calibration or PX4 joint realtime test."
+  ],
+  "observation": {
+    "feature_dim": 74,
+    "heading": "float32[2] sin/cos of current ENU body yaw",
+    "lidar": "float32[3,12,24] normalized range/sampled mask/hit mask",
+    "lidar_age": "float32[1] MuJoCo simulation seconds",
+    "normalize_images": false,
+    "state": "float32[7] target_position\u2212position ENU, velocity ENU, wrapped yaw error",
+    "state_source": "SIM_GROUND_TRUTH_STATE"
+  },
+  "offline_separate_process_init_memory_probe_ru_maxrss_mib": {
+    "after_environment_init": 1274.875,
+    "after_import": 339.23828125,
+    "after_model_init": 1274.875,
+    "note": "Separate process; peak-so-far ru_maxrss, not same-process incremental RSS.",
+    "training_in_this_probe": false
+  },
+  "resource_note": "One CPU process, one MuJoCo environment; cv2/NumPy ABI import warning printed by SB3 import chain but process completed. No PX4 process.",
+  "reward_audit": {
+    "A_ideal_hover_math_not_executed": {
+      "assumptions": "zero speed, zero command, zero progress for 375 policy steps",
+      "return": -5.75,
+      "termination": "timeout"
+    },
+    "B_front_box_actual_obstacle_blind_collision": {
+      "raw_sha256": "121ce01732948e93a04ad94200aadd3be4f5e2e18e85db425c88258b259a691a",
+      "return": -25.30922798442316,
+      "steps": 43,
+      "termination": "collision"
+    },
+    "C_channel_actual_clearance_and_stop": {
+      "raw_sha256": "65ba235329a7ebfe4628eeb9fcf0978ed4f4c572179b5f556ee731ba86092002",
+      "return": 25.610684669905062,
+      "steps": 91,
+      "termination": "success"
+    },
+    "C_interpretation": "physical corridor clearance; not a front-box detour planner",
+    "evidence_scope": "Historical L5 trajectories from different layouts; its same-scene status does not describe the separate POST_SMOKE front_box audit",
+    "fixed_small_scene_ordering": true,
+    "limitation": "A is mathematical ideal; B/C are different Phase L5 Train layouts. This does not prove obstacle-aware PPO learning or general reward alignment.",
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "same_front_box_collision_return_upper_bound": -11.890684827070519,
+    "same_front_box_success_return_upper_bound_not_a_trajectory": 28.10931517292948,
+    "same_scene_three_policy_comparison": "NOT TESTED"
+  },
+  "runtime_source_sha256": {
+    "control/control_allocator.py": "d40e59ac1d00c4671f9afce092d3700284b0cea933f1ce8c01b36692b98bbeb8",
+    "control/hover_controller.py": "6fd531fe31fe973c7d64a1da3bfa37e5086c73c40e7b6bbdafb78b9047c27612",
+    "control/velocity_command_controller.py": "79618e6ab6c19d40c6e94ee23b67a18388b12917374f9ef05875529424264e24",
+    "lidar_integration/async_observation.py": "2a31589209078582ba89f17bb18c79a1d43622b95d0a5bba98c9584029727de1",
+    "lidar_integration/navigation_env.py": "dfd8aa3918a450a80a568fc147057b018bcd8a129625e83187d07ada5cf8f5d2",
+    "lidar_integration/navigation_scene.py": "3b46ffd11c34d8c20ecaf88ccd1ae51433ed6249dbe46a3194d6bf7bc30ee490",
+    "lidar_integration/observation.py": "a914e8509a852a9b8a8f553c35b7aa59e0ff07020b1bb7c20ccd15673669c575",
+    "lidar_integration/ppo_preflight.py": "8accaf532c852bf504a884249ee604752ae9367be6e7102b51a2cd2877219f57",
+    "lidar_integration/ppo_scenarios.py": "cf48743c2fb501709de01c7e9404ef1bb822786d07bc591903efcfd4f6a32c10",
+    "lidar_integration/ppo_training_runner.py": "685dc7f19c8eea77577315a224621abc5e3a3ba80c2cd41f4cbd9724fce34a84",
+    "lidar_integration/scanner.py": "e49af9f1576545379a4ee47b2092958f2232d9d0253ac636ac22b2b898c94a47",
+    "rl/mine_uav_env.py": "1006c9fded52cdf3e14a8e7941a52dad38a7858b6bc73fdd10db9a48c2c3d524"
+  },
+  "same_scene_reward_audit": {
+    "C_controller_privilege": "fixed geometry-derived waypoints; not a LiDAR policy",
+    "actual_episode_count": 3,
+    "analysis_timing": "POST_SMOKE; not used for Reward or checkpoint selection",
+    "conditions": {
+      "A_zero_command": {
+        "final_distance_m": 1.8109315172928888,
+        "initial_state_sha256": "c7ea87701c6ea291b8b09a8ef2a8a582f6150a0ecd3c620bca5a919ec80b349d",
+        "outcome": "time_limit",
+        "physics_time_s": 15.000000000001679,
+        "policy_steps": 375,
+        "raw_path_local_only": "mujoco/reports/mujoco_lidar_ppo_training_preflight_parts/reward_same_scene_01/A_zero_command.npz",
+        "raw_sha256": "874958c13d71a167b859fa878c971fa0d6ed0b2833aa54a39aa22ada5877a0ba",
+        "return": -5.749999999999371,
+        "scene_hash": "54c2e1bcfd2c91f44673735608aeca320d420fa03e06a02498819e92f5cd6b9b",
+        "wall_seconds": 1.9649961190007161,
+        "waypoint_stage_reached": null
+      },
+      "B_obstacle_blind_direct": {
+        "final_distance_m": 1.2830763350021062,
+        "initial_state_sha256": "c7ea87701c6ea291b8b09a8ef2a8a582f6150a0ecd3c620bca5a919ec80b349d",
+        "outcome": "collision",
+        "physics_time_s": 1.6960000000000013,
+        "policy_steps": 43,
+        "raw_path_local_only": "mujoco/reports/mujoco_lidar_ppo_training_preflight_parts/reward_same_scene_01/B_obstacle_blind_direct.npz",
+        "raw_sha256": "62475043bb2bc816310ab8ebe4ddf6c814645c7b3889c57815b2007f0c7a893f",
+        "return": -25.30922798442316,
+        "scene_hash": "54c2e1bcfd2c91f44673735608aeca320d420fa03e06a02498819e92f5cd6b9b",
+        "wall_seconds": 0.21540671200637007,
+        "waypoint_stage_reached": null
+      },
+      "C_privileged_fixed_waypoint_detour": {
+        "final_distance_m": 0.08975518059226109,
+        "initial_state_sha256": "c7ea87701c6ea291b8b09a8ef2a8a582f6150a0ecd3c620bca5a919ec80b349d",
+        "outcome": "success",
+        "physics_time_s": 13.760000000001265,
+        "policy_steps": 344,
+        "raw_path_local_only": "mujoco/reports/mujoco_lidar_ppo_training_preflight_parts/reward_same_scene_01/C_privileged_fixed_waypoint_detour.npz",
+        "raw_sha256": "8c1b15b84fb4c9b27d733ba58b37b23ea0e9e16e2dabb0db72ed173c8b74a6db",
+        "return": 22.83471369778676,
+        "scene_hash": "54c2e1bcfd2c91f44673735608aeca320d420fa03e06a02498819e92f5cd6b9b",
+        "wall_seconds": 1.7790145040053176,
+        "waypoint_stage_reached": 2
+      }
+    },
+    "initial_identity_scope": "SHA256 covers qpos, qvel and target only; PI/act/ctrl are reset by the same deterministic environment reset, but are not included in this hash",
+    "observed_ordering_C_gt_A_gt_B": true,
+    "privileged_waypoints": [
+      [
+        0.45,
+        0.85,
+        1.0
+      ],
+      [
+        1.45,
+        0.85,
+        1.0
+      ]
+    ],
+    "same_initial_state_sha256": "c7ea87701c6ea291b8b09a8ef2a8a582f6150a0ecd3c620bca5a919ec80b349d",
+    "training_or_optimizer_steps": 0
+  },
+  "scenario_counts": {
+    "test": 6,
+    "train": 12,
+    "validation": 6
+  },
+  "scenario_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+  "smoke": {
+    "actor_final_sha256": "17a49d01733442d5d3a6e6737ef1e1909d5bd12b58e837925c11511fcd7a5583",
+    "actor_initial_sha256": "bb267b4d10796a33501a0511820dced74c8ea95a5b3625b45e41e426f5a1fa7e",
+    "checkpoint_path": "mujoco/reports/mujoco_lidar_ppo_training_preflight_parts/smoke_run_01/SMOKE_ONLY_lidar_ppo_seed0.zip",
+    "checkpoint_sha256": "ca1c33b7a2ed3444067b4463131c02792e81bc46445904746973f24191740203",
+    "cpu_seconds": 2.9009799979999995,
+    "critic_final_sha256": "5982cf258807ed73e64d7156beaa85da3e4713e5e2416bf64f17ceaa3ad3a219",
+    "critic_initial_sha256": "c8eb88d063c5a2b4ec9545c8e5228322dc42d19e876ac78f3549624606e44539",
+    "env_step_ms": {
+      "count": 512,
+      "max": 13.190172998292837,
+      "p50": 1.095645497116493,
+      "p95": 11.510255252142088,
+      "p99": 11.832937975559616
+    },
+    "env_steps_per_wall_second": 175.76987651325376,
+    "episode_outcomes": [
+      "time_limit"
+    ],
+    "experiment_id": "LIDAR_PPO_SMOKE_ONLY_V1",
+    "formal_training_executed": false,
+    "historical_checkpoints_unchanged": true,
+    "last_gradient_norm_max": 0.4594435691833496,
+    "lidar_encode_ms": {
+      "count": 204,
+      "max": 4.9061099998652935,
+      "p50": 3.8569779972021934,
+      "p95": 4.152352954042726,
+      "p99": 4.356839748797938
+    },
+    "lidar_scan_ms": {
+      "count": 204,
+      "max": 7.754211001156364,
+      "p50": 6.039156000042567,
+      "p95": 6.419611650562729,
+      "p99": 6.658993916134932
+    },
+    "navigation_learning_claim": false,
+    "non_env_step_wall_seconds": 0.32569940308167133,
+    "out_of_memory": false,
+    "parameter_count": 170857,
+    "physics_ticks_total": 10240,
+    "prereg_sha256": "c468490154627ba8f71df9c73bc8c80769f557054d9692313139188971e332c8",
+    "protocol_sha256": "b7dfb9d6a652ea519830b3cf907a82f54c253a1b673389d84d2c031a7fb88837",
+    "reload_exact_action": true,
+    "rss_peak_mib": 1325.6640625,
+    "sb3_last_available_training_diagnostics": {
+      "train/approx_kl": 0.0001306571066379547,
+      "train/clip_fraction": 0.0,
+      "train/clip_range": 0.2,
+      "train/entropy_loss": -5.673295021057129,
+      "train/explained_variance": 0.016555607318878174,
+      "train/learning_rate": 0.0003,
+      "train/loss": 0.30560794472694397,
+      "train/n_updates": 8.0,
+      "train/policy_gradient_loss": -0.0014289808459579945,
+      "train/std": 0.9996799230575562,
+      "train/value_loss": 0.7032234370708466
+    },
+    "scenario_identity_sha256": "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+    "scenario_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+    "sim_seconds_per_wall_second": 7.03079506053015,
+    "status": "PASS",
+    "system_min_available_mib": 9982.6328125,
+    "timesteps": 512,
+    "wall_seconds": 2.912899583003309,
+    "worker_count": 1
+  },
+  "smoke_scene": {
+    "identity_sha256": "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+    "layout": "front_box",
+    "split": "train"
+  },
+  "software_versions": {
+    "gymnasium": "1.3.0",
+    "mujoco": "3.14.0",
+    "numpy": "2.2.6",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.14.0+cpu"
+  },
+  "status": {
+    "bounded_training_smoke": "PASS",
+    "checkpoint_reload": "PASS",
+    "cnn_actor_critic_shapes_and_gradients": "PASS",
+    "fixed_reward_formula_and_accounting": "PASS",
+    "formal_multiseed_training": "NOT TESTED",
+    "geometric_feasibility_at_nominal_height": "PASS",
+    "observation_interface": "PASS",
+    "obstacle_avoidance_learned": "NOT TESTED",
+    "px4_fast_lio2_real_sensor": "NOT TESTED",
+    "ready_to_run_formal_training_without_further_implementation": "BLOCKED",
+    "same_scene_ABC_reward_trajectory_comparison": "PASS",
+    "scene_split_identity": "PASS",
+    "test_generalization": "NOT TESTED"
+  },
+  "task": "Phase 3E-L6 LiDAR-CNN-PPO training preflight",
+  "tests": {
+    "failed": 0,
+    "inherited_bridge_and_lidar": 627,
+    "new_preflight": 15,
+    "old_controller_targeted": 25,
+    "total": 667,
+    "warnings": 2
+  },
+  "upstream_lidar_commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+  "upstream_pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3"
+}

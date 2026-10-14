@@ -69,7 +69,8 @@ class LidarNavigationEnv(MineUAVEnv):
     metadata = {"render_modes": [], "render_fps": 25}
 
     def __init__(self, layout: str, scene_seed: int, upstream_root: str | Path,
-                 max_episode_seconds: float = 15.) -> None:
+                 max_episode_seconds: float = 15.,
+                 scene: NavigationScene | None = None) -> None:
         super().__init__(max_episode_seconds=max_episode_seconds,
                          render_mode=None, reward_version="v2", target_distribution="full")
         old = self.velocity_controller
@@ -79,7 +80,9 @@ class LidarNavigationEnv(MineUAVEnv):
             old.attitude_controller, self.model.opt.gravity, kv=old.kv,
             horizontal_accel_limit=old.horizontal_accel_limit,
             vertical_accel_limit=old.vertical_accel_limit, ki_xy=.5, ki_z=.8)
-        self.scene: NavigationScene = build_scene(layout, scene_seed)
+        if scene is not None and (scene.layout != layout or scene.scene_seed != scene_seed):
+            raise ValueError("injected scene identity does not match requested layout/seed")
+        self.scene: NavigationScene = scene if scene is not None else build_scene(layout, scene_seed)
         if (not math.isclose(mujoco.mj_getTotalmass(self.scene.model),
                              mujoco.mj_getTotalmass(self.model), abs_tol=1e-10)
                 or not np.array_equal(self.scene.model.actuator_gear,
@@ -188,11 +191,24 @@ class LidarNavigationEnv(MineUAVEnv):
         opts = {} if options is None else dict(options)
         start_seed = opts.pop("start_seed", 1000 if seed is None else 1000 + seed)
         target_seed = opts.pop("target_seed", 2000 if seed is None else 2000 + seed)
-        endpoints = sample_start_target(self.scene, start_seed, target_seed)
-        target = opts.pop("target_position", endpoints.target_xyz)
+        explicit_start = opts.pop("start_position", None)
+        explicit_yaw = opts.pop("start_yaw_rad", None)
+        explicit_target = opts.pop("target_position", None)
+        endpoints = (None if all(item is not None for item in
+                                 (explicit_start, explicit_yaw, explicit_target))
+                     else sample_start_target(self.scene, start_seed, target_seed))
+        start = np.asarray(explicit_start if explicit_start is not None else endpoints.start_xyz,
+                           dtype=float)
+        yaw = float(explicit_yaw if explicit_yaw is not None else endpoints.start_yaw_rad)
+        target = explicit_target if explicit_target is not None else endpoints.target_xyz
         if opts:
             raise ValueError(f"unsupported navigation reset options: {sorted(opts)}")
         target = np.asarray(target, dtype=float)
+        if (start.shape != (3,) or not np.isfinite(start).all()
+                or self.scene.overlaps_obstacle(start, clearance_m=.20)
+                or np.any(np.abs(start[:2]) >= self.scene.boundary_half_extent_m - .20)
+                or not .7 < start[2] < 2.95 or not math.isfinite(yaw)):
+            raise ValueError("start pose must be finite, clear and inside bounds")
         if (target.shape != (3,) or not np.isfinite(target).all()
                 or self.scene.overlaps_obstacle(target, clearance_m=.12)
                 or np.any(np.abs(target[:2]) >= self.scene.boundary_half_extent_m - .12)
@@ -200,11 +216,10 @@ class LidarNavigationEnv(MineUAVEnv):
             raise ValueError("target must be finite, inside bounds and clear of obstacle/floor")
         self._lidar_active = False
         state, info = super().reset(seed=seed, options={"target_position": target})
-        self.data.qpos[:3] = endpoints.start_xyz
-        self.data.qpos[3:7] = [math.cos(endpoints.start_yaw_rad / 2), 0., 0.,
-                              math.sin(endpoints.start_yaw_rad / 2)]
+        self.data.qpos[:3] = start
+        self.data.qpos[3:7] = [math.cos(yaw / 2), 0., 0., math.sin(yaw / 2)]
         mujoco.mj_forward(self.model, self.data)
-        self.velocity_controller.reset(yaw_target=endpoints.start_yaw_rad)
+        self.velocity_controller.reset(yaw_target=yaw)
         self.previous_distance = float(np.linalg.norm(self.target_position - self.data.qpos[:3]))
         self._episode_serial += 1
         self._experiment_id = f"{self.scene.geometry_hash}:{self._episode_serial}"

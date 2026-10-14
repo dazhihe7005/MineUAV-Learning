@@ -1,0 +1,780 @@
+{
+  "complete_protocol_sha256": "2f12230b340691d14a5237697349e001a3519a5c979d4b2c02588912d27ee75b",
+  "formal_proposal_not_run": {
+    "batch_size": 64,
+    "checkpoint_every_steps": 100000,
+    "clip_range": 0.2,
+    "ent_coef": 0.0,
+    "experiment_id": "LIDAR_PPO_FORMAL_PROPOSAL_NOT_RUN_V1",
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "learning_rate": 0.0003,
+    "lidar_hz": 10,
+    "max_grad_norm": 0.5,
+    "n_epochs": 2,
+    "n_steps": 128,
+    "network": "Conv(3,16,3,p1)-Conv(16,32,3,s2,p1)-FC64+state7+heading2+age1; pi/vf64x64",
+    "normalize_images": false,
+    "physics_hz": 500,
+    "pi_hz": 100,
+    "policy": "MultiInputPolicy",
+    "policy_hz": 25,
+    "ray_count": 24000,
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "sealed_test_scenario_count": 6,
+    "seed": 0,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "selection_rule": "final checkpoint, not test-selected",
+    "total_timesteps_per_seed": 1000000,
+    "train_scene_scheduler": "uniform among 12 Train identities at episode reset; NOT IMPLEMENTED",
+    "training_scenario_count": 12,
+    "validation_every_steps": 100000,
+    "validation_scenario_count": 6,
+    "vf_coef": 0.5,
+    "workers": 1
+  },
+  "formal_proposal_sha256": "f12cee995d003cbd502b3bd5477d142d658f1362dae368e5286ee1ddafc49bf4",
+  "historical_checkpoint_sha256": {
+    "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+    "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+    "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+    "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+    "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+    "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+    "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+  },
+  "historical_model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+  "lidar_pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3",
+  "network_implementation_sha256": "8accaf532c852bf504a884249ee604752ae9367be6e7102b51a2cd2877219f57",
+  "preflight_source_sha256": {
+    "control/control_allocator.py": "d40e59ac1d00c4671f9afce092d3700284b0cea933f1ce8c01b36692b98bbeb8",
+    "control/hover_controller.py": "6fd531fe31fe973c7d64a1da3bfa37e5086c73c40e7b6bbdafb78b9047c27612",
+    "control/velocity_command_controller.py": "79618e6ab6c19d40c6e94ee23b67a18388b12917374f9ef05875529424264e24",
+    "lidar_integration/async_observation.py": "2a31589209078582ba89f17bb18c79a1d43622b95d0a5bba98c9584029727de1",
+    "lidar_integration/navigation_env.py": "dfd8aa3918a450a80a568fc147057b018bcd8a129625e83187d07ada5cf8f5d2",
+    "lidar_integration/navigation_scene.py": "3b46ffd11c34d8c20ecaf88ccd1ae51433ed6249dbe46a3194d6bf7bc30ee490",
+    "lidar_integration/observation.py": "a914e8509a852a9b8a8f553c35b7aa59e0ff07020b1bb7c20ccd15673669c575",
+    "lidar_integration/ppo_preflight.py": "8accaf532c852bf504a884249ee604752ae9367be6e7102b51a2cd2877219f57",
+    "lidar_integration/ppo_scenarios.py": "cf48743c2fb501709de01c7e9404ef1bb822786d07bc591903efcfd4f6a32c10",
+    "lidar_integration/ppo_training_runner.py": "685dc7f19c8eea77577315a224621abc5e3a3ba80c2cd41f4cbd9724fce34a84",
+    "lidar_integration/scanner.py": "e49af9f1576545379a4ee47b2092958f2232d9d0253ac636ac22b2b898c94a47",
+    "rl/mine_uav_env.py": "1006c9fded52cdf3e14a8e7941a52dad38a7858b6bc73fdd10db9a48c2c3d524"
+  },
+  "reward_implementation_sha256": "dfd8aa3918a450a80a568fc147057b018bcd8a129625e83187d07ada5cf8f5d2",
+  "scenario_manifest": {
+    "test": [
+      {
+        "identity_sha256": "5839232411e4a6f4754123528b9ed25333bc57d208694e19bd59ac46007c1da0",
+        "layout": "empty",
+        "obstacle_configuration_hash": "e2d5d9f31bfba5f946c52c029ffad737ac65b782a924ff8da5ca3ddedfc56e9d",
+        "obstacle_variation": [],
+        "scene_seed": 61000,
+        "split": "test",
+        "start_seed": 161000,
+        "start_xyz": [
+          -0.1500323,
+          0.1621793,
+          1.0
+        ],
+        "start_yaw_rad": 2.0659235,
+        "target_seed": 261000,
+        "target_xyz": [
+          1.9821581,
+          -0.0081028,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "1e8533c3a2c9f787e5750ccdc4eb1c4c91863f5cd7806b64bae61f828bdd36b7",
+        "layout": "front_box",
+        "obstacle_configuration_hash": "b234f105da5b4be017031a478b9ea66adb87eb8a16e62545d8b44c8d48ad2cc1",
+        "obstacle_variation": [
+          [
+            -0.1270247,
+            -0.2069001,
+            1.0685021
+          ]
+        ],
+        "scene_seed": 61001,
+        "split": "test",
+        "start_seed": 161001,
+        "start_xyz": [
+          -0.0231277,
+          -0.0497068,
+          1.0
+        ],
+        "start_yaw_rad": 1.5571164,
+        "target_seed": 261001,
+        "target_xyz": [
+          1.9334156,
+          0.06596,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "df46081cd4e0dde917672b065d9ac2b6aa3061e7038db54bf5899b27fdd6d9f1",
+        "layout": "side_pair",
+        "obstacle_configuration_hash": "37ec9ac3089d5a06f36719a8802a10534ed1b3b8eb35276ff2019df2c0c38b9e",
+        "obstacle_variation": [
+          [
+            0.0999624,
+            -0.1644357,
+            1.1339657
+          ],
+          [
+            0.1166497,
+            -0.0578628,
+            0.8505985
+          ]
+        ],
+        "scene_seed": 61002,
+        "split": "test",
+        "start_seed": 161002,
+        "start_xyz": [
+          -0.0177314,
+          0.2107559,
+          1.0
+        ],
+        "start_yaw_rad": -1.1633574,
+        "target_seed": 261002,
+        "target_xyz": [
+          1.973903,
+          -0.0173252,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "594ddc9ee2288bf21ed862e35ae63d2c5d530ccf4c1b18f54596b1ffbe86393b",
+        "layout": "detour",
+        "obstacle_configuration_hash": "afd1874b4b28d7fba1dac9f5f6a8b22df1022ae76137c89e4af9b1d9c0da4c9a",
+        "obstacle_variation": [
+          [
+            -0.0277217,
+            0.0210478,
+            1.0202867
+          ],
+          [
+            -0.1394677,
+            -0.1383325,
+            1.0376827
+          ]
+        ],
+        "scene_seed": 61003,
+        "split": "test",
+        "start_seed": 161003,
+        "start_xyz": [
+          -0.1428801,
+          -0.0517254,
+          1.0
+        ],
+        "start_yaw_rad": 3.0229511,
+        "target_seed": 261003,
+        "target_xyz": [
+          1.9877464,
+          -0.1145121,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "9f669da1d751dce44c753d0477d501ae30cf62f48ddeb1139ec54ef4ee1b50ef",
+        "layout": "channel",
+        "obstacle_configuration_hash": "776328d329bcb3dc2651644610e4fc4a13898c3d7eb2cf24df9054da689b9ed1",
+        "obstacle_variation": [
+          [
+            -0.0279263,
+            0.0274023,
+            0.9956705
+          ],
+          [
+            0.100878,
+            0.0688902,
+            0.8489955
+          ]
+        ],
+        "scene_seed": 61004,
+        "split": "test",
+        "start_seed": 161004,
+        "start_xyz": [
+          -0.09046,
+          -0.2775068,
+          1.0
+        ],
+        "start_yaw_rad": -0.2403981,
+        "target_seed": 261004,
+        "target_xyz": [
+          1.972689,
+          -0.1255809,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "e034cc01daf894659535bedf631ef697760c5e49e38588094655b4311654e1b4",
+        "layout": "empty",
+        "obstacle_configuration_hash": "cf763f91625968f0e20fe90b67b99301c649c1304a127b94e04385a1210522e2",
+        "obstacle_variation": [],
+        "scene_seed": 61005,
+        "split": "test",
+        "start_seed": 161005,
+        "start_xyz": [
+          0.00665,
+          0.2226203,
+          1.0
+        ],
+        "start_yaw_rad": -1.202122,
+        "target_seed": 261005,
+        "target_xyz": [
+          1.9389807,
+          0.0534665,
+          1.0
+        ]
+      }
+    ],
+    "train": [
+      {
+        "identity_sha256": "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+        "layout": "empty",
+        "obstacle_configuration_hash": "d8502ffc90eb4e545e426ae0436814c15a447f8cf5cd63138514d9298dce2e17",
+        "obstacle_variation": [],
+        "scene_seed": 41000,
+        "split": "train",
+        "start_seed": 141000,
+        "start_xyz": [
+          -0.0503064,
+          -0.0709097,
+          1.0
+        ],
+        "start_yaw_rad": -1.1761304,
+        "target_seed": 241000,
+        "target_xyz": [
+          1.9765056,
+          -0.0914893,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+        "layout": "front_box",
+        "obstacle_configuration_hash": "9f80e09c817b87d92e12c93068a6335e1f3f72fecf106acedd246fd21a3423a6",
+        "obstacle_variation": [
+          [
+            0.0996531,
+            -0.2019382,
+            0.9978964
+          ]
+        ],
+        "scene_seed": 41001,
+        "split": "train",
+        "start_seed": 141001,
+        "start_xyz": [
+          0.0780003,
+          -0.1084441,
+          1.0
+        ],
+        "start_yaw_rad": -1.0301523,
+        "target_seed": 241001,
+        "target_xyz": [
+          1.9471578,
+          0.1662212,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+        "layout": "side_pair",
+        "obstacle_configuration_hash": "5bd3214fb42c619328ae006d5ae5e1c6367af8c5da7370482ca3d19459fc02a3",
+        "obstacle_variation": [
+          [
+            -0.0263049,
+            0.0357125,
+            1.1895347
+          ],
+          [
+            -4.28e-05,
+            -0.0726642,
+            1.050846
+          ]
+        ],
+        "scene_seed": 41002,
+        "split": "train",
+        "start_seed": 141002,
+        "start_xyz": [
+          0.0169887,
+          -0.0452211,
+          1.0
+        ],
+        "start_yaw_rad": -1.3300971,
+        "target_seed": 241002,
+        "target_xyz": [
+          1.9419767,
+          0.1421112,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+        "layout": "detour",
+        "obstacle_configuration_hash": "08b398c21469de480d1d693928b05293c0a9351c7c764998e1a0dcd74fb6b8a1",
+        "obstacle_variation": [
+          [
+            -0.0062002,
+            -0.2062267,
+            1.1472422
+          ],
+          [
+            -0.0712984,
+            0.1480872,
+            0.9755263
+          ]
+        ],
+        "scene_seed": 41003,
+        "split": "train",
+        "start_seed": 141003,
+        "start_xyz": [
+          -0.1746756,
+          0.2997526,
+          1.0
+        ],
+        "start_yaw_rad": -1.8047378,
+        "target_seed": 241003,
+        "target_xyz": [
+          1.9637311,
+          0.0103784,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+        "layout": "channel",
+        "obstacle_configuration_hash": "c1bde6f25ac38c94dfd752680fb6e2c790a839b6a4f8c56437f1920521b2c295",
+        "obstacle_variation": [
+          [
+            -0.0305128,
+            0.0206339,
+            1.0019997
+          ],
+          [
+            0.1032185,
+            0.0222619,
+            0.8658643
+          ]
+        ],
+        "scene_seed": 41004,
+        "split": "train",
+        "start_seed": 141004,
+        "start_xyz": [
+          -0.0705515,
+          -0.2032268,
+          1.0
+        ],
+        "start_yaw_rad": 1.6616317,
+        "target_seed": 241004,
+        "target_xyz": [
+          1.9601126,
+          0.0118547,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+        "layout": "empty",
+        "obstacle_configuration_hash": "c85940ca34e17fc044f43e6e3ab2a52c1e308a5a05aeabfa88ac7507086f7778",
+        "obstacle_variation": [],
+        "scene_seed": 41005,
+        "split": "train",
+        "start_seed": 141005,
+        "start_xyz": [
+          -0.0836704,
+          0.0571978,
+          1.0
+        ],
+        "start_yaw_rad": 0.6747245,
+        "target_seed": 241005,
+        "target_xyz": [
+          1.9766657,
+          0.066806,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+        "layout": "front_box",
+        "obstacle_configuration_hash": "87717b1076dd90f2375ce4c10a9802b61f4a7b6a51bf4e61d6c96c2a481231f7",
+        "obstacle_variation": [
+          [
+            0.1242362,
+            0.171486,
+            1.132154
+          ]
+        ],
+        "scene_seed": 41006,
+        "split": "train",
+        "start_seed": 141006,
+        "start_xyz": [
+          -0.0487935,
+          -0.2457135,
+          1.0
+        ],
+        "start_yaw_rad": 2.3226625,
+        "target_seed": 241006,
+        "target_xyz": [
+          1.9539395,
+          -0.1564169,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+        "layout": "side_pair",
+        "obstacle_configuration_hash": "9645b93ebc1f36dca3523f96f0d84d5ee85a377b2ee557355d310e898ecf8b64",
+        "obstacle_variation": [
+          [
+            -0.1055013,
+            -0.0659062,
+            1.0025937
+          ],
+          [
+            0.024353,
+            0.1631752,
+            0.8361876
+          ]
+        ],
+        "scene_seed": 41007,
+        "split": "train",
+        "start_seed": 141007,
+        "start_xyz": [
+          -0.1670658,
+          0.1210261,
+          1.0
+        ],
+        "start_yaw_rad": 2.1905155,
+        "target_seed": 241007,
+        "target_xyz": [
+          1.9698097,
+          0.1233911,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+        "layout": "detour",
+        "obstacle_configuration_hash": "b61378daf091f62bb74ff68f6541405832be6fe5e92cdbe4e476688f6eb6a7fd",
+        "obstacle_variation": [
+          [
+            0.1402849,
+            0.1040301,
+            0.9128544
+          ],
+          [
+            -0.1982575,
+            0.1615301,
+            1.004311
+          ]
+        ],
+        "scene_seed": 41008,
+        "split": "train",
+        "start_seed": 141008,
+        "start_xyz": [
+          -0.0761844,
+          0.1303479,
+          1.0
+        ],
+        "start_yaw_rad": -0.1223956,
+        "target_seed": 241008,
+        "target_xyz": [
+          1.9715636,
+          -0.051198,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+        "layout": "channel",
+        "obstacle_configuration_hash": "8195e008d0552db0a5ae77857a3389789feb26ea5bf17080b8f19be3ee42fd53",
+        "obstacle_variation": [
+          [
+            -0.0022273,
+            0.0303716,
+            0.8898724
+          ],
+          [
+            0.1044016,
+            -0.0638676,
+            0.8761821
+          ]
+        ],
+        "scene_seed": 41009,
+        "split": "train",
+        "start_seed": 141009,
+        "start_xyz": [
+          0.0925123,
+          -0.2403769,
+          1.0
+        ],
+        "start_yaw_rad": 1.1892434,
+        "target_seed": 241009,
+        "target_xyz": [
+          1.9495167,
+          0.1300323,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+        "layout": "empty",
+        "obstacle_configuration_hash": "5165a98ab03db7be80be20dfbd99eeb3963d8d459d48ce4f3318b04669fbefe2",
+        "obstacle_variation": [],
+        "scene_seed": 41010,
+        "split": "train",
+        "start_seed": 141010,
+        "start_xyz": [
+          -0.1110285,
+          -0.0459002,
+          1.0
+        ],
+        "start_yaw_rad": -0.1170396,
+        "target_seed": 241010,
+        "target_xyz": [
+          1.9596643,
+          0.1630154,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+        "layout": "front_box",
+        "obstacle_configuration_hash": "c73c805dd4b0de5952907868e488b27bd0d826c37b21c032d876aeb7496f99b3",
+        "obstacle_variation": [
+          [
+            -0.0311387,
+            0.0909714,
+            0.830849
+          ]
+        ],
+        "scene_seed": 41011,
+        "split": "train",
+        "start_seed": 141011,
+        "start_xyz": [
+          0.0397968,
+          0.0232398,
+          1.0
+        ],
+        "start_yaw_rad": -0.6358202,
+        "target_seed": 241011,
+        "target_xyz": [
+          1.9663402,
+          0.177499,
+          1.0
+        ]
+      }
+    ],
+    "validation": [
+      {
+        "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+        "layout": "empty",
+        "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+        "obstacle_variation": [],
+        "scene_seed": 51000,
+        "split": "validation",
+        "start_seed": 151000,
+        "start_xyz": [
+          -0.0754896,
+          -0.2716165,
+          1.0
+        ],
+        "start_yaw_rad": -2.8096483,
+        "target_seed": 251000,
+        "target_xyz": [
+          1.9774321,
+          -0.0969566,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+        "layout": "front_box",
+        "obstacle_configuration_hash": "4d63e53d1f19e88193c642d165a880eea591798f512b12f7fc368dc772f57dfd",
+        "obstacle_variation": [
+          [
+            -0.1530586,
+            -0.0479436,
+            1.0917566
+          ]
+        ],
+        "scene_seed": 51001,
+        "split": "validation",
+        "start_seed": 151001,
+        "start_xyz": [
+          0.0497985,
+          -0.1996976,
+          1.0
+        ],
+        "start_yaw_rad": 3.0252606,
+        "target_seed": 251001,
+        "target_xyz": [
+          1.9322095,
+          0.1532845,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+        "layout": "side_pair",
+        "obstacle_configuration_hash": "de69ffee0adddf072b6e2675e2f25a0fa65d7afd559d682ebdb4af4f16784289",
+        "obstacle_variation": [
+          [
+            -0.1700284,
+            -0.0904398,
+            0.9578842
+          ],
+          [
+            -0.0326648,
+            -0.0563386,
+            0.8878916
+          ]
+        ],
+        "scene_seed": 51002,
+        "split": "validation",
+        "start_seed": 151002,
+        "start_xyz": [
+          0.0512922,
+          0.1899546,
+          1.0
+        ],
+        "start_yaw_rad": 0.5961816,
+        "target_seed": 251002,
+        "target_xyz": [
+          1.953399,
+          -0.1115559,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+        "layout": "detour",
+        "obstacle_configuration_hash": "8fcc17ffb850c9eb3e81282ecf58a7d5e43c3785373e09607121d8afa007c08c",
+        "obstacle_variation": [
+          [
+            -0.0195579,
+            0.1950133,
+            1.1450021
+          ],
+          [
+            -0.1809624,
+            0.1393471,
+            0.9555784
+          ]
+        ],
+        "scene_seed": 51003,
+        "split": "validation",
+        "start_seed": 151003,
+        "start_xyz": [
+          -0.1221735,
+          -0.1046859,
+          1.0
+        ],
+        "start_yaw_rad": 1.3524609,
+        "target_seed": 251003,
+        "target_xyz": [
+          1.9789627,
+          0.1048454,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+        "layout": "channel",
+        "obstacle_configuration_hash": "a5eb7b33488bdf8858e0e696fb6e0189d8e535207b6cfe018b1eab8c38eb12cc",
+        "obstacle_variation": [
+          [
+            0.1158533,
+            -0.0178958,
+            1.0297941
+          ],
+          [
+            0.1086019,
+            -0.0283534,
+            1.0066017
+          ]
+        ],
+        "scene_seed": 51004,
+        "split": "validation",
+        "start_seed": 151004,
+        "start_xyz": [
+          0.007751,
+          0.017084,
+          1.0
+        ],
+        "start_yaw_rad": 1.0710029,
+        "target_seed": 251004,
+        "target_xyz": [
+          1.9329941,
+          -0.1685474,
+          1.0
+        ]
+      },
+      {
+        "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+        "layout": "empty",
+        "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+        "obstacle_variation": [],
+        "scene_seed": 51005,
+        "split": "validation",
+        "start_seed": 151005,
+        "start_xyz": [
+          -0.1505737,
+          0.0293293,
+          1.0
+        ],
+        "start_yaw_rad": -2.532766,
+        "target_seed": 251005,
+        "target_xyz": [
+          1.979277,
+          -0.0583131,
+          1.0
+        ]
+      }
+    ]
+  },
+  "scenario_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+  "smoke_protocol": {
+    "batch_size": 64,
+    "checkpoint_rule": "final checkpoint only; no validation/test selection",
+    "clip_range": 0.2,
+    "ent_coef": 0.0,
+    "experiment_id": "LIDAR_PPO_SMOKE_ONLY_V1",
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "learning_rate": 0.0003,
+    "lidar_hz": 10,
+    "max_grad_norm": 0.5,
+    "n_epochs": 2,
+    "n_steps": 128,
+    "network": "Conv(3,16,3,p1)-Conv(16,32,3,s2,p1)-FC64+state7+heading2+age1; pi/vf64x64",
+    "normalize_images": false,
+    "physics_hz": 500,
+    "pi_hz": 100,
+    "policy": "MultiInputPolicy",
+    "policy_hz": 25,
+    "ray_count": 24000,
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "seed": 0,
+    "total_timesteps": 512,
+    "vf_coef": 0.5,
+    "workers": 1
+  },
+  "smoke_protocol_sha256": "b7dfb9d6a652ea519830b3cf907a82f54c253a1b673389d84d2c031a7fb88837",
+  "smoke_train_identity_sha256": "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+  "software_versions": {
+    "gymnasium": "1.3.0",
+    "mujoco": "3.14.0",
+    "numpy": "2.2.6",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.14.0+cpu"
+  },
+  "test_episode_results_used": false,
+  "upstream_lidar_commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b"
+}

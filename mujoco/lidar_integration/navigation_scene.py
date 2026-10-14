@@ -78,10 +78,19 @@ def _add_box(world: ET.Element, name: str, center: tuple[float, float, float],
     })
 
 
-def build_scene(layout: str, scene_seed: int) -> NavigationScene:
+def build_scene(layout: str, scene_seed: int,
+                obstacle_variation: tuple[tuple[float, float, float], ...] | None = None) -> NavigationScene:
     """Compile five seeded layouts; never write or alter the original MJCF."""
     if layout not in LAYOUTS:
         raise ValueError(f"unknown navigation layout: {layout}")
+    if obstacle_variation is not None:
+        if len(obstacle_variation) != len(_BOXES[layout]) or any(
+            len(item) != 3 or not all(math.isfinite(v) for v in item)
+            or not (-.25 <= item[0] <= .25 and -.30 <= item[1] <= .30
+                    and .75 <= item[2] <= 1.25)
+            for item in obstacle_variation
+        ):
+            raise ValueError("obstacle variation outside preflight geometry limits")
     seed = _validated_seed(scene_seed)
     rng = np.random.default_rng(seed)
     extent = 3.0 + float(rng.uniform(-.05, .05))
@@ -98,9 +107,14 @@ def build_scene(layout: str, scene_seed: int) -> NavigationScene:
     for index, template in enumerate(_BOXES[layout]):
         x, y, z, sx, sy, sz = template
         # Small fixed-seed layout variation; the designed gap remains open.
-        center = (x + float(rng.uniform(-.025, .025)),
-                  y + float(rng.uniform(-.025, .025)), z)
-        size = (sx, sy, sz)
+        if obstacle_variation is None:
+            center = (x + float(rng.uniform(-.025, .025)),
+                      y + float(rng.uniform(-.025, .025)), z)
+            size = (sx, sy, sz)
+        else:
+            dx, dy, scale = obstacle_variation[index]
+            center = (x + dx, y + dy, z)
+            size = (sx * scale, sy * scale, sz * scale)
         _add_box(world, f"nav_obstacle_{index}", center, size, ".75 .25 .15 1")
         boxes.append(tuple((center[axis] - size[axis], center[axis] + size[axis])
                            for axis in range(3)))
@@ -109,6 +123,8 @@ def build_scene(layout: str, scene_seed: int) -> NavigationScene:
     boundary_ids = frozenset(model.geom(item[0]).id for item in boundary)
     config = {"layout": layout, "scene_seed": seed, "boundary_half_extent_m": extent,
               "obstacle_aabbs": boxes}
+    if obstacle_variation is not None:
+        config["obstacle_variation"] = obstacle_variation
     digest = hashlib.sha256(json.dumps(config, sort_keys=True).encode()).hexdigest()
     return NavigationScene(model, data, layout, seed, geom_ids, boundary_ids,
                            tuple(boxes), extent, digest)
