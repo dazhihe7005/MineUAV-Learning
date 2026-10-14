@@ -1,0 +1,340 @@
+{
+  "FORMAL_TRAINING_READY": "NO",
+  "actual_timesteps": null,
+  "automatic_restart_count": 0,
+  "continuation_policy": "RESTART_REQUIRED",
+  "exact_failure_info": "NOT RECORDED",
+  "exact_failure_step": "NOT RECORDED",
+  "failing_environment_step_bounds": [
+    119553,
+    119680
+  ],
+  "failure": {
+    "accounting_contract_defect": "Confirmed",
+    "captured_exception": {
+      "automatic_restart_count": 0,
+      "call_chain": [
+        "ppo_formal_seed0_entry.py:104 main -> driver.run_formal",
+        "ppo_formal_seed0_health.py:190 run_formal -> super().run_formal",
+        "ppo_training_orchestration.py:418 run_formal -> self._run",
+        "ppo_training_orchestration.py:340 _run -> execute_segments",
+        "ppo_training_orchestration.py:126 execute_segments -> model.learn",
+        "stable_baselines3/ppo/ppo.py:311 learn -> super().learn",
+        "stable_baselines3/common/on_policy_algorithm.py:324 learn -> collect_rollouts",
+        "stable_baselines3/common/on_policy_algorithm.py:218 collect_rollouts -> env.step",
+        "stable_baselines3/common/vec_env/base_vec_env.py:222 step -> step_wait",
+        "stable_baselines3/common/vec_env/dummy_vec_env.py:59 step_wait -> env.step",
+        "stable_baselines3/common/monitor.py:96 step -> self.env.step",
+        "ppo_formal_seed0_health.py:77 step -> super().step",
+        "ppo_training_orchestration.py:226 step -> RuntimeError"
+      ],
+      "evidence_source": "Unified exec session 62439 terminal output collected after user continuation",
+      "exact_failing_transition_info": "NOT RECORDED",
+      "exact_failing_transition_step": null,
+      "exception_message": "invalid or nonexclusive training episode outcome",
+      "exception_type": "RuntimeError",
+      "exit_code": 1,
+      "failure_wall_time": "NOT RECORDED",
+      "traceback_source": "Exact failing call chain from captured process traceback"
+    },
+    "explanation": "navigation_env retains raw physical termination_reason while setting canonical physical_failure flag; frozen L8 TrainingMetricsEnv rejects that raw reason",
+    "offline_reproduction": "outside_flight_area with exactly one physical_failure flag raises the same accounting RuntimeError; zero optimizer updates",
+    "source_evidence": [
+      "navigation_env.py:284-300",
+      "ppo_training_orchestration.py:223-226",
+      "mine_uav_env.py:177-189"
+    ],
+    "specific_physical_trigger": "Unresolved: failing info was not persisted"
+  },
+  "figures": [
+    "episode_reward.png",
+    "training_success_rate.png",
+    "training_collision_rate.png",
+    "training_timeout_rate.png",
+    "validation_six_scene_success.png",
+    "train_scene_visits.png",
+    "ppo_loss_approx_kl.png",
+    "action_and_progress.png",
+    "rss_and_training_time.png"
+  ],
+  "final_model_sha256": null,
+  "formal_attempt_count": 1,
+  "formal_protocol": {
+    "actual_total_timesteps_per_seed": 1000064,
+    "batch_size": 64,
+    "checkpoint_every_nominal_steps": 100000,
+    "checkpoint_every_steps": 100000,
+    "clip_range": 0.2,
+    "continuation_policy": "interrupted formal runs RESTART_REQUIRED; no exact or boundary resume",
+    "ent_coef": 0.0,
+    "experiment_id": "LIDAR_PPO_FORMAL_L8_PROTOCOL_NOT_RUN_V1",
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "learning_rate": 0.0003,
+    "lidar_hz": 10,
+    "max_grad_norm": 0.5,
+    "milestone_rule": "first complete 128-step rollout at/after nominal threshold; after PPO optimizer",
+    "n_epochs": 2,
+    "n_steps": 128,
+    "network": "Conv(3,16,3,p1)-Conv(16,32,3,s2,p1)-FC64+state7+heading2+age1; pi/vf64x64",
+    "nominal_total_timesteps_per_seed": 1000000,
+    "normalize_images": false,
+    "parent_l7_protocol_sha256": "7c0c032002a5ea04b3400a5d939215cb10996a40fc5ff2f008c076ec51f55e33",
+    "physics_hz": 500,
+    "pi_hz": 100,
+    "policy": "MultiInputPolicy",
+    "policy_hz": 25,
+    "ray_count": 24000,
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "sealed_test_scenario_count": 6,
+    "seed": 0,
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "selection_rule": "final checkpoint, not test-selected",
+    "total_timesteps_per_seed": 1000000,
+    "train_scene_scheduler": "uniform registered Train identity draw at each episode reset; single active MuJoCo environment; L7 IMPLEMENTED",
+    "training_scenario_count": 12,
+    "validation_every_steps": 100000,
+    "validation_scenario_count": 6,
+    "vf_coef": 0.5,
+    "workers": 1
+  },
+  "formal_protocol_sha256": "fe07816f48bd4183165db482d8c93de50c637a32d13d86eccb47667d85e8cef6",
+  "formal_training_complete": false,
+  "historical_checkpoint_sha256": {
+    "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+    "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+    "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+    "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+    "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+    "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+    "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+  },
+  "last_completed_episode_step": 119370,
+  "last_persisted_environment_step": 119552,
+  "limitations": [
+    "No final checkpoint or complete result: exact terminal counters and final train step are unavailable.",
+    "Recorded 706 episode outcomes exclude the unrecorded failing transition.",
+    "Complete scene reset history is certified through step100096 only; subsequent terminal episode identities are recorded.",
+    "Only one post-update PPO diagnostic sample and one Validation event survived.",
+    "The physical trigger is not recorded; it is not valid to conclude a specific tilt, altitude or nonfinite failure.",
+    "Seven old models and frozen physics/protocol remain unchanged; future repair needs a separately audited protocol and new authorized attempt."
+  ],
+  "milestones": [
+    {
+      "actual_execution_step": 100096,
+      "checkpoint_sha256": "d71927d83c3f844f035a3059c1329b0df22773a58ad6b258fa1093c2377abff9",
+      "nominal_step": 100000,
+      "ppo_diagnostics": {
+        "train/approx_kl": 6.758328527212143e-05,
+        "train/clip_fraction": 0.0,
+        "train/clip_range": 0.2,
+        "train/entropy_loss": -5.613095045089722,
+        "train/explained_variance": 0.6625452041625977,
+        "train/learning_rate": 0.0003,
+        "train/loss": 10.466863632202148,
+        "train/n_updates": 1564.0,
+        "train/policy_gradient_loss": 0.00042437808588147163,
+        "train/std": 0.9845871925354004,
+        "train/value_loss": 27.665215015411377
+      },
+      "train_completed_episodes": 611,
+      "train_terminal_counts": {
+        "collision": 575,
+        "physical_failure": 0,
+        "sensor_failure": 0,
+        "success": 0,
+        "time_limit": 36
+      },
+      "validation_by_scenario": [
+        {
+          "outcome": "collision",
+          "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f"
+        },
+        {
+          "outcome": "collision",
+          "scenario_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277"
+        },
+        {
+          "outcome": "collision",
+          "scenario_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c"
+        },
+        {
+          "outcome": "collision",
+          "scenario_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079"
+        },
+        {
+          "outcome": "collision",
+          "scenario_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1"
+        },
+        {
+          "outcome": "collision",
+          "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd"
+        }
+      ],
+      "validation_overall": {
+        "collision": 6,
+        "collision_rate": 1.0,
+        "mean_return": -26.227100914600754,
+        "mean_time_to_goal_s": null,
+        "mean_trajectory_length_m": 1.918846908142284,
+        "navigation_success_rate": 0.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 0,
+        "time_limit": 0,
+        "timeout_rate": 0.0,
+        "total": 6
+      }
+    }
+  ],
+  "original_mjcf_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+  "overall_result": "FAIL",
+  "raw_evidence_sha256": {
+    "L8_SEED0_STEP0100096.json": "4b542a7c97574e38b4c42c4852069d112e5b52666c5d7a0b6556616344bf3dca",
+    "L8_SEED0_STEP0100096.zip": "d71927d83c3f844f035a3059c1329b0df22773a58ad6b258fa1093c2377abff9",
+    "L8_SEED0_STEP0100096_event.json": "bb59bf70d47b1a38c9abff838180ff3199907421e422cc17ef664ebf05abb247",
+    "L9_HEALTH_STEP0100096.json": "b1486182e536ebf930a6612068f2bb29819e0d957226076a724ec01ef23b7bba",
+    "failure_capture.json": "8a48173d7b317aba00497144f8e1b06e1f6737d51f7b0367f689f5a8b3c596de",
+    "formal.attempt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "formal_progress.json": "6ba59d9e91728a19405cc61c353b7d1e5e6ad441cfe75aa9293705f6b0a1e22f",
+    "preflight_identity.json": "4fbc92d063eb16d2d6f692f638d7fcc0adc723e3002300aa3a222ea550d0aac1",
+    "process_failure_traceback.txt": "2bb4cafdccb9d6df8724ef96ef337d3e6a3f4a87cae38e02c4319ddefa325a1c",
+    "resource_samples.jsonl": "793589034bf8ec941ed05236aa657fbf1a2f0cb6c64804b15e306ed6fbdd3604",
+    "train_episodes.jsonl": "5e3b653de9ae72404fa897c075a51afbc37961334a587dd7f5823e9e8dcc87ab"
+  },
+  "recorded_motionless_episode_fraction": 0.0,
+  "recorded_train_completed_episode_counts_by_identity": {
+    "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 63,
+    "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 67,
+    "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 59,
+    "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 62,
+    "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 64,
+    "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 71,
+    "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 50,
+    "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 47,
+    "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 51,
+    "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 56,
+    "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 52,
+    "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 64
+  },
+  "recorded_train_episode_count": 706,
+  "recorded_train_mean_return": -29.38914905522911,
+  "recorded_train_terminal_counts": {
+    "collision": 656,
+    "physical_failure": 0,
+    "sensor_failure": 0,
+    "success": 0,
+    "time_limit": 50
+  },
+  "requested_actual_timesteps": 1000064,
+  "resource": {
+    "environment_scan_encoding_update_timings": "NOT RECORDED: in-memory aggregates lost on exception",
+    "exact_final_peak_rss": "NOT RECORDED",
+    "exact_final_wall_time": "NOT RECORDED",
+    "last_recorded_cpu_seconds": 945.5397219089999,
+    "last_recorded_current_rss_mib": 1431.046875,
+    "last_recorded_peak_rss_mib": 1793.05078125,
+    "last_recorded_wall_seconds": 950.4856282100081,
+    "oom_observed": false,
+    "recorded_disk_free_min_bytes": 71536844800,
+    "recorded_mem_available_min_mib": 8583.65625,
+    "sample_count": 934,
+    "termination_is_oom": false
+  },
+  "runtime_source_sha256": {
+    "l8": {
+      "ppo_formal_checkpoint.py": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4",
+      "ppo_formal_scheduler.py": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d",
+      "ppo_formal_validation.py": "bbdf18e9e9ae2b7a82dcd49ceb9969994fb3b160c402ef613f0c991ed3d05156",
+      "ppo_training_orchestration.py": "4202ba5bb519d15b973bf95d2a4fc7ab07bec9c25c7bada070d7ff15f4078801"
+    },
+    "l9": {
+      "ppo_formal_seed0_entry.py": "5d5827bf4223eec53f1bf0cd25ee18df326169b74ead1096b32dcb83c22f1e13",
+      "ppo_formal_seed0_health.py": "50b7d06c18ea7df34b2f2565f620b58b04349ceffa95cc79f9e60a6e992c9615"
+    }
+  },
+  "scenario_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+  "seed": 0,
+  "software_versions": {
+    "gymnasium": "1.3.0",
+    "mujoco": "3.14.0",
+    "numpy": "2.2.6",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.14.0+cpu"
+  },
+  "status": {
+    "all_10_milestones": "FAIL",
+    "complete_train_visit_history": "BLOCKED",
+    "final_checkpoint": "NOT TESTED",
+    "formal_navigation_performance": "NOT TESTED",
+    "formal_seed0_training": "FAIL",
+    "historical_models_unchanged": "PASS",
+    "original_7kg_dynamics_unchanged": "PASS",
+    "px4_or_real_mid360s": "NOT TESTED",
+    "recorded_resource_guard": "PASS",
+    "runtime_source_identity": "PASS",
+    "six_scenario_validation_at_100096": "PASS",
+    "surviving_checkpoint_identity": "PASS",
+    "test_sealed": "PASS"
+  },
+  "successful_returned_environment_step_bounds": [
+    119552,
+    119679
+  ],
+  "task": "Phase 3E-L9 Formal LiDAR-CNN-PPO Training \u2014 Seed 0",
+  "test_episode_count": 0,
+  "train_visit_counts_at_checkpoint_100096": {
+    "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 58,
+    "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 59,
+    "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 45,
+    "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 52,
+    "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 56,
+    "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 62,
+    "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 47,
+    "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 36,
+    "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 44,
+    "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 53,
+    "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 45,
+    "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 55
+  },
+  "verification": {
+    "additional_full_recheck": {
+      "status": "BLOCKED",
+      "exit_code": 143,
+      "signal": "SIGTERM",
+      "session_id": 22540,
+      "progress": "approximately 10 percent; incomplete",
+      "cause": "UNVERIFIED",
+      "counted_as_pass": false
+    },
+    "final_l9_targeted_suite": {
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0,
+      "wall_seconds": 28.69,
+      "includes_png_visible_header_check": true
+    },
+    "formal_training_acceptance": "FAIL",
+    "posttrain_independent_review": "GO: failure evidence accepted; no retry",
+    "pretrain_independent_review": "GO",
+    "tests": {
+      "scope": "completed full regression before the additional PNG test",
+      "failed": 0,
+      "inherited": 698,
+      "new": 21,
+      "passed": 719,
+      "skipped": 0,
+      "warnings": 2
+    },
+    "unique_test_cases_covered_by_completed_runs": 720,
+    "single_complete_720_case_run": false
+  },
+  "workers": 1
+}
