@@ -15,10 +15,11 @@ from .ppo_formal_scheduler import (L6_MANIFEST_SHA256, require_memory,
 from .ppo_preflight import HeadingObservation
 from .ppo_scenarios import build_ppo_scene
 from .ppo_training_runner import _stats, _weights_sha, protocol_hash
+from .terminal_accounting import classify_terminal, TERMINAL_CLASSES
+from .failure_evidence import NOT_AVAILABLE, transition_failure_context
 
 
-TERMINAL_OUTCOMES = ("success", "collision", "time_limit", "physical_failure",
-                     "sensor_failure")
+TERMINAL_OUTCOMES = TERMINAL_CLASSES
 
 
 def _optimizer_states_equal(a, b) -> bool:
@@ -34,7 +35,7 @@ def _optimizer_states_equal(a, b) -> bool:
 class LidarPPOValidationEvaluator:
     """Only six frozen Validation scenes; never changes the training environment."""
 
-    def __init__(self, prereg: dict, upstream_root: Path):
+    def __init__(self, prereg: dict, upstream_root: Path, *, failure_recorder=None):
         verify_l6_runtime_sources(prereg)
         if protocol_hash(prereg["scenario_manifest"]) != L6_MANIFEST_SHA256:
             raise ValueError("Validation requires the unchanged L6 scenario manifest")
@@ -43,6 +44,7 @@ class LidarPPOValidationEvaluator:
             raise ValueError("only the six frozen Validation identities are supported")
         self.rows = tuple(copy.deepcopy(rows))
         self.upstream_root = Path(upstream_root)
+        self.failure_recorder = failure_recorder
 
     def evaluate(self, model, *, max_policy_steps: int = 375) -> dict:
         if (isinstance(max_policy_steps, bool) or not isinstance(max_policy_steps, int)
@@ -61,6 +63,9 @@ class LidarPPOValidationEvaluator:
                 raise ValueError("Validation compiled geometry identity mismatch")
             env = HeadingObservation(LidarNavigationEnv(
                 row["layout"], row["scene_seed"], self.upstream_root, scene=scene))
+            returned, classification, action = None, None, NOT_AVAILABLE
+            completed_before, known_reward = 0, NOT_AVAILABLE
+            policy_step = NOT_AVAILABLE
             try:
                 obs, info = env.reset(seed=row["scene_seed"], options={
                     "start_seed": row["start_seed"], "target_seed": row["target_seed"],
@@ -70,12 +75,15 @@ class LidarPPOValidationEvaluator:
                     raise RuntimeError("Validation reset scene identity changed")
                 previous_position = env.unwrapped.data.qpos[:3].copy()
                 path_length = 0.
+                path_available = bool(np.isfinite(previous_position).all())
                 rewards = 0.
                 minimum_range = None
                 ages, inference_ms = [], []
                 final_info = None
                 outcome = "probe_cutoff"
                 for policy_step in range(1, max_policy_steps + 1):
+                    returned, classification = None, None
+                    completed_before = policy_step - 1
                     require_memory()
                     started = time.perf_counter()
                     with torch.inference_mode():
@@ -83,10 +91,16 @@ class LidarPPOValidationEvaluator:
                     inference_ms.append((time.perf_counter() - started) * 1000.)
                     if np.asarray(action).shape != (4,) or not np.isfinite(action).all():
                         raise RuntimeError("Validation model emitted invalid action")
-                    obs, reward, terminated, truncated, final_info = env.step(action)
+                    returned = env.step(action)
+                    obs, reward, terminated, truncated, final_info = returned
+                    classification = classify_terminal(final_info, terminated, truncated)
+                    if not np.isfinite(reward):
+                        raise RuntimeError("Validation returned nonfinite reward")
                     rewards += float(reward)
                     position = env.unwrapped.data.qpos[:3].copy()
-                    path_length += float(np.linalg.norm(position - previous_position))
+                    path_available = path_available and bool(np.isfinite(position).all())
+                    if path_available:
+                        path_length += float(np.linalg.norm(position - previous_position))
                     previous_position = position
                     if final_info["lidar_age_s"] is not None:
                         ages.append(float(final_info["lidar_age_s"]))
@@ -95,34 +109,43 @@ class LidarPPOValidationEvaluator:
                         sample = float(np.min(frame.ranges[frame.valid_mask]))
                         minimum_range = sample if minimum_range is None else min(minimum_range, sample)
                     if terminated or truncated:
-                        reason = final_info["termination_reason"]
-                        outcome = reason if reason in TERMINAL_OUTCOMES else "physical_failure"
+                        outcome = classification.terminal_class
                         break
+                    known_reward = float(reward)
                 if final_info is None:
                     raise RuntimeError("Validation did not execute a policy step")
-                if outcome != "probe_cutoff":
-                    flags = [bool(final_info.get(key)) for key in
-                             ("success", "collision", "timeout", "physical_failure", "sensor_failure")]
-                    if sum(flags) != 1:
-                        raise RuntimeError("Validation terminal class is not mutually exclusive")
                 rows.append({
                     "scenario_identity_sha256": row["identity_sha256"],
                     "layout": row["layout"], "outcome": outcome,
+                    "terminal_class": classification.terminal_class,
+                    "raw_termination_reason": classification.raw_termination_reason,
                     "success": outcome == "success", "collision": outcome == "collision",
                     "timeout": outcome == "time_limit",
                     "physical_failure": outcome == "physical_failure",
                     "sensor_failure": outcome == "sensor_failure",
                     "policy_steps": policy_step, "episode_return": rewards,
-                    "trajectory_length_m": path_length,
+                    "trajectory_length_m": path_length if path_available else NOT_AVAILABLE,
                     "completion_time_s": float(env.unwrapped.data.time) if outcome == "success" else None,
                     "final_target_error_m": float(np.linalg.norm(
-                        env.unwrapped.target_position - position)),
+                        env.unwrapped.target_position - position))
+                        if np.isfinite(position).all() else NOT_AVAILABLE,
                     "minimum_valid_lidar_range_m": minimum_range,
                     "mean_lidar_age_s": float(np.mean(ages)) if ages else None,
                     "inference_ms": _stats(inference_ms),
                     "collision_contact_pairs": final_info.get("contact_pairs", []),
                     "last_sim_time_s": float(env.unwrapped.data.time),
                 })
+            except BaseException as error:
+                if self.failure_recorder is not None:
+                    context = transition_failure_context(env, completed_before=completed_before,
+                        action=action, known_reward=known_reward, returned=returned,
+                        outcome=classification, scenario_identity=row["identity_sha256"], phase="VALIDATION")
+                    context["policy_step_attempt"] = policy_step
+                    try:
+                        self.failure_recorder.capture(context, error)
+                    except BaseException as capture_error:
+                        raise RuntimeError(f"Validation failure evidence persistence failed: {capture_error}") from error
+                raise
             finally:
                 env.close()
         if _weights_sha(model.policy) != policy_before or model.num_timesteps != training_steps_before:
@@ -143,14 +166,17 @@ class LidarPPOValidationEvaluator:
             "sensor_failure_rate": counts["sensor_failure"] / len(rows) if complete else None,
         }
         times_to_goal = [row["completion_time_s"] for row in rows if row["success"]]
+        available_paths = [row["trajectory_length_m"] for row in rows
+                           if row["trajectory_length_m"] != NOT_AVAILABLE]
         return {
             "split": "validation", "model_status": "UNTRAINED_RANDOM_INITIALIZATION"
             if training_steps_before == 0 else "FROZEN_MODEL_DIAGNOSTIC",
             "probe_only": not complete, "episodes": rows,
             "overall": {**counts, **rates, "total": len(rows),
                         "mean_return": float(np.mean([row["episode_return"] for row in rows])),
-                        "mean_trajectory_length_m": float(np.mean(
-                            [row["trajectory_length_m"] for row in rows])),
+                        "mean_trajectory_length_m": float(np.mean(available_paths))
+                            if available_paths else NOT_AVAILABLE,
+                        "trajectory_length_available_count": len(available_paths),
                         "mean_time_to_goal_s": float(np.mean(times_to_goal)) if times_to_goal else None},
             "per_scene": {row["scenario_identity_sha256"]: dict(row) for row in rows},
             "policy_sha256_before_after": policy_before,

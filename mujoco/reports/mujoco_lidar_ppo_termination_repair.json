@@ -1,0 +1,502 @@
+{
+  "task": "Phase 3E-L9R PPO Terminal Accounting Repair and Failure Evidence Hardening",
+  "base_commit": "c1c8d4f288a75a539b8721d4f991c613b830605f",
+  "branch": "fix/lidar-ppo-terminal-accounting",
+  "TERMINAL_ACCOUNTING_FIXED": "YES",
+  "FAILURE_CAPTURE_READY": "YES",
+  "FORMAL_RETRAIN_AUTHORIZED": "NO",
+  "overall_result": "PASS_OFFLINE_REPAIR_ONLY",
+  "original_L9_overall_result": "FAIL",
+  "status": {
+    "terminal_contract": "PASS",
+    "forced_mujoco_terminals": "PASS",
+    "reward_observation_termination_equivalence": "PASS",
+    "failure_capture": "PASS",
+    "validation_classification": "PASS",
+    "original_L9_evidence_identity": "PASS",
+    "historical_models_and_physics": "PASS",
+    "new_protocol_frozen": "PASS",
+    "selected_regressions": "PASS",
+    "independent_code_review": "PASS",
+    "independent_result_review": "PASS",
+    "formal_retraining": "NOT TESTED",
+    "optimizer_execution": "NOT TESTED"
+  },
+  "bug": {
+    "evidence_level": "Confirmed",
+    "root_cause": "NavigationEnv preserves physical raw termination_reason and sets physical_failure flag/reward outcome; frozen TrainingMetricsEnv incorrectly requires raw string itself to equal canonical category.",
+    "specific_original_physical_trigger": "Unresolved; the failed transition was not persisted",
+    "original_navigation_environment_changed": false,
+    "old_L8_L9_protocol_payload_changed": false
+  },
+  "modified_existing_sources": [
+    "mujoco/lidar_integration/ppo_training_orchestration.py",
+    "mujoco/lidar_integration/ppo_formal_seed0_health.py",
+    "mujoco/lidar_integration/ppo_formal_validation.py"
+  ],
+  "new_sources": [
+    "mujoco/lidar_integration/terminal_accounting.py",
+    "mujoco/lidar_integration/failure_evidence.py",
+    "mujoco/lidar_integration/ppo_termination_repair_protocol.py",
+    "mujoco/lidar_integration/analyze_termination_repair.py",
+    "mujoco/lidar_integration/verify_termination_repair.py"
+  ],
+  "old_contract": "raw termination_reason must itself be a canonical category; legal physical raw causes throw accounting exception",
+  "new_contract": {
+    "version": "TERMINAL_CLASS_RAW_REASON_V1",
+    "classes": [
+      "success",
+      "collision",
+      "time_limit",
+      "physical_failure",
+      "sensor_failure"
+    ],
+    "physical_raw_reason_whitelist": [
+      "z_below_zero",
+      "outside_flight_area",
+      "excessive_tilt",
+      "nonfinite_state"
+    ],
+    "fields": [
+      "terminal_class",
+      "raw_termination_reason"
+    ],
+    "unknown_or_contradictory_transition": "FAIL_CLOSED_AND_LATCH",
+    "time_limit": "truncated=True, terminated=False",
+    "other_terminal_classes": "terminated=True, truncated=False",
+    "reward_observation_physics_termination_changes": false
+  },
+  "forced_test_state": {
+    "provenance": "FORCED_TEST_STATE; not natural L9 failures or navigation performance",
+    "cases": [
+      {
+        "raw": "success",
+        "terminal_class": "success",
+        "terminated": true,
+        "truncated": false
+      },
+      {
+        "raw": "collision",
+        "terminal_class": "collision",
+        "terminated": true,
+        "truncated": false
+      },
+      {
+        "raw": "time_limit",
+        "terminal_class": "time_limit",
+        "terminated": false,
+        "truncated": true
+      },
+      {
+        "raw": "sensor_failure",
+        "terminal_class": "sensor_failure",
+        "terminated": true,
+        "truncated": false
+      },
+      {
+        "raw": "z_below_zero",
+        "terminal_class": "physical_failure",
+        "terminated": true,
+        "truncated": false
+      },
+      {
+        "raw": "outside_flight_area",
+        "terminal_class": "physical_failure",
+        "terminated": true,
+        "truncated": false
+      },
+      {
+        "raw": "excessive_tilt",
+        "terminal_class": "physical_failure",
+        "terminated": true,
+        "truncated": false
+      },
+      {
+        "raw": "nonfinite_state",
+        "terminal_class": "physical_failure",
+        "terminated": true,
+        "truncated": false
+      }
+    ],
+    "each_case": "raw scheduler versus repaired metrics wrapper: exact reward, reward_breakdown, observation, terminal semantics and canonical count compared",
+    "negative_altitude_caveat": "Pre-integration invariant injection intentionally retains reset contact set; separate mj_forward floor-contact test confirms collision priority. This is not a naturally integrated underground trajectory.",
+    "time_limit_caveat": "Counter injected to existing last policy step; does not claim a new full-duration training rollout",
+    "nonfinite": "NaN control/position/quaternion tests are artificial; NaN position metrics NOT_AVAILABLE, NaN quaternion may prevent any returned transition"
+  },
+  "failure_evidence": {
+    "schema_version": "FAILURE_EVIDENCE_V1",
+    "fields": [
+      "run_id",
+      "attempt_id",
+      "policy_step_attempt",
+      "last_completed_policy_step",
+      "scenario_identity_sha256",
+      "simulation_time",
+      "terminal_class",
+      "raw_termination_reason",
+      "terminated",
+      "truncated",
+      "terminal_flags",
+      "last_action",
+      "qpos",
+      "qvel",
+      "relevant_ctrl",
+      "lidar_status",
+      "physics_steps",
+      "last_known_reward",
+      "returned_reward",
+      "exception_type",
+      "exception_message",
+      "traceback",
+      "current_rss_mib",
+      "mem_available_mib",
+      "context_kind",
+      "clock_domain",
+      "phase",
+      "event_id",
+      "origin",
+      "returned_scenario_identity_sha256"
+    ],
+    "missing": "NOT_AVAILABLE; never fabricated zero or guessed info/reward",
+    "unreturned_step": "LAST_KNOWN_CONTEXT; no complete transition is claimed",
+    "returned_step": "RETURNED_TRANSITION; canonical class remains NOT_AVAILABLE if strict classification fails",
+    "serialization": {
+      "maximum_record_bytes": 262144,
+      "shared_context_nodes": 512,
+      "shared_context_text_characters": 8192,
+      "max_depth": 6,
+      "mapping_items": 64,
+      "sequence_items": 128,
+      "unknown_context_fields": "ignored, cannot override exception metadata",
+      "nonfinite": "NONFINITE_NAN / POSITIVE_INFINITY / NEGATIVE_INFINITY",
+      "oversize": "explicit truncation; final byte guard fails closed",
+      "exception_text_and_traceback": "bounded separately; up to 32 traceback frames, chain not fully reconstructed"
+    },
+    "atomic_publication": "unique run/attempt/event identity; fsync temporary bytes, atomic os.link no-overwrite, fsync directory",
+    "failure_latched": true,
+    "capture_write_failure": "abort and retain original exception as cause; never continue",
+    "coverage": "Train step/terminal classification/post-step health records, and Validation episode internals",
+    "limitations": [
+      "Train reset/environment initialization/PPO optimizer exceptions are not comprehensively hooked.",
+      "SIGKILL, abrupt process termination, power loss or unavailable storage may prevent persistence; no all-failure guarantee.",
+      "Sample vectors are current MjData at catch time, not fabricated snapshots before an unreturned step.",
+      "Diagnostic unavailable/truncated values do not alter Reward or environment state."
+    ]
+  },
+  "red_green": {
+    "original_bug_red": "old RuntimeError invalid or nonexclusive training episode outcome from controlled outside_flight_area with exactly one physical_failure flag",
+    "red_stages": [
+      "known reason classifier missing",
+      "failure evidence missing",
+      "health capture integration missing",
+      "new protocol authorization gate missing",
+      "global serialization bound/authoritative metadata failures",
+      "Validation nonfinite JSON and missing capture",
+      "Health invalid final distance",
+      "read-only history audit missing",
+      "verification guard missing",
+      "Validation reset cannot invent attempted policy step",
+      "published JSON float/int protocol identity mismatch"
+    ],
+    "green": "777 selected tests complete, exit 0; original defect, Validation reset evidence and published protocol roundtrip all GREEN",
+    "raw_evidence_directory": "mujoco/reports/mujoco_lidar_ppo_termination_repair_parts/run_01",
+    "first_broad_regression": {
+      "passed": 767,
+      "failed": 6,
+      "deselected": 22,
+      "cause": "temporary resource-monitor thread violated unchanged Bridge single-thread runner requirements",
+      "production_fix": false,
+      "harness_fix": "single-thread test lifecycle /proc sampling",
+      "failure_nodeids": [
+        "mujoco/px4_bridge/test_odometry_reverification_runner.py::test_runtime_hooks_restore_and_private_logger",
+        "mujoco/px4_bridge/test_odometry_runtime.py::test_odometry_startup_params_keep_gnss_and_restore_historical_runner",
+        "mujoco/px4_bridge/test_odometry_runtime.py::test_odometry_packet_is_appended_without_replacing_hil_gps",
+        "mujoco/px4_bridge/test_odometry_runtime.py::test_scoped_hooks_restore_all_historical_runtime_bindings_on_error",
+        "mujoco/px4_bridge/test_odometry_runtime.py::test_odom_summary_is_nonflight_kind_and_cannot_rearm_as_old_proof",
+        "mujoco/px4_bridge/gnss_denied/test_runner.py::test_hooks_restore_and_use_disarmed_identity_and_private_logger"
+      ]
+    }
+  },
+  "tests": {
+    "status": "PASS_SELECTED_SCOPE",
+    "complete": true,
+    "passed": 777,
+    "inherited_passed": 720,
+    "new_passed": 57,
+    "failed": 0,
+    "skipped": 0,
+    "deselected": 22,
+    "warnings": 2,
+    "groups": {
+      "bridge": 514,
+      "lidar_integration": 210,
+      "mid360_interface_audit": 6,
+      "shadow": 30,
+      "legacy_control": 17
+    },
+    "excluded": [
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_formal_preflight_accepts_only_current_l8_identity",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_checks_disk_on_existing_ancestor_without_creating_output",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes0-PermissionError]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes1-ValueError]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes2-ValueError]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes3-ValueError]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes4-ValueError]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_existing_output_without_deleting_it",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_low_disk_and_low_memory",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_cli_requires_explicit_formal_mode_authorization_and_rejects_initializer",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_l9_driver_writes_real_post_optimizer_health_snapshot",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[weight]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[logger]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_l8_physical_reason_contract_reproduces_formal_stop_without_training",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_interrupted_formal_report_never_claims_exact_completion_or_final_model",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_preflight.py::test_actor_critic_optimizer_and_checkpoint_roundtrip",
+        "reason": "would execute optimizer.step"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_real_sb3_rollouts_update_weights_and_switch_train_scenes",
+        "reason": "would execute PPO.learn"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_refuses_reused_attempt_and_formal_mode_requires_separate_authorization",
+        "reason": "old Pilot authorization contract superseded by L9R no-training gate"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_completed_real_rollout_milestone_saves_after_update_and_validates_without_mutation",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_passive_ppo_train_timer_counts_actual_updates_and_is_removed_before_save",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_analysis_rejects_tampered_completion_and_preserves_negative_outcome",
+        "reason": "old recorded L8 runtime hashes; audited as history not current code"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_report_readiness_fails_closed_on_missing_failed_or_incomplete_tests",
+        "reason": "old recorded L8 runtime hashes; no new readiness claim"
+      }
+    ],
+    "unrestricted_repository_suite": "NOT RUN: user forbids optimizer updates/Pilot; unrelated global dependencies not changed",
+    "forbidden_learning_or_update_calls": [],
+    "intentional_tripwire_unit_test": "one blocked SGD.step call verifies unchanged parameter; zero actual optimizer updates",
+    "warnings_description": [
+      "inherited Matplotlib Axes3D package warning",
+      "inherited Gymnasium unregistered alternate-render check warning"
+    ],
+    "optional_import_warning": "system cv2 NumPy1/NumPy2 ABI message caught during SB3 Atari-wrapper import; tested CPU paths do not invoke that OpenCV feature",
+    "command": "python3 -u -m lidar_integration.verify_termination_repair",
+    "raw_verification_file": "mujoco/reports/mujoco_lidar_ppo_termination_repair_parts/run_01/release_verification.json"
+  },
+  "original_L9_audit": {
+    "overall_result": "FAIL",
+    "completed_train_episodes": 706,
+    "terminal_counts": {
+      "success": 0,
+      "collision": 656,
+      "time_limit": 50,
+      "physical_failure": 0,
+      "sensor_failure": 0
+    },
+    "test_episode_count": 0,
+    "original_raw_file_count": 11,
+    "raw_evidence_sha256": {
+      "formal_progress.json": "6ba59d9e91728a19405cc61c353b7d1e5e6ad441cfe75aa9293705f6b0a1e22f",
+      "resource_samples.jsonl": "793589034bf8ec941ed05236aa657fbf1a2f0cb6c64804b15e306ed6fbdd3604",
+      "formal.attempt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_identity.json": "4fbc92d063eb16d2d6f692f638d7fcc0adc723e3002300aa3a222ea550d0aac1",
+      "L8_SEED0_STEP0100096.zip": "d71927d83c3f844f035a3059c1329b0df22773a58ad6b258fa1093c2377abff9",
+      "failure_capture.json": "8a48173d7b317aba00497144f8e1b06e1f6737d51f7b0367f689f5a8b3c596de",
+      "train_episodes.jsonl": "5e3b653de9ae72404fa897c075a51afbc37961334a587dd7f5823e9e8dcc87ab",
+      "process_failure_traceback.txt": "2bb4cafdccb9d6df8724ef96ef337d3e6a3f4a87cae38e02c4319ddefa325a1c",
+      "L8_SEED0_STEP0100096_event.json": "bb59bf70d47b1a38c9abff838180ff3199907421e422cc17ef664ebf05abb247",
+      "L9_HEALTH_STEP0100096.json": "b1486182e536ebf930a6612068f2bb29819e0d957226076a724ec01ef23b7bba",
+      "L8_SEED0_STEP0100096.json": "4b542a7c97574e38b4c42c4852069d112e5b52666c5d7a0b6556616344bf3dca"
+    },
+    "original_sources_verified_against_base_git_objects": true,
+    "original_source_sha256": {
+      "l8": {
+        "ppo_formal_checkpoint.py": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4",
+        "ppo_formal_scheduler.py": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d",
+        "ppo_formal_validation.py": "bbdf18e9e9ae2b7a82dcd49ceb9969994fb3b160c402ef613f0c991ed3d05156",
+        "ppo_training_orchestration.py": "4202ba5bb519d15b973bf95d2a4fc7ab07bec9c25c7bada070d7ff15f4078801"
+      },
+      "l9": {
+        "ppo_formal_seed0_entry.py": "5d5827bf4223eec53f1bf0cd25ee18df326169b74ead1096b32dcb83c22f1e13",
+        "ppo_formal_seed0_health.py": "50b7d06c18ea7df34b2f2565f620b58b04349ceffa95cc79f9e60a6e992c9615"
+      }
+    },
+    "historical_checkpoint_sha256": {
+      "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+      "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+      "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+      "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+      "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+    },
+    "original_mjcf_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+    "specific_original_physical_trigger": "UNRESOLVED_NOT_RECORDED",
+    "failed_transition_in_episode_counts": false,
+    "mean_episode_return": -29.38914905522911,
+    "mean_trajectory_length_m": 3.222637564776019,
+    "mean_final_target_distance_m": 1.7852186139099875,
+    "mean_action_norm": 1.4374261223672076,
+    "milestone": {
+      "actual_execution_step": 100096,
+      "completed_episodes": 611,
+      "terminal_counts": {
+        "collision": 575,
+        "physical_failure": 0,
+        "sensor_failure": 0,
+        "success": 0,
+        "time_limit": 36
+      },
+      "ppo_diagnostics": {
+        "train/approx_kl": 0.00006758328527212143,
+        "train/clip_fraction": 0,
+        "train/clip_range": 0.2,
+        "train/entropy_loss": -5.613095045089722,
+        "train/explained_variance": 0.6625452041625977,
+        "train/learning_rate": 0.0003,
+        "train/loss": 10.466863632202148,
+        "train/n_updates": 1564,
+        "train/policy_gradient_loss": 0.00042437808588147163,
+        "train/std": 0.9845871925354004,
+        "train/value_loss": 27.665215015411377
+      },
+      "mean_action_norm": 1.441488059424059,
+      "mean_trajectory_length_m": 3.1605863643289345,
+      "mean_final_target_distance_m": 1.7540311003005453,
+      "motionless_episode_fraction": 0
+    },
+    "interpretation": "One partial seed, zero recorded successes; neither learned obstacle avoidance nor permanent PPO incapability is established. Single diagnostic sample is not a learning curve.",
+    "next_diagnostic_priorities": [
+      "canonical/raw terminal evidence including failed transitions",
+      "success, collision, timeout and no-progress rates separately",
+      "action norm, target progress, trajectory length and near-target braking",
+      "value loss/explained variance and policy loss/KL/clip fraction across milestones"
+    ]
+  },
+  "frozen_repair_identity": {"protocol": {"batch_size": 64, "checkpoint_every_steps": 100000, "clip_range": 0.2, "ent_coef": 0.0, "experiment_id": "LIDAR_PPO_FORMAL_L8_PROTOCOL_NOT_RUN_V1", "gae_lambda": 0.95, "gamma": 0.99, "learning_rate": 0.0003, "lidar_hz": 10, "max_grad_norm": 0.5, "n_epochs": 2, "n_steps": 128, "network": "Conv(3,16,3,p1)-Conv(16,32,3,s2,p1)-FC64+state7+heading2+age1; pi/vf64x64", "normalize_images": false, "physics_hz": 500, "pi_hz": 100, "policy": "MultiInputPolicy", "policy_hz": 25, "ray_count": 24000, "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1", "sealed_test_scenario_count": 6, "seed": 0, "seeds": [0, 1, 2], "selection_rule": "final checkpoint, not test-selected", "total_timesteps_per_seed": 1000000, "train_scene_scheduler": "uniform registered Train identity draw at each episode reset; single active MuJoCo environment; L7 IMPLEMENTED", "training_scenario_count": 12, "validation_every_steps": 100000, "validation_scenario_count": 6, "vf_coef": 0.5, "workers": 1, "continuation_policy": "interrupted formal runs RESTART_REQUIRED; no exact or boundary resume", "parent_l7_protocol_sha256": "7c0c032002a5ea04b3400a5d939215cb10996a40fc5ff2f008c076ec51f55e33", "nominal_total_timesteps_per_seed": 1000000, "actual_total_timesteps_per_seed": 1000064, "checkpoint_every_nominal_steps": 100000, "milestone_rule": "first complete 128-step rollout at/after nominal threshold; after PPO optimizer", "parent_l8_execution_protocol_sha256": "fe07816f48bd4183165db482d8c93de50c637a32d13d86eccb47667d85e8cef6", "repair_revision": "L9R_TERMINAL_ACCOUNTING_AND_FAILURE_EVIDENCE_V1", "formal_retrain_authorized": false, "repair_source_sha256": {"terminal_accounting.py": "9bf647c9aeae1f290ad9b4c999065f484b3d41e944568299fad878dbd236f8b6", "failure_evidence.py": "ecdb1cd3dbf84106c278c6066a8e83374d84e9050e608dcfd6759487ca851fea", "ppo_termination_repair_protocol.py": "2603c5336288537d68dbe58c630c0d6f6997b7ba3e37cf6ee663d95ca97f1cb4", "ppo_training_orchestration.py": "af801bae3b8fd6e5c0df2c323d2ddeb259d19d5862c75cc3dc12230ec4932935", "ppo_formal_validation.py": "64c16aa9929a16da5598a2eb1844cceab84aa913ce78e40dd66f97ed404034f3", "ppo_formal_seed0_health.py": "cb220f5c3dd3602efe35e0a4e4b8f729e393f8a88789c56ce16f136fb17a021b", "ppo_formal_seed0_entry.py": "5d5827bf4223eec53f1bf0cd25ee18df326169b74ead1096b32dcb83c22f1e13", "ppo_formal_scheduler.py": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d", "ppo_formal_checkpoint.py": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4"}, "terminal_contract": {"version": "TERMINAL_CLASS_RAW_REASON_V1", "classes": ["success", "collision", "time_limit", "physical_failure", "sensor_failure"], "physical_raw_reason_whitelist": ["z_below_zero", "outside_flight_area", "excessive_tilt", "nonfinite_state"], "fields": ["terminal_class", "raw_termination_reason"], "unknown_or_contradictory_transition": "FAIL_CLOSED_AND_LATCH", "time_limit": "truncated=True, terminated=False", "other_terminal_classes": "terminated=True, truncated=False", "reward_observation_physics_termination_changes": false}, "failure_capture": {"schema_version": "FAILURE_EVIDENCE_V1", "maximum_record_bytes": 262144, "returned_transition": "RETURNED_TRANSITION", "unreturned_step": "LAST_KNOWN_CONTEXT; unavailable fields NOT_AVAILABLE", "nonfinite_values": "NONFINITE_NAN/POSITIVE_INFINITY/NEGATIVE_INFINITY", "publication": "fsync + atomic hard link, exclusive unique event, never replace", "original_l9_run": "STRICTLY_READ_ONLY"}}, "protocol_sha256": "e267406ec4203353b4ee0c7f8349b57759ef64b31bd076c3db57b99b3682678f", "software_versions": {"mujoco": "3.14.0", "numpy": "2.2.6", "stable-baselines3": "2.9.0", "torch": "2.14.0+cpu", "gymnasium": "1.3.0"}, "scenario_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5", "reward_implementation_sha256": "dfd8aa3918a450a80a568fc147057b018bcd8a129625e83187d07ada5cf8f5d2", "network_implementation_sha256": "8accaf532c852bf504a884249ee604752ae9367be6e7102b51a2cd2877219f57"},
+  "protocol_difference": {
+    "parent_L8_SHA256": "fe07816f48bd4183165db482d8c93de50c637a32d13d86eccb47667d85e8cef6",
+    "unchanged": [
+      "Reward NAV_V2_COLLISION_PREFLIGHT_V1",
+      "CNN network",
+      "PPO hyperparameters",
+      "action scaling",
+      "500/100/25/10Hz",
+      "24000 rays",
+      "12/6/6 scene manifest",
+      "1000064 old proposed budget",
+      "Final Checkpoint rule",
+      "RESTART_REQUIRED"
+    ],
+    "added": [
+      "strict terminal_class/raw_termination_reason contract",
+      "bounded independent failure evidence",
+      "new source hashes",
+      "formal_retrain_authorized=false"
+    ],
+    "executed_under_new_protocol": false,
+    "old_CLI": "retains old identity/output checks; historical directory and current no-training gate reject reuse. A future new attempt needs separate authorization/preflight revision."
+  },
+  "protection": {
+    "protected_files_before_after": 21,
+    "byte_identical": true,
+    "original_raw_files": 11,
+    "historical_checkpoint_count": 7,
+    "original_report_and_document_unchanged": true,
+    "navigation_env_and_original_reward_unchanged": true,
+    "main_worktree_untracked_count": 87,
+    "main_worktree_not_modified": true,
+    "no_new_formal_attempt": true,
+    "no_checkpoint_resume": true,
+    "test_episode_count": 0
+  },
+  "execution": {
+    "formal_training_runs": 0,
+    "pilot_runs": 0,
+    "ppo_optimizer_updates": 0,
+    "total_optimizer_updates": 0,
+    "px4_runs": 0,
+    "fast_lio_runs": 0,
+    "real_device_connections": 0,
+    "worker_processes": 1,
+    "scope": "offline controlled MuJoCo faults and related regression tests only"
+  },
+  "resources": {
+    "selected_verification_wall_seconds": 102.13220265199197,
+    "selected_verification_peak_rss_mib": 1890.61328125,
+    "selected_verification_min_mem_available_mib": 8297.09765625,
+    "memory_sampling": "single-threaded test setup/teardown; not continuous sampling",
+    "oom_observed": false,
+    "whole_task_peak_rss": "NOT_AVAILABLE: early RED stress tests were separate, not continuously monitored",
+    "early_red_serialization_stress": "demonstrated approximately 1GiB serialized payload before repair; source was repeated references; process exited normally. Do not repeat unfixed stress path.",
+    "swap_changed": false,
+    "maximum_measured_regression_peak_rss_mib": 2007.9453125
+  },
+  "independent_review": {
+    "code": "GO",
+    "critical": 0,
+    "important_unresolved": 0,
+    "result": "GO",
+    "read_only": true,
+    "important_findings_fixed": [
+      "global serialization/traversal budget and metadata preservation",
+      "Validation nonfinite-position metrics",
+      "published protocol JSON preserved Python float/int types; roundtrip identity regression"
+    ],
+    "boundaries": "offline repair certification only; not formal training or flight readiness"
+  },
+  "next_step": "Stop. Any fresh seed0 training requires separate authorization and new explicit execution identity; no warm-start continuation.",
+  "protocol_serialization": "Python JSON payload preserved verbatim; ent_coef is 0.0, never integer 0. protocol_hash algorithm unchanged."
+}

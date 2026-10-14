@@ -10,6 +10,7 @@ import json
 import os
 import resource
 import time
+import uuid
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable
@@ -23,6 +24,9 @@ from .ppo_formal_checkpoint import CheckpointManager
 from .ppo_formal_scheduler import MultiScenarioTrainingEnv, load_l6_prereg, require_memory
 from .ppo_formal_validation import LidarPPOValidationEvaluator
 from .ppo_preflight import make_ppo
+from .terminal_accounting import classify_terminal, TERMINAL_CLASSES
+from .failure_evidence import (FailureEvidenceRecorder, NOT_AVAILABLE, PROTECTED_L9_RUN,
+                               transition_failure_context)
 from .ppo_training_runner import (_atomic_json, _historical_model_hashes, _stats,
                                   _weights_sha, protocol_hash)
 
@@ -166,18 +170,17 @@ def verify_source_hashes(paths: Iterable[Path], frozen: dict[str, str]) -> None:
 
 
 def _runtime_paths() -> tuple[Path, ...]:
-    root = Path(__file__).parent
-    return tuple(root / name for name in
-                 ("ppo_training_orchestration.py", "ppo_formal_checkpoint.py",
-                  "ppo_formal_scheduler.py", "ppo_formal_validation.py"))
+    from .ppo_termination_repair_protocol import _repair_source_paths
+    return _repair_source_paths()
 
 
 class TrainingMetricsEnv(gym.Wrapper):
     """Observe real train physics and memory without changing control or reward."""
 
-    TERMINALS = ("success", "collision", "time_limit", "physical_failure", "sensor_failure")
+    TERMINALS = TERMINAL_CLASSES
 
-    def __init__(self, env: gym.Env):
+    def __init__(self, env: gym.Env, *, failure_recorder: FailureEvidenceRecorder | None = None,
+                 diagnostics_dir: Path | None = None):
         available = require_memory()
         super().__init__(env)
         self.step_ms: list[float] = []
@@ -191,43 +194,87 @@ class TrainingMetricsEnv(gym.Wrapper):
         self.policy_steps = 0
         self.min_available_mib = available
         self._current_return = 0.
+        self.failure_recorder = failure_recorder
+        self.diagnostics_dir = Path(diagnostics_dir) if diagnostics_dir is not None else None
+        self._failure_latched = False
+        self._last_known_reward = NOT_AVAILABLE
+        self._last_returned_step = None
+        self.last_failure_path = None
 
     def reset(self, *, seed=None, options=None):
+        if self._failure_latched:
+            raise RuntimeError("failed metrics instance cannot be reset; create a new experiment")
         self.min_available_mib = min(self.min_available_mib, require_memory())
         started = time.perf_counter()
         result = self.env.reset(seed=seed, options=options)
         self.reset_ms.append((time.perf_counter() - started) * 1000.)
         self.reset_rss_mib.append(_current_rss_mib())
         self._current_return = 0.
+        self._last_known_reward = NOT_AVAILABLE
+        self._last_returned_step = None
         self.min_available_mib = min(self.min_available_mib, require_memory())
         return result
 
     def step(self, action):
-        self.min_available_mib = min(self.min_available_mib, require_memory())
-        before_frames = self.env.active.unwrapped.lidar_frame_count
-        started = time.perf_counter()
-        obs, reward, terminated, truncated, info = self.env.step(action)
-        self.step_ms.append((time.perf_counter() - started) * 1000.)
-        self.policy_steps += 1
-        self.physics_ticks += int(info["physics_steps"])
-        self._current_return += float(reward)
-        if (info["scenario_split"] != "train" or
-                info["scenario_identity_sha256"] not in self.env.by_identity or
-                not np.isfinite(reward) or not np.isfinite(action).all()):
-            raise RuntimeError("non-Train, unregistered or nonfinite PPO transition")
-        plant = self.env.active.unwrapped
-        if plant.lidar_frame_count > before_frames:
-            self.scan_ms.append(float(plant.last_scan_ms))
-            self.encode_ms.append(float(plant.last_encode_ms))
-        if terminated or truncated:
-            reason = info["termination_reason"]
-            if reason not in self.terminal_counts or sum(bool(info.get(key)) for key in
-                    ("success", "collision", "timeout", "physical_failure", "sensor_failure")) != 1:
-                raise RuntimeError("invalid or nonexclusive training episode outcome")
-            self.terminal_counts[reason] += 1
-            self.episode_returns.append(self._current_return)
-        self.min_available_mib = min(self.min_available_mib, require_memory())
-        return obs, reward, terminated, truncated, info
+        if self._failure_latched:
+            raise RuntimeError("training transition failure is latched")
+        completed_before = self.policy_steps
+        returned = None
+        outcome = None
+        known_reward = self._last_known_reward
+        try:
+            self.min_available_mib = min(self.min_available_mib, require_memory())
+            before_frames = self.env.active.unwrapped.lidar_frame_count
+            started = time.perf_counter()
+            returned = self.env.step(action)
+            obs, reward, terminated, truncated, info = returned
+            elapsed_ms = (time.perf_counter() - started) * 1000.
+            outcome = classify_terminal(info, terminated, truncated)
+            if (info["scenario_split"] != "train" or
+                    info["scenario_identity_sha256"] not in self.env.by_identity or
+                    not np.isfinite(reward) or not np.isfinite(action).all()):
+                raise RuntimeError("non-Train, unregistered or nonfinite PPO transition")
+            ticks = info["physics_steps"]
+            if type(ticks) is not int or ticks < 0:
+                raise RuntimeError("invalid returned physics-step counter")
+            available = require_memory()
+            plant = self.env.active.unwrapped
+            scan_sample = None
+            if plant.lidar_frame_count > before_frames:
+                scan_sample = (float(plant.last_scan_ms), float(plant.last_encode_ms))
+            info = {**info, "terminal_class": outcome.terminal_class,
+                    "raw_termination_reason": outcome.raw_termination_reason}
+            self.step_ms.append(elapsed_ms)
+            self.policy_steps += 1
+            self.physics_ticks += ticks
+            self._current_return += float(reward)
+            if scan_sample is not None:
+                self.scan_ms.append(scan_sample[0])
+                self.encode_ms.append(scan_sample[1])
+            if terminated or truncated:
+                self.terminal_counts[outcome.terminal_class] += 1
+                self.episode_returns.append(self._current_return)
+            self.min_available_mib = min(self.min_available_mib, available)
+            self._last_known_reward = float(reward)
+            self._last_returned_step = (reward, terminated, truncated, info)
+            return obs, reward, terminated, truncated, info
+        except BaseException as error:
+            self.capture_step_failure(error, action=action, completed_before=completed_before,
+                                      returned=returned, outcome=outcome, known_reward=known_reward)
+            raise
+
+    def capture_step_failure(self, error, *, action, completed_before, returned=None,
+                             outcome=None, known_reward=NOT_AVAILABLE):
+        """Capture an actual result if available; otherwise explicitly retain last context."""
+        self._failure_latched = True
+        if self.failure_recorder is None:
+            return
+        context = transition_failure_context(self.env, completed_before=completed_before,
+            action=action, known_reward=known_reward, returned=returned, outcome=outcome)
+        try:
+            self.last_failure_path = self.failure_recorder.capture(context, error)
+        except BaseException as capture_error:
+            raise RuntimeError(f"failure evidence persistence failed: {type(capture_error).__name__}: {capture_error}") from error
 
     @property
     def rss_peak_mib(self) -> float:
@@ -255,7 +302,7 @@ def _finite_model_and_gradients(model) -> bool:
 
 
 class FormalPPOTrainingDriver:
-    """Frozen driver; formal mode is gated and is never launched by pilot CLI."""
+    """Repaired identity; L9R has no authorization for any optimizer execution."""
 
     def __init__(self, prereg_path: Path, upstream_root: Path, output_dir: Path):
         self.prereg = load_l6_prereg(prereg_path)
@@ -263,7 +310,10 @@ class FormalPPOTrainingDriver:
             raise RuntimeError("historical checkpoint identity changed")
         self.upstream_root = Path(upstream_root)
         self.output_dir = Path(output_dir)
-        self.protocol = l8_execution_protocol(self.prereg)
+        if self.output_dir.resolve().is_relative_to(PROTECTED_L9_RUN.resolve()):
+            raise ValueError("historical L9 attempt is strictly read-only; new output required")
+        from .ppo_termination_repair_protocol import repair_execution_protocol
+        self.protocol = repair_execution_protocol(self.prereg)
         self.protocol_sha256 = protocol_hash(self.protocol)
         self.completed_events: list[dict] = []
         self.runtime_sources = source_hashes(_runtime_paths())
@@ -276,7 +326,7 @@ class FormalPPOTrainingDriver:
         if (int(model.num_timesteps) != event.actual_step or event.actual_step % 128
                 or int(model._n_updates) != 2 * (event.actual_step // 128)):
             raise RuntimeError("milestone not at a post-optimizer rollout boundary")
-        run_id = f"L8_SEED0_STEP{event.actual_step:07d}"
+        run_id = f"L9R_SEED0_STEP{event.actual_step:07d}"
         event_path = self.output_dir / f"{run_id}_event.json"
         if event_path.exists():
             raise FileExistsError("milestone event already exists")
@@ -288,7 +338,8 @@ class FormalPPOTrainingDriver:
             raise RuntimeError("saved checkpoint did not reload the updated policy")
         del restored
         before_rng = scheduler.scheduler_state()
-        validation = LidarPPOValidationEvaluator(self.prereg, self.upstream_root).evaluate(model)
+        validation = LidarPPOValidationEvaluator(self.prereg, self.upstream_root,
+            failure_recorder=getattr(self, "failure_recorder", None)).evaluate(model)
         unchanged = scheduler.scheduler_state() == before_rng
         if not unchanged or validation["probe_only"]:
             raise RuntimeError("Validation changed Train scheduler or ended before terminal")
@@ -312,14 +363,25 @@ class FormalPPOTrainingDriver:
         os.close(fd)
 
     def _run(self, *, mode: str, seed: int, events: tuple[Milestone, ...]) -> dict:
+        from .ppo_termination_repair_protocol import verify_repair_protocol
+        verify_repair_protocol(self.prereg, expected_sha256=self.protocol_sha256)
+        if protocol_hash(self.protocol) != self.protocol_sha256:
+            raise RuntimeError("execution protocol mutated after identity freeze")
+        if self.protocol.get("formal_retrain_authorized") is not True:
+            raise PermissionError("L9R optimizer execution is not authorized; new experiment approval required")
         require_memory()
         if seed != 0 or not events:
             raise ValueError("this driver instance is pinned to independent seed0")
         verify_source_hashes(_runtime_paths(), self.runtime_sources)
         self._reserve_attempt(mode)
+        attempt_id = f"{mode.upper()}_{uuid.uuid4().hex}"
+        _atomic_json(self.output_dir / "attempt_identity.json", {
+            "run_id": f"L9R_{mode.upper()}_SEED{seed}", "attempt_id": attempt_id,
+            "execution_protocol_sha256": self.protocol_sha256})
         _atomic_json(self.output_dir / "preflight_identity.json", {
             "runtime_source_sha256": self.runtime_sources,
-            "l8_protocol_sha256": self.protocol_sha256,
+            "execution_protocol_sha256": self.protocol_sha256,
+            "parent_l8_protocol_sha256": self.protocol["parent_l8_execution_protocol_sha256"],
             "l6_manifest_sha256": self.prereg["scenario_manifest_sha256"],
             "network_implementation_sha256": self.prereg["network_implementation_sha256"],
             "reward_version": self.protocol["reward_version"],
@@ -328,7 +390,11 @@ class FormalPPOTrainingDriver:
         started = time.perf_counter()
         torch.set_num_threads(1)
         scheduler = MultiScenarioTrainingEnv(self.prereg, self.upstream_root, seed=seed)
-        measured = TrainingMetricsEnv(scheduler)
+        self.failure_recorder = FailureEvidenceRecorder(
+            self.output_dir / "failures", run_id=f"L9R_{mode.upper()}_SEED{seed}",
+            attempt_id=attempt_id, origin="TRAINING_RUNTIME")
+        measured = TrainingMetricsEnv(scheduler, failure_recorder=self.failure_recorder,
+                                      diagnostics_dir=self.output_dir)
         historical_before = _historical_model_hashes()
         try:
             model = make_ppo(measured, n_steps=128, seed=seed)
@@ -381,7 +447,8 @@ class FormalPPOTrainingDriver:
                 "rss_peak_mib": measured.rss_peak_mib,
                 "system_min_available_mib": measured.min_available_mib,
                 "wall_seconds": time.perf_counter() - started,
-                "l8_protocol_sha256": self.protocol_sha256,
+                "execution_protocol_sha256": self.protocol_sha256,
+                "parent_l8_protocol_sha256": self.protocol["parent_l8_execution_protocol_sha256"],
                 "l7_protocol_sha256": self.protocol["parent_l7_protocol_sha256"],
                 "l6_manifest_sha256": self.prereg["scenario_manifest_sha256"],
                 "l6_formal_proposal_sha256": self.prereg["formal_proposal_sha256"],

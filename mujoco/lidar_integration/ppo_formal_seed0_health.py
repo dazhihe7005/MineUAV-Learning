@@ -1,4 +1,4 @@
-"""Passive L9 health telemetry around the unchanged L8 formal trainer."""
+"""L9R passive health accounting; original L9 records remain read-only."""
 
 from __future__ import annotations
 
@@ -16,6 +16,8 @@ from .ppo_training_orchestration import (FormalPPOTrainingDriver, TrainingMetric
                                          _current_rss_mib, _finite_model_and_gradients,
                                          source_hashes, verify_source_hashes)
 from .ppo_training_runner import _atomic_json
+from .terminal_accounting import classify_terminal
+from .failure_evidence import NOT_AVAILABLE, PROTECTED_L9_RUN, json_safe
 
 
 FORMAL_HEALTH_DIR = Path(__file__).parents[1] / "reports/mujoco_lidar_ppo_formal_seed0_parts/run_01"
@@ -24,9 +26,11 @@ L9_RUNTIME_PATHS = (Path(__file__).with_name("ppo_formal_seed0_entry.py"), Path(
 
 
 def _append_jsonl(path: Path, row: dict) -> None:
+    if path.resolve().is_relative_to(PROTECTED_L9_RUN.resolve()):
+        raise ValueError("historical L9 evidence is strictly read-only")
     path.parent.mkdir(parents=True, exist_ok=True)
     with path.open("a", encoding="utf-8") as handle:
-        handle.write(json.dumps(row, sort_keys=True) + "\n")
+        handle.write(json.dumps(json_safe(row), sort_keys=True, allow_nan=False) + "\n")
         handle.flush()
         os.fsync(handle.fileno())
 
@@ -36,9 +40,11 @@ class FormalHealthMetricsEnv(TrainingMetricsEnv):
 
     active_instance: FormalHealthMetricsEnv | None = None
 
-    def __init__(self, env):
-        super().__init__(env)
-        self.health_dir = FORMAL_HEALTH_DIR
+    def __init__(self, env, *, failure_recorder=None, diagnostics_dir=None):
+        self.health_dir = Path(diagnostics_dir) if diagnostics_dir is not None else FORMAL_HEALTH_DIR
+        if self.health_dir.resolve().is_relative_to(PROTECTED_L9_RUN.resolve()):
+            raise ValueError("historical L9 diagnostics require a new independent directory")
+        super().__init__(env, failure_recorder=failure_recorder, diagnostics_dir=self.health_dir)
         self.episode_diagnostics: list[dict] = []
         self.resource_samples: list[dict] = []
         self.min_disk_free_bytes = float("inf")
@@ -47,6 +53,7 @@ class FormalHealthMetricsEnv(TrainingMetricsEnv):
         self._path_length = 0.
         self._action_norm_sum = 0.
         self._episode_steps = 0
+        self._position_history_valid = True
         self._start_wall = time.perf_counter()
         self._start_cpu = time.process_time()
         self.l9_runtime_sources = source_hashes(L9_RUNTIME_PATHS)
@@ -68,38 +75,62 @@ class FormalHealthMetricsEnv(TrainingMetricsEnv):
         self._path_length = 0.
         self._action_norm_sum = 0.
         self._episode_steps = 0
+        self._position_history_valid = True
         return result
 
     def step(self, action):
+        if self._failure_latched:
+            raise RuntimeError("training transition failure is latched")
+        completed_before = self.policy_steps
+        known_reward = self._last_known_reward
+        try:
+            return self._health_step(action)
+        except BaseException as error:
+            returned = None
+            outcome = None
+            if self.policy_steps > completed_before and self._last_returned_step is not None:
+                reward, terminated, truncated, info = self._last_returned_step
+                returned = (None, reward, terminated, truncated, info)
+                outcome = classify_terminal(info, terminated, truncated)
+            self.capture_step_failure(error, action=action, completed_before=completed_before,
+                                      returned=returned, outcome=outcome, known_reward=known_reward)
+            raise
+
+    def _health_step(self, action):
         if self.policy_steps % 128 == 0:
             verify_source_hashes(L9_RUNTIME_PATHS, self.l9_runtime_sources)
             self._check_disk()
         result = super().step(action)
         obs, reward, terminated, truncated, info = result
         position = np.asarray(self.env.active.unwrapped.data.qpos[:3], dtype=float).copy()
-        self._path_length += float(np.linalg.norm(position - self._previous_position))
+        self._position_history_valid &= bool(np.isfinite(position).all())
+        if self._position_history_valid:
+            self._path_length += float(np.linalg.norm(position - self._previous_position))
         self._previous_position = position
         self._action_norm_sum += float(np.linalg.norm(np.asarray(action, dtype=float)))
         self._episode_steps += 1
         if terminated or truncated:
-            displacement = float(np.linalg.norm(position - self._episode_start))
+            displacement = (float(np.linalg.norm(position - self._episode_start))
+                            if self._position_history_valid else NOT_AVAILABLE)
             row = {
                 "scenario_identity_sha256": info["scenario_identity_sha256"],
-                "outcome": info["termination_reason"],
+                "outcome": info["terminal_class"],
+                "terminal_class": info["terminal_class"],
+                "raw_termination_reason": info["raw_termination_reason"],
                 "policy_end_step": self.policy_steps,
                 "episode_policy_steps": self._episode_steps,
                 "episode_return": float(self.episode_returns[-1]),
-                "trajectory_length_m": self._path_length,
+                "trajectory_length_m": self._path_length if self._position_history_valid else NOT_AVAILABLE,
                 "net_displacement_m": displacement,
                 "mean_action_norm": self._action_norm_sum / self._episode_steps,
-                "final_target_distance_m": float(info["distance_m"]),
-                "motionless_episode": displacement < .10 and self._path_length < .20,
+                "final_target_distance_m": float(info["distance_m"])
+                    if np.isfinite(position).all() else NOT_AVAILABLE,
+                "motionless_episode": (displacement < .10 and self._path_length < .20
+                                       if self._position_history_valid else NOT_AVAILABLE),
                 "sim_end_time_s": float(self.env.active.unwrapped.data.time),
             }
             if not all(np.isfinite(value) for value in
-                       (row["episode_return"], row["trajectory_length_m"],
-                        row["net_displacement_m"], row["mean_action_norm"],
-                        row["final_target_distance_m"], row["sim_end_time_s"])):
+                       (row["episode_return"], row["mean_action_norm"], row["sim_end_time_s"])):
                 raise RuntimeError("nonfinite formal episode health telemetry")
             _append_jsonl(self.health_dir / "train_episodes.jsonl", row)
             self.episode_diagnostics.append(row)
@@ -128,6 +159,12 @@ class FormalHealthMetricsEnv(TrainingMetricsEnv):
         if actual_step != self.policy_steps or model.num_timesteps != actual_step:
             raise RuntimeError("formal health snapshot is not at the completed PPO step")
         rows = self.episode_diagnostics
+        def mean_available(key):
+            values = [row[key] for row in rows if isinstance(row[key], (int, float, np.number))
+                      and np.isfinite(row[key])]
+            return float(np.mean(values)) if values else None
+        motion_available = [r["motionless_episode"] for r in rows
+                            if isinstance(r["motionless_episode"], bool)]
         terminal = dict(self.terminal_counts)
         if sum(terminal.values()) != len(rows):
             raise RuntimeError("formal episode health accounting differs from terminal counts")
@@ -148,11 +185,14 @@ class FormalHealthMetricsEnv(TrainingMetricsEnv):
             "completed_episodes": len(rows),
             "terminal_counts": terminal,
             "mean_episode_return": float(np.mean(self.episode_returns)) if rows else None,
-            "mean_trajectory_length_m": float(np.mean([r["trajectory_length_m"] for r in rows])) if rows else None,
-            "mean_final_target_distance_m": float(np.mean([r["final_target_distance_m"] for r in rows])) if rows else None,
+            "mean_trajectory_length_m": mean_available("trajectory_length_m"),
+            "mean_final_target_distance_m": mean_available("final_target_distance_m"),
+            "final_distance_available_episode_count": sum(
+                r["final_target_distance_m"] != NOT_AVAILABLE for r in rows),
             "mean_action_norm": float(np.mean([r["mean_action_norm"] for r in rows])) if rows else None,
-            "mean_displacement_m": float(np.mean([r["net_displacement_m"] for r in rows])) if rows else None,
-            "motionless_episode_fraction": (sum(r["motionless_episode"] for r in rows) / len(rows)) if rows else None,
+            "mean_displacement_m": mean_available("net_displacement_m"),
+            "motionless_episode_fraction": sum(motion_available) / len(motion_available) if motion_available else None,
+            "motion_diagnostics_available_episode_count": len(motion_available),
             "ppo_diagnostics": metrics,
             "rss_current_mib": _current_rss_mib(),
             "rss_peak_mib": self.rss_peak_mib,
