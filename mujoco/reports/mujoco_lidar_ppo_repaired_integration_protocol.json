@@ -1,0 +1,74 @@
+{
+  "protocol": {
+    "actual_timesteps": 4096,
+    "algorithm": {
+      "batch_size": 64,
+      "clip_range": 0.2,
+      "ent_coef": 0.0,
+      "gae_lambda": 0.95,
+      "gamma": 0.99,
+      "learning_rate": 0.0003,
+      "lidar_hz": 10,
+      "max_grad_norm": 0.5,
+      "n_epochs": 2,
+      "n_steps": 128,
+      "network": "Conv(3,16,3,p1)-Conv(16,32,3,s2,p1)-FC64+state7+heading2+age1; pi/vf64x64",
+      "normalize_images": false,
+      "physics_hz": 500,
+      "pi_hz": 100,
+      "policy": "MultiInputPolicy",
+      "policy_hz": 25,
+      "ray_count": 24000,
+      "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+      "vf_coef": 0.5
+    },
+    "continuation": "RESTART_REQUIRED; this task does not authorize a restart",
+    "experiment_id": "L9S_REPAIRED_PILOT_ONLY_SEED0",
+    "formal_retrain_authorized": false,
+    "historical_checkpoint_sha256": {
+      "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+      "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+      "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+      "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+      "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+    },
+    "initialization": "NEW_RANDOM_NETWORK_NO_CHECKPOINT",
+    "minimum_disk_free_bytes": 2147483648,
+    "minimum_mem_available_mib": 1536.0,
+    "network_implementation_sha256": "8accaf532c852bf504a884249ee604752ae9367be6e7102b51a2cd2877219f57",
+    "original_model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+    "parent_l9r_sha256": "e267406ec4203353b4ee0c7f8349b57759ef64b31bd076c3db57b99b3682678f",
+    "parent_source_sha256": {
+      "failure_evidence.py": "ecdb1cd3dbf84106c278c6066a8e83374d84e9050e608dcfd6759487ca851fea",
+      "ppo_formal_checkpoint.py": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4",
+      "ppo_formal_scheduler.py": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d",
+      "ppo_formal_seed0_entry.py": "5d5827bf4223eec53f1bf0cd25ee18df326169b74ead1096b32dcb83c22f1e13",
+      "ppo_formal_seed0_health.py": "cb220f5c3dd3602efe35e0a4e4b8f729e393f8a88789c56ce16f136fb17a021b",
+      "ppo_formal_validation.py": "64c16aa9929a16da5598a2eb1844cceab84aa913ce78e40dd66f97ed404034f3",
+      "ppo_termination_repair_protocol.py": "2603c5336288537d68dbe58c630c0d6f6997b7ba3e37cf6ee663d95ca97f1cb4",
+      "ppo_training_orchestration.py": "af801bae3b8fd6e5c0df2c323d2ddeb259d19d5862c75cc3dc12230ec4932935",
+      "terminal_accounting.py": "9bf647c9aeae1f290ad9b4c999065f484b3d41e944568299fad878dbd236f8b6"
+    },
+    "pilot_authorization_scope": "ONE_ATTEMPT_ONLY",
+    "runtime_source_sha256": {
+      "ppo_repaired_pilot.py": "7ec0c79c5eb90e814f0a904e289fba8a7e81e98d96feadc9167cb81c252e1ff1"
+    },
+    "scene_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+    "seed": 0,
+    "software_versions": {
+      "gymnasium": "1.3.0",
+      "mujoco": "3.14.0",
+      "numpy": "2.2.6",
+      "stable-baselines3": "2.9.0",
+      "torch": "2.14.0+cpu"
+    },
+    "test_episode_budget": 0,
+    "upstream_commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+    "upstream_pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3",
+    "validation": "one final diagnostic, six frozen Validation scenes, deterministic",
+    "workers": 1
+  },
+  "protocol_sha256": "09837c2104b12a1780cf81b6eb06c9b6c7f6e167d3378381def706e6af9f5cb3"
+}

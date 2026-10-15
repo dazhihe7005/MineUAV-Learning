@@ -1,0 +1,1378 @@
+{
+  "task": "Phase 3E-L9S Repaired PPO End-to-End Integration Regression",
+  "base_commit": "77e921f15a3e275df448641672f348991d27a3ce",
+  "branch": "test/lidar-ppo-repaired-integration",
+  "status": "PASS",
+  "status_reason": "One4096-step integration Pilot, final885-case selected regression and independent final document/result review passed; no formal retraining is authorized.",
+  "REPAIRED_TRAINING_CHAIN_READY": "YES",
+  "FORMAL_RETRAIN_AUTHORIZED": "NO",
+  "formal_retrain_authorized": false,
+  "pilot_attempt_count": 1,
+  "additional_training_attempts": 0,
+  "final_validation_invocations": 1,
+  "natural_validation_episode_count": 6,
+  "test_episode_count": 0,
+  "formal_training_runs": 0,
+  "PX4_runs": 0,
+  "FAST_LIO2_runs": 0,
+  "real_device_connections": 0,
+  "execution_protocol_sha256": "09837c2104b12a1780cf81b6eb06c9b6c7f6e167d3378381def706e6af9f5cb3",
+  "runtime_source_sha256": {
+    "ppo_repaired_pilot.py": "7ec0c79c5eb90e814f0a904e289fba8a7e81e98d96feadc9167cb81c252e1ff1"
+  },
+  "runtime_unchanged_after_pilot": true,
+  "source_identity_note": "L9S runtime froze before the sole Pilot; only read-only analyzer/tests/report were completed afterwards. All nine L9R sources remain unchanged.",
+  "artifact_audit": {
+    "status": "PASS",
+    "actual_timesteps": 4096,
+    "formal_retrain_authorized": false,
+    "test_episode_count": 0,
+    "execution_protocol_sha256": "09837c2104b12a1780cf81b6eb06c9b6c7f6e167d3378381def706e6af9f5cb3",
+    "evidence_sha256": {
+      "L9S_REPAIRED_PILOT_ONLY_SEED0.json": "a7f2639844421a9eefdba714e4f16ccc46791a5b2e85f512c16a30e12f9e686d",
+      "L9S_REPAIRED_PILOT_ONLY_SEED0.zip": "5fe8c3f2a89a922dda8bcd9ad4025944040adc2fff863d6a34d3892b626bff35",
+      "causal_observations.jsonl": "26a38e1f6ad9edc282e1b642699ff25d9aea3952fbbdddec3e4c17fb278683e9",
+      "execution_protocol.json": "219735b4995330aa5371c0c445cc62e2c54bcd6469835bb712c1ee7bfddf99cf",
+      "formal_progress.json": "7b46c19e232349f34b15fc3ade0224e6cbc6debf3cfe1d1b594b8643cfa7e500",
+      "historical_identity_before.json": "a3a938e64d611feae372ed4c273dc9ee74640773311c933f8820813f742d2f70",
+      "pilot.attempt": "d5b6a80c2e07566579152e0df6e649e06c36f48a908fe4c5e4983703708a128a",
+      "pilot_summary.json": "04642e96ea8ad06143e7c1d726e6631a68bcfaa6d5b420f58f9b3330f7f30620",
+      "resource_samples.jsonl": "2f26af5f9ec4eeded17fa450bbce22f55ae233f017bdfca735deeea54c403b71",
+      "train_episodes.jsonl": "d1534a68c6e708395229e3dd059e1ec432f75168e5f91b0e9a2b6989f0b4bfed"
+    },
+    "checkpoint_sha256": "5fe8c3f2a89a922dda8bcd9ad4025944040adc2fff863d6a34d3892b626bff35",
+    "episode_audit": {
+      "episode_count": 21,
+      "terminal_counts": {
+        "success": 0,
+        "collision": 17,
+        "time_limit": 4,
+        "physical_failure": 0,
+        "sensor_failure": 0
+      },
+      "physical_raw_reason_counts": {},
+      "natural_physical_failure": "NOT OBSERVED"
+    },
+    "causal_audit": {
+      "policy_steps": 4096,
+      "reset_rows": 22,
+      "physics_ticks": 81729,
+      "terminal_rows": 21,
+      "observation_rows": 4118,
+      "maximum_lidar_age_s": 0.0979999999999892
+    },
+    "validation_terminal_counts": {
+      "success": 0,
+      "collision": 6,
+      "time_limit": 0,
+      "physical_failure": 0,
+      "sensor_failure": 0
+    },
+    "protocol": {
+      "actual_timesteps": 4096,
+      "algorithm": {
+        "batch_size": 64,
+        "clip_range": 0.2,
+        "ent_coef": 0.0,
+        "gae_lambda": 0.95,
+        "gamma": 0.99,
+        "learning_rate": 0.0003,
+        "lidar_hz": 10,
+        "max_grad_norm": 0.5,
+        "n_epochs": 2,
+        "n_steps": 128,
+        "network": "Conv(3,16,3,p1)-Conv(16,32,3,s2,p1)-FC64+state7+heading2+age1; pi/vf64x64",
+        "normalize_images": false,
+        "physics_hz": 500,
+        "pi_hz": 100,
+        "policy": "MultiInputPolicy",
+        "policy_hz": 25,
+        "ray_count": 24000,
+        "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+        "vf_coef": 0.5
+      },
+      "continuation": "RESTART_REQUIRED; this task does not authorize a restart",
+      "experiment_id": "L9S_REPAIRED_PILOT_ONLY_SEED0",
+      "formal_retrain_authorized": false,
+      "historical_checkpoint_sha256": {
+        "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+        "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+        "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+        "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+        "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+        "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+        "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+      },
+      "initialization": "NEW_RANDOM_NETWORK_NO_CHECKPOINT",
+      "minimum_disk_free_bytes": 2147483648,
+      "minimum_mem_available_mib": 1536.0,
+      "network_implementation_sha256": "8accaf532c852bf504a884249ee604752ae9367be6e7102b51a2cd2877219f57",
+      "original_model_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+      "parent_l9r_sha256": "e267406ec4203353b4ee0c7f8349b57759ef64b31bd076c3db57b99b3682678f",
+      "parent_source_sha256": {
+        "failure_evidence.py": "ecdb1cd3dbf84106c278c6066a8e83374d84e9050e608dcfd6759487ca851fea",
+        "ppo_formal_checkpoint.py": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4",
+        "ppo_formal_scheduler.py": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d",
+        "ppo_formal_seed0_entry.py": "5d5827bf4223eec53f1bf0cd25ee18df326169b74ead1096b32dcb83c22f1e13",
+        "ppo_formal_seed0_health.py": "cb220f5c3dd3602efe35e0a4e4b8f729e393f8a88789c56ce16f136fb17a021b",
+        "ppo_formal_validation.py": "64c16aa9929a16da5598a2eb1844cceab84aa913ce78e40dd66f97ed404034f3",
+        "ppo_termination_repair_protocol.py": "2603c5336288537d68dbe58c630c0d6f6997b7ba3e37cf6ee663d95ca97f1cb4",
+        "ppo_training_orchestration.py": "af801bae3b8fd6e5c0df2c323d2ddeb259d19d5862c75cc3dc12230ec4932935",
+        "terminal_accounting.py": "9bf647c9aeae1f290ad9b4c999065f484b3d41e944568299fad878dbd236f8b6"
+      },
+      "pilot_authorization_scope": "ONE_ATTEMPT_ONLY",
+      "runtime_source_sha256": {
+        "ppo_repaired_pilot.py": "7ec0c79c5eb90e814f0a904e289fba8a7e81e98d96feadc9167cb81c252e1ff1"
+      },
+      "scene_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+      "seed": 0,
+      "software_versions": {
+        "gymnasium": "1.3.0",
+        "mujoco": "3.14.0",
+        "numpy": "2.2.6",
+        "stable-baselines3": "2.9.0",
+        "torch": "2.14.0+cpu"
+      },
+      "test_episode_budget": 0,
+      "upstream_commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+      "upstream_pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3",
+      "validation": "one final diagnostic, six frozen Validation scenes, deterministic",
+      "workers": 1
+    },
+    "summary": {
+      "OOM": false,
+      "accounting": {
+        "natural_physical_failure": "NOT OBSERVED",
+        "physical_raw_reason_counts": {},
+        "terminal_counts": {
+          "collision": 17,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 4
+        }
+      },
+      "actual_timesteps": 4096,
+      "attempt_id": "L9S_537c081491ff4283b525b48153a2f74f",
+      "checkpoint": {
+        "checkpoint_sha256": "5fe8c3f2a89a922dda8bcd9ad4025944040adc2fff863d6a34d3892b626bff35",
+        "continuation_class": "WARM_START",
+        "execution_protocol_sha256": "09837c2104b12a1780cf81b6eb06c9b6c7f6e167d3378381def706e6af9f5cb3",
+        "historical_checkpoint_sha256": {
+          "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+          "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+          "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+          "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+          "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+          "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+          "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+        },
+        "interrupted_formal_run_policy": "RESTART_REQUIRED",
+        "l6_formal_proposal_sha256": "f12cee995d003cbd502b3bd5477d142d658f1362dae368e5286ee1ddafc49bf4",
+        "l6_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+        "l7_formal_protocol_sha256": "7c0c032002a5ea04b3400a5d939215cb10996a40fc5ff2f008c076ec51f55e33",
+        "missing_exact_resume_state": [
+          "active MuJoCo MjData",
+          "PI state",
+          "LiDAR buffer",
+          "partial PPO rollout"
+        ],
+        "network_implementation_sha256": "8accaf532c852bf504a884249ee604752ae9367be6e7102b51a2cd2877219f57",
+        "optimizer_state_in_sb3_zip": true,
+        "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+        "rng_fingerprints": {
+          "note": "fingerprints are audit evidence, not restorable RNG snapshots",
+          "numpy_global": "92cad373f131ee1287a764fd391a45a5e6990c8a6d1a1b312c9a80d23d100838",
+          "python_random": "46f264538534643a886ab78f16bc37e702ec6d58f1c40cc2c2c5607abc7b3900",
+          "scheduler_full_state_saved": true,
+          "torch": "15311d892cfc3f67fb4f8cff3658da0ae1bf6c565bccf9ad3f3f29cacd813461"
+        },
+        "run_id": "L9S_REPAIRED_PILOT_ONLY_SEED0",
+        "scheduler_state": {
+          "current_identity": "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+          "rng_state": {
+            "bit_generator": "PCG64",
+            "has_uint32": 0,
+            "state": {
+              "inc": 87136372517582989555478159403783844777,
+              "state": 60962236562132093294799584313909798854
+            },
+            "uinteger": 3504064333
+          },
+          "seed": 0,
+          "selected_identities": [
+            "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+            "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+            "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+            "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+            "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+            "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+            "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+            "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+            "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+            "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+            "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+            "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+            "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+            "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+            "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+            "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+            "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+            "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+            "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+            "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+            "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+            "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3"
+          ],
+          "visit_counts": {
+            "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 3,
+            "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 4,
+            "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 4,
+            "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 3,
+            "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 1,
+            "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 2,
+            "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 0,
+            "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 1,
+            "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 0,
+            "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 2,
+            "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 0,
+            "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 2
+          }
+        },
+        "sidecar_payload_sha256": "5b03ee08a637271d3483a21dfdd779269f3cfed3aa80c0b6d232d475a7fbb109",
+        "training_seed": 0,
+        "training_timesteps": 4096
+      },
+      "checkpoint_reload_equal": true,
+      "environment_step_ms": {
+        "count": 4096,
+        "max": 14.11078399996768,
+        "p50": 1.1704600001394283,
+        "p95": 11.951931250223424,
+        "p99": 12.298108349750692
+      },
+      "episode_reset_rss_mib": [
+        1110.23828125,
+        1275.81640625,
+        1258.609375,
+        1229.4765625,
+        1229.4765625,
+        1182.17578125,
+        1182.17578125,
+        1182.17578125,
+        1295.3125,
+        1274.84765625,
+        1208.7578125,
+        1129.04296875,
+        1403.2734375,
+        1307.39453125,
+        1249.29296875,
+        1266.7265625,
+        1322.171875,
+        1213.375,
+        1213.37890625,
+        1276.2265625,
+        1334.05078125,
+        1230.82421875
+      ],
+      "execution_protocol_sha256": "09837c2104b12a1780cf81b6eb06c9b6c7f6e167d3378381def706e6af9f5cb3",
+      "experiment_id": "L9S_REPAIRED_PILOT_ONLY_SEED0",
+      "finite_gradients_and_optimizer": true,
+      "formal_retrain_authorized": false,
+      "global_rng_preserved": true,
+      "health": {
+        "actual_execution_step": 4096,
+        "completed_episodes": 21,
+        "cpu_elapsed_s": 32.682212938,
+        "disk_free_bytes": 72001421312,
+        "final_distance_available_episode_count": 21,
+        "l9_runtime_source_sha256": {
+          "ppo_formal_seed0_entry.py": "5d5827bf4223eec53f1bf0cd25ee18df326169b74ead1096b32dcb83c22f1e13",
+          "ppo_formal_seed0_health.py": "cb220f5c3dd3602efe35e0a4e4b8f729e393f8a88789c56ce16f136fb17a021b"
+        },
+        "mean_action_norm": 1.4166868289938626,
+        "mean_displacement_m": 1.992022408209455,
+        "mean_episode_return": -24.563638102106104,
+        "mean_final_target_distance_m": 1.6428927662305408,
+        "mean_trajectory_length_m": 3.158886620579384,
+        "mem_available_min_mib": 9316.12109375,
+        "motion_diagnostics_available_episode_count": 21,
+        "motionless_episode_fraction": 0.0,
+        "optimizer_updates": 64,
+        "policy_steps": 4096,
+        "ppo_diagnostics": {
+          "train/approx_kl": 4.599802196025848e-06,
+          "train/clip_fraction": 0.0,
+          "train/clip_range": 0.2,
+          "train/entropy_loss": -5.673571825027466,
+          "train/explained_variance": 0.12960141897201538,
+          "train/learning_rate": 0.0003,
+          "train/loss": 1.6304941177368164,
+          "train/n_updates": 64.0,
+          "train/policy_gradient_loss": 0.0003439148422330618,
+          "train/std": 0.9994743466377258,
+          "train/value_loss": 3.3275159001350403
+        },
+        "resource_sample_count": 32,
+        "rss_current_mib": 1230.82421875,
+        "rss_peak_mib": 1601.95703125,
+        "terminal_counts": {
+          "collision": 17,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 4
+        },
+        "test_episode_count": 0,
+        "train_episodes_jsonl_rows": 21,
+        "wall_elapsed_s": 34.96229984400043
+      },
+      "historical_identity_unchanged": true,
+      "lidar_causal_rows": 4118,
+      "lidar_encode_ms": {
+        "count": 1625,
+        "max": 5.604770999980246,
+        "p50": 4.072457999882317,
+        "p95": 4.3070239998087345,
+        "p99": 4.489110719860037
+      },
+      "lidar_scan_ms": {
+        "count": 1625,
+        "max": 7.915666999906534,
+        "p50": 6.274308000229212,
+        "p95": 6.7049145998680615,
+        "p99": 6.90428019996034
+      },
+      "lidar_scans_including_reset": 1647,
+      "max_lidar_age_s": 0.0979999999999892,
+      "min_mem_available_mib": 9256.953125,
+      "minimum_disk_free_bytes": 71999062016,
+      "optimizer_steps": 128,
+      "parameter_hash_after": {
+        "actor": "d4e99fafcfb4405cf2b31d6d533946fe83447ba5f642c379727b585f15ad5ec8",
+        "critic": "d97e5197e99609fb82defc6dcd0eb1cb2d6351b75e7a78a6ff9dc726f65a3dd0"
+      },
+      "parameter_hash_before": {
+        "actor": "bb267b4d10796a33501a0511820dced74c8ea95a5b3625b45e41e426f5a1fa7e",
+        "critic": "c8eb88d063c5a2b4ec9545c8e5228322dc42d19e876ac78f3549624606e44539"
+      },
+      "peak_rss_mib": 1607.421875,
+      "ppo_n_updates": 64,
+      "ppo_update_ms": {
+        "count": 32,
+        "max": 36.71045500004766,
+        "p50": 25.28073750022486,
+        "p95": 26.333505099978538,
+        "p99": 33.55202030993043
+      },
+      "reset_compile_ms": {
+        "count": 22,
+        "max": 458.28036300008534,
+        "p50": 388.2614984997872,
+        "p95": 449.278144100208,
+        "p99": 456.6013752001163
+      },
+      "resource_guard_samples": 5821,
+      "rollouts": 32,
+      "runtime_source_sha256": {
+        "ppo_repaired_pilot.py": "7ec0c79c5eb90e814f0a904e289fba8a7e81e98d96feadc9167cb81c252e1ff1"
+      },
+      "status": "PASS",
+      "test_episode_count": 0,
+      "total_cpu_s": 40.15036015,
+      "total_wall_s": 42.40579895100018,
+      "train_rng_unchanged_during_validation": true,
+      "train_scheduler": {
+        "current_identity": "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+        "rng_state": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 87136372517582989555478159403783844777,
+            "state": 60962236562132093294799584313909798854
+          },
+          "uinteger": 3504064333
+        },
+        "seed": 0,
+        "selected_identities": [
+          "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+          "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+          "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+          "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+          "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+          "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+          "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+          "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+          "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+          "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+          "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+          "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+          "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+          "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+          "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+          "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+          "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+          "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+          "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+          "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+          "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+          "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3"
+        ],
+        "visit_counts": {
+          "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 3,
+          "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 4,
+          "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 4,
+          "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 3,
+          "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 1,
+          "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 2,
+          "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 0,
+          "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 1,
+          "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 0,
+          "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 2,
+          "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 0,
+          "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 2
+        }
+      },
+      "training_physics_ticks": 81729,
+      "training_wall_s": 35.82713311999987,
+      "validation": {
+        "episodes": [
+          {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -21.756807292712956,
+            "final_target_error_m": 0.9967802717060263,
+            "inference_ms": {
+              "count": 174,
+              "max": 0.6156360000204586,
+              "p50": 0.2719184999477875,
+              "p95": 0.2973128497842481,
+              "p99": 0.3960689699397335
+            },
+            "last_sim_time_s": 6.9419999999994575,
+            "layout": "empty",
+            "mean_lidar_age_s": 0.04012643678160606,
+            "minimum_valid_lidar_range_m": 0.24588898643655138,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 174,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 2.9595292665563226
+          },
+          {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_obstacle_0",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -27.763465195856636,
+            "final_target_error_m": 1.631404356827228,
+            "inference_ms": {
+              "count": 38,
+              "max": 0.6023500000083004,
+              "p50": 0.2724045000377373,
+              "p95": 0.2992655998241389,
+              "p99": 0.49085789994023876
+            },
+            "last_sim_time_s": 1.5180000000000011,
+            "layout": "front_box",
+            "mean_lidar_age_s": 0.04047368421052635,
+            "minimum_valid_lidar_range_m": 0.2480142635165712,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 38,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 0.30930769934933894
+          },
+          {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -22.991376142806935,
+            "final_target_error_m": 1.0421621067588085,
+            "inference_ms": {
+              "count": 162,
+              "max": 0.6268669999371923,
+              "p50": 0.2769940001599025,
+              "p95": 0.35158164985205065,
+              "p99": 0.49674163989948167
+            },
+            "last_sim_time_s": 6.46599999999951,
+            "layout": "side_pair",
+            "mean_lidar_age_s": 0.040160493827157445,
+            "minimum_valid_lidar_range_m": 0.11274544246095533,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 162,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 2.804133224382985
+          },
+          {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_obstacle_0",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -26.134032665286284,
+            "final_target_error_m": 1.6706118975864999,
+            "inference_ms": {
+              "count": 45,
+              "max": 0.6288109998422442,
+              "p50": 0.26885799979936564,
+              "p95": 0.283927400050743,
+              "p99": 0.4774276800708329
+            },
+            "last_sim_time_s": 1.7700000000000014,
+            "layout": "detour",
+            "mean_lidar_age_s": 0.041555555555555596,
+            "minimum_valid_lidar_range_m": 0.16186526373882826,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 45,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 0.46830898352335587
+          },
+          {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ],
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -24.107618640354794,
+            "final_target_error_m": 1.1388605731623471,
+            "inference_ms": {
+              "count": 186,
+              "max": 0.6137219997981447,
+              "p50": 0.2777805000278022,
+              "p95": 0.32952974959243875,
+              "p99": 0.3840804502033281
+            },
+            "last_sim_time_s": 7.4319999999994035,
+            "layout": "channel",
+            "mean_lidar_age_s": 0.03995698924730862,
+            "minimum_valid_lidar_range_m": 0.10000224851810452,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 186,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 2.962847625962222
+          },
+          {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -21.028592685423604,
+            "final_target_error_m": 0.9624877297287479,
+            "inference_ms": {
+              "count": 175,
+              "max": 0.8469910003441328,
+              "p50": 0.30341499996211496,
+              "p95": 0.5082383999706506,
+              "p99": 0.5942035601401585
+            },
+            "last_sim_time_s": 6.965999999999455,
+            "layout": "empty",
+            "mean_lidar_age_s": 0.04037714285713968,
+            "minimum_valid_lidar_range_m": 0.27423014472274143,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 175,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 3.0050403451409653
+          }
+        ],
+        "model_status": "FROZEN_MODEL_DIAGNOSTIC",
+        "optimizer_unchanged": true,
+        "overall": {
+          "collision": 6,
+          "collision_rate": 1.0,
+          "mean_return": -23.963648770406866,
+          "mean_time_to_goal_s": null,
+          "mean_trajectory_length_m": 2.0848611908191983,
+          "navigation_success_rate": 0.0,
+          "physical_failure": 0,
+          "physical_failure_rate": 0.0,
+          "probe_cutoff": 0,
+          "sensor_failure": 0,
+          "sensor_failure_rate": 0.0,
+          "success": 0,
+          "time_limit": 0,
+          "timeout_rate": 0.0,
+          "total": 6,
+          "trajectory_length_available_count": 6
+        },
+        "per_scene": {
+          "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd": {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -21.028592685423604,
+            "final_target_error_m": 0.9624877297287479,
+            "inference_ms": {
+              "count": 175,
+              "max": 0.8469910003441328,
+              "p50": 0.30341499996211496,
+              "p95": 0.5082383999706506,
+              "p99": 0.5942035601401585
+            },
+            "last_sim_time_s": 6.965999999999455,
+            "layout": "empty",
+            "mean_lidar_age_s": 0.04037714285713968,
+            "minimum_valid_lidar_range_m": 0.27423014472274143,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 175,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 3.0050403451409653
+          },
+          "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079": {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_obstacle_0",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -26.134032665286284,
+            "final_target_error_m": 1.6706118975864999,
+            "inference_ms": {
+              "count": 45,
+              "max": 0.6288109998422442,
+              "p50": 0.26885799979936564,
+              "p95": 0.283927400050743,
+              "p99": 0.4774276800708329
+            },
+            "last_sim_time_s": 1.7700000000000014,
+            "layout": "detour",
+            "mean_lidar_age_s": 0.041555555555555596,
+            "minimum_valid_lidar_range_m": 0.16186526373882826,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 45,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 0.46830898352335587
+          },
+          "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277": {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_obstacle_0",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -27.763465195856636,
+            "final_target_error_m": 1.631404356827228,
+            "inference_ms": {
+              "count": 38,
+              "max": 0.6023500000083004,
+              "p50": 0.2724045000377373,
+              "p95": 0.2992655998241389,
+              "p99": 0.49085789994023876
+            },
+            "last_sim_time_s": 1.5180000000000011,
+            "layout": "front_box",
+            "mean_lidar_age_s": 0.04047368421052635,
+            "minimum_valid_lidar_range_m": 0.2480142635165712,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 38,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 0.30930769934933894
+          },
+          "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1": {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ],
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -24.107618640354794,
+            "final_target_error_m": 1.1388605731623471,
+            "inference_ms": {
+              "count": 186,
+              "max": 0.6137219997981447,
+              "p50": 0.2777805000278022,
+              "p95": 0.32952974959243875,
+              "p99": 0.3840804502033281
+            },
+            "last_sim_time_s": 7.4319999999994035,
+            "layout": "channel",
+            "mean_lidar_age_s": 0.03995698924730862,
+            "minimum_valid_lidar_range_m": 0.10000224851810452,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 186,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 2.962847625962222
+          },
+          "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c": {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -22.991376142806935,
+            "final_target_error_m": 1.0421621067588085,
+            "inference_ms": {
+              "count": 162,
+              "max": 0.6268669999371923,
+              "p50": 0.2769940001599025,
+              "p95": 0.35158164985205065,
+              "p99": 0.49674163989948167
+            },
+            "last_sim_time_s": 6.46599999999951,
+            "layout": "side_pair",
+            "mean_lidar_age_s": 0.040160493827157445,
+            "minimum_valid_lidar_range_m": 0.11274544246095533,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 162,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 2.804133224382985
+          },
+          "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f": {
+            "collision": true,
+            "collision_contact_pairs": [
+              [
+                "nav_wall_x_pos",
+                "coarse_collision"
+              ]
+            ],
+            "completion_time_s": null,
+            "episode_return": -21.756807292712956,
+            "final_target_error_m": 0.9967802717060263,
+            "inference_ms": {
+              "count": 174,
+              "max": 0.6156360000204586,
+              "p50": 0.2719184999477875,
+              "p95": 0.2973128497842481,
+              "p99": 0.3960689699397335
+            },
+            "last_sim_time_s": 6.9419999999994575,
+            "layout": "empty",
+            "mean_lidar_age_s": 0.04012643678160606,
+            "minimum_valid_lidar_range_m": 0.24588898643655138,
+            "outcome": "collision",
+            "physical_failure": false,
+            "policy_steps": 174,
+            "raw_termination_reason": "collision",
+            "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+            "sensor_failure": false,
+            "success": false,
+            "terminal_class": "collision",
+            "timeout": false,
+            "trajectory_length_m": 2.9595292665563226
+          }
+        },
+        "policy_sha256_before_after": "cefea59f4908dc120f85fa4dd984a821d3fb4cea5b9518548c018b75e6bda6c6",
+        "probe_only": false,
+        "split": "validation",
+        "training_timesteps_before_after": 4096,
+        "wall_seconds": 6.464796950000164
+      }
+    },
+    "audit_method": "READ_ONLY_JSON_JSONL_SHA256_ZIP; NO_MODEL_LOAD_OR_EPISODES",
+    "limitations": [
+      "Optimizer/reload equality and finite gradients are hash-bound producer evidence; this audit does not deserialize tensors.",
+      "A single 4096-step Pilot does not prove navigation learning or long-run stability and does not authorize formal retraining."
+    ]
+  },
+  "final_partial_train_episode": {
+    "completed": false,
+    "last_completed_episode_end_step": 3896,
+    "partial_steps": 200,
+    "included_in_terminal_counts": false
+  },
+  "natural_train_scene_coverage": {
+    "visited": 9,
+    "frozen_count": 12,
+    "reset_visits": 22,
+    "counts": {
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 3,
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 4,
+      "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 4,
+      "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 3,
+      "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 1,
+      "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 2,
+      "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 0,
+      "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 1,
+      "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 0,
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 2,
+      "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 0,
+      "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 2
+    },
+    "note": "Three zero-visit scenes remain zero; no extra sampling. Deterministic all-scene coverage is inherited offline regression, not this Pilot."
+  },
+  "forced_tests": {
+    "label": "FORCED_TEST_STATE",
+    "optimizer_updates": 0,
+    "classes": [
+      "success",
+      "collision",
+      "time_limit",
+      "sensor_failure",
+      "physical_failure"
+    ],
+    "physical_reasons": [
+      "z_below_zero",
+      "outside_flight_area",
+      "excessive_tilt",
+      "nonfinite_state"
+    ],
+    "chain": "NavigationEnv -> TrainingMetricsEnv/FormalHealthMetricsEnv -> checkpoint association and Validation classification",
+    "reward_observation_terminal_equivalence": "PASS",
+    "unknown_or_contradictory_outcomes": "FAIL_CLOSED",
+    "evidence_cases": [
+      "returned transition",
+      "step did not return: LAST_KNOWN_CONTEXT",
+      "nonfinite state markers",
+      "write failure",
+      "exclusive no-overwrite publication",
+      "step after failure rejected"
+    ],
+    "not_navigation_performance": true
+  },
+  "original_l9_protection": {
+    "overall_result": "FAIL",
+    "completed_train_episodes": 706,
+    "terminal_counts": {
+      "success": 0,
+      "collision": 656,
+      "time_limit": 50,
+      "physical_failure": 0,
+      "sensor_failure": 0
+    },
+    "test_episode_count": 0,
+    "original_raw_file_count": 11,
+    "raw_evidence_sha256": {
+      "formal_progress.json": "6ba59d9e91728a19405cc61c353b7d1e5e6ad441cfe75aa9293705f6b0a1e22f",
+      "resource_samples.jsonl": "793589034bf8ec941ed05236aa657fbf1a2f0cb6c64804b15e306ed6fbdd3604",
+      "formal.attempt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preflight_identity.json": "4fbc92d063eb16d2d6f692f638d7fcc0adc723e3002300aa3a222ea550d0aac1",
+      "L8_SEED0_STEP0100096.zip": "d71927d83c3f844f035a3059c1329b0df22773a58ad6b258fa1093c2377abff9",
+      "failure_capture.json": "8a48173d7b317aba00497144f8e1b06e1f6737d51f7b0367f689f5a8b3c596de",
+      "train_episodes.jsonl": "5e3b653de9ae72404fa897c075a51afbc37961334a587dd7f5823e9e8dcc87ab",
+      "process_failure_traceback.txt": "2bb4cafdccb9d6df8724ef96ef337d3e6a3f4a87cae38e02c4319ddefa325a1c",
+      "L8_SEED0_STEP0100096_event.json": "bb59bf70d47b1a38c9abff838180ff3199907421e422cc17ef664ebf05abb247",
+      "L9_HEALTH_STEP0100096.json": "b1486182e536ebf930a6612068f2bb29819e0d957226076a724ec01ef23b7bba",
+      "L8_SEED0_STEP0100096.json": "4b542a7c97574e38b4c42c4852069d112e5b52666c5d7a0b6556616344bf3dca"
+    },
+    "original_sources_verified_against_base_git_objects": true,
+    "original_source_sha256": {
+      "l8": {
+        "ppo_formal_checkpoint.py": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4",
+        "ppo_formal_scheduler.py": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d",
+        "ppo_formal_validation.py": "bbdf18e9e9ae2b7a82dcd49ceb9969994fb3b160c402ef613f0c991ed3d05156",
+        "ppo_training_orchestration.py": "4202ba5bb519d15b973bf95d2a4fc7ab07bec9c25c7bada070d7ff15f4078801"
+      },
+      "l9": {
+        "ppo_formal_seed0_entry.py": "5d5827bf4223eec53f1bf0cd25ee18df326169b74ead1096b32dcb83c22f1e13",
+        "ppo_formal_seed0_health.py": "50b7d06c18ea7df34b2f2565f620b58b04349ceffa95cc79f9e60a6e992c9615"
+      }
+    },
+    "historical_checkpoint_sha256": {
+      "uav_bc_mlp_seed0.pt": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "uav_bc_yaw_augmented_seed0.pt": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "uav_ppo_fixed_protocol_seed0.zip": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+      "uav_ppo_fixed_protocol_seed1.zip": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+      "uav_ppo_fixed_protocol_seed2.zip": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+      "uav_ppo_fixed_protocol_seed3.zip": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+      "uav_ppo_fixed_protocol_seed4.zip": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125"
+    },
+    "original_mjcf_sha256": "cde862f424a86bda3676249859268c69dede9dde2ebadeef819813351684b520",
+    "specific_original_physical_trigger": "UNRESOLVED_NOT_RECORDED",
+    "failed_transition_in_episode_counts": false,
+    "mean_episode_return": -29.38914905522911,
+    "mean_trajectory_length_m": 3.222637564776019,
+    "mean_final_target_distance_m": 1.7852186139099875,
+    "mean_action_norm": 1.4374261223672076,
+    "milestone": {
+      "actual_execution_step": 100096,
+      "completed_episodes": 611,
+      "terminal_counts": {
+        "collision": 575,
+        "physical_failure": 0,
+        "sensor_failure": 0,
+        "success": 0,
+        "time_limit": 36
+      },
+      "ppo_diagnostics": {
+        "train/approx_kl": 6.758328527212143e-05,
+        "train/clip_fraction": 0.0,
+        "train/clip_range": 0.2,
+        "train/entropy_loss": -5.613095045089722,
+        "train/explained_variance": 0.6625452041625977,
+        "train/learning_rate": 0.0003,
+        "train/loss": 10.466863632202148,
+        "train/n_updates": 1564.0,
+        "train/policy_gradient_loss": 0.00042437808588147163,
+        "train/std": 0.9845871925354004,
+        "train/value_loss": 27.665215015411377
+      },
+      "mean_action_norm": 1.441488059424059,
+      "mean_trajectory_length_m": 3.1605863643289345,
+      "mean_final_target_distance_m": 1.7540311003005453,
+      "motionless_episode_fraction": 0.0
+    },
+    "interpretation": "One partial seed, zero recorded successes; neither learned obstacle avoidance nor permanent PPO incapability is established. Single diagnostic sample is not a learning curve.",
+    "next_diagnostic_priorities": [
+      "canonical/raw terminal evidence including failed transitions",
+      "success, collision, timeout and no-progress rates separately",
+      "action norm, target progress, trajectory length and near-target braking",
+      "value loss/explained variance and policy loss/KL/clip fraction across milestones"
+    ]
+  },
+  "historical_main_worktree_untracked_count": 87,
+  "tests": {
+    "status": "PASS",
+    "complete": true,
+    "passed": 885,
+    "failed": 0,
+    "skipped": 0,
+    "deselected": 15,
+    "warnings": 2,
+    "prior_L9R_passed": 777,
+    "restored_unchanged_old_cases": 7,
+    "new_L9S_cases": 101,
+    "new_cases_per_file": {
+      "mujoco/lidar_integration/test_repaired_evidence.py": 57,
+      "mujoco/lidar_integration/test_repaired_pilot.py": 24,
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py": 19,
+      "mujoco/lidar_integration/test_repaired_verification.py": 1
+    },
+    "all_passed_per_file": {
+      "mujoco/px4_bridge/test_allocation_analysis.py": 8,
+      "mujoco/px4_bridge/test_allocation_identity.py": 17,
+      "mujoco/px4_bridge/test_allocation_math.py": 15,
+      "mujoco/px4_bridge/test_analysis.py": 2,
+      "mujoco/px4_bridge/test_analyze_odometry_fusion.py": 7,
+      "mujoco/px4_bridge/test_closed_loop.py": 4,
+      "mujoco/px4_bridge/test_disarmed_verification.py": 32,
+      "mujoco/px4_bridge/test_external_odometry.py": 21,
+      "mujoco/px4_bridge/test_interfaces.py": 12,
+      "mujoco/px4_bridge/test_logger_configuration.py": 9,
+      "mujoco/px4_bridge/test_native_allocator.py": 1,
+      "mujoco/px4_bridge/test_odometry_producer.py": 2,
+      "mujoco/px4_bridge/test_odometry_reverification.py": 34,
+      "mujoco/px4_bridge/test_odometry_reverification_analysis.py": 17,
+      "mujoco/px4_bridge/test_odometry_reverification_runner.py": 6,
+      "mujoco/px4_bridge/test_odometry_runtime.py": 5,
+      "mujoco/px4_bridge/test_query_scheduler.py": 46,
+      "mujoco/px4_bridge/test_query_scheduling_analysis.py": 5,
+      "mujoco/px4_bridge/test_runner.py": 8,
+      "mujoco/px4_bridge/test_streaming_diagnostics.py": 21,
+      "mujoco/px4_bridge/test_streaming_safety.py": 67,
+      "mujoco/px4_bridge/test_telemetry_freshness.py": 35,
+      "mujoco/px4_bridge/test_transport.py": 7,
+      "mujoco/px4_bridge/test_yaw_analysis.py": 7,
+      "mujoco/px4_bridge/test_yaw_closed_loop.py": 15,
+      "mujoco/px4_bridge/test_yaw_telemetry_analysis.py": 5,
+      "mujoco/px4_bridge/test_yaw_validation.py": 29,
+      "mujoco/px4_bridge/gnss_denied/test_analysis.py": 21,
+      "mujoco/px4_bridge/gnss_denied/test_evidence.py": 25,
+      "mujoco/px4_bridge/gnss_denied/test_protocol.py": 22,
+      "mujoco/px4_bridge/gnss_denied/test_runner.py": 9,
+      "mujoco/lidar_integration/test_async_observation.py": 9,
+      "mujoco/lidar_integration/test_dynamic_runner.py": 4,
+      "mujoco/lidar_integration/test_failure_evidence.py": 14,
+      "mujoco/lidar_integration/test_navigation_env.py": 14,
+      "mujoco/lidar_integration/test_navigation_runner.py": 4,
+      "mujoco/lidar_integration/test_navigation_scene.py": 6,
+      "mujoco/lidar_integration/test_observation.py": 11,
+      "mujoco/lidar_integration/test_observation_runner.py": 4,
+      "mujoco/lidar_integration/test_pointcloud.py": 9,
+      "mujoco/lidar_integration/test_policy_input_contract.py": 4,
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py": 12,
+      "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py": 14,
+      "mujoco/lidar_integration/test_ppo_preflight.py": 14,
+      "mujoco/lidar_integration/test_ppo_training_orchestration.py": 13,
+      "mujoco/lidar_integration/test_repair_protocol.py": 4,
+      "mujoco/lidar_integration/test_repair_verification_scope.py": 2,
+      "mujoco/lidar_integration/test_repaired_evidence.py": 57,
+      "mujoco/lidar_integration/test_repaired_pilot.py": 24,
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py": 19,
+      "mujoco/lidar_integration/test_repaired_verification.py": 1,
+      "mujoco/lidar_integration/test_runner.py": 1,
+      "mujoco/lidar_integration/test_scanner.py": 15,
+      "mujoco/lidar_integration/test_scene.py": 6,
+      "mujoco/lidar_integration/test_shaft.py": 6,
+      "mujoco/lidar_integration/test_termination_repair.py": 30,
+      "mujoco/lidar_integration/test_termination_repair_audit.py": 3,
+      "mujoco/lidar_integration/test_trajectory.py": 14,
+      "mujoco/lidar_integration/test_validation_termination_repair.py": 4,
+      "mujoco/tests/test_mid360s_interface_audit.py": 6,
+      "mujoco/rl/test_px4_policy_shadow.py": 30,
+      "mujoco/rl/test_mine_uav_env.py": 9,
+      "mujoco/rl/test_velocity_command_controller.py": 8
+    },
+    "old_22_exclusions_review": [
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_formal_preflight_accepts_only_current_l8_identity",
+        "classification": "HISTORICAL_IDENTITY_OR_DEFECT_EXPECTATION",
+        "status": "NOT RUN",
+        "replacement_evidence": "New independent L9S authorization/failure-evidence tests and read-only original-L9 audit; historical assertion not rewritten."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_checks_disk_on_existing_ancestor_without_creating_output",
+        "classification": "HISTORICAL_IDENTITY_OR_DEFECT_EXPECTATION",
+        "status": "NOT RUN",
+        "replacement_evidence": "New independent L9S authorization/failure-evidence tests and read-only original-L9 audit; historical assertion not rewritten."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes0-PermissionError]",
+        "classification": "RESTORED_UNCHANGED",
+        "status": "PASS",
+        "replacement_evidence": "Original test executed unchanged in final selected suite."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes1-ValueError]",
+        "classification": "RESTORED_UNCHANGED",
+        "status": "PASS",
+        "replacement_evidence": "Original test executed unchanged in final selected suite."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes2-ValueError]",
+        "classification": "RESTORED_UNCHANGED",
+        "status": "PASS",
+        "replacement_evidence": "Original test executed unchanged in final selected suite."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes3-ValueError]",
+        "classification": "RESTORED_UNCHANGED",
+        "status": "PASS",
+        "replacement_evidence": "Original test executed unchanged in final selected suite."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_wrong_authorization_seed_budget_or_protocol[changes4-ValueError]",
+        "classification": "RESTORED_UNCHANGED",
+        "status": "PASS",
+        "replacement_evidence": "Original test executed unchanged in final selected suite."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_existing_output_without_deleting_it",
+        "classification": "RESTORED_UNCHANGED",
+        "status": "PASS",
+        "replacement_evidence": "Original test executed unchanged in final selected suite."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_rejects_low_disk_and_low_memory",
+        "classification": "RESTORED_UNCHANGED",
+        "status": "PASS",
+        "replacement_evidence": "Original test executed unchanged in final selected suite."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_cli_requires_explicit_formal_mode_authorization_and_rejects_initializer",
+        "classification": "HISTORICAL_IDENTITY_OR_DEFECT_EXPECTATION",
+        "status": "NOT RUN",
+        "replacement_evidence": "New independent L9S authorization/failure-evidence tests and read-only original-L9 audit; historical assertion not rewritten."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_l9_driver_writes_real_post_optimizer_health_snapshot",
+        "classification": "EXTRA_OPTIMIZER_EXECUTION",
+        "status": "NOT RUN",
+        "replacement_evidence": "Single authorized L9S Pilot: real updates, finite optimizer, post-update checkpoint/reload, Training Health and frozen six-scene Validation; original node not claimed PASS."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[weight]",
+        "classification": "EXTRA_OPTIMIZER_EXECUTION",
+        "status": "NOT RUN",
+        "replacement_evidence": "Single authorized L9S Pilot: real updates, finite optimizer, post-update checkpoint/reload, Training Health and frozen six-scene Validation; original node not claimed PASS."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[logger]",
+        "classification": "EXTRA_OPTIMIZER_EXECUTION",
+        "status": "NOT RUN",
+        "replacement_evidence": "Single authorized L9S Pilot: real updates, finite optimizer, post-update checkpoint/reload, Training Health and frozen six-scene Validation; original node not claimed PASS."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_l8_physical_reason_contract_reproduces_formal_stop_without_training",
+        "classification": "HISTORICAL_IDENTITY_OR_DEFECT_EXPECTATION",
+        "status": "NOT RUN",
+        "replacement_evidence": "New independent L9S authorization/failure-evidence tests and read-only original-L9 audit; historical assertion not rewritten."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_interrupted_formal_report_never_claims_exact_completion_or_final_model",
+        "classification": "HISTORICAL_IDENTITY_OR_DEFECT_EXPECTATION",
+        "status": "NOT RUN",
+        "replacement_evidence": "New independent L9S authorization/failure-evidence tests and read-only original-L9 audit; historical assertion not rewritten."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_preflight.py::test_actor_critic_optimizer_and_checkpoint_roundtrip",
+        "classification": "EXTRA_OPTIMIZER_EXECUTION",
+        "status": "NOT RUN",
+        "replacement_evidence": "Single authorized L9S Pilot: real updates, finite optimizer, post-update checkpoint/reload, Training Health and frozen six-scene Validation; original node not claimed PASS."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_real_sb3_rollouts_update_weights_and_switch_train_scenes",
+        "classification": "EXTRA_OPTIMIZER_EXECUTION",
+        "status": "NOT RUN",
+        "replacement_evidence": "Single authorized L9S Pilot: real updates, finite optimizer, post-update checkpoint/reload, Training Health and frozen six-scene Validation; original node not claimed PASS."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_refuses_reused_attempt_and_formal_mode_requires_separate_authorization",
+        "classification": "HISTORICAL_IDENTITY_OR_DEFECT_EXPECTATION",
+        "status": "NOT RUN",
+        "replacement_evidence": "New independent L9S authorization/failure-evidence tests and read-only original-L9 audit; historical assertion not rewritten."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_completed_real_rollout_milestone_saves_after_update_and_validates_without_mutation",
+        "classification": "EXTRA_OPTIMIZER_EXECUTION",
+        "status": "NOT RUN",
+        "replacement_evidence": "Single authorized L9S Pilot: real updates, finite optimizer, post-update checkpoint/reload, Training Health and frozen six-scene Validation; original node not claimed PASS."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_passive_ppo_train_timer_counts_actual_updates_and_is_removed_before_save",
+        "classification": "EXTRA_OPTIMIZER_EXECUTION",
+        "status": "NOT RUN",
+        "replacement_evidence": "Single authorized L9S Pilot: real updates, finite optimizer, post-update checkpoint/reload, Training Health and frozen six-scene Validation; original node not claimed PASS."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_analysis_rejects_tampered_completion_and_preserves_negative_outcome",
+        "classification": "HISTORICAL_IDENTITY_OR_DEFECT_EXPECTATION",
+        "status": "NOT RUN",
+        "replacement_evidence": "New independent L9S authorization/failure-evidence tests and read-only original-L9 audit; historical assertion not rewritten."
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_report_readiness_fails_closed_on_missing_failed_or_incomplete_tests",
+        "classification": "HISTORICAL_IDENTITY_OR_DEFECT_EXPECTATION",
+        "status": "NOT RUN",
+        "replacement_evidence": "New independent L9S authorization/failure-evidence tests and read-only original-L9 audit; historical assertion not rewritten."
+      }
+    ],
+    "selected_exclusion_records": [
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_formal_preflight_accepts_only_current_l8_identity",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_checks_disk_on_existing_ancestor_without_creating_output",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_cli_requires_explicit_formal_mode_authorization_and_rejects_initializer",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_l9_driver_writes_real_post_optimizer_health_snapshot",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[weight]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[logger]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_l8_physical_reason_contract_reproduces_formal_stop_without_training",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_interrupted_formal_report_never_claims_exact_completion_or_final_model",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_preflight.py::test_actor_critic_optimizer_and_checkpoint_roundtrip",
+        "reason": "would execute optimizer.step"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_real_sb3_rollouts_update_weights_and_switch_train_scenes",
+        "reason": "would execute PPO.learn"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_refuses_reused_attempt_and_formal_mode_requires_separate_authorization",
+        "reason": "old Pilot authorization contract superseded by L9R no-training gate"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_completed_real_rollout_milestone_saves_after_update_and_validates_without_mutation",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_passive_ppo_train_timer_counts_actual_updates_and_is_removed_before_save",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_analysis_rejects_tampered_completion_and_preserves_negative_outcome",
+        "reason": "old recorded L8 runtime hashes; audited as history not current code"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_report_readiness_fails_closed_on_missing_failed_or_incomplete_tests",
+        "reason": "old recorded L8 runtime hashes; no new readiness claim"
+      }
+    ],
+    "actual_optimizer_updates": 0,
+    "forbidden_calls": [],
+    "scope": "related Bridge, LiDAR, audit, Shadow, targeted legacy controllers; no full-repository run",
+    "full_repository_suite": "NOT RUN: forbidden extra optimizer tests and unrelated historical dependencies are excluded; not an all-history PASS.",
+    "wall_seconds": 132.50716992900016,
+    "peak_rss_mib": 1850.98828125,
+    "minimum_mem_available_mib": 8857.66015625,
+    "evidence_path": "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/final_regression_01.json",
+    "evidence_sha256": "f94c9dfa0474d5267d67be6e3a4ea22f1d6605289a29adb1e9f2609aaaef6a79",
+    "warnings_detail": [
+      "Inherited Matplotlib Axes3D mixed-package warning",
+      "Inherited Gymnasium alternate render-mode check unavailable without registered spec"
+    ],
+    "red_green": [
+      "Independent L9S entry missing: RED, then new entry tests GREEN.",
+      "Validation resource/finite/causality guard and completion-publication rollback: RED -> GREEN before Pilot.",
+      "Analyzer missing/incomplete evidence: first combined suite 827 PASS/39 FAIL/15 deselected; then 867 PASS.",
+      "Post-run read-only analyzer protocol substitution and JSON float overflow: seven RED -> seven GREEN; full analyzer57 PASS.",
+      "Final complete selected suite885 PASS/15 deselected, no optimizer invocations."
+    ],
+    "initial_collection_blocker": "Initial pinned temporary upstream copy missing: collection exit2, zero executed; restored exact source commit, no dependency installation. Not counted as PASS."
+  },
+  "resources": {
+    "workers": 1,
+    "device": "CPU",
+    "pilot_peak_rss_mib": 1607.421875,
+    "pilot_min_mem_available_mib": 9256.953125,
+    "pilot_min_disk_free_bytes": 71999062016,
+    "total_wall_s": 42.40579895100018,
+    "total_cpu_s": 40.15036015,
+    "cpu_one_core_percent": 94.68129629250392,
+    "training_wall_s": 35.82713311999987,
+    "training_throughput_steps_per_s": 114.32675861283133,
+    "physical_simulation_seconds": 163.458,
+    "regression_peak_rss_mib": 1850.98828125,
+    "largest_measured_completed_regression_peak_mib": 1955.390625,
+    "OOM_observed": false,
+    "whole_task_absolute_peak": "NOT AVAILABLE across all short-lived RED/test processes; reported peaks are per measured process.",
+    "long_run_memory_proven": false
+  },
+  "independent_review": {
+    "reviewer": "/root/l9s_preflight_review",
+    "runtime_pre_pilot": "GO",
+    "runtime_sha256": "7ec0c79c5eb90e814f0a904e289fba8a7e81e98d96feadc9167cb81c252e1ff1",
+    "runtime_findings_resolved_before_pilot": [
+      "Validation resource/finite/causality guarding",
+      "atomic completion rollback and cleanup-before-complete",
+      "first Validation failure retains known scene/prior reward"
+    ],
+    "post_pilot_analyzer_review": "GO",
+    "analyzer_sha256": "caaf0ea9692460c450d565664c784576e549e5fc95988d829cc31b7a2a4ce3e6",
+    "analyzer_findings_resolved": [
+      "exact authorized published/artifact protocol binding",
+      "JSON exponent overflow rejection"
+    ],
+    "unresolved_critical_or_important_code_findings": 0,
+    "final_document_result_review": "GO: zero Critical/Important; sealed Pilot, test counts/exclusions, partial episode and historical identities independently checked; read-only review, no execution."
+  },
+  "local_only": {
+    "raw_run": "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01",
+    "console": "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/pilot_console.log",
+    "checkpoint": "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/L9S_REPAIRED_PILOT_ONLY_SEED0.zip",
+    "test_evidence_directory": "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts"
+  },
+  "limitations": [
+    "No successful navigation episode in this bounded Pilot/Validation; do not claim learned obstacle avoidance.",
+    "Natural physical_failure NOT OBSERVED; only forced tests cover its four detailed causes.",
+    "Final partial Train episode is not counted as completed.",
+    "9/12 Train identities visited naturally; no forced extension.",
+    "Single4096-step execution cannot establish million-step stability or exact resume.",
+    "Checkpoint retains WARM_START metadata, but continuation is not authorized and formal interruptions remain RESTART_REQUIRED.",
+    "Optional SB3 Atari cv2 import encounters existing NumPy ABI conflict and is caught; this non-Atari navigation chain does not call it. No environment upgrades.",
+    "No Test evaluation, no formal retraining authorization, no PX4/FAST-LIO2/real hardware."
+  ]
+}
