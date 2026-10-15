@@ -1,0 +1,57 @@
+{
+  "project_id": "MineUAV-Learning",
+  "phase_id": "OPS-01",
+  "runtime_paths": ["researchctl", "research_ops"],
+  "protected_paths": [
+    "mujoco/models", "mujoco/rl/models", "mujoco/reports", "mujoco/control",
+    "mujoco/px4_bridge", "mujoco/lidar_integration",
+    "docs/MUJOCO_LIDAR_PPO_FORMAL_SEED0.md",
+    "docs/MUJOCO_LIDAR_PPO_TERMINATION_REPAIR.md",
+    "docs/MUJOCO_LIDAR_PPO_REPAIRED_INTEGRATION.md"
+  ],
+  "protected_exclusions": ["mujoco/reports/research_operations_v1.json"],
+  "history_worktrees": ["/home/keyousuke/MineUAV-Learning"],
+  "historical_ignored_paths": {
+    "/home/keyousuke/MineUAV-Learning": [
+      "mujoco/rl/datasets", "mujoco/rl/logs", "mujoco/rl/models", "mujoco/reports"
+    ]
+  },
+  "trusted_base_commit": "984a1fd46609dca510eee650ac46bef57fa5e1cf",
+  "original_l9": {
+    "report": "mujoco/reports/mujoco_lidar_ppo_formal_seed0.json",
+    "raw_directory": "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01"
+  },
+  "checkpoint": {
+    "path": "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/L9S_REPAIRED_PILOT_ONLY_SEED0.zip",
+    "sha256": "5fe8c3f2a89a922dda8bcd9ad4025944040adc2fff863d6a34d3892b626bff35",
+    "experiment_id": "L9S_REPAIRED_PILOT_ONLY_SEED0",
+    "resume_class": "WARM_START"
+  },
+  "scenario_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+  "remote": "origin",
+  "expected_remote_url": "https://github.com/dazhihe7005/MineUAV-Learning.git",
+  "readiness_report": "mujoco/reports/research_operations_v1.json",
+  "required_delivery_paths": [
+    "researchctl", "README.md", "docs/CODEX_MASTER_SPEC.md",
+    "docs/RESEARCH_OPERATIONS_PROTOCOL.md", "docs/ENVIRONMENT_LOCK.md",
+    "docs/DAILY_PROGRESS.md", "docs/PROJECT_PROGRESS.md", "docs/CODEX_NEXT_ACTION.md",
+    "docs/PHASE_OPS_01_PERSISTENCE.md", "docs/EXPERIMENT_LOG.md",
+    "mujoco/reports/research_operations_v1.json"
+  ],
+  "sync_files": [
+    ".gitignore", "researchctl", "README.md",
+    "research_ops/__init__.py", "research_ops/storage.py", "research_ops/identity.py",
+    "research_ops/environment.py", "research_ops/documents.py", "research_ops/lifecycle.py",
+    "research_ops/synchronization.py", "research_ops/cli.py",
+    "research_ops/environment_lock.json", "research_ops/operations_config.json",
+    "tests/research_ops/support.py", "tests/research_ops/test_storage.py",
+    "tests/research_ops/test_identity.py", "tests/research_ops/test_lifecycle.py",
+    "tests/research_ops/test_sync.py", "tests/research_ops/test_environment.py",
+    "tests/research_ops/run_suite.py",
+    "docs/CODEX_MASTER_SPEC.md", "docs/OPS01_IMPLEMENTATION_PLAN.md",
+    "docs/RESEARCH_OPERATIONS_PROTOCOL.md", "docs/ENVIRONMENT_LOCK.md",
+    "docs/DAILY_PROGRESS.md", "docs/PROJECT_PROGRESS.md", "docs/CODEX_NEXT_ACTION.md",
+    "docs/RESEARCH_STATUS.json", "docs/PHASE_OPS_01_PERSISTENCE.md",
+    "docs/EXPERIMENT_LOG.md", "mujoco/reports/research_operations_v1.json"
+  ]
+}

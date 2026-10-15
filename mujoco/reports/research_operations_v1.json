@@ -1,0 +1,521 @@
+{
+  "project_id": "MineUAV-Learning",
+  "phase_id": "OPS-01",
+  "master_protocol_version": "MASTER_PROTOCOL_V1.0",
+  "implementation_status": "PASS",
+  "OPS_READY": "YES",
+  "AUTO_TRAINING_AUTHORIZED": "NO",
+  "TRAINING_BUDGET_AVAILABLE": 0,
+  "phase_completion_rule": "Not claimed by this pre-commit snapshot. Requires local phase_complete=true and latest_successful_push.commit equal actual HEAD and origin branch SHA.",
+  "protocol_sha256": "59964b4d2bba385308e62ff0b9f9d8d0818e53ba767aaf398ec20fa95007a5a8",
+  "runtime_identity_sha256": "bd02c8049b806056c47e553c92d32886d0406fc3c777300f1a6b1e8beedf899e",
+  "runtime_identity": {
+    "research_ops/__init__.py": {
+      "kind": "file",
+      "sha256": "dbd6e93af72cfbc0391ccea7c195b78eab30ce93bda421d7a4a56aba81ee275b",
+      "size": 84
+    },
+    "research_ops/cli.py": {
+      "kind": "file",
+      "sha256": "824b9a4579e19860621c94583575a4a147591977ffa225eb137f993307074ab6",
+      "size": 2322
+    },
+    "research_ops/documents.py": {
+      "kind": "file",
+      "sha256": "7191d4a37cf3179b39ecc9b11c8129754ece23bffd91fdbeac5487ac7701c909",
+      "size": 5368
+    },
+    "research_ops/environment.py": {
+      "kind": "file",
+      "sha256": "fbbcaa5ad308f4ddeb7cde8841e2863f167a8ab89f967d4c13b694f50462162b",
+      "size": 5817
+    },
+    "research_ops/environment_lock.json": {
+      "kind": "file",
+      "sha256": "e18681c02268badfb5e10778f7869516037f1b9840ba7c746ab111c75346453f",
+      "size": 1149
+    },
+    "research_ops/identity.py": {
+      "kind": "file",
+      "sha256": "b05b5feeb2dd0075f0ce1a0e502cfbb6dc85644f66deee34374443066058af5f",
+      "size": 5531
+    },
+    "research_ops/lifecycle.py": {
+      "kind": "file",
+      "sha256": "2a07896cf21052a71d9647173577c2bc58879138396ce8630f09474cda891f86",
+      "size": 17501
+    },
+    "research_ops/operations_config.json": {
+      "kind": "file",
+      "sha256": "2f6fa8045d5280eb09da27e7904b86ee32a22835ebdefc39fdc4b144db4fc341",
+      "size": 2954
+    },
+    "research_ops/storage.py": {
+      "kind": "file",
+      "sha256": "6f9101644fcbab13348699ae4b0208c4d59bb1d84afbc18181f70b0d47e95dae",
+      "size": 8108
+    },
+    "research_ops/synchronization.py": {
+      "kind": "file",
+      "sha256": "006e01e30b89e6a4e53e80b068d6a211a7490196cd53d07be8ef76f54eb7558f",
+      "size": 9972
+    },
+    "researchctl": {
+      "kind": "file",
+      "sha256": "ef301c9f73f65c16034e3dec18e24b457e71fd85d9fa24a36c5ac9b6b4fded7b",
+      "size": 195
+    }
+  },
+  "git": {
+    "branch": "feat/research-operations-v1",
+    "actual_base_commit": "984a1fd46609dca510eee650ac46bef57fa5e1cf",
+    "user_reference_base_commit": "77e921f15a3e275df448641672f348991d27a3ce",
+    "difference": "Verified direct L9S successor from preceding conversation; retained, not rerun. Remote matched984a1fd before branch creation.",
+    "delivery_commit": "Resolve actual HEAD and .research_local state after sync; self-referential commit SHA is not fabricated."
+  },
+  "authorization": {
+    "levels": [
+      0,
+      1
+    ],
+    "authorized_training_timesteps": 0,
+    "authorized_training_wall_time": 0,
+    "optimizer_updates": 0,
+    "training_runs": 0,
+    "PX4_runs": 0,
+    "FAST_LIO2_runs": 0,
+    "real_device_connections": 0,
+    "budget_scope": "MASTER_PROTOCOL_V1.0/OPS only; historical consumed training remains separate read-only evidence and grants no new credit."
+  },
+  "commands": {
+    "status": "IMPLEMENTED_AND_TESTED",
+    "doctor": "IMPLEMENTED_AND_TESTED",
+    "start": "IMPLEMENTED_AND_TESTED",
+    "request-stop": "IMPLEMENTED_AND_TESTED",
+    "recover": "IMPLEMENTED_AND_TESTED",
+    "verify": "IMPLEMENTED_AND_TESTED",
+    "sync": "IMPLEMENTED_AND_TESTED"
+  },
+  "command_scope": {
+    "start": "Foreground registered read-only ops-audit; optional0..30s observation window, plus full pre/post integrity checks. No arbitrary command or training adapter.",
+    "request-stop": "Matching atomic request; safe boundary; by default commits and pushes allowlisted delivery. Incomplete failure/interruption remains incomplete.",
+    "recover": "Kernel-lock and boot/start process audit; never resumes ML; corrupt/ambiguous state blocked.",
+    "sync": "Exact path allowlist, all outgoing commits/blobs, effective push URL, no overwrite of user index; failed push retains same committed HEAD as SYNC_PENDING."
+  },
+  "persistence": {
+    "state": ".research_local/research_state.json",
+    "state_integrity": "Strict finite JSON, SHA envelope, fsync+atomic replacement; exclusive attempt publication",
+    "protocol": ".research_local/protocol.json",
+    "budget_ledger": ".research_local/budget_ledger.json",
+    "lock": "Git common-dir/research-operations-v1.lock; shared by linked worktrees",
+    "owner": "Linux boot_id + PID + /proc start_ticks, independently of flock",
+    "resume_policy": "RESTART_REQUIRED",
+    "EXACT_RESUME": "UNSUPPORTED",
+    "BOUNDARY_RESUME": "UNSUPPORTED",
+    "WARM_START": "Checkpoint identity only; not authorized",
+    "source_changes_after_init": "Fail closed; no silent rebaseline or attempt deletion."
+  },
+  "history": {
+    "ops_worktree_protected_files": 1404,
+    "main_worktree_untracked": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "main_worktree_scoped_ignored_files": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "baseline_path": ".research_local/history_baseline.json",
+    "baseline_sha256": "6d04e5030fe4df4b03952d5f881dc37d11b69c44e9ac15467aee19cbc1203966",
+    "baseline_size": 10447594,
+    "catalog_path": ".research_local/artifact_catalog/manifest.json",
+    "catalog_sha256": "86d506735e12f5397ddd11a10a97df6fb1fb03cc5550ba4eec7c6e2e8d2e4538",
+    "catalog_records": 44426,
+    "catalog_pages": 174,
+    "provenance": "Path/size/SHA per file. Known L9S path association explicit; uncertain historical origins remain NOT_VERIFIED, never guessed.",
+    "original_l9": "FAIL retained; all raw files checked against old report, no completion marker added.",
+    "L9R": "Nine runtime sources, repair protocol and formal_retrain_authorized=false unchanged.",
+    "L9S": "Existing4096-step result retained; no new Pilot."
+  },
+  "environment": {
+    "executable": "/usr/bin/python3.10",
+    "modules": {
+      "mujoco": {
+        "file": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/mujoco/__init__.py",
+        "real_MjModel_API": true,
+        "version": "3.14.0"
+      },
+      "numpy": {
+        "file": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/numpy/__init__.py",
+        "version": "2.2.6"
+      },
+      "torch": {
+        "file": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/torch/__init__.py",
+        "version": "2.14.0+cpu"
+      }
+    },
+    "packages": {
+      "gymnasium": "1.3.0",
+      "mujoco": "3.14.0",
+      "numpy": "2.2.6",
+      "stable-baselines3": "2.9.0",
+      "torch": "2.14.0+cpu"
+    },
+    "python": "3.10.12",
+    "upstream": {
+      "commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+      "directory": "/home/keyousuke/MineUAV-Learning-px4-sitl/.research_local/dependencies/MuJoCo-LiDAR",
+      "pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3"
+    }
+  },
+  "environment_limits": {
+    "OpenCV_NumPy_ABI": "Existing optional Atari/OpenCV import conflict retained; current OPS and navigation CPU path does not call Atari. No packages upgraded.",
+    "tmp_dependency": "OPS uses independent durable .research_local/dependencies clone at pinned commit; no objects depend on temporary copy.",
+    "legacy_test_portability": "UNSUPPORTED without matching legacy/tmp compatibility path; failed mixed-root run preserved; no old tests/source modified."
+  },
+  "live_checks": {
+    "complete": true,
+    "commands": [
+      {
+        "command": [
+          "init"
+        ],
+        "exit_code": 0,
+        "wall_seconds": 9.117120253000394
+      },
+      {
+        "command": [
+          "doctor",
+          "--restore-dependencies",
+          "--source",
+          "/tmp/mineuav-mujoco-lidar-audit"
+        ],
+        "exit_code": 0,
+        "wall_seconds": 11.144430260000263
+      },
+      {
+        "command": [
+          "status"
+        ],
+        "exit_code": 0,
+        "wall_seconds": 0.027024623999750474
+      },
+      {
+        "command": [
+          "start",
+          "--task",
+          "ops-audit"
+        ],
+        "exit_code": 0,
+        "wall_seconds": 10.990957799999705
+      },
+      {
+        "command": [
+          "recover"
+        ],
+        "exit_code": 0,
+        "wall_seconds": 5.500747033999687
+      },
+      {
+        "command": [
+          "verify"
+        ],
+        "exit_code": 0,
+        "wall_seconds": 5.484080148999965
+      }
+    ],
+    "evidence": {
+      "path": ".research_local/verification/live_ops_01.json",
+      "sha256": "2627ebdae03b7fe49493466daae3bb592832e49a6bd9f8a672517db196816e3d"
+    },
+    "wall_seconds": 42.26466467899991,
+    "maximum_child_peak_rss_mib": 238.765625,
+    "actual_git_delivery": "Final request-stop/sync must run after this report; actual receipt kept locally."
+  },
+  "tests": {
+    "status": "PASS",
+    "runtime_identity_sha256": "bd02c8049b806056c47e553c92d32886d0406fc3c777300f1a6b1e8beedf899e",
+    "test_source_identity": {
+      "tests/research_ops/run_suite.py": {
+        "kind": "file",
+        "sha256": "15e7e86f24fe96ba1d3f2ebc544e9a47144a12d3c40e6912007ef92e1195b6d7",
+        "size": 3380
+      },
+      "tests/research_ops/support.py": {
+        "kind": "file",
+        "sha256": "98be3e6f1810fb63798db85adf6f750ef70b9f5a52ffd98b2bca8ee69ebfffe0",
+        "size": 1804
+      },
+      "tests/research_ops/test_environment.py": {
+        "kind": "file",
+        "sha256": "516e2ef4e954a0717f022abdbbee495b8c595c558d8e8bcda55afccc3017b60c",
+        "size": 3709
+      },
+      "tests/research_ops/test_identity.py": {
+        "kind": "file",
+        "sha256": "590bf9afa55bb56d1de9c32f508874d76edfe61361bbcc7f1879d64b1a9b1d02",
+        "size": 3638
+      },
+      "tests/research_ops/test_lifecycle.py": {
+        "kind": "file",
+        "sha256": "0c1b1a381c2efcb42a40ad3df65d924eb8389525093cd7fecacb0a26020c64e3",
+        "size": 10011
+      },
+      "tests/research_ops/test_storage.py": {
+        "kind": "file",
+        "sha256": "00f23e40537941ef932cfb907160b015e789ad0af95d2a247b24741246dfde07",
+        "size": 4084
+      },
+      "tests/research_ops/test_sync.py": {
+        "kind": "file",
+        "sha256": "1bd4bafc9ea15ddd7e43f7a9c9a51fc2191fbb0d6fb5c9c1cd54d608ac54e1f0",
+        "size": 8700
+      }
+    },
+    "evidence": {
+      "path": ".research_local/verification/ops_final.json",
+      "sha256": "aa8cba5422cbd5a7e1d2cc41cffa713f261b405a5edc486691843236089787bb"
+    },
+    "ops_passed": 49,
+    "ops_failed": 0,
+    "ops_errors": 0,
+    "ops_skipped": 0,
+    "ops_wall_seconds": 3.560839804999887,
+    "ops_peak_rss_mib": 482.13671875,
+    "ops_minimum_mem_available_mib": 9954.71484375,
+    "ops_ML_imports": "FORBIDDEN_IN_UNIT_PROCESS",
+    "inherited_passed": 885,
+    "inherited_failed": 0,
+    "inherited_deselected": [
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_formal_preflight_accepts_only_current_l8_identity",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_checks_disk_on_existing_ancestor_without_creating_output",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_cli_requires_explicit_formal_mode_authorization_and_rejects_initializer",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_l9_driver_writes_real_post_optimizer_health_snapshot",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[weight]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[logger]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_l8_physical_reason_contract_reproduces_formal_stop_without_training",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_interrupted_formal_report_never_claims_exact_completion_or_final_model",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_preflight.py::test_actor_critic_optimizer_and_checkpoint_roundtrip",
+        "reason": "would execute optimizer.step"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_real_sb3_rollouts_update_weights_and_switch_train_scenes",
+        "reason": "would execute PPO.learn"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_refuses_reused_attempt_and_formal_mode_requires_separate_authorization",
+        "reason": "old Pilot authorization contract superseded by L9R no-training gate"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_completed_real_rollout_milestone_saves_after_update_and_validates_without_mutation",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_passive_ppo_train_timer_counts_actual_updates_and_is_removed_before_save",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_analysis_rejects_tampered_completion_and_preserves_negative_outcome",
+        "reason": "old recorded L8 runtime hashes; audited as history not current code"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_report_readiness_fails_closed_on_missing_failed_or_incomplete_tests",
+        "reason": "old recorded L8 runtime hashes; no new readiness claim"
+      }
+    ],
+    "inherited_warnings": 2,
+    "inherited_wall_seconds": 125.19561005299965,
+    "inherited_peak_rss_mib": 1991.1171875,
+    "inherited_minimum_mem_available_mib": 8209.18359375,
+    "inherited_evidence": {
+      "path": ".research_local/verification/inherited_legacy_paths.json",
+      "sha256": "e763aa6de8516571ce544efb04e3763d73b8fc374d77a24c716a7fc0f64a9d62"
+    },
+    "actual_optimizer_updates": 0,
+    "forbidden_calls": [],
+    "combined_unique_selected_passes": 934,
+    "count_note": "49 OPS +885 inherited in separate complete runs; not one934-test run and not full-repository coverage.",
+    "red_green": "Missing storage/lifecycle/sync APIs reproduced RED; added corruption/attempt/public-state/typed-budget/parent-symlink and six review-finding regressions failed before fixes and pass in final49. One test-fixture misplaced block caused NameError during development and was corrected before final run."
+  },
+  "preserved_failed_regression": {
+    "status": "FAIL",
+    "cause": "Mixed imported persistent source versus hardcoded/tmp roots; scanner correctly rejected source mismatch.",
+    "passed": 812,
+    "failed": 64,
+    "setup_errors": 9,
+    "deselected": 15,
+    "forbidden_optimizer_calls": [],
+    "evidence_path": ".research_local/verification/inherited_regression.json",
+    "evidence_sha256": "245b03bdb3e1a3f333e308c44979b7cb790c51b675e0359e7ac52fae78de3557",
+    "failed_nodes": [
+      "mujoco/lidar_integration/test_failure_evidence.py::test_returned_invalid_terminal_records_complete_transition_before_raising",
+      "mujoco/lidar_integration/test_failure_evidence.py::test_lower_step_exception_records_last_known_context_without_fake_info",
+      "mujoco/lidar_integration/test_failure_evidence.py::test_nonfinite_quaternion_exception_is_captured_as_unreturned_context",
+      "mujoco/lidar_integration/test_failure_evidence.py::test_capture_write_failure_cannot_allow_step_to_continue",
+      "mujoco/lidar_integration/test_failure_evidence.py::test_failure_latch_cannot_be_cleared_by_reset",
+      "mujoco/lidar_integration/test_failure_evidence.py::test_health_wrapper_logs_canonical_physical_terminal_in_new_directory",
+      "mujoco/lidar_integration/test_failure_evidence.py::test_health_nonfinite_position_is_recorded_as_unavailable_not_guessed_or_raised",
+      "mujoco/lidar_integration/test_failure_evidence.py::test_health_append_failure_captures_returned_result_and_latches",
+      "mujoco/lidar_integration/test_navigation_env.py::test_reset_and_step_use_old_controller_with_dict_observation_and_exact_rates",
+      "mujoco/lidar_integration/test_navigation_env.py::test_lidar_is_generated_at_physics_tick_50_and_never_from_future",
+      "mujoco/lidar_integration/test_navigation_env.py::test_real_contact_with_box_terminates_but_clearance_does_not",
+      "mujoco/lidar_integration/test_navigation_env.py::test_boundary_wall_contact_is_a_collision_not_a_free_flight_escape",
+      "mujoco/lidar_integration/test_navigation_env.py::test_real_contact_precedes_simultaneous_tilt_failure",
+      "mujoco/lidar_integration/test_navigation_env.py::test_reset_refuses_target_inside_a_physical_obstacle",
+      "mujoco/lidar_integration/test_navigation_env.py::test_success_timeout_and_physical_failure_remain_distinct",
+      "mujoco/lidar_integration/test_navigation_env.py::test_stale_scan_stops_before_another_action_and_reset_clears_cache_and_pi",
+      "mujoco/lidar_integration/test_navigation_env.py::test_physical_failure_is_not_relabelled_as_sensor_failure",
+      "mujoco/lidar_integration/test_navigation_env.py::test_old_physical_model_and_nominal_env_remain_unchanged",
+      "mujoco/lidar_integration/test_navigation_env.py::test_gymnasium_environment_checker_accepts_deterministic_info",
+      "mujoco/lidar_integration/test_navigation_runner.py::test_small_preflight_produces_real_episode_evidence_and_seven_figures",
+      "mujoco/lidar_integration/test_navigation_runner.py::test_old_scene_geometry_and_model_hash_are_preserved_after_real_preflight",
+      "mujoco/lidar_integration/test_navigation_scene.py::test_real_cpu_rays_see_front_box_that_physically_collides",
+      "mujoco/lidar_integration/test_navigation_scene.py::test_each_initial_obstacle_has_real_lidar_returns_in_fixed_layouts",
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py::test_train_scheduler_draws_only_train_and_is_reproducible",
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py::test_all_train_rows_initialize_exactly_and_switch_resets_state",
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py::test_sampler_state_does_not_change_on_explicit_coverage_reset",
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py::test_validation_is_independent_and_reports_six_untrained_probe_outcomes",
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py::test_checkpoint_is_atomic_identity_verified_and_warm_start_only",
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py::test_bounded_probe_never_trains_or_runs_test_episode",
+      "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_passive_health_wrapper_preserves_real_transitions_and_records_episode",
+      "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_health_monitor_stops_on_disk_pressure_without_false_completion",
+      "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_health_fails_closed_if_l9_runtime_source_changes",
+      "mujoco/lidar_integration/test_ppo_preflight.py::test_scenario_uses_actual_reset_pose_not_legacy_endpoint_sampler",
+      "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_checkpoint_sidecar_binds_explicit_l8_execution_protocol",
+      "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_validation_rng_mutation_is_detected_before_event_completion",
+      "mujoco/lidar_integration/test_repaired_pilot.py::test_real_pilot_observation_is_causal_and_budget_latches_before_physics",
+      "mujoco/lidar_integration/test_repaired_pilot.py::test_future_lidar_and_nonfinite_state_rejected_before_policy",
+      "mujoco/lidar_integration/test_repaired_pilot.py::test_validation_guard_checks_disk_before_step_and_restores_factory",
+      "mujoco/lidar_integration/test_repaired_pilot.py::test_validation_guard_preserves_returned_evidence_for_new_faults[nonfinite]",
+      "mujoco/lidar_integration/test_repaired_pilot.py::test_validation_guard_preserves_returned_evidence_for_new_faults[future]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_real_terminal_chain_preserves_transitions_and_counts_once[success-success-True-False]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_real_terminal_chain_preserves_transitions_and_counts_once[collision-collision-True-False]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_real_terminal_chain_preserves_transitions_and_counts_once[time_limit-time_limit-False-True]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_real_terminal_chain_preserves_transitions_and_counts_once[sensor_failure-sensor_failure-True-False]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_real_terminal_chain_preserves_transitions_and_counts_once[z_below_zero-physical_failure-True-False]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_real_terminal_chain_preserves_transitions_and_counts_once[outside_flight_area-physical_failure-True-False]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_real_terminal_chain_preserves_transitions_and_counts_once[excessive_tilt-physical_failure-True-False]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_real_terminal_chain_preserves_transitions_and_counts_once[nonfinite_state-physical_failure-True-False]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_forced_terminal_statistics_survive_untrained_checkpoint_association",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_validation_missing_terminal_cases_share_classifier_without_updates[success-success]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_validation_missing_terminal_cases_share_classifier_without_updates[collision-collision]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_validation_missing_terminal_cases_share_classifier_without_updates[time_limit-time_limit]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_validation_missing_terminal_cases_share_classifier_without_updates[sensor_failure-sensor_failure]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_validation_missing_terminal_cases_share_classifier_without_updates[z_below_zero-physical_failure]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_validation_missing_terminal_cases_share_classifier_without_updates[excessive_tilt-physical_failure]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_health_nested_failure_capture_preserves_first_evidence_and_latches[invalid_return]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_health_nested_failure_capture_preserves_first_evidence_and_latches[bottom_step_raises]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_health_evidence_persistence_failure_cannot_resume_or_overwrite[write_failure]",
+      "mujoco/lidar_integration/test_repaired_terminal_chain.py::test_health_evidence_persistence_failure_cannot_resume_or_overwrite[existing_event]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_boundary_failure_is_counted_without_l9_exception",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_all_terminals_preserve_reward_and_raw_reason[success-success-True-False]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_all_terminals_preserve_reward_and_raw_reason[collision-collision-True-False]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_all_terminals_preserve_reward_and_raw_reason[time_limit-time_limit-False-True]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_all_terminals_preserve_reward_and_raw_reason[sensor_failure-sensor_failure-True-False]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_all_terminals_preserve_reward_and_raw_reason[z_below_zero-physical_failure-True-False]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_all_terminals_preserve_reward_and_raw_reason[outside_flight_area-physical_failure-True-False]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_all_terminals_preserve_reward_and_raw_reason[excessive_tilt-physical_failure-True-False]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_forced_mujoco_all_terminals_preserve_reward_and_raw_reason[nonfinite_state-physical_failure-True-False]",
+      "mujoco/lidar_integration/test_termination_repair.py::test_refreshed_floor_contact_keeps_collision_priority_over_negative_altitude",
+      "mujoco/lidar_integration/test_validation_termination_repair.py::test_validation_preserves_canonical_physical_reason_and_never_serializes_nan[outside_flight_area]",
+      "mujoco/lidar_integration/test_validation_termination_repair.py::test_validation_preserves_canonical_physical_reason_and_never_serializes_nan[nonfinite_state]",
+      "mujoco/lidar_integration/test_validation_termination_repair.py::test_validation_inconsistent_return_is_persisted_before_environment_close",
+      "mujoco/lidar_integration/test_validation_termination_repair.py::test_validation_reset_exception_cannot_invent_a_policy_step_attempt"
+    ],
+    "peak_rss_mib": 3397.6171875,
+    "minimum_mem_available_mib": 6716.546875
+  },
+  "review": {
+    "status": "GO",
+    "method": "SELF_REVIEW_AFTER_INDEPENDENT_INITIAL_FINDINGS_AND_RED_GREEN_FIXES",
+    "runtime_identity_sha256": "bd02c8049b806056c47e553c92d32886d0406fc3c777300f1a6b1e8beedf899e",
+    "independent_initial_reviewer": "/root/ops01_readonly_review",
+    "independent_initial_verdict": "NO_GO:0 Critical,6 Important,2 Minor",
+    "findings": [
+      {
+        "finding": "Outgoing unpublished commits bypassed file allowlist",
+        "regression": "test_existing_unpublished_commit_outside_allowlist_is_never_pushed",
+        "resolution": "Audit every post-base commit and intermediate blob before push.",
+        "closure": "CONFIRMED_BY_FINAL_REGRESSION_AND_AUTHOR_REVIEW"
+      },
+      {
+        "finding": "Alternate remote pushurl was unchecked",
+        "regression": "test_alternate_pushurl_is_rejected_before_any_publication",
+        "resolution": "Require all effective push destinations equal the fixed fetch destination.",
+        "closure": "CONFIRMED_BY_FINAL_REGRESSION_AND_AUTHOR_REVIEW"
+      },
+      {
+        "finding": "Ignored main-worktree history was omitted",
+        "regression": "test_ignored_historical_dataset_is_protected_in_other_worktree",
+        "resolution": "Scoped streaming inventories cover ignored datasets/logs/models/reports.",
+        "closure": "CONFIRMED_BY_FINAL_REGRESSION_AND_AUTHOR_REVIEW"
+      },
+      {
+        "finding": "Interrupted/failed attempt closeout was inconsistent",
+        "regression": "test_stop_after_recovery_preserves_interrupted_experiment_status; test_failed_running_audit_blocks_retry_and_can_be_safely_reported",
+        "resolution": "Preserve INTERRUPTED/FAIL; forbid retry; report without promoting safe completion.",
+        "closure": "CONFIRMED_BY_FINAL_REGRESSION_AND_AUTHOR_REVIEW"
+      },
+      {
+        "finding": "Readiness accepted unbound PASS/GO strings",
+        "regression": "test_three_positive_strings_do_not_prove_stage_readiness; test_only_matching_runtime_and_test_evidence_can_complete_delivery",
+        "resolution": "Bind report to protocol, runtime, test sources and raw test-evidence hash; verify pending committed report.",
+        "closure": "CONFIRMED_BY_FINAL_REGRESSION_AND_AUTHOR_REVIEW"
+      },
+      {
+        "finding": "Untracked dependency startup code could execute before checking",
+        "regression": "test_untracked_startup_code_is_rejected_before_python_probe",
+        "resolution": "Inspect pinned source first; reject all extra content except explicit pycache/pyc caches.",
+        "closure": "CONFIRMED_BY_FINAL_REGRESSION_AND_AUTHOR_REVIEW"
+      }
+    ],
+    "minor_closure": [
+      "CLI exit status now considers nested failure/interruption.",
+      "Generated next action derives from actual sync/blocked/maintenance state."
+    ],
+    "remaining_known_critical_important": 0,
+    "final_independent_code_certification": "NOT TESTED; do not represent author fix review as independent final GO."
+  },
+  "limitations": [
+    "No training authority installation CLI or arbitrary new phase/task executor in V1; future adapters require a new reviewed protocol.",
+    "No unattended AI or startup service; user starts Codex after boot.",
+    "No training exact/boundary resume; historical checkpoint only hash-verified.",
+    "Cooperative flock does not stop unrelated programs that bypass researchctl.",
+    "No claim of adversarial security against arbitrary same-user file writes, or complete secret detection.",
+    "Local-only raw/model preservation is not a remote backup.",
+    "No simulated power outage at filesystem/kernel level: actual SIGKILL subprocess recovery tested instead.",
+    "Snapshot commit/push fields describe their recorded time; current completion is resolved from live Git and local verified receipt.",
+    "Legacy full test path portability remains a separate L1 follow-up; OPS runtime itself uses durable source."
+  ],
+  "next_authorized_work": "Level0/1 audit/design of legacy regression dependency-path portability and existing L9/L9S evidence. New training/PX4/real devices remain BLOCKED for authorization.",
+  "resource_summary": {
+    "OOM_observed": false,
+    "worker_count": 1,
+    "maximum_measured_process_peak_mib": 3397.6171875,
+    "minimum_sampled_available_mib": 6716.546875,
+    "scope_note": "Per-process peaks, not summed whole-system RSS; task-wide absolute peak across every short RED process not continuously sampled."
+  }
+}

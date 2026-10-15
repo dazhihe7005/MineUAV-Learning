@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+"""Repository-local research lifecycle entry; no ML import or background service."""
+from research_ops.cli import main
+
+if __name__ == '__main__':
+    raise SystemExit(main())

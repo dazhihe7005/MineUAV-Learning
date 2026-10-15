@@ -87,6 +87,7 @@ mujoco/reports/**/*_trace.json
 mujoco/reports/**/*_traces.json
 docs/superpowers/
 .superpowers/
+.research_local/
 
 # Raw datasets/derived latent arrays already covered by *.npz and *.npy above.
 # Keep manifest/config/hash metadata, not transient logs or replay checkpoints.

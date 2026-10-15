@@ -1,0 +1,27 @@
+{
+  "interpreter": "/usr/bin/python3.10",
+  "interpreter_sha256": "a2f33a6e006989270f4340528eb61f8f97366e00a5d1b602ac8672ea44fc56ae",
+  "python_version": "3.10.12",
+  "package_root": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages",
+  "packages": {
+    "mujoco": "3.14.0",
+    "stable-baselines3": "2.9.0",
+    "torch": "2.14.0+cpu",
+    "gymnasium": "1.3.0",
+    "numpy": "2.2.6"
+  },
+  "modules": ["mujoco", "numpy", "torch"],
+  "upstream": {
+    "directory": ".research_local/dependencies/MuJoCo-LiDAR",
+    "url": "https://github.com/discoverse-dev/MuJoCo-LiDAR.git",
+    "commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+    "pattern_path": "src/mujoco_lidar/scan_mode/mid360.npy",
+    "pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3"
+  },
+  "environment_variables": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  },
+  "known_warning": "System OpenCV built against NumPy1 ABI is incompatible with NumPy2.2.6. SB3 optional Atari import catches ImportError; current navigation does not use Atari/OpenCV. No global upgrade is authorized."
+}
