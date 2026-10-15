@@ -1,6 +1,7 @@
 """L8 rollout-aligned training orchestration contracts."""
 
 from __future__ import annotations
+from research_regression.upstream import resolve_upstream
 
 from pathlib import Path
 from types import SimpleNamespace
@@ -26,7 +27,7 @@ from .ppo_training_runner import protocol_hash
 
 
 PREREG = Path(__file__).resolve().parents[1] / "reports/mujoco_lidar_ppo_training_prereg_seed0.json"
-UPSTREAM = Path("/tmp/mineuav-mujoco-lidar-audit")
+UPSTREAM = resolve_upstream()
 
 
 def test_frozen_milestones_align_up_without_misreporting_nominal_budget():

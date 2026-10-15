@@ -1,5 +1,6 @@
 """Dynamic replay contracts using actual MuJoCo time and CPU rays."""
 
+from research_regression.upstream import resolve_upstream
 import math
 import os
 from pathlib import Path
@@ -11,7 +12,7 @@ from lidar_integration.scene import make_scene
 from lidar_integration.scanner import Mid360Scanner
 
 
-UPSTREAM = Path(os.environ["MINEUAV_LIDAR_UPSTREAM"])
+UPSTREAM = resolve_upstream()
 
 
 def test_integer_tick_schedule_is_shared_500hz_clock():

@@ -1,5 +1,6 @@
 """Angular policy observations from the previous real MuJoCo ray frames."""
 
+from research_regression.upstream import resolve_upstream
 import hashlib
 import json
 from dataclasses import replace
@@ -92,7 +93,7 @@ def test_real_mujoco_roll_pitch_pose_changes_local_encoding_but_not_world_wall()
     from lidar_integration.scanner import Mid360Scanner
     from lidar_integration.scene import make_scene, set_uav_pose
 
-    root = os.environ.get("MINEUAV_LIDAR_UPSTREAM")
+    root = resolve_upstream()
     if not root:
         pytest.skip("pinned upstream MuJoCo-LiDAR checkout unavailable")
     encoder = AngularRangeEncoder()

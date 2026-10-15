@@ -682,12 +682,18 @@ Sim2Real
 
 > **面向黑暗、狭窄矿井环境的感知驱动、预测式自主飞行。**
 
+## OPS-02：当前管理入口
+
+当前研发分支：`feat/research-operations-v2`。V2使用独立状态及版本化登记，旧V1源码、协议、预算和历史实验保持原身份。便携相关回归885通过、15排除；V1管理49项与V2新增34项通过。发布是否完成、远端SHA以 `./researchctl-v2 status` 收据为准。
+
+日常运行 `./researchctl-v2 status`、`recover`、`doctor`；停止使用 `request-stop`，同步使用 `sync`。详见[新版操作协议](docs/RESEARCH_OPERATIONS_V2.md)、[阶段报告](docs/PHASE_OPS_02_PORTABILITY.md)。当前训练预算0，禁止optimizer更新、Pilot、正式训练与PX4。算法导航性能本阶段没有新结论。以下V1块保留为历史快照，不作为当前操作入口。
+
 <!-- RESEARCH_OPS_V1_BEGIN -->
 ## 当前研究管理状态
 
 阶段：OPS-01；状态：SAFE_STOPPED。
 
-分支：`feat/research-operations-v1`。快照基于Commit：`984a1fd46609dca510eee650ac46bef57fa5e1cf`。
+分支：`feat/research-operations-v1`。快照基于Commit：`37b6d90e84ba0554db3574c9913413ee93c58e41`。
 
 当前Commit以 `git rev-parse HEAD` 为准；快照不能包含它自身尚未创建的Commit SHA。最近成功推送及实时完成状态见 `./researchctl status` 的核验收据。
 

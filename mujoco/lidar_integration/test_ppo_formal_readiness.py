@@ -1,6 +1,7 @@
 """L7 contracts; real MuJoCo paths, no PPO learning call."""
 
 from __future__ import annotations
+from research_regression.upstream import resolve_upstream
 
 import copy
 import json
@@ -20,7 +21,7 @@ from .ppo_formal_analysis import build_readiness_report
 
 ROOT = Path(__file__).resolve().parents[1]
 PREREG = ROOT / "reports/mujoco_lidar_ppo_training_prereg_seed0.json"
-UPSTREAM = Path("/tmp/mineuav-mujoco-lidar-audit")
+UPSTREAM = resolve_upstream()
 
 
 def test_frozen_manifest_rejects_recomputed_but_unregistered_scene(tmp_path):

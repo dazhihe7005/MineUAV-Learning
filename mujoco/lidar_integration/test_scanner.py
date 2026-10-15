@@ -1,5 +1,6 @@
 """Boundary tests against the pinned real MuJoCo-LiDAR CPU backend."""
 
+from research_regression.upstream import resolve_upstream
 import hashlib
 import math
 import os
@@ -13,7 +14,7 @@ from mujoco_lidar import MjLidarWrapper
 from lidar_integration.scene import make_scene, set_uav_pose
 
 
-UPSTREAM = Path(os.environ["MINEUAV_LIDAR_UPSTREAM"])
+UPSTREAM = resolve_upstream()
 
 
 def scanner_api():

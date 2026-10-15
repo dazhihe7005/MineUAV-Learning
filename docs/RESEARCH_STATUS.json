@@ -22,10 +22,15 @@
   "current_branch": "feat/research-operations-v1",
   "experiment_id": "OPS01_AUDIT_ceac901a31af4121873c1d3774bd8c26",
   "last_shutdown_status": "SAFE_STOPPED",
-  "last_update_time": "2026-10-15T08:37:48+00:00",
+  "last_update_time": "2026-10-15T09:09:17+00:00",
   "last_verified_actual_timesteps": 0,
-  "latest_commit": "984a1fd46609dca510eee650ac46bef57fa5e1cf",
-  "latest_successful_push": "NOT_VERIFIED",
+  "latest_commit": "37b6d90e84ba0554db3574c9913413ee93c58e41",
+  "latest_successful_push": {
+    "branch": "feat/research-operations-v1",
+    "commit": "37b6d90e84ba0554db3574c9913413ee93c58e41",
+    "remote": "origin",
+    "verified_at": "2026-10-15T08:37:57+00:00"
+  },
   "next_action": "ops-audit",
   "phase_id": "OPS-01",
   "project_id": "MineUAV-Learning",

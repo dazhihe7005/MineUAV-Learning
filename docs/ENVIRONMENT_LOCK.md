@@ -1,5 +1,13 @@
 # MineUAV-Learning Environment Lock
 
+## OPS-02当前入口与便携回归
+
+当前V2分支使用 `./researchctl-v2 doctor`。本节是V2补充，以下OPS-01路径限制描述保留为历史记录，不代表修复后的当前状态。缺持久源码时可显式运行 `./researchctl-v2 doctor --restore-dependencies`：复用原固定提交恢复工具，不覆盖现存错误目录，不安装包。缺包/解释器仍BLOCKED。
+
+17份LiDAR测试已统一使用 `research_regression.upstream.resolve_upstream`：显式 `MINEUAV_LIDAR_UPSTREAM`，否则锁定持久路径；无/tmp回退。源码commit、工作树、patternSHA仍强校验。`python3 -m research_regression.run --suite historical --evidence .research_local/<新的唯一证据名>.json` 构造一致的锁定环境并记录真实包目录。禁止直接混用系统namespace与真实MuJoCo包。
+
+OPS-02在禁止访问旧/tmp路径的进程中实际完成885项相关历史回归（15排除）。该模拟不改动真实/tmp副本。上游commit、pattern、MuJoCo/SB3/Torch版本与下表相同；系统Python、原venv、swap均未改变。管理自身可用标准库运行；真实扫描回归仍需要已锁定的MuJoCo环境。
+
 机器可读清单：`research_ops/environment_lock.json`。管理CLI仅使用Python标准库，不导入SB3/PPO。原历史环境和全部历史实验身份保留。
 
 | 项目 | 固定值 |

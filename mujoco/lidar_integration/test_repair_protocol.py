@@ -1,5 +1,6 @@
 """Offline L9R identity/authorization checks; tripwire forbids PPO construction."""
 
+from research_regression.upstream import resolve_upstream
 from pathlib import Path
 
 import pytest
@@ -9,7 +10,7 @@ from .ppo_training_orchestration import FormalPPOTrainingDriver, l8_execution_pr
 from .ppo_training_runner import protocol_hash
 
 
-UPSTREAM = Path("/tmp/mineuav-mujoco-lidar-audit")
+UPSTREAM = resolve_upstream()
 PREREG = Path(__file__).resolve().parents[1] / "reports/mujoco_lidar_ppo_training_prereg_seed0.json"
 OLD_PROTOCOL = "fe07816f48bd4183165db482d8c93de50c637a32d13d86eccb47667d85e8cef6"
 

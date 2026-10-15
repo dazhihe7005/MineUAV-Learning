@@ -1,0 +1,816 @@
+{
+  "AUTO_TRAINING_AUTHORIZED": "NO",
+  "DAILY_RESTART_READY": "YES",
+  "FAST_LIO2_runs": 0,
+  "OPS_V2_READY": "YES",
+  "PORTABLE_REGRESSION_READY": "YES",
+  "actual_runtime": {
+    "commands": [
+      {
+        "arguments": [
+          "status"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "recover"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "doctor"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "start",
+          "--task",
+          "audit"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "request-stop",
+          "--no-sync"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "recover"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "verify"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "start",
+          "--task",
+          "operations"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "start",
+          "--task",
+          "snapshot"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "start",
+          "--task",
+          "l9-analysis"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "request-stop",
+          "--no-sync"
+        ],
+        "returncode": 0
+      },
+      {
+        "arguments": [
+          "verify"
+        ],
+        "returncode": 0
+      }
+    ],
+    "evidence": [
+      {
+        "path": ".research_local/ops_v2_validation/actual_v2_runtime_01.json",
+        "sha256": "a555e820864d6432387506df7ba5943be4c853e3ec368d992bde4ea10cf4c6af",
+        "size_bytes": 9874
+      },
+      {
+        "path": ".research_local/ops_v2_validation/actual_v2_runtime_02.json",
+        "sha256": "4d7654b59f3b940fa2dfeb497430951813a5c44d7a91fcb84c1a49c6b0ccfea9",
+        "size_bytes": 3983
+      }
+    ],
+    "fresh_process_recover_status": "PASS",
+    "migration_status": "PASS",
+    "registered_task_types": [
+      "offline-audit",
+      "regression-check",
+      "regression-check",
+      "documentation-update",
+      "experiment-analysis"
+    ],
+    "resume_class": "RESTART_REQUIRED",
+    "stage_status": "SAFE_STOPPED",
+    "status": "PASS",
+    "training_task_registration": "REFUSED"
+  },
+  "base_commit": "37b6d90e84ba0554db3574c9913413ee93c58e41",
+  "branch": "feat/research-operations-v2",
+  "history": {
+    "all_historical_models_raw_and_attempts": "\u8eab\u4efd\u6838\u9a8c\u901a\u8fc7\uff0c\u539fL9\u7ee7\u7eedFAIL",
+    "checkpoint": {
+      "continuation_authorized": false,
+      "experiment_id": "L9S_REPAIRED_PILOT_ONLY_SEED0",
+      "path": "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/L9S_REPAIRED_PILOT_ONLY_SEED0.zip",
+      "resume_class": "WARM_START",
+      "sha256": "5fe8c3f2a89a922dda8bcd9ad4025944040adc2fff863d6a34d3892b626bff35",
+      "verification": "FILE_SHA256_ONLY"
+    },
+    "exception_note": "1404\u9879\u4fdd\u62a4\u6e05\u5355\u4ec517\u4efd\u6d4b\u8bd5\u5939\u5177\u91c7\u7528\u663e\u5f0f\u5ba1\u67e5before/after\uff1b\u5e76\u975e\u58f0\u79f0\u8fd9\u4e9b\u6d4b\u8bd5\u5b57\u8282\u672a\u6539",
+    "original_l9": {
+      "original_result": "FAIL",
+      "raw_file_count": 11,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "v1_files_and_backups": {
+      "budget_ledger.json": {
+        "kind": "file",
+        "sha256": "2f226c86ff054f3875e6ecdf9166776f9b13dfa6bad0b5b0d1237de136ff5621",
+        "size": 308
+      },
+      "history_baseline.json": {
+        "kind": "file",
+        "sha256": "6d04e5030fe4df4b03952d5f881dc37d11b69c44e9ac15467aee19cbc1203966",
+        "size": 10447594
+      },
+      "initialization.attempt.json": {
+        "kind": "file",
+        "sha256": "f9912e5934fd7cab2fa2c35c7b7d7d288c2223d8a0d13456e89bde9f77e5a36b",
+        "size": 161
+      },
+      "initialization.complete.json": {
+        "kind": "file",
+        "sha256": "0e60795b176765d5620a784aee643ac6d13d8d9d3197b91d4ac60e293a0d8357",
+        "size": 153
+      },
+      "protocol.json": {
+        "kind": "file",
+        "sha256": "c8f415aae89bb95a0f9dc1b4c74db1898cc58ec4cff1f0d7134da6440d623ddf",
+        "size": 2800
+      },
+      "research_state.json": {
+        "kind": "file",
+        "sha256": "18057d65570e79ff25bcef921e85805a5a632b667c20b92d6849d4dd24879ba9",
+        "size": 2520
+      },
+      "runs/OPS01_ceac901a31af4121873c1d3774bd8c26/attempt.json": {
+        "kind": "file",
+        "sha256": "f7ded45aaf89249354371e4d32ca33e875354f013a0a760455851532a776547f",
+        "size": 404
+      },
+      "runs/OPS01_ceac901a31af4121873c1d3774bd8c26/audit.json": {
+        "kind": "file",
+        "sha256": "44c7d357218bb092d8b49d210699c32ea707354ec2b724057780d09c610d9ace",
+        "size": 2103
+      },
+      "runs/OPS01_ceac901a31af4121873c1d3774bd8c26/complete.json": {
+        "kind": "file",
+        "sha256": "cf4e52985ebfc6eba8587499999a4dc41029db0cf4cfdd1ffdc8e28731fcc271",
+        "size": 216
+      }
+    },
+    "verified_effective_baseline": {
+      "historical_scoped_counts": {
+        "/home/keyousuke/MineUAV-Learning": 42935
+      },
+      "historical_untracked_counts": {
+        "/home/keyousuke/MineUAV-Learning": 87
+      },
+      "new_untracked_names": {
+        "/home/keyousuke/MineUAV-Learning": []
+      },
+      "protected_count": 1404,
+      "unchanged": true
+    }
+  },
+  "implementation_status": "PASS",
+  "limits": [
+    "\u672a\u5b9e\u9645\u91cd\u542f/\u65ad\u7535\uff0c\u91c7\u7528\u9694\u79bb\u8fdb\u7a0b\u53ca\u6545\u969c\u6ce8\u5165\u6a21\u62df",
+    "\u4e0d\u63d0\u4f9bEXACT_RESUME\u6216BOUNDARY_RESUME",
+    "\u8bad\u7ec3\u6388\u6743\u4ecd\u4e3a0\uff1b\u65b0\u7b97\u6cd5/\u8bad\u7ec3/PX4\u9700\u5355\u72ec\u660e\u786e\u6388\u6743",
+    "OpenCV/NumPy ABI\u3001Matplotlib Axes3D\u3001Gymnasium render\u8b66\u544a\u672a\u4fee\u5168\u5c40\u73af\u5883",
+    "\u672c\u673a\u540c\u6743\u9650\u6076\u610f\u7528\u6237\u4e0d\u5728\u5b89\u5168\u9694\u79bb\u4fdd\u8bc1\u5185\uff0c\u51ed\u636e\u89c4\u5219\u626b\u63cf\u4e0d\u80fd\u66ff\u4ee3\u4eba\u5de5\u5ba1\u9605",
+    "Linux\u5b88\u62a4\u8f6e\u8be2\u4e0d\u662f\u786c\u5b9e\u65f6\u6545\u969c\u68c0\u6d4b\u8ba4\u8bc1"
+  ],
+  "next_action": "\u5b8c\u6210\u5f53\u524d\u529f\u80fd\u5206\u652f\u540c\u6b65\u540e\u505c\u6b62\uff1b\u540e\u7eed\u4ec5Level0/1\u5ba1\u8ba1\uff0c\u7981\u6b62\u81ea\u52a8\u8bad\u7ec3",
+  "old_protocol_policy": "V1\u534f\u8bae\u3001\u72b6\u6001\u3001\u9884\u7b97\u3001attempt\u539f\u4f4d\u4fdd\u7559\uff1bV2\u72ec\u7acb\u7248\u672c\u8eab\u4efd\uff0c\u4e0d\u56de\u5199\u65e7SHA",
+  "phase_id": "OPS-02",
+  "portability": {
+    "actual_old_tmp_directory": "\u672a\u5220\u9664\u3001\u672a\u4fee\u6539\u3001\u672a\u91cd\u547d\u540d\uff1b\u4ec5\u672c\u56de\u5f52\u8fdb\u7a0b\u5185\u663e\u5f0f\u6a21\u62df\u4e0d\u53ef\u8bbf\u95ee",
+    "approved_changes": {
+      "mujoco/lidar_integration/test_dynamic_runner.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "a425617aa193fdb857508255267f6286fa4c75bda97f89e0200d5617778c917e",
+          "size": 4344
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "ba48af9b743bcaead7a2d26caecef5d28529b63cc8a1ae36ef2a905cb96fbbd9",
+          "size": 4310
+        }
+      },
+      "mujoco/lidar_integration/test_failure_evidence.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "d45d85dd24d2c9c645a102b49c269114bd6f0012721a090a6c15262c220393fd",
+          "size": 13453
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "bd9f1e6de48b69b19b85304f75024b264aeea6d14a25436adf423ebcfda95407",
+          "size": 13416
+        }
+      },
+      "mujoco/lidar_integration/test_navigation_env.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "4a7c54769f9e1cf1e6f2e63e954641a99bb72e14f3a2774f31660f55d39cbad5",
+          "size": 11552
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "7f75fc83ec3b485a466a7d9e26d221f157844560064b5148d96318e41b494867",
+          "size": 11515
+        }
+      },
+      "mujoco/lidar_integration/test_navigation_runner.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "cb08bbac53385478563683c7ac977628d986a9cf2eab49a1dc5ff289edd05b5d",
+          "size": 4737
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "0fd851286199208f809fcdb4d5ebf633da320134b2a4debedf701d881dcfbf47",
+          "size": 4700
+        }
+      },
+      "mujoco/lidar_integration/test_navigation_scene.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "7898aa14254de96284c827ff64575da230a76fe7acd3e6fa8623e63150a295e3",
+          "size": 5634
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "7a4d01a4602553458e81046f8d762417252fc15a84a706154e54fa14e4463b3c",
+          "size": 5618
+        }
+      },
+      "mujoco/lidar_integration/test_observation.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "51e3f6ddce9ef0d69d41f0105750837877646488e6c3b9c6a2d97d8d3c704fc5",
+          "size": 9448
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "25a82eb99f5470d659b235ed62f9fd5824afd61a06c62a7f4a0128e81e21dd2a",
+          "size": 9412
+        }
+      },
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "c888543234c8af94e2b28aab48621a6a88242d6e46bf38b5ecb042fb91925daa",
+          "size": 11673
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "18614862963989e99b1d391adaec468c60264cefb7e263373863f0ecc3d1a5b4",
+          "size": 11636
+        }
+      },
+      "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "7bcc3147a4bc8a62163776cbe4f8a352bf2d5288389fad933a1700ca6a43f553",
+          "size": 14030
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "111bbca706792a3f856678cd3cd5423dedf86f76ccfba76b6f4bb9eca69f7397",
+          "size": 13993
+        }
+      },
+      "mujoco/lidar_integration/test_ppo_preflight.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "4b9254f546ea2e318e0630e02765ea55a9f5d9c13d36b9133df9708f21e01ad8",
+          "size": 12132
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "b00170fbf8d49afa3e14042fecada4ba7752cd0c1e12564717b108ee20bbb711",
+          "size": 12089
+        }
+      },
+      "mujoco/lidar_integration/test_ppo_training_orchestration.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "ce75c58a482bce422aaf8ae666f12123fa786dec65de78752d8f53cfba5c3ac1",
+          "size": 15046
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "62c020e91e01e6fc8c5f0ae3bc8118c43e633d857b439d836cec4e05551041c8",
+          "size": 15009
+        }
+      },
+      "mujoco/lidar_integration/test_repair_protocol.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "4883f63ed355ff1d7f2f97502fae1e728f548edf4ddfa4e868b429e6871e08b2",
+          "size": 3474
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "2ec2b4e376bf0b0543c48c90ddae5cecb0cdc0a35d870842f74a19742faf1f06",
+          "size": 3437
+        }
+      },
+      "mujoco/lidar_integration/test_runner.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "7049d34b543e446a2b4074b92b1a8f3da3126d409cd2eab85579cbd252ebf7a3",
+          "size": 1504
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "de2bcc711cff0b459d9b6b500a4efb3c26f20da0eb0ec576809d2105a9b3e6a9",
+          "size": 1470
+        }
+      },
+      "mujoco/lidar_integration/test_scanner.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "1806015470aae9665b0a98f1476a2e21313e62cee1bec8497556192c9c7ea4db",
+          "size": 5962
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "e8e29e3c6d36e801eea21763a86405347dc1f0927b2ae047056e62ee7e555a01",
+          "size": 5928
+        }
+      },
+      "mujoco/lidar_integration/test_shaft.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "a545468bc4f37e591a61acdb7051aa577ada799596ee3d3b02e114e12d138b38",
+          "size": 2247
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "10dd86fd7df4dcecd4a372f55bb285ecfe2fc5da95fb5e1cd95edb2d14fa42a0",
+          "size": 2213
+        }
+      },
+      "mujoco/lidar_integration/test_termination_repair.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "49ef845f617c01dfd441a2422b84dec62830e0437549bdecb1b482dd532aec8c",
+          "size": 8325
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "bc0dceb1aeb06f8b1b4de6219d24f35054cbce280dd9966d482670af3cb5d000",
+          "size": 8288
+        }
+      },
+      "mujoco/lidar_integration/test_trajectory.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "8edb204abe69ddaf791bbc9eed6ba6855a2509edbfb9108e57ed2ab3f9c59ba1",
+          "size": 4203
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "9d31cd77c3884bce72dcc46dda4d4921c0f129b01d32f53610789a173d5075b2",
+          "size": 4169
+        }
+      },
+      "mujoco/lidar_integration/test_validation_termination_repair.py": {
+        "after": {
+          "kind": "file",
+          "sha256": "97bfbbe90925e0679fe5b8b43ddb8e9da0efa4c472fe3be873a5bcb2a2168b52",
+          "size": 4828
+        },
+        "before": {
+          "kind": "file",
+          "sha256": "cb497f72ab8ae90d89db46270595d2c6a1d575f7a437b6882a3cc58427e4796b",
+          "size": 4791
+        }
+      }
+    },
+    "changed_test_fixture_count": 17,
+    "legacy_tmp_access": "DENIED_BY_EXPLICIT_PYTHON_AUDIT_HOOK; no actual directory was changed",
+    "runtime_scanner_source_changed": false,
+    "scan_pattern_identity_check_weakened": false,
+    "source_code_tmp_audit": "\u5f53\u524d\u53ef\u6267\u884c\u6e90\u7801\u552f\u4e00\u65e7\u8def\u5f84\u5b57\u7b26\u4e32\u4e3a\u62d2\u7edd\u8bbf\u95ee\u6d4b\u8bd5\u8f93\u5165\uff1b\u5176\u4f59\u65e7\u8def\u5f84\u4ec5\u5b58\u5386\u53f2MD/JSON\u8bf4\u660e",
+    "status": "PASS",
+    "upstream_identity": {
+      "commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+      "imported_package_directory": "/home/keyousuke/MineUAV-Learning-px4-sitl/.research_local/dependencies/MuJoCo-LiDAR/src/mujoco_lidar",
+      "pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3",
+      "source_directory": "/home/keyousuke/MineUAV-Learning-px4-sitl/.research_local/dependencies/MuJoCo-LiDAR"
+    }
+  },
+  "ppo_optimizer_updates": 0,
+  "ppo_training_runs": 0,
+  "preflight": {
+    "pre_command_backup": ".research_local/ops_v2_preflight/snapshot_91de59f58218485893c4af55ab172fc5/",
+    "remote_base_sha_verified": "37b6d90e84ba0554db3574c9913413ee93c58e41",
+    "v1_recover_note": "\u7528\u6237\u8981\u6c42\u7684\u539frecover\u6309V1\u6b63\u5e38\u8bed\u4e49\u66f4\u65b0\u4e86\u72b6\u6001\u4e0e\u516c\u5f00\u5feb\u7167\uff1b\u5148\u5907\u4efd\uff0c\u540e\u7eed\u8fc1\u79fb\u4e0d\u518d\u4fee\u6539V1",
+    "v1_status_recover_doctor": "PASS"
+  },
+  "project_id": "MineUAV-Learning",
+  "protocol_sha256": "2863f8d5d047f9ebe7098a8ab3073e5b4cb1a3061757c4e40fd592c5dbc881c1",
+  "publication": {
+    "allowlist": [
+      "README.md",
+      "docs/CODEX_NEXT_ACTION.md",
+      "docs/DAILY_PROGRESS.md",
+      "docs/ENVIRONMENT_LOCK.md",
+      "docs/EXPERIMENT_LOG.md",
+      "docs/OPS02_IMPLEMENTATION_PLAN.md",
+      "docs/PHASE_OPS_02_PORTABILITY.md",
+      "docs/PROJECT_PROGRESS.md",
+      "docs/RESEARCH_OPERATIONS_V2.md",
+      "docs/RESEARCH_STATUS.json",
+      "docs/RESEARCH_STATUS_V2.json",
+      "mujoco/lidar_integration/test_dynamic_runner.py",
+      "mujoco/lidar_integration/test_failure_evidence.py",
+      "mujoco/lidar_integration/test_navigation_env.py",
+      "mujoco/lidar_integration/test_navigation_runner.py",
+      "mujoco/lidar_integration/test_navigation_scene.py",
+      "mujoco/lidar_integration/test_observation.py",
+      "mujoco/lidar_integration/test_ppo_formal_readiness.py",
+      "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py",
+      "mujoco/lidar_integration/test_ppo_preflight.py",
+      "mujoco/lidar_integration/test_ppo_training_orchestration.py",
+      "mujoco/lidar_integration/test_repair_protocol.py",
+      "mujoco/lidar_integration/test_runner.py",
+      "mujoco/lidar_integration/test_scanner.py",
+      "mujoco/lidar_integration/test_shaft.py",
+      "mujoco/lidar_integration/test_termination_repair.py",
+      "mujoco/lidar_integration/test_trajectory.py",
+      "mujoco/lidar_integration/test_validation_termination_repair.py",
+      "mujoco/reports/research_operations_v2.json",
+      "mujoco/reports/research_operations_v2_registration.json",
+      "research_ops_v2/__init__.py",
+      "research_ops_v2/cli.py",
+      "research_ops_v2/execution.py",
+      "research_ops_v2/manager.py",
+      "research_ops_v2/publication.py",
+      "research_ops_v2/registration.py",
+      "research_ops_v2/test_runner.py",
+      "research_ops_v2/worker.py",
+      "research_regression/__init__.py",
+      "research_regression/run.py",
+      "research_regression/upstream.py",
+      "researchctl-v2",
+      "tests/research_ops_v2/support_v2.py",
+      "tests/research_ops_v2/test_lifecycle.py",
+      "tests/research_ops_v2/test_portability.py",
+      "tests/research_ops_v2/test_publication.py",
+      "tests/research_ops_v2/test_versions.py"
+    ],
+    "final_commit_source": "./researchctl-v2 status \u7684\u6700\u65b0\u5df2\u9a8c\u8bc1\u6536\u636e\uff1b\u62a5\u544a\u4e0d\u5199\u81ea\u8eab\u672a\u6765\u63d0\u4ea4SHA",
+    "mechanism": "researchctl-v2 sync\uff0c\u539f\u5b50\u5f85\u63a8\u6536\u636e\uff0c\u5b9e\u9645\u8fdc\u7aefSHA\u6838\u9a8c\u540e\u624dphase_complete",
+    "publication_anchor": {
+      "branch": "feat/research-operations-v1",
+      "commit": "37b6d90e84ba0554db3574c9913413ee93c58e41",
+      "remote": "origin",
+      "verified_at": "2026-10-15T08:37:57+00:00"
+    },
+    "status": "PENDING_REMOTE_VERIFICATION_AT_REPORT_CREATION"
+  },
+  "px4_runs": 0,
+  "real_hardware_connections": 0,
+  "recorded_at": "2026-10-15T09:41:41+00:00",
+  "registration_sha256": "a79dc2d5374c089e05db6c92ef0858ac22a4ed796435211939ee03594ea73ba9",
+  "resources": {
+    "OOM": "NOT_OBSERVED_IN_STAGE_PROCESSES",
+    "current": {
+      "disk_free_bytes": 71406833664,
+      "mem_available_mib": 10140.20703125
+    },
+    "guard_disk_free_bytes": 2147483648,
+    "guard_mem_available_mib": 1536,
+    "portable_regression": {
+      "minimum_mem_available_mib": 7992.40234375,
+      "peak_rss_mib": 1953.3984375,
+      "wall_seconds": 124.82813442899896
+    },
+    "scope_note": "RSS\u4e3a\u5404\u5957\u4ef6\u8bb0\u5f55\u7684\u8fdb\u7a0b\u9ad8\u6c34\u4f4d\uff0c\u4e0d\u662f\u6574\u673a\u540c\u65f6\u9a7b\u7559\u5185\u5b58\u603b\u548c",
+    "v2_unit_process": {
+      "child_peak_rss_mib": 23.66796875,
+      "minimum_endpoint_mem_available_mib": 10223.171875,
+      "peak_rss_mib": 482.13671875,
+      "process_cpu_s": 1.323673537,
+      "wall_seconds": 5.642465127000833
+    }
+  },
+  "result_review": {
+    "evidence": {
+      "path": ".research_local/ops_v2_validation/independent_result_review_final.json",
+      "sha256": "9eeb3f9061b1044b303360b6dfb66ef3166f2c3b690af929828e51aa8aa63572",
+      "size_bytes": 755
+    },
+    "status": "GO",
+    "unresolved_critical": 0,
+    "unresolved_important": 0
+  },
+  "review": {
+    "closed_findings": [
+      "\u5f3a\u5236\u8986\u76d6\u6267\u884c\u5668\u4e0e\u6d4b\u8bd5\u6e90\u7801",
+      "\u6d4b\u8bd5\u8bc1\u636e\u6821\u9a8c\u5f53\u524d\u6e90\u7801\u4e0e\u6d4b\u8bd5SHA",
+      "\u4efb\u52a1\u5b9e\u9645\u8bc1\u636e\u54c8\u5e0c\u7ed1\u5b9a",
+      "\u505c\u6b62\u540e\u4ee3\u8fdb\u7a0b\u7ec4",
+      "\u53d1\u5e03\u8d77\u70b9\u4f7f\u7528\u5df2\u9a8c\u8bc1\u8fdc\u7aef\u951a\u70b9",
+      "\u5b8c\u6210\u6807\u8bb0\u540e\u72b6\u6001\u5199\u5931\u8d25\u4e0d\u5236\u9020\u77db\u76fe",
+      "\u505c\u6b62\u5728\u9501\u5185\u91cd\u8bfb",
+      "attempt\u4e0eRUNNING\u4e4b\u95f4\u7684\u4e2d\u65ad\u6062\u590d",
+      "\u542f\u52a8\u63e1\u624b\u4e0e\u72ec\u7acb\u671f\u9650\u5b88\u62a4",
+      "\u9694\u79bb\u6d4b\u8bd5\u8fdb\u7a0b\u4e5f\u6709\u7236\u6b7b\u4ea1\u4fdd\u62a4"
+    ],
+    "evidence": {
+      "path": ".research_local/ops_v2_validation/independent_review_final.json",
+      "sha256": "7f7271bcc977acc30a3977497a5eddfdfb75612019a63ca0c2eed918ee90b2bb",
+      "size_bytes": 742
+    },
+    "method": "INDEPENDENT_READ_ONLY_SUBAGENT_REVIEW",
+    "source_identity_sha256": "92d175a347dc273374c3ac40cb6d68c86c1c5ebd002dd3c583b9cdd6e4da926a",
+    "status": "GO",
+    "unresolved_critical": 0,
+    "unresolved_important": 0
+  },
+  "source_identity_sha256": "92d175a347dc273374c3ac40cb6d68c86c1c5ebd002dd3c583b9cdd6e4da926a",
+  "tests": {
+    "evidence": {
+      "path": ".research_local/ops_v2_validation/v2_regression_final_03.json",
+      "sha256": "387fd64cf4e9a3c824a18a77617a7d51d60d5000e684390bf543a9c86782624d",
+      "size_bytes": 9667
+    },
+    "inherited_operations": {
+      "FAIL": 0,
+      "PASS": 49,
+      "SKIP": 0,
+      "evidence": {
+        "path": ".research_local/ops_v2_validation/v1_regression_01.json",
+        "sha256": "7903be83b2fa49510cd21ff3c532a62295e92b4bb89a15b269a575d9f8732494",
+        "size_bytes": 10620
+      }
+    },
+    "initial_failed_evidence": {
+      "path": ".research_local/ops_v2_validation/portable_historical_01.json",
+      "sha256": "b7c851064fb286763cfd0d414bdf691d873d347e30620decbe7ef81f4bb0c422",
+      "size_bytes": 1049
+    },
+    "new_operations": {
+      "DESELECTED": 0,
+      "FAIL": 0,
+      "PASS": 34,
+      "SKIP": 0,
+      "results": [
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_completion_state_disk_error_never_creates_contradictory_markers",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_current_runtime_must_match_unless_explicit_new_version_review",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_independent_watchdog_enforces_deadline_for_worker_and_descendants",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_interrupt_after_attempt_before_running_state_is_recoverable",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_live_task_stop_request_and_no_replay_after_restart",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_lock_duplicate_start_rejected_without_state_mutation",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_process_group_cleanup_includes_grandchild",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_real_fixed_worker_completes_and_evidence_is_bound",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_resource_shortage_stops_before_attempt",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_state_corruption_cannot_grant_training",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_stop_without_work_is_safe_and_preserves_v1",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_supervisor_crash_at_popen_return_cannot_launch_task",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_unclean_reboot_is_audited_without_task_reexecution",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_lifecycle.LifecycleTests.test_unregistered_training_does_not_create_attempt",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_portability.PortabilityTests.test_default_is_durable_and_does_not_fall_back_to_tmp",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_portability.PortabilityTests.test_explicit_path_is_validated_and_missing_source_is_rejected",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_portability.PortabilityTests.test_source_identity_records_pinned_commit_and_pattern",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_publication.PublicationTests.test_changed_test_source_invalidates_readiness",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_publication.PublicationTests.test_failed_push_then_recover_retries_exact_commit",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_publication.PublicationTests.test_failing_test_evidence_and_forged_positive_strings_refused",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_publication.PublicationTests.test_historical_report_not_publishable_even_if_registered",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_publication.PublicationTests.test_pre_registration_unpublished_secret_commit_is_not_trusted",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_publication.PublicationTests.test_real_feature_commit_push_and_restart_verify",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_publication.PublicationTests.test_secret_raw_large_and_png_payload_refused",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_publication.PublicationTests.test_user_staging_not_changed",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_actual_executor_and_tests_cannot_be_omitted_from_source_identity",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_bad_review_and_training_tasks_do_not_activate",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_failed_atomic_migration_never_publishes_active_version",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_migration_preserves_exact_v1_files_and_uses_new_identity",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_new_delivery_rules_reject_raw_history_and_escape",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_new_phase_registration_preserves_previous_version",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_source_changed_after_review_refuses_migration",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_unknown_or_corrupt_v1_state_cannot_be_reinitialized",
+          "outcome": "PASS"
+        },
+        {
+          "nodeid": "test_versions.VersionTests.test_unknown_parameters_and_budget_escalation_are_rejected",
+          "outcome": "PASS"
+        }
+      ]
+    },
+    "portable_related_regression": {
+      "DESELECTED": 15,
+      "FAIL": 0,
+      "PASS": 885,
+      "SKIP": 0,
+      "evidence": {
+        "path": ".research_local/ops_v2_validation/portable_historical_02.json",
+        "sha256": "ef1ec74fa911115a4c4779585662355d9020da1a28ed70be5207b724fb1d1527",
+        "size_bytes": 216759
+      },
+      "excluded_nodes": [
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_formal_preflight_accepts_only_current_l8_identity",
+          "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_checks_disk_on_existing_ancestor_without_creating_output",
+          "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_cli_requires_explicit_formal_mode_authorization_and_rejects_initializer",
+          "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_l9_driver_writes_real_post_optimizer_health_snapshot",
+          "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[weight]",
+          "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[logger]",
+          "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_l8_physical_reason_contract_reproduces_formal_stop_without_training",
+          "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_interrupted_formal_report_never_claims_exact_completion_or_final_model",
+          "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_preflight.py::test_actor_critic_optimizer_and_checkpoint_roundtrip",
+          "reason": "would execute optimizer.step"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_real_sb3_rollouts_update_weights_and_switch_train_scenes",
+          "reason": "would execute PPO.learn"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_refuses_reused_attempt_and_formal_mode_requires_separate_authorization",
+          "reason": "old Pilot authorization contract superseded by L9R no-training gate"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_completed_real_rollout_milestone_saves_after_update_and_validates_without_mutation",
+          "reason": "would execute PPO updates"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_passive_ppo_train_timer_counts_actual_updates_and_is_removed_before_save",
+          "reason": "would execute PPO updates"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_analysis_rejects_tampered_completion_and_preserves_negative_outcome",
+          "reason": "old recorded L8 runtime hashes; audited as history not current code"
+        },
+        {
+          "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_report_readiness_fails_closed_on_missing_failed_or_incomplete_tests",
+          "reason": "old recorded L8 runtime hashes; no new readiness claim"
+        }
+      ],
+      "forbidden_optimizer_calls": [],
+      "scope": "related Bridge, LiDAR, audit, Shadow, targeted legacy controllers; no full-repository run",
+      "warnings": 2
+    },
+    "red_green": {
+      "additional_failure": "\u4e3b\u7ba1\u5d29\u6e83\u6545\u969c\u6d4b\u8bd5\u66fe\u8bef\u622a\u83b7git\u5b50\u8fdb\u7a0b\uff0c\u4fee\u590d\u4ec5\u5339\u914dworker\u540e\u901a\u8fc7\uff0c\u4e0d\u662f\u5b9e\u9645\u751f\u4ea7\u4efb\u52a1\u6545\u969c",
+      "portable_collection": "\u9996\u6b213\u9879future import\u6536\u96c6\u9519\u8bef\uff0c\u4fee\u590d\u540e885 PASS\uff1b\u5931\u8d25\u6587\u4ef6\u4fdd\u7559",
+      "resolver": "3 RED \u2192 3 GREEN",
+      "version_registration": "\u521d\u6b21\u7f3a\u5b9e\u73b0RED \u2192 \u8fc1\u79fb\u4e0e\u6388\u6743\u6d4b\u8bd5GREEN"
+    },
+    "scope_note": "\u76f8\u5173\u9009\u5b9a\u56de\u5f52\uff0c\u4e0d\u662f\u5168\u4ed3\u6d4b\u8bd5\uff1b\u91cd\u590d\u5b9e\u6d4b\u4e0d\u91cd\u590d\u8ba1\u6570",
+    "status": "PASS",
+    "unique_total_pass": 968
+  },
+  "training_budget_available": 0,
+  "v1_protocol_sha256": "59964b4d2bba385308e62ff0b9f9d8d0818e53ba767aaf398ec20fa95007a5a8",
+  "version_id": "v2_a79dc2d5374c089e05db6c92ef0858ac22a4ed796435211939ee03594ea73ba9"
+}

@@ -1,5 +1,6 @@
 """Offline RED/GREEN checks for the LiDAR PPO training interface."""
 
+from research_regression.upstream import resolve_upstream
 import math
 from pathlib import Path
 
@@ -107,7 +108,7 @@ def test_scenario_uses_actual_reset_pose_not_legacy_endpoint_sampler():
     from .navigation_env import LidarNavigationEnv
     row = make_scenario_manifest()["train"][0]
     env = LidarNavigationEnv(row["layout"], row["scene_seed"],
-                             "/tmp/mineuav-mujoco-lidar-audit", scene=build_ppo_scene(row))
+                             resolve_upstream(), scene=build_ppo_scene(row))
     try:
         _, info = env.reset(seed=0, options={"start_position": row["start_xyz"],
                                             "target_position": row["target_xyz"],

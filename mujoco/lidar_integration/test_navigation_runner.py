@@ -1,12 +1,13 @@
 """Bounded real-physics preflight emits only truthful metrics and figures."""
 
+from research_regression.upstream import resolve_upstream
 import json
 from pathlib import Path
 
 import pytest
 
 
-UPSTREAM = Path("/tmp/mineuav-mujoco-lidar-audit")
+UPSTREAM = resolve_upstream()
 
 
 def test_contact_acceptance_never_passes_without_actual_matching_contact():

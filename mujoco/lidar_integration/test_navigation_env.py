@@ -1,5 +1,6 @@
 """Real MuJoCo obstacle-contact, timing, reward and missing-sensor regressions."""
 
+from research_regression.upstream import resolve_upstream
 import hashlib
 import subprocess
 import sys
@@ -13,7 +14,7 @@ import pytest
 from lidar_integration.scene import BASE_MODEL, BASE_SHA256
 
 
-UPSTREAM = Path("/tmp/mineuav-mujoco-lidar-audit")
+UPSTREAM = resolve_upstream()
 
 
 @pytest.fixture

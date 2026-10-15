@@ -1,5 +1,6 @@
 """Physical scene identity, feasible seeded endpoints and real LiDAR obstacles."""
 
+from research_regression.upstream import resolve_upstream
 import hashlib
 from pathlib import Path
 
@@ -79,7 +80,7 @@ def test_real_cpu_rays_see_front_box_that_physically_collides():
     from lidar_integration.navigation_scene import build_scene
     from lidar_integration.scanner import Mid360Scanner
 
-    upstream = Path("/tmp/mineuav-mujoco-lidar-audit")
+    upstream = resolve_upstream()
     if not upstream.is_dir():
         pytest.skip("pinned upstream MuJoCo-LiDAR source unavailable")
     scene = build_scene("front_box", 1101)
@@ -98,7 +99,7 @@ def test_each_initial_obstacle_has_real_lidar_returns_in_fixed_layouts():
     from lidar_integration.navigation_scene import build_scene, sample_start_target
     from lidar_integration.scanner import Mid360Scanner
 
-    upstream = Path("/tmp/mineuav-mujoco-lidar-audit")
+    upstream = resolve_upstream()
     if not upstream.is_dir():
         pytest.skip("pinned upstream MuJoCo-LiDAR source unavailable")
     for layout in ("front_box", "side_pair", "detour", "channel"):

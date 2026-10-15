@@ -1,5 +1,6 @@
 """End-to-end static scan artifact checks (real MuJoCo rays)."""
 
+from research_regression.upstream import resolve_upstream
 import json
 import os
 from pathlib import Path
@@ -12,7 +13,7 @@ from lidar_integration.runner import run_experiment
 
 @pytest.fixture
 def upstream_root() -> Path:
-    return Path(os.environ["MINEUAV_LIDAR_UPSTREAM"])
+    return resolve_upstream()
 
 
 def test_real_scan_artifacts_and_report(tmp_path: Path, upstream_root: Path):

@@ -1,5 +1,11 @@
 # 每日项目交接
 
+## 2026-10-15：OPS-02
+
+完成持久依赖解析、17份测试路径迁移、独立版本管理、任务白名单和发布保护；885项相关历史回归、49项V1管理回归及34项新增V2单测通过。旧/tmp目录没有删除或修改。独立初审/复审的问题保留并修复，不将初次NO_GO覆盖成从未失败。
+
+当前分支 `feat/research-operations-v2`；提交和真实远端核验收据见 `researchctl-v2 status`。当天最终交付尚须以 `phase_complete=true` 为准，静态日报不伪造尚未创建的commit。下一次开机先recover→doctor；待同步则先sync。未执行任何PPO更新、PX4或设备通信，预算0；无下一轮训练授权。实际断电测试未执行，采用隔离进程与故障注入模拟恢复。
+
 ## 2026-10-15 — OPS-01开发及验收
 
 完成：七个researchctl命令、零预算/原子状态/独占锁、实际停止与SIGKILL恢复测试、持久化上游、历史文件清单及Git同步。训练更新0，PX4/设备0。当前源码冻结，状态及远端交付从下方最新自动记录和 `./researchctl status`读取；提交前基础Commit为984a1fd，不能预填本文件自身未来Commit。
@@ -87,6 +93,24 @@
 阶段：OPS-01；状态：SAFE_STOPPED。
 
 分支：`feat/research-operations-v1`。快照基于Commit：`984a1fd46609dca510eee650ac46bef57fa5e1cf`。
+
+当前Commit以 `git rev-parse HEAD` 为准；快照不能包含它自身尚未创建的Commit SHA。最近成功推送及实时完成状态见 `./researchctl status` 的核验收据。
+
+训练授权：NO；剩余timesteps/wall-time：0/0；optimizer更新：禁止。
+
+历史L9保持FAIL；L9R修复、L9S4096步链路Pilot已记录。L9S无成功导航，不能当作避障能力。
+
+安全下一步：`./researchctl doctor` 后运行 `./researchctl start --task ops-audit`，或在Codex中只读分析已有实验。 新的训练需要用户提供独立预算与协议。
+
+未完成：新的训练预算、正式导航效果验证；当前维护记录不是训练快照。完整测试/审查见阶段JSON及Markdown。
+
+## 2026-10-15T09:09:17+00:00 — OPS-01
+
+<!-- OPS01_ceac901a31af4121873c1d3774bd8c26:SAFE_STOPPED:2026-10-15T09:09:17+00:00 -->
+
+阶段：OPS-01；状态：SAFE_STOPPED。
+
+分支：`feat/research-operations-v1`。快照基于Commit：`37b6d90e84ba0554db3574c9913413ee93c58e41`。
 
 当前Commit以 `git rev-parse HEAD` 为准；快照不能包含它自身尚未创建的Commit SHA。最近成功推送及实时完成状态见 `./researchctl status` 的核验收据。
 

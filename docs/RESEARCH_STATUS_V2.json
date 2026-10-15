@@ -1,0 +1,12 @@
+{
+  "authority": "INFORMATION_ONLY; not a grant or restorable execution state",
+  "automatic_training": "DISABLED",
+  "head_at_snapshot": "37b6d90e84ba0554db3574c9913413ee93c58e41",
+  "operations_version": "RESEARCH_OPS_V2",
+  "phase_id": "OPS-02",
+  "protocol_sha256": "2863f8d5d047f9ebe7098a8ab3073e5b4cb1a3061757c4e40fd592c5dbc881c1",
+  "registration_sha256": "a79dc2d5374c089e05db6c92ef0858ac22a4ed796435211939ee03594ea73ba9",
+  "resume": "RESTART_REQUIRED",
+  "stage_status": "SAFE_STOPPED",
+  "training_budget": 0
+}

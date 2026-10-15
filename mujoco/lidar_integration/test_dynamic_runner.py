@@ -1,5 +1,6 @@
 """End-to-end dynamic experiment and evidence checks, using real CPU rays."""
 
+from research_regression.upstream import resolve_upstream
 import json
 import os
 from pathlib import Path
@@ -8,7 +9,7 @@ import numpy as np
 import pytest
 
 
-UPSTREAM = Path(os.environ["MINEUAV_LIDAR_UPSTREAM"])
+UPSTREAM = resolve_upstream()
 
 
 def test_dynamic_report_contains_all_paths_real_clock_and_raw_npz(tmp_path):

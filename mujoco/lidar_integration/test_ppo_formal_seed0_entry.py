@@ -1,6 +1,7 @@
 """L9 formal seed0 launch fails closed before any PPO optimizer work."""
 
 from __future__ import annotations
+from research_regression.upstream import resolve_upstream
 
 from pathlib import Path
 from types import SimpleNamespace
@@ -18,7 +19,7 @@ from .ppo_training_orchestration import Milestone, TrainingMetricsEnv, execute_s
 import numpy as np
 
 
-UPSTREAM = Path("/tmp/mineuav-mujoco-lidar-audit")
+UPSTREAM = resolve_upstream()
 PREREG = Path(__file__).resolve().parents[1] / "reports/mujoco_lidar_ppo_training_prereg_seed0.json"
 
 

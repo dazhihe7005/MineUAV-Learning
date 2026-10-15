@@ -1,5 +1,6 @@
 """L9R: controlled MuJoCo terminal/failure checks; no PPO optimizer updates."""
 
+from research_regression.upstream import resolve_upstream
 from pathlib import Path
 
 import mujoco
@@ -10,7 +11,7 @@ from .ppo_formal_scheduler import MultiScenarioTrainingEnv, load_l6_prereg
 from .ppo_training_orchestration import TrainingMetricsEnv
 
 
-UPSTREAM = Path("/tmp/mineuav-mujoco-lidar-audit")
+UPSTREAM = resolve_upstream()
 PREREG = Path(__file__).resolve().parents[1] / "reports/mujoco_lidar_ppo_training_prereg_seed0.json"
 
 

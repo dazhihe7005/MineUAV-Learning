@@ -1,5 +1,13 @@
 # Experiment Log
 
+## 2026-10-15 — OPS-02：便携回归与版本化管理
+
+分支 `feat/research-operations-v2`，基线 `37b6d90e84ba0554db3574c9913413ee93c58e41`。17份测试通过统一解析器读取持久化MuJoCo-LiDAR，commit及patternSHA不变；禁止访问旧/tmp路径的相关回归885 PASS、15 DESELECTED、2已知警告，optimizer调用0。V1管理49 PASS、V2新增34 PASS。
+
+新 `researchctl-v2` 独立存储、版本化登记、源码/审查绑定、零预算任务白名单、启动握手、进程组守护及显式文件发布；不改V1入口或原始协议。独立最终源码复审GO，先前NO_GO的重要问题经修复与回归保留闭环。登记SHA `a79dc2d5374c089e05db6c92ef0858ac22a4ed796435211939ee03594ea73ba9`；源码身份SHA `92d175a347dc273374c3ac40cb6d68c86c1c5ebd002dd3c583b9cdd6e4da926a`。真实迁移和功能分支发布以机器报告及CLI收据为准。
+
+L9永久FAIL，L9R/L9S证据、历史模型及原始点云不变，训练预算0。没有PX4、训练或硬件通信；不增加导航能力结论。[阶段报告](PHASE_OPS_02_PORTABILITY.md)、[新操作协议](RESEARCH_OPERATIONS_V2.md)、[JSON](../mujoco/reports/research_operations_v2.json)。
+
 ## 2026-10-05 — One-Step Latent Dynamics
 
 Branch: `feat/latent-dynamics-one-step`

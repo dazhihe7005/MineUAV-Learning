@@ -1,5 +1,6 @@
 """Real MuJoCo horizontal-ray evidence for an ideal uniform vertical shaft."""
 
+from research_regression.upstream import resolve_upstream
 import hashlib
 import math
 import os
@@ -12,7 +13,7 @@ from lidar_integration.scanner import Mid360Scanner
 from lidar_integration.scene import BASE_MODEL, set_uav_pose
 
 
-UPSTREAM = Path(os.environ["MINEUAV_LIDAR_UPSTREAM"])
+UPSTREAM = resolve_upstream()
 
 
 def test_uniform_shaft_horizontal_ranges_are_z_invariant_but_hits_move_in_world_z():
