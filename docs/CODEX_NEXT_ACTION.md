@@ -1,3 +1,12 @@
+## AUTONOMOUS-RL-RESEARCH-V1：当前交接优先于以下历史
+
+用户已于AUDIT-01之后明确授权：累计2,000,000训练environment steps／86400s wall，单次<=1,000,064、CPU单worker；不授权PX4、FAST-LIO2、实机、Test调参。读`CODEX_AUTONOMOUS_RL_V1.md`、本阶段机器JSON及本地新预算，不能从以下历史NO推断新授权丢失，也不能用本段恢复账本。
+
+工作目录不变，当前分支`feat/autonomous-rl-research-v1`。先`git status`及`python3 -m research_regression.authorized_rl status/doctor/recover`；OPS-V2仍负责维护／历史核验和显式文件发布，其NO/零预算只是旧范围。不得改旧L9R denial或V1/V2账本。
+
+新入口和独立预审完成后，下一安全操作为在新阶段登记下运行三个empty Train的state-only Scripted基线，全部原标准成功再开展两臂65536步课程对照。无SMOKE/PILOT/L9权重初始化，B在32768后下个自然reset切换；两个checkpoint延后至Train关闭后分别Validation，Test=0。完整细则在设计文件。预算先预留全额、失败不退不重试；未知attempt必须recover审计。每阶段先Commit/Push/远端SHA核验再推进下一阶段。
+
+停止用`python3 -m research_regression.authorized_rl request-stop`；此版本停止锁存，不自动清除或重跑。最新Commit和实际阶段完成读V2收据；不存在必须续训的旧checkpoint。以下为历史快照，不构成当前执行权限。
 
 
 ## AUDIT-01交接：优先读取本节

@@ -1,5 +1,11 @@
 # Experiment Log
 
+## 2026-10-15 — AUTORL-01：独立训练授权与预算执行
+
+基线e77479e，分支`feat/autonomous-rl-research-v1`。用户新增累计2,000,000训练步／86400s、单次<=1,000,064、CPU单worker授权。独立grant／append-only预算／固定模块执行／父进程死亡与进程组清理／stop锁存；旧OPS-V1/V2账本及L9R denial不变。授权机制阶段无optimizer更新，实际测试与独立审查见`autonomous_rl_authorization_v1.json`，Git完成以真实V2收据为准。
+
+首项预注册研究为三个原Train empty身份的非学习基线，然后两臂各65536步、只改场景调度。B自然episode reset切换，原Reward/CNN/PPO不变，checkpoint独立Validation不占用Train RNG，不运行Test。算法是否改善尚无新证据。
+
 ## 2026-10-15 — AUDIT-01：LiDAR-PPO学习失败只读诊断
 
 分支 `research/lidar-ppo-learning-diagnosis`，基线 `6258dd4ecae09e2614d9c9b47f9eebd52b6b6bee`。按OPS-V2恢复/核验，通过prepare→显式继承原17项overlay的新候选→独立审查→register建立AUDIT-01，未改旧协议或训练预算。

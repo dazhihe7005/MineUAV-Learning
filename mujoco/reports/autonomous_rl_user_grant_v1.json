@@ -1,0 +1,21 @@
+{
+  "grant": {
+    "PX4": false,
+    "allowed_executor": "PPO_ONLY_V1",
+    "authorization_id": "AUTONOMOUS-RL-RESEARCH-V1",
+    "basis": "Explicit user instruction following AUDIT-01 commit e77479eaccf08cacfd9844b5ea4f0df98e4ad0d6",
+    "device": "cpu",
+    "hardware": false,
+    "interruption": "RESTART_REQUIRED; no retry of consumed experiment identity",
+    "max_single_run_timesteps": 1000064,
+    "max_training_timesteps": 2000000,
+    "max_training_wall_seconds": 86400,
+    "step_accounting": "All optimizer-collecting environment steps charged; no free optimizer tests or supervised updates",
+    "test_episodes": false,
+    "version": 1,
+    "wall_accounting": "Full wall reservation permanently charged; actual elapsed also recorded, no automatic refund",
+    "workers": 1
+  },
+  "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+  "source": "USER_EXPLICIT_AUTHORIZATION_NOT_HISTORICAL_PROTOCOL_EDIT"
+}

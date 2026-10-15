@@ -1,0 +1,54 @@
+"""Explicit fixed research operations; never accepts arbitrary scripts or shell."""
+import argparse
+import json
+from research_ops.storage import OpsError,read_json,atomic_json,digest
+from .budget import BudgetStore,grant,experiment
+from .runtime import ROOT,HOME,supervise,verify_current,run_directory
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    sub=parser.add_subparsers(dest='command',required=True)
+    for name in ('status','doctor','recover','request-stop','baseline'):sub.add_parser(name)
+    p=sub.add_parser('initialize');p.add_argument('--user-grant-sha256',required=True)
+    p=sub.add_parser('prepare');p.add_argument('--arm',choices=('UNIFORM','CURRICULUM'),required=True)
+    p=sub.add_parser('start');p.add_argument('--arm',choices=('UNIFORM','CURRICULUM'),required=True)
+    p.add_argument('--expected-protocol-sha256',required=True)
+    args=parser.parse_args();store=BudgetStore(HOME)
+    try:
+        if args.command=='initialize':
+            m,_=verify_current()
+            from research_ops.storage import FileLock
+            with FileLock(m.lock_path):store.initialize(expected_grant_sha256=args.user_grant_sha256)
+            result=store.status()
+        elif args.command in ('status','doctor','recover'):
+            result=store.status()
+            if args.command!='status':
+                m,_=verify_current()
+                result['history_and_environment']='PASS'
+                result['recovery']='AUDIT_ONLY; NEVER REPLAY RESERVED/FAILED ATTEMPTS'
+                result['shared_lock_held']=__import__('research_ops.storage',fromlist=['lock_held']).lock_held(m.lock_path)
+        elif args.command=='request-stop':
+            store.request_stop();result={'status':'STOP_REQUESTED','scheduling':'DISABLED'}
+        elif args.command=='baseline':
+            from .baseline import run_baseline
+            result=run_baseline()
+        elif args.command=='prepare':
+            m,r=verify_current()
+            from research_ops.storage import FileLock
+            with FileLock(m.lock_path):
+                p=experiment(args.arm,65536,3600)
+                p.update(source_identity_sha256=digest(r['source_identity']),registration_sha256=digest(r))
+                dest=HOME/'protocols'/f"{p['experiment_id']}.json"
+                atomic_json(dest,p,exclusive=True)
+            result={'protocol_sha256':digest(p),'protocol':p,'active':False}
+        else:
+            p=read_json(HOME/'protocols'/f'ARL_R1_{args.arm}_SEED0.json')
+            if digest(p)!=args.expected_protocol_sha256:raise OpsError('explicit experiment SHA mismatch')
+            result=supervise(p)
+        print(json.dumps(result,ensure_ascii=False,indent=2));return 0
+    except (OpsError,OSError,ValueError,KeyError,TypeError) as error:
+        print(json.dumps({'status':'BLOCKED','error':str(error),'error_type':type(error).__name__},ensure_ascii=False));return 2
+
+
+if __name__=='__main__':raise SystemExit(main())

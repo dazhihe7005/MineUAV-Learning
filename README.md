@@ -1,5 +1,11 @@
 # MineUAV-Learning
 
+## 当前：AUTONOMOUS-RL-RESEARCH-V1
+
+项目负责人已明确授权独立的累计200万训练步／24小时CPU单worker预算。正在落实[新授权与操作协议](docs/CODEX_AUTONOMOUS_RL_V1.md)及[安全准入阶段](docs/PHASE_AUTORL_01_AUTHORIZATION.md)；实际激活、已预留和余额以新账本CLI为准，不由本段文字授权。原OPS-V1/V2零预算及L9R禁止重训记录保持不变；不启动PX4／真实设备，不使用Test调参。
+
+下一项是冻结empty Train的非学习可完成性检查，再比较相同预算的原12场景与empty优先课程。所有训练从新初始化开始，结果无论好坏均记录并推送。尚不能宣称LiDAR策略具备避障能力。
+
 **面向约 7 kg 矿井无人机的机器人学习、飞行控制与 Sim2Real 项目**
 
 MineUAV-Learning 是一个围绕真实矿井无人机建立的机器人学习与强化学习项目，核心基于具有物理参数约束的 MuJoCo 动力学模型。

@@ -1,0 +1,205 @@
+{
+  "environment": {
+    "executable": "/usr/bin/python3.10",
+    "modules": {
+      "mujoco": {
+        "file": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/mujoco/__init__.py",
+        "real_MjModel_API": true,
+        "version": "3.14.0"
+      },
+      "numpy": {
+        "file": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/numpy/__init__.py",
+        "version": "2.2.6"
+      },
+      "torch": {
+        "file": "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/torch/__init__.py",
+        "version": "2.14.0+cpu"
+      }
+    },
+    "packages": {
+      "gymnasium": "1.3.0",
+      "mujoco": "3.14.0",
+      "numpy": "2.2.6",
+      "stable-baselines3": "2.9.0",
+      "torch": "2.14.0+cpu"
+    },
+    "python": "3.10.12",
+    "upstream": {
+      "commit": "e6b879df4b96daaed30ef10fe02650d29048fa9b",
+      "directory": "/home/keyousuke/MineUAV-Learning-px4-sitl/.research_local/dependencies/MuJoCo-LiDAR",
+      "pattern_sha256": "9fa0165576f0060488254f04bd647a891004d4f4faa6e9b03b69d830c117c9a3"
+    }
+  },
+  "grant": {
+    "PX4": false,
+    "allowed_executor": "PPO_ONLY_V1",
+    "authorization_id": "AUTONOMOUS-RL-RESEARCH-V1",
+    "basis": "Explicit user instruction following AUDIT-01 commit e77479eaccf08cacfd9844b5ea4f0df98e4ad0d6",
+    "device": "cpu",
+    "hardware": false,
+    "interruption": "RESTART_REQUIRED; no retry of consumed experiment identity",
+    "max_single_run_timesteps": 1000064,
+    "max_training_timesteps": 2000000,
+    "max_training_wall_seconds": 86400,
+    "step_accounting": "All optimizer-collecting environment steps charged; no free optimizer tests or supervised updates",
+    "test_episodes": false,
+    "version": 1,
+    "wall_accounting": "Full wall reservation permanently charged; actual elapsed also recorded, no automatic refund",
+    "workers": 1
+  },
+  "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+  "historical_protection": {
+    "historical_scoped_counts": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "historical_untracked_counts": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "new_untracked_names": {
+      "/home/keyousuke/MineUAV-Learning": []
+    },
+    "protected_count": 1404,
+    "unchanged": true
+  },
+  "implementation_status": "PASS",
+  "limitations": [
+    "No learned navigation improvement claimed",
+    "Full wall reservations conservatively consumed without refund",
+    "No exact or boundary resume",
+    "Stop is latched; no automatic clear",
+    "No Test, PX4, FAST-LIO2 or hardware permission",
+    "CPU NumPy/OpenCV optional import warning unchanged",
+    "Baseline and A/B must share one registration identity"
+  ],
+  "new_budget": {
+    "attempts": [],
+    "authorization_id": "AUTONOMOUS-RL-RESEARCH-V1",
+    "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+    "remaining_timesteps": 2000000,
+    "remaining_wall_seconds": 86400,
+    "reserved_timesteps": 0,
+    "reserved_wall_seconds": 0,
+    "stop_requested": false,
+    "training_authorized": true
+  },
+  "next_action": "Publish authorization phase, new registration for empty feasibility baseline and 65536+65536 curriculum experiment",
+  "old_l9_result": "FAIL",
+  "old_l9r_formal_retrain_authorized": false,
+  "old_v1_v2_ledgers_unchanged": true,
+  "original_l9": {
+    "original_result": "FAIL",
+    "raw_file_count": 11,
+    "status": "PASS"
+  },
+  "phase": "AUTORL-01-AUTH",
+  "publication": {
+    "completion_authority": "live researchctl-v2 receipt, not this snapshot",
+    "status_at_creation": "PENDING_REMOTE_SHA_VERIFICATION"
+  },
+  "registration_sha256": "7a7b3078c459edb1eceb1fc34c62a56a849a49bc7ba3a1d8d0c7bd7a37ea925b",
+  "resources": {
+    "historical_regression_min_mem_available_mib": 9451.6640625,
+    "historical_regression_peak_rss_mib": 1956.09765625,
+    "no_optimizer_training_runs": true
+  },
+  "review": {
+    "evidence": {
+      "path": ".research_local/autorl_authorization_review_01.json",
+      "sha256": "39ebf96367e67adc3be5cfa1862e1390c844b114e1c038074bf20692d6169582"
+    },
+    "reviewer": "/root/autorl_authorization_review",
+    "source_identity_sha256": "5d969e4ca2758a185e2940522668df57ff0effa194140a27fabc0c63bedef957",
+    "status": "GO",
+    "unresolved_critical": 0,
+    "unresolved_important": 0
+  },
+  "source_identity_sha256": "5d969e4ca2758a185e2940522668df57ff0effa194140a27fabc0c63bedef957",
+  "tests": {
+    "deselected": [
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_formal_preflight_accepts_only_current_l8_identity",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_checks_disk_on_existing_ancestor_without_creating_output",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_cli_requires_explicit_formal_mode_authorization_and_rejects_initializer",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_l9_driver_writes_real_post_optimizer_health_snapshot",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[weight]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[logger]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_l8_physical_reason_contract_reproduces_formal_stop_without_training",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_interrupted_formal_report_never_claims_exact_completion_or_final_model",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_preflight.py::test_actor_critic_optimizer_and_checkpoint_roundtrip",
+        "reason": "would execute optimizer.step"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_real_sb3_rollouts_update_weights_and_switch_train_scenes",
+        "reason": "would execute PPO.learn"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_refuses_reused_attempt_and_formal_mode_requires_separate_authorization",
+        "reason": "old Pilot authorization contract superseded by L9R no-training gate"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_completed_real_rollout_milestone_saves_after_update_and_validates_without_mutation",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_passive_ppo_train_timer_counts_actual_updates_and_is_removed_before_save",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_analysis_rejects_tampered_completion_and_preserves_negative_outcome",
+        "reason": "old recorded L8 runtime hashes; audited as history not current code"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_report_readiness_fails_closed_on_missing_failed_or_incomplete_tests",
+        "reason": "old recorded L8 runtime hashes; no new readiness claim"
+      }
+    ],
+    "evidence": {
+      "path": ".research_local/autorl_authorization_unit_01.json",
+      "sha256": "8804c1fde1d811b6819b575da9bf165d29d8e9759176b273f3f4ad88f4d099c7"
+    },
+    "historical_evidence": {
+      "path": ".research_local/autorl_authorization_historical_01.json",
+      "sha256": "2888bd2f3cbd47fcf0a469630b922734d388312c18b4c6388f67170065ad81c4"
+    },
+    "new_tests": 25,
+    "operations_v1_pass": 49,
+    "operations_v2_pass": 71,
+    "optimizer_updates": 0,
+    "physical_forward_checkpoint_checks": 6,
+    "physical_preflight_evidence": {
+      "path": ".research_local/autorl_auth_preflight_01.json",
+      "sha256": "0835587853f3dc09a42f9ec3bfe16c70e17374acfa71571c9ba4e78a5df8dc10"
+    },
+    "related_historical_pass": 885,
+    "scope": "selected related suites, not whole repository",
+    "status": "PASS",
+    "v1_evidence": {
+      "path": ".research_local/autorl_authorization_v1_regression_01.json",
+      "sha256": "3723ebad4b76d2f722cf6f588d0c41e96f7f8df776c9792bb5107ad821e671de"
+    }
+  }
+}
