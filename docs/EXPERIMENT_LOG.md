@@ -1,5 +1,11 @@
 # Experiment Log
 
+## 2026-10-15 — AUTORL-R1：真实课程对照，改善FAIL
+
+冻结协议889ab050…，源码仍5d969e4c…；先3个exact Train empty非学习基线均成功，再新随机同权重seed0两臂各65536步。A377collision21timeout0success（398完成）；B221collision57timeout0success（278完成），B在32919自然reset切全12。最终六Validation均6collision0success。工程执行／checkpoint／optimizer PASS，课程改善FAIL。全部原始记录与权重local-only；71当前标准库回归、6无学习物理检查；旧885相关回归从相同源码身份继承（15排除）。
+
+总131072实际训练步、4096 Adam调用，主管wall合计1133.10s、最大RSS1753.77MiB，无安全停止或OOM。预算保守余额1,868,928步／79,200s。没有Test、PX4或设备。下一候选为解析state-only教师初始化，先单变量预注册／零optimizer测试再新实验，不把先验能力冒充PPO学习，不自动直接重复百万步。
+
 ## 2026-10-15 — AUTORL-01：独立训练授权与预算执行
 
 基线e77479e，分支`feat/autonomous-rl-research-v1`。用户新增累计2,000,000训练步／86400s、单次<=1,000,064、CPU单worker授权。独立grant／append-only预算／固定模块执行／父进程死亡与进程组清理／stop锁存；旧OPS-V1/V2账本及L9R denial不变。授权机制阶段无optimizer更新，实际测试与独立审查见`autonomous_rl_authorization_v1.json`，Git完成以真实V2收据为准。

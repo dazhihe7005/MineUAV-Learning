@@ -2,9 +2,11 @@
 
 ## 当前：AUTONOMOUS-RL-RESEARCH-V1
 
-项目负责人已明确授权独立的累计200万训练步／24小时CPU单worker预算。正在落实[新授权与操作协议](docs/CODEX_AUTONOMOUS_RL_V1.md)及[安全准入阶段](docs/PHASE_AUTORL_01_AUTHORIZATION.md)；实际激活、已预留和余额以新账本CLI为准，不由本段文字授权。原OPS-V1/V2零预算及L9R禁止重训记录保持不变；不启动PX4／真实设备，不使用Test调参。
+首项[课程对照R1](docs/PHASE_AUTORL_R1_CURRICULUM.md)已完成真实131072训练步：A/B最终Validation均0／6成功，课程改善假设FAIL；工程执行PASS不代表学会导航。原冻结empty的非学习基线3／3成功，任务可完成。累计剩余1,868,928训练步／79,200秒保守wall预算；实时以独立账本为准。下一步先研究state-only教师初始化的单变量对照，不直接重跑百万步。
 
-下一项是冻结empty Train的非学习可完成性检查，再比较相同预算的原12场景与empty优先课程。所有训练从新初始化开始，结果无论好坏均记录并推送。尚不能宣称LiDAR策略具备避障能力。
+项目负责人已明确授权独立的累计200万训练步／24小时CPU单worker预算。[新授权与操作协议](docs/CODEX_AUTONOMOUS_RL_V1.md)及[安全准入阶段](docs/PHASE_AUTORL_01_AUTHORIZATION.md)已通过测试、独立审查和远端同步；实际激活、已预留和余额以新账本CLI为准，不由本段文字授权。原OPS-V1/V2零预算及L9R禁止重训记录保持不变；不启动PX4／真实设备，不使用Test调参。
+
+非学习可完成性与原12场景／empty优先课程比较均已执行，阴性结果如实保留。后续实验仍须独立冻结与审查，结果无论好坏均记录并推送。尚不能宣称LiDAR策略具备避障能力。
 
 **面向约 7 kg 矿井无人机的机器人学习、飞行控制与 Sim2Real 项目**
 

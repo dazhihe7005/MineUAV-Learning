@@ -1,4 +1,16 @@
-## AUTONOMOUS-RL-RESEARCH-V1：当前交接优先于以下历史
+## AUTORL-R1：当前执行优先于以下历史
+
+**已结束**：两臂各65536步均完整，最终Validation均0成功6碰撞，课程改善FAIL。不得再次start两个R1 ID。预算真实余额1,868,928步／79,200秒；两次预留完成记录均在独立账本。先完成本阶段结果独立复审、Commit/Push远端核验，再进行新注册研发阶段。
+
+下一候选：解析state-only教师初始化的单变量诊断。仅改变Actor初始化，原结构／Reward／PPO／std不变；先检验两层Tanh能否在预注册容差内逼近已成功Scripted反馈（不是已证明的精确等价），不调用optimizer；再冻结新实验预算和研究评价。现有CLI尚只支持固定R1，必须先开发／测试／新版本登记／独立GO，不能改R1协议或复用其attempt。普通研发及明确预算内PPO已获授权，不用再次索取普通阶段指令。
+
+当前分支`research/lidar-curriculum-r1`，基线e9b90198732bec00c64173c154bd63b7cbc8c537已推送。R1登记SHA de9a5517c7806fce459411acb9204e010124284d1dd763718e99797684cb7714，冻结协议见`autonomous_rl_curriculum_r1_prereg.json`。同注册版本baseline三条empty Train已真实成功（.research_local/authorized_rl_v1/baseline.json），不重复运行或initialize账本。
+
+上述两个ID已按顺序各执行65536步、各预留wall3600s；这不是待执行指令。先读新预算`python3 -m research_regression.authorized_rl status`；锁被持有或存在未知／失败attempt时不能重放。完整训练结果在`.research_local/authorized_rl_v1/runs/<ID>/`，无complete不能宣称完成。训练器已使用过的ID永久不能自动重试；不是旧L9的续训。
+
+真实剩余额度以新append-only账本为准；公开文字和旧OPS的NO都不是恢复授权来源。训练结束后独立结果复审、报告／图／长期文档Commit/Push和远端核验；若结果未达目标，则先分析并冻结下一新协议，不盲目增步。
+
+## AUTONOMOUS-RL-RESEARCH-V1：授权历史与操作说明
 
 用户已于AUDIT-01之后明确授权：累计2,000,000训练environment steps／86400s wall，单次<=1,000,064、CPU单worker；不授权PX4、FAST-LIO2、实机、Test调参。读`CODEX_AUTONOMOUS_RL_V1.md`、本阶段机器JSON及本地新预算，不能从以下历史NO推断新授权丢失，也不能用本段恢复账本。
 
