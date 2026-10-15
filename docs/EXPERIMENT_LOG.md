@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-10-15 — AUDIT-01：LiDAR-PPO学习失败只读诊断
+
+分支 `research/lidar-ppo-learning-diagnosis`，基线 `6258dd4ecae09e2614d9c9b47f9eebd52b6b6bee`。按OPS-V2恢复/核验，通过prepare→显式继承原17项overlay的新候选→独立审查→register建立AUDIT-01，未改旧协议或训练预算。
+
+原L9完整episode重新统计706=656碰撞/50超时/0成功；empty为169条、152碰撞/17超时/0成功。路径均值3.2226m、末端误差1.7852m，无符合既有motionless阈值的episode。L9S21条=17碰撞/4超时/0成功，末尾200步非完整episode。L8/L9S都是独立seed0短attempt，不当多seed；L9继续FAIL，119552仅最后资源样本。
+
+证据更支持先检验基础到点停稳与有效探索，而非唯一归因Reward/学习率。碰撞步无进度奖励、-30惩罚；理想悬停timeout=-5.75是数学反事实，不是实际学会悬停。2条正return超时证明奖励正值≠成功。PPO只有一个L9可靠快照，不能编造诊断趋势；L9S最大LiDAR age0.098s，无未来样本，但没有保存物理位置和逐步动作，绕行/制动过程不可观测。
+
+建议下一项为只改变调度的课程对照，两臂各65536步，总131072；不推荐直接重跑百万步作为第一项。当前未授权，optimizer/Pilot/正式训练/Test新评价/PX4/FAST-LIO2/设备连接均0。新算法性能无提升结论。
+
+验证：12项新增RED→GREEN，与34原V2、49原V1及885相关历史回归合计980 PASS，15 DESELECTED、2继承warning；非全仓。分析7.017s、峰值RSS118.30MiB，回归峰值1887.37MiB、最低MemAvailable7873.76MiB。旧模型/数据/87个untracked身份保护通过。最终结果审查和Push核验按JSON/CLI真实收据，不预填未来SHA。
+
+交付：[中文报告](PHASE_AUDIT_01_PPO_DIAGNOSIS.md)、[机器报告](../mujoco/reports/lidar_ppo_learning_diagnosis.json)、三张实际数据图。登记SHA `fc712feb312afdb8b8f975724fc74b286b121f7a2adf01caf209702cfd72ef34`；源码SHA `6aacbf7e17024d39dc7eb47da8f602169df469aa9c5ace65da2ca2d048bbf5a5`。训练仍须独立授权。
+
 ## 2026-10-15 — OPS-02：便携回归与版本化管理
 
 分支 `feat/research-operations-v2`，基线 `37b6d90e84ba0554db3574c9913413ee93c58e41`。17份测试通过统一解析器读取持久化MuJoCo-LiDAR，commit及patternSHA不变；禁止访问旧/tmp路径的相关回归885 PASS、15 DESELECTED、2已知警告，optimizer调用0。V1管理49 PASS、V2新增34 PASS。

@@ -1,0 +1,6094 @@
+{
+  "AUTO_TRAINING_AUTHORIZED": "NO",
+  "L5_comparability": "different small preflight scene manifest and starts/Yaw; not matched expert proof for L9",
+  "L8": {
+    "counts": {
+      "collision": 42,
+      "physical_failure": 0,
+      "sensor_failure": 0,
+      "success": 0,
+      "time_limit": 4
+    },
+    "episode_detail": "NOT OBSERVABLE",
+    "mean_return": -25.968805049625526,
+    "steps": 8192
+  },
+  "L9": {
+    "by_identity": {
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": {
+        "counts": {
+          "collision": 54,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 9
+        },
+        "episode_policy_steps": {
+          "count": 63,
+          "max": 375,
+          "mean": 227.55555555555554,
+          "median": 207,
+          "min": 114
+        },
+        "episode_return": {
+          "count": 63,
+          "max": 1.4432708967279542,
+          "mean": -27.73992407320135,
+          "median": -27.369637107941845,
+          "min": -47.369561238250654
+        },
+        "episodes": 63,
+        "final_target_distance_m": {
+          "count": 63,
+          "max": 3.802568211352478,
+          "mean": 1.707833212195947,
+          "median": 1.3929436794520946,
+          "min": 0.9133808156756145
+        },
+        "mean_action_norm": {
+          "count": 63,
+          "max": 1.5133930990436855,
+          "mean": 1.432419980863046,
+          "median": 1.430155945943893,
+          "min": 1.3730396190771836
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 63,
+          "max": 3.9324403721232106,
+          "mean": 2.93956096721892,
+          "median": 2.9942553452305325,
+          "min": 1.4007392168553103
+        },
+        "trajectory_length_m": {
+          "count": 63,
+          "max": 7.125127154424764,
+          "mean": 4.457943321319148,
+          "median": 3.9475851599098934,
+          "min": 2.264582295125217
+        }
+      },
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": {
+        "counts": {
+          "collision": 63,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 4
+        },
+        "episode_policy_steps": {
+          "count": 67,
+          "max": 375,
+          "mean": 177.8955223880597,
+          "median": 162,
+          "min": 43
+        },
+        "episode_return": {
+          "count": 67,
+          "max": 0.09486842224057801,
+          "mean": -30.35588492980054,
+          "median": -27.37025076555794,
+          "min": -46.39534001464237
+        },
+        "episodes": 67,
+        "final_target_distance_m": {
+          "count": 67,
+          "max": 4.484095975828023,
+          "mean": 1.828735175817115,
+          "median": 1.4038654050731103,
+          "min": 0.9368590507246727
+        },
+        "mean_action_norm": {
+          "count": 67,
+          "max": 1.5357569833257272,
+          "mean": 1.44187354733005,
+          "median": 1.4417673608465962,
+          "min": 1.340902612721114
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 67,
+          "max": 3.9922051492026114,
+          "mean": 2.424440371758167,
+          "median": 2.972945462767137,
+          "min": 0.6818851399590673
+        },
+        "trajectory_length_m": {
+          "count": 67,
+          "max": 8.325391998322852,
+          "mean": 3.524263337603983,
+          "median": 3.800769655726733,
+          "min": 0.7525004079099907
+        }
+      },
+      "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": {
+        "counts": {
+          "collision": 53,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 6
+        },
+        "episode_policy_steps": {
+          "count": 59,
+          "max": 375,
+          "mean": 192.05084745762713,
+          "median": 176,
+          "min": 52
+        },
+        "episode_return": {
+          "count": 59,
+          "max": -10.998642963353623,
+          "mean": -28.903792577075077,
+          "median": -26.428500598273686,
+          "min": -53.41650599722357
+        },
+        "episodes": 59,
+        "final_target_distance_m": {
+          "count": 59,
+          "max": 5.875666272228161,
+          "mean": 1.900776239690433,
+          "median": 1.546792337576597,
+          "min": 0.8449598457849548
+        },
+        "mean_action_norm": {
+          "count": 59,
+          "max": 1.5175388671196215,
+          "mean": 1.4278332853020939,
+          "median": 1.4346739643117068,
+          "min": 1.3491123679626513
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 59,
+          "max": 4.1941883068751915,
+          "mean": 2.3421938321059064,
+          "median": 2.990970442936384,
+          "min": 0.8354615851815569
+        },
+        "trajectory_length_m": {
+          "count": 59,
+          "max": 7.840496329988572,
+          "mean": 3.526524385232022,
+          "median": 3.571663903179949,
+          "min": 0.9119843414977014
+        }
+      },
+      "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": {
+        "counts": {
+          "collision": 58,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 4
+        },
+        "episode_policy_steps": {
+          "count": 62,
+          "max": 375,
+          "mean": 153.32258064516128,
+          "median": 141.0,
+          "min": 40
+        },
+        "episode_return": {
+          "count": 62,
+          "max": -5.653769720434515,
+          "mean": -29.01378839246083,
+          "median": -26.681018518222864,
+          "min": -42.99101862250253
+        },
+        "episodes": 62,
+        "final_target_distance_m": {
+          "count": 62,
+          "max": 3.5541698091926475,
+          "mean": 1.9051847217311568,
+          "median": 1.6478448265425467,
+          "min": 1.0545860296426508
+        },
+        "mean_action_norm": {
+          "count": 62,
+          "max": 1.5189878005643158,
+          "mean": 1.4379778849890565,
+          "median": 1.4350336017935659,
+          "min": 1.371861276132225
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 62,
+          "max": 3.886798731770095,
+          "mean": 2.0277708097811464,
+          "median": 2.5042701020697242,
+          "min": 0.5310261811023523
+        },
+        "trajectory_length_m": {
+          "count": 62,
+          "max": 7.940484776980437,
+          "mean": 2.9083807813309517,
+          "median": 3.6332003279109744,
+          "min": 0.5671921819272316
+        }
+      },
+      "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": {
+        "counts": {
+          "collision": 63,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 1
+        },
+        "episode_policy_steps": {
+          "count": 64,
+          "max": 375,
+          "mean": 164.15625,
+          "median": 156.5,
+          "min": 46
+        },
+        "episode_return": {
+          "count": 64,
+          "max": -11.143603915245437,
+          "mean": -31.694148342824835,
+          "median": -27.574511290715897,
+          "min": -51.82533809653744
+        },
+        "episodes": 64,
+        "final_target_distance_m": {
+          "count": 64,
+          "max": 3.846576444309911,
+          "mean": 1.930506850714914,
+          "median": 1.5175367784505975,
+          "min": 1.054655040698986
+        },
+        "mean_action_norm": {
+          "count": 64,
+          "max": 1.5120136890599654,
+          "mean": 1.4345785534227673,
+          "median": 1.4320882314242311,
+          "min": 1.319844968069091
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 64,
+          "max": 4.131602602805049,
+          "mean": 2.2385414264407406,
+          "median": 2.783229971294338,
+          "min": 0.38236993100680705
+        },
+        "trajectory_length_m": {
+          "count": 64,
+          "max": 7.230735372526938,
+          "mean": 3.20283930677363,
+          "median": 3.4448785869743483,
+          "min": 0.672217336845134
+        }
+      },
+      "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": {
+        "counts": {
+          "collision": 66,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 5
+        },
+        "episode_policy_steps": {
+          "count": 71,
+          "max": 375,
+          "mean": 172.0281690140845,
+          "median": 170,
+          "min": 37
+        },
+        "episode_return": {
+          "count": 71,
+          "max": -3.25670068888079,
+          "mean": -29.83602517470537,
+          "median": -27.07103592369353,
+          "min": -58.72017690313419
+        },
+        "episodes": 71,
+        "final_target_distance_m": {
+          "count": 71,
+          "max": 4.342129378507049,
+          "mean": 1.742741431448331,
+          "median": 1.4851041790296609,
+          "min": 0.8889427448273773
+        },
+        "mean_action_norm": {
+          "count": 71,
+          "max": 1.5309094766433926,
+          "mean": 1.4435903971474653,
+          "median": 1.4467548376449335,
+          "min": 1.348829968629955
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 71,
+          "max": 3.9431092057049435,
+          "mean": 2.1021102219878633,
+          "median": 2.823933815164345,
+          "min": 0.463820576988445
+        },
+        "trajectory_length_m": {
+          "count": 71,
+          "max": 7.861498164697328,
+          "mean": 3.2662346463464105,
+          "median": 3.6875192112117836,
+          "min": 0.5037596243227798
+        }
+      },
+      "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": {
+        "counts": {
+          "collision": 44,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 6
+        },
+        "episode_policy_steps": {
+          "count": 50,
+          "max": 375,
+          "mean": 226.2,
+          "median": 199.5,
+          "min": 99
+        },
+        "episode_return": {
+          "count": 50,
+          "max": -2.2078374488886454,
+          "mean": -28.353240068915063,
+          "median": -28.533595931098287,
+          "min": -44.21471686414038
+        },
+        "episodes": 50,
+        "final_target_distance_m": {
+          "count": 50,
+          "max": 3.20464828522253,
+          "mean": 1.7241565950339328,
+          "median": 1.4320291077968046,
+          "min": 0.8742687860681609
+        },
+        "mean_action_norm": {
+          "count": 50,
+          "max": 1.5085027309998926,
+          "mean": 1.4395907146771119,
+          "median": 1.439477696012271,
+          "min": 1.35691574419334
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 50,
+          "max": 4.034872386869861,
+          "mean": 3.032842670592284,
+          "median": 3.042661535318999,
+          "min": 1.2550073625312725
+        },
+        "trajectory_length_m": {
+          "count": 50,
+          "max": 7.577382173812725,
+          "mean": 4.515225761867911,
+          "median": 3.9849190923825892,
+          "min": 2.935651556192515
+        }
+      },
+      "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": {
+        "counts": {
+          "collision": 44,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 3
+        },
+        "episode_policy_steps": {
+          "count": 47,
+          "max": 375,
+          "mean": 117.25531914893617,
+          "median": 75,
+          "min": 43
+        },
+        "episode_return": {
+          "count": 47,
+          "max": -0.7455482389099886,
+          "mean": -26.973301615451124,
+          "median": -26.704247921005226,
+          "min": -48.972100560915386
+        },
+        "episodes": 47,
+        "final_target_distance_m": {
+          "count": 47,
+          "max": 4.363158750956309,
+          "mean": 1.5510268247260686,
+          "median": 1.4522683762613502,
+          "min": 0.7020138008989812
+        },
+        "mean_action_norm": {
+          "count": 47,
+          "max": 1.5368929626837569,
+          "mean": 1.438153873091526,
+          "median": 1.4450603624100347,
+          "min": 1.3413695224222102
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 47,
+          "max": 3.574896229656211,
+          "mean": 1.4211093242755912,
+          "median": 0.8505409800911222,
+          "min": 0.5495066675709159
+        },
+        "trajectory_length_m": {
+          "count": 47,
+          "max": 6.4741306400101495,
+          "mean": 2.055612789024921,
+          "median": 1.0752333754284005,
+          "min": 0.6245316239061659
+        }
+      },
+      "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": {
+        "counts": {
+          "collision": 47,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 4
+        },
+        "episode_policy_steps": {
+          "count": 51,
+          "max": 375,
+          "mean": 111.41176470588235,
+          "median": 74,
+          "min": 35
+        },
+        "episode_return": {
+          "count": 51,
+          "max": -15.224956938930282,
+          "mean": -28.62526097150835,
+          "median": -27.5429116717171,
+          "min": -49.753842909945455
+        },
+        "episodes": 51,
+        "final_target_distance_m": {
+          "count": 51,
+          "max": 5.1557455041394284,
+          "mean": 1.8769897663971506,
+          "median": 1.6812641711324303,
+          "min": 0.6921925048213114
+        },
+        "mean_action_norm": {
+          "count": 51,
+          "max": 1.5170023787372229,
+          "mean": 1.4349494601372297,
+          "median": 1.435269096157869,
+          "min": 1.3479010080421912
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 51,
+          "max": 5.662922999509139,
+          "mean": 1.3603453422903409,
+          "median": 0.8889594996239456,
+          "min": 0.4230519095087031
+        },
+        "trajectory_length_m": {
+          "count": 51,
+          "max": 7.520508798445203,
+          "mean": 1.8924933564178301,
+          "median": 1.146986053465354,
+          "min": 0.44116070721752515
+        }
+      },
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": {
+        "counts": {
+          "collision": 54,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 2
+        },
+        "episode_policy_steps": {
+          "count": 56,
+          "max": 375,
+          "mean": 216.01785714285714,
+          "median": 198.5,
+          "min": 122
+        },
+        "episode_return": {
+          "count": 56,
+          "max": -22.57028149035199,
+          "mean": -32.68905838476118,
+          "median": -29.762440588435915,
+          "min": -62.877065190688654
+        },
+        "episodes": 56,
+        "final_target_distance_m": {
+          "count": 56,
+          "max": 4.78901977884815,
+          "mean": 1.9538693168984083,
+          "median": 1.7063511190513476,
+          "min": 0.885045602783837
+        },
+        "mean_action_norm": {
+          "count": 56,
+          "max": 1.488631882406132,
+          "mean": 1.4380801952477502,
+          "median": 1.4372196774301238,
+          "min": 1.3648958693405175
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 56,
+          "max": 4.0694005432160445,
+          "mean": 3.219704925694317,
+          "median": 3.0854488875133117,
+          "min": 1.8463109914107638
+        },
+        "trajectory_length_m": {
+          "count": 56,
+          "max": 7.201920295951708,
+          "mean": 4.518652992046694,
+          "median": 4.399513873665149,
+          "min": 3.120124885433153
+        }
+      },
+      "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": {
+        "counts": {
+          "collision": 49,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 3
+        },
+        "episode_policy_steps": {
+          "count": 52,
+          "max": 375,
+          "mean": 148.1153846153846,
+          "median": 114.0,
+          "min": 38
+        },
+        "episode_return": {
+          "count": 52,
+          "max": -8.343568441554794,
+          "mean": -29.65570632414365,
+          "median": -26.645171778062917,
+          "min": -69.455569918753
+        },
+        "episodes": 52,
+        "final_target_distance_m": {
+          "count": 52,
+          "max": 5.185158972794332,
+          "mean": 1.6872783243505312,
+          "median": 1.3888535208833401,
+          "min": 0.9469611208151582
+        },
+        "mean_action_norm": {
+          "count": 52,
+          "max": 1.5385537594713758,
+          "mean": 1.4374011350142462,
+          "median": 1.4351274169355444,
+          "min": 1.3538155055929324
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 52,
+          "max": 4.049561525623735,
+          "mean": 1.763290666335596,
+          "median": 1.0186723629129268,
+          "min": 0.54476864876078
+        },
+        "trajectory_length_m": {
+          "count": 52,
+          "max": 7.114387397075562,
+          "mean": 2.7097314165135025,
+          "median": 2.4667919000623852,
+          "min": 0.5797464021754247
+        }
+      },
+      "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": {
+        "counts": {
+          "collision": 61,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 3
+        },
+        "episode_policy_steps": {
+          "count": 64,
+          "max": 375,
+          "mean": 113.375,
+          "median": 76.0,
+          "min": 35
+        },
+        "episode_return": {
+          "count": 64,
+          "max": -6.283697850571994,
+          "mean": -28.09903617246223,
+          "median": -27.550499752087834,
+          "min": -54.26950002298316
+        },
+        "episodes": 64,
+        "final_target_distance_m": {
+          "count": 64,
+          "max": 3.9336167114079013,
+          "mean": 1.573492782688907,
+          "median": 1.4856087898080763,
+          "min": 0.28924868928523884
+        },
+        "mean_action_norm": {
+          "count": 64,
+          "max": 1.5115396893496063,
+          "mean": 1.4412121471300103,
+          "median": 1.434770424876905,
+          "min": 1.365731700178752
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 64,
+          "max": 3.698411097614037,
+          "mean": 1.323386114124029,
+          "median": 0.9065090622121192,
+          "min": 0.3524213989088499
+        },
+        "trajectory_length_m": {
+          "count": 64,
+          "max": 6.37860681327571,
+          "mean": 1.8764730250904202,
+          "median": 1.2056535175427925,
+          "min": 0.3937816104971211
+        }
+      }
+    },
+    "by_layout": {
+      "channel": {
+        "counts": {
+          "collision": 108,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 7
+        },
+        "episode_policy_steps": {
+          "count": 115,
+          "max": 375,
+          "mean": 112.50434782608696,
+          "median": 74,
+          "min": 35
+        },
+        "episode_return": {
+          "count": 115,
+          "max": -6.283697850571994,
+          "mean": -28.33240543116964,
+          "median": -27.5429116717171,
+          "min": -54.26950002298316
+        },
+        "episodes": 115,
+        "final_target_distance_m": {
+          "count": 115,
+          "max": 5.1557455041394284,
+          "mean": 1.7080870972029976,
+          "median": 1.5990005154658156,
+          "min": 0.28924868928523884
+        },
+        "mean_action_norm": {
+          "count": 115,
+          "max": 1.5170023787372229,
+          "mean": 1.4384347815940814,
+          "median": 1.4351702690774175,
+          "min": 1.3479010080421912
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 115,
+          "max": 5.662922999509139,
+          "mean": 1.3397767283543065,
+          "median": 0.8889594996239456,
+          "min": 0.3524213989088499
+        },
+        "trajectory_length_m": {
+          "count": 115,
+          "max": 7.520508798445203,
+          "mean": 1.8835776937660542,
+          "median": 1.1627489829784907,
+          "min": 0.3937816104971211
+        }
+      },
+      "detour": {
+        "counts": {
+          "collision": 121,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 5
+        },
+        "episode_policy_steps": {
+          "count": 126,
+          "max": 375,
+          "mean": 158.82539682539684,
+          "median": 151.0,
+          "min": 40
+        },
+        "episode_return": {
+          "count": 126,
+          "max": -5.653769720434515,
+          "mean": -30.375241065661598,
+          "median": -26.94185719884308,
+          "min": -51.82533809653744
+        },
+        "episodes": 126,
+        "final_target_distance_m": {
+          "count": 126,
+          "max": 3.846576444309911,
+          "mean": 1.9180467555006842,
+          "median": 1.6355957268223942,
+          "min": 1.0545860296426508
+        },
+        "mean_action_norm": {
+          "count": 126,
+          "max": 1.5189878005643158,
+          "mean": 1.4362512403839574,
+          "median": 1.433073527891295,
+          "min": 1.319844968069091
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 126,
+          "max": 4.131602602805049,
+          "mean": 2.134828900782845,
+          "median": 2.7720443800248544,
+          "min": 0.38236993100680705
+        },
+        "trajectory_length_m": {
+          "count": 126,
+          "max": 7.940484776980437,
+          "mean": 3.057947016476439,
+          "median": 3.571089226284022,
+          "min": 0.5671921819272316
+        }
+      },
+      "empty": {
+        "counts": {
+          "collision": 152,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 17
+        },
+        "episode_policy_steps": {
+          "count": 169,
+          "max": 375,
+          "mean": 223.33136094674558,
+          "median": 200,
+          "min": 99
+        },
+        "episode_return": {
+          "count": 169,
+          "max": 1.4432708967279542,
+          "mean": -29.56132834085245,
+          "median": -28.02045152718574,
+          "min": -62.877065190688654
+        },
+        "episodes": 169,
+        "final_target_distance_m": {
+          "count": 169,
+          "max": 4.78901977884815,
+          "mean": 1.7941893719902495,
+          "median": 1.4614260571866162,
+          "min": 0.8742687860681609
+        },
+        "mean_action_norm": {
+          "count": 169,
+          "max": 1.5133930990436855,
+          "mean": 1.4364170737402455,
+          "median": 1.4352875575916841,
+          "min": 1.35691574419334
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 169,
+          "max": 4.0694005432160445,
+          "mean": 3.0599878716170883,
+          "median": 3.055456496553718,
+          "min": 1.2550073625312725
+        },
+        "trajectory_length_m": {
+          "count": 169,
+          "max": 7.577382173812725,
+          "mean": 4.495007602906016,
+          "median": 4.134579015447502,
+          "min": 2.264582295125217
+        }
+      },
+      "front_box": {
+        "counts": {
+          "collision": 178,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 12
+        },
+        "episode_policy_steps": {
+          "count": 190,
+          "max": 375,
+          "mean": 167.55263157894737,
+          "median": 158.5,
+          "min": 37
+        },
+        "episode_return": {
+          "count": 190,
+          "max": 0.09486842224057801,
+          "mean": -29.969993718716776,
+          "median": -27.091676642530444,
+          "min": -69.455569918753
+        },
+        "episodes": 190,
+        "final_target_distance_m": {
+          "count": 190,
+          "max": 5.185158972794332,
+          "mean": 1.757886164625294,
+          "median": 1.4563735480827842,
+          "min": 0.8889427448273773
+        },
+        "mean_action_norm": {
+          "count": 190,
+          "max": 1.5385537594713758,
+          "mean": 1.441291078364864,
+          "median": 1.4434468528327327,
+          "min": 1.340902612721114
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 190,
+          "max": 4.049561525623735,
+          "mean": 2.1230444490441394,
+          "median": 2.828613593914107,
+          "min": 0.463820576988445
+        },
+        "trajectory_length_m": {
+          "count": 190,
+          "max": 8.325391998322852,
+          "mean": 3.2049175640461267,
+          "median": 3.6324538056522906,
+          "min": 0.5037596243227798
+        }
+      },
+      "side_pair": {
+        "counts": {
+          "collision": 97,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 9
+        },
+        "episode_policy_steps": {
+          "count": 106,
+          "max": 375,
+          "mean": 158.88679245283018,
+          "median": 132.5,
+          "min": 43
+        },
+        "episode_return": {
+          "count": 106,
+          "max": -0.7455482389099886,
+          "mean": -28.04782016956257,
+          "median": -26.63276010196646,
+          "min": -53.41650599722357
+        },
+        "episodes": 106,
+        "final_target_distance_m": {
+          "count": 106,
+          "max": 5.875666272228161,
+          "mean": 1.7456986689043468,
+          "median": 1.49391502702469,
+          "min": 0.7020138008989812
+        },
+        "mean_action_norm": {
+          "count": 106,
+          "max": 1.5368929626837569,
+          "mean": 1.4324093949823138,
+          "median": 1.4363976555629603,
+          "min": 1.3413695224222102
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 106,
+          "max": 4.1941883068751915,
+          "mean": 1.9337884371245402,
+          "median": 1.4792203657063714,
+          "min": 0.5495066675709159
+        },
+        "trajectory_length_m": {
+          "count": 106,
+          "max": 7.840496329988572,
+          "mean": 2.8743277340835904,
+          "median": 2.5016519252509175,
+          "min": 0.6245316239061659
+        }
+      }
+    },
+    "closest_approach": "NOT OBSERVABLE",
+    "collision_contact_location": "NOT OBSERVABLE",
+    "counts": {
+      "collision": 656,
+      "physical_failure": 0,
+      "sensor_failure": 0,
+      "success": 0,
+      "time_limit": 50
+    },
+    "episode_policy_steps": {
+      "count": 706,
+      "max": 375,
+      "mean": 169.07932011331445,
+      "median": 156.0,
+      "min": 35
+    },
+    "episode_return": {
+      "count": 706,
+      "max": 1.4432708967279542,
+      "mean": -29.38914905522911,
+      "median": -27.22975699567388,
+      "min": -69.455569918753
+    },
+    "episode_weighting": "completed episodes, not independent training seeds",
+    "episodes": 706,
+    "exact_failure_step": "NOT RECORDED",
+    "failing_transition_physical_cause": "NOT RECORDED",
+    "final_distance_threshold_counts": {
+      "<0.1m": 0,
+      "<0.25m": 0,
+      "<0.5m": 1,
+      "<1m": 50
+    },
+    "final_target_distance_m": {
+      "count": 706,
+      "max": 5.875666272228161,
+      "mean": 1.7852186139099855,
+      "median": 1.530151318937632,
+      "min": 0.28924868928523884
+    },
+    "last_completed_episode_step": 119370,
+    "last_resource_step": 119552,
+    "mean_action_norm": {
+      "count": 706,
+      "max": 1.5385537594713758,
+      "mean": 1.437426122367208,
+      "median": 1.4359571876460115,
+      "min": 1.319844968069091
+    },
+    "motionless_episodes": 0,
+    "net_displacement_m": {
+      "count": 706,
+      "max": 5.662922999509139,
+      "mean": 2.1934288034224636,
+      "median": 2.8465367165164372,
+      "min": 0.3524213989088499
+    },
+    "reward_reconstruction": {
+      "endpoint_distance_reduction_m": {
+        "count": 706,
+        "max": 1.604337410437718,
+        "mean": 0.23278377605588668,
+        "median": 0.4768795433658962,
+        "min": -3.7387894634894705
+      },
+      "per_step_components": "NOT OBSERVABLE",
+      "timeout_action_sum_lower_bound": {
+        "count": 50,
+        "max": -5.0581123823623315,
+        "mean": -5.31074794764784,
+        "median": -5.3124361320457565,
+        "min": -5.5591552823252375
+      },
+      "timeout_action_sum_upper_bound": {
+        "count": 50,
+        "max": -3.4112667830142853,
+        "mean": -3.7615304374537164,
+        "median": -3.7629401846758777,
+        "min": -4.120560993733945
+      },
+      "timeout_brake_sum_lower_bound": {
+        "count": 50,
+        "max": -0.14196807381643373,
+        "mean": -0.318472431542439,
+        "median": -0.17132094709814294,
+        "min": -3.9284724936561055
+      },
+      "timeout_brake_sum_upper_bound": {
+        "count": 50,
+        "max": 1.462032005088929,
+        "mean": 1.2307450786516845,
+        "median": 1.3785927421924935,
+        "min": -2.436476621517439
+      },
+      "timeout_progress_sum": {
+        "count": 50,
+        "max": 11.135356609657297,
+        "mean": -6.300620111347353,
+        "median": -4.501591546032271,
+        "min": -37.38789463489471
+      }
+    },
+    "step_blocks": [
+      {
+        "by_layout": {
+          "channel": {
+            "counts": {
+              "collision": 39,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 39,
+              "max": 264,
+              "mean": 87.84615384615384,
+              "median": 71,
+              "min": 35
+            },
+            "episode_return": {
+              "count": 39,
+              "max": -16.616361951410163,
+              "mean": -27.45334779134303,
+              "median": -27.163172121851783,
+              "min": -41.34945831591564
+            },
+            "episodes": 39,
+            "final_target_distance_m": {
+              "count": 39,
+              "max": 2.891711182528663,
+              "mean": 1.4986801915387447,
+              "median": 1.4850124993112412,
+              "min": 0.28924868928523884
+            },
+            "mean_action_norm": {
+              "count": 39,
+              "max": 1.4938844905634074,
+              "mean": 1.4278313726060177,
+              "median": 1.424447070833024,
+              "min": 1.3479010080421912
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 39,
+              "max": 3.5885515942721997,
+              "mean": 1.314124014796706,
+              "median": 0.9383360029141771,
+              "min": 0.37297735344111144
+            },
+            "trajectory_length_m": {
+              "count": 39,
+              "max": 4.19856390879577,
+              "mean": 1.593248369432557,
+              "median": 1.187381957498993,
+              "min": 0.44116070721752515
+            }
+          },
+          "detour": {
+            "counts": {
+              "collision": 34,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            },
+            "episode_policy_steps": {
+              "count": 35,
+              "max": 375,
+              "mean": 145.85714285714286,
+              "median": 143,
+              "min": 45
+            },
+            "episode_return": {
+              "count": 35,
+              "max": -15.803710611377161,
+              "mean": -33.72473108359132,
+              "median": -32.18914681161502,
+              "min": -48.45790450463434
+            },
+            "episodes": 35,
+            "final_target_distance_m": {
+              "count": 35,
+              "max": 3.4303673985545737,
+              "mean": 2.2477741686313273,
+              "median": 2.5356876821258783,
+              "min": 1.0545860296426508
+            },
+            "mean_action_norm": {
+              "count": 35,
+              "max": 1.4874296572571124,
+              "mean": 1.422253076975892,
+              "median": 1.4235050356780539,
+              "min": 1.319844968069091
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 35,
+              "max": 4.131602602805049,
+              "mean": 2.5020229281523965,
+              "median": 3.0841554697023796,
+              "min": 0.570789380177453
+            },
+            "trajectory_length_m": {
+              "count": 35,
+              "max": 4.995787185683909,
+              "mean": 3.0107940575414855,
+              "median": 3.630434269703436,
+              "min": 0.646042695500748
+            }
+          },
+          "empty": {
+            "counts": {
+              "collision": 56,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 2
+            },
+            "episode_policy_steps": {
+              "count": 58,
+              "max": 375,
+              "mean": 196.6206896551724,
+              "median": 182.5,
+              "min": 99
+            },
+            "episode_return": {
+              "count": 58,
+              "max": -7.445768763896027,
+              "mean": -30.819023401640518,
+              "median": -28.01712640966722,
+              "min": -43.579687237164315
+            },
+            "episodes": 58,
+            "final_target_distance_m": {
+              "count": 58,
+              "max": 3.915559624478887,
+              "mean": 1.7865449776578366,
+              "median": 1.4554381535922847,
+              "min": 0.885045602783837
+            },
+            "mean_action_norm": {
+              "count": 58,
+              "max": 1.5085027309998926,
+              "mean": 1.4298398181936942,
+              "median": 1.4322203445611519,
+              "min": 1.35691574419334
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 58,
+              "max": 4.0694005432160445,
+              "mean": 3.2112947661207527,
+              "median": 3.1003704963565744,
+              "min": 1.8463109914107638
+            },
+            "trajectory_length_m": {
+              "count": 58,
+              "max": 7.125127154424764,
+              "mean": 4.219878003123161,
+              "median": 3.8885420643668587,
+              "min": 2.264582295125217
+            }
+          },
+          "front_box": {
+            "counts": {
+              "collision": 56,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            },
+            "episode_policy_steps": {
+              "count": 57,
+              "max": 375,
+              "mean": 125.3157894736842,
+              "median": 109,
+              "min": 37
+            },
+            "episode_return": {
+              "count": 57,
+              "max": -17.453549518237875,
+              "mean": -30.05334949124072,
+              "median": -26.606933612239082,
+              "min": -45.12253759323737
+            },
+            "episodes": 57,
+            "final_target_distance_m": {
+              "count": 57,
+              "max": 3.1625412375929485,
+              "mean": 1.7321145753338059,
+              "median": 1.4660827932946021,
+              "min": 0.903239111667503
+            },
+            "mean_action_norm": {
+              "count": 57,
+              "max": 1.5380753556064906,
+              "mean": 1.4353120787771385,
+              "median": 1.4308804157716986,
+              "min": 1.340902612721114
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 57,
+              "max": 4.049561525623735,
+              "mean": 1.9747379693705187,
+              "median": 1.2125670878103745,
+              "min": 0.463820576988445
+            },
+            "trajectory_length_m": {
+              "count": 57,
+              "max": 7.975711118713392,
+              "mean": 2.4856820578897025,
+              "median": 2.2140443331962034,
+              "min": 0.5037596243227798
+            }
+          },
+          "side_pair": {
+            "counts": {
+              "collision": 26,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            },
+            "episode_policy_steps": {
+              "count": 27,
+              "max": 375,
+              "mean": 106.81481481481481,
+              "median": 74,
+              "min": 43
+            },
+            "episode_return": {
+              "count": 27,
+              "max": -10.998642963353623,
+              "mean": -25.61209154109911,
+              "median": -25.776039356648578,
+              "min": -42.352785232019585
+            },
+            "episodes": 27,
+            "final_target_distance_m": {
+              "count": 27,
+              "max": 2.7572249365244828,
+              "mean": 1.486361099096345,
+              "median": 1.443816928570639,
+              "min": 0.9530349388587511
+            },
+            "mean_action_norm": {
+              "count": 27,
+              "max": 1.4983201992888118,
+              "mean": 1.4319257734464215,
+              "median": 1.4316811491183445,
+              "min": 1.3590368765312708
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 27,
+              "max": 3.8169228350822504,
+              "mean": 1.515712297648994,
+              "median": 1.0633319599264086,
+              "min": 0.585990960489014
+            },
+            "trajectory_length_m": {
+              "count": 27,
+              "max": 5.876934079072,
+              "mean": 1.9098144029357196,
+              "median": 1.2912993544443816,
+              "min": 0.6245316239061659
+            }
+          }
+        },
+        "counts": {
+          "collision": 211,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 5
+        },
+        "episode_policy_steps": {
+          "count": 216,
+          "max": 375,
+          "mean": 138.71296296296296,
+          "median": 133.5,
+          "min": 35
+        },
+        "episode_return": {
+          "count": 216,
+          "max": -7.445768763896027,
+          "mean": -29.82924491524825,
+          "median": -27.037168683186692,
+          "min": -48.45790450463434
+        },
+        "episodes": 216,
+        "final_target_distance_m": {
+          "count": 216,
+          "max": 3.915559624478887,
+          "mean": 1.7574190395643068,
+          "median": 1.480134096744218,
+          "min": 0.28924868928523884
+        },
+        "lower_exclusive": 0,
+        "mean_action_norm": {
+          "count": 216,
+          "max": 1.5380753556064906,
+          "mean": 1.4299526622887753,
+          "median": 1.4303650433320474,
+          "min": 1.319844968069091
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 216,
+          "max": 4.131602602805049,
+          "mean": 2.2155603323520903,
+          "median": 2.9123978636351047,
+          "min": 0.37297735344111144
+        },
+        "trajectory_length_m": {
+          "count": 216,
+          "max": 7.975711118713392,
+          "mean": 2.8033160591756596,
+          "median": 3.469398154594008,
+          "min": 0.44116070721752515
+        },
+        "upper_inclusive": 30000
+      },
+      {
+        "by_layout": {
+          "channel": {
+            "counts": {
+              "collision": 24,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            },
+            "episode_policy_steps": {
+              "count": 25,
+              "max": 375,
+              "mean": 128.44,
+              "median": 91,
+              "min": 35
+            },
+            "episode_return": {
+              "count": 25,
+              "max": -15.224956938930282,
+              "mean": -30.10577624722224,
+              "median": -27.899753297837396,
+              "min": -53.88364002526314
+            },
+            "episodes": 25,
+            "final_target_distance_m": {
+              "count": 25,
+              "max": 3.5197194551931674,
+              "mean": 1.7694738402020305,
+              "median": 1.5733815463805578,
+              "min": 0.9340591310436396
+            },
+            "mean_action_norm": {
+              "count": 25,
+              "max": 1.5170023787372229,
+              "mean": 1.4663917124458299,
+              "median": 1.4747289850960823,
+              "min": 1.3859784843569711
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 25,
+              "max": 3.116350901177374,
+              "mean": 1.3304750417177378,
+              "median": 0.8889594996239456,
+              "min": 0.35513714251491174
+            },
+            "trajectory_length_m": {
+              "count": 25,
+              "max": 6.37860681327571,
+              "mean": 2.1027261226001093,
+              "median": 1.1627489829784907,
+              "min": 0.4042572103963447
+            }
+          },
+          "detour": {
+            "counts": {
+              "collision": 22,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 2
+            },
+            "episode_policy_steps": {
+              "count": 24,
+              "max": 375,
+              "mean": 163.08333333333334,
+              "median": 127.0,
+              "min": 54
+            },
+            "episode_return": {
+              "count": 24,
+              "max": -14.308377793716714,
+              "mean": -27.72947041280585,
+              "median": -26.40772740491574,
+              "min": -38.59956647228482
+            },
+            "episodes": 24,
+            "final_target_distance_m": {
+              "count": 24,
+              "max": 3.5541698091926475,
+              "mean": 1.7809293322317974,
+              "median": 1.634070956321254,
+              "min": 1.1675565505370937
+            },
+            "mean_action_norm": {
+              "count": 24,
+              "max": 1.5120136890599654,
+              "mean": 1.4610967191779103,
+              "median": 1.4672903201239254,
+              "min": 1.4116338839823883
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 24,
+              "max": 3.7236724197266833,
+              "mean": 1.775580089080836,
+              "median": 1.3160680959742033,
+              "min": 0.5496481161892036
+            },
+            "trajectory_length_m": {
+              "count": 24,
+              "max": 7.940484776980437,
+              "mean": 2.9946644718506787,
+              "median": 2.4182360377894936,
+              "min": 0.6238983260383668
+            }
+          },
+          "empty": {
+            "counts": {
+              "collision": 31,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 8
+            },
+            "episode_policy_steps": {
+              "count": 39,
+              "max": 375,
+              "mean": 274.38461538461536,
+              "median": 265,
+              "min": 143
+            },
+            "episode_return": {
+              "count": 39,
+              "max": -3.169747551309174,
+              "mean": -31.119758841228734,
+              "median": -29.660399472817318,
+              "min": -62.877065190688654
+            },
+            "episodes": 39,
+            "final_target_distance_m": {
+              "count": 39,
+              "max": 4.78901977884815,
+              "mean": 2.1407571978996045,
+              "median": 2.0529448718952374,
+              "min": 0.9719597754815889
+            },
+            "mean_action_norm": {
+              "count": 39,
+              "max": 1.5133930990436855,
+              "mean": 1.4519863191002973,
+              "median": 1.4541830314424586,
+              "min": 1.38957806990153
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 39,
+              "max": 3.930129692444196,
+              "mean": 2.9193526199108577,
+              "median": 3.032296659120291,
+              "min": 1.5228710742030662
+            },
+            "trajectory_length_m": {
+              "count": 39,
+              "max": 7.577382173812725,
+              "mean": 5.0863347394977705,
+              "median": 4.858043325808506,
+              "min": 2.6292139243025967
+            }
+          },
+          "front_box": {
+            "counts": {
+              "collision": 35,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 2
+            },
+            "episode_policy_steps": {
+              "count": 37,
+              "max": 375,
+              "mean": 214.6216216216216,
+              "median": 219,
+              "min": 46
+            },
+            "episode_return": {
+              "count": 37,
+              "max": 0.09486842224057801,
+              "mean": -32.49700254499129,
+              "median": -29.701769798712704,
+              "min": -58.3087266588418
+            },
+            "episodes": 37,
+            "final_target_distance_m": {
+              "count": 37,
+              "max": 4.484095975828023,
+              "mean": 1.8895388296441573,
+              "median": 1.4454675791373148,
+              "min": 0.9324761535368232
+            },
+            "mean_action_norm": {
+              "count": 37,
+              "max": 1.5357569833257272,
+              "mean": 1.4574007170957592,
+              "median": 1.458847940593271,
+              "min": 1.3865488441108327
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 37,
+              "max": 3.9431092057049435,
+              "mean": 2.280106294853257,
+              "median": 2.788208451997912,
+              "min": 0.5400077278443668
+            },
+            "trajectory_length_m": {
+              "count": 37,
+              "max": 8.325391998322852,
+              "mean": 3.9679268236125393,
+              "median": 3.792162318757236,
+              "min": 0.8044477947589035
+            }
+          },
+          "side_pair": {
+            "counts": {
+              "collision": 19,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 2
+            },
+            "episode_policy_steps": {
+              "count": 21,
+              "max": 375,
+              "mean": 196.33333333333334,
+              "median": 176,
+              "min": 67
+            },
+            "episode_return": {
+              "count": 21,
+              "max": -17.603540186639414,
+              "mean": -30.5549425826043,
+              "median": -28.098345732148502,
+              "min": -50.862962173841325
+            },
+            "episodes": 21,
+            "final_target_distance_m": {
+              "count": 21,
+              "max": 4.580013528144864,
+              "mean": 1.9537877880182957,
+              "median": 1.634168419226037,
+              "min": 1.0148887710390733
+            },
+            "mean_action_norm": {
+              "count": 21,
+              "max": 1.527284137461231,
+              "mean": 1.4522734367152825,
+              "median": 1.4553741232848203,
+              "min": 1.4021872675335143
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 21,
+              "max": 3.836293933110598,
+              "mean": 2.253229276744762,
+              "median": 2.7843701877695044,
+              "min": 0.68042225133968
+            },
+            "trajectory_length_m": {
+              "count": 21,
+              "max": 5.988128040094098,
+              "mean": 3.5230739309232413,
+              "median": 3.2591740960524445,
+              "min": 1.0163598670265654
+            }
+          }
+        },
+        "counts": {
+          "collision": 131,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 15
+        },
+        "episode_policy_steps": {
+          "count": 146,
+          "max": 375,
+          "mean": 204.72602739726028,
+          "median": 192.5,
+          "min": 35
+        },
+        "episode_return": {
+          "count": 146,
+          "max": 0.09486842224057801,
+          "mean": -30.656610817090307,
+          "median": -28.368400208002075,
+          "min": -62.877065190688654
+        },
+        "episodes": 146,
+        "final_target_distance_m": {
+          "count": 146,
+          "max": 4.78901977884815,
+          "mean": 1.9274737050816197,
+          "median": 1.6318670436481764,
+          "min": 0.9324761535368232
+        },
+        "lower_exclusive": 30000,
+        "mean_action_norm": {
+          "count": 146,
+          "max": 1.5357569833257272,
+          "mean": 1.4573640357526796,
+          "median": 1.4587962402602466,
+          "min": 1.3859784843569711
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 146,
+          "max": 3.9431092057049435,
+          "mean": 2.2014540964288867,
+          "median": 2.561866548434883,
+          "min": 0.35513714251491174
+        },
+        "trajectory_length_m": {
+          "count": 146,
+          "max": 8.325391998322852,
+          "mean": 3.723321919540302,
+          "median": 3.6932525325963885,
+          "min": 0.4042572103963447
+        },
+        "upper_inclusive": 60000
+      },
+      {
+        "by_layout": {
+          "channel": {
+            "counts": {
+              "collision": 22,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 4
+            },
+            "episode_policy_steps": {
+              "count": 26,
+              "max": 375,
+              "mean": 128.46153846153845,
+              "median": 79.5,
+              "min": 35
+            },
+            "episode_return": {
+              "count": 26,
+              "max": -6.283697850571994,
+              "mean": -26.775240054076995,
+              "median": -27.498757511178415,
+              "min": -54.26950002298316
+            },
+            "episodes": 26,
+            "final_target_distance_m": {
+              "count": 26,
+              "max": 3.9336167114079013,
+              "mean": 1.7888359408758931,
+              "median": 1.6077456598917514,
+              "min": 0.8864511293447097
+            },
+            "mean_action_norm": {
+              "count": 26,
+              "max": 1.5115396893496063,
+              "mean": 1.4383818535393438,
+              "median": 1.4313559445763024,
+              "min": 1.3789696181342908
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 26,
+              "max": 5.662922999509139,
+              "mean": 1.390655341634442,
+              "median": 0.9835141427717262,
+              "min": 0.3524213989088499
+            },
+            "trajectory_length_m": {
+              "count": 26,
+              "max": 7.520508798445203,
+              "mean": 2.0755049031346986,
+              "median": 1.1825657735142951,
+              "min": 0.3937816104971211
+            }
+          },
+          "detour": {
+            "counts": {
+              "collision": 36,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            },
+            "episode_policy_steps": {
+              "count": 37,
+              "max": 375,
+              "mean": 160.94594594594594,
+              "median": 159,
+              "min": 40
+            },
+            "episode_return": {
+              "count": 37,
+              "max": -11.143603915245437,
+              "mean": -30.630344005618532,
+              "median": -27.285932920881752,
+              "min": -51.82533809653744
+            },
+            "episodes": 37,
+            "final_target_distance_m": {
+              "count": 37,
+              "max": 3.846576444309911,
+              "mean": 1.896764616160488,
+              "median": 1.6489123236549281,
+              "min": 1.31720355365347
+            },
+            "mean_action_norm": {
+              "count": 37,
+              "max": 1.503121513038167,
+              "mean": 1.438333332812076,
+              "median": 1.4369633015274117,
+              "min": 1.3779592405598635
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 37,
+              "max": 3.9941195606915056,
+              "mean": 2.068772148643079,
+              "median": 1.990200097075618,
+              "min": 0.38236993100680705
+            },
+            "trajectory_length_m": {
+              "count": 37,
+              "max": 7.230735372526938,
+              "mean": 3.138541201125273,
+              "median": 3.9017526346024853,
+              "min": 0.5671921819272316
+            }
+          },
+          "empty": {
+            "counts": {
+              "collision": 37,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 4
+            },
+            "episode_policy_steps": {
+              "count": 41,
+              "max": 375,
+              "mean": 213.65853658536585,
+              "median": 180,
+              "min": 114
+            },
+            "episode_return": {
+              "count": 41,
+              "max": 1.4432708967279542,
+              "mean": -26.831424086517558,
+              "median": -26.425865726723845,
+              "min": -52.520659615622634
+            },
+            "episodes": 41,
+            "final_target_distance_m": {
+              "count": 41,
+              "max": 3.601934695778349,
+              "mean": 1.5513435075829016,
+              "median": 1.3627708091928268,
+              "min": 0.9133808156756145
+            },
+            "mean_action_norm": {
+              "count": 41,
+              "max": 1.4927891361847196,
+              "mean": 1.4405215145216277,
+              "median": 1.4436100830546403,
+              "min": 1.3670533814922479
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 41,
+              "max": 4.063544023839649,
+              "mean": 3.016705720124923,
+              "median": 3.0371839907844924,
+              "min": 1.2550073625312725
+            },
+            "trajectory_length_m": {
+              "count": 41,
+              "max": 6.986339846397931,
+              "mean": 4.314871027480531,
+              "median": 3.9570775789532218,
+              "min": 3.253070795896053
+            }
+          },
+          "front_box": {
+            "counts": {
+              "collision": 49,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 5
+            },
+            "episode_policy_steps": {
+              "count": 54,
+              "max": 375,
+              "mean": 164.12962962962962,
+              "median": 139.5,
+              "min": 40
+            },
+            "episode_return": {
+              "count": 54,
+              "max": -3.25670068888079,
+              "mean": -28.418394364189837,
+              "median": -26.846874379202397,
+              "min": -45.131773736689574
+            },
+            "episodes": 54,
+            "final_target_distance_m": {
+              "count": 54,
+              "max": 4.629100993052881,
+              "mean": 1.6850228276709434,
+              "median": 1.4096162633899207,
+              "min": 0.8952463156565817
+            },
+            "mean_action_norm": {
+              "count": 54,
+              "max": 1.5385537594713758,
+              "mean": 1.4473075957885366,
+              "median": 1.4492930390061258,
+              "min": 1.3691252005802117
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 54,
+              "max": 3.866604889134634,
+              "mean": 2.236010575211013,
+              "median": 2.9348902662716956,
+              "min": 0.4989681507360979
+            },
+            "trajectory_length_m": {
+              "count": 54,
+              "max": 7.42882083419316,
+              "mean": 3.2414863229235165,
+              "median": 3.601534236321495,
+              "min": 0.5412684041694754
+            }
+          },
+          "side_pair": {
+            "counts": {
+              "collision": 21,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 2
+            },
+            "episode_policy_steps": {
+              "count": 23,
+              "max": 375,
+              "mean": 137.82608695652175,
+              "median": 106,
+              "min": 45
+            },
+            "episode_return": {
+              "count": 23,
+              "max": -0.7455482389099886,
+              "mean": -27.41729278579447,
+              "median": -26.634048689298183,
+              "min": -50.21125525180265
+            },
+            "episodes": 23,
+            "final_target_distance_m": {
+              "count": 23,
+              "max": 4.363158750956309,
+              "mean": 1.689529854334175,
+              "median": 1.5021837641232259,
+              "min": 0.7020138008989812
+            },
+            "mean_action_norm": {
+              "count": 23,
+              "max": 1.5368929626837569,
+              "mean": 1.4606102416173912,
+              "median": 1.4540223770288745,
+              "min": 1.4217125507450068
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 23,
+              "max": 3.8567106981803567,
+              "mean": 1.8559122356229467,
+              "median": 1.2505606129712838,
+              "min": 0.6142307109225377
+            },
+            "trajectory_length_m": {
+              "count": 23,
+              "max": 6.4741306400101495,
+              "mean": 2.637049296867468,
+              "median": 2.153623705141664,
+              "min": 0.6678259904407048
+            }
+          }
+        },
+        "counts": {
+          "collision": 165,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 16
+        },
+        "episode_policy_steps": {
+          "count": 181,
+          "max": 375,
+          "mean": 166.23204419889504,
+          "median": 152,
+          "min": 35
+        },
+        "episode_return": {
+          "count": 181,
+          "max": 1.4432708967279542,
+          "mean": -28.147836391716197,
+          "median": -27.018251966590327,
+          "min": -54.26950002298316
+        },
+        "episodes": 181,
+        "final_target_distance_m": {
+          "count": 181,
+          "max": 4.629100993052881,
+          "mean": 1.71351120671562,
+          "median": 1.5411967803784574,
+          "min": 0.7020138008989812
+        },
+        "lower_exclusive": 60000,
+        "mean_action_norm": {
+          "count": 181,
+          "max": 1.5385537594713758,
+          "mean": 1.4443441399515882,
+          "median": 1.4458094248420994,
+          "min": 1.3670533814922479
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 181,
+          "max": 5.662922999509139,
+          "mean": 2.2089342286637224,
+          "median": 2.9090723821538202,
+          "min": 0.3524213989088499
+        },
+        "trajectory_length_m": {
+          "count": 181,
+          "max": 7.520508798445203,
+          "mean": 3.219288725500888,
+          "median": 3.564173091276025,
+          "min": 0.3937816104971211
+        },
+        "upper_inclusive": 90000
+      },
+      {
+        "by_layout": {
+          "channel": {
+            "counts": {
+              "collision": 23,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 2
+            },
+            "episode_policy_steps": {
+              "count": 25,
+              "max": 375,
+              "mean": 118.44,
+              "median": 72,
+              "min": 40
+            },
+            "episode_return": {
+              "count": 25,
+              "max": -18.746381885953575,
+              "mean": -29.549816525422905,
+              "median": -28.137246714164057,
+              "min": -46.2676967054529
+            },
+            "episodes": 25,
+            "final_target_distance_m": {
+              "count": 25,
+              "max": 5.1557455041394284,
+              "mean": 1.8893963296203882,
+              "median": 1.7152062164731616,
+              "min": 0.6161209545675578
+            },
+            "mean_action_norm": {
+              "count": 25,
+              "max": 1.4938907955591978,
+              "mean": 1.4270742139406398,
+              "median": 1.4294831910789887,
+              "min": 1.365731700178752
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 25,
+              "max": 3.698411097614037,
+              "mean": 1.3361828903293906,
+              "median": 0.7617900389666624,
+              "min": 0.42029872086579906
+            },
+            "trajectory_length_m": {
+              "count": 25,
+              "max": 6.490754025313116,
+              "mean": 1.917738713148865,
+              "median": 0.9288277860918932,
+              "min": 0.46202936371882036
+            }
+          },
+          "detour": {
+            "counts": {
+              "collision": 29,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            },
+            "episode_policy_steps": {
+              "count": 30,
+              "max": 375,
+              "mean": 167.93333333333334,
+              "median": 158.5,
+              "min": 45
+            },
+            "episode_return": {
+              "count": 30,
+              "max": -5.653769720434515,
+              "mean": -28.269492274414624,
+              "median": -26.78742628410818,
+              "min": -48.9284430748657
+            },
+            "episodes": 30,
+            "final_target_distance_m": {
+              "count": 30,
+              "max": 3.274485633091616,
+              "mean": 1.6693066839829522,
+              "median": 1.5704142615087964,
+              "min": 1.054655040698986
+            },
+            "mean_action_norm": {
+              "count": 30,
+              "max": 1.5189878005643158,
+              "mean": 1.4301381339968582,
+              "median": 1.4232691969663844,
+              "min": 1.379817907037323
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 30,
+              "max": 3.9416286709816153,
+              "mean": 2.075304912519021,
+              "median": 2.321166162600025,
+              "min": 0.5310261811023523
+            },
+            "trajectory_length_m": {
+              "count": 30,
+              "max": 7.137938010739798,
+              "mean": 3.064185343200931,
+              "median": 3.5909820212170507,
+              "min": 0.5884709874532644
+            }
+          },
+          "empty": {
+            "counts": {
+              "collision": 28,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 3
+            },
+            "episode_policy_steps": {
+              "count": 31,
+              "max": 375,
+              "mean": 221.8709677419355,
+              "median": 201,
+              "min": 124
+            },
+            "episode_return": {
+              "count": 31,
+              "max": -2.2078374488886454,
+              "mean": -28.858133869476575,
+              "median": -27.23976689528149,
+              "min": -50.128487563266006
+            },
+            "episodes": 31,
+            "final_target_distance_m": {
+              "count": 31,
+              "max": 3.802568211352478,
+              "mean": 1.693670343006907,
+              "median": 1.2560843865732922,
+              "min": 0.8742687860681609
+            },
+            "mean_action_norm": {
+              "count": 31,
+              "max": 1.4884500061570871,
+              "mean": 1.4237073376312552,
+              "median": 1.4196072395117385,
+              "min": 1.3691112083491137
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 31,
+              "max": 3.8106187314654227,
+              "mean": 3.011069908601256,
+              "median": 3.021396845682455,
+              "min": 1.4007392168553103
+            },
+            "trajectory_length_m": {
+              "count": 31,
+              "max": 7.005321530978976,
+              "mean": 4.504083669124471,
+              "median": 4.495799620149586,
+              "min": 3.2234167484729017
+            }
+          },
+          "front_box": {
+            "counts": {
+              "collision": 38,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 4
+            },
+            "episode_policy_steps": {
+              "count": 42,
+              "max": 375,
+              "mean": 187.8095238095238,
+              "median": 170.0,
+              "min": 38
+            },
+            "episode_return": {
+              "count": 42,
+              "max": -8.343568441554794,
+              "mean": -29.625607041060405,
+              "median": -26.66726848924077,
+              "min": -69.455569918753
+            },
+            "episodes": 42,
+            "final_target_distance_m": {
+              "count": 42,
+              "max": 5.185158972794332,
+              "mean": 1.7705635974693839,
+              "median": 1.465040480033152,
+              "min": 0.8889427448273773
+            },
+            "mean_action_norm": {
+              "count": 42,
+              "max": 1.4910359379664544,
+              "mean": 1.4274780879500768,
+              "median": 1.4277638975574485,
+              "min": 1.348829968629955
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 42,
+              "max": 3.698171102833176,
+              "mean": 2.0407113593643262,
+              "median": 2.84438225703858,
+              "min": 0.471941299816193
+            },
+            "trajectory_length_m": {
+              "count": 42,
+              "max": 7.6954422660452515,
+              "mean": 3.4618310942266,
+              "median": 3.8096776949799622,
+              "min": 0.5551234694327587
+            }
+          },
+          "side_pair": {
+            "counts": {
+              "collision": 31,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 4
+            },
+            "episode_policy_steps": {
+              "count": 35,
+              "max": 375,
+              "mean": 190.42857142857142,
+              "median": 162,
+              "min": 53
+            },
+            "episode_return": {
+              "count": 35,
+              "max": -4.776337250194311,
+              "mean": -28.836883944456947,
+              "median": -27.016968023874067,
+              "min": -53.41650599722357
+            },
+            "episodes": 35,
+            "final_target_distance_m": {
+              "count": 35,
+              "max": 5.875666272228161,
+              "mean": 1.857816543719692,
+              "median": 1.4574382124799532,
+              "min": 0.8449598457849548
+            },
+            "mean_action_norm": {
+              "count": 35,
+              "max": 1.4686373767255052,
+              "mean": 1.4023320644814556,
+              "median": 1.3955256104455878,
+              "min": 1.3413695224222102
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 35,
+              "max": 4.1941883068751915,
+              "mean": 2.1158156019345897,
+              "median": 2.9370062335314304,
+              "min": 0.5495066675709159
+            },
+            "trajectory_length_m": {
+              "count": 35,
+              "max": 7.840496329988572,
+              "mean": 3.3850589873216093,
+              "median": 3.2700753814988084,
+              "min": 0.6634774039531407
+            }
+          }
+        },
+        "counts": {
+          "collision": 149,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 14
+        },
+        "episode_policy_steps": {
+          "count": 163,
+          "max": 375,
+          "mean": 180.5521472392638,
+          "median": 166,
+          "min": 38
+        },
+        "episode_return": {
+          "count": 163,
+          "max": -2.2078374488886454,
+          "mean": -29.049072178541813,
+          "median": -27.016968023874067,
+          "min": -69.455569918753
+        },
+        "episodes": 163,
+        "final_target_distance_m": {
+          "count": 163,
+          "max": 5.875666272228161,
+          "mean": 1.7742646596142069,
+          "median": 1.5224347872816806,
+          "min": 0.6161209545675578
+        },
+        "lower_exclusive": 90000,
+        "mean_action_norm": {
+          "count": 163,
+          "max": 1.5189878005643158,
+          "mean": 1.4217891336548762,
+          "median": 1.4223824943494052,
+          "min": 1.3413695224222102
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 163,
+          "max": 4.1941883068751915,
+          "mean": 2.139695153137771,
+          "median": 2.847744914941028,
+          "min": 0.42029872086579906
+        },
+        "trajectory_length_m": {
+          "count": 163,
+          "max": 7.840496329988572,
+          "mean": 3.3335557814808694,
+          "median": 3.7218874956198076,
+          "min": 0.46202936371882036
+        },
+        "upper_inclusive": 120000
+      }
+    ],
+    "trajectory_length_m": {
+      "count": 706,
+      "max": 8.325391998322852,
+      "mean": 3.2226375647760186,
+      "median": 3.5719152639621803,
+      "min": 0.3937816104971211
+    }
+  },
+  "L9R_authorization": false,
+  "L9S": {
+    "by_identity": {
+      "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": {
+        "counts": {
+          "collision": 2,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 1
+        },
+        "episode_policy_steps": {
+          "count": 3,
+          "max": 375,
+          "mean": 260,
+          "median": 238,
+          "min": 167
+        },
+        "episode_return": {
+          "count": 3,
+          "max": -7.445768763896027,
+          "mean": -19.99517539628169,
+          "median": -25.106781554895633,
+          "min": -27.43297587005342
+        },
+        "episodes": 3,
+        "final_target_distance_m": {
+          "count": 3,
+          "max": 1.8118929706801137,
+          "mean": 1.4387111319971686,
+          "median": 1.4402530974931238,
+          "min": 1.0639873278182683
+        },
+        "mean_action_norm": {
+          "count": 3,
+          "max": 1.4220835248619328,
+          "mean": 1.3993334143765574,
+          "median": 1.3992199684331306,
+          "min": 1.3766967498346092
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 3,
+          "max": 3.1164741102768585,
+          "mean": 2.977414468761762,
+          "median": 2.9696427438430595,
+          "min": 2.8461265521653676
+        },
+        "trajectory_length_m": {
+          "count": 3,
+          "max": 5.96339240522347,
+          "mean": 4.738428278097631,
+          "median": 4.748944897832317,
+          "min": 3.5029475312371052
+        }
+      },
+      "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": {
+        "counts": {
+          "collision": 4,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 4,
+          "max": 264,
+          "mean": 159,
+          "median": 162.5,
+          "min": 47
+        },
+        "episode_return": {
+          "count": 4,
+          "max": -23.829783427185177,
+          "mean": -27.113921166435585,
+          "median": -27.31515521991789,
+          "min": -29.995590798721377
+        },
+        "episodes": 4,
+        "final_target_distance_m": {
+          "count": 4,
+          "max": 1.458451208244169,
+          "mean": 1.3861466100017732,
+          "median": 1.4040418298938935,
+          "min": 1.2780515719751369
+        },
+        "mean_action_norm": {
+          "count": 4,
+          "max": 1.4269782356742775,
+          "mean": 1.4190360464946605,
+          "median": 1.4179866430815866,
+          "min": 1.4131926641411918
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 4,
+          "max": 3.083547438828973,
+          "mean": 1.3692364711269829,
+          "median": 0.8295483039804391,
+          "min": 0.7343018377180804
+        },
+        "trajectory_length_m": {
+          "count": 4,
+          "max": 3.9541835004089974,
+          "mean": 2.490092223258337,
+          "median": 2.6261810843037385,
+          "min": 0.753823224016873
+        }
+      },
+      "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": {
+        "counts": {
+          "collision": 3,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 1
+        },
+        "episode_policy_steps": {
+          "count": 4,
+          "max": 375,
+          "mean": 213.25,
+          "median": 209.0,
+          "min": 60
+        },
+        "episode_return": {
+          "count": 4,
+          "max": -10.998642963353623,
+          "mean": -20.636440025641047,
+          "median": -21.83208839320787,
+          "min": -27.882940352794822
+        },
+        "episodes": 4,
+        "final_target_distance_m": {
+          "count": 4,
+          "max": 2.262750282739446,
+          "mean": 1.4516886326255651,
+          "median": 1.2529741604193991,
+          "min": 1.0380559269240157
+        },
+        "mean_action_norm": {
+          "count": 4,
+          "max": 1.4253464224959225,
+          "mean": 1.4127926751293693,
+          "median": 1.413581745437432,
+          "min": 1.3986607871466914
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 4,
+          "max": 3.1824294419992234,
+          "mean": 2.46030726516359,
+          "median": 2.728277335843693,
+          "min": 1.2022449469677494
+        },
+        "trajectory_length_m": {
+          "count": 4,
+          "max": 5.876934079072,
+          "mean": 3.764889090486238,
+          "median": 3.9546953702505974,
+          "min": 1.2732315423717582
+        }
+      },
+      "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": {
+        "counts": {
+          "collision": 2,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 1
+        },
+        "episode_policy_steps": {
+          "count": 3,
+          "max": 375,
+          "mean": 163.66666666666666,
+          "median": 71,
+          "min": 45
+        },
+        "episode_return": {
+          "count": 3,
+          "max": -15.803710611377161,
+          "mean": -22.39127974329301,
+          "median": -25.407866919586166,
+          "min": -25.962261698915697
+        },
+        "episodes": 3,
+        "final_target_distance_m": {
+          "count": 3,
+          "max": 2.775691569371367,
+          "mean": 1.9925917815218424,
+          "median": 1.6061140312075306,
+          "min": 1.5959697439866294
+        },
+        "mean_action_norm": {
+          "count": 3,
+          "max": 1.439387979538734,
+          "mean": 1.424355705726001,
+          "median": 1.429637309265104,
+          "min": 1.4040418283741647
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 3,
+          "max": 1.153454516643059,
+          "mean": 0.7698782967637391,
+          "median": 0.5853909934707053,
+          "min": 0.570789380177453
+        },
+        "trajectory_length_m": {
+          "count": 3,
+          "max": 4.001013664892469,
+          "mean": 1.8185559193409935,
+          "median": 0.8086113976297636,
+          "min": 0.646042695500748
+        }
+      },
+      "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": {
+        "counts": {
+          "collision": 1,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 1,
+          "max": 137,
+          "mean": 137,
+          "median": 137,
+          "min": 137
+        },
+        "episode_return": {
+          "count": 1,
+          "max": -25.111339023541987,
+          "mean": -25.111339023541987,
+          "median": -25.111339023541987,
+          "min": -25.111339023541987
+        },
+        "episodes": 1,
+        "final_target_distance_m": {
+          "count": 1,
+          "max": 1.2971699944043458,
+          "mean": 1.2971699944043458,
+          "median": 1.2971699944043458,
+          "min": 1.2971699944043458
+        },
+        "mean_action_norm": {
+          "count": 1,
+          "max": 1.4521705065901427,
+          "mean": 1.4521705065901427,
+          "median": 1.4521705065901427,
+          "min": 1.4521705065901427
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 1,
+          "max": 3.0504284646831974,
+          "mean": 3.0504284646831974,
+          "median": 3.0504284646831974,
+          "min": 3.0504284646831974
+        },
+        "trajectory_length_m": {
+          "count": 1,
+          "max": 3.2530943404366224,
+          "mean": 3.2530943404366224,
+          "median": 3.2530943404366224,
+          "min": 3.2530943404366224
+        }
+      },
+      "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": {
+        "counts": {
+          "collision": 2,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 2,
+          "max": 173,
+          "mean": 111.5,
+          "median": 111.5,
+          "min": 50
+        },
+        "episode_return": {
+          "count": 2,
+          "max": -26.1571930730207,
+          "mean": -28.817896990799216,
+          "median": -28.817896990799216,
+          "min": -31.478600908577732
+        },
+        "episodes": 2,
+        "final_target_distance_m": {
+          "count": 2,
+          "max": 1.7502661332182707,
+          "mean": 1.595256291818438,
+          "median": 1.595256291818438,
+          "min": 1.4402464504186054
+        },
+        "mean_action_norm": {
+          "count": 2,
+          "max": 1.3952425936570878,
+          "mean": 1.3902936088782718,
+          "median": 1.3902936088782718,
+          "min": 1.3853446240994558
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 2,
+          "max": 3.1203642615184957,
+          "mean": 1.858967481930157,
+          "median": 1.858967481930157,
+          "min": 0.5975707023418183
+        },
+        "trajectory_length_m": {
+          "count": 2,
+          "max": 3.7095968121310716,
+          "mean": 2.178717507179417,
+          "median": 2.178717507179417,
+          "min": 0.6478382022277619
+        }
+      },
+      "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": {
+        "counts": {
+          "collision": 0,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episode_return": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episodes": 0,
+        "final_target_distance_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "mean_action_norm": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "trajectory_length_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        }
+      },
+      "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": {
+        "counts": {
+          "collision": 1,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 1,
+          "max": 44,
+          "mean": 44,
+          "median": 44,
+          "min": 44
+        },
+        "episode_return": {
+          "count": 1,
+          "max": -26.92380383588401,
+          "mean": -26.92380383588401,
+          "median": -26.92380383588401,
+          "min": -26.92380383588401
+        },
+        "episodes": 1,
+        "final_target_distance_m": {
+          "count": 1,
+          "max": 1.5346809365471437,
+          "mean": 1.5346809365471437,
+          "median": 1.5346809365471437,
+          "min": 1.5346809365471437
+        },
+        "mean_action_norm": {
+          "count": 1,
+          "max": 1.4316811491183445,
+          "mean": 1.4316811491183445,
+          "median": 1.4316811491183445,
+          "min": 1.4316811491183445
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 1,
+          "max": 0.585990960489014,
+          "mean": 0.585990960489014,
+          "median": 0.585990960489014,
+          "min": 0.585990960489014
+        },
+        "trajectory_length_m": {
+          "count": 1,
+          "max": 0.6245316239061659,
+          "mean": 0.6245316239061659,
+          "median": 0.6245316239061659,
+          "min": 0.6245316239061659
+        }
+      },
+      "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": {
+        "counts": {
+          "collision": 0,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episode_return": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episodes": 0,
+        "final_target_distance_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "mean_action_norm": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "trajectory_length_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        }
+      },
+      "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": {
+        "counts": {
+          "collision": 1,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 1
+        },
+        "episode_policy_steps": {
+          "count": 2,
+          "max": 375,
+          "mean": 282.5,
+          "median": 282.5,
+          "min": 190
+        },
+        "episode_return": {
+          "count": 2,
+          "max": -26.172386455722158,
+          "mean": -27.09641899145395,
+          "median": -27.09641899145395,
+          "min": -28.02045152718574
+        },
+        "episodes": 2,
+        "final_target_distance_m": {
+          "count": 2,
+          "max": 3.915559624478887,
+          "mean": 2.617332937234193,
+          "median": 2.617332937234193,
+          "min": 1.3191062499894994
+        },
+        "mean_action_norm": {
+          "count": 2,
+          "max": 1.43655827526225,
+          "mean": 1.4239539687788572,
+          "median": 1.4239539687788572,
+          "min": 1.4113496622954644
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 2,
+          "max": 3.161555624959883,
+          "mean": 2.5039333081853234,
+          "median": 2.5039333081853234,
+          "min": 1.8463109914107638
+        },
+        "trajectory_length_m": {
+          "count": 2,
+          "max": 5.977235200491152,
+          "mean": 4.774109364773002,
+          "median": 4.774109364773002,
+          "min": 3.5709835290548524
+        }
+      },
+      "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": {
+        "counts": {
+          "collision": 0,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episode_return": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episodes": 0,
+        "final_target_distance_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "mean_action_norm": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "trajectory_length_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        }
+      },
+      "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": {
+        "counts": {
+          "collision": 1,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 1,
+          "max": 167,
+          "mean": 167,
+          "median": 167,
+          "min": 167
+        },
+        "episode_return": {
+          "count": 1,
+          "max": -33.811815133265185,
+          "mean": -33.811815133265185,
+          "median": -33.811815133265185,
+          "min": -33.811815133265185
+        },
+        "episodes": 1,
+        "final_target_distance_m": {
+          "count": 1,
+          "max": 1.598468990718217,
+          "mean": 1.598468990718217,
+          "median": 1.598468990718217,
+          "min": 1.598468990718217
+        },
+        "mean_action_norm": {
+          "count": 1,
+          "max": 1.4396943510445737,
+          "mean": 1.4396943510445737,
+          "median": 1.4396943510445737,
+          "min": 1.4396943510445737
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 1,
+          "max": 2.910196325256584,
+          "mean": 2.910196325256584,
+          "median": 2.910196325256584,
+          "min": 2.910196325256584
+        },
+        "trajectory_length_m": {
+          "count": 1,
+          "max": 3.862461476625257,
+          "mean": 3.862461476625257,
+          "median": 3.862461476625257,
+          "min": 3.862461476625257
+        }
+      }
+    },
+    "by_layout": {
+      "channel": {
+        "counts": {
+          "collision": 1,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 1,
+          "max": 167,
+          "mean": 167,
+          "median": 167,
+          "min": 167
+        },
+        "episode_return": {
+          "count": 1,
+          "max": -33.811815133265185,
+          "mean": -33.811815133265185,
+          "median": -33.811815133265185,
+          "min": -33.811815133265185
+        },
+        "episodes": 1,
+        "final_target_distance_m": {
+          "count": 1,
+          "max": 1.598468990718217,
+          "mean": 1.598468990718217,
+          "median": 1.598468990718217,
+          "min": 1.598468990718217
+        },
+        "mean_action_norm": {
+          "count": 1,
+          "max": 1.4396943510445737,
+          "mean": 1.4396943510445737,
+          "median": 1.4396943510445737,
+          "min": 1.4396943510445737
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 1,
+          "max": 2.910196325256584,
+          "mean": 2.910196325256584,
+          "median": 2.910196325256584,
+          "min": 2.910196325256584
+        },
+        "trajectory_length_m": {
+          "count": 1,
+          "max": 3.862461476625257,
+          "mean": 3.862461476625257,
+          "median": 3.862461476625257,
+          "min": 3.862461476625257
+        }
+      },
+      "detour": {
+        "counts": {
+          "collision": 3,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 1
+        },
+        "episode_policy_steps": {
+          "count": 4,
+          "max": 375,
+          "mean": 157,
+          "median": 104.0,
+          "min": 45
+        },
+        "episode_return": {
+          "count": 4,
+          "max": -15.803710611377161,
+          "mean": -23.071294563355252,
+          "median": -25.259602971564078,
+          "min": -25.962261698915697
+        },
+        "episodes": 4,
+        "final_target_distance_m": {
+          "count": 4,
+          "max": 2.775691569371367,
+          "mean": 1.8187363347424683,
+          "median": 1.60104188759708,
+          "min": 1.2971699944043458
+        },
+        "mean_action_norm": {
+          "count": 4,
+          "max": 1.4521705065901427,
+          "mean": 1.4313094059420364,
+          "median": 1.4345126444019192,
+          "min": 1.4040418283741647
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 4,
+          "max": 3.0504284646831974,
+          "mean": 1.3400158387436036,
+          "median": 0.8694227550568822,
+          "min": 0.570789380177453
+        },
+        "trajectory_length_m": {
+          "count": 4,
+          "max": 4.001013664892469,
+          "mean": 2.177190524614901,
+          "median": 2.030852869033193,
+          "min": 0.646042695500748
+        }
+      },
+      "empty": {
+        "counts": {
+          "collision": 3,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 2
+        },
+        "episode_policy_steps": {
+          "count": 5,
+          "max": 375,
+          "mean": 269,
+          "median": 238,
+          "min": 167
+        },
+        "episode_return": {
+          "count": 5,
+          "max": -7.445768763896027,
+          "mean": -22.835672834350596,
+          "median": -26.172386455722158,
+          "min": -28.02045152718574
+        },
+        "episodes": 5,
+        "final_target_distance_m": {
+          "count": 5,
+          "max": 3.915559624478887,
+          "mean": 1.9101598540919784,
+          "median": 1.4402530974931238,
+          "min": 1.0639873278182683
+        },
+        "mean_action_norm": {
+          "count": 5,
+          "max": 1.43655827526225,
+          "mean": 1.4091816361374774,
+          "median": 1.4113496622954644,
+          "min": 1.3766967498346092
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 5,
+          "max": 3.161555624959883,
+          "mean": 2.7880220045311863,
+          "median": 2.9696427438430595,
+          "min": 1.8463109914107638
+        },
+        "trajectory_length_m": {
+          "count": 5,
+          "max": 5.977235200491152,
+          "mean": 4.752700712767779,
+          "median": 4.748944897832317,
+          "min": 3.5029475312371052
+        }
+      },
+      "front_box": {
+        "counts": {
+          "collision": 6,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 6,
+          "max": 264,
+          "mean": 143.16666666666666,
+          "median": 138.0,
+          "min": 47
+        },
+        "episode_return": {
+          "count": 6,
+          "max": -23.829783427185177,
+          "mean": -27.68191310789013,
+          "median": -27.31515521991789,
+          "min": -31.478600908577732
+        },
+        "episodes": 6,
+        "final_target_distance_m": {
+          "count": 6,
+          "max": 1.7502661332182707,
+          "mean": 1.4558498372739948,
+          "median": 1.4328420987313844,
+          "min": 1.2780515719751369
+        },
+        "mean_action_norm": {
+          "count": 6,
+          "max": 1.4269782356742775,
+          "mean": 1.4094552339558644,
+          "median": 1.4143038053830013,
+          "min": 1.3853446240994558
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 6,
+          "max": 3.1203642615184957,
+          "mean": 1.5324801413947076,
+          "median": 0.8295483039804391,
+          "min": 0.5975707023418183
+        },
+        "trajectory_length_m": {
+          "count": 6,
+          "max": 3.9541835004089974,
+          "mean": 2.38630065123203,
+          "median": 2.615827221165679,
+          "min": 0.6478382022277619
+        }
+      },
+      "side_pair": {
+        "counts": {
+          "collision": 4,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 1
+        },
+        "episode_policy_steps": {
+          "count": 5,
+          "max": 375,
+          "mean": 179.4,
+          "median": 155,
+          "min": 44
+        },
+        "episode_return": {
+          "count": 5,
+          "max": -10.998642963353623,
+          "mean": -21.893912787689636,
+          "median": -22.60720379403172,
+          "min": -27.882940352794822
+        },
+        "episodes": 5,
+        "final_target_distance_m": {
+          "count": 5,
+          "max": 2.262750282739446,
+          "mean": 1.4682870934098808,
+          "median": 1.3921789811301557,
+          "min": 1.0380559269240157
+        },
+        "mean_action_norm": {
+          "count": 5,
+          "max": 1.4316811491183445,
+          "mean": 1.4165703699271646,
+          "median": 1.41933404531601,
+          "min": 1.3986607871466914
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 5,
+          "max": 3.1824294419992234,
+          "mean": 2.0854440042286746,
+          "median": 2.388098115565032,
+          "min": 0.585990960489014
+        },
+        "trajectory_length_m": {
+          "count": 5,
+          "max": 5.876934079072,
+          "mean": 3.1368175971702237,
+          "median": 3.561077964577331,
+          "min": 0.6245316239061659
+        }
+      }
+    },
+    "causality": {
+      "future_samples": 0,
+      "max_age_s": 0.0979999999999892,
+      "mean_age_s": 0.03995094706168105,
+      "physics_ticks": 81729,
+      "raw_pose_or_action": "NOT OBSERVABLE",
+      "rows": 4118,
+      "step_rows": 4096,
+      "zero_tick_rows": 22
+    },
+    "closest_approach": "NOT OBSERVABLE",
+    "collision_contact_location": "NOT OBSERVABLE",
+    "counts": {
+      "collision": 17,
+      "physical_failure": 0,
+      "sensor_failure": 0,
+      "success": 0,
+      "time_limit": 4
+    },
+    "episode_policy_steps": {
+      "count": 21,
+      "max": 375,
+      "mean": 185.52380952380952,
+      "median": 167,
+      "min": 44
+    },
+    "episode_return": {
+      "count": 21,
+      "max": -7.445768763896027,
+      "mean": -24.5636381021061,
+      "median": -26.1571930730207,
+      "min": -33.811815133265185
+    },
+    "episode_weighting": "completed episodes, not independent training seeds",
+    "episodes": 21,
+    "final_distance_threshold_counts": {
+      "<0.1m": 0,
+      "<0.25m": 0,
+      "<0.5m": 0,
+      "<1m": 0
+    },
+    "final_target_distance_m": {
+      "count": 21,
+      "max": 3.915559624478887,
+      "mean": 1.6428927662305408,
+      "median": 1.4402530974931238,
+      "min": 1.0380559269240157
+    },
+    "mean_action_norm": {
+      "count": 21,
+      "max": 1.4521705065901427,
+      "mean": 1.4166868289938626,
+      "median": 1.41933404531601,
+      "min": 1.3766967498346092
+    },
+    "motionless_episodes": 0,
+    "net_displacement_m": {
+      "count": 21,
+      "max": 3.1824294419992234,
+      "mean": 1.9920224082094546,
+      "median": 2.388098115565032,
+      "min": 0.570789380177453
+    },
+    "reward_reconstruction": {
+      "endpoint_distance_reduction_m": {
+        "count": 21,
+        "max": 1.0988208818146745,
+        "mean": 0.4062556130479832,
+        "median": 0.5619275293400063,
+        "min": -1.8343545889537465
+      },
+      "per_step_components": "NOT OBSERVABLE",
+      "timeout_action_sum_lower_bound": {
+        "count": 4,
+        "max": -5.24707488162424,
+        "mean": -5.287460513998765,
+        "median": -5.278859045005555,
+        "min": -5.345049084359709
+      },
+      "timeout_action_sum_upper_bound": {
+        "count": 4,
+        "max": -3.6709059751162707,
+        "mean": -3.7278141887201834,
+        "median": -3.715538742267927,
+        "min": -3.809273295228609
+      },
+      "timeout_brake_sum_lower_bound": {
+        "count": 4,
+        "max": -0.17509784839206066,
+        "mean": -0.1818321451379461,
+        "median": -0.18007617468840076,
+        "min": -0.19207838278292222
+      },
+      "timeout_brake_sum_upper_bound": {
+        "count": 4,
+        "max": 1.4010710581159085,
+        "mean": 1.377814180140635,
+        "median": 1.3775224007164928,
+        "min": 1.3551408610136457
+      },
+      "timeout_progress_sum": {
+        "count": 4,
+        "max": 2.1502350596123043,
+        "mean": -5.907497132595009,
+        "median": -3.718338850227436,
+        "min": -18.343545889537467
+      }
+    },
+    "step_blocks": [
+      {
+        "by_layout": {
+          "channel": {
+            "counts": {
+              "collision": 1,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 1,
+              "max": 167,
+              "mean": 167,
+              "median": 167,
+              "min": 167
+            },
+            "episode_return": {
+              "count": 1,
+              "max": -33.811815133265185,
+              "mean": -33.811815133265185,
+              "median": -33.811815133265185,
+              "min": -33.811815133265185
+            },
+            "episodes": 1,
+            "final_target_distance_m": {
+              "count": 1,
+              "max": 1.598468990718217,
+              "mean": 1.598468990718217,
+              "median": 1.598468990718217,
+              "min": 1.598468990718217
+            },
+            "mean_action_norm": {
+              "count": 1,
+              "max": 1.4396943510445737,
+              "mean": 1.4396943510445737,
+              "median": 1.4396943510445737,
+              "min": 1.4396943510445737
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 1,
+              "max": 2.910196325256584,
+              "mean": 2.910196325256584,
+              "median": 2.910196325256584,
+              "min": 2.910196325256584
+            },
+            "trajectory_length_m": {
+              "count": 1,
+              "max": 3.862461476625257,
+              "mean": 3.862461476625257,
+              "median": 3.862461476625257,
+              "min": 3.862461476625257
+            }
+          },
+          "detour": {
+            "counts": {
+              "collision": 3,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            },
+            "episode_policy_steps": {
+              "count": 4,
+              "max": 375,
+              "mean": 157,
+              "median": 104.0,
+              "min": 45
+            },
+            "episode_return": {
+              "count": 4,
+              "max": -15.803710611377161,
+              "mean": -23.071294563355252,
+              "median": -25.259602971564078,
+              "min": -25.962261698915697
+            },
+            "episodes": 4,
+            "final_target_distance_m": {
+              "count": 4,
+              "max": 2.775691569371367,
+              "mean": 1.8187363347424683,
+              "median": 1.60104188759708,
+              "min": 1.2971699944043458
+            },
+            "mean_action_norm": {
+              "count": 4,
+              "max": 1.4521705065901427,
+              "mean": 1.4313094059420364,
+              "median": 1.4345126444019192,
+              "min": 1.4040418283741647
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 4,
+              "max": 3.0504284646831974,
+              "mean": 1.3400158387436036,
+              "median": 0.8694227550568822,
+              "min": 0.570789380177453
+            },
+            "trajectory_length_m": {
+              "count": 4,
+              "max": 4.001013664892469,
+              "mean": 2.177190524614901,
+              "median": 2.030852869033193,
+              "min": 0.646042695500748
+            }
+          },
+          "empty": {
+            "counts": {
+              "collision": 3,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 2
+            },
+            "episode_policy_steps": {
+              "count": 5,
+              "max": 375,
+              "mean": 269,
+              "median": 238,
+              "min": 167
+            },
+            "episode_return": {
+              "count": 5,
+              "max": -7.445768763896027,
+              "mean": -22.835672834350596,
+              "median": -26.172386455722158,
+              "min": -28.02045152718574
+            },
+            "episodes": 5,
+            "final_target_distance_m": {
+              "count": 5,
+              "max": 3.915559624478887,
+              "mean": 1.9101598540919784,
+              "median": 1.4402530974931238,
+              "min": 1.0639873278182683
+            },
+            "mean_action_norm": {
+              "count": 5,
+              "max": 1.43655827526225,
+              "mean": 1.4091816361374774,
+              "median": 1.4113496622954644,
+              "min": 1.3766967498346092
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 5,
+              "max": 3.161555624959883,
+              "mean": 2.7880220045311863,
+              "median": 2.9696427438430595,
+              "min": 1.8463109914107638
+            },
+            "trajectory_length_m": {
+              "count": 5,
+              "max": 5.977235200491152,
+              "mean": 4.752700712767779,
+              "median": 4.748944897832317,
+              "min": 3.5029475312371052
+            }
+          },
+          "front_box": {
+            "counts": {
+              "collision": 6,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 6,
+              "max": 264,
+              "mean": 143.16666666666666,
+              "median": 138.0,
+              "min": 47
+            },
+            "episode_return": {
+              "count": 6,
+              "max": -23.829783427185177,
+              "mean": -27.68191310789013,
+              "median": -27.31515521991789,
+              "min": -31.478600908577732
+            },
+            "episodes": 6,
+            "final_target_distance_m": {
+              "count": 6,
+              "max": 1.7502661332182707,
+              "mean": 1.4558498372739948,
+              "median": 1.4328420987313844,
+              "min": 1.2780515719751369
+            },
+            "mean_action_norm": {
+              "count": 6,
+              "max": 1.4269782356742775,
+              "mean": 1.4094552339558644,
+              "median": 1.4143038053830013,
+              "min": 1.3853446240994558
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 6,
+              "max": 3.1203642615184957,
+              "mean": 1.5324801413947076,
+              "median": 0.8295483039804391,
+              "min": 0.5975707023418183
+            },
+            "trajectory_length_m": {
+              "count": 6,
+              "max": 3.9541835004089974,
+              "mean": 2.38630065123203,
+              "median": 2.615827221165679,
+              "min": 0.6478382022277619
+            }
+          },
+          "side_pair": {
+            "counts": {
+              "collision": 4,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            },
+            "episode_policy_steps": {
+              "count": 5,
+              "max": 375,
+              "mean": 179.4,
+              "median": 155,
+              "min": 44
+            },
+            "episode_return": {
+              "count": 5,
+              "max": -10.998642963353623,
+              "mean": -21.893912787689636,
+              "median": -22.60720379403172,
+              "min": -27.882940352794822
+            },
+            "episodes": 5,
+            "final_target_distance_m": {
+              "count": 5,
+              "max": 2.262750282739446,
+              "mean": 1.4682870934098808,
+              "median": 1.3921789811301557,
+              "min": 1.0380559269240157
+            },
+            "mean_action_norm": {
+              "count": 5,
+              "max": 1.4316811491183445,
+              "mean": 1.4165703699271646,
+              "median": 1.41933404531601,
+              "min": 1.3986607871466914
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 5,
+              "max": 3.1824294419992234,
+              "mean": 2.0854440042286746,
+              "median": 2.388098115565032,
+              "min": 0.585990960489014
+            },
+            "trajectory_length_m": {
+              "count": 5,
+              "max": 5.876934079072,
+              "mean": 3.1368175971702237,
+              "median": 3.561077964577331,
+              "min": 0.6245316239061659
+            }
+          }
+        },
+        "counts": {
+          "collision": 17,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 4
+        },
+        "episode_policy_steps": {
+          "count": 21,
+          "max": 375,
+          "mean": 185.52380952380952,
+          "median": 167,
+          "min": 44
+        },
+        "episode_return": {
+          "count": 21,
+          "max": -7.445768763896027,
+          "mean": -24.5636381021061,
+          "median": -26.1571930730207,
+          "min": -33.811815133265185
+        },
+        "episodes": 21,
+        "final_target_distance_m": {
+          "count": 21,
+          "max": 3.915559624478887,
+          "mean": 1.6428927662305408,
+          "median": 1.4402530974931238,
+          "min": 1.0380559269240157
+        },
+        "lower_exclusive": 0,
+        "mean_action_norm": {
+          "count": 21,
+          "max": 1.4521705065901427,
+          "mean": 1.4166868289938626,
+          "median": 1.41933404531601,
+          "min": 1.3766967498346092
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 21,
+          "max": 3.1824294419992234,
+          "mean": 1.9920224082094546,
+          "median": 2.388098115565032,
+          "min": 0.570789380177453
+        },
+        "trajectory_length_m": {
+          "count": 21,
+          "max": 5.977235200491152,
+          "mean": 3.1588866205793837,
+          "median": 3.5709835290548524,
+          "min": 0.6245316239061659
+        },
+        "upper_inclusive": 30000
+      },
+      {
+        "by_layout": {
+          "channel": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "detour": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "empty": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "front_box": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "side_pair": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          }
+        },
+        "counts": {
+          "collision": 0,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episode_return": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episodes": 0,
+        "final_target_distance_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "lower_exclusive": 30000,
+        "mean_action_norm": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "trajectory_length_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "upper_inclusive": 60000
+      },
+      {
+        "by_layout": {
+          "channel": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "detour": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "empty": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "front_box": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "side_pair": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          }
+        },
+        "counts": {
+          "collision": 0,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episode_return": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episodes": 0,
+        "final_target_distance_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "lower_exclusive": 60000,
+        "mean_action_norm": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "trajectory_length_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "upper_inclusive": 90000
+      },
+      {
+        "by_layout": {
+          "channel": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "detour": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "empty": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "front_box": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          },
+          "side_pair": {
+            "counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            },
+            "episode_policy_steps": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episode_return": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "episodes": 0,
+            "final_target_distance_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "mean_action_norm": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "motionless_episodes": 0,
+            "net_displacement_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            },
+            "trajectory_length_m": {
+              "count": 0,
+              "max": null,
+              "mean": null,
+              "median": null,
+              "min": null
+            }
+          }
+        },
+        "counts": {
+          "collision": 0,
+          "physical_failure": 0,
+          "sensor_failure": 0,
+          "success": 0,
+          "time_limit": 0
+        },
+        "episode_policy_steps": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episode_return": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "episodes": 0,
+        "final_target_distance_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "lower_exclusive": 90000,
+        "mean_action_norm": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "motionless_episodes": 0,
+        "net_displacement_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "trajectory_length_m": {
+          "count": 0,
+          "max": null,
+          "mean": null,
+          "median": null,
+          "min": null
+        },
+        "upper_inclusive": 120000
+      }
+    ],
+    "trajectory_length_m": {
+      "count": 21,
+      "max": 5.977235200491152,
+      "mean": 3.1588866205793837,
+      "median": 3.5709835290548524,
+      "min": 0.6245316239061659
+    }
+  },
+  "L9_positive_return_failed_episodes": [
+    {
+      "episode_policy_steps": 375,
+      "episode_return": 0.09486842224057801,
+      "final_target_distance_m": 1.041701700387027,
+      "mean_action_norm": 1.3865488441108327,
+      "motionless_episode": false,
+      "net_displacement_m": 1.300187032173317,
+      "outcome": "time_limit",
+      "policy_end_step": 31915,
+      "scenario_identity_sha256": "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "sim_end_time_s": 15.000000000001679,
+      "trajectory_length_m": 5.623607796672717
+    },
+    {
+      "episode_policy_steps": 375,
+      "episode_return": 1.4432708967279542,
+      "final_target_distance_m": 0.9133808156756145,
+      "mean_action_norm": 1.4189393688802208,
+      "motionless_episode": false,
+      "net_displacement_m": 2.458581876558595,
+      "outcome": "time_limit",
+      "policy_end_step": 89133,
+      "scenario_identity_sha256": "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "sim_end_time_s": 15.000000000001679,
+      "trajectory_length_m": 6.986339846397931
+    }
+  ],
+  "Reward": {
+    "exact_training_component_replay": "NOT OBSERVABLE",
+    "failure_transition_progress": 0,
+    "formula": "10*delta_distance_if_not_failed - .005*action_norm_squared - .5*clip((.5-d)/.4,0,1)*speed_squared + 10*success -30*collision -30*physical_failure -10*sensor_failure -.01*executed_step -2*timeout",
+    "timeout_bootstrap_actual_values": "NOT OBSERVABLE",
+    "timeout_bootstrap_source_confirmed": true,
+    "timeout_math_note": "\u8fdb\u5ea6\u53ef\u671b\u8fdc\u955c\u6c42\u548c\uff0caction/brake\u4ec5\u533a\u95f4\uff1b\u6b63brake\u4e0a\u754c\u4e0d\u7b49\u4e8e\u6b63\u5956\u52b1",
+    "version": "NAV_V2_COLLISION_PREFLIGHT_V1"
+  },
+  "TRAINING_AUTHORIZED": "NO",
+  "TRAINING_BUDGET_AVAILABLE": 0,
+  "algorithm_navigation_performance": "NOT DEMONSTRATED; no successful saved PPO navigation episode",
+  "audit_evidence": {
+    "path": ".research_local/audit_01/run_01/analysis.json",
+    "sha256": "1d1b4f1b05a9e576a18caae21f0ed3e72d981b5a346c87be054867c12a747d37",
+    "size_bytes": 172918
+  },
+  "audit_resource": {
+    "optimizer_updates": 0,
+    "peak_rss_mib": 118.296875,
+    "wall_s": 7.016674247000992
+  },
+  "base_commit": "6258dd4ecae09e2614d9c9b47f9eebd52b6b6bee",
+  "branch": "research/lidar-ppo-learning-diagnosis",
+  "direct_original_million_step_rerun_recommended": false,
+  "evidence_matrix": [
+    {
+      "candidate": "exploration",
+      "counter": "\u6709\u8fd0\u52a8\u4e14Gaussian std\u63a5\u8fd11\uff1b\u4e0d\u662f\u65e0\u566a\u58f0\u6216\u5df2\u5b66\u4f1a\u9759\u6b62",
+      "strength": "SUPPORTED_HYPOTHESIS",
+      "support": "706\u6761\u5b8c\u6574episode\u65e0\u6210\u529fbonus\uff0c\u7a7a\u573a\u666f0/169",
+      "unresolved": "\u662f\u5426\u5230\u8fc7\u76ee\u6807\u9644\u8fd1/\u969c\u788d\u4fa7\u9762NOT OBSERVABLE"
+    },
+    {
+      "candidate": "reward",
+      "counter": "\u5931\u8d25\u6b65progress\u6291\u5236\u3001\u78b0\u649e-30\u3001\u65e7Scripted\u6210\u529f\u7ea6+25\uff1b\u65e0\u5df2\u89c2\u5bdf\u60ac\u505c\u6295\u673a",
+      "strength": "SUPPORTED_HYPOTHESIS",
+      "support": "\u6210\u529f\u53cd\u9988\u7a00\u5c11\u3001\u6298\u6263\u4e0etimeout bootstrap\u30012\u4e2a\u6b63return\u8d85\u65f6",
+      "unresolved": "\u4e0d\u662f\u5df2\u786e\u8ba4\u56e0\u679c\u6839\u6e90"
+    },
+    {
+      "candidate": "scenario_difficulty",
+      "counter": "empty\u4e5f\u5931\u8d25\uff0c\u4e0d\u80fd\u53ea\u602a\u7ed5\u884c\uff1b\u539f\u6e90\u7801\u6709\u53ef\u8fbe\u6027\u68c0\u67e5",
+      "strength": "SUPPORTED_HYPOTHESIS",
+      "support": "\u6df7\u5408\u4efb\u52a1\u53ca\u57fa\u7840empty\u4ecd\u9ad8\u78b0\u649e",
+      "unresolved": "\u6240\u6709\u51bb\u7ed3\u573a\u666f\u52a8\u529b\u5b66\u4e13\u5bb6\u53ef\u8fbe\u672a\u5b9e\u9645\u5339\u914d\u9a8c\u8bc1"
+    },
+    {
+      "candidate": "observation",
+      "counter": "\u5df2\u6709heading\u548c\u53ccMask\uff0c\u672a\u53d1\u73b0future LiDAR\uff1b\u4e0d\u662f\u7b80\u5355\u7f3aYaw/\u65e0\u56de\u6ce2\u96f6\u70b9",
+      "strength": "UNRESOLVED",
+      "support": "\u65e0roll/pitch/\u89d2\u901f\u5ea6/PI\u79ef\u5206/\u5386\u53f2\uff0c\u5355\u5e27\u89d2\u5ea6\u538b\u7f29",
+      "unresolved": "\u65e0\u539f\u59cb\u5f20\u91cf\u53ca\u6d88\u878d"
+    },
+    {
+      "candidate": "action_control",
+      "counter": "\u5b9e\u9645\u8fd0\u52a8\u3001\u5386\u53f2L5\u6210\u529f\u3001\u4e16\u754c\u901f\u5ea6\u7f29\u653e\u6e90\u7801\u6b63\u786e",
+      "strength": "UNRESOLVED",
+      "support": "Validation\u6b63X\u8fb9\u754c\u649e\u51fb\u53ef\u80fd\u6d89\u53ca\u5230\u70b9/\u5236\u52a8\u4e0d\u8db3",
+      "unresolved": "\u8bad\u7ec3\u9010\u8f74\u52a8\u4f5c\u3001\u9971\u548c\u3001\u5b9e\u9645\u901f\u5ea6\u53ca\u8f6c\u5411\u8fc7\u7a0b\u672a\u8bb0\u5f55"
+    },
+    {
+      "candidate": "ppo_optimization",
+      "counter": "\u5b9e\u9645\u66f4\u65b0\u548c\u6709\u9650\u68af\u5ea6\u6709\u8bc1\u636e\uff0cstd\u4ecd\u9ad8\u3001EV\u975e\u96f6",
+      "strength": "UNRESOLVED",
+      "support": "L9\u4e00\u4e2a\u5feb\u7167KL\u5c0f\u3001clip_fraction0",
+      "unresolved": "\u53ea\u6709\u5355\u5feb\u7167\uff0c\u65e0\u539f\u59cbValue/Advantage\u53ca\u66f4\u65b0\u5e8f\u5217"
+    },
+    {
+      "candidate": "environment_terminal",
+      "counter": "\u4e0d\u80fd\u7528\u665a\u671f\u4e2d\u65ad\u89e3\u91ca\u6b64\u524d\u6240\u6709\u5408\u6cd5\u5931\u8d25\uff1bReward/\u7269\u7406\u6761\u4ef6\u672a\u6539",
+      "strength": "CONFIRMED_INTERRUPTION_ONLY",
+      "support": "L9\u5951\u7ea6Bug\u5bfc\u81f4\u505c\u6b62\uff0cL9R/L9S\u4fee\u590d\u5e76\u9a8c\u8bc1",
+      "unresolved": "\u539f\u59cb\u7269\u7406\u89e6\u53d1\u5177\u4f53\u539f\u56e0\u672a\u8bb0\u5f55"
+    }
+  ],
+  "execution": {
+    "FAST_LIO2_runs": 0,
+    "PX4_runs": 0,
+    "new_policy_performance_experiments": 0,
+    "new_ppo_optimizer_updates": 0,
+    "new_test_episode_runs": 0,
+    "new_training_runs": 0,
+    "real_hardware_connections": 0,
+    "scope_note": "\u5386\u53f2\u56de\u5f52\u5141\u8bb8\u65e2\u6709\u6709\u754c\u7269\u7406\u3001\u524d\u5411\u63a8\u7406\u548c\u63a5\u53e3\u68c0\u67e5\uff1b\u4e0d\u5f53\u4f5c\u65b0\u7684\u6027\u80fd\u8bc4\u4ef7\u5b9e\u9a8c\uff0c\u65e0optimizer\u66f4\u65b0\u6216\u5c01\u5b58Test episode"
+  },
+  "figures": [
+    {
+      "path": "mujoco/reports/lidar_ppo_learning_diagnosis/figures/l9_recorded_training.png",
+      "sha256": "c3b710bfbd727443be342c39748119c2cf6756af6e17ec013dd0094e7f2213b9",
+      "source": "preserved episode/validation/snapshot aggregates, not new rollouts"
+    },
+    {
+      "path": "mujoco/reports/lidar_ppo_learning_diagnosis/figures/l9_layout_stratification.png",
+      "sha256": "ea08b75f4aa80dc7a3a1efbaeae9ce7d3eb6d9329c9be3e1c592a7c19db05460",
+      "source": "preserved episode/validation/snapshot aggregates, not new rollouts"
+    },
+    {
+      "path": "mujoco/reports/lidar_ppo_learning_diagnosis/figures/validation_and_separate_ppo_snapshots.png",
+      "sha256": "f2a39a3f206238d10d89143ac2b086817a568caf1d5c2e540cc44407a325e97f",
+      "source": "preserved episode/validation/snapshot aggregates, not new rollouts"
+    }
+  ],
+  "historical_L5_scripted_reference": [
+    {
+      "collision": false,
+      "final_distance_m": 0.09067032331914454,
+      "layout": "empty",
+      "return": 25.151430566373307,
+      "reward_component_sums": {
+        "action": -0.03564668909302942,
+        "brake": -1.145034785160817,
+        "collision": 0.0,
+        "physical_failure": 0.0,
+        "progress": 17.242112040627156,
+        "sensor_failure": 0.0,
+        "success": 10.0,
+        "timeout_or_time_cost": -0.9100000000000006,
+        "total": 25.1514305663733
+      },
+      "scene_seed": 1001,
+      "steps": 91,
+      "success": true
+    },
+    {
+      "collision": true,
+      "final_distance_m": 1.2830763350021062,
+      "layout": "front_box",
+      "return": -25.30922798442316,
+      "reward_component_sums": {
+        "action": -0.030237354287920352,
+        "brake": 0.0,
+        "collision": -30.0,
+        "physical_failure": 0.0,
+        "progress": 5.151009369864761,
+        "sensor_failure": 0.0,
+        "success": 0.0,
+        "timeout_or_time_cost": -0.4300000000000002,
+        "total": -25.30922798442316
+      },
+      "scene_seed": 1002,
+      "steps": 43,
+      "success": false
+    },
+    {
+      "collision": false,
+      "final_distance_m": 0.09167389394861737,
+      "layout": "channel",
+      "return": 25.610684669905062,
+      "reward_component_sums": {
+        "action": -0.03725780104758393,
+        "brake": -1.1491526161706487,
+        "collision": 0.0,
+        "physical_failure": 0.0,
+        "progress": 17.7070950871233,
+        "sensor_failure": 0.0,
+        "success": 10.0,
+        "timeout_or_time_cost": -0.9100000000000006,
+        "total": 25.610684669905066
+      },
+      "scene_seed": 1005,
+      "steps": 91,
+      "success": true
+    }
+  ],
+  "history_note": "\u65e717\u9879\u6d4b\u8bd5overlay\u539f\u6837\u7ee7\u627f\uff1b\u672c\u9636\u6bb5\u672a\u4fee\u6539\u5386\u53f2\u8fd0\u884c\u4ee3\u7801/\u6a21\u578b/Reward/\u6570\u636e/\u534f\u8bae\uff1b87\u9879\u65e7untracked\u4e0d\u53d8",
+  "history_verification": {
+    "historical_scoped_counts": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "historical_untracked_counts": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "new_untracked_names": {
+      "/home/keyousuke/MineUAV-Learning": []
+    },
+    "protected_count": 1404,
+    "unchanged": true
+  },
+  "implementation_status": "PASS",
+  "interpretation_limits": {
+    "audit_new_test_episodes": 0,
+    "ever_entered_goal_neighborhood": "NOT OBSERVABLE",
+    "independent_training_seeds": 1,
+    "positions_or_actions_per_step": "NOT OBSERVABLE",
+    "reached_obstacle_side": "NOT OBSERVABLE",
+    "reward_components_per_training_step": "NOT OBSERVABLE",
+    "rollout_advantages_and_returns": "NOT OBSERVABLE",
+    "source_data_test_episode_count": 0,
+    "train_contact_location": "NOT OBSERVABLE"
+  },
+  "operations_registration": {
+    "inherited_overlay_count": 17,
+    "legacy_protocols_modified": false,
+    "new_registration_sha256": "fc712feb312afdb8b8f975724fc74b286b121f7a2adf01caf209702cfd72ef34",
+    "prepare_draft_sha256": "af9b2f8b75f0812f653fc3b60c9689dda488191108a09ef3eaed71bb895935d5"
+  },
+  "original_L9_result": "FAIL",
+  "phase_id": "AUDIT-01",
+  "ppo_snapshots": {
+    "L9": {
+      "actual_step": 100096,
+      "entropy_note": "negative entropy_loss is unsquashed Gaussian entropy, not clipped action diversity",
+      "metrics": {
+        "train/approx_kl": 6.758328527212143e-05,
+        "train/clip_fraction": 0.0,
+        "train/clip_range": 0.2,
+        "train/entropy_loss": -5.613095045089722,
+        "train/explained_variance": 0.6625452041625977,
+        "train/learning_rate": 0.0003,
+        "train/loss": 10.466863632202148,
+        "train/n_updates": 1564.0,
+        "train/policy_gradient_loss": 0.00042437808588147163,
+        "train/std": 0.9845871925354004,
+        "train/value_loss": 27.665215015411377
+      },
+      "raw_actor_action_series": "NOT OBSERVABLE",
+      "raw_advantages_or_value_targets": "NOT OBSERVABLE",
+      "snapshot_count": 1,
+      "temporal_trend": "NOT OBSERVABLE"
+    },
+    "L9S": {
+      "actual_step": 4096,
+      "entropy_note": "negative entropy_loss is unsquashed Gaussian entropy, not clipped action diversity",
+      "metrics": {
+        "train/approx_kl": 4.599802196025848e-06,
+        "train/clip_fraction": 0.0,
+        "train/clip_range": 0.2,
+        "train/entropy_loss": -5.673571825027466,
+        "train/explained_variance": 0.12960141897201538,
+        "train/learning_rate": 0.0003,
+        "train/loss": 1.6304941177368164,
+        "train/n_updates": 64.0,
+        "train/policy_gradient_loss": 0.0003439148422330618,
+        "train/std": 0.9994743466377258,
+        "train/value_loss": 3.3275159001350403
+      },
+      "raw_actor_action_series": "NOT OBSERVABLE",
+      "raw_advantages_or_value_targets": "NOT OBSERVABLE",
+      "snapshot_count": 1,
+      "temporal_trend": "NOT OBSERVABLE"
+    }
+  },
+  "project_id": "MineUAV-Learning",
+  "protocol_sha256": "fad29c2e86f0a0f0995aceefdaab81aa6483e4ce48bd87d136b05ada592371d3",
+  "publication": {
+    "final_receipt": "researchctl-v2 status \u7684 phase_complete \u53ca latest_successful_push\uff1b\u4e0d\u5728\u62a5\u544a\u4f2a\u9020\u81ea\u8eab\u672a\u6765SHA",
+    "status": "PENDING_REMOTE_VERIFICATION_AT_REPORT_CREATION"
+  },
+  "recommendations": [
+    {
+      "action_scales": [
+        1.5,
+        1.5,
+        1.0,
+        1.0
+      ],
+      "actual_timesteps_per_arm": 65536,
+      "arms": {
+        "control": "\u5168\u7a0b\u5747\u530012\u4e2aTrain\u8eab\u4efd",
+        "curriculum": "\u524d32768\u6b65\u5747\u5300\u539f\u6e05\u53553\u4e2aempty\u8eab\u4efd\uff1b\u540e32768\u6b65\u5747\u530012\u4e2aTrain\u8eab\u4efd"
+      },
+      "cumulative_max_wall_seconds": 7200,
+      "cumulative_training_timesteps": 131072,
+      "device": "cpu",
+      "disk_free_min_bytes": 2147483648,
+      "estimate_note": "\u6309L9S\u7ea6114\u6b65/s\u7c97\u4f30\uff0c\u573a\u666f\u91cd\u7f6e\u6bd4\u4f8b\u6539\u53d8\u541e\u5410\uff1b\u4e0d\u662f\u5b9e\u65f6\u4fdd\u8bc1",
+      "expected_wall_minutes_range": [
+        20,
+        30
+      ],
+      "extra_passive_evidence": [
+        "\u6bcfrollout\u8bca\u65ad",
+        "reward\u5206\u91cf",
+        "\u6700\u5c0f\u76ee\u6807\u8ddd\u79bb",
+        "\u8fd1\u76ee\u6807\u901f\u5ea6\u53castreak",
+        "\u63a5\u89e6\u7c7b\u578b",
+        "\u52a8\u4f5cclip\u6bd4\u4f8b",
+        "\u6709\u754c\u56fa\u5b9a\u6837\u672c\u8f68\u8ff9"
+      ],
+      "failure_conditions": [
+        "\u8bfe\u7a0b\u7ec4\u4ecd0\u6210\u529f\u4e14\u6ca1\u6709\u6539\u5584\u76ee\u6807\u8bef\u5dee/\u78b0\u649e",
+        "\u5207\u56de\u6df7\u5408\u540e\u9057\u5fd8",
+        "\u77ed\u9884\u7b97\u4e0d\u8db3\u4e0d\u81ea\u52a8\u589e\u9884\u7b97"
+      ],
+      "fixed_common_protocol": {
+        "batch_size": 64,
+        "clip_range": 0.2,
+        "ent_coef": 0.0,
+        "gae_lambda": 0.95,
+        "gamma": 0.99,
+        "learning_rate": 0.0003,
+        "lidar_hz": 10,
+        "max_grad_norm": 0.5,
+        "n_epochs": 2,
+        "n_steps": 128,
+        "network": "Conv(3,16,3,p1)-Conv(16,32,3,s2,p1)-FC64+state7+heading2+age1; pi/vf64x64",
+        "normalize_images": false,
+        "physics_hz": 500,
+        "pi_hz": 100,
+        "policy": "MultiInputPolicy",
+        "policy_hz": 25,
+        "ray_count": 24000,
+        "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+        "vf_coef": 0.5
+      },
+      "hypothesis": "\u5148\u96c6\u4e2d\u5b66\u4e60\u5230\u70b9\u505c\u7a33\u53ef\u6bd4\u5168\u7a0b\u6df7\u5408\u573a\u666f\u66f4\u5feb\u83b7\u5f97\u6210\u529f\u53cd\u9988",
+      "initialization": "\u4e24\u81c2\u5747\u65b0\u521d\u59cb\u5316seed0\u5e76\u6838\u9a8c\u76f8\u540c\u521d\u59cb\u6743\u91cd\uff0c\u4e0d\u4eceL9/L9S\u6062\u590d",
+      "max_wall_seconds_per_arm": 3600,
+      "memory_available_min_mib": 1536,
+      "only_changed_variable": "Train\u573a\u666f\u8c03\u5ea6\uff1b\u4e0d\u6539\u539f12\u4e2a\u573a\u666f\u51e0\u4f55\u3001Reward\u3001\u7f51\u7edc\u3001\u52a8\u4f5c\u6216PPO",
+      "primary_metric": "6\u573a\u666fValidation\u6210\u529f\u6b21\u6570/\u9010\u573a\u666f\u6210\u529f\u7387\uff1b\u5355seed\u4e0d\u5916\u63a8\u6cdb\u5316",
+      "proposal_sha256": "423ddc239c223ba23f87c8094deb4f3ffd6b2c94a13d3c41eb9b59bac7235596",
+      "proposal_status": "DRAFT_NOT_AUTHORIZED",
+      "resume": "RESTART_REQUIRED",
+      "retry": "NO_AUTOMATIC_RETRY",
+      "secondary_metrics": [
+        "collision",
+        "time_limit",
+        "physical_failure",
+        "sensor_failure",
+        "return",
+        "time_to_goal",
+        "path",
+        "final_distance"
+      ],
+      "seeds": [
+        0
+      ],
+      "selection": "FINAL_CHECKPOINT",
+      "test_episodes": 0,
+      "training_authorized": false,
+      "validation_episodes_total_two_arms": 24,
+      "validation_scene_count": 6,
+      "validation_steps": [
+        32768,
+        65536
+      ],
+      "workers": 1
+    },
+    {
+      "budget_proposal": {
+        "additional_supervised_examples_max": 20000,
+        "ppo_steps_per_arm": 65536,
+        "ppo_steps_total": 131072,
+        "supervised_optimizer_updates_max": 2000
+      },
+      "changed_variable": "BC\u521d\u59cb\u5316 vs \u968f\u673a\u521d\u59cb\u5316\uff0c\u5176\u4f59PPO/\u573a\u666f/Reward\u56fa\u5b9a",
+      "evaluation": "\u76f8\u540c6\u573a\u666fValidation\u53caFinal Checkpoint\uff0c\u65e0Test",
+      "hypothesis": "\u57fa\u672c\u822a\u70b9\u793a\u8303\u521d\u59cb\u5316\u6539\u5584\u6709\u6548\u63a2\u7d22",
+      "limitations": [
+        "\u65e77D BC\u542b\u72ec\u7acb\u5f52\u4e00\u5316\uff0c\u4e0d\u80fd\u76f4\u63a5\u52a0\u8f7d\u8fdbCNN Actor",
+        "\u9700\u8981\u65b0\u6388\u6743\u91c7\u96c6Train\u793a\u8303\u53ca\u76d1\u7763\u9884\u7b97\uff1b\u73b0\u6709L5\u4e09\u6761\u8bb0\u5f55\u4e0d\u591f",
+        "State-only\u6559\u5e08\u4e0d\u662f\u907f\u969c\u4e13\u5bb6\uff0c\u53ef\u80fd\u8fc1\u79fb\u76f4\u51b2\u969c\u788d\u884c\u4e3a"
+      ],
+      "proposal_status": "DRAFT_NOT_AUTHORIZED",
+      "training_authorized": false
+    }
+  ],
+  "recommended_experiment": "two-arm frozen-scene curriculum pilot",
+  "recorded_at": "2026-10-15T10:59:07+00:00",
+  "registration_sha256": "fc712feb312afdb8b8f975724fc74b286b121f7a2adf01caf209702cfd72ef34",
+  "resources": {
+    "OOM": "NOT_OBSERVED",
+    "analysis": {
+      "optimizer_updates": 0,
+      "peak_rss_mib": 118.296875,
+      "wall_s": 7.016674247000992
+    },
+    "current": {
+      "disk_free_bytes": 71414169600,
+      "mem_available_mib": 11083.6015625
+    },
+    "historical_regression": {
+      "minimum_mem_available_mib": 7873.76171875,
+      "peak_rss_mib": 1887.3671875,
+      "wall_seconds": 126.21249270500084
+    },
+    "training_budget_consumed": 0,
+    "unit_tests": {
+      "child_peak_rss_mib": 25.234375,
+      "peak_rss_mib": 482.13671875,
+      "wall_seconds": 5.982713532999696
+    }
+  },
+  "review": {
+    "evidence": {
+      "path": ".research_local/audit_01/pre_registration_review.json",
+      "sha256": "3ff3c6ff9eeb16ee77e3d9b78ff524dcd9ad5bc0ab3f683401ec9682c84edbcd",
+      "size_bytes": 573
+    },
+    "method": "INDEPENDENT_READ_ONLY_SOURCE_AND_REGISTRATION_REVIEW",
+    "result_review_status": "GO",
+    "result_review": {
+      "reviewer": "/root/audit01_readonly_review",
+      "method": "INDEPENDENT_READ_ONLY_RESULTS_AND_PROPOSALS_REVIEW",
+      "unresolved_critical": 0,
+      "unresolved_important": 0,
+      "reviewed_report_sha256_before_receipt_append": "716b05305a48f0bc510a623883a678a0acf37a52007170b531a49637fd5fd42b",
+      "reviewed_chinese_report_sha256": "c8d1a781a2eba929e380a043f99614cdea3c17a9ca7ac297b78bb289eaf8fdf7",
+      "local_receipt_path": ".research_local/audit_01/result_review.json",
+      "followup_protocol_detail": "未来执行课程对照前，冻结32768步边界的episode reset语义及两臂抽样RNG分配；本次GO不构成训练或Validation执行授权。"
+    },
+    "source_identity_sha256": "6aacbf7e17024d39dc7eb47da8f602169df469aa9c5ace65da2ca2d048bbf5a5",
+    "status": "GO",
+    "unresolved_critical": 0,
+    "unresolved_important": 0
+  },
+  "reviewed_sb3_source_files": {
+    "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/stable_baselines3/common/buffers.py": {
+      "kind": "file",
+      "sha256": "21db27f000048615f5848facf18af9afc22e6e2a1c26148911c2cba542d1988d",
+      "size": 40735
+    },
+    "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/stable_baselines3/common/on_policy_algorithm.py": {
+      "kind": "file",
+      "sha256": "ce1984ea8e8a2d969443a484ab159194b9d70ff92a7ef1bc25fcc183e391e35c",
+      "size": 14576
+    },
+    "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/stable_baselines3/common/vec_env/dummy_vec_env.py": {
+      "kind": "file",
+      "sha256": "e9086bccdee89800a03e32fad09b2baa4195bb72ada97a12f381afe211c7c32b",
+      "size": 6980
+    },
+    "/home/keyousuke/MineUAV-Learning/.venv/lib/python3.10/site-packages/stable_baselines3/ppo/ppo.py": {
+      "kind": "file",
+      "sha256": "724a5f6324bd3c6160e6e3125147df597c0ea9d3c6f5cc0dbc1bcb8731cdb12a",
+      "size": 15220
+    }
+  },
+  "snapshot_comparison": "different fresh seed0 attempts, NOT a within-run time series or independent seeds",
+  "source_evidence": {
+    "mujoco/lidar_integration/failure_evidence.py": {
+      "kind": "file",
+      "sha256": "ecdb1cd3dbf84106c278c6066a8e83374d84e9050e608dcfd6759487ca851fea",
+      "size": 9950
+    },
+    "mujoco/lidar_integration/ppo_formal_checkpoint.py": {
+      "kind": "file",
+      "sha256": "78fc3862ce9a8f6613b8153945d572c02858808486dabf4c464bca41ce3d4ea4",
+      "size": 7296
+    },
+    "mujoco/lidar_integration/ppo_formal_scheduler.py": {
+      "kind": "file",
+      "sha256": "587ee276ab0755140f0467a6d30209e7adc1a2bc21a3ed88cde1039bf1dbd59d",
+      "size": 9038
+    },
+    "mujoco/lidar_integration/ppo_formal_seed0_entry.py": {
+      "kind": "file",
+      "sha256": "5d5827bf4223eec53f1bf0cd25ee18df326169b74ead1096b32dcb83c22f1e13",
+      "size": 6273
+    },
+    "mujoco/lidar_integration/ppo_formal_seed0_health.py": {
+      "kind": "file",
+      "sha256": "cb220f5c3dd3602efe35e0a4e4b8f729e393f8a88789c56ce16f136fb17a021b",
+      "size": 12927
+    },
+    "mujoco/lidar_integration/ppo_formal_validation.py": {
+      "kind": "file",
+      "sha256": "64c16aa9929a16da5598a2eb1844cceab84aa913ce78e40dd66f97ed404034f3",
+      "size": 10881
+    },
+    "mujoco/lidar_integration/ppo_termination_repair_protocol.py": {
+      "kind": "file",
+      "sha256": "2603c5336288537d68dbe58c630c0d6f6997b7ba3e37cf6ee663d95ca97f1cb4",
+      "size": 2762
+    },
+    "mujoco/lidar_integration/ppo_training_orchestration.py": {
+      "kind": "file",
+      "sha256": "af801bae3b8fd6e5c0df2c323d2ddeb259d19d5862c75cc3dc12230ec4932935",
+      "size": 25776
+    },
+    "mujoco/lidar_integration/terminal_accounting.py": {
+      "kind": "file",
+      "sha256": "9bf647c9aeae1f290ad9b4c999065f484b3d41e944568299fad878dbd236f8b6",
+      "size": 2477
+    },
+    "mujoco/reports/mujoco_lidar_navigation_env.json": {
+      "kind": "file",
+      "sha256": "247cf257ce7c7246e82f718104d7dfa9d378df7c97310b34bb2aa7151eb5d794",
+      "size": 15679
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0.json": {
+      "kind": "file",
+      "sha256": "d7b4227f2e831402c2de3a772b6d56daa144c8a50d9c072052e6bda4bb7a4385",
+      "size": 15343
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/L8_SEED0_STEP0100096.json": {
+      "kind": "file",
+      "sha256": "4b542a7c97574e38b4c42c4852069d112e5b52666c5d7a0b6556616344bf3dca",
+      "size": 48936
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/L8_SEED0_STEP0100096.zip": {
+      "kind": "file",
+      "sha256": "d71927d83c3f844f035a3059c1329b0df22773a58ad6b258fa1093c2377abff9",
+      "size": 2118428
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/L8_SEED0_STEP0100096_event.json": {
+      "kind": "file",
+      "sha256": "bb59bf70d47b1a38c9abff838180ff3199907421e422cc17ef664ebf05abb247",
+      "size": 64222
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/L9_HEALTH_STEP0100096.json": {
+      "kind": "file",
+      "sha256": "b1486182e536ebf930a6612068f2bb29819e0d957226076a724ec01ef23b7bba",
+      "size": 1551
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/failure_capture.json": {
+      "kind": "file",
+      "sha256": "8a48173d7b317aba00497144f8e1b06e1f6737d51f7b0367f689f5a8b3c596de",
+      "size": 1422
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/formal.attempt": {
+      "kind": "file",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/formal_progress.json": {
+      "kind": "file",
+      "sha256": "6ba59d9e91728a19405cc61c353b7d1e5e6ad441cfe75aa9293705f6b0a1e22f",
+      "size": 372
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/preflight_identity.json": {
+      "kind": "file",
+      "sha256": "4fbc92d063eb16d2d6f692f638d7fcc0adc723e3002300aa3a222ea550d0aac1",
+      "size": 1559
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/process_failure_traceback.txt": {
+      "kind": "file",
+      "sha256": "2bb4cafdccb9d6df8724ef96ef337d3e6a3f4a87cae38e02c4319ddefa325a1c",
+      "size": 3079
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/resource_samples.jsonl": {
+      "kind": "file",
+      "sha256": "793589034bf8ec941ed05236aa657fbf1a2f0cb6c64804b15e306ed6fbdd3604",
+      "size": 209103
+    },
+    "mujoco/reports/mujoco_lidar_ppo_formal_seed0_parts/run_01/train_episodes.jsonl": {
+      "kind": "file",
+      "sha256": "5e3b653de9ae72404fa897c075a51afbc37961334a587dd7f5823e9e8dcc87ab",
+      "size": 318579
+    },
+    "mujoco/reports/mujoco_lidar_ppo_orchestration.json": {
+      "kind": "file",
+      "sha256": "a08df1131aaac650482f64e302c5717fad3cf599062fa5356376e02ac6f69c78",
+      "size": 38805
+    },
+    "mujoco/reports/mujoco_lidar_ppo_orchestration_parts/run_01/pilot.complete.json": {
+      "kind": "file",
+      "sha256": "03faa32c8e553d647edf9015ef9342e2d4506dba360881ff3171cfdc6ab43c4a",
+      "size": 133
+    },
+    "mujoco/reports/mujoco_lidar_ppo_orchestration_parts/run_01/pilot_summary.json": {
+      "kind": "file",
+      "sha256": "f0e61b8815a625d769680f128999166362efee041322ed34147def38cd781bd6",
+      "size": 32494
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/L9S_REPAIRED_PILOT_ONLY_SEED0.json": {
+      "kind": "file",
+      "sha256": "a7f2639844421a9eefdba714e4f16ccc46791a5b2e85f512c16a30e12f9e686d",
+      "size": 5270
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/L9S_REPAIRED_PILOT_ONLY_SEED0.zip": {
+      "kind": "file",
+      "sha256": "5fe8c3f2a89a922dda8bcd9ad4025944040adc2fff863d6a34d3892b626bff35",
+      "size": 2115187
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/causal_observations.jsonl": {
+      "kind": "file",
+      "sha256": "26a38e1f6ad9edc282e1b642699ff25d9aea3952fbbdddec3e4c17fb278683e9",
+      "size": 1365201
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/execution_protocol.json": {
+      "kind": "file",
+      "sha256": "219735b4995330aa5371c0c445cc62e2c54bcd6469835bb712c1ee7bfddf99cf",
+      "size": 3649
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/formal_progress.json": {
+      "kind": "file",
+      "sha256": "7b46c19e232349f34b15fc3ade0224e6cbc6debf3cfe1d1b594b8643cfa7e500",
+      "size": 368
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/historical_identity_before.json": {
+      "kind": "file",
+      "sha256": "a3a938e64d611feae372ed4c273dc9ee74640773311c933f8820813f742d2f70",
+      "size": 4792
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/pilot.attempt": {
+      "kind": "file",
+      "sha256": "d5b6a80c2e07566579152e0df6e649e06c36f48a908fe4c5e4983703708a128a",
+      "size": 209
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/pilot.complete.json": {
+      "kind": "file",
+      "sha256": "e2e537a937470c0de74316b29c58a89dcc9d632dd8b057e22afad80df8ca7355",
+      "size": 1155
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/pilot_summary.json": {
+      "kind": "file",
+      "sha256": "04642e96ea8ad06143e7c1d726e6631a68bcfaa6d5b420f58f9b3330f7f30620",
+      "size": 28253
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/resource_samples.jsonl": {
+      "kind": "file",
+      "sha256": "2f26af5f9ec4eeded17fa450bbce22f55ae233f017bdfca735deeea54c403b71",
+      "size": 7132
+    },
+    "mujoco/reports/mujoco_lidar_ppo_repaired_integration_parts/run_01/train_episodes.jsonl": {
+      "kind": "file",
+      "sha256": "d1534a68c6e708395229e3dd059e1ec432f75168e5f91b0e9a2b6989f0b4bfed",
+      "size": 10930
+    },
+    "mujoco/reports/mujoco_lidar_ppo_termination_repair.json": {
+      "kind": "file",
+      "sha256": "f679f6c6e96852288ed9e7b1397ce4b92d852cae7f2dab82b315fbc875c2cd48",
+      "size": 28988
+    },
+    "mujoco/reports/mujoco_lidar_ppo_training_prereg_seed0.json": {
+      "kind": "file",
+      "sha256": "c468490154627ba8f71df9c73bc8c80769f557054d9692313139188971e332c8",
+      "size": 22879
+    },
+    "mujoco/rl/models/uav_bc_mlp_seed0.pt": {
+      "kind": "file",
+      "sha256": "7d7cf248c1fc672ec859bb906f4e8e0f442fbee9c6daea8fec54d4eee64c772c",
+      "size": 76053
+    },
+    "mujoco/rl/models/uav_bc_yaw_augmented_seed0.pt": {
+      "kind": "file",
+      "sha256": "d29b93555ef46f231228c23345761f76b5758f6451648375fcc2b7e4501f03ce",
+      "size": 76501
+    },
+    "mujoco/rl/models/uav_ppo_fixed_protocol_seed0.zip": {
+      "kind": "file",
+      "sha256": "9a1e211611436d058a9fafe218c8f0e965572dfe6389c4dff869a9dcedcfd49b",
+      "size": 151662
+    },
+    "mujoco/rl/models/uav_ppo_fixed_protocol_seed1.zip": {
+      "kind": "file",
+      "sha256": "96d66efd3d1a943d6320d1013abb20cb429cffb1f992ecbb24e94775e91a9a33",
+      "size": 151642
+    },
+    "mujoco/rl/models/uav_ppo_fixed_protocol_seed2.zip": {
+      "kind": "file",
+      "sha256": "61da0c0f000f544f6963254a1f4c3aa086161592988900ff0d4bfd0a3d2e737d",
+      "size": 151662
+    },
+    "mujoco/rl/models/uav_ppo_fixed_protocol_seed3.zip": {
+      "kind": "file",
+      "sha256": "0f0bddee3c711b925b7a9ac7336d23ca47afb250196773a3bf6cda40851c8cd6",
+      "size": 151654
+    },
+    "mujoco/rl/models/uav_ppo_fixed_protocol_seed4.zip": {
+      "kind": "file",
+      "sha256": "80224e40f26faf1802388d9f9f264e5ec120bb40cfdc9efe91c77f921d6a5125",
+      "size": 151658
+    }
+  },
+  "source_formula": {
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "gamma_375": 0.02307798964136396,
+    "gamma_lambda_trace_seconds": 0.6722689075630253,
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "rollout_seconds": 5.12,
+    "stationary_far_goal_timeout_return": -5.75,
+    "stationary_note": "MATHEMATICAL_COUNTERFACTUAL: fixed pose, zero velocity/action, no contact; not a new rollout"
+  },
+  "source_identity_sha256": "6aacbf7e17024d39dc7eb47da8f602169df469aa9c5ace65da2ca2d048bbf5a5",
+  "task_distribution": {
+    "all_train_targets_z_m": [
+      1.0
+    ],
+    "initial_distance_m": {
+      "count": 12,
+      "max": 2.1578972733266357,
+      "mean": 2.017948900321439,
+      "median": 2.0344695921594846,
+      "min": 1.8892302101200742
+    },
+    "scenario_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+    "train_layout_counts": {
+      "channel": 2,
+      "detour": 2,
+      "empty": 3,
+      "front_box": 3,
+      "side_pair": 2
+    }
+  },
+  "tests": {
+    "BLOCKED": 0,
+    "DESELECTED": 15,
+    "FAIL": 0,
+    "SKIP": 0,
+    "deselected_nodes": [
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_formal_preflight_accepts_only_current_l8_identity",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_checks_disk_on_existing_ancestor_without_creating_output",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_cli_requires_explicit_formal_mode_authorization_and_rejects_initializer",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_l9_driver_writes_real_post_optimizer_health_snapshot",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[weight]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[logger]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_l8_physical_reason_contract_reproduces_formal_stop_without_training",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_interrupted_formal_report_never_claims_exact_completion_or_final_model",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_preflight.py::test_actor_critic_optimizer_and_checkpoint_roundtrip",
+        "reason": "would execute optimizer.step"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_real_sb3_rollouts_update_weights_and_switch_train_scenes",
+        "reason": "would execute PPO.learn"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_refuses_reused_attempt_and_formal_mode_requires_separate_authorization",
+        "reason": "old Pilot authorization contract superseded by L9R no-training gate"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_completed_real_rollout_milestone_saves_after_update_and_validates_without_mutation",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_passive_ppo_train_timer_counts_actual_updates_and_is_removed_before_save",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_analysis_rejects_tampered_completion_and_preserves_negative_outcome",
+        "reason": "old recorded L8 runtime hashes; audited as history not current code"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_report_readiness_fails_closed_on_missing_failed_or_incomplete_tests",
+        "reason": "old recorded L8 runtime hashes; no new readiness claim"
+      }
+    ],
+    "evidence": {
+      "path": ".research_local/audit_01/unit_verification_01.json",
+      "sha256": "10481d047fadd61ae707664bc05bbd60b85d59d897307f896ef21a6dd19d2b24",
+      "size_bytes": 13319
+    },
+    "history_evidence": {
+      "path": ".research_local/audit_01/historical_regression_01.json",
+      "sha256": "0f3142b4e100a0288a395c0dae5962644555141e83a2099f163733c81fe46943",
+      "size_bytes": 216759
+    },
+    "inherited_v2_tests": 34,
+    "inherited_warnings": 2,
+    "new_audit_tests": 12,
+    "red_green": "\u5206\u6790\u5668\u7f3a\u5b9e\u73b010 RED\u219210 GREEN\uff1bPNG/overflow\u589e\u52a02 RED\u219212 GREEN",
+    "related_historical_tests": 885,
+    "scope": "\u76f8\u5173\u9009\u5b9a\u8303\u56f4\uff0c\u4e0d\u662f\u5168\u4ed3",
+    "status": "PASS",
+    "unique_PASS": 980,
+    "v1_evidence": {
+      "path": ".research_local/audit_01/v1_regression_01.json",
+      "sha256": "61fe21aa6ab429163dd54be6b6e5a80b1741bff0f40d813f29eddab05a1913d6",
+      "size_bytes": 10615
+    },
+    "v1_tests": 49
+  },
+  "validation": {
+    "L8": {
+      "episodes": [
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -29.27924079304642,
+          "final_target_error_m": 1.7713167636959204,
+          "inference_ms": {
+            "count": 213,
+            "max": 0.6332719931378961,
+            "p50": 0.26385100500192493,
+            "p95": 0.2912224066676572,
+            "p99": 0.31127480033319443
+          },
+          "last_sim_time_s": 8.493999999999506,
+          "layout": "empty",
+          "mean_lidar_age_s": 0.04044131455398848,
+          "minimum_valid_lidar_range_m": 0.2731645759428319,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 213,
+          "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 3.4005730000706573
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_0",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -27.487084095501693,
+          "final_target_error_m": 1.6009427936775207,
+          "inference_ms": {
+            "count": 41,
+            "max": 0.6589100084966049,
+            "p50": 0.26636599795892835,
+            "p95": 0.30341598903760314,
+            "p99": 0.6156720017315821
+          },
+          "last_sim_time_s": 1.6400000000000012,
+          "layout": "front_box",
+          "mean_lidar_age_s": 0.040000000000000036,
+          "minimum_valid_lidar_range_m": 0.25367770319826644,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 41,
+          "scenario_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 0.3333069698656626
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_1",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -26.696160353655447,
+          "final_target_error_m": 1.5328650066463227,
+          "inference_ms": {
+            "count": 51,
+            "max": 0.6021930021233857,
+            "p50": 0.26346000959165394,
+            "p95": 0.29171349888201803,
+            "p99": 0.4809680031030439
+          },
+          "last_sim_time_s": 2.0239999999999987,
+          "layout": "side_pair",
+          "mean_lidar_age_s": 0.03968627450980391,
+          "minimum_valid_lidar_range_m": 0.10000853847647515,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 51,
+          "scenario_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 0.5716351496998086
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_0",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -26.010902101392507,
+          "final_target_error_m": 1.6504696755081723,
+          "inference_ms": {
+            "count": 49,
+            "max": 0.6055889971321449,
+            "p50": 0.2657040022313595,
+            "p95": 0.29109660536050797,
+            "p99": 0.4565446841297659
+          },
+          "last_sim_time_s": 1.9400000000000015,
+          "layout": "detour",
+          "mean_lidar_age_s": 0.040408163265306156,
+          "minimum_valid_lidar_range_m": 0.14173606514762108,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 49,
+          "scenario_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 0.5244857425028019
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_1",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -26.638589285880126,
+          "final_target_error_m": 1.5378680276660668,
+          "inference_ms": {
+            "count": 49,
+            "max": 0.6360369879985228,
+            "p50": 0.2638509904500097,
+            "p95": 0.37882260221522235,
+            "p99": 0.5965829087654125
+          },
+          "last_sim_time_s": 1.9400000000000015,
+          "layout": "channel",
+          "mean_lidar_age_s": 0.040408163265306156,
+          "minimum_valid_lidar_range_m": 0.11070973964404074,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 49,
+          "scenario_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 0.5279248051882106
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ],
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -34.17073524878235,
+          "final_target_error_m": 2.315602274082538,
+          "inference_ms": {
+            "count": 225,
+            "max": 0.6209979910636321,
+            "p50": 0.267217998043634,
+            "p95": 0.28382100572343916,
+            "p99": 0.3028588404413312
+          },
+          "last_sim_time_s": 8.961999999999662,
+          "layout": "empty",
+          "mean_lidar_age_s": 0.040275555555554204,
+          "minimum_valid_lidar_range_m": 0.24239895516489993,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 225,
+          "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 3.638659388617101
+        }
+      ],
+      "obstacle_contact_episodes": 4,
+      "overall": {
+        "collision": 6,
+        "collision_rate": 1.0,
+        "mean_return": -28.38045197970975,
+        "mean_time_to_goal_s": null,
+        "mean_trajectory_length_m": 1.4994308426573735,
+        "navigation_success_rate": 0.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 0,
+        "time_limit": 0,
+        "timeout_rate": 0.0,
+        "total": 6
+      },
+      "positive_x_boundary_contact_episodes": 2
+    },
+    "L9": {
+      "episodes": [
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -27.510207920556958,
+          "final_target_error_m": 1.5825881693899628,
+          "inference_ms": {
+            "count": 192,
+            "max": 0.625628003035672,
+            "p50": 0.2638869991642423,
+            "p95": 0.2859489533875603,
+            "p99": 0.31844363227719447
+          },
+          "last_sim_time_s": 7.64799999999938,
+          "layout": "empty",
+          "mean_lidar_age_s": 0.040041666666663416,
+          "minimum_valid_lidar_range_m": 0.10000748910460386,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 192,
+          "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 3.3756699820095672
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_0",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -28.12742828367851,
+          "final_target_error_m": 1.6682523967874034,
+          "inference_ms": {
+            "count": 42,
+            "max": 0.6084359920350835,
+            "p50": 0.26138799876207486,
+            "p95": 0.35774230345850777,
+            "p99": 0.5910109906108117
+          },
+          "last_sim_time_s": 1.6640000000000013,
+          "layout": "front_box",
+          "mean_lidar_age_s": 0.040571428571428605,
+          "minimum_valid_lidar_range_m": 0.27657188569777796,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 42,
+          "scenario_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 0.33881571452365505
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -26.65198511170938,
+          "final_target_error_m": 1.1939481237158733,
+          "inference_ms": {
+            "count": 153,
+            "max": 0.5910529871471226,
+            "p50": 0.26637199334800243,
+            "p95": 0.2913624048233032,
+            "p99": 0.37287324899807434
+          },
+          "last_sim_time_s": 6.081999999999552,
+          "layout": "side_pair",
+          "mean_lidar_age_s": 0.040535947712415296,
+          "minimum_valid_lidar_range_m": 0.2244729828861485,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 153,
+          "scenario_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 3.1207423824620553
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_0",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -26.100435995482332,
+          "final_target_error_m": 1.648618491424934,
+          "inference_ms": {
+            "count": 50,
+            "max": 0.596502999542281,
+            "p50": 0.2617525024106726,
+            "p95": 0.2741016010986641,
+            "p99": 0.4407280824671027
+          },
+          "last_sim_time_s": 1.9780000000000015,
+          "layout": "detour",
+          "mean_lidar_age_s": 0.04156000000000004,
+          "minimum_valid_lidar_range_m": 0.10000455484686493,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 50,
+          "scenario_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 0.5362082967147962
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_0",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -24.528182081756768,
+          "final_target_error_m": 1.2990097029709435,
+          "inference_ms": {
+            "count": 58,
+            "max": 0.6154790025902912,
+            "p50": 0.2635415003169328,
+            "p95": 0.28358440249576233,
+            "p99": 0.43803458611364465
+          },
+          "last_sim_time_s": 2.303999999999968,
+          "layout": "channel",
+          "mean_lidar_age_s": 0.0400689655172408,
+          "minimum_valid_lidar_range_m": 0.18494722303576816,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 58,
+          "scenario_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 0.724729136823471
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -24.444366094420587,
+          "final_target_error_m": 1.3377173109116955,
+          "inference_ms": {
+            "count": 193,
+            "max": 0.6271710008149967,
+            "p50": 0.2630949893500656,
+            "p95": 0.27995539421681315,
+            "p99": 0.32950196531600895
+          },
+          "last_sim_time_s": 7.717999999999372,
+          "layout": "empty",
+          "mean_lidar_age_s": 0.0400932642487014,
+          "minimum_valid_lidar_range_m": 0.10000053200798568,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 193,
+          "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "sensor_failure": false,
+          "success": false,
+          "timeout": false,
+          "trajectory_length_m": 3.4169159363201578
+        }
+      ],
+      "obstacle_contact_episodes": 3,
+      "overall": {
+        "collision": 6,
+        "collision_rate": 1.0,
+        "mean_return": -26.227100914600754,
+        "mean_time_to_goal_s": null,
+        "mean_trajectory_length_m": 1.918846908142284,
+        "navigation_success_rate": 0.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 0,
+        "time_limit": 0,
+        "timeout_rate": 0.0,
+        "total": 6
+      },
+      "positive_x_boundary_contact_episodes": 3
+    },
+    "L9S": {
+      "episodes": [
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -21.756807292712956,
+          "final_target_error_m": 0.9967802717060263,
+          "inference_ms": {
+            "count": 174,
+            "max": 0.6156360000204586,
+            "p50": 0.2719184999477875,
+            "p95": 0.2973128497842481,
+            "p99": 0.3960689699397335
+          },
+          "last_sim_time_s": 6.9419999999994575,
+          "layout": "empty",
+          "mean_lidar_age_s": 0.04012643678160606,
+          "minimum_valid_lidar_range_m": 0.24588898643655138,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 174,
+          "raw_termination_reason": "collision",
+          "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "sensor_failure": false,
+          "success": false,
+          "terminal_class": "collision",
+          "timeout": false,
+          "trajectory_length_m": 2.9595292665563226
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_0",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -27.763465195856636,
+          "final_target_error_m": 1.631404356827228,
+          "inference_ms": {
+            "count": 38,
+            "max": 0.6023500000083004,
+            "p50": 0.2724045000377373,
+            "p95": 0.2992655998241389,
+            "p99": 0.49085789994023876
+          },
+          "last_sim_time_s": 1.5180000000000011,
+          "layout": "front_box",
+          "mean_lidar_age_s": 0.04047368421052635,
+          "minimum_valid_lidar_range_m": 0.2480142635165712,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 38,
+          "raw_termination_reason": "collision",
+          "scenario_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+          "sensor_failure": false,
+          "success": false,
+          "terminal_class": "collision",
+          "timeout": false,
+          "trajectory_length_m": 0.30930769934933894
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -22.991376142806935,
+          "final_target_error_m": 1.0421621067588085,
+          "inference_ms": {
+            "count": 162,
+            "max": 0.6268669999371923,
+            "p50": 0.2769940001599025,
+            "p95": 0.35158164985205065,
+            "p99": 0.49674163989948167
+          },
+          "last_sim_time_s": 6.46599999999951,
+          "layout": "side_pair",
+          "mean_lidar_age_s": 0.040160493827157445,
+          "minimum_valid_lidar_range_m": 0.11274544246095533,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 162,
+          "raw_termination_reason": "collision",
+          "scenario_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+          "sensor_failure": false,
+          "success": false,
+          "terminal_class": "collision",
+          "timeout": false,
+          "trajectory_length_m": 2.804133224382985
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_obstacle_0",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -26.134032665286284,
+          "final_target_error_m": 1.6706118975864999,
+          "inference_ms": {
+            "count": 45,
+            "max": 0.6288109998422442,
+            "p50": 0.26885799979936564,
+            "p95": 0.283927400050743,
+            "p99": 0.4774276800708329
+          },
+          "last_sim_time_s": 1.7700000000000014,
+          "layout": "detour",
+          "mean_lidar_age_s": 0.041555555555555596,
+          "minimum_valid_lidar_range_m": 0.16186526373882826,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 45,
+          "raw_termination_reason": "collision",
+          "scenario_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+          "sensor_failure": false,
+          "success": false,
+          "terminal_class": "collision",
+          "timeout": false,
+          "trajectory_length_m": 0.46830898352335587
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ],
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -24.107618640354794,
+          "final_target_error_m": 1.1388605731623471,
+          "inference_ms": {
+            "count": 186,
+            "max": 0.6137219997981447,
+            "p50": 0.2777805000278022,
+            "p95": 0.32952974959243875,
+            "p99": 0.3840804502033281
+          },
+          "last_sim_time_s": 7.4319999999994035,
+          "layout": "channel",
+          "mean_lidar_age_s": 0.03995698924730862,
+          "minimum_valid_lidar_range_m": 0.10000224851810452,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 186,
+          "raw_termination_reason": "collision",
+          "scenario_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+          "sensor_failure": false,
+          "success": false,
+          "terminal_class": "collision",
+          "timeout": false,
+          "trajectory_length_m": 2.962847625962222
+        },
+        {
+          "collision": true,
+          "collision_contact_pairs": [
+            [
+              "nav_wall_x_pos",
+              "coarse_collision"
+            ]
+          ],
+          "completion_time_s": null,
+          "episode_return": -21.028592685423604,
+          "final_target_error_m": 0.9624877297287479,
+          "inference_ms": {
+            "count": 175,
+            "max": 0.8469910003441328,
+            "p50": 0.30341499996211496,
+            "p95": 0.5082383999706506,
+            "p99": 0.5942035601401585
+          },
+          "last_sim_time_s": 6.965999999999455,
+          "layout": "empty",
+          "mean_lidar_age_s": 0.04037714285713968,
+          "minimum_valid_lidar_range_m": 0.27423014472274143,
+          "outcome": "collision",
+          "physical_failure": false,
+          "policy_steps": 175,
+          "raw_termination_reason": "collision",
+          "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "sensor_failure": false,
+          "success": false,
+          "terminal_class": "collision",
+          "timeout": false,
+          "trajectory_length_m": 3.0050403451409653
+        }
+      ],
+      "obstacle_contact_episodes": 2,
+      "overall": {
+        "collision": 6,
+        "collision_rate": 1.0,
+        "mean_return": -23.963648770406866,
+        "mean_time_to_goal_s": null,
+        "mean_trajectory_length_m": 2.0848611908191983,
+        "navigation_success_rate": 0.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 0,
+        "time_limit": 0,
+        "timeout_rate": 0.0,
+        "total": 6,
+        "trajectory_length_available_count": 6
+      },
+      "positive_x_boundary_contact_episodes": 4
+    }
+  }
+}

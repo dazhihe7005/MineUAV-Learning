@@ -1,6 +1,16 @@
 
 
-## OPS-02交接：优先读取本节
+## AUDIT-01交接：优先读取本节
+
+位置 `/home/keyousuke/MineUAV-Learning-px4-sitl`，分支 `research/lidar-ppo-learning-diagnosis`，实际最新Commit读 `git rev-parse HEAD` 及V2同步收据。先读总协议、V2协议、[本轮中文诊断](PHASE_AUDIT_01_PPO_DIAGNOSIS.md)与JSON，再运行status→recover→doctor；若SYNC_PENDING优先sync，不改已封存待推文件。
+
+当前授权Level0/1、训练预算0；**不允许任何PPO/监督optimizer更新、Pilot、正式训练、Test episode、PX4或设备通信**。L9永远FAIL，L9R denial不变，L9S只是4096步链路Pilot；中断策略RESTART_REQUIRED，不能加载L9中间checkpoint继续原实验。
+
+最推荐的下一次实验是“仅改变场景调度”的课程对照：新初始化seed0，两臂各65536步，总131072；单worker顺序执行、wall总上限7200s建议，原Reward/CNN/PPO不变。**这只是提案，不是可执行授权**。需项目负责人独立批准预算，随后新协议和安全预检；不自动运行。
+
+仍可执行已登记的 `./researchctl-v2 start --task audit` 做历史核验。新分析原始结果在 `.research_local/audit_01/run_01/`，已使用目录拒绝覆盖；不把原始数据粒度不足用新训练或伪造轨迹补齐。没有必须自动追加的研究阶段，本轮交付后停止训练相关工作。以下为历史交接，发生冲突以本节和真实本地状态为准。
+
+## OPS-02交接：历史记录
 
 项目 `/home/keyousuke/MineUAV-Learning-px4-sitl`，当前分支 `feat/research-operations-v2`。先读 `CODEX_MASTER_SPEC.md`、`RESEARCH_OPERATIONS_V2.md`、本阶段JSON及 `./researchctl-v2 status`，实际HEAD以 `git rev-parse HEAD` 核对；提交自身SHA不写回静态报告以免循环。
 

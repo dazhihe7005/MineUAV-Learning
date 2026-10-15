@@ -682,7 +682,13 @@ Sim2Real
 
 > **面向黑暗、狭窄矿井环境的感知驱动、预测式自主飞行。**
 
-## OPS-02：当前管理入口
+## AUDIT-01：当前研究结论
+
+已有LiDAR-PPO尚无成功导航证据。L9记录706个结束episode：656碰撞、50超时、0成功；空场景也为0/169，不能只归因障碍难。单个PPO诊断点不足以确认学习率或Reward是唯一根因。推荐先用“空场景优先”课程与原混合调度做两臂对照，建议总131072步；**尚未授权，本轮训练更新0**。
+
+[中文诊断报告](docs/PHASE_AUDIT_01_PPO_DIAGNOSIS.md) · [机器报告](mujoco/reports/lidar_ppo_learning_diagnosis.json)。当前分支 `research/lidar-ppo-learning-diagnosis`；训练预算0，旧L9继续FAIL。最终交付SHA及完成状态见 `./researchctl-v2 status`。不自动重训、续训或运行Test/PX4。
+
+## OPS-02：管理基础（历史阶段记录）
 
 当前研发分支：`feat/research-operations-v2`。V2使用独立状态及版本化登记，旧V1源码、协议、预算和历史实验保持原身份。便携相关回归885通过、15排除；V1管理49项与V2新增34项通过。发布是否完成、远端SHA以 `./researchctl-v2 status` 收据为准。
 
