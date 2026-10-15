@@ -1,5 +1,9 @@
 # 每日项目交接
 
+## 2026-10-15：AUTORL-R2-PRIOR-PREFLIGHT
+
+R1远端已核验9d3ac31。新分支research/lidar-actor-prior-preflight完成原网络解析初始化表达测试：3条Train empty均成功，optimizer0、Validation/Test0。962项选择测试PASS／15排除；RSS实测最大1880.04MiB，未OOM。原模型／历史数据不变；剩余预算1,868,928步／79,200s。下次先核验OPS及新账本，若SYNC_PENDING先同步。下一项是新注册R2执行协议／初始化单变量训练设计；不能重复旧R1，也不能用本预检的成功声称学习提升。
+
 ## 2026-10-15：AUTORL-01
 
 ### AUTORL-R1 更新

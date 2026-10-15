@@ -1,0 +1,298 @@
+{
+  "PX4_runs": 0,
+  "budget_unchanged": true,
+  "configuration": {
+    "alpha": 0.2,
+    "analytic_error_bound": 0.016314780826418795,
+    "beta": 0.5,
+    "kind": "HAND_WRITTEN_PRIOR_NOT_LEARNED_AVOIDANCE",
+    "max_clipped_action_error": 0.02,
+    "normalized_gains": [
+      0.2222222222222222,
+      0.2222222222222222,
+      0.3333333333333333,
+      1.0
+    ],
+    "optimizer_updates": 0,
+    "state_feature_indices": [
+      64,
+      65,
+      66,
+      70
+    ],
+    "version": "ANALYTIC_STATE_MEAN_TANH_V1"
+  },
+  "episodes": [
+    {
+      "episode_return": 21.448124711699574,
+      "final_error_m": 0.07288459989863162,
+      "final_speed_m_s": 0.10908109313903558,
+      "last_five_stop_verified": true,
+      "max_action_error": 0.015569746494293213,
+      "raw_termination_reason": "success",
+      "scenario_identity_sha256": "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "steps": 295,
+      "terminal_class": "success"
+    },
+    {
+      "episode_return": 24.42977773330922,
+      "final_error_m": 0.07786337895425777,
+      "final_speed_m_s": 0.07757156579862266,
+      "last_five_stop_verified": true,
+      "max_action_error": 0.00506967306137085,
+      "raw_termination_reason": "success",
+      "scenario_identity_sha256": "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+      "steps": 193,
+      "terminal_class": "success"
+    },
+    {
+      "episode_return": 24.841963307837325,
+      "final_error_m": 0.06284193354783005,
+      "final_speed_m_s": 0.06558215075868216,
+      "last_five_stop_verified": true,
+      "max_action_error": 0.001616746187210083,
+      "raw_termination_reason": "success",
+      "scenario_identity_sha256": "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+      "steps": 193,
+      "terminal_class": "success"
+    }
+  ],
+  "figure": {
+    "bytes": 129953,
+    "path": "mujoco/reports/autonomous_rl_actor_prior/figures/physical_probe.png",
+    "sha256": "9d624e7a10857b58258bce30685c5dc2416c35c042b51f713e6fb9fe4ebf233c"
+  },
+  "hardware_connections": 0,
+  "historical_regression_resources": {
+    "actual_optimizer_updates": 0,
+    "minimum_mem_available_mib": 6241.98046875,
+    "peak_rss_mib": 1880.03515625,
+    "wall_seconds": 129.00375044099928
+  },
+  "implementation_status": "PASS",
+  "next_training_profile": "NOT_IMPLEMENTED; independently freeze and review before training",
+  "observed_max_action_error": 0.015569746494293213,
+  "old_l9_result": "FAIL",
+  "optimizer_updates": 0,
+  "phase": "AUTORL-R2-PRIOR-PREFLIGHT",
+  "physical_probe": {
+    "all_success": true,
+    "assigned_policy_sha256": "1f3e9a0a6779d9b7290ba138bda5e6f916e5d73380b291cc9a97d1650c5e835c",
+    "budget_unchanged": true,
+    "changed_tensor_names": [
+      "mlp_extractor.policy_net.0.weight",
+      "mlp_extractor.policy_net.2.weight",
+      "action_net.weight"
+    ],
+    "classification": "ANALYTIC_PRIOR_NOT_TRAINED_POLICY",
+    "configuration": {
+      "alpha": 0.2,
+      "analytic_error_bound": 0.016314780826418795,
+      "beta": 0.5,
+      "kind": "HAND_WRITTEN_PRIOR_NOT_LEARNED_AVOIDANCE",
+      "max_clipped_action_error": 0.02,
+      "normalized_gains": [
+        0.2222222222222222,
+        0.2222222222222222,
+        0.3333333333333333,
+        1.0
+      ],
+      "optimizer_updates": 0,
+      "state_feature_indices": [
+        64,
+        65,
+        66,
+        70
+      ],
+      "version": "ANALYTIC_STATE_MEAN_TANH_V1"
+    },
+    "initial_fresh_policy_sha256": "bc1adbd197b52b4bfd0bb759a749c16e351092960557f2d341ba3321876b39ba",
+    "min_mem_available_mib": 6855.1953125,
+    "optimizer_updates": 0,
+    "registration_sha256": "443833a087946a174ef3988c8e7f260ae6ea6d3cd1e8ec80bd12693f020698b0",
+    "rss_peak_mib": 1518.09765625,
+    "source_identity_sha256": "400e25a68a2af0ed3dcf351ed7deeca657d9bc7d78f6f9b7f92ee8ec831d699d",
+    "status": "PASS",
+    "test_episodes": 0,
+    "training_timesteps": 0,
+    "validation_episodes": 0,
+    "wall_seconds": 6.5033750779984985
+  },
+  "prior_configuration_sha256": "b21aa7600b1b8c3067b51670855400e5b5e7cb93b78ba5bd0670e686ca798f8c",
+  "publication": {
+    "authority": "live OPS V2 receipt",
+    "status_at_creation": "PENDING_REMOTE_VERIFICATION"
+  },
+  "raw_evidence": [
+    {
+      "bytes": 238,
+      "path": ".research_local/autorl_r2_prior/run_01/attempt.json",
+      "sha256": "c3b161474e6d60d77c8098cbf6f12178807112a9ab80e3746d90119c6cdda2b3"
+    },
+    {
+      "bytes": 670899,
+      "path": ".research_local/autorl_r2_prior/run_01/result.json",
+      "sha256": "628494e7895cbed2a433fde2588546d961604889959c7e095ff8105a6ecfe2ba"
+    },
+    {
+      "bytes": 90,
+      "path": ".research_local/autorl_r2_prior/run_01/complete.json",
+      "sha256": "1a8443f19152abfc9c99fa03309b4ecfbbea158fee9747c9e5efa0c8c32b1027"
+    },
+    {
+      "bytes": 165,
+      "path": ".research_local/autorl_prior_physics_01.launch.json",
+      "sha256": "7e41428eab5798041e58b69bdeba67ae8e6920908aa139203aae76f4d1f8fd38"
+    },
+    {
+      "bytes": 2662,
+      "path": ".research_local/autorl_prior_physics_01.stdout.txt",
+      "sha256": "95e538b6d800796672f76d51b0d8938e734a16e4951e698f14bfbedea4b8f4e4"
+    },
+    {
+      "bytes": 2460,
+      "path": ".research_local/autorl_prior_analysis_01.py",
+      "sha256": "6bfa059a83dfc010bedbcdca0dc0661da849834092758685311691df233137cd"
+    }
+  ],
+  "red_green": [
+    {
+      "bytes": 8535,
+      "path": ".research_local/autorl_prior_red_01.json",
+      "sha256": "c8d4b8003dde7a8e201773b7fb69773a6f5d9c75c932face57db91ff2b5ce6fa"
+    },
+    {
+      "bytes": 3955,
+      "path": ".research_local/autorl_prior_green_01.json",
+      "sha256": "ec7ea7d3386c32ab3bce33afd62b5be6159a043e37cb24b43ae9efa0a2c6d1f3"
+    },
+    {
+      "bytes": 4236,
+      "path": ".research_local/autorl_prior_launch_red_01.json",
+      "sha256": "8fb5c3deeae4a731f368684db96defcef4a012cfb7261674ebac4f18df6ef467"
+    },
+    {
+      "bytes": 4274,
+      "path": ".research_local/autorl_prior_green_02.json",
+      "sha256": "60ce66ad8f80334c1512a16cbf8e560baf720bfe72b4b9c0153c29b22b007873"
+    }
+  ],
+  "registration_sha256": "443833a087946a174ef3988c8e7f260ae6ea6d3cd1e8ec80bd12693f020698b0",
+  "remaining_reserved_wall_seconds": 79200,
+  "remaining_training_timesteps": 1868928,
+  "resume": "RESTART_REQUIRED",
+  "result_review": {
+    "status": "GO",
+    "reviewer": "/root/autorl_authorization_review",
+    "method": "INDEPENDENT_READ_ONLY",
+    "unresolved_critical": 0,
+    "unresolved_important": 0,
+    "receipt_path": ".research_local/autorl_prior_results_review_01.json",
+    "reviewed_report_before_receipt_sha256": "b21b1b9dd97e583b369c82d844778f5bf86fa73bb69739aeaece20210dede54a",
+    "reviewed_markdown_sha256": "7fbcceb291ba8710e93d1dbbad5b71659c502d61fbd085f446f8c032cd8e8388"
+  },
+  "review": {
+    "evidence": {
+      "bytes": 501,
+      "path": ".research_local/autorl_prior_review_02.json",
+      "sha256": "c9a9dd1ab5b1d7694319ee6f128f1b6f55d183abee24aa21d223655a97c2ef95"
+    },
+    "scope": "independent source and pre-run no-optimizer protocol; final result review pending",
+    "source_identity_sha256": "400e25a68a2af0ed3dcf351ed7deeca657d9bc7d78f6f9b7f92ee8ec831d699d",
+    "status": "GO"
+  },
+  "scientific_status": "ACTOR_PRIOR_EXPRESSIBILITY_PASS; PPO_LEARNING_NOT_TESTED",
+  "source_identity_sha256": "400e25a68a2af0ed3dcf351ed7deeca657d9bc7d78f6f9b7f92ee8ec831d699d",
+  "test_episodes": 0,
+  "tests": {
+    "current_stdlib": 71,
+    "current_tensor": 6,
+    "deselected": 15,
+    "evidence": {
+      "bytes": 20290,
+      "path": ".research_local/autorl_prior_operations_02.json",
+      "sha256": "007438f618374298dbcea7c42d5d4c5a6f46b09b29317b728e8c2d7360eea1ad"
+    },
+    "exclusions": [
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_formal_preflight_accepts_only_current_l8_identity",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_formal_preflight_checks_disk_on_existing_ancestor_without_creating_output",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_cli_requires_explicit_formal_mode_authorization_and_rejects_initializer",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_l9_driver_writes_real_post_optimizer_health_snapshot",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[weight]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_bad_post_update_model_cannot_be_checkpointed_or_validated[logger]",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_frozen_l8_physical_reason_contract_reproduces_formal_stop_without_training",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py::test_interrupted_formal_report_never_claims_exact_completion_or_final_model",
+        "reason": "historical L9 entry/source identity or old-defect expectation, or optimizer execution; superseded by L9R targeted tests"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_preflight.py::test_actor_critic_optimizer_and_checkpoint_roundtrip",
+        "reason": "would execute optimizer.step"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_real_sb3_rollouts_update_weights_and_switch_train_scenes",
+        "reason": "would execute PPO.learn"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_refuses_reused_attempt_and_formal_mode_requires_separate_authorization",
+        "reason": "old Pilot authorization contract superseded by L9R no-training gate"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_completed_real_rollout_milestone_saves_after_update_and_validates_without_mutation",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_passive_ppo_train_timer_counts_actual_updates_and_is_removed_before_save",
+        "reason": "would execute PPO updates"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_pilot_analysis_rejects_tampered_completion_and_preserves_negative_outcome",
+        "reason": "old recorded L8 runtime hashes; audited as history not current code"
+      },
+      {
+        "nodeid": "mujoco/lidar_integration/test_ppo_training_orchestration.py::test_report_readiness_fails_closed_on_missing_failed_or_incomplete_tests",
+        "reason": "old recorded L8 runtime hashes; no new readiness claim"
+      }
+    ],
+    "fail": 0,
+    "historical_evidence": {
+      "bytes": 216760,
+      "path": ".research_local/autorl_prior_historical_01.json",
+      "sha256": "15d24341c98a08eeb9ba6d3b9cb407b8a2837c5d52b6ae4727b52b1c29082dc2"
+    },
+    "historical_selected": 885,
+    "scope": "selected related suites, not full repository",
+    "skip": 0,
+    "status": "PASS",
+    "tensor_evidence": {
+      "bytes": 4274,
+      "path": ".research_local/autorl_prior_green_02.json",
+      "sha256": "60ce66ad8f80334c1512a16cbf8e560baf720bfe72b4b9c0153c29b22b007873"
+    },
+    "total_unique_pass": 962,
+    "warnings": "2 inherited pytest; optional cv2/NumPy ABI and Matplotlib Axes3D warnings retained"
+  },
+  "training_timesteps": 0,
+  "validation_episodes": 0
+}

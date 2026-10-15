@@ -1,4 +1,14 @@
-## AUTORL-R1：当前执行优先于以下历史
+## AUTORL-R2-PRIOR-PREFLIGHT：当前执行优先于以下历史
+
+分支research/lidar-actor-prior-preflight，基线为已推送R1的9d3ac31。登记443833a087946a174ef3988c8e7f260ae6ea6d3cd1e8ec80bd12693f020698b0；源码400e25a68a2af0ed3dcf351ed7deeca657d9bc7d78f6f9b7f92ee8ec831d699d。读本阶段MD／JSON和真实OPS收据；结果／Commit／Push完成后再推进。
+
+已完成无optimizer的解析Actor测试及三条真实empty Train probe（全部原标准成功），不得重放`.research_local/autorl_r2_prior/run_01`。没有Validation/Test，没有新训练；不是避障策略。新账本仍131072步已预留、余额1,868,928步／79,200s；不要initialize。
+
+下一安全工作：在独立分支为新R2 PPO实验扩展显式固定入口和版本化协议，只改变Actor初始化、std/Reward/CNN/PPO等不变。先声明原随机初始网络与手写先验差别，预注册初始和最终Validation，历史R1 UNIFORM作为冻结对照而非重新执行。新源码／执行协议／累计预算预留／测试及独立GO完成前不得启动R2训练；当前CLI仅支持已完成R1，不能换ID绕过。用户总预算内的普通开发与研究已授权，无需再次问普通阶段是否执行。
+
+停止和恢复仍用新authorized_rl入口；RESTART_REQUIRED，不宣称精确续训。若停止锁存或未知attempt，先审计，不删除标记。若远端待推，先完成sync；严禁PX4、FAST-LIO2、实机及Test开发评价。
+
+## AUTORL-R1：已完成历史
 
 **已结束**：两臂各65536步均完整，最终Validation均0成功6碰撞，课程改善FAIL。不得再次start两个R1 ID。预算真实余额1,868,928步／79,200秒；两次预留完成记录均在独立账本。先完成本阶段结果独立复审、Commit/Push远端核验，再进行新注册研发阶段。
 
