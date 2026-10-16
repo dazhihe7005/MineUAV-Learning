@@ -88,7 +88,10 @@ def train_worker(output,permit,p,registration,identity):
         if store.status()['stop_requested']:raise OpsError('stop requested')
         if time.monotonic()-started>=p['wall_seconds']:raise OpsError('worker absolute wall deadline')
 
-    if p['schema']==6:
+    if p['schema']==8:
+        from .repaired_distance_training import make_repaired_scheduler
+        scheduler=make_repaired_scheduler(prereg,upstream,seed=p['seed'])
+    elif p['schema']==6:
         from .short_goal_env import make_short_scheduler
         scheduler=make_short_scheduler(prereg,upstream,seed=p['seed'])
     else:scheduler=make_scheduler(prereg,upstream,p['arm'],p['seed'])
@@ -117,7 +120,7 @@ def train_worker(output,permit,p,registration,identity):
                     'collision_contact_pairs':info.get('contact_pairs',[]),
                     'action_boundary_fraction':self.boundary_count/self._episode_steps,
                     **({'distance_stage':info['distance_stage'],'base_scenario_identity_sha256':info['base_scenario_identity_sha256'],
-                        'task_target_xyz':info['task_target_xyz']} if p['schema']==6 else {})})
+                        'task_target_xyz':info['task_target_xyz']} if p['schema'] in (6,8) else {})})
             if len(self.episode_diagnostics)<4 and self.policy_steps%5==0:
                 plant=scheduler.active.unwrapped
                 _append_jsonl(output/'bounded_traces.jsonl',{'step':self.policy_steps,'sim_time':float(plant.data.time),
@@ -134,7 +137,11 @@ def train_worker(output,permit,p,registration,identity):
         if model.num_timesteps or model.policy.optimizer.state:raise OpsError('not a new random initialization')
         initialization={'kind':'FRESH_RANDOM'}
         events=[];checkpoint_probes={}
-        if p['schema']==6:
+        if p['schema']==8:
+            from .repaired_distance_training import initialize_repaired_training
+            initialization,event,probe=initialize_repaired_training(model,scheduler,manager,identity=identity,seed=p['seed'])
+            events.append(event);checkpoint_probes[0]=probe
+        elif p['schema']==6:
             from .distance_training import initialize_distance_training
             initialization,event,probe=initialize_distance_training(model,scheduler,manager,identity=identity,seed=p['seed'])
             events.append(event);checkpoint_probes[0]=probe
@@ -212,11 +219,13 @@ def train_worker(output,permit,p,registration,identity):
                 or not np.array_equal(action_probe,restored.predict(obs_probe,deterministic=True)[0])):
                 raise OpsError('checkpoint optimizer/prediction identity mismatch')
             event['optimizer_and_prediction_reload_verified']=True
-            if p['schema']==6:
+            if p['schema'] in (6,8):
                 from .distance_training import ShortValidationEvaluator,reuse_original_step0
                 event['validation']=(reuse_original_step0(event['weight_sha256']) if event['actual_step']==0
                     else LidarPPOValidationEvaluator(prereg,upstream,failure_recorder=failures).evaluate(restored))
                 event['short_validation']=ShortValidationEvaluator(prereg,upstream,failure_recorder=failures).evaluate(restored)
+                if p['schema']==8 and event['actual_step']==0:
+                    event['validation']['claim']='historical original-target evaluation, NOT a new R8 episode'
             else:event['validation']=LidarPPOValidationEvaluator(prereg,upstream,failure_recorder=failures).evaluate(restored)
             if p['schema'] in (2,3):
                 event['validation']['initialization']=initialization['kind']
@@ -224,7 +233,7 @@ def train_worker(output,permit,p,registration,identity):
                     event['validation']['model_status']=('ANALYTIC_HAND_WRITTEN_PRIOR_NOT_LEARNED'
                         if initialization['kind']=='ANALYTIC_STATE_MEAN_TANH_V1' else 'UNTRAINED_RANDOM_MEAN')
             event['validation_execution']='DEFERRED_UNTIL_TRAIN_ENV_CLOSED; frozen milestone weights'
-            if p['schema']==6 and event['actual_step']==0:
+            if p['schema'] in (6,8) and event['actual_step']==0:
                 event['validation_execution']='ORIGINAL_STEP0_REUSED_FROM_R3; SHORT_VALIDATION_DEFERRED_UNTIL_TRAIN_CLOSED'
             atomic_json(output/f"validation_{event['actual_step']}.json",event,exclusive=True)
             del restored
@@ -241,7 +250,7 @@ def train_worker(output,permit,p,registration,identity):
             'rss_peak_mib':measured.rss_peak_mib,'min_available_mib':measured.min_available_mib,
             'reset_rss_mib':measured.reset_rss_mib,'elapsed_wall_seconds':time.monotonic()-started,
             'resume':'RESTART_REQUIRED','model_selection':'FINAL_CHECKPOINT'}
-        if p['schema']==6:
+        if p['schema'] in (6,8):
             actual_validation=sum(len(e['short_validation']['episodes'])+
                 (0 if e['actual_step']==0 else len(e['validation']['episodes'])) for e in events)
             if actual_validation!=30:raise OpsError('distance Validation evidence coverage incomplete')
