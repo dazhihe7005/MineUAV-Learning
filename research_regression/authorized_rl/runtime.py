@@ -56,6 +56,12 @@ def verify_current(root=ROOT):
 
 
 def supervise(protocol,*,root=ROOT):
+    from .shutdown_guard import DeferredTermination
+    with DeferredTermination() as termination:
+        return _supervise(protocol,root=root,termination=termination)
+
+
+def _supervise(protocol,*,root,termination):
     validate_experiment(protocol)
     home=root/'.research_local/authorized_rl_v1';store=BudgetStore(home)
     manager=OperationsV2(root)
@@ -114,6 +120,7 @@ def supervise(protocol,*,root=ROOT):
         output=run_directory(home,protocol['experiment_id'])
         if output.exists():raise OpsError('runtime directory already used; never retry')
         available=resource_status(root);check_resources(available['mem_available_mib'],available['disk_free_bytes'])
+        termination.checkpoint()
         store.reserve(protocol)
         output.mkdir(parents=True,exist_ok=False)
         atomic_json(output/'protocol.json',protocol,exclusive=True)
@@ -123,16 +130,19 @@ def supervise(protocol,*,root=ROOT):
         lock=read_json(root/'research_ops/environment_lock.json')
         started=time.monotonic();child=None
         try:
+            termination.checkpoint()
             with (output/'console.txt').open('xb') as console:
                 child=subprocess.Popen([lock['interpreter'],'-m','research_regression.authorized_rl.worker',
                     '--experiment-id',protocol['experiment_id']],cwd=root,env=runtime_environment(root,lock),
                     stdout=console,stderr=subprocess.STDOUT,start_new_session=True)
                 atomic_json(output/'child.json',{'pid':child.pid,'identity':process_identity(child.pid)},exclusive=True)
                 def probe():
+                    termination.checkpoint()
                     resources=resource_status(root)
                     check_resources(resources['mem_available_mib'],resources['disk_free_bytes'])
                     if store.status()['stop_requested']:raise OpsError('safe stop requested')
                 monitor_process(child,protocol['wall_seconds']-(time.monotonic()-started),probe)
+            termination.checkpoint()
             elapsed=time.monotonic()-started
             if child.returncode!=0:raise OpsError(f'fixed training worker failed: {child.returncode}')
             summary=read_json(output/'summary.json');complete=read_json(output/'complete.json')
@@ -141,6 +151,7 @@ def supervise(protocol,*,root=ROOT):
             verify_current(root)
             for rel,expected in summary['runtime_sources'].items():
                 if sha256(root/rel)!=expected:raise OpsError('runtime source changed')
+            termination.checkpoint()
             store.complete(protocol['experiment_id'],{'protocol_sha256':digest(protocol),
                 'actual_timesteps':summary['actual_timesteps'],'optimizer_step_count':summary['optimizer_step_count'],
                 'finite_model_and_gradients':summary['finite_model_and_gradients'],
@@ -151,6 +162,8 @@ def supervise(protocol,*,root=ROOT):
             if child is not None and (child.poll() is None or group_alive(child.pid)):stop_group(child)
             atomic_json(output/'supervisor_failure.json',{'error_type':type(error).__name__,
                 'message':str(error)[:2000],'elapsed_wall_seconds':time.monotonic()-started,
+                'termination_request':termination.snapshot(),
+                'exact_final_timesteps':'NOT_VERIFIED',
                 'resume':'RESTART_REQUIRED; no automatic retry'},exclusive=True)
             store.fail(protocol['experiment_id'],str(error))
             raise

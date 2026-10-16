@@ -1,0 +1,162 @@
+{
+  "R20_failure_delivery_commit": "5e95e3f9373753f408b6e2b92beb2670193e00cd",
+  "R20_published_failed_report": {
+    "bytes": 65300,
+    "path": "mujoco/reports/autonomous_rl_temporal_credit_r20.json",
+    "sha256": "ba600c42d4b851b390d3787e47c43635ef05112c89b7c12949de1aa4251ec014"
+  },
+  "R20_science_remains": "NOT TESTED",
+  "budget_head_unchanged": {
+    "count": 26,
+    "sha256": "327cab70474f8857eae55f20f9ccabafb61f3e38bf8dd726d0c96d2b2e988488"
+  },
+  "budget_remaining": {
+    "reserved_wall_seconds": 39600,
+    "stop_requested": false,
+    "timesteps": 1148032
+  },
+  "budget_unchanged": true,
+  "history": {
+    "historical_scoped_counts": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "historical_untracked_counts": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "new_untracked_names": {
+      "/home/keyousuke/MineUAV-Learning": []
+    },
+    "protected_count": 1404,
+    "unchanged": true
+  },
+  "implementation_status": "PASS",
+  "known_limits": [
+    "no exact final training step from supervisor failure;NOT_VERIFIED",
+    "pre-try output/permit IO error window inherited;not full lifecycle repair",
+    "independent lifetime guard SIGKILL lacks separate reason receipt;unchanged",
+    "SIGTERM checkpoint latency not hard real-time;long blocking IO can defer cleanup",
+    "failed-closure eligibility still rejects R20 in old helper;new execution needs separately reviewed versioned proof,not bypass",
+    "not EXACT_RESUME or BOUNDARY_RESUME;RESTART_REQUIRED,no R20 retry or ZIP continuation"
+  ],
+  "new_signal_tests_pass": 9,
+  "next_action": "After normal publication,independent offline closed-failure eligibility and new GAE-only hypothesis design;no old attempt retries or unreviewed new training.",
+  "observed_signal_behavior": {
+    "SIGKILL_power_loss": "NOT TESTED;cannot guarantee cleanup/capture",
+    "before_last_completion_checkpoint": "FAIL,no false COMPLETE",
+    "handler": "first SIGTERM latched with original boot/unix/monotonic times,no asynchronous exception",
+    "inside_completion_transaction": "valid full completion committed,never followed by conflictingFAIL",
+    "launch_window": "signal after checkpoint can briefly create child,then cleaned;not zero extra execution guarantee",
+    "live_owned_child": "monitor detects pending SIGTERM,owned group cleaned,FAIL once",
+    "real_host_shutdown": "NOT TESTED",
+    "real_training_with_new_runtime": "NOT TESTED",
+    "reserve_mid_event_head": "transaction intact,FAIL once,no child at already-latched start boundary"
+  },
+  "offline_protocol": {
+    "R20_retry": false,
+    "actual_training_workers": 0,
+    "kind": "OFFLINE_SIGNAL_LIFECYCLE_TESTS_ONLY",
+    "optimizer_updates": 0,
+    "phase": "AUTORL-R21-SHUTDOWN-GUARD",
+    "registration_sha256": "22006cf50fa7a917045e78beda98f5b3fcb4da31469b1d13088a26e184260ce3",
+    "resource_thresholds_unchanged": {
+      "disk_free_bytes": 2147483648,
+      "mem_available_mib": 1536
+    },
+    "resume": "RESTART_REQUIRED",
+    "source_identity_sha256": "42c73b28580f5eaf722009eaa42226e0f197bcc705918263d1a7f8d055916b24",
+    "test_navigation_episodes": 0,
+    "training_environment_timesteps": 0,
+    "training_protocol_created": false
+  },
+  "offline_protocol_sha256": "e1d678d6dc1cd6e82ed0c63691812d841b9ce4f76940d4dd1a8a1a5332e8e4fa",
+  "phase_id": "AUTORL-R21-SHUTDOWN-GUARD",
+  "protected_files_unchanged": 339,
+  "registration_sha256": "22006cf50fa7a917045e78beda98f5b3fcb4da31469b1d13088a26e184260ce3",
+  "resources": {
+    "historical": {
+      "minimum_mem_available_mib": 8382.546875,
+      "peak_rss_mib": 1876.34765625,
+      "wall_seconds": 121.41628777100004
+    },
+    "operations": {
+      "child_peak_rss_mib": 28.1953125,
+      "minimum_endpoint_mem_available_mib": 10001.05078125,
+      "peak_rss_mib": 28.1953125,
+      "process_cpu_s": 4.282023667,
+      "wall_seconds": 18.006514101999983
+    },
+    "scope": "per-test-process measured counters/endpoints,not full training or shutdown performance",
+    "tensor_wall_seconds": 58.41501043700009
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r21_results_review_02.json",
+      "sha256": "a01620ed3effb2ffaa4e861f6d4e44e3e4ffe42ac12190ac7a64cfce1863147a"
+    },
+    "important": 0,
+    "method": "INDEPENDENT_READ_ONLY_SUBAGENT",
+    "new_minor": 0,
+    "reviewed_report_sha256": "f1e080b309d07571f2e97d4ecce7b82986ff94e57e90a49cada7e0e005f25e71",
+    "scope": "offline signal repair publication only,not training or host-shutdown proof",
+    "source_identity_sha256": "42c73b28580f5eaf722009eaa42226e0f197bcc705918263d1a7f8d055916b24",
+    "status": "GO"
+  },
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "bytes": 1398,
+      "path": ".research_local/autorl_r21_pre_review_02.json",
+      "sha256": "33206200fb3d13a4cc90d2b8f473ad06e03639071b008f74552e2d0fd0f3044b"
+    },
+    "important": 0,
+    "method": "INDEPENDENT_READ_ONLY_SUBAGENT",
+    "source_identity_sha256": "42c73b28580f5eaf722009eaa42226e0f197bcc705918263d1a7f8d055916b24",
+    "status": "GO"
+  },
+  "scientific_result": "NOT TESTED",
+  "source_identity_sha256": "42c73b28580f5eaf722009eaa42226e0f197bcc705918263d1a7f8d055916b24",
+  "tests": {
+    "evidence": {
+      "bytes": 59649,
+      "path": ".research_local/autorl_r21_operations_02.json",
+      "sha256": "a5d70b7c9ce07afab17242800bc869804ff2137dbaf1050566ea24360d4c89f4"
+    },
+    "evidence_bundle": {
+      "historical": {
+        "path": ".research_local/autorl_r21_historical_02.json",
+        "sha256": "f0227b0714894fbe875d059d17db4df00f9b241725fa1838157a4845af46b96d"
+      },
+      "operations": {
+        "path": ".research_local/autorl_r21_operations_02.json",
+        "sha256": "a5d70b7c9ce07afab17242800bc869804ff2137dbaf1050566ea24360d4c89f4"
+      },
+      "tensor": {
+        "path": ".research_local/autorl_r21_tensor_02.json",
+        "sha256": "7c1986c6c1fdba83a3cbaeef691e85c72eeeb90b8f6220c65cc8ffa0870f2c6a"
+      }
+    },
+    "excluded": 15,
+    "first_eight_RED_then_GREEN": true,
+    "historical_pass": 885,
+    "new_tests": 9,
+    "ninth": "review-added launch-window characterization,not extra RED",
+    "operations_pass": 202,
+    "red": {
+      "bytes": 7809,
+      "path": ".research_local/autorl_r21_red_01.json",
+      "sha256": "7dbb41dca3c404c92ea3031cc679b7385727310399d37f3eb92ad14f8b0324b6"
+    },
+    "scope": "selected no-update suites,not entire repository;mock worker JSON is fixture only,not actual PPO results",
+    "selected_total_pass": 1153,
+    "status": "PASS",
+    "superseded_checks": "_01 individual tests finished but changed SOURCE assertion failed; aggregate INCOMPLETE,not admission",
+    "superseded_evidence": {
+      "bytes": 1403,
+      "path": ".research_local/autorl_r21_checks_01_INCOMPLETE.json",
+      "sha256": "3d141c48e073b56a5bb0550ea91382f5b7abc746614b8414d0c5aac0311d0cce"
+    },
+    "tensor_pass": 66,
+    "test_optimizer_updates": 0
+  }
+}

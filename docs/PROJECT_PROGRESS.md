@@ -1,3 +1,11 @@
+## AUTORL-R21 最新：SIGTERM事务边界离线修复（2026-10-16）
+
+R20失败记录已发布5e95e3f9373753f408b6e2b92beb2670193e00cd，实验永久FAIL/INTERRUPTED、科学NOT TESTED，不重试或ZIP续训。R21仅修主管：第一SIGTERM锁存，在事务边界清理，保留event/head原子顺序，不异步raise。检查点之后/Popen中的信号可能短暂启动child后清理；完成事务越过最后检查点后优先提交，不承诺绝对零额外执行。SIGKILL/掉电无法保证，未实际关机或真实训练验证。
+
+9项新标准库场景PASS（8项RED→GREEN＋1审查窗口刻画）；最终1153选择测试PASS=202OPS/66无更新Tensor/885历史，15排除。旧_01因新增测试导致最后SOURCE绑定失败，整体INCOMPLETE并保留；_02全套重跑。339份真实grant/head/26events/13attempts/raw未变，11COMPLETE/2FAIL；预算1148032步/39600秒预留墙钟、stopfalse，本阶段optimizer0/训练0/Test0/PX4及设备0。当前HEAD/远端完成以真实OPS收据核验为准，不把文档快照当训练授权。
+
+下一安全动作：发布后独立离线登记已关闭R20失败的严格证据准入及新的GAE单变量研究方案，与完整R17比较；不能修改旧eligible_budget放行所有FAIL，不能重试R20或改变旧grant/账本。新训练需独立协议、测试、审查和剩余预算验证。详见[中文阶段报告](PHASE_AUTORL_R21_SHUTDOWN_GUARD.md)及mujoco/reports/autonomous_rl_shutdown_guard_r21.json。旧pre-try IO窗口及guard强杀收据问题明确保留，非全生命周期解决。
+
 ## AUTORL-R20 最新：跨boot系统关机中断，科学NOT TESTED（2026-10-16）
 
 R19已完整发布545c6c9a321956e1b89314f1fa8a63583e475cf1，不重放。R20新gamma .995单变量训练已跨boot中断，不能重复启动或从32k ZIP继续。原boot b5fd…的12:51:29 UTC kernel记录系统关机与向remaining processes发SIGTERM，紧随最后PPO日志约2秒；当前boot0b6…。可确认关机事件，不能证明具体worker最终信号、精确停止步数、是谁/为何关机。
