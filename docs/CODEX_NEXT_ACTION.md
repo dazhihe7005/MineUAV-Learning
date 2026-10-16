@@ -1,3 +1,31 @@
+## AUTORL-R22 最新：GAE单变量训练实际完成（2026-10-16）
+
+R21已发布597ff08，R20永久FAIL/INTERRUPTED、科学NOT TESTED不重试。新R22相对完整R17只改GAE λ .95→.99，γ=.99保持；fresh手写先验/std.1、同中心化CNN/Reward/PI/课程reset.5/频率与24000rays。65536实际步/512rollout/2048Adam/1024epoch/1309969实际physics ticks完成（逐episode时间核对，非65536×20假定），36新Val/Test0；科学FAIL，五原判据{'empty_retention': 'FAIL', 'gae_credit_benefit_over_R17': 'FAIL', 'original_learning_over_prior': 'FAIL', 'short_candidate': 'FAIL', 'short_prior_retention': 'FAIL'}。原始checkpoint local-only，Final Checkpoint，不选32k。
+
+1166选择测试PASS=211OPS/70无更新Tensor/885历史，15排除；13新RED→GREEN，分析5和来源/物理计数2另列。349旧文件不变，原事件1..26保留，仅新27RESERVE/28COMPLETE；余额1082496步/36000秒预留wall，stopfalse。完整CLI wrapper wall911.098s，worker至summary含延后Val的HWM1764.305MiB；全进程合计瞬时峰值未知，训练采样前缀单列。独立结果复审及远端同步状态以真实收据为准，未全交付不称阶段完成。
+
+下一步先真实Commit/Push/远端核验，再核累计预算/停止请求/资源，针对上述实际结果自主制定独立新实验；不回填旧grant或失败，不重试原attempt，不运行Test/PX4/设备。详见[中文报告](PHASE_AUTORL_R22_GAE_CREDIT.md)和mujoco/reports/autonomous_rl_gae_credit_r22.json；checkpoint RESTART_REQUIRED，不是无损恢复。
+
+## AUTORL-R22 最新：唯一attempt已启动，禁止重复start（2026-10-16）
+
+R22正常新版本register/recover/doctor/audit/prepare已完成，精确独立预审C0/I0/newMinor0通过；已调用一次`.research_local/launch_autorl_r22.py`，不得再次prepare/start或重跑launcher。真实run为`.research_local/authorized_rl_v1/runs/ARL_R22_GAE_CREDIT_SEED0/`，唯一launch_attempt另在`.research_local/autorl_r22_launch_attempt_01.json`。启动后已核验flock被主管持有、worker PID40261/start_ticks474415/boot0b6aec35-b19b-4fd1-b0f0-c41ff4b7e148，账本第27RESERVE已追加。此PID只属当时观测，恢复必须核验process_identity与真实锁，不能仅看PID。初次观测仍初始化，没有精确完成步数可以报告。
+
+65536step/3600s已全额永久预留，余额1082496step/36000s预留wall、stopfalse。当前RESERVED_OR_INTERRUPTED配合真实活进程/锁表示运行中，不据此误判失败。只监控同一attempt；若锁/进程消失或没有summary/complete，先独立中断审计，不能再启动、退款或从中间ZIP继续。RESTART_REQUIRED。最终源137/REG/EXEC沿用下方冻结值，完整checks1cbdca32…已实际通过1166项选择回归、15排除、0测试optimizer；分析5契约和来源/物理计数2契约另列。
+
+预审期间local finalizer曾硬编码physics ticks=65536×20，被独立审查拦截；真实R17触发RED后修复成实际episode仿真时间及tail重构。最终helper SHAe954847d4c85fe85acf812e5ed1b9a24fb1fd66b188ef30f1d1db926b227dce6、contract_06 SHA4809397eb70c5e7bf0b3f218b060c5b1d064378883488171de89d62630202076；旧错误记录不改。资源HWM正确分为worker含延后Val、训练前缀采样和未知的多进程合计峰值。运行SOURCE未因此改变。详见authentic `.research_local/autorl_r22_pre_review_01.json`全部精确方法/启动/执行身份。
+
+若正常完整结束，先确认launcher真实退出码/预算COMPLETE/summary及36新Val，不把progress当精确最终步数。随后只运行已冻结`.research_local/analyze_autorl_r22.py`（194d580a…）及finalizer，独立结果复审、25路径白名单提交、正常OPS sync并核验远端，再检查剩余预算/停止请求/资源、进入下项安全独立研究。R20与旧L9永久失败，R21已完整发布，不重复；Test/PX4/FAST-LIO2/硬件仍禁止。以下准备段仅为历史快照。
+
+## AUTORL-R22 准备中：尚未启动训练（2026-10-16）
+
+分支research/lidar-gae-credit-r22，基线为已远端核验的R21提交597ff08fd35d2d18c81c67e2f2072f718a918c33，R21完整结束，不重复。新R22只对完整R17改变GAE lambda .95→.99，gamma保持.99；R20永久FAIL/INTERRUPTED、科学NOT TESTED，不重试或ZIP续训。当前是开发与准入，不是训练完成；不得根据本段跳过真实状态核验。
+
+已冻结候选REG4564cd3419bbb607fe3ee29355aa7def17e600048cf5b89e327a36e05e2ceba2、137文件SOURCE5b4013569e334db25b0154ad5c88a3d6d6ba781bb75e988ca1e19606234887e8、EXEC7d24fa9a6ff3dc45497ff6715af3d65e3e930942d96e9986e2bccad51f68bd6c；见本地autorl_r22_registration_01和公开prereg/设计。9标准库+3Tensor缺接口RED、真实worker分派.95另RED已保留；开发GREEN不作最终准入。_final_01全套211OPS/70无更新Tensor/885历史正在唯一回归流程中，须检查真实收据/exit/当前SOURCE，不完整不能PASS或启动。分析/启动/最终报告脚本仍需齐备、测试、独立只读精确GO，之后才能正常新登记、prepare和唯一start。
+
+本段写入时真实grant账本26事件/13attempt、余额1148032step/39600s预留wall、stopfalse；尚无R22真实protocol/run/预留。恢复必须再次核账本/锁/PID，若R22已经出现protocol或attempt，禁止重复prepare/start。新实验预算65536/3600CPU1seed0、fresh手写先验而非旧checkpoint，合法预留后余额应1082496/36000；所有实际optimizer都须记入现有累计账本。不能初始化/退款/扩权。新closed_failure_proof核R20已发布报告/raw/posthoc/第26FAIL/实际预算及R21发布修复，未知失败仍拒绝，旧eligible_budget保持拒绝R20；新准入不是旧实验恢复授权。
+
+首先检查.research_local/autorl_r22_checks_01.json是否真实完整、保护349文件不变、是否存在活跃回归进程。若回归已完整，不重复；继续完成分析和执行辅助脚本、精确独立审查及新OPS登记。源码已冻结，不在运行中改动。现有V2仍登记R21，因新分支/源码在开发而doctor不匹配属于待新登记状态，不改旧身份。之后正常发布本阶段结果，再据真实剩余预算推进新独立任务。
+
 ## AUTORL-R21 最新：SIGTERM事务边界离线修复（2026-10-16）
 
 R20失败记录已发布5e95e3f9373753f408b6e2b92beb2670193e00cd，实验永久FAIL/INTERRUPTED、科学NOT TESTED，不重试或ZIP续训。R21仅修主管：第一SIGTERM锁存，在事务边界清理，保留event/head原子顺序，不异步raise。检查点之后/Popen中的信号可能短暂启动child后清理；完成事务越过最后检查点后优先提交，不承诺绝对零额外执行。SIGKILL/掉电无法保证，未实际关机或真实训练验证。

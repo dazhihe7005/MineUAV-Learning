@@ -1,3 +1,11 @@
+## AUTORL-R22 最新：GAE单变量训练实际完成（2026-10-16）
+
+R21已发布597ff08，R20永久FAIL/INTERRUPTED、科学NOT TESTED不重试。新R22相对完整R17只改GAE λ .95→.99，γ=.99保持；fresh手写先验/std.1、同中心化CNN/Reward/PI/课程reset.5/频率与24000rays。65536实际步/512rollout/2048Adam/1024epoch/1309969实际physics ticks完成（逐episode时间核对，非65536×20假定），36新Val/Test0；科学FAIL，五原判据{'empty_retention': 'FAIL', 'gae_credit_benefit_over_R17': 'FAIL', 'original_learning_over_prior': 'FAIL', 'short_candidate': 'FAIL', 'short_prior_retention': 'FAIL'}。原始checkpoint local-only，Final Checkpoint，不选32k。
+
+1166选择测试PASS=211OPS/70无更新Tensor/885历史，15排除；13新RED→GREEN，分析5和来源/物理计数2另列。349旧文件不变，原事件1..26保留，仅新27RESERVE/28COMPLETE；余额1082496步/36000秒预留wall，stopfalse。完整CLI wrapper wall911.098s，worker至summary含延后Val的HWM1764.305MiB；全进程合计瞬时峰值未知，训练采样前缀单列。独立结果复审及远端同步状态以真实收据为准，未全交付不称阶段完成。
+
+下一步先真实Commit/Push/远端核验，再核累计预算/停止请求/资源，针对上述实际结果自主制定独立新实验；不回填旧grant或失败，不重试原attempt，不运行Test/PX4/设备。详见[中文报告](PHASE_AUTORL_R22_GAE_CREDIT.md)和mujoco/reports/autonomous_rl_gae_credit_r22.json；checkpoint RESTART_REQUIRED，不是无损恢复。
+
 ## AUTORL-R21 最新：SIGTERM事务边界离线修复（2026-10-16）
 
 R20失败记录已发布5e95e3f9373753f408b6e2b92beb2670193e00cd，实验永久FAIL/INTERRUPTED、科学NOT TESTED，不重试或ZIP续训。R21仅修主管：第一SIGTERM锁存，在事务边界清理，保留event/head原子顺序，不异步raise。检查点之后/Popen中的信号可能短暂启动child后清理；完成事务越过最后检查点后优先提交，不承诺绝对零额外执行。SIGKILL/掉电无法保证，未实际关机或真实训练验证。
