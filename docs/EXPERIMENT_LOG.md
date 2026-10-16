@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-10-16 — AUTORL-R3-STD：两臂完整执行，改善FAIL
+
+原随机均值／解析均值仅将初始std改.3，各65536步／2048 Adam，源b7290417…全程不变。RANDOM548结束=513碰撞35超时0成功，PRIOR971=956碰撞14超时1自然outside_flight_area0成功；尾段65／4步仍计预算。Final Validation两臂均0成功6碰撞，三项预注册标准均FAIL。PRIOR step0的1成功3碰撞2超时与历史R2相同，是手写先验，不是新学习成果。RANDOM平均raw元素裁剪.62485%仍未成功；不能把少裁剪或较高return当成导航提升。
+
+982项选择测试PASS、15排除、2既有warning，独立运行前源码／准入GO；运行后84 OPS复核不增唯一数。所有6份checkpoint权重、optimizer、固定观察重载一致；实际主管wall1565.009s、worker ru_maxrss峰值1779.86MiB（含重载／Validation）、最低MemAvailable7076.81MiB、未观察OOM。summary SHA7651327c…／afbeac0d…，Test0，历史及旧L9 FAIL不改。余额1,672,320步／68,400s保守wall；最终结果复审及远端核验见收据，下一方向先无optimizer分析反馈控制，不重复本训练。
+
+## 2026-10-16 — AUTORL-R3-STD：初始Gaussian尺度的补充两臂（IN_PROGRESS）
+
+只将初始std从1改为.3，原随机Actor与原解析Actor分别对照已冻结R1／R2，其他网络／Reward／PPO／场景／物理不变；不是重新执行旧实验。原累计授权内新ID各65536步／3600s、顺序单worker，Final选择，3checkpoint各6Validation，Test0。源码b7290417…／登记955dd536…／预注册f71199ee…，982项相关无更新测试PASS、15排除，独立预审及实际准入GO。RANDOM唯一attempt已启动，当前科学结论NOT TESTED；PRIOR待第一组完成后顺序启动。不提前报告导航提升，不修改当前冻结协议。
+
 ## 2026-10-16 — AUTORL-R2-PRIOR：Actor先验训练未改善（FAIL）
 
 原网络／Reward／PPO／std1不变，仅解析Actor均值初始化；全新seed0、单CPU worker、65536实际步、512rollout／2048 Adam调用。Train983结束=956碰撞+24自然outside_flight_area+3超时、0成功；尾部55步未结束但计费。step0／32768／65536三份checkpoint关闭Train后各6Validation：成功1→0→0，碰撞3→6→6，超时2→0→0。原R1 UNIFORM最终0成功6碰撞作为历史控制，不重跑。三个预注册科学准入全部FAIL，不解释为独特根因或PPO已学会感知。

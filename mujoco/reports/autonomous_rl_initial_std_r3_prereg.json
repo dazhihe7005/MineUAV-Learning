@@ -1,0 +1,95 @@
+{
+  "formal_selection": "FINAL_CHECKPOINT",
+  "phase": "AUTORL-R3-STD",
+  "protocols": {
+    "PRIOR": {
+      "protocol": {
+        "algorithm": "PPO",
+        "arm": "UNIFORM",
+        "control_summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928",
+        "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+        "device": "cpu",
+        "evaluation": {
+          "candidate_collision_max": 1,
+          "candidate_physical_sensor_failures_max": 0,
+          "candidate_success_min": 4,
+          "claim_limit": "single seed historical control; no learned LiDAR dependence or generalization proof",
+          "initial_std_effect": "final successes > same-mean historical std1 final successes and collisions <= control",
+          "learning_over_step0": "final successes > own step0 successes and collisions <= own step0 collisions",
+          "selection": "FINAL_CHECKPOINT"
+        },
+        "execution_profile": "INITIAL_STD_R3_V1",
+        "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+        "initial_std": 0.3,
+        "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+        "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+        "n_steps": 128,
+        "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+        "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+        "resume": "RESTART_REQUIRED",
+        "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+        "schema": 3,
+        "seed": 0,
+        "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1",
+        "std_remains_trainable": true,
+        "test_episode_count": 0,
+        "timesteps": 65536,
+        "validation_steps": [
+          0,
+          32768,
+          65536
+        ],
+        "variant": "PRIOR",
+        "wall_seconds": 3600,
+        "workers": 1
+      },
+      "protocol_sha256": "6b9e46d53fabc20f2b064c7588f283f96238b8a9b4e06b6cc2f68b51982bd739"
+    },
+    "RANDOM": {
+      "protocol": {
+        "algorithm": "PPO",
+        "arm": "UNIFORM",
+        "control_summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+        "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+        "device": "cpu",
+        "evaluation": {
+          "candidate_collision_max": 1,
+          "candidate_physical_sensor_failures_max": 0,
+          "candidate_success_min": 4,
+          "claim_limit": "single seed historical control; no learned LiDAR dependence or generalization proof",
+          "initial_std_effect": "final successes > same-mean historical std1 final successes and collisions <= control",
+          "learning_over_step0": "final successes > own step0 successes and collisions <= own step0 collisions",
+          "selection": "FINAL_CHECKPOINT"
+        },
+        "execution_profile": "INITIAL_STD_R3_V1",
+        "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+        "initial_std": 0.3,
+        "initialization": "FRESH_RANDOM",
+        "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+        "n_steps": 128,
+        "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+        "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+        "resume": "RESTART_REQUIRED",
+        "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+        "schema": 3,
+        "seed": 0,
+        "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1",
+        "std_remains_trainable": true,
+        "test_episode_count": 0,
+        "timesteps": 65536,
+        "validation_steps": [
+          0,
+          32768,
+          65536
+        ],
+        "variant": "RANDOM",
+        "wall_seconds": 3600,
+        "workers": 1
+      },
+      "protocol_sha256": "20f0382a1e544c9a9c4419763819e9e24a6ca49c2c48033bbfb7267501ddd80d"
+    }
+  },
+  "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+  "scope": "only initial std changes within same-mean historical contrasts; Final checkpoint; Test sealed",
+  "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1"
+}

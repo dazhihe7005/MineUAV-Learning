@@ -1,11 +1,11 @@
 {
   "authority": "INFORMATION_ONLY; not a grant or restorable execution state",
   "automatic_training": "DISABLED",
-  "head_at_snapshot": "161997c0cecbe0b0f1e19d861d927ab774bb7ccf",
+  "head_at_snapshot": "669afdcfa0551496bc9e8262f5c2d7353a5828d7",
   "operations_version": "RESEARCH_OPS_V2",
-  "phase_id": "AUTORL-R2-PRIOR",
-  "protocol_sha256": "e8916ced04afb6db513cf8d7f305d83c14df78df80564bec83519b1f3eae8e22",
-  "registration_sha256": "520b6dfd65c796efe67f15e2eb2799908ae1e45b4b7f648902a049d4ee638757",
+  "phase_id": "AUTORL-R3-STD",
+  "protocol_sha256": "df3b15e95b76fef7060698fe8a28c5697660aed90066505d342e96a53cccd02c",
+  "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
   "resume": "RESTART_REQUIRED",
   "stage_status": "PASS",
   "training_budget": 0

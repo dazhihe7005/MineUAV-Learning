@@ -129,7 +129,12 @@ def train_worker(output,permit,p,registration,identity):
         if model.num_timesteps or model.policy.optimizer.state:raise OpsError('not a new random initialization')
         initialization={'kind':'FRESH_RANDOM'}
         events=[];checkpoint_probes={}
-        if p['schema']==2:
+        if p['schema']==3:
+            from .std_training import initialize_std_training
+            initialization,event,probe=initialize_std_training(model,scheduler,manager,
+                identity=identity,seed=p['seed'],variant=p['variant'])
+            events.append(event);checkpoint_probes[0]=probe
+        elif p['schema']==2:
             from .prior_training import initialize_training_prior
             initialization,event,probe=initialize_training_prior(model,scheduler,manager,identity=identity,seed=p['seed'])
             events.append(event);checkpoint_probes[0]=probe
@@ -199,10 +204,11 @@ def train_worker(output,permit,p,registration,identity):
                 raise OpsError('checkpoint optimizer/prediction identity mismatch')
             event['optimizer_and_prediction_reload_verified']=True
             event['validation']=LidarPPOValidationEvaluator(prereg,upstream,failure_recorder=failures).evaluate(restored)
-            if p['schema']==2:
+            if p['schema'] in (2,3):
                 event['validation']['initialization']=initialization['kind']
                 if event['actual_step']==0:
-                    event['validation']['model_status']='ANALYTIC_HAND_WRITTEN_PRIOR_NOT_LEARNED'
+                    event['validation']['model_status']=('ANALYTIC_HAND_WRITTEN_PRIOR_NOT_LEARNED'
+                        if initialization['kind']=='ANALYTIC_STATE_MEAN_TANH_V1' else 'UNTRAINED_RANDOM_MEAN')
             event['validation_execution']='DEFERRED_UNTIL_TRAIN_ENV_CLOSED; frozen milestone weights'
             atomic_json(output/f"validation_{event['actual_step']}.json",event,exclusive=True)
             del restored

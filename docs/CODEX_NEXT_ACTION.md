@@ -1,4 +1,16 @@
-## AUTORL-R2-PRIOR：2026-10-16当前权威交接
+## AUTORL-R3-STD：2026-10-16当前研发阶段
+
+**当前权威：两组均完整COMPLETE，不得再次prepare/start。** RANDOM summary7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1；PRIOR summaryafbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e，各65536步／2048Adam。Train均0成功，Final Val均0成功6碰撞，三个科学标准FAIL。源码b7290417…前后不变，982个唯一相关测试PASS／15排除。所有5个grant attempt均COMPLETE，预算余额1,672,320步／68,400s，stop=false；不得initialize或退款。完整原始目录只读。
+
+先核对当前OPS最终结果复审与Git远端收据，若待推先sync；本阶段完成后新分支／新登记进入无optimizer的冻结checkpoint目标反馈／减速诊断。拟检查人工声明的固定观察中位置误差、速度、Yaw与动作响应，使用真实射线编码／合法自身状态，不读取障碍真值或Test，不把输入探针当闭环性能。依据该证据再冻结新的课程／优化对照；不重复旧训练，不盲目扩步或修改运行过的协议。下方均为已结束过程快照，不是新的执行命令。
+
+最新已确认：RANDOM完整COMPLETE，summary SHA7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1，65536步／2048Adam／548结束episode=513碰撞35超时0成功。Final Validation0成功6碰撞，科学改善FAIL；不再prepare/start RANDOM。第二组PRIOR已按原冻结计划唯一prepare/start，协议6b9e46d53fabc20f2b064c7588f283f96238b8a9b4e06b6cc2f68b51982bd739；只监控同一ID，禁止并行或自动重试。初始policy6312e99c…，原均值1f3e9a0a…、std.3，其余初态相同。累计预留327680步／18000s，余额1,672,320步／68,400s；完整原始目录及预算为权威状态，下方为过程快照。
+
+R2已完成并远端核验669afdcfa0551496bc9e8262f5c2d7353a5828d7，禁止重跑。当前分支research/lidar-initial-std-r3，先读AUTORL_R3_STD_DESIGN.md及PHASE_AUTORL_R3_INITIAL_STD.md。R3只改变初始Gaussian std=.3，随机均值／解析均值两个65536步新臂，各3600s、顺序CPU单worker；其他算法／Reward／物理不变。当前正在实现固定schema3、无更新测试及新登记，尚未训练。既有R2旧OPS身份拒绝修改后源码属预期，必须新版本审查／register，不改旧协议。
+
+预算以新ledger CLI为准；不得initialize。84 OPS／13 Tensor／885相关历史无更新测试、15排除、源码及准入独立GO已完整，登记955dd536…／源码b7290417…／准入498ecfd9…，recover/doctor PASS。唯一RANDOM新attempt已prepare/start，协议20f0382a1e544c9a9c4419763819e9e24a6ca49c2c48033bbfb7267501ddd80d；核对真实flock和事件，不再启动同一ID。完成后审计complete，再prepare/start唯一PRIOR（6b9e46d5…），不能并行；中断／失败不自动重试。Test0，不从历史checkpoint继续。授权范围内不再问普通阶段是否执行；每阶段先Git推送核验再下一阶段。
+
+## AUTORL-R2-PRIOR：已完成历史交接
 
 **唯一attempt已完整COMPLETE，不可再次prepare/start。** 实际65536步、2048 Adam调用、512rollout；Train983=956碰撞+24自然越界+3超时+0成功；尾部55步未结束，仍计预算。最终Validation0/6成功、6碰撞，step0为1成功3碰撞2超时，改善假设FAIL；不是学会避障。源码44bd92f5…运行前后相同，summary SHA03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928。原始目录只读。
 

@@ -64,7 +64,11 @@ def supervise(protocol,*,root=ROOT):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        if protocol['schema']==2:
+        if protocol['schema']==3:
+            if registration['phase_id']!='AUTORL-R3-STD':raise OpsError('std run needs its own reviewed training registration')
+            from .std_profile import verify_std_controls,verify_std_checks
+            verify_std_controls(protocol,root);verify_std_checks(protocol,root)
+        elif protocol['schema']==2:
             if registration['phase_id']!='AUTORL-R2-PRIOR':raise OpsError('prior run needs its own reviewed training registration')
             from .prior_profile import verify_prior_proof,verify_training_checks
             verify_prior_proof(protocol,root)

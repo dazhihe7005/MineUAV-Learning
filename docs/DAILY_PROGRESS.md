@@ -1,5 +1,15 @@
 # 每日项目交接
 
+## 2026-10-16：AUTORL-R3实际结果
+
+两臂各65536步完整完成（总131072／4096 Adam），最终Validation均0成功6碰撞，初始std改善FAIL。随机组548结束episode：513碰撞35超时；先验组971：956碰撞14超时1自然outside_flight_area，均0成功。未完成尾段65／4步计预算不计terminal；原始summary SHA7651327c…／afbeac0d…保持只读。最新总训练预留327680步／18000s，余额1,672,320步／68,400s；实测本阶段wall1565.009s，不等于保守预留。worker峰值RSS1779.86MiB包含重载／Validation；纯训练样本ru_maxrss最大1699.07MiB，未观察OOM。
+
+982项相关测试PASS／15排除、2既有warning；运行后84项OPS再次通过但不重复计数。源码b7290417…与原冻结完全一致，历史保持；原始ZIP/轨迹local-only。结果图和中文分析完成后须独立复审／Commit／Push核验。下一项安全工作是无更新的checkpoint反馈探针审计，不重复R3，不启动PX4，不读取Test；仍在原自主授权范围，无须普通阶段再次确认。
+
+## 2026-10-16：AUTORL-R3准入与执行（IN_PROGRESS）
+
+R2已独立结果复审GO并远端核验669afdcfa0551496bc9e8262f5c2d7353a5828d7。新分支research/lidar-initial-std-r3按std单变量设计，六项profile及四项tensor RED→GREEN；完整982项选择测试PASS、15排除。源码与实际准入独立复核GO，登记955dd536…／源码b7290417…，doctor/history PASS。唯一RANDOM/std.3已启动，PRIOR尚未预留；训练结果未完成，预算当前1,737,856步／72,000s。不得重复任何已预留ID；中断只审计、RESTART_REQUIRED，不从snapshot或旧L9权重继续。
+
 ## 2026-10-16：AUTORL-R2完整结束
 
 唯一65536步完成，2048 Adam调用；983结束episode中956碰撞、24自然越界、3超时、0成功。初始化Validation1/6成功，最终0/6且6碰撞；科学改善FAIL、执行PASS，不修改Reward或重试。剩余预算1,803,392步／75,600s保守wall。主管wall814.918s，训练采样峰值RSS1703.41MiB，无观察到OOM。延后启动的附加/proc观察器首次解析空字段失败，独立诊断修正后继续只读观察，未影响训练守护；最终精确进程HWM不可验证，详见报告。

@@ -2,6 +2,8 @@
 
 ## 当前：AUTONOMOUS-RL-RESEARCH-V1
 
+当前[R3初始动作噪声对照](docs/PHASE_AUTORL_R3_INITIAL_STD.md)两臂各65536步已完整结束，工程PASS、改善假设FAIL；最终Validation各0成功6碰撞。随机均值组548个结束episode=513碰撞35超时；解析均值组971=956碰撞14超时1自然越界，均0成功。982项相关测试PASS、15排除；不会把更少动作裁剪当作学会导航。累计327680训练步，余额1,672,320步／68,400s保守wall，实时以账本为准。下一项优先无optimizer的冻结策略反馈诊断，不重跑旧实验，不接PX4。
+
 2026-10-16：[R2解析Actor初始化对照](docs/PHASE_AUTORL_R2_ACTOR_PRIOR.md)完整执行65536步，执行PASS、改善假设FAIL。初始化先验Validation为1成功／3碰撞／2超时，最终变为0成功／6碰撞，不能声称PPO学会导航。983个结束Train episode含956碰撞、24自然越界、3超时；Test=0。972项相关测试通过、15排除。剩余保守预算1,803,392步／75,600s；不重复R2，下一方向为独立预注册的初始动作噪声对照。
 
 [R2解析Actor先验预检](docs/PHASE_AUTORL_R2_PRIOR_PREFLIGHT.md)：未调用optimizer，原Tanh网络近似state-only反馈后，3个冻结empty Train均按原标准停稳；CNN／Critic／std不变。962项相关测试通过、15排除。这是手写先验表达能力，不是PPO学会避障；下一项独立训练须冻结新执行协议和对照口径。

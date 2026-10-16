@@ -1,6 +1,10 @@
 
 
-## 当前阶段：AUTORL-R2 解析Actor初始化对照（执行PASS／科学假设FAIL）
+## 当前阶段：AUTORL-R3 初始std对照（执行PASS／改善FAIL）
+
+两个独立65536步新attempt均COMPLETE，共4096 Adam调用；RANDOM548=513碰撞35超时，PRIOR971=956碰撞14超时1自然越界，Train成功均0。最终各6Validation全碰撞，std效果／超越自身step0／候选导航三项均FAIL。RANDOM虽平均raw元素裁剪仅.625%，仍未学会任务；PRIOR平均KL.1054，更新敏感性待分离。982项选择测试PASS／15排除（运行后84复核不双计），源码b7290417…前后不变。worker峰值RSS1779.86MiB（含重载／Validation），主管wall总1565.009s，未观察OOM。余额1,672,320步／68,400s保守wall，Test0。最终独立结果复审及远端收据决定阶段完成；下一项无optimizer反馈诊断，不重跑或延长本实验。
+
+## 历史阶段：AUTORL-R2 解析Actor初始化对照（执行PASS／科学假设FAIL）
 
 2026-10-16唯一R2完成65536真实步／2048 Adam调用；983个结束episode=956碰撞+24自然outside_flight_area+3超时+0成功，末尾55步未结束。最终6Validation全部碰撞，未保住step0的1次成功；三个预注册改善／候选标准均FAIL。78 OPS＋9无更新Tensor＋885历史选择测试PASS（15排除），不是全仓测试。主管wall814.918s、采样峰值RSS1703.41MiB、未观察OOM。累计196608步，余1,803,392步／75,600s保守wall；Test0。完成以最终独立复审及远端收据为准，不重复R2。下一方向：随机Actor与先验Actor各自只改变初始std的受控研究，先独立设计、登记、测试和审查。
 
