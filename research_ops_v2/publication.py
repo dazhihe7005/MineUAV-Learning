@@ -113,7 +113,14 @@ def synchronize(manager):
         target=pending['commit'];prior=pending['prior_status']
     else:
         prior=state['stage_status']
-        git(manager.root,'add','--',*allowed)
+        # A reviewed artifact may already be tracked beneath a broad historical
+        # directory ignore rule. Plain `add` errors even for that tracked path.
+        # Update only exact registered tracked files; never force-add ignored raw.
+        tracked=set(git(manager.root,'--literal-pathspecs','ls-files','-z','--',*allowed).stdout.split('\0'))
+        existing=[p for p in allowed if p in tracked]
+        fresh=[p for p in allowed if p not in tracked]
+        if existing:git(manager.root,'--literal-pathspecs','add','-u','--',*existing)
+        if fresh:git(manager.root,'--literal-pathspecs','add','--',*fresh)
         staged=set(git(manager.root,'diff','--cached','--name-only','-z').stdout.strip('\0').split('\0'))-{''}
         if not staged<=set(allowed):raise OpsError('unexpected index content')
         if staged:

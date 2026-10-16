@@ -88,5 +88,22 @@ class PublicationTests(unittest.TestCase):
         with self.assertRaises(OpsError):proposal(self.root,sync_files=['history/failure.json'])
         self.assertEqual(p.read_bytes(),before)
 
+    def test_already_tracked_registered_artifact_under_ignored_parent_can_sync(self):
+        # Real Git behavior: plain `git add exact/tracked/file` errors when its
+        # parent matches a directory ignore rule, even after explicit publication.
+        artifact='docs/ignored_preflight/diagram.md'
+        path=self.root/artifact;path.parent.mkdir();path.write_text('# 已审查的小型证据\n')
+        ignore=self.root/'.git/info/exclude';ignore.write_text(ignore.read_text()+'\ndocs/*_preflight/\n')
+        git(self.root,'add','-f','--',artifact)
+        git(self.root,'commit','-m','explicit bounded artifact fixture')
+        new=proposal(self.root,phase='OPS-TRACKED-PUBLISH',sync_files=[*self.reg['sync_files'],artifact])
+        self.m.register(new,review(new));self.reg=new;self.ready()
+        path.write_text('# 已审查的有界证据更新\n')
+        (self.root/'untracked-private.txt').write_text('remain local')
+        result=self.m.sync()
+        self.assertEqual(result['status'],'PASS')
+        self.assertEqual(git(self.root,'show','HEAD:'+artifact),'# 已审查的有界证据更新')
+        self.assertFalse(git(self.root,'ls-files','untracked-private.txt'))
+
 
 if __name__=='__main__':unittest.main()
