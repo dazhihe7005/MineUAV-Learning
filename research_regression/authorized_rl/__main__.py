@@ -17,6 +17,8 @@ def main():
     sub.add_parser('prepare-prior')
     sub.add_parser('prepare-distance')
     sub.add_parser('prepare-repaired-distance')
+    sub.add_parser('prepare-prior-distance')
+    p=sub.add_parser('start-prior-distance');p.add_argument('--expected-protocol-sha256',required=True)
     p=sub.add_parser('start-repaired-distance');p.add_argument('--expected-protocol-sha256',required=True)
     p=sub.add_parser('start-distance');p.add_argument('--expected-protocol-sha256',required=True)
     p=sub.add_parser('start-prior');p.add_argument('--expected-protocol-sha256',required=True)
@@ -42,11 +44,15 @@ def main():
         elif args.command=='baseline':
             from .baseline import run_baseline
             result=run_baseline()
-        elif args.command in ('prepare','prepare-prior','prepare-std','prepare-distance','prepare-repaired-distance'):
+        elif args.command in ('prepare','prepare-prior','prepare-std','prepare-distance','prepare-repaired-distance','prepare-prior-distance'):
             m,r=verify_current()
             from research_ops.storage import FileLock
             with FileLock(m.lock_path):
-                if args.command=='prepare-repaired-distance':
+                if args.command=='prepare-prior-distance':
+                    from .prior_distance_profile import prior_distance_experiment,verify_prior_distance_proof
+                    if r['phase_id']!='AUTORL-R10-PRIOR-DISTANCE':raise OpsError('prior-distance prepare requires reviewed R10 phase')
+                    p=prior_distance_experiment();verify_prior_distance_proof(p)
+                elif args.command=='prepare-repaired-distance':
                     from .repaired_distance_profile import repaired_distance_experiment,verify_repaired_proof
                     if r['phase_id']!='AUTORL-R8-REPAIRED-DISTANCE':raise OpsError('repaired prepare requires reviewed R8 phase')
                     p=repaired_distance_experiment();verify_repaired_proof(p)
@@ -64,7 +70,10 @@ def main():
                     p=prior_experiment();verify_prior_proof(p)
                 else:p=experiment(args.arm,65536,3600)
                 p.update(source_identity_sha256=digest(r['source_identity']),registration_sha256=digest(r))
-                if args.command=='prepare-repaired-distance':
+                if args.command=='prepare-prior-distance':
+                    from .prior_distance_profile import verify_prior_distance_checks
+                    verify_prior_distance_checks(p)
+                elif args.command=='prepare-repaired-distance':
                     from .repaired_distance_profile import verify_repaired_checks
                     verify_repaired_checks(p)
                 elif args.command=='prepare-distance':
@@ -80,7 +89,8 @@ def main():
                 atomic_json(dest,p,exclusive=True)
             result={'protocol_sha256':digest(p),'protocol':p,'active':False}
         else:
-            identity=('ARL_R8_REPAIRED_DISTANCE_SEED0' if args.command=='start-repaired-distance' else
+            identity=('ARL_R10_PRIOR_DISTANCE_SEED0' if args.command=='start-prior-distance' else
+                'ARL_R8_REPAIRED_DISTANCE_SEED0' if args.command=='start-repaired-distance' else
                 'ARL_R6_DISTANCE_SEED0' if args.command=='start-distance' else
                 f'ARL_R3_{args.variant}_STD03_SEED0' if args.command=='start-std' else
                 'ARL_R2_PRIOR_SEED0' if args.command=='start-prior' else f'ARL_R1_{args.arm}_SEED0')

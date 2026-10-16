@@ -1,0 +1,1170 @@
+{
+  "actual_timesteps": 65536,
+  "adam_calls": 2048,
+  "analysis": {
+    "path": ".research_local/autorl_r10_analysis.json",
+    "sha256": "c29406be70f258c0f09c81b8410751ce4f0fd34e86dd09b6e2e63a7e5043d68c"
+  },
+  "analysis_contract_tests": {
+    "count": 5,
+    "evidence": {
+      "path": ".research_local/autorl_r10_analysis_green_02.json",
+      "sha256": "413aa71c9f163326dedd665873c593932a2e5ae0268b81f2d25ba02aeadf281a"
+    },
+    "optimizer_updates": 0,
+    "provenance": "SYNTHETIC_ANALYSIS_CONTRACT_ONLY",
+    "status": "PASS"
+  },
+  "analysis_review": {
+    "path": ".research_local/autorl_r10_analysis_review_02.json",
+    "sha256": "37200c12a3675e85a0970a18364f88b304deff86ffcc99295b411d393f2b36e7"
+  },
+  "attempt_count": 1,
+  "base_scene_visits": {
+    "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 42,
+    "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 45,
+    "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 31,
+    "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 33,
+    "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 38,
+    "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 46,
+    "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 28,
+    "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 26,
+    "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 33,
+    "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 37,
+    "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 28,
+    "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 39
+  },
+  "budget": {
+    "cumulative_reserved_steps": 524288,
+    "cumulative_reserved_wall_seconds": 28800,
+    "refund": false,
+    "remaining_reserved_wall_seconds": 57600,
+    "remaining_steps": 1475712,
+    "stop_requested": false
+  },
+  "completed_train_episodes": 425,
+  "control": {
+    "execution": "HISTORICAL_REUSE_NOT_RERUN",
+    "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+    "final_original_collision": 2,
+    "final_original_success": 0,
+    "summary_sha256": "a6760dc61ff03a3895eb451f99d61d77513c643a3e8d4f8e31a55f556475dce4"
+  },
+  "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+  "figures": {
+    "mujoco/reports/autonomous_rl_prior_distance_r10/figures/goal_progress.png": "7a2ba9f6fe661147281ac5c6e06a45e167a7c71f24759dee7df5f0d7df478a33",
+    "mujoco/reports/autonomous_rl_prior_distance_r10/figures/ppo.png": "32596e1e33b50037c67c624a1f38e2d445280fbb6f2d05f37059fb7878978cda",
+    "mujoco/reports/autonomous_rl_prior_distance_r10/figures/resources.png": "12f1d9c1de3db6a30af88c68981a4a17ed374d39d67d15ed7463a47a764c4de3",
+    "mujoco/reports/autonomous_rl_prior_distance_r10/figures/training.png": "ac191981070b9b0d36b90b947b22d8b5aa98a1b2d69de2ba7407d2e3afd532a5",
+    "mujoco/reports/autonomous_rl_prior_distance_r10/figures/validation.png": "b45bd30943a9b12552717a3219c2c23f7e3304ca50e885105fc43c2135ea5a98"
+  },
+  "final_weights": {
+    "actor": "bf8da68454845460b39115caf5cd1661633ab6b7d6a5af062613af4b8119c4fc",
+    "critic": "ab933e829f205b566796085ae09fd591e09abed32abca39d3c18e42dccd59b9c"
+  },
+  "finite_model_and_gradients": true,
+  "implementation_status": "PASS",
+  "incomplete_final_episode_steps": 137,
+  "initial_weights": {
+    "actor": "d0cca53f6e0d302255b7655d52bba1029c201cb38d17c31daff4dc05285d6282",
+    "critic": "c8eb88d063c5a2b4ec9545c8e5228322dc42d19e876ac78f3549624606e44539",
+    "policy": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74"
+  },
+  "initialization": {
+    "actual_std": [
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657
+    ],
+    "assigned_policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74",
+    "base_mean_policy_sha256": "1f3e9a0a6779d9b7290ba138bda5e6f916e5d73380b291cc9a97d1650c5e835c",
+    "base_random_policy_sha256": "bc1adbd197b52b4bfd0bb759a749c16e351092960557f2d341ba3321876b39ba",
+    "configuration": {
+      "alpha": 0.2,
+      "analytic_error_bound": 0.016314780826418795,
+      "beta": 0.5,
+      "kind": "HAND_WRITTEN_PRIOR_NOT_LEARNED_AVOIDANCE",
+      "max_clipped_action_error": 0.02,
+      "normalized_gains": [
+        0.2222222222222222,
+        0.2222222222222222,
+        0.3333333333333333,
+        1.0
+      ],
+      "optimizer_updates": 0,
+      "state_feature_indices": [
+        64,
+        65,
+        66,
+        70
+      ],
+      "version": "ANALYTIC_STATE_MEAN_TANH_V1"
+    },
+    "execution_profile": "PRIOR_DISTANCE_R10_V1",
+    "initial_std": 0.3,
+    "kind": "ANALYTIC_STATE_MEAN_TANH_V1",
+    "optimizer_updates": 0,
+    "std_remains_trainable": true,
+    "step0_usage": "EVALUATION_ONLY; never a resume or training initialization file",
+    "variant": "PRIOR"
+  },
+  "limitations": [
+    "hand-written initial ability is not learned avoidance",
+    "single seed/small fixed Validation/no Test",
+    "sample diagnostics not full continuous goal trajectories",
+    "coarse collision body TEMPORARY_PLACEHOLDER; floor/walls/boxes all counted as collision",
+    "inherited R7 arbitrary active_task structural corruption may obscure context",
+    "no PX4/hardware/real MID360/FASTLIO/long-run memory proof",
+    "known optional cv2/NumPy ABI warnings retained"
+  ],
+  "mean_episode_return": -30.31494017221291,
+  "new_validation_episodes": 30,
+  "next_action": "after honest FAIL result review/publication/remote verification, new R11 LR-only hypothesis (3e-4 to3e-5 global Actor/Critic optimizer), offline schedule/group/checkpoint identity tests + independent pre-review before any new reservation; no R10 retry",
+  "phase_id": "AUTORL-R10-PRIOR-DISTANCE",
+  "phase_switch_actual_reset_step": 33100,
+  "physics_ticks": 1307707,
+  "ppo_epoch_updates": 1024,
+  "ppo_update_summary": {
+    "raw_action_clip_fraction": {
+      "last": 0.00390625,
+      "max": 0.306640625,
+      "mean": 0.060428619384765625,
+      "min": 0.0
+    },
+    "train/approx_kl": {
+      "last": 0.025244247168302536,
+      "max": 0.9134524464607239,
+      "mean": 0.09148210696366732,
+      "min": 0.009321335703134537
+    },
+    "train/clip_fraction": {
+      "last": 0.2109375,
+      "max": 0.63671875,
+      "mean": 0.3782806396484375,
+      "min": 0.1015625
+    },
+    "train/explained_variance": {
+      "last": 0.015078425407409668,
+      "max": 0.8477174639701843,
+      "mean": -0.00037772185169160366,
+      "min": -5.274936676025391
+    },
+    "train/std": {
+      "last": 0.30747559666633606,
+      "max": 0.30747559666633606,
+      "mean": 0.3027541865594685,
+      "min": 0.2994076609611511
+    },
+    "train/value_loss": {
+      "last": 1.7779950201511383,
+      "max": 144.48930740356445,
+      "mean": 16.17944117429215,
+      "min": 0.16091347858309746
+    }
+  },
+  "prefix_claim_limit": "prior cases show larger early update KL/clipping; hypothesis only, not unique LR cause; not entire-run trend",
+  "prefix_update_diagnostics": {
+    "ARL_R10_PRIOR_DISTANCE_SEED0": {
+      "max": {
+        "raw_action_clip_fraction": 0.169921875,
+        "train/approx_kl": 0.38909217715263367,
+        "train/clip_fraction": 0.61328125
+      },
+      "mean": {
+        "raw_action_clip_fraction": 0.02569580078125,
+        "train/approx_kl": 0.07136825448833406,
+        "train/clip_fraction": 0.33740234375
+      },
+      "scope": "first32 complete updates / steps128..4096, not full-run trend",
+      "source": {
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ppo_updates.jsonl",
+        "sha256": "6c0de2cc7b139032b2ace9af541ace660cdd6760106587a499d70faabff3f731"
+      }
+    },
+    "ARL_R3_PRIOR_STD03_SEED0": {
+      "max": {
+        "raw_action_clip_fraction": 0.166015625,
+        "train/approx_kl": 0.30368244647979736,
+        "train/clip_fraction": 0.55078125
+      },
+      "mean": {
+        "raw_action_clip_fraction": 0.0478515625,
+        "train/approx_kl": 0.07391581131378189,
+        "train/clip_fraction": 0.3665771484375
+      },
+      "scope": "first32 complete updates / steps128..4096, not full-run trend",
+      "source": {
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R3_PRIOR_STD03_SEED0/ppo_updates.jsonl",
+        "sha256": "f09f64cd6f028efcbd47d517984b319290a89ba55b2a02cedb8689b085dd048d"
+      }
+    },
+    "ARL_R8_REPAIRED_DISTANCE_SEED0": {
+      "max": {
+        "raw_action_clip_fraction": 0.005859375,
+        "train/approx_kl": 0.00896905642002821,
+        "train/clip_fraction": 0.06640625
+      },
+      "mean": {
+        "raw_action_clip_fraction": 0.00115966796875,
+        "train/approx_kl": 0.0035300809249747545,
+        "train/clip_fraction": 0.0140380859375
+      },
+      "scope": "first32 complete updates / steps128..4096, not full-run trend",
+      "source": {
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R8_REPAIRED_DISTANCE_SEED0/ppo_updates.jsonl",
+        "sha256": "0f666058b612c5de2ec5606b8fdc41075d4d1716df01d40f075b5bea36b2d3f8"
+      }
+    }
+  },
+  "protection": {
+    "path": ".research_local/autorl_r10_protection_after.json",
+    "sha256": "74a410bdad0f720741fc61439bae5729fe6b12e63d1aec8215efc80eff119544"
+  },
+  "protocol_sha256": "5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf",
+  "raw_action_clip_fraction_mean": 0.060428619384765625,
+  "raw_files": [
+    {
+      "bytes": 7317,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP0.json",
+      "sha256": "12cadc6ef7cc020646155f7dc488463f719898115876424710e43749721a1084"
+    },
+    {
+      "bytes": 733114,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP0.zip",
+      "sha256": "88d0397da1cf1b5dea49dbdce2579594553482a5562e966926cbe986759ac03c"
+    },
+    {
+      "bytes": 32464,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP32768.json",
+      "sha256": "234bd75fe664fe16aa5473dab3fd93fd894de7a8adf967de365dcc1795ce4150"
+    },
+    {
+      "bytes": 2118708,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP32768.zip",
+      "sha256": "0d60f99c50d9f09719b86a812914ee6e730bf91d2a8c9b50adaabb7c1499e25a"
+    },
+    {
+      "bytes": 71862,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP65536.json",
+      "sha256": "7cfc25f2f6f7e762e58fed7c356745d49b987e7a8a89e5ec08d6a016a8cadc94"
+    },
+    {
+      "bytes": 2118647,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP65536.zip",
+      "sha256": "90726f17fb15ef55fc464164fe1e9fbdbf6a77a110ddb8c2a71f33e05bbdec5e"
+    },
+    {
+      "bytes": 98669,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/bounded_traces.jsonl",
+      "sha256": "238379400016ee7902c6587cb8b895fcb6c962dfdd84de337993efee7b9e79d7"
+    },
+    {
+      "bytes": 141,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/child.json",
+      "sha256": "3f005c0c232a0587946f196b88ef494fa10d8176c6c9726d5c6da5f211e50019"
+    },
+    {
+      "bytes": 120,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/complete.json",
+      "sha256": "e2a32c7f38ebfb74da5677d9df9fd9c698eaac20c8f7d40191adb8d78e101209"
+    },
+    {
+      "bytes": 2728,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/console.txt",
+      "sha256": "141a3a38328680b4431153fe87073d55e57b666526e4574c473fc85c63bd1c84"
+    },
+    {
+      "bytes": 557862,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/episode_details.jsonl",
+      "sha256": "c3b26dbcc3dd4a26edf53adcc0acfcccb880a55d21ea228a8a801797e37401e4"
+    },
+    {
+      "bytes": 371,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/formal_progress.json",
+      "sha256": "e457ab135b49fbbfd6a98283e4f1e1a0d70b0ff7e6acd94e48e7d4d1b1a89066"
+    },
+    {
+      "bytes": 242,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/initial_weights.json",
+      "sha256": "12c8eb8fed0089c2b8bcd7de23b462a1209ef859adb66da34bb0658db186362f"
+    },
+    {
+      "bytes": 1169,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/initialization.json",
+      "sha256": "19fab0525ba5ae22b5096f9110bc1f466b2504987b08d503f23d6aff3f1a3660"
+    },
+    {
+      "bytes": 295,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/permit.json",
+      "sha256": "ebd061aa783f588a45756e45ff23f42558378ef9144c3c1c8ca9b604265d2abe"
+    },
+    {
+      "bytes": 283355,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ppo_updates.jsonl",
+      "sha256": "6c0de2cc7b139032b2ace9af541ace660cdd6760106587a499d70faabff3f731"
+    },
+    {
+      "bytes": 2652,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/protocol.json",
+      "sha256": "362694aeafd00d905161a38489324b45082c74d7e9fc098f95f78647e10fd9db"
+    },
+    {
+      "bytes": 114488,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/resource_samples.jsonl",
+      "sha256": "5cb541ea9223d6775c16c53742bf7e1576c5b01283d28cb142c661d62bb41ed5"
+    },
+    {
+      "bytes": 411101,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/summary.json",
+      "sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca"
+    },
+    {
+      "bytes": 221797,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/train_episodes.jsonl",
+      "sha256": "21d0b33aaef182908c2fd63447c78949b9be8a51c2b13d0122c1fd17f5c10912"
+    },
+    {
+      "bytes": 41546,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/validation_0.json",
+      "sha256": "13f716c7d995bb5262d4ee12e8d8116da0925f0803065ccc918e4c4208a9ebe2"
+    },
+    {
+      "bytes": 92851,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/validation_32768.json",
+      "sha256": "e15046b8d76db2f3850eb54ac2fa57f16a95d205128b221c9908ec2993168c75"
+    },
+    {
+      "bytes": 171584,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/validation_65536.json",
+      "sha256": "e6d83829fbe08d13eb9da239a46a50374ecbfc4ca83859bd18216086b8686f78"
+    }
+  ],
+  "registration_sha256": "69fcf055e72c0fee6986be3d6e4f7966e7308c9e958d9f6742bf2e5076bed302",
+  "resources": {
+    "OOM": "NOT OBSERVED",
+    "encoding_ms": {
+      "count": 26004,
+      "max": 7.660641000256874,
+      "p50": 4.205988000194338,
+      "p95": 4.5638517999123,
+      "p99": 4.875761570092436
+    },
+    "environment_step_ms": {
+      "count": 65536,
+      "max": 19.407429000239063,
+      "p50": 1.1890464998032257,
+      "p95": 12.379997999914849,
+      "p99": 13.12354704991776
+    },
+    "full_run_min_available_mib": "NOT_AVAILABLE including all deferred Validation",
+    "last_training_health_clock_cpu_s": 710.7064584230001,
+    "last_training_health_clock_wall_s": 721.9822592310002,
+    "ppo_update_ms": {
+      "count": 512,
+      "max": 23.72455299973808,
+      "p50": 16.9496500002424,
+      "p95": 18.411631099479564,
+      "p99": 20.902009820438252
+    },
+    "reset_rss_mib": [
+      1053.8515625,
+      1197.19921875,
+      1092.11328125,
+      1135.8828125,
+      1135.8828125,
+      1090.5234375,
+      1090.52734375,
+      1090.53125,
+      1164.23046875,
+      1228.38671875,
+      1234.85546875,
+      1232.390625,
+      1250.29296875,
+      1225.15234375,
+      1216.640625,
+      1146.9140625,
+      1233.33984375,
+      1281.671875,
+      1281.671875,
+      1158.8671875,
+      1226.9375,
+      1250.640625,
+      1289.86328125,
+      1289.90625,
+      1325.7421875,
+      1205.265625,
+      1213.4609375,
+      1339.90625,
+      1205.3359375,
+      1345.8203125,
+      1343.4375,
+      1126.7578125,
+      1205.453125,
+      1346.1640625,
+      1185.42578125,
+      1221.44921875,
+      1243.2890625,
+      1252.75,
+      1263.34375,
+      1263.34375,
+      1320.39453125,
+      1311.00390625,
+      1311.00390625,
+      1190.81640625,
+      1184.37890625,
+      1246.49609375,
+      1159.52734375,
+      1272.26953125,
+      1340.109375,
+      1340.12890625,
+      1216.30078125,
+      1318.55078125,
+      1171.515625,
+      1208.23828125,
+      1181.25,
+      1344.5859375,
+      1217.92578125,
+      1229.890625,
+      1240.5703125,
+      1340.31640625,
+      1184.05078125,
+      1315.0859375,
+      1315.08984375,
+      1171.78125,
+      1327.5078125,
+      1184.7890625,
+      1303.109375,
+      1179.97265625,
+      1291.515625,
+      1285.20703125,
+      1209.265625,
+      1232.51953125,
+      1244.578125,
+      1244.578125,
+      1181.4140625,
+      1249.1796875,
+      1257.49609375,
+      1193.2109375,
+      1227.734375,
+      1231.19921875,
+      1236.02734375,
+      1381.45703125,
+      1248.3515625,
+      1248.3515625,
+      1211.04296875,
+      1298.09375,
+      1314.0,
+      1199.1640625,
+      1219.8125,
+      1364.203125,
+      1294.63671875,
+      1241.7265625,
+      1205.02734375,
+      1319.6484375,
+      1211.140625,
+      1262.14453125,
+      1223.90625,
+      1163.140625,
+      1197.23046875,
+      1228.9296875,
+      1181.55859375,
+      1236.45703125,
+      1250.35546875,
+      1250.35546875,
+      1288.87890625,
+      1298.9296875,
+      1249.26953125,
+      1249.26953125,
+      1310.02734375,
+      1183.0703125,
+      1248.99609375,
+      1246.140625,
+      1382.98046875,
+      1339.72265625,
+      1346.84765625,
+      1230.6953125,
+      1328.8515625,
+      1289.4921875,
+      1226.953125,
+      1255.05078125,
+      1342.01953125,
+      1339.76953125,
+      1211.078125,
+      1242.95703125,
+      1242.96484375,
+      1249.07421875,
+      1372.58984375,
+      1254.0859375,
+      1268.50390625,
+      1316.4140625,
+      1269.37109375,
+      1265.94140625,
+      1200.0859375,
+      1115.03125,
+      1237.4453125,
+      1181.71484375,
+      1213.06640625,
+      1300.03515625,
+      1271.66796875,
+      1240.0546875,
+      1180.25390625,
+      1188.57421875,
+      1241.73828125,
+      1252.375,
+      1261.20703125,
+      1361.76953125,
+      1361.76953125,
+      1238.86328125,
+      1285.484375,
+      1200.43359375,
+      1196.1484375,
+      1189.76953125,
+      1360.40625,
+      1181.34375,
+      1248.71484375,
+      1248.73046875,
+      1262.08203125,
+      1262.12109375,
+      1304.85546875,
+      1304.875,
+      1383.6953125,
+      1313.09765625,
+      1506.18359375,
+      1256.33203125,
+      1256.3359375,
+      1323.15234375,
+      1403.42578125,
+      1287.78125,
+      1287.79296875,
+      1295.96875,
+      1429.63671875,
+      1287.80859375,
+      1287.80859375,
+      1287.80859375,
+      1287.80859375,
+      1287.80859375,
+      1421.11328125,
+      1396.83984375,
+      1396.83984375,
+      1491.25,
+      1459.890625,
+      1459.89453125,
+      1351.796875,
+      1351.80859375,
+      1296.05078125,
+      1287.90625,
+      1287.921875,
+      1287.921875,
+      1469.46875,
+      1547.8671875,
+      1346.51171875,
+      1296.12890625,
+      1429.796875,
+      1287.953125,
+      1296.14453125,
+      1296.14453125,
+      1574.62109375,
+      1287.984375,
+      1287.984375,
+      1459.4765625,
+      1309.7734375,
+      1444.37890625,
+      1317.96484375,
+      1309.7890625,
+      1317.96875,
+      1550.02734375,
+      1416.58984375,
+      1416.58984375,
+      1416.58984375,
+      1311.546875,
+      1370.13671875,
+      1311.5625,
+      1403.046875,
+      1398.54296875,
+      1311.59375,
+      1311.59375,
+      1446.19921875,
+      1390.40234375,
+      1319.81640625,
+      1311.640625,
+      1311.640625,
+      1515.65234375,
+      1319.8359375,
+      1319.8515625,
+      1454.453125,
+      1370.28125,
+      1311.72265625,
+      1311.72265625,
+      1403.19140625,
+      1457.171875,
+      1311.7421875,
+      1399.75,
+      1323.75,
+      1404.01953125,
+      1331.5,
+      1257.046875,
+      1257.06640625,
+      1278.765625,
+      1278.77734375,
+      1286.96875,
+      1365.7890625,
+      1327.69140625,
+      1278.8671875,
+      1278.8828125,
+      1407.51953125,
+      1373.48046875,
+      1370.3984375,
+      1278.9296875,
+      1413.51953125,
+      1370.4140625,
+      1370.4140625,
+      1278.9453125,
+      1278.9453125,
+      1370.4296875,
+      1365.94140625,
+      1365.94140625,
+      1412.265625,
+      1412.265625,
+      1278.9921875,
+      1287.16796875,
+      1287.16796875,
+      1393.8203125,
+      1423.16796875,
+      1296.76953125,
+      1431.35546875,
+      1431.35546875,
+      1344.80078125,
+      1344.81640625,
+      1403.55859375,
+      1288.64453125,
+      1288.66015625,
+      1288.67578125,
+      1383.2421875,
+      1288.69140625,
+      1288.69140625,
+      1380.16015625,
+      1296.8671875,
+      1288.69140625,
+      1355.4609375,
+      1480.79296875,
+      1367.50390625,
+      1288.73828125,
+      1288.73828125,
+      1288.73828125,
+      1288.73828125,
+      1296.9296875,
+      1288.75390625,
+      1288.75390625,
+      1288.78515625,
+      1296.9609375,
+      1300.55078125,
+      1359.15625,
+      1300.59765625,
+      1504.60546875,
+      1321.62890625,
+      1265.80078125,
+      1265.80078125,
+      1297.05078125,
+      1423.46484375,
+      1441.6875,
+      1288.890625,
+      1288.890625,
+      1288.90625,
+      1383.4765625,
+      1518.078125,
+      1297.09765625,
+      1288.921875,
+      1288.9375,
+      1295.71875,
+      1374.51171875,
+      1303.89453125,
+      1441.16796875,
+      1295.73828125,
+      1295.75390625,
+      1477.3046875,
+      1398.52734375,
+      1398.12890625,
+      1295.83203125,
+      1398.609375,
+      1497.19921875,
+      1295.87890625,
+      1382.8671875,
+      1354.48828125,
+      1354.48828125,
+      1295.9296875,
+      1354.50390625,
+      1354.50390625,
+      1304.12109375,
+      1295.9453125,
+      1387.4296875,
+      1387.4296875,
+      1304.140625,
+      1376.3359375,
+      1295.9765625,
+      1295.9765625,
+      1295.98046875,
+      1390.55078125,
+      1295.9921875,
+      1374.79296875,
+      1304.17578125,
+      1304.17578125,
+      1296.0,
+      1304.17578125,
+      1304.1796875,
+      1525.8203125,
+      1296.0078125,
+      1304.1875,
+      1296.01171875,
+      1304.19921875,
+      1296.0234375,
+      1296.0234375,
+      1304.2109375,
+      1296.0390625,
+      1304.22265625,
+      1304.22265625,
+      1304.22265625,
+      1354.62109375,
+      1296.0546875,
+      1296.0546875,
+      1296.0546875,
+      1387.53125,
+      1296.0625,
+      1296.0625,
+      1390.640625,
+      1304.24609375,
+      1304.24609375,
+      1304.24609375,
+      1430.66015625,
+      1296.07421875,
+      1387.55859375,
+      1496.12109375,
+      1383.0546875,
+      1344.9140625,
+      1304.265625,
+      1437.93359375,
+      1437.93359375,
+      1296.10546875,
+      1296.10546875,
+      1296.10546875,
+      1296.10546875,
+      1296.10546875,
+      1304.296875,
+      1296.12109375,
+      1304.296875,
+      1441.5546875,
+      1447.26953125,
+      1404.1640625,
+      1407.9140625,
+      1362.77734375,
+      1443.13671875,
+      1296.13671875,
+      1296.13671875,
+      1296.15234375,
+      1304.328125,
+      1438.9140625,
+      1444.8671875,
+      1296.16796875,
+      1362.8203125,
+      1304.35546875,
+      1354.76171875,
+      1360.703125,
+      1489.09375,
+      1390.765625,
+      1296.19921875,
+      1390.76953125,
+      1398.9453125,
+      1398.9609375,
+      1438.0703125,
+      1304.41015625,
+      1401.515625,
+      1363.0,
+      1398.578125,
+      1304.47265625,
+      1304.48828125,
+      1296.328125,
+      1304.54296875,
+      1445.34765625,
+      1296.421875,
+      1387.90625,
+      1533.78515625,
+      1391.0546875,
+      1391.0703125,
+      1391.1015625,
+      1399.29296875,
+      1457.76953125,
+      1296.59375
+    ],
+    "scan_ms": {
+      "count": 26004,
+      "max": 12.189217000013741,
+      "p50": 6.429419999676611,
+      "p95": 6.956093349981528,
+      "p99": 7.50588803009123
+    },
+    "supervisor_wall_seconds": 772.0242655540005,
+    "training_observed_hwm_rss_mib": 1698.921875,
+    "training_recorded_cumulative_min_available_mib": 7093.90234375,
+    "worker_hwm_rss_mib": 1778.15234375,
+    "worker_hwm_scope": "entire worker including checkpoint reload/deferred Validation",
+    "worker_wall_seconds": 770.7678686440004
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r10_results_review_01.json",
+      "sha256": "d3c6dd19a1de437e37cfaaf894cce5dcf605b44bbd3c11cf86eaaa02121130ac"
+    },
+    "important": 0,
+    "inherited_minor": 1,
+    "scope": "honest engineering PASS/four scientific FAIL R10 publication only; not future Git or R11 authorization",
+    "status": "GO"
+  },
+  "resume": "RESTART_REQUIRED; no duplicate retry/warmstart of this ID",
+  "reused_R3_prior_original_step0_episodes": 6,
+  "review": {
+    "evidence": {
+      "path": ".research_local/autorl_r10_pre_review_02.json",
+      "sha256": "a71841f58b78c61d322fd8522e7c0a8ba5ecabe8fddf24b00eefec1bf98ddc58"
+    },
+    "scope": "pre-run only",
+    "source_identity_sha256": "5170a41bb9cade75afa81f215755e5dfbfe15b7f1c9a39e736c07e5f8cca55b1",
+    "status": "GO"
+  },
+  "rollouts": 512,
+  "scientific_acceptance": {
+    "initialization_benefit_over_R8": "FAIL",
+    "original_learning_over_prior": "FAIL",
+    "short_candidate": "FAIL",
+    "short_prior_retention": "FAIL"
+  },
+  "selection": "FINAL_CHECKPOINT",
+  "source_identity_sha256": "5170a41bb9cade75afa81f215755e5dfbfe15b7f1c9a39e736c07e5f8cca55b1",
+  "stage_metrics": {
+    "ORIGINAL": {
+      "collision_episode_unique_pairs": [
+        {
+          "episodes": 81,
+          "pair": [
+            "floor",
+            "coarse_collision"
+          ]
+        },
+        {
+          "episodes": 30,
+          "pair": [
+            "nav_obstacle_0",
+            "coarse_collision"
+          ]
+        },
+        {
+          "episodes": 33,
+          "pair": [
+            "nav_obstacle_1",
+            "coarse_collision"
+          ]
+        },
+        {
+          "episodes": 11,
+          "pair": [
+            "nav_wall_x_pos",
+            "coarse_collision"
+          ]
+        },
+        {
+          "episodes": 66,
+          "pair": [
+            "nav_wall_y_pos",
+            "coarse_collision"
+          ]
+        }
+      ],
+      "episodes": 260,
+      "episodes_with_sampled_goal_entry": 0,
+      "final_goal_error_m": {
+        "available_count": 260,
+        "mean": 2.0484645939249146
+      },
+      "goal_stop_totals": {
+        "joint_samples": 0,
+        "near_goal_fast_samples": 0,
+        "near_goal_samples": 0
+      },
+      "joint_max_distribution": {
+        "0": 260
+      },
+      "mean_return": {
+        "available_count": 260,
+        "mean": -27.943027138544164
+      },
+      "minimum_goal_error_m": {
+        "available_count": 260,
+        "mean": 1.597576009114027
+      },
+      "motionless": 0,
+      "terminal_counts": {
+        "collision": 221,
+        "time_limit": 39
+      }
+    },
+    "SHORT": {
+      "collision_episode_unique_pairs": [
+        {
+          "episodes": 80,
+          "pair": [
+            "floor",
+            "coarse_collision"
+          ]
+        },
+        {
+          "episodes": 16,
+          "pair": [
+            "nav_obstacle_0",
+            "coarse_collision"
+          ]
+        },
+        {
+          "episodes": 1,
+          "pair": [
+            "nav_obstacle_1",
+            "coarse_collision"
+          ]
+        }
+      ],
+      "episodes": 165,
+      "episodes_with_sampled_goal_entry": 8,
+      "final_goal_error_m": {
+        "available_count": 165,
+        "mean": 1.3773058513050067
+      },
+      "goal_stop_totals": {
+        "joint_samples": 5,
+        "near_goal_fast_samples": 96,
+        "near_goal_samples": 101
+      },
+      "joint_max_distribution": {
+        "0": 164,
+        "5": 1
+      },
+      "mean_return": {
+        "available_count": 165,
+        "mean": -34.05250010405456
+      },
+      "minimum_goal_error_m": {
+        "available_count": 165,
+        "mean": 0.18791046680327764
+      },
+      "motionless": 0,
+      "terminal_counts": {
+        "collision": 97,
+        "success": 1,
+        "time_limit": 67
+      }
+    }
+  },
+  "summed_training_physics_seconds": 2615.414,
+  "task_visits": {
+    "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": 24,
+    "1a78c7f694369dd0570292a6577af8f84abf3888bf0a1ba65df37e00fd25c79d": 16,
+    "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": 29,
+    "1d7f972606b5a9a29cfebe106af298c13e1ad3ac7e3a5634954e7d596640af8c": 14,
+    "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": 17,
+    "2cb407703306b5fe63c3e4aec58d07e795600be89e60b87fc3b854e2dee789ab": 17,
+    "2daf66441a4710a859014924b581e06e9e9e09f247308496d50f82f025b27a71": 17,
+    "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": 21,
+    "5a5de25c104b52078d2d5cc4581fafda281e6f2fba38829dc4b4b55fc5c787fd": 12,
+    "69510af27f743edfdeafc2ec29663341c38ea04e1a7bf2452326db2b20769bfc": 8,
+    "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": 23,
+    "8965e5ac8e2301f67eec79c7ff77bdc83702abe017323539cbaee977dc0a8bb1": 13,
+    "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": 32,
+    "951641977659cfdbe0534a758008be9f070b497f0d885645ca859022b7483b4d": 14,
+    "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": 15,
+    "a2456b5178db23ba4982786ee6e2bdb7704e599800e36a5cc3976676b8f9cd85": 14,
+    "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": 18,
+    "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": 16,
+    "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": 20,
+    "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": 21,
+    "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": 25,
+    "d26c835a3c460b3cd92292731913cd8744ff958b108b54ac978d7080813fcb9c": 7,
+    "eb25d5230c0d44c40595eff50d4d807d61dbf89226ada2091bb465c81df02328": 18,
+    "fd0b684dd3c541e3239b32eec86837a020810e90bd80c3cd4aa178b19cff8c59": 15
+  },
+  "terminal_counts": {
+    "collision": 318,
+    "physical_failure": 0,
+    "sensor_failure": 0,
+    "success": 1,
+    "time_limit": 106
+  },
+  "test_episodes": 0,
+  "tests": {
+    "admission": {
+      "path": ".research_local/autorl_r10_checks.json",
+      "sha256": "505cefa0d23f0d905fcf2752582c189015a9728b67bfbd3445c8ad041bfac3b0"
+    },
+    "deselected": 15,
+    "evidence": {
+      "path": ".research_local/autorl_r10_operations_final_02.json",
+      "sha256": "6f3459dfe30fb19e0d795110ab85438160ddcc0e22acbabd8c1c6de183f3c0b0"
+    },
+    "historical": 885,
+    "historical_evidence": {
+      "path": ".research_local/autorl_r10_historical_final_02.json",
+      "sha256": "eed1c436ed769d0333622de847b39a42734f436bcad5c0f2f1eaafdb3b6b1a91"
+    },
+    "operations": 125,
+    "scope": "selected related no-update suites, NOT full repository",
+    "status": "PASS",
+    "tensor": 35,
+    "tensor_evidence": {
+      "path": ".research_local/autorl_r10_tensor_final_02.json",
+      "sha256": "1ef11b1e02a98e382cc0bc91edd1dc1ec8b6c7cfb0c7f408ffb97d5d7f73595c"
+    },
+    "unique_passed": 1045
+  },
+  "validation": [
+    {
+      "original": {
+        "collision": 3,
+        "collision_rate": 0.5,
+        "mean_return": -6.000643351609099,
+        "mean_time_to_goal_s": 7.719999999999372,
+        "mean_trajectory_length_m": 2.922262677939079,
+        "navigation_success_rate": 0.16666666666666666,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 1,
+        "time_limit": 2,
+        "timeout_rate": 0.3333333333333333,
+        "total": 6,
+        "trajectory_length_available_count": 6
+      },
+      "original_reused": true,
+      "short": {
+        "collision": 0,
+        "collision_rate": 0.0,
+        "mean_return": 10.25354633688584,
+        "mean_time_to_goal_s": 2.339999999999964,
+        "mean_trajectory_length_m": 0.1180126819287904,
+        "navigation_success_rate": 1.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 6,
+        "time_limit": 0,
+        "timeout_rate": 0.0,
+        "total": 6,
+        "trajectory_length_available_count": 6
+      },
+      "step": 0
+    },
+    {
+      "original": {
+        "collision": 6,
+        "collision_rate": 1.0,
+        "mean_return": -26.36315728959083,
+        "mean_time_to_goal_s": null,
+        "mean_trajectory_length_m": 1.8821914939096487,
+        "navigation_success_rate": 0.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 0,
+        "time_limit": 0,
+        "timeout_rate": 0.0,
+        "total": 6,
+        "trajectory_length_available_count": 6
+      },
+      "original_reused": false,
+      "short": {
+        "collision": 1,
+        "collision_rate": 0.16666666666666666,
+        "mean_return": -21.08333670497124,
+        "mean_time_to_goal_s": null,
+        "mean_trajectory_length_m": 2.532479985665665,
+        "navigation_success_rate": 0.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 0,
+        "time_limit": 5,
+        "timeout_rate": 0.8333333333333334,
+        "total": 6,
+        "trajectory_length_available_count": 6
+      },
+      "step": 32768
+    },
+    {
+      "original": {
+        "collision": 1,
+        "collision_rate": 0.16666666666666666,
+        "mean_return": -9.854402217585017,
+        "mean_time_to_goal_s": null,
+        "mean_trajectory_length_m": 4.68287108387378,
+        "navigation_success_rate": 0.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 0,
+        "time_limit": 5,
+        "timeout_rate": 0.8333333333333334,
+        "total": 6,
+        "trajectory_length_available_count": 6
+      },
+      "original_reused": false,
+      "short": {
+        "collision": 0,
+        "collision_rate": 0.0,
+        "mean_return": -26.492149802301252,
+        "mean_time_to_goal_s": null,
+        "mean_trajectory_length_m": 5.512186493118031,
+        "navigation_success_rate": 0.0,
+        "physical_failure": 0,
+        "physical_failure_rate": 0.0,
+        "probe_cutoff": 0,
+        "sensor_failure": 0,
+        "sensor_failure_rate": 0.0,
+        "success": 0,
+        "time_limit": 6,
+        "timeout_rate": 1.0,
+        "total": 6,
+        "trajectory_length_available_count": 6
+      },
+      "step": 65536
+    }
+  ]
+}

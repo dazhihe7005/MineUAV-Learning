@@ -44,6 +44,9 @@ def experiment(arm,steps,wall,*,seed=0,revision='R1'):
 
 
 def validate_experiment(p):
+    if p.get('schema')==10:
+        from .prior_distance_profile import validate_prior_distance_profile
+        return validate_prior_distance_profile(p)
     if p.get('schema')==8:
         from .repaired_distance_profile import validate_repaired_profile
         return validate_repaired_profile(p)

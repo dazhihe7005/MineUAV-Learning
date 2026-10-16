@@ -64,7 +64,11 @@ def supervise(protocol,*,root=ROOT):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        if protocol['schema']==8:
+        if protocol['schema']==10:
+            if registration['phase_id']!='AUTORL-R10-PRIOR-DISTANCE':raise OpsError('prior-distance requires its reviewed R10 phase')
+            from .prior_distance_profile import verify_prior_distance_proof,verify_prior_distance_checks
+            verify_prior_distance_proof(protocol,root);verify_prior_distance_checks(protocol,root)
+        elif protocol['schema']==8:
             if registration['phase_id']!='AUTORL-R8-REPAIRED-DISTANCE':raise OpsError('repaired run requires its reviewed R8 phase')
             from .repaired_distance_profile import verify_repaired_proof,verify_repaired_checks
             verify_repaired_proof(protocol,root);verify_repaired_checks(protocol,root)

@@ -1,3 +1,29 @@
+## AUTORL-R10 最新：执行COMPLETE，四项科学标准FAIL（2026-10-16）
+
+唯一ARL_R10_PRIOR_DISTANCE_SEED0已由主管及账本COMPLETE，实际65536步/512rollout/1024PPOepoch/2048Adam，summary SHAc9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca、final ZIP90726f17…，SOURCE5170a41…未变。425结束Train=1success/318collision/106timeout，short165、original260，实际reset切换33100，尾137步未结束仍计预算。唯一训练成功不证明学会导航；short Val从初态手写先验6成功降为final0成功0碰撞6超时，original final0/1/5，30新Val/6历史R3 PRIOR step0复用/Test0。四科学标准均FAIL，不重跑本ID/不warmstart。
+
+当前research/lidar-prior-distance-r10，基线已推R9 0bdcfa999ef75a0b4f3d34a6498d76267348b7d3。1045项选择准入PASS（125OPS/35Tensor/885历史，15排除），另5分析纯契约RED→GREEN，不是全仓测试。23raw/5图local原始身份完整；主管wall772.024s，workerHWM1778.152MiB含reload/Val，训练记录minMem7093.902MiB；全程含Val最低NOT_AVAILABLE。168旧不可变授权文件与R9 17raw不变，事件15/16真实追加。累计524288step/28800s保守预留，余1,475,712step/57,600s，stop=false，不initialize/退款。结果与远端以PHASE_AUTORL_R10_PRIOR_DISTANCE.md、autonomous_rl_prior_distance_r10.json和真实审查/OPS收据为准，未全交付不称阶段完成。
+
+下一安全动作：先完整结果独立复审/历史audit/Commit/OPS sync/远端SHA；再R11离线准入研究仅降全局PPO LR3e-4→3e-5（Actor/Critic共用），相对R10保持其他条件、原目标科学标准不降低。先验证真实schedule/optimizer组/step0 ZIP及重载新LR，明确旧L6协议仅base provenance不篡改旧hash；新profile/ID/协议/完整测试/独立GO/stop资源预算核验前不训练。R10先验在32k前已丢失、KL/clip大支持更新幅度假设但不证明唯一原因。PX4/FASTLIO/实机/Test调参禁止。普通科学FAIL不终止长期任务，真正阻塞/停止/预算或会话限制才停止。
+
+以下为已结束历史过程，不能据此重复启动。
+
+## AUTORL-R10 权威：唯一训练已预留并启动，只能监控
+
+ARL_R10_PRIOR_DISTANCE_SEED0已完整通过_02准入1045项选择PASS/独立GO/新OPS登记/recover/doctor/资源/169旧文件检查、prepare精确SHA5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf后唯一start。真实PPO更新记录已观察到，但不是最终完成数。预算第15预留后累计524288步/28800s，剩1475712步/57600s，stop=false；不initialize/退款。SOURCE5170a41…运行期不得修改、新增research_regression生产/测试源也会改变聚合身份并触发停止。
+
+只读监控`.research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0`及真实父子process/flock/主管账本。已有attempt永久不能再prepare/start，同ID不重试，不加载中间checkpoint续训。当前PTY36649只是本会话句柄，重启后不能据此推断活跃。完成worker complete还不够，必须主管和账本COMPLETE，30新Validation+6历史R3 PRIOR原step0复用/Test0，实际raw核验、四独立科学标准/图/MD/JSON/结果复审/Commit/OPS sync远端，再继续新安全假设。不修改Reward/CNN/PPO/课程运行中配置，PX4/FASTLIO/实机/Test调参禁止。若未知/失败先保留证据离线审计，RESTART_REQUIRED，不伪造完成。
+
+下面是已结束准入过程，不能作为重复启动命令。
+
+## AUTORL-R10 当前：先验×距离课程已实现，唯一训练尚未开始
+
+R9已推0bdcfa999ef75a0b4f3d34a6498d76267348b7d3、远端核验phase_complete=true；12/12短任务非学习先验通过，不重放。当前research/lidar-prior-distance-r10，设计AUTORL_R10_PRIOR_DISTANCE_DESIGN.md。_02 REG69fcf055e72c0fee6986be3d6e4f7966e7308c9e958d9f6742bf2e5076bed302 /SOURCE5170a41bb9cade75afa81f215755e5dfbfe15b7f1c9a39e736c07e5f8cca55b1 /protocol5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf；新metadata RED→GREEN已在实际训练前修，旧_01准入只保留历史。新125OPS/35Tensor/885历史正在完整执行，独立复审C0/I0/继承Minor1条件GO。尚未prepare/预留/启动，当前余额1541248步/61200s、stop=false，不initialize或退款。
+
+下一安全动作：等_02完整收据及runtime_binding生成checks→新OPS register/recover/doctor→核169旧授权文件/资源/预算stop→prepare-prior-distance并比对上述精确SHA→唯一start-prior-distance。新ARL_R10_PRIOR_DISTANCE_SEED0仅65536步/3600s/CPU1，从新随机网络赋解析均值6312…，不加载任何旧权重。相对R8只变初始化，原课程/Reward/CNN/PPO/物理不变；首次预留后余额应1475712/57600。运行期源冻结、同ID不重试、RESTART_REQUIRED。30新Validation/6历史R3 PRIOR原step0复用/Test0，四科学标准分别报告，先验保留不等于学习。完成结果审查/报告/图/Commit/OPS sync远端后继续下一安全研究，不普通阶段即结束长期任务。PX4/FASTLIO/实机禁止，封存Test不调参。
+
+以下为历史，不能据此重跑已完成实验。
+
 ## AUTORL-R9 最新：非学习短目标解析Actor可完成性PASS（2026-10-16）
 
 R8已完整推送2c731100f0c8888ffc7b0bf30f0a16c6d923895a，工程完成但三学习标准FAIL，永久不重跑。R9唯一AUTORL_R9_SHORT_PRIOR_FEASIBILITY_ONLY实际12/12短Train成功，701物理策略步/14020tick/28.04s合计仿真，0optimizer/训练/Validation/Test；result SHA3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1。不是训练成果/避障能力，最终仍约8cm误差/.10m/s速度，只是原容差联合条件通过。
