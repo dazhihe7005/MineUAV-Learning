@@ -20,6 +20,8 @@ def main():
     sub.add_parser('prepare-prior-distance')
     sub.add_parser('prepare-lower-lr')
     sub.add_parser('prepare-centered')
+    sub.add_parser('prepare-centered-noise')
+    p=sub.add_parser('start-centered-noise');p.add_argument('--expected-protocol-sha256',required=True)
     p=sub.add_parser('start-centered');p.add_argument('--expected-protocol-sha256',required=True)
     p=sub.add_parser('start-lower-lr');p.add_argument('--expected-protocol-sha256',required=True)
     p=sub.add_parser('start-prior-distance');p.add_argument('--expected-protocol-sha256',required=True)
@@ -48,11 +50,15 @@ def main():
         elif args.command=='baseline':
             from .baseline import run_baseline
             result=run_baseline()
-        elif args.command in ('prepare','prepare-prior','prepare-std','prepare-distance','prepare-repaired-distance','prepare-prior-distance','prepare-lower-lr','prepare-centered'):
+        elif args.command in ('prepare','prepare-prior','prepare-std','prepare-distance','prepare-repaired-distance','prepare-prior-distance','prepare-lower-lr','prepare-centered','prepare-centered-noise'):
             m,r=verify_current()
             from research_ops.storage import FileLock
             with FileLock(m.lock_path):
-                if args.command=='prepare-centered':
+                if args.command=='prepare-centered-noise':
+                    from .centered_noise_profile import noise_experiment,verify_noise_proof
+                    if r['phase_id']!='AUTORL-R16-CENTERED-STD01':raise OpsError('noise prepare requires reviewed R16 phase')
+                    p=noise_experiment();verify_noise_proof(p)
+                elif args.command=='prepare-centered':
                     from .centered_training_profile import centered_experiment,verify_centered_proof
                     if r['phase_id']!='AUTORL-R14-CENTERED-ACTOR':raise OpsError('centered prepare requires reviewed R14 phase')
                     p=centered_experiment();verify_centered_proof(p)
@@ -82,7 +88,10 @@ def main():
                     p=prior_experiment();verify_prior_proof(p)
                 else:p=experiment(args.arm,65536,3600)
                 p.update(source_identity_sha256=digest(r['source_identity']),registration_sha256=digest(r))
-                if args.command=='prepare-centered':
+                if args.command=='prepare-centered-noise':
+                    from .centered_noise_profile import verify_noise_checks
+                    verify_noise_checks(p)
+                elif args.command=='prepare-centered':
                     from .centered_training_profile import verify_centered_checks
                     verify_centered_checks(p)
                 elif args.command=='prepare-lower-lr':
@@ -107,7 +116,8 @@ def main():
                 atomic_json(dest,p,exclusive=True)
             result={'protocol_sha256':digest(p),'protocol':p,'active':False}
         else:
-            identity=('ARL_R14_CENTERED_ACTOR_SEED0' if args.command=='start-centered' else
+            identity=('ARL_R16_CENTERED_STD01_SEED0' if args.command=='start-centered-noise' else
+                'ARL_R14_CENTERED_ACTOR_SEED0' if args.command=='start-centered' else
                 'ARL_R11_PRIOR_LOWER_LR_SEED0' if args.command=='start-lower-lr' else
                 'ARL_R10_PRIOR_DISTANCE_SEED0' if args.command=='start-prior-distance' else
                 'ARL_R8_REPAIRED_DISTANCE_SEED0' if args.command=='start-repaired-distance' else

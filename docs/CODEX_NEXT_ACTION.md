@@ -1,3 +1,39 @@
+## AUTORL-R16 最新：停稳经验增加，最终原任务0/6，科学总FAIL（2026-10-16）
+
+R15已完整推59e34070a166f195261abd6a3b62e051f20695b3，不重复。R16唯一ARL_R16_CENTERED_STD01_SEED0主管exit0/ledger COMPLETE，实际65536step/512rollout/1024epoch/2048Adam，1309123tick；summary bf3814e86f0402ed02748483453a8279079aabca3e4df0c93264a82fcc71668c、SOURCEf253400f…保持。唯一变量新初态std.3→.1，均值/Critic初态相同，不加载旧ZIP。473结束Train=247success175collision51timeout，short251=223/18/10、original222=24/157/41；自然32850切课程，474reset，尾20步另列。
+
+36新Val/0复用/Test0：短6/0/0→5/1/0→5/1/0，原1/3/2→2/3/1→0/3/3。坚持FinalCheckpoint，不挑32k。短候选PASS、own短保留FAIL、own原学习FAIL、相对R14FAIL、停稳经验机制PASS，五项合取科学FAIL。短Train成功88.84%比R14的31.48%高，近目标高速率77.54%比89.89%低，但没转化为最终导航；两个原Val空场景32k成功、final又超时，不以终点距离替代连续停稳。
+
+1106选择准入PASS（166OPS/55Tensor/885历史，15排除、0测试optimizer）及4方法契约；独立预审C0/I0/新Minor0/继承Minor1。三checkpoint实际参数/预测/optimizer重载，23raw/五图身份完整；final ZIPb3244a56…/policy25ff48c4…。246旧不可变授权文件+R13/R15七raw及原模型/七旧checkpoint保持。主管851.212s，wholeHWM1738.480MiB，训练采样minMem6877.793MiB；含Val连续最低NOT AVAILABLE。训练CPU样本单核98.16%，不是整机/fullVal CPU。
+
+累计保守预留720896step/39600s，余1279104step/46800s、stop=false，不退款/重置。完整报告PHASE_AUTORL_R16_CENTERED_NOISE.md、autonomous_rl_centered_noise_r16.json；最终结果独立复审/Commit/OPS sync远端以真实收据为准。下一安全动作：完成本次交付后新R17，仅研究后半程原距离empty任务重放权重，先具体设计/可完成性既有证据核验/固定profile/测试/独立GO/预算stop资源，不能直接训练或重试R16，不旧ZIP续训。普通FAIL继续长期研究，PX4/FASTLIO/实机/封存Test禁止。
+
+下方为历史快照，不是重放指令。
+
+## AUTORL-R16 权威：唯一训练启动请求已发出，只能监控
+
+完整1106选择PASS/15排除/0测试optimizer，独立C0/I0/新Minor0/继承Minor1 GO绑定REGbbf7dae8…/SOURCEf253400f…/EXEC10e6b844…/checksf2264ede…，新register/recover/doctor及246旧授权+7历史raw/stop/预算/资源/prepare-centered-noise精确SHA实际通过。已唯一调用launch_autorl_r16.py→原受监督start-centered-noise。不得因为工具会话/旧文字尚无完成记录而再次启动；先核.research_local/authorized_rl_v1/runs/ARL_R16_CENTERED_STD01_SEED0、真实ledger/attempt/child/process/flock及supervisor_01。工具会话不是重启后的进程身份证明。
+
+实际event21 RESERVE、worker child178188（boot b5fd7f5c-6278-4129-ae22-6a50bed7c8f9/start_ticks1641519）与共享flock已核，余额1279104step/46800s、stop=false。最近观察完整更新42240步，短Train223成功18碰撞10超时，原Train5成功38碰撞14超时；不是最终完成/停止数，不代表学会避障。32k ZIP已保存，重载/独立Val仍待Train关闭后执行。
+
+只65536step/3600sCPU1seed0、新std.1初态、不加载旧ZIP，36全新Val/Test0。SOURCE运行期冻结（新增生产/测试py也会改变身份）。before保护所有246旧不可变授权及R13/R15七raw，运行中额外只读哈希核验保持。监控脚本monitor_autorl_r16.py只读最新完整行，不能把它的进度当最终完成/停止数；工具训练会话不是进程身份依据，重启必须先核真实child/process/ledger。
+
+只有主管exit0且ledgerCOMPLETE、完整summary/complete匹配后，才运行已冻结分析方法/派生图及finalizer，真实MDJSON/独立结果审查/Commit/正常OPS sync远端，再按证据与真实余额继续下一安全任务。失败保留RESTART_REQUIRED，不重试本ID、不warmstart。PX4/FASTLIO/实机/封存Test禁止，普通阶段不终止长期研究。
+
+以下为已结束准入过程，不是重放指令。
+
+## AUTORL-R16 当前：新初始std0.1对照完整测试通过，尚未训练
+
+R15已完整推59e34070a166f195261abd6a3b62e051f20695b3，OPS sync远端核验phase_complete=true，released report cd99705e…；不重复。新research/lidar-centered-low-noise-r16，相对R14唯一算法变量初始std.3→.1，保持trainable；新seed0中心化均值/Critic/CNN/Reward/LR3e-5/PPO/课程/物理不变，不加载旧ZIP。
+
+7纯+2真实tensor/hook RED→GREEN；参数只有log_std改变，同62输入初始mean/Value完全相同，新fullpolicy650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4。当前166OPS+55Tensor+885历史=1106选择PASS，15排除，0测试optimizer；另4分析契约GREEN。REGbbf7dae8c780aa360604524ca772b16668e1799e855c7984091243b7490a7517 /SOURCEf253400ffff84970bea2dcd1c96be00e165c18224ee80bc716ab09a58dd788be（112文件）/execution10e6b844b54b51290d574eb67ca6cd91fbe2b2dc1224f5161be018dbe2d70302；checks f2264ede2f730ebc3cc8aae4b1b65b9df37315c6c7e55084a44428c2a67cc61c。设计AUTORL_R16_CENTERED_NOISE_DESIGN.md含五个冻结判据，机制不等导航。
+
+下一安全动作：等待独立精确GO→activate_autorl_r16.py新register/recover/doctor/246旧不可变授权+R13/R15七raw/预算stop资源→prepare-centered-noise精确SHA→唯一launch_autorl_r16.py受监督start-centered-noise。当前余1344640step/50400s、stop=false，未预留，尚无protocol/run；真实预留后应1279104/46800。必须核实际ledger/attempt/process/flock，不因这段历史文字再次启动。每run65536step/3600sCPU1、36全新Val/Test0、RESTART_REQUIRED，已有attempt永不重试或warmstart。
+
+运行期全部生产/测试源码冻结；主管/账本COMPLETE后实际分析/五图/MDJSON/独立结果复审/Commit/正常OPS sync远端，再决定下一安全研究。旧OPS零维护预算不撤销独立grant。PX4/FASTLIO/实机/Test禁止。普通阶段不终止长期研究。
+
+以下为已结束历史，不是重放指令。
+
 ## AUTORL-R15 最新：新模型形成负速度反馈，尚不证明导航学习（2026-10-16）
 
 R14已完整推1ab46a3d0c857ded3c0f496db0e54261a49b3005，科学总FAIL不改。R15唯一AUTORL_R15_CENTERED_FEEDBACK_ONLY exit0/groupgone，result SHA85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846；R14两个新32k/final模型×62反事实输入=124新行，R13同类初态62仅复用，R4真实历史背景固定。训练/optimizer/物理/新扫描/episode/Val/Test均0。
