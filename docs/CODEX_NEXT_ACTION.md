@@ -1,3 +1,31 @@
+## AUTORL-R12 最新：固定新模型反馈诊断完成，四panel先验保留FAIL（2026-10-16）
+
+R11已完整推bd9095ff2f1b16a1bcd89a8ae699f4df47d1a05a，不重复。唯一AUTORL_R12_LOW_KL_FEEDBACK_ONLY结果SHAd4578edbd556c10e34189376c84b5554b46799318536e15d8e02c583906b771b、exit0/进程组清理；只读4个R10/R11新32k/final模型×62反事实输入=248新响应，复用R4真实背景/旧62初态参考，非310新推理/非新点云。训练/optimizer/物理/新扫描/episode/Val/Test全0。SOURCEc40fa232…、REGb54713cf…、execution2b19c122…保持。
+
+相同固定输入下，R10@32k/final零state速度指令范数.381546/.739462m/s，R11低LR为.294207/1.190841；四panel先验保留FAIL。R11 final零yaw误差原均值2.10765裁剪到+1，五个yaw输入都+1、响应差0。只是离线指令，不是物理漂移/电机饱和/PX4故障，也不由偏离Scripted本身认定Bug。R11小KL仍伴随累计反馈偏离，未证明唯一根因或任何学习提升。
+
+初始_01判据错误（误要求原先验不存在的负速度反馈）在执行前由基准测试发现，旧GO/源码/协议/失败收据原样归档，独立确认Important修复；最终_02完整140OPS/38Tensor/885历史=1063PASS，15排除、0测试optimizer，另3分析方法契约GREEN，不称全仓。全221授权文件/18events字节不变，余1410176step/54000s、stop=false，无新预留/退款。innerwall6.910s/CPU6.092s，launcher14.028s，wholeworker HWM486.340MiB；四次模型前采样minMem8279.930MiB，非全程最低。3raw/四图local身份完整，报告PHASE_AUTORL_R12_LOW_KL_FEEDBACK.md与autonomous_rl_low_kl_feedback_r12.json，最终独立结果复审/Git远端以收据为准。
+
+下一安全动作：完成R12实际独立结果复审/历史audit/Commit/OPS sync远端；再R13零optimizer的Actor状态归零锚定表达预检，研究mean=f(obs)−f(同当前背景,zero-state)以抑制常量偏置。先新设计、测试、序列化/梯度及独立GO，不自动训练；若可行再独立协议对照R11，在原预算内执行。锚定零输出是结构约束，不是学习成绩。不能重放R12或从R11旧模型续训；普通阶段不终止长期研究。PX4/FASTLIO/实机/封存Test禁止。
+
+以下为历史，不得重跑。
+
+## AUTORL-R12 权威：唯一_02零训练诊断已请求启动，只能监控
+
+140OPS/38Tensor/885历史=1063选择测试已完整PASS（15排除、0optimizer），_02独立C0/I0 GO已精确绑定REGb54713cf…/SOURCEc40fa232…/execution2b19c122…/checks_02 SHA046b8940…，新OPS register/recover/doctor及221授权文件/资源/停止/预算核验通过。唯一launch_autorl_r12已调用，当前无第二次执行授权；只审计实际attempt/result/complete和exit_01，不依据本段认证完成。工具会话不是重启后的进程身份依据。
+
+原_01判据错误已在实际运行前RED→GREEN和独立确认修正，旧GO/源码/协议/收据只读归档。R12只能4新模型×62固定输入，无训练/optimizer/physics/新扫描/Val/Test。账本余额1410176step/54000s、18events须字节不变。已有OUT永久不得重放；若未知状态先recover真实锁/process与证据，不能启动替代run。结果/图/MD/JSON/独立复审/Commit/OPS sync远端后继续下一安全研究，源冻结。PX4/FASTLIO/实机/Test禁止。
+
+下方为已结束准入过程，不是启动指令。
+
+## AUTORL-R12 当前：_02固定反馈诊断准入，未执行
+
+R11已完整推bd9095ff2f1b16a1bcd89a8ae699f4df47d1a05a，phase_complete=true/远端已核；不重试。当前research/lidar-low-kl-feedback-r12，设计AUTORL_R12_FEEDBACK_DESIGN.md，新4个R10/R11@32768/65536模型×62反事实输入，原R4背景/初态panel只复用，0optimizer/训练/物理/新扫描/Val/Test。_01“速度差严格负”错误在实际执行前由基准校准测试发现（原先验恰无速度输入），旧GO已废止用于新版本，source/protocol/收据留archive，不能拿旧139项准入执行新代码。
+
+最终候选_02 .research_local/autorl_r12_registration_02.json REGb54713cf…/SOURCEc40fa232…/execution2b19c122…，新9纯/2数组来源及3分析契约GREEN，完整140OPS/38Tensor/885历史正在执行，15明确排除，不提前完整PASS。等待全部_02checks和精确独立GO→新register/recover/doctor→221grant文件、stop、预算、资源→独立进程组唯一feedback_followup_run。当前OUT.research_local/autorl_r12_feedback/run_01不存在；已有attempt绝不能重放。余额1410176step/54000s、stop=false，不initialize/退款或保守预留。source运行期冻结，完成实际结果审查/Commit/OPS sync远端后继续下一安全研究；PX4/FASTLIO/设备/Test禁止。
+
+下方是已结束历史，不得据此重复启动。
+
 ## AUTORL-R11 最新：工程COMPLETE，低KL但导航FAIL（2026-10-16）
 
 R10已推21831fcc90d06756f431373643e75822b633eb7a，未重复。新R11仅将全局PPO LR3e-4→3e-5，唯一ARL_R11_PRIOR_LOWER_LR_SEED0已主管/账本COMPLETE：65536实际step/512rollout/1024epoch/2048Adam，1306104物理tick；summary SHA7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26、final ZIP9ec87ba5…，SOURCEab7544a0…未变。574结束Train=3success/481collision/90timeout；short106、original468，自然切换32811、尾0，575reset仅冻结Train。3成功均short，不证明学会导航。

@@ -1,0 +1,958 @@
+{
+  "budget_snapshot_sha256": "c7a7df9b0f890f27e5422a85e088013a4700e977a648a5ba58d6166fc7e23a6a",
+  "case_count": 62,
+  "cases": [
+    {
+      "axis": "x",
+      "case_id": "x_error-2.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-2.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-2.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.5_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.5,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.5_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.1_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.1,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.1_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.1,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.1_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.1,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.1_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.1,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.5_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.5,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.5_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error2.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error2.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error2.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-2.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-2.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-2.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.5_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.5_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.1_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.1_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.1_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.1_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.5_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.5_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error2.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error2.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error2.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.5_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.5_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.1_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.1_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.0_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.0_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.1_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.1_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.5_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.5_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error-0.1",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.1
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error0.1",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ]
+    }
+  ],
+  "claim_limit": "fixed panel prior-function retention, not physical drift, stability, avoidance or navigation success",
+  "device": "cpu",
+  "experiment_id": "AUTORL_R12_LOW_KL_FEEDBACK_ONLY",
+  "historical_background_result_sha256": "83d3766ebdba586282f23e2b3c39a4284cc03791a4017d963af2fa04cef7a673",
+  "kind": "READ_ONLY_INFERENCE_NOT_TRAINING",
+  "model_count": 4,
+  "model_steps": [
+    32768,
+    65536
+  ],
+  "models": [
+    {
+      "actual_step": 32768,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "0d60f99c50d9f09719b86a812914ee6e730bf91d2a8c9b50adaabb7c1499e25a",
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "policy_sha256": "fb250f3d48ae5998b0b5c5f0747bc1f17b950a3ea6fecdcacf97fb1cc9ea1c32",
+      "protocol_sha256": "5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf",
+      "run_id": "ARL_R10_PRIOR_DISTANCE_SEED0_STEP32768",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP32768.json",
+      "sidecar_sha256": "234bd75fe664fe16aa5473dab3fd93fd894de7a8adf967de365dcc1795ce4150",
+      "summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 65536,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "90726f17fb15ef55fc464164fe1e9fbdbf6a77a110ddb8c2a71f33e05bbdec5e",
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "policy_sha256": "eeab32ddf6b92f8e8829054a9de4e42485f82e81ddf6f35823516a317b7b7a56",
+      "protocol_sha256": "5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf",
+      "run_id": "ARL_R10_PRIOR_DISTANCE_SEED0_STEP65536",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP65536.json",
+      "sidecar_sha256": "7cfc25f2f6f7e762e58fed7c356745d49b987e7a8a89e5ec08d6a016a8cadc94",
+      "summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 32768,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0/ARL_R11_PRIOR_LOWER_LR_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "da48a62c87b97cf73f12d0fd92b734fefb8b5839fea20b3d9733eb6d29ccb468",
+      "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+      "policy_sha256": "8e28614f950a3f8bc1740fea3a26303afb9c24afcec92f0ceeee7da3662fc542",
+      "protocol_sha256": "25c6571ecf76757b052a73ca41d620c5d42e39c42d473c36223ae65ee5b80e39",
+      "run_id": "ARL_R11_PRIOR_LOWER_LR_SEED0_STEP32768",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0/ARL_R11_PRIOR_LOWER_LR_SEED0_STEP32768.json",
+      "sidecar_sha256": "92e8d29abd9701ac8fc06ff272dc98225678326c7c8af741ee533f9f38b50a86",
+      "summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 65536,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0/ARL_R11_PRIOR_LOWER_LR_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "9ec87ba5379a2fc6473d0b6bc501bae9b3699119292605e99f5a3604230c8cf5",
+      "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+      "policy_sha256": "46124f643ffba9f62b47c16059948ba4cf3e426f8fcf9de15a2800ac406bb635",
+      "protocol_sha256": "25c6571ecf76757b052a73ca41d620c5d42e39c42d473c36223ae65ee5b80e39",
+      "run_id": "ARL_R11_PRIOR_LOWER_LR_SEED0_STEP65536",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0/ARL_R11_PRIOR_LOWER_LR_SEED0_STEP65536.json",
+      "sidecar_sha256": "8c2e5d800a275cde87479675d79d24fa098f1724eaf084e0c375b95a30509795",
+      "summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    }
+  ],
+  "new_navigation_episodes": 0,
+  "new_physics_steps": 0,
+  "new_validation_episodes": 0,
+  "optimizer_updates": 0,
+  "reference_usage": "R4_R3_PRIOR_STEP0_REUSED_NO_NEW_INFERENCE",
+  "registration_sha256": "b54713cf6ec095b728787a35c4e1af59a439d7f8fa13c87f7f811425f829219a",
+  "retention": {
+    "all_three_axis_goal_sign_fractions": 1.0,
+    "all_velocity_response_differences": "WITHIN_REFERENCE_ZERO_TOLERANCE",
+    "max_action_difference_to_reference": 0.05,
+    "velocity_response_difference_error_max_m_s": 0.05,
+    "yaw_response_difference": "STRICTLY_POSITIVE",
+    "zero_velocity_norm_max_m_s": 0.05
+  },
+  "source_identity_sha256": "c40fa23285cb672db4587cb0a67d3fb3739d28de063b00e54a643aae9d1fe8c3",
+  "source_observation_identity_sha256": "453a7723fb4225d141af3c32f847d6b7df12aad9067d488fe343f82aac3702fc",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "wall_seconds": 120,
+  "workers": 1
+}

@@ -1,0 +1,412 @@
+{
+  "all_authorization_files_unchanged": true,
+  "analysis": {
+    "path": ".research_local/autorl_r12_analysis.json",
+    "sha256": "4d903e2d8bdeaaea71765ad4eadf212f5e8d609cad5fd4020ff46b42661fb03b"
+  },
+  "analysis_review": {
+    "path": ".research_local/autorl_r12_analysis_review_01.json",
+    "sha256": "e5a484e3c2c942915689a5de0912c394ba035a19b3199b05ced94faa526c2290"
+  },
+  "attempt_count": 1,
+  "authorization_file_count": 221,
+  "budget": {
+    "cumulative_reserved_steps": 589824,
+    "cumulative_reserved_wall_seconds": 32400,
+    "new_reservations": 0,
+    "refund": false,
+    "remaining_reserved_wall_seconds": 54000,
+    "remaining_steps": 1410176,
+    "stop_requested": false
+  },
+  "case_count_per_model": 62,
+  "clock_domain": "MUJOCO_SIM_TIME",
+  "data_provenance": "248 new frozen-model response rows on a historical real LiDAR background; old62initial rows reused, not310new inferences, no new physical trajectories",
+  "experiment_id": "AUTORL_R12_LOW_KL_FEEDBACK_ONLY",
+  "figures": {
+    "mujoco/reports/autonomous_rl_low_kl_feedback_r12/figures/position_feedback.png": "19494b3b3917c6b6a0e081bd91d08062151b7e7586b715ee2755cec02b85e8f6",
+    "mujoco/reports/autonomous_rl_low_kl_feedback_r12/figures/velocity_response.png": "dbb7c61dbb982d4d907dfa2b7972dfe666aa5d3dc073476d40aae830fef8f064",
+    "mujoco/reports/autonomous_rl_low_kl_feedback_r12/figures/yaw_response.png": "02080025dfa1d270f2dab7cdc5137d47a3a4833237223cab38e7e096e294b34c",
+    "mujoco/reports/autonomous_rl_low_kl_feedback_r12/figures/zero_bias.png": "39374ccce205c57252ec1001892be093c758e920424bc6db67f9386a9a587c99"
+  },
+  "historical_prior_metrics": {
+    "actual_step": 0,
+    "batch_inference_ms": 3.087365999817848,
+    "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+    "max_error_to_scripted_reference": 0.002072155475616455,
+    "mean_boundary_fraction_not_training_clip": 0.0,
+    "panel_prior_retention": "PASS",
+    "provenance": "HISTORICAL_R4_REUSED_NOT_NEW_INFERENCE",
+    "x_goal_sign_fraction": 1.0,
+    "x_positive_minus_negative_velocity_command": 0.0,
+    "y_goal_sign_fraction": 1.0,
+    "y_positive_minus_negative_velocity_command": 0.0,
+    "yaw_response_difference_over_1_rad": 0.9958556890487671,
+    "z_goal_sign_fraction": 1.0,
+    "z_positive_minus_negative_velocity_command": 0.0,
+    "zero_state_raw_mean": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "zero_state_std": [
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657
+    ],
+    "zero_state_velocity_command_norm": 0.0,
+    "zero_state_yaw_rate": 0.0
+  },
+  "implementation_status": "PASS",
+  "limitations": [
+    "one historical background and finite counterfactual state panel, not physical damping/stability/avoidance/navigation success",
+    "deviation from prior alone is not a bug, avoidance may need different commands",
+    "Critic values have no paired return truth",
+    "single seed/small frozen sets/no Test evaluation",
+    "R7 arbitrary active_task corruption diagnostic inherited and not reached in this no-env inference path",
+    "known optional cv2/NumPy ABI and Axes3D warnings retained",
+    "no new physics/PX4/FASTLIO/hardware/real-MID360/network communication"
+  ],
+  "method_tests": {
+    "count": 3,
+    "evidence": {
+      "path": ".research_local/autorl_r12_analysis_green_02.json",
+      "sha256": "91d48aadceb95281256602a858c13a5d7374399dd83996a50e1bd51361c7da00"
+    },
+    "optimizer_updates": 0,
+    "provenance": "METHOD_REGRESSION_ONLY; reused historical rows and synthetic corruptions",
+    "status": "PASS"
+  },
+  "metrics": [
+    {
+      "actual_step": 32768,
+      "batch_inference_ms": 4.321247000916628,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "max_error_to_scripted_reference": 1.4312406182289124,
+      "mean_boundary_fraction_not_training_clip": 0.24596774193548387,
+      "panel_prior_retention": "FAIL",
+      "x_goal_sign_fraction": 0.8333333333333334,
+      "x_positive_minus_negative_velocity_command": 0.0071601904928684235,
+      "y_goal_sign_fraction": 0.6666666666666666,
+      "y_positive_minus_negative_velocity_command": -0.18381818756461143,
+      "yaw_response_difference_over_1_rad": 0.06875938177108765,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": -0.05860714614391327,
+      "zero_state_raw_mean": [
+        -0.11776383966207504,
+        -0.17071452736854553,
+        -0.2209087312221527,
+        -1.4043357372283936
+      ],
+      "zero_state_std": [
+        0.3019650876522064,
+        0.302081435918808,
+        0.3014402985572815,
+        0.3033313453197479
+      ],
+      "zero_state_velocity_command_norm": 0.38154574306376177,
+      "zero_state_yaw_rate": -1.0
+    },
+    {
+      "actual_step": 65536,
+      "batch_inference_ms": 3.026868998858845,
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "max_error_to_scripted_reference": 0.8518955111503601,
+      "mean_boundary_fraction_not_training_clip": 0.004032258064516129,
+      "panel_prior_retention": "FAIL",
+      "x_goal_sign_fraction": 0.6666666666666666,
+      "x_positive_minus_negative_velocity_command": -0.3130350038409233,
+      "y_goal_sign_fraction": 0.6666666666666666,
+      "y_positive_minus_negative_velocity_command": -0.1623120903968811,
+      "yaw_response_difference_over_1_rad": 0.8068816661834717,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": -0.047305941581726074,
+      "zero_state_raw_mean": [
+        -0.3135420083999634,
+        0.300038605928421,
+        0.35079512000083923,
+        -0.6842925548553467
+      ],
+      "zero_state_std": [
+        0.3104955852031708,
+        0.30550456047058105,
+        0.3051215410232544,
+        0.30878064036369324
+      ],
+      "zero_state_velocity_command_norm": 0.7394617416702824,
+      "zero_state_yaw_rate": -0.6842925548553467
+    },
+    {
+      "actual_step": 32768,
+      "batch_inference_ms": 2.81081299908692,
+      "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+      "max_error_to_scripted_reference": 0.23556199669837952,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "panel_prior_retention": "FAIL",
+      "x_goal_sign_fraction": 0.8333333333333334,
+      "x_positive_minus_negative_velocity_command": -0.04716028645634651,
+      "y_goal_sign_fraction": 0.6666666666666666,
+      "y_positive_minus_negative_velocity_command": -0.06281670928001404,
+      "yaw_response_difference_over_1_rad": 1.0155466496944427,
+      "z_goal_sign_fraction": 0.75,
+      "z_positive_minus_negative_velocity_command": -0.00969027727842331,
+      "zero_state_raw_mean": [
+        -0.0839727371931076,
+        -0.17267456650733948,
+        0.060040995478630066,
+        -0.18226589262485504
+      ],
+      "zero_state_std": [
+        0.29977428913116455,
+        0.2996024787425995,
+        0.2995362877845764,
+        0.30003827810287476
+      ],
+      "zero_state_velocity_command_norm": 0.2942069947945079,
+      "zero_state_yaw_rate": -0.18226589262485504
+    },
+    {
+      "actual_step": 65536,
+      "batch_inference_ms": 2.8410100003384287,
+      "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+      "max_error_to_scripted_reference": 1.5,
+      "mean_boundary_fraction_not_training_clip": 0.2620967741935484,
+      "panel_prior_retention": "FAIL",
+      "x_goal_sign_fraction": 0.6666666666666666,
+      "x_positive_minus_negative_velocity_command": -0.03940442204475403,
+      "y_goal_sign_fraction": 0.5,
+      "y_positive_minus_negative_velocity_command": -0.039094626903533936,
+      "yaw_response_difference_over_1_rad": 0.0,
+      "z_goal_sign_fraction": 0.75,
+      "z_positive_minus_negative_velocity_command": -0.010443955659866333,
+      "zero_state_raw_mean": [
+        0.3612082302570343,
+        -0.697365403175354,
+        -0.17414125800132751,
+        2.107649803161621
+      ],
+      "zero_state_std": [
+        0.3003401756286621,
+        0.2999430298805237,
+        0.2989670932292938,
+        0.3000471293926239
+      ],
+      "zero_state_velocity_command_norm": 1.19084106111135,
+      "zero_state_yaw_rate": 1.0
+    }
+  ],
+  "model_references": [
+    {
+      "actual_step": 32768,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "0d60f99c50d9f09719b86a812914ee6e730bf91d2a8c9b50adaabb7c1499e25a",
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "policy_sha256": "fb250f3d48ae5998b0b5c5f0747bc1f17b950a3ea6fecdcacf97fb1cc9ea1c32",
+      "protocol_sha256": "5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf",
+      "run_id": "ARL_R10_PRIOR_DISTANCE_SEED0_STEP32768",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP32768.json",
+      "sidecar_sha256": "234bd75fe664fe16aa5473dab3fd93fd894de7a8adf967de365dcc1795ce4150",
+      "summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 65536,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "90726f17fb15ef55fc464164fe1e9fbdbf6a77a110ddb8c2a71f33e05bbdec5e",
+      "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+      "policy_sha256": "eeab32ddf6b92f8e8829054a9de4e42485f82e81ddf6f35823516a317b7b7a56",
+      "protocol_sha256": "5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf",
+      "run_id": "ARL_R10_PRIOR_DISTANCE_SEED0_STEP65536",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R10_PRIOR_DISTANCE_SEED0/ARL_R10_PRIOR_DISTANCE_SEED0_STEP65536.json",
+      "sidecar_sha256": "7cfc25f2f6f7e762e58fed7c356745d49b987e7a8a89e5ec08d6a016a8cadc94",
+      "summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 32768,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0/ARL_R11_PRIOR_LOWER_LR_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "da48a62c87b97cf73f12d0fd92b734fefb8b5839fea20b3d9733eb6d29ccb468",
+      "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+      "policy_sha256": "8e28614f950a3f8bc1740fea3a26303afb9c24afcec92f0ceeee7da3662fc542",
+      "protocol_sha256": "25c6571ecf76757b052a73ca41d620c5d42e39c42d473c36223ae65ee5b80e39",
+      "run_id": "ARL_R11_PRIOR_LOWER_LR_SEED0_STEP32768",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0/ARL_R11_PRIOR_LOWER_LR_SEED0_STEP32768.json",
+      "sidecar_sha256": "92e8d29abd9701ac8fc06ff272dc98225678326c7c8af741ee533f9f38b50a86",
+      "summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 65536,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0/ARL_R11_PRIOR_LOWER_LR_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "9ec87ba5379a2fc6473d0b6bc501bae9b3699119292605e99f5a3604230c8cf5",
+      "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+      "policy_sha256": "46124f643ffba9f62b47c16059948ba4cf3e426f8fcf9de15a2800ac406bb635",
+      "protocol_sha256": "25c6571ecf76757b052a73ca41d620c5d42e39c42d473c36223ae65ee5b80e39",
+      "run_id": "ARL_R11_PRIOR_LOWER_LR_SEED0_STEP65536",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0/ARL_R11_PRIOR_LOWER_LR_SEED0_STEP65536.json",
+      "sidecar_sha256": "8c2e5d800a275cde87479675d79d24fa098f1724eaf084e0c375b95a30509795",
+      "summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    }
+  ],
+  "navigation_performance_improvement": "NOT TESTED",
+  "new_inference_rows": 248,
+  "new_model_count": 4,
+  "new_navigation_episodes": 0,
+  "new_scans": 0,
+  "next_action": "actual independent result review, current history audit, explicit Commit/OPS sync/remote SHA, then select a falsifiable new authorized experiment without repeating R11 or R12",
+  "optimizer_updates": 0,
+  "phase_id": "AUTORL-R12-LOW-KL-FEEDBACK",
+  "physics_steps": 0,
+  "pre_run_correction": {
+    "archive": ".research_local/autorl_r12_candidate_01_archive",
+    "classification": "CONFIRMED_CONCEPTUAL_IMPORTANT_RESOLVED_BEFORE_EXECUTION",
+    "explanation": "strictly negative velocity sensitivity is not prior retention: original prior/Scripted are position-error feedback with exactly zero velocity difference. _02 compares to sealed zero reference within .05m/s; no newmodel inference occurred before correction.",
+    "failed_initial_method_check": {
+      "path": ".research_local/autorl_r12_analysis_green_01.json",
+      "sha256": "2b5fcc3372c3ab0bdb90eec59d890cf469c9fcdb6e6b50067dc13588b0391598"
+    },
+    "old_admission_preserved": {
+      "path": ".research_local/autorl_r12_checks.json",
+      "sha256": "4f0ef07e3803a3bf413c79e66640c148cc36c340aa402d45510db32a5c1fb13f"
+    },
+    "old_exact_GO_superseded": {
+      "path": ".research_local/autorl_r12_pre_review_01.json",
+      "sha256": "f87ecbcd5910d2bc05b67cca7bc7a53c1bce04816c86d6891e378814e100df83"
+    },
+    "red_velocity_contract": {
+      "path": ".research_local/autorl_r12_velocity_contract_red_01.json",
+      "sha256": "4a810f35b55ffa8f227df68fde8754ba27202318ba1fee41015d74d692939bcf"
+    }
+  },
+  "protection": {
+    "path": ".research_local/autorl_r12_protection_after.json",
+    "sha256": "75e0d0533e33134c0de14b14a8931f42a2ca58a9fc1efa0956cbc7653b8dc5a2"
+  },
+  "protocol_sha256": "2b19c1224893334325e3769f28cba00a7699a1495e2c1bffdfaa369c621146ca",
+  "raw_files": [
+    {
+      "bytes": 624,
+      "experiment_id": "AUTORL_R12_LOW_KL_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r12_feedback/run_01/attempt.json",
+      "sha256": "3d26594c58301962df022d51bae819a2962b7977199cced3fd81067e7250500a"
+    },
+    {
+      "bytes": 90,
+      "experiment_id": "AUTORL_R12_LOW_KL_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r12_feedback/run_01/complete.json",
+      "sha256": "0d6971f29a3b5494e989d6b6389d7e0e457cb3ac9792a8bc2747d2bc97f1e103"
+    },
+    {
+      "bytes": 365076,
+      "experiment_id": "AUTORL_R12_LOW_KL_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r12_feedback/run_01/result.json",
+      "sha256": "d4578edbd556c10e34189376c84b5554b46799318536e15d8e02c583906b771b"
+    }
+  ],
+  "registration_sha256": "b54713cf6ec095b728787a35c4e1af59a439d7f8fa13c87f7f811425f829219a",
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r12_results_review_01.json",
+      "sha256": "af898ec0c768e41915588b88260e1873b8bd02921589fa854c1cc6d777c77081"
+    },
+    "important": 0,
+    "inherited_minor": 1,
+    "method": "INDEPENDENT_READ_ONLY_SUBAGENT",
+    "new_minor": 0,
+    "reviewed_report_sha256": "c86ca9242510a29038e0d30525e8b6f74056f69b6db2b42a74ea33b2c9ba8835",
+    "source_identity_sha256": "c40fa23285cb672db4587cb0a67d3fb3739d28de063b00e54a643aae9d1fe8c3",
+    "status": "GO"
+  },
+  "review": {
+    "evidence": {
+      "path": ".research_local/autorl_r12_pre_review_02.json",
+      "sha256": "f91171acbee10138c0b75c13f636babee949335f3dc36c82d25fef812853582e"
+    },
+    "scope": "pre-run only",
+    "source_identity_sha256": "c40fa23285cb672db4587cb0a67d3fb3739d28de063b00e54a643aae9d1fe8c3",
+    "status": "GO"
+  },
+  "run_result": {
+    "path": ".research_local/autorl_r12_feedback/run_01/result.json",
+    "sha256": "d4578edbd556c10e34189376c84b5554b46799318536e15d8e02c583906b771b"
+  },
+  "runtime": {
+    "OOM": "NOT OBSERVED",
+    "batch_inference_ms": [
+      4.321247000916628,
+      3.026868998858845,
+      2.81081299908692,
+      2.8410100003384287
+    ],
+    "batch_scope": "62-input panel includes mean/value/deterministic prediction; not single-step real-time budget",
+    "inner_cpu_seconds": 6.091707853999999,
+    "inner_scope": "after imports through identity/end checks; includes model loading and inference",
+    "inner_wall_seconds": 6.909970194001289,
+    "launcher": {
+      "path": ".research_local/autorl_r12_exit_01.json",
+      "sha256": "7ff1094007e283a89a347b003701f16736cfe3ccc69c401f7752994951621098"
+    },
+    "min_sampled_mem_available_mib": 8279.9296875,
+    "minimum_scope": "four pre-model resource probes, NOT full-run continuous minimum",
+    "worker_hwm_rss_mib": 486.33984375,
+    "worker_hwm_scope": "whole worker including imports/checkpoint loads"
+  },
+  "scientific_claim": "fixed panel prior-function retention, not physical drift, stability, avoidance or navigation success",
+  "snapshot_files": {
+    "files": {
+      "base_observation.npz": {
+        "bytes": 1548,
+        "sha256": "c3623067784b9ee5e57845bff6496aad0cf5cafb8604fc06bf4a195d9ae1b741"
+      },
+      "sensor_frame.npz": {
+        "bytes": 977645,
+        "sha256": "ec026bbc6e5fa020cf9d9657f6869d47486c14c0ce043b416d89710f2342230d"
+      },
+      "snapshot.json": {
+        "bytes": 780,
+        "sha256": "08555af64000a33eb4f9cd277aedd84258e1fccf09a59885332f6d37640dc5c8"
+      }
+    },
+    "observation_identity_sha256": "453a7723fb4225d141af3c32f847d6b7df12aad9067d488fe343f82aac3702fc"
+  },
+  "snapshot_usage": "HISTORICAL_R4_REAL_MUJOCO_RESET_REUSED_NO_NEW_SENSOR_SAMPLE",
+  "source_identity_sha256": "c40fa23285cb672db4587cb0a67d3fb3739d28de063b00e54a643aae9d1fe8c3",
+  "source_sample_time": 0.0,
+  "test_episodes": 0,
+  "tests": {
+    "admission": {
+      "path": ".research_local/autorl_r12_checks_02.json",
+      "sha256": "046b8940ff05accd97fe0648fbc7d575b0b9f774ed5f21855d036cbfdf4ed070"
+    },
+    "deselected": 15,
+    "evidence": {
+      "path": ".research_local/autorl_r12_operations_final_02.json",
+      "sha256": "8ad79ac79dcd24fd69c54e672c65dc83b56da37ae26c8903c6ee1f8e7547ea4c"
+    },
+    "historical": 885,
+    "historical_evidence": {
+      "path": ".research_local/autorl_r12_historical_final_02.json",
+      "sha256": "c672ad55cab9b369c87ae2a344eb979f8241e24478d86193de6611eff1220b66"
+    },
+    "operations": 140,
+    "scope": "selected no-update regressions, NOT whole repository",
+    "status": "PASS",
+    "tensor": 38,
+    "tensor_evidence": {
+      "path": ".research_local/autorl_r12_tensor_final_02.json",
+      "sha256": "6e289eb0b8af406db9faefada0a6a5c58b9f52d63f15467f414d09a1321fa721"
+    },
+    "unique_passed": 1063
+  },
+  "training_timesteps": 0,
+  "unique_counterfactual_states": 59,
+  "validation_episodes": 0,
+  "weights_optimizer_rng_invariants": {
+    "all_panels": true,
+    "rng_scope": "within each infer_panel only; checkpoint construction/load may consume local RNG"
+  }
+}
