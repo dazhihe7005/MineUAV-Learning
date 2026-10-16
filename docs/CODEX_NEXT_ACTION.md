@@ -1,3 +1,29 @@
+## AUTORL-R9 最新：非学习短目标解析Actor可完成性PASS（2026-10-16）
+
+R8已完整推送2c731100f0c8888ffc7b0bf30f0a16c6d923895a，工程完成但三学习标准FAIL，永久不重跑。R9唯一AUTORL_R9_SHORT_PRIOR_FEASIBILITY_ONLY实际12/12短Train成功，701物理策略步/14020tick/28.04s合计仿真，0optimizer/训练/Validation/Test；result SHA3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1。不是训练成果/避障能力，最终仍约8cm误差/.10m/s速度，只是原容差联合条件通过。
+
+当前research/lidar-short-prior-r9，REGa958ac…/SOURCE35a4ef…/protocol2bf3f2…；1037项选择回归PASS（118OPS/34Tensor/885历史，15排除/2既有warning）。预审Important物理失败未停止已先RED→GREEN修复；两个Minor和测试夹具错误诚实记录。三图与逐步原始trace封存，worker wall15.256s/HWM1669.391MiB/runner前置采样minMem8704.117MiB、Health累计记录min8608.676MiB；预算169旧文件全字节不变，余1,541,248step/61,200s，stop=false。报告[PHASE_AUTORL_R9_SHORT_PRIOR.md](PHASE_AUTORL_R9_SHORT_PRIOR.md)及autonomous_rl_short_prior_r9.json，最终审查/Commit/远端以真实OPS收据为准。
+
+下一安全工作：完成R9独立结果复审/历史audit/Commit/OPS sync远端核验，然后R10仅改变Actor初始化的独立距离课程PPO设计与准入。保持R8全部算法/Reward/预算/课程，补上相对R3/R8的先验×短课程交互项；明确区分先验保留与真实学习增益，不从旧checkpoint训练、不重跑已用ID、不因普通阶段结束停整个研究。PX4/FASTLIO/实机/Test调参仍禁止，不初始化/扩大原grant。
+
+以下为历史过程快照，不得作为重复启动指令。
+
+## AUTORL-R9 权威：唯一非学习run已启动，不得重复
+
+_03完整1037项选择回归PASS（118OPS+34Tensor+885历史，15排除/2既有warning）、独立预审GO（2已披露Minor）、新登记/recover/doctor/资源与169旧授权文件已核验。REGa958ac5fc2fe3bcbc5c64b5267bf4a598f61697ec8d7e9a82dfa17ed48510532 /SOURCE35a4efcf224a1a0e9b7c4c878e1948d139b174007c5e93798585ac4e3742772b /protocol2bf3f221a6a4a9f9ec3e481b8aac8e2ce4968df97f0a9616eae24ceac5439766。唯一`.research_local/autorl_r9_short_prior/run_01`已启动；只读monitor，已有attempt永不再次调用runner。0optimizer/训练/Val/Test，旧R6/R8均不重试；余额1541248/61200不变。
+
+完成complete/result/exit后核验逐步物理trace、原停稳标准、预算全目录和源身份、图/MD/JSON、独立结果复审及显式Commit/OPS sync远端，然后继续下一安全阶段。断电/未知状态先recover实际锁和process identity、标INCOMPLETE，不能重放。physical/sensor/未知终止立即停止，普通collision/time_limit仅可作为科学失败继续固定覆盖；不改Reward或判据。json_safe512节点可能截断异常context及R7结构损坏Minor均披露，不承诺完整异常快照。
+
+下面为已结束准入过程，不是启动命令。
+
+## AUTORL-R9 当前：非学习解析Actor短目标预检，尚未运行唯一实验
+
+R8已完整Commit/Push远端核验2c731100f0c8888ffc7b0bf30f0a16c6d923895a，工程PASS/三科学FAIL；永久不重跑。当前research/lidar-short-prior-r9，新设计AUTORL_R9_SHORT_PRIOR_DESIGN.md。新6纯契约/1真实step RED→GREEN；最终注册候选_02 REG e9af4f8705640ef36290764e4563b681248fcc0561c4a4f3d7d4659fc923860e /SOURCE077ae00d0939476d1beda2041fe5dd10c80695bab2ea61032c177e4c93269977，116OPS/34Tensor/885历史及独立预审正在执行。尚未登记或启动唯一run，不从旧权重初始化。
+
+下一安全动作：等待全部完整回归及精确GO后，新OPS register/recover/doctor→验证grant/stop/169既有文件/资源→独立进程组唯一short_prior_runner。固定12short Train、原停稳条件、0optimizer/训练/Val/Test，180s/单worker。已有attempt不可重试；若会话中断先核锁/实际进程及原证据，不能重放。余额1541248step/61200s不initialize/不退款，旧R6永久FAIL不重试。结果复审/图/MD/JSON/Commit/OPS sync远端后继续新独立研究；先验成功不是学习收益，不能直接开下一训练。PX4/FASTLIO/实机/Test调参禁止。
+
+以下为已结束历史，不能作为重复执行命令。
+
 ## AUTORL-R8 最新：执行COMPLETE，距离课程学习标准FAIL
 
 唯一ARL_R8_REPAIRED_DISTANCE_SEED0已由主管及账本确认COMPLETE，永久禁止再次prepare/start或从checkpoint继续。actual65536step/512rollout/1024PPOepoch/2048Adam；summary SHA a6760dc61ff03a3895eb451f99d61d77513c643a3e8d4f8e31a55f556475dce4，final ZIP54c95adb…，SOURCE62b330…前后未变。当前branch research/lidar-repaired-distance-r8，基线为已推R7 05c7d9b；最终Commit/远端以OPS真实收据为准。报告PHASE_AUTORL_R8_REPAIRED_DISTANCE.md和autonomous_rl_repaired_distance_r8.json，独立结果审查/发布流程未全部完成前不宣称阶段已交付。

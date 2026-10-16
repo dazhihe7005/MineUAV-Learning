@@ -1,0 +1,372 @@
+{
+  "analysis": {
+    "path": ".research_local/autorl_r9_analysis.json",
+    "sha256": "3f79ff3d7bbff7be4f016b931715f780188e8dc5f5549b27ad5c1aa43c085f1a"
+  },
+  "attempt_count": 1,
+  "budget_remaining_reserved_wall_seconds": 61200,
+  "budget_remaining_steps": 1541248,
+  "budget_unchanged": true,
+  "experiment_id": "AUTORL_R9_SHORT_PRIOR_FEASIBILITY_ONLY",
+  "feasibility_status": "PASS",
+  "figures": {
+    "mujoco/reports/autonomous_rl_short_prior_r9/figures/stop.png": "729b1adeeff7107aaeb16f8f95ed8f380a954b4900d1d732d0330bcb93d72b7b",
+    "mujoco/reports/autonomous_rl_short_prior_r9/figures/timing.png": "911415a0a55054fe0819bd34254be8d8bda63c0b3cbb8b5eb197b8b730f5aa76",
+    "mujoco/reports/autonomous_rl_short_prior_r9/figures/trajectory.png": "d4b66a441a1f9d540f91d6ae66b8040f521bb8b74e8a9bea95fcdb77de6354cd"
+  },
+  "implementation_status": "PASS",
+  "initialization": {
+    "configuration": {
+      "alpha": 0.2,
+      "analytic_error_bound": 0.016314780826418795,
+      "beta": 0.5,
+      "kind": "HAND_WRITTEN_PRIOR_NOT_LEARNED_AVOIDANCE",
+      "max_clipped_action_error": 0.02,
+      "normalized_gains": [
+        0.2222222222222222,
+        0.2222222222222222,
+        0.3333333333333333,
+        1.0
+      ],
+      "optimizer_updates": 0,
+      "state_feature_indices": [
+        64,
+        65,
+        66,
+        70
+      ],
+      "version": "ANALYTIC_STATE_MEAN_TANH_V1"
+    },
+    "optimizer_updates": 0,
+    "policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74"
+  },
+  "limitations": [
+    "HAND_WRITTEN_STATE_ONLY_PRIOR_NOT_LEARNED_AVOIDANCE",
+    "tolerance success not exact zero-speed/target center",
+    "single seed/12Train/noValidation/noTest",
+    "no real MID360/PX4/FASTLIO/generalization",
+    "json_safe512node bound may truncate failure last transition; no full crash snapshot",
+    "inherited R7 arbitrary internal active_task structural damage can mask context",
+    "known optional cv2/NumPy ABI and Axes3D warnings unchanged"
+  ],
+  "metrics": [
+    {
+      "base_identity_sha256": "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "episode_return": 10.292654576682914,
+      "final_goal_error_m": 0.08089135432465341,
+      "final_speed_m_s": 0.10907072590400145,
+      "path_length_m": 0.12023340431416733,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "eb25d5230c0d44c40595eff50d4d807d61dbf89226ada2091bb465c81df02328",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+      "episode_return": 10.32365931525899,
+      "final_goal_error_m": 0.0810879439675289,
+      "final_speed_m_s": 0.10796859200807138,
+      "path_length_m": 0.11995338096228611,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "d26c835a3c460b3cd92292731913cd8744ff958b108b54ac978d7080813fcb9c",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+      "episode_return": 10.276256471604414,
+      "final_goal_error_m": 0.078587581102436,
+      "final_speed_m_s": 0.10776661591711312,
+      "path_length_m": 0.12226584448824773,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "69510af27f743edfdeafc2ec29663341c38ea04e1a7bf2452326db2b20769bfc",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+      "episode_return": 10.203608451683028,
+      "final_goal_error_m": 0.08057214178877925,
+      "final_speed_m_s": 0.10563571751967518,
+      "path_length_m": 0.12001573093804371,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "5a5de25c104b52078d2d5cc4581fafda281e6f2fba38829dc4b4b55fc5c787fd",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+      "episode_return": 10.222131716958385,
+      "final_goal_error_m": 0.0798062844561693,
+      "final_speed_m_s": 0.10665050905256632,
+      "path_length_m": 0.12089401132738822,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "2daf66441a4710a859014924b581e06e9e9e09f247308496d50f82f025b27a71",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+      "episode_return": 10.428386726151466,
+      "final_goal_error_m": 0.08031010059169266,
+      "final_speed_m_s": 0.10239815702120757,
+      "path_length_m": 0.12030065299752303,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "8965e5ac8e2301f67eec79c7ff77bdc83702abe017323539cbaee977dc0a8bb1",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "episode_return": 10.171009121927765,
+      "final_goal_error_m": 0.08364145009924819,
+      "final_speed_m_s": 0.0989652505330146,
+      "path_length_m": 0.11658016857215164,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "1a78c7f694369dd0570292a6577af8f84abf3888bf0a1ba65df37e00fd25c79d",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+      "episode_return": 10.17272741932568,
+      "final_goal_error_m": 0.08336514060570736,
+      "final_speed_m_s": 0.09998601262772465,
+      "path_length_m": 0.11687189733778088,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "1d7f972606b5a9a29cfebe106af298c13e1ad3ac7e3a5634954e7d596640af8c",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+      "episode_return": 10.500179393567581,
+      "final_goal_error_m": 0.08053072388119656,
+      "final_speed_m_s": 0.09765905138473488,
+      "path_length_m": 0.11952560410271816,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "fd0b684dd3c541e3239b32eec86837a020810e90bd80c3cd4aa178b19cff8c59",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+      "episode_return": 10.300390707290143,
+      "final_goal_error_m": 0.07962457751360263,
+      "final_speed_m_s": 0.10947012882172293,
+      "path_length_m": 0.12166877919306561,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "a2456b5178db23ba4982786ee6e2bdb7704e599800e36a5cc3976676b8f9cd85",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+      "episode_return": 10.49914282047935,
+      "final_goal_error_m": 0.08067250128038977,
+      "final_speed_m_s": 0.09772770159883545,
+      "path_length_m": 0.11938211057172668,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "2cb407703306b5fe63c3e4aec58d07e795600be89e60b87fc3b854e2dee789ab",
+      "terminal_class": "success"
+    },
+    {
+      "base_identity_sha256": "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+      "episode_return": 10.434024281085291,
+      "final_goal_error_m": 0.08063881917477138,
+      "final_speed_m_s": 0.10195827706425545,
+      "path_length_m": 0.11989408581115811,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "951641977659cfdbe0534a758008be9f070b497f0d885645ca859022b7483b4d",
+      "terminal_class": "success"
+    }
+  ],
+  "new_scan_frames_excluding_reset": 276,
+  "next_action": "after result review and remote verification, freeze new R10 initialization-only curriculum PPO comparison within existing original grant; no old ID retry",
+  "optimizer_updates": 0,
+  "other_terminal_episodes": 0,
+  "phase_id": "AUTORL-R9-SHORT-PRIOR",
+  "physical_policy_steps": 701,
+  "physics_ticks": 14020,
+  "protection": {
+    "path": ".research_local/autorl_r9_protection_after.json",
+    "sha256": "2d97d0084596fa4626c203cecb8045a6e0353af5ee037bda3a1a657a29da6f1e"
+  },
+  "protocol_sha256": "2bf3f221a6a4a9f9ec3e481b8aac8e2ce4968df97f0a9616eae24ceac5439766",
+  "raw_files": [
+    {
+      "bytes": 581,
+      "path": ".research_local/autorl_r9_short_prior/run_01/attempt.json",
+      "sha256": "2babe01ba7536c4a2b93ca58aa14f00d455bae182e881d4bb6d991fd81df7f07"
+    },
+    {
+      "bytes": 110,
+      "path": ".research_local/autorl_r9_short_prior/run_01/complete.json",
+      "sha256": "71eb3b74c079370b4650b644e8bd8513640ec0c3b782a233f75528aea618ef0f"
+    },
+    {
+      "bytes": 40663,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_00.json",
+      "sha256": "0dc2c337879029561e68d4b00284ce06e1053d3aa1d342cf3e3f66b00a9fa749"
+    },
+    {
+      "bytes": 40723,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_01.json",
+      "sha256": "9e8dcff8163c5c189523b2ade632ca9ba258b5dc8a68fa6327d351d41906448e"
+    },
+    {
+      "bytes": 41131,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_02.json",
+      "sha256": "5ef65e2805385bd6e20f3e86aa13b5ab9c8366e65c846dac70f8c21baeca906a"
+    },
+    {
+      "bytes": 40863,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_03.json",
+      "sha256": "ee20a12f7f45fdb3572c5689cbda88f6a48f4b30eb7ab666293c834f38ffb06b"
+    },
+    {
+      "bytes": 40972,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_04.json",
+      "sha256": "5efc5883f27489295387045c61a833590fad796ca4c60795223f5ff44fb382ce"
+    },
+    {
+      "bytes": 40997,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_05.json",
+      "sha256": "06c65d04ce152657bfccac94febe5026ebd51992d02b353db5bc475fb9dbd488"
+    },
+    {
+      "bytes": 40854,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_06.json",
+      "sha256": "5e974a216e40f7cb966e0f96a40094a32e7590dc8920532ccd246231d62fe886"
+    },
+    {
+      "bytes": 40849,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_07.json",
+      "sha256": "558a98dc803bd3311828ebcd9d7ea9e8783b52d05aa90bc6b6106cf475f77c65"
+    },
+    {
+      "bytes": 41001,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_08.json",
+      "sha256": "b6d3a08cd49a298a4786b838838bdf73fe444a8759ae47f67a537f0735bc62e9"
+    },
+    {
+      "bytes": 40478,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_09.json",
+      "sha256": "259fe298234768e7415d8201b1f7edccdc6cccf450045e348a5d1ce0e7fd84c0"
+    },
+    {
+      "bytes": 40978,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_10.json",
+      "sha256": "4a67c318ace65229dfb0de10a87ef8875ac48daf481516151e9d2d2d16e9ac00"
+    },
+    {
+      "bytes": 40844,
+      "path": ".research_local/autorl_r9_short_prior/run_01/episode_11.json",
+      "sha256": "ff430d72d9a8d5ea896be4ab2293eace8dedd4bd0c1874c04df1757b9d801d2f"
+    },
+    {
+      "bytes": 1096,
+      "path": ".research_local/autorl_r9_short_prior/run_01/health/resource_samples.jsonl",
+      "sha256": "25e6873cbca9f57a35a5c7d498d932f586d8dc9982f71abe0cfeec00e1dde6e2"
+    },
+    {
+      "bytes": 6189,
+      "path": ".research_local/autorl_r9_short_prior/run_01/health/train_episodes.jsonl",
+      "sha256": "4ce58dd3c7f5769ad605a2147fe7a656473d267914f047a2705d5be430363f71"
+    },
+    {
+      "bytes": 589670,
+      "path": ".research_local/autorl_r9_short_prior/run_01/result.json",
+      "sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1"
+    }
+  ],
+  "registration_sha256": "a958ac5fc2fe3bcbc5c64b5267bf4a598f61697ec8d7e9a82dfa17ed48510532",
+  "resources": {
+    "cpu_seconds": 15.364820098,
+    "encoding_ms_new_frame_excluding_reset": {
+      "count": 276,
+      "max": 4.93896100033453,
+      "p50": 4.3455025006551296,
+      "p95": 4.527431500264356,
+      "p99": 4.790520249571273
+    },
+    "environment_step_ms": {
+      "count": 701,
+      "max": 14.96214799954032,
+      "p50": 1.382535000630014,
+      "p95": 12.992500999644108,
+      "p99": 14.334827000311634
+    },
+    "health_recorded_cumulative_min_mem_available_mib": 8608.67578125,
+    "health_recorded_cumulative_min_scope": "Health internal denser sampling; recorded at steps128/256/384/512/640; not a continuous full-process minimum",
+    "min_sampled_mem_available_mib": 8704.1171875,
+    "min_sampled_mem_available_mib_scope": "runner pre-step samples only; NOT all observed samples",
+    "scan_ms_new_frame_excluding_reset": {
+      "count": 276,
+      "max": 7.570921000478847,
+      "p50": 6.764254000245273,
+      "p95": 7.123752000097738,
+      "p99": 7.365130500375017
+    },
+    "wall_seconds": 15.256131541000286,
+    "worker_ru_maxrss_mib": 1669.390625
+  },
+  "result": {
+    "path": ".research_local/autorl_r9_short_prior/run_01/result.json",
+    "sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1"
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r9_results_review_01.json",
+      "sha256": "730d29e9555711635f94e3f2f28ab06143f8bd42ae9748742071ed7e484e4a09"
+    },
+    "important": 0,
+    "minor": 2,
+    "scope": "R9 result publication only; not future Git/remote/R10 authorization",
+    "status": "GO"
+  },
+  "review": {
+    "evidence": {
+      "path": ".research_local/autorl_r9_pre_review_02.json",
+      "sha256": "7b3e90a6d25b4c9759225b47b6900cb0f48edf03a145d811cbc1ea2cd862d91f"
+    },
+    "scope": "pre-run only",
+    "source_identity_sha256": "35a4efcf224a1a0e9b7c4c878e1948d139b174007c5e93798585ac4e3742772b",
+    "status": "GO"
+  },
+  "scan_frames_including_reset": 288,
+  "source_identity_sha256": "35a4efcf224a1a0e9b7c4c878e1948d139b174007c5e93798585ac4e3742772b",
+  "success_episodes": 12,
+  "summed_simulation_seconds": 28.04,
+  "test_episodes": 0,
+  "tests": {
+    "admission": {
+      "path": ".research_local/autorl_r9_checks.json",
+      "sha256": "faf40723d2161a08f1b77d318ac5e2e423cd1e67d70189ee8e6d9c4266423f4d"
+    },
+    "deselected": 15,
+    "evidence": {
+      "path": ".research_local/autorl_r9_operations_final_03.json",
+      "sha256": "83a6d963830b86cb69f6bd46fa924befcf1e540949e5a47f13c0fa269962e2ef"
+    },
+    "historical": 885,
+    "historical_evidence": {
+      "path": ".research_local/autorl_r9_historical_final_03.json",
+      "sha256": "d7fb352ef2f3f2a1665c805be819b8ab8c5cb50cd7b46e6dde43353605df4560"
+    },
+    "operations": 118,
+    "scope": "selected related regression not full repository",
+    "status": "PASS",
+    "tensor": 34,
+    "tensor_evidence": {
+      "path": ".research_local/autorl_r9_tensor_final_03.json",
+      "sha256": "11424ebc27c0e44b15b8af25945d3927a65844b4c067c4c30af8b54ad95ef27b"
+    },
+    "unique_passed": 1037
+  },
+  "training_timesteps": 0,
+  "validation_episodes": 0
+}
