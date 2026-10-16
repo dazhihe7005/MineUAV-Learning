@@ -1,0 +1,118 @@
+{
+  "budget": {
+    "all_ledger_bytes_unchanged": true,
+    "remaining_reserved_wall_seconds": 64800,
+    "remaining_steps": 1606784
+  },
+  "contracts": {
+    "accounting_train_tasks": 24,
+    "base_current_identity": "inner base geometry ID",
+    "by_identity_values": "MEMBERSHIP_ONLY_NOT_RESET_ROWS",
+    "current_identity": "true active task ID or None",
+    "fault_without_return": "LAST_KNOWN_CONTEXT, task identity retained, returned reward/ID NOT_AVAILABLE",
+    "original_sources_changed": false,
+    "resume": "RESTART_REQUIRED",
+    "sampling_base_train": 12
+  },
+  "earlier_review": {
+    "path": ".research_local/autorl_r7_review_01.json",
+    "sha256": "818ba1ec4fea6050a2b4f19ce04c10bfdf337eb3298e20520f181e8f805b79e7"
+  },
+  "earlier_test_failure": "green_01 array assertion ValueError, corrected test assertion; preserved original log",
+  "forced_cases": [
+    "success",
+    "collision",
+    "time_limit",
+    "sensor_failure",
+    "z_below_zero",
+    "outside_flight_area",
+    "excessive_tilt",
+    "nonfinite_state"
+  ],
+  "forced_cases_provenance": "FORCED_TEST_STATE, NOT naturally observed training failures",
+  "implementation_status": "PASS",
+  "learning_effect": "NOT TESTED",
+  "limitations": [
+    "No learning improvement measured",
+    "R6 profile remains failed/unmodified; helper not wired to new training yet",
+    "Artificial arbitrary active_task structural corruption may obscure failure context; known Minor, not reachable through normal scheduler",
+    "No exact resume, PX4, hardware or long-run memory proof"
+  ],
+  "new_full_validation_episodes": 0,
+  "next_action": "After GO, register/publish, then independent R8 protocol/ID with current reviewed accounting adapter; never retry R6",
+  "optimizer_updates": 0,
+  "phase_id": "AUTORL-R7-ACCOUNTING",
+  "protection": {
+    "path": ".research_local/autorl_r7_protection_after.json",
+    "sha256": "fd25f0ee0e9eb435b9b8ff536bbaa883ec48626b718e95625c72c3af652a07af"
+  },
+  "red_green": [
+    {
+      "path": ".research_local/autorl_r7_chain_red_01.json",
+      "sha256": "b9d004fd4ac26d53a0876c08b365dd80435b8f348633b9973119bfa2fa68d548"
+    },
+    {
+      "path": ".research_local/autorl_r7_chain_green_02.json",
+      "sha256": "41b0a15caef3aeb1f7664778f869d67edec3fbc03ee6636992bef43097c2ab82"
+    },
+    {
+      "path": ".research_local/autorl_r7_identity_red_01.json",
+      "sha256": "d7d63d29496ce7759cdc284be7d8fab39f928c237455a5eb70ebfd74d439a248"
+    },
+    {
+      "path": ".research_local/autorl_r7_identity_green_01.json",
+      "sha256": "f36e3c8240728d9e80e872e518676ea017e049c7c2c811d0510041fa15b35a0d"
+    }
+  ],
+  "registration_sha256": "486b2730207cdc96ea231cd845a433ff1eea7b1cb44537e2aa0c1beefe1deb16",
+  "resources": {
+    "historical_min_available_mib": 9542.82421875,
+    "historical_peak_rss_mib": 2027.25,
+    "historical_wall_seconds": 120.53054907899991,
+    "tensor_child_hwm_mib": 1796.88671875,
+    "tensor_wall_seconds": 40.457742326000016,
+    "whole_stage_peak": "NOT_AVAILABLE across separate processes"
+  },
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r7_review_02.json",
+      "sha256": "7ab4ba533cb6da53f350faabb903f766f16a9018d1974ed19882665dd26204fb"
+    },
+    "important": 0,
+    "minor": 1,
+    "scope": "offline repair registration and publication ONLY; no training execution certification",
+    "source_identity_sha256": "1eaa6b1f515ab32bce7b5ca15d1f1a5889ceb9505317fa6da3752794962031fb",
+    "status": "GO"
+  },
+  "source_identity_sha256": "1eaa6b1f515ab32bce7b5ca15d1f1a5889ceb9505317fa6da3752794962031fb",
+  "test_episodes": 0,
+  "tests": {
+    "deselected": 15,
+    "evidence": {
+      "path": ".research_local/autorl_r7_operations_final_02.json",
+      "sha256": "b062a70048337024d9291ae094f774f76bfb9c771938f03228dcadd442210224"
+    },
+    "historical": 885,
+    "historical_evidence": {
+      "path": ".research_local/autorl_r7_historical_final_02.json",
+      "sha256": "6c1ebc5d41cbccb429ed77e67ecb48ed13e7a9ce62a3d9846cfde90c34114a99"
+    },
+    "historical_runtime_binding": {
+      "path": ".research_local/autorl_r7_historical_runtime_binding_02.json",
+      "sha256": "d05f1e288855dfe7f1d1998dc13e656ca82df9ca9a53bc7bc3145094da8ad447"
+    },
+    "new_tensor": 11,
+    "operations": 105,
+    "scope": "selected no-update, NOT full repository",
+    "status": "PASS",
+    "tensor": 32,
+    "tensor_evidence": {
+      "path": ".research_local/autorl_r7_tensor_final_02.json",
+      "sha256": "6da0bdf672d01a092205ee41faf5c0356187baa76974b41fd4b20ede6fe5a65d"
+    },
+    "unique_passed": 1022
+  },
+  "training_runs": 0,
+  "validation_interface_probes": "inherited tensor test executes six one-step Validation probes, not learning results"
+}

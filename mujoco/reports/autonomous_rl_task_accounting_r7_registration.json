@@ -1,0 +1,660 @@
+{
+  "approved_changes": {
+    "mujoco/lidar_integration/test_dynamic_runner.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "a425617aa193fdb857508255267f6286fa4c75bda97f89e0200d5617778c917e",
+        "size": 4344
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "ba48af9b743bcaead7a2d26caecef5d28529b63cc8a1ae36ef2a905cb96fbbd9",
+        "size": 4310
+      }
+    },
+    "mujoco/lidar_integration/test_failure_evidence.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "d45d85dd24d2c9c645a102b49c269114bd6f0012721a090a6c15262c220393fd",
+        "size": 13453
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "bd9f1e6de48b69b19b85304f75024b264aeea6d14a25436adf423ebcfda95407",
+        "size": 13416
+      }
+    },
+    "mujoco/lidar_integration/test_navigation_env.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "4a7c54769f9e1cf1e6f2e63e954641a99bb72e14f3a2774f31660f55d39cbad5",
+        "size": 11552
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "7f75fc83ec3b485a466a7d9e26d221f157844560064b5148d96318e41b494867",
+        "size": 11515
+      }
+    },
+    "mujoco/lidar_integration/test_navigation_runner.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "cb08bbac53385478563683c7ac977628d986a9cf2eab49a1dc5ff289edd05b5d",
+        "size": 4737
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "0fd851286199208f809fcdb4d5ebf633da320134b2a4debedf701d881dcfbf47",
+        "size": 4700
+      }
+    },
+    "mujoco/lidar_integration/test_navigation_scene.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "7898aa14254de96284c827ff64575da230a76fe7acd3e6fa8623e63150a295e3",
+        "size": 5634
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "7a4d01a4602553458e81046f8d762417252fc15a84a706154e54fa14e4463b3c",
+        "size": 5618
+      }
+    },
+    "mujoco/lidar_integration/test_observation.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "51e3f6ddce9ef0d69d41f0105750837877646488e6c3b9c6a2d97d8d3c704fc5",
+        "size": 9448
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "25a82eb99f5470d659b235ed62f9fd5824afd61a06c62a7f4a0128e81e21dd2a",
+        "size": 9412
+      }
+    },
+    "mujoco/lidar_integration/test_ppo_formal_readiness.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "c888543234c8af94e2b28aab48621a6a88242d6e46bf38b5ecb042fb91925daa",
+        "size": 11673
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "18614862963989e99b1d391adaec468c60264cefb7e263373863f0ecc3d1a5b4",
+        "size": 11636
+      }
+    },
+    "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "7bcc3147a4bc8a62163776cbe4f8a352bf2d5288389fad933a1700ca6a43f553",
+        "size": 14030
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "111bbca706792a3f856678cd3cd5423dedf86f76ccfba76b6f4bb9eca69f7397",
+        "size": 13993
+      }
+    },
+    "mujoco/lidar_integration/test_ppo_preflight.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "4b9254f546ea2e318e0630e02765ea55a9f5d9c13d36b9133df9708f21e01ad8",
+        "size": 12132
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "b00170fbf8d49afa3e14042fecada4ba7752cd0c1e12564717b108ee20bbb711",
+        "size": 12089
+      }
+    },
+    "mujoco/lidar_integration/test_ppo_training_orchestration.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "ce75c58a482bce422aaf8ae666f12123fa786dec65de78752d8f53cfba5c3ac1",
+        "size": 15046
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "62c020e91e01e6fc8c5f0ae3bc8118c43e633d857b439d836cec4e05551041c8",
+        "size": 15009
+      }
+    },
+    "mujoco/lidar_integration/test_repair_protocol.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "4883f63ed355ff1d7f2f97502fae1e728f548edf4ddfa4e868b429e6871e08b2",
+        "size": 3474
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "2ec2b4e376bf0b0543c48c90ddae5cecb0cdc0a35d870842f74a19742faf1f06",
+        "size": 3437
+      }
+    },
+    "mujoco/lidar_integration/test_runner.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "7049d34b543e446a2b4074b92b1a8f3da3126d409cd2eab85579cbd252ebf7a3",
+        "size": 1504
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "de2bcc711cff0b459d9b6b500a4efb3c26f20da0eb0ec576809d2105a9b3e6a9",
+        "size": 1470
+      }
+    },
+    "mujoco/lidar_integration/test_scanner.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "1806015470aae9665b0a98f1476a2e21313e62cee1bec8497556192c9c7ea4db",
+        "size": 5962
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "e8e29e3c6d36e801eea21763a86405347dc1f0927b2ae047056e62ee7e555a01",
+        "size": 5928
+      }
+    },
+    "mujoco/lidar_integration/test_shaft.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "a545468bc4f37e591a61acdb7051aa577ada799596ee3d3b02e114e12d138b38",
+        "size": 2247
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "10dd86fd7df4dcecd4a372f55bb285ecfe2fc5da95fb5e1cd95edb2d14fa42a0",
+        "size": 2213
+      }
+    },
+    "mujoco/lidar_integration/test_termination_repair.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "49ef845f617c01dfd441a2422b84dec62830e0437549bdecb1b482dd532aec8c",
+        "size": 8325
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "bc0dceb1aeb06f8b1b4de6219d24f35054cbce280dd9966d482670af3cb5d000",
+        "size": 8288
+      }
+    },
+    "mujoco/lidar_integration/test_trajectory.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "8edb204abe69ddaf791bbc9eed6ba6855a2509edbfb9108e57ed2ab3f9c59ba1",
+        "size": 4203
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "9d31cd77c3884bce72dcc46dda4d4921c0f129b01d32f53610789a173d5075b2",
+        "size": 4169
+      }
+    },
+    "mujoco/lidar_integration/test_validation_termination_repair.py": {
+      "after": {
+        "kind": "file",
+        "sha256": "97bfbbe90925e0679fe5b8b43ddb8e9da0efa4c472fe3be873a5bcb2a2168b52",
+        "size": 4828
+      },
+      "before": {
+        "kind": "file",
+        "sha256": "cb497f72ab8ae90d89db46270595d2c6a1d575f7a437b6882a3cc58427e4796b",
+        "size": 4791
+      }
+    }
+  },
+  "authorization_scope": {
+    "PX4": false,
+    "automatic_training": "DISABLED",
+    "levels": [
+      0,
+      1
+    ],
+    "optimizer_updates": false,
+    "real_devices": false
+  },
+  "base_commit": "2f6e5c297c2a12f7e69a8328d90aee11eed97589",
+  "branch": "fix/lidar-distance-accounting-r7",
+  "budget_ledger": {
+    "authorized_training_seeds": [],
+    "authorized_training_timesteps": 0,
+    "authorized_training_wall_time": 0,
+    "consumed_training_timesteps": 0,
+    "consumed_training_wall_time": 0,
+    "max_workers": 1
+  },
+  "operations_version": "RESEARCH_OPS_V2",
+  "output_root": ".research_local/ops_v2/runs",
+  "phase_id": "AUTORL-R7-ACCOUNTING",
+  "report_path": "mujoco/reports/autonomous_rl_task_accounting_r7.json",
+  "schema_version": 2,
+  "source_identity": {
+    "mujoco/lidar_integration/test_dynamic_runner.py": {
+      "kind": "file",
+      "sha256": "a425617aa193fdb857508255267f6286fa4c75bda97f89e0200d5617778c917e",
+      "size": 4344
+    },
+    "mujoco/lidar_integration/test_failure_evidence.py": {
+      "kind": "file",
+      "sha256": "d45d85dd24d2c9c645a102b49c269114bd6f0012721a090a6c15262c220393fd",
+      "size": 13453
+    },
+    "mujoco/lidar_integration/test_navigation_env.py": {
+      "kind": "file",
+      "sha256": "4a7c54769f9e1cf1e6f2e63e954641a99bb72e14f3a2774f31660f55d39cbad5",
+      "size": 11552
+    },
+    "mujoco/lidar_integration/test_navigation_runner.py": {
+      "kind": "file",
+      "sha256": "cb08bbac53385478563683c7ac977628d986a9cf2eab49a1dc5ff289edd05b5d",
+      "size": 4737
+    },
+    "mujoco/lidar_integration/test_navigation_scene.py": {
+      "kind": "file",
+      "sha256": "7898aa14254de96284c827ff64575da230a76fe7acd3e6fa8623e63150a295e3",
+      "size": 5634
+    },
+    "mujoco/lidar_integration/test_observation.py": {
+      "kind": "file",
+      "sha256": "51e3f6ddce9ef0d69d41f0105750837877646488e6c3b9c6a2d97d8d3c704fc5",
+      "size": 9448
+    },
+    "mujoco/lidar_integration/test_ppo_formal_readiness.py": {
+      "kind": "file",
+      "sha256": "c888543234c8af94e2b28aab48621a6a88242d6e46bf38b5ecb042fb91925daa",
+      "size": 11673
+    },
+    "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py": {
+      "kind": "file",
+      "sha256": "7bcc3147a4bc8a62163776cbe4f8a352bf2d5288389fad933a1700ca6a43f553",
+      "size": 14030
+    },
+    "mujoco/lidar_integration/test_ppo_preflight.py": {
+      "kind": "file",
+      "sha256": "4b9254f546ea2e318e0630e02765ea55a9f5d9c13d36b9133df9708f21e01ad8",
+      "size": 12132
+    },
+    "mujoco/lidar_integration/test_ppo_training_orchestration.py": {
+      "kind": "file",
+      "sha256": "ce75c58a482bce422aaf8ae666f12123fa786dec65de78752d8f53cfba5c3ac1",
+      "size": 15046
+    },
+    "mujoco/lidar_integration/test_repair_protocol.py": {
+      "kind": "file",
+      "sha256": "4883f63ed355ff1d7f2f97502fae1e728f548edf4ddfa4e868b429e6871e08b2",
+      "size": 3474
+    },
+    "mujoco/lidar_integration/test_runner.py": {
+      "kind": "file",
+      "sha256": "7049d34b543e446a2b4074b92b1a8f3da3126d409cd2eab85579cbd252ebf7a3",
+      "size": 1504
+    },
+    "mujoco/lidar_integration/test_scanner.py": {
+      "kind": "file",
+      "sha256": "1806015470aae9665b0a98f1476a2e21313e62cee1bec8497556192c9c7ea4db",
+      "size": 5962
+    },
+    "mujoco/lidar_integration/test_shaft.py": {
+      "kind": "file",
+      "sha256": "a545468bc4f37e591a61acdb7051aa577ada799596ee3d3b02e114e12d138b38",
+      "size": 2247
+    },
+    "mujoco/lidar_integration/test_termination_repair.py": {
+      "kind": "file",
+      "sha256": "49ef845f617c01dfd441a2422b84dec62830e0437549bdecb1b482dd532aec8c",
+      "size": 8325
+    },
+    "mujoco/lidar_integration/test_trajectory.py": {
+      "kind": "file",
+      "sha256": "8edb204abe69ddaf791bbc9eed6ba6855a2509edbfb9108e57ed2ab3f9c59ba1",
+      "size": 4203
+    },
+    "mujoco/lidar_integration/test_validation_termination_repair.py": {
+      "kind": "file",
+      "sha256": "97bfbbe90925e0679fe5b8b43ddb8e9da0efa4c472fe3be873a5bcb2a2168b52",
+      "size": 4828
+    },
+    "research_ops_v2/__init__.py": {
+      "kind": "file",
+      "sha256": "610987f3aaef9126b14bd97028df9f0abf0c86f438e867a5aa026982ff4313f5",
+      "size": 83
+    },
+    "research_ops_v2/cli.py": {
+      "kind": "file",
+      "sha256": "87e7c35079118daf2eb17d111555853f331a3146dc72d88504871733245b39cc",
+      "size": 3401
+    },
+    "research_ops_v2/execution.py": {
+      "kind": "file",
+      "sha256": "f934ee6c1fd42d95f507d239838aa5d06f8d27d260a29c3e172f245febab3bbb",
+      "size": 9051
+    },
+    "research_ops_v2/manager.py": {
+      "kind": "file",
+      "sha256": "77f05c0ab470d8b302123872e902af8348818ae49d7169d57c0ba0f25ac78b4f",
+      "size": 16495
+    },
+    "research_ops_v2/publication.py": {
+      "kind": "file",
+      "sha256": "c9396314f3fd2c1e312b9d65d36a8ed08541ad9d2a1215f81f6cf98d22b0542d",
+      "size": 9569
+    },
+    "research_ops_v2/registration.py": {
+      "kind": "file",
+      "sha256": "e8961687653c35a070afb2fb83af5d08b1d15f459d9637042d26b41650c12ca6",
+      "size": 6628
+    },
+    "research_ops_v2/test_runner.py": {
+      "kind": "file",
+      "sha256": "936b9346203eca1c49b53c3438916c5ad4c622c5a635484e95e0e2ec5ca76bbf",
+      "size": 3259
+    },
+    "research_ops_v2/worker.py": {
+      "kind": "file",
+      "sha256": "dccadb28d29c101168478c13ad6b0e58931476a9902a051345c16441dd1f6759",
+      "size": 3941
+    },
+    "research_regression/__init__.py": {
+      "kind": "file",
+      "sha256": "89584d6817cd2de0f97e06accbd52904051e00fbf73f087492f3f653e4d5a9a0",
+      "size": 72
+    },
+    "research_regression/authorized_rl/__init__.py": {
+      "kind": "file",
+      "sha256": "46eaa5714d57cf5f3b93f29866d5c159ab0156414e316547d58f1d102a7d6b01",
+      "size": 82
+    },
+    "research_regression/authorized_rl/__main__.py": {
+      "kind": "file",
+      "sha256": "79bdc8045e500c49cb56df4831cb9b614471999ead426672d3d92b1efbf4eb80",
+      "size": 5296
+    },
+    "research_regression/authorized_rl/actor_prior.py": {
+      "kind": "file",
+      "sha256": "996329164d73ab7b830edca199ded8f44a7b74bad39bcc91572fe871b8fd5551",
+      "size": 2423
+    },
+    "research_regression/authorized_rl/baseline.py": {
+      "kind": "file",
+      "sha256": "13c0cee5c7196d5a7be25d3be6d40b551fa592ca7baf410a8244b1c31fbb5d74",
+      "size": 7212
+    },
+    "research_regression/authorized_rl/budget.py": {
+      "kind": "file",
+      "sha256": "fc9872b01ee7aef1b5805c4ca5a1cf01cff1f195cd20d6ed6da528ef2de28379",
+      "size": 9348
+    },
+    "research_regression/authorized_rl/curriculum.py": {
+      "kind": "file",
+      "sha256": "25a2aef3db6ad6ac15aa32030dae21033bfe332db5dcb164a217b4f450b2f818",
+      "size": 2013
+    },
+    "research_regression/authorized_rl/distance_profile.py": {
+      "kind": "file",
+      "sha256": "f19386e6a4ac002c80c67e8a250df61d3377ad14220090e221db51adf51aa81b",
+      "size": 6455
+    },
+    "research_regression/authorized_rl/distance_training.py": {
+      "kind": "file",
+      "sha256": "b93fbce90aa2b52e06b071ad15d4bf23921b5aeffab228982307449344d2bf48",
+      "size": 2287
+    },
+    "research_regression/authorized_rl/distance_training_tests.py": {
+      "kind": "file",
+      "sha256": "e297f7a562cf37deb5ed80146a50f402fab8664b3e6c4982c0358188729b44c5",
+      "size": 4229
+    },
+    "research_regression/authorized_rl/feedback_probe.py": {
+      "kind": "file",
+      "sha256": "5fba8e8b40dcfbee9ef6b85c4a5c673729bd3f1c6687482387b0c77eb05053ad",
+      "size": 4660
+    },
+    "research_regression/authorized_rl/feedback_run.py": {
+      "kind": "file",
+      "sha256": "12235ba1481a9b630d957467b1152d082ed578aa2a5ea49b7fbfa89cbfeb6f99",
+      "size": 7587
+    },
+    "research_regression/authorized_rl/feedback_spec.py": {
+      "kind": "file",
+      "sha256": "235426d5dc73cc92e4729b8410e6b72d30b95d635770a532badf908e060f2e37",
+      "size": 6272
+    },
+    "research_regression/authorized_rl/feedback_tests.py": {
+      "kind": "file",
+      "sha256": "f4a51493b0186555c1c6ffb64c75ebfe2c5a8383c7f07761c0251945651f8766",
+      "size": 5087
+    },
+    "research_regression/authorized_rl/lifetime.py": {
+      "kind": "file",
+      "sha256": "1323e044f9635e31d2a66e03f191735d8a74bf1000d7754421eba3c2dcec2016",
+      "size": 1129
+    },
+    "research_regression/authorized_rl/preflight.py": {
+      "kind": "file",
+      "sha256": "f3ba13be1a8bf1bf9b525477b7640dda12284a1a947454cf24e10de1ba3b3551",
+      "size": 4714
+    },
+    "research_regression/authorized_rl/prior_preflight.py": {
+      "kind": "file",
+      "sha256": "5fabb1917ae455293b9b08c36f43164a6807d3279c9f7fc6c2e5d55e5ba5f33d",
+      "size": 6855
+    },
+    "research_regression/authorized_rl/prior_profile.py": {
+      "kind": "file",
+      "sha256": "f18dfde46a5ae51ae81c4eb22e7ab0b8ef3f6f76c2bbd770bca678205f5f458d",
+      "size": 6743
+    },
+    "research_regression/authorized_rl/prior_tests.py": {
+      "kind": "file",
+      "sha256": "7ff649a05a144c9894ad1a2d97b50cfbd183a657a0f1a98dad8da3d6806d5502",
+      "size": 4815
+    },
+    "research_regression/authorized_rl/prior_training.py": {
+      "kind": "file",
+      "sha256": "f8ca5f1e50c1749e69a9a795be12d927b19714dc7478ccda82e4014fdd9aac0b",
+      "size": 1820
+    },
+    "research_regression/authorized_rl/prior_training_tests.py": {
+      "kind": "file",
+      "sha256": "36706ba0ffc5e3ca91153b5331e0ccf307537d3d4e288468de495a10a5de8191",
+      "size": 3933
+    },
+    "research_regression/authorized_rl/runtime.py": {
+      "kind": "file",
+      "sha256": "573c9048c5b1ca7e8347d7acc96cc2d94db952ae49beb58001779cbc0fd1f1a4",
+      "size": 7590
+    },
+    "research_regression/authorized_rl/short_goal.py": {
+      "kind": "file",
+      "sha256": "a95b7158cf9a612c7766aacb3606fa4a2d4835429b29d20f0deec93611d8f654",
+      "size": 7192
+    },
+    "research_regression/authorized_rl/short_goal_env.py": {
+      "kind": "file",
+      "sha256": "268f8f07b18392f5fff83bde80a1a04d0a8af6a0d6a349b1922ae35e533ce0b0",
+      "size": 3868
+    },
+    "research_regression/authorized_rl/short_goal_feasibility.py": {
+      "kind": "file",
+      "sha256": "5158dd8969eceb4a271215ca8e4f0b23330de5e8262c4154ef63d3b16c92c745",
+      "size": 8007
+    },
+    "research_regression/authorized_rl/short_goal_tests.py": {
+      "kind": "file",
+      "sha256": "e8edf61070758b5b70383a55022be8ac6fa965daa378e56f62189b7f3ef8f1e1",
+      "size": 4217
+    },
+    "research_regression/authorized_rl/std_profile.py": {
+      "kind": "file",
+      "sha256": "9e0c2d3f4501c24d428f79771dc903aab53f1e739b3650c2686016f4149454c7",
+      "size": 5117
+    },
+    "research_regression/authorized_rl/std_training.py": {
+      "kind": "file",
+      "sha256": "68d0c6c798a79126f6b825a250756e2ddb79490ef5313bf97fecf450c76fa625",
+      "size": 2346
+    },
+    "research_regression/authorized_rl/std_training_tests.py": {
+      "kind": "file",
+      "sha256": "2ddcd9dd6631c11361f9ad400d2bff544a25264acc42026c16121fb8635a0675",
+      "size": 5045
+    },
+    "research_regression/authorized_rl/task_accounting.py": {
+      "kind": "file",
+      "sha256": "45dcc8f83a77dbb3370638145ad94d8dd0221406b1af0f72cd4bd9537476ca69",
+      "size": 5364
+    },
+    "research_regression/authorized_rl/task_accounting_tests.py": {
+      "kind": "file",
+      "sha256": "8472a947a5e6ee681c96ec245dce35269afe8855c7da79614b13c8ae1edf927b",
+      "size": 12742
+    },
+    "research_regression/authorized_rl/worker.py": {
+      "kind": "file",
+      "sha256": "d3d973a42ef9c34a50a59e9ce2bb84c1322ad09c4de699f4fd2465ea6b38e676",
+      "size": 17039
+    },
+    "research_regression/navigation_diagnosis.py": {
+      "kind": "file",
+      "sha256": "9c7eb9471b18a5585241bf5e316d1fbe8d5b52c2107f056fd1fe752fd8c94f05",
+      "size": 17666
+    },
+    "research_regression/navigation_diagnosis_plots.py": {
+      "kind": "file",
+      "sha256": "458144f4fd260f26825ba649a41d18e637b81cd5b60100aeb4aac4bdb123ff09",
+      "size": 5142
+    },
+    "research_regression/run.py": {
+      "kind": "file",
+      "sha256": "4218d0b64533393f26d61e764ce40675972a097a897a07588236dc2dabc41f9a",
+      "size": 2685
+    },
+    "research_regression/upstream.py": {
+      "kind": "file",
+      "sha256": "2c1029cf52e2e75cf2f8d2581e72eff818ccea1c355f4f3af9c3da82a5099945",
+      "size": 1437
+    },
+    "researchctl-v2": {
+      "kind": "file",
+      "sha256": "83dbfa5e4c64a57d465cac5ce029d7a75798bb2391572fae0de29b5e558cf66b",
+      "size": 81
+    },
+    "tests/research_ops_v2/support_v2.py": {
+      "kind": "file",
+      "sha256": "8b70aa56156acfe0cc810a282886c0ad194f84550c9cf89b8a2ed8280b86811d",
+      "size": 1955
+    },
+    "tests/research_ops_v2/test_authorized_rl_budget.py": {
+      "kind": "file",
+      "sha256": "6de5572548a79643340406a0cd5d8ec0ede45aef5cb64aeb8c5d8199629676c9",
+      "size": 6465
+    },
+    "tests/research_ops_v2/test_authorized_rl_execution.py": {
+      "kind": "file",
+      "sha256": "aa64672b5dfad348477ac8aedf2cc34df5880a76433ebfeebdc6844096fb2f16",
+      "size": 4868
+    },
+    "tests/research_ops_v2/test_distance_profile.py": {
+      "kind": "file",
+      "sha256": "f16ecd1bf515af512942b273e02f3330af21aefdca512078e1183a8cd0a4cf39",
+      "size": 4138
+    },
+    "tests/research_ops_v2/test_feedback_spec.py": {
+      "kind": "file",
+      "sha256": "cc3620fae87f62b69acba678fcf44918bc52a90e0ff4d5d5758aa41d7c12ad93",
+      "size": 3100
+    },
+    "tests/research_ops_v2/test_lifecycle.py": {
+      "kind": "file",
+      "sha256": "a64676ee8cad3f042a67705e6b6d37cde3d1905b248a6fe0a14ea8a900ab96da",
+      "size": 10298
+    },
+    "tests/research_ops_v2/test_navigation_diagnosis.py": {
+      "kind": "file",
+      "sha256": "fb43839d1c3ec9ec0ec3aa16ef0f3923c7582e18621bbff96a0c5a5a22c60b02",
+      "size": 5648
+    },
+    "tests/research_ops_v2/test_portability.py": {
+      "kind": "file",
+      "sha256": "993209c58b5bbb5e980306093929e1f7a8db873dcb3f693de91e7fe9a3ce73df",
+      "size": 1561
+    },
+    "tests/research_ops_v2/test_prior_profile.py": {
+      "kind": "file",
+      "sha256": "898d498a5aaf0f7dcc3a2196be427e650660b9d8e2e6eabe3a5448be8ca8b787",
+      "size": 3731
+    },
+    "tests/research_ops_v2/test_publication.py": {
+      "kind": "file",
+      "sha256": "033a5263380906569c9ac71c2d2b944d90676a42d07d8d1534c5848414d83199",
+      "size": 5691
+    },
+    "tests/research_ops_v2/test_short_goal.py": {
+      "kind": "file",
+      "sha256": "fb6ca459c3feb2c6a812849496d0683d6b2900e4e1e8106b02ab6d6a259c8417",
+      "size": 6442
+    },
+    "tests/research_ops_v2/test_std_profile.py": {
+      "kind": "file",
+      "sha256": "541d59305c434a51c56c5010aadfc76055e33c16862420172189eaa089f872cf",
+      "size": 3850
+    },
+    "tests/research_ops_v2/test_versions.py": {
+      "kind": "file",
+      "sha256": "af4c2aaa4bb84510755f47a141ae0c0cdd7c3867ab8a43d24b0021b848a92f51",
+      "size": 5109
+    }
+  },
+  "source_paths": [
+    "mujoco/lidar_integration/test_dynamic_runner.py",
+    "mujoco/lidar_integration/test_failure_evidence.py",
+    "mujoco/lidar_integration/test_navigation_env.py",
+    "mujoco/lidar_integration/test_navigation_runner.py",
+    "mujoco/lidar_integration/test_navigation_scene.py",
+    "mujoco/lidar_integration/test_observation.py",
+    "mujoco/lidar_integration/test_ppo_formal_readiness.py",
+    "mujoco/lidar_integration/test_ppo_formal_seed0_entry.py",
+    "mujoco/lidar_integration/test_ppo_preflight.py",
+    "mujoco/lidar_integration/test_ppo_training_orchestration.py",
+    "mujoco/lidar_integration/test_repair_protocol.py",
+    "mujoco/lidar_integration/test_runner.py",
+    "mujoco/lidar_integration/test_scanner.py",
+    "mujoco/lidar_integration/test_shaft.py",
+    "mujoco/lidar_integration/test_termination_repair.py",
+    "mujoco/lidar_integration/test_trajectory.py",
+    "mujoco/lidar_integration/test_validation_termination_repair.py",
+    "research_ops_v2",
+    "research_regression",
+    "researchctl-v2",
+    "tests/research_ops_v2"
+  ],
+  "sync_files": [
+    "docs/AUTORL_R7_ACCOUNTING_DESIGN.md",
+    "docs/PHASE_AUTORL_R7_TASK_ACCOUNTING.md",
+    "mujoco/reports/autonomous_rl_task_accounting_r7.json",
+    "mujoco/reports/autonomous_rl_task_accounting_r7_registration.json",
+    "README.md",
+    "docs/EXPERIMENT_LOG.md",
+    "docs/PROJECT_PROGRESS.md",
+    "docs/DAILY_PROGRESS.md",
+    "docs/CODEX_NEXT_ACTION.md",
+    "docs/RESEARCH_STATUS_V2.json",
+    "research_regression/authorized_rl/task_accounting.py",
+    "research_regression/authorized_rl/task_accounting_tests.py"
+  ],
+  "tasks": [
+    {
+      "parameters": {
+        "scope": "history"
+      },
+      "task_id": "audit",
+      "task_type": "offline-audit",
+      "wall_time_s": 60,
+      "workers": 1
+    }
+  ],
+  "training_budget": 0,
+  "working_directory": "."
+}
