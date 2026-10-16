@@ -1,11 +1,11 @@
 {
   "authority": "INFORMATION_ONLY; not a grant or restorable execution state",
   "automatic_training": "DISABLED",
-  "head_at_snapshot": "1ee2d6f7568b0e6043386763410bee32c27884e7",
+  "head_at_snapshot": "4967f0abc53552730e660d8dbe5e2674709af138",
   "operations_version": "RESEARCH_OPS_V2",
-  "phase_id": "AUTORL-R18-STOPPING-DYNAMICS",
-  "protocol_sha256": "d819df6675aad216c97c760d931bcb3085d2443076b6e215ae0d147e78eaf916",
-  "registration_sha256": "634fa6175039f3a4aca3e4252d0da7bdd548c3f05805b8bef31338e670283164",
+  "phase_id": "AUTORL-R19-REWARD-CREDIT",
+  "protocol_sha256": "f3554552b6c766d6642166b8ffd5038834d8af1cce9e0043864e1737b8914313",
+  "registration_sha256": "96e61d65ff78c13e8bedbff7e279ad67d55635cd7945f877ce586795d121a075",
   "resume": "RESTART_REQUIRED",
   "stage_status": "PASS",
   "training_budget": 0

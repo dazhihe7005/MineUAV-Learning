@@ -1,3 +1,25 @@
+## AUTORL-R19 最新：成功Reward排序与实际任务曝光审计PASS（2026-10-16）
+
+R18含发布补充已正常OPS sync/远端4967f0abc53552730e660d8dbe5e2674709af138，不重放。R19唯一AUTORL_R19_REWARD_CREDIT_ONLY exit0/groupgone/complete，result e4b187eec7da23bcae213c92c9b36ec68ed751f7625ec8e19fd769fd7ee9ef1f。只读三R18 trace、两轮Train及ZIP JSON；train/optimizer/inference/physics/new episodes/Test0，OPS环境探针可import包但不加载策略。
+
+真实gamma .99：32k成功回报8.059904，R16/R17final失败6.500101/5.725403，反驳“Reward偏好这两个失败”在三trace上的解释；+10成功bonus发生第283步，折扣只留.587658（5.8766%）。.995/.999/1只是相同记录反事实算术，不是训练结果/真实advantage。R16/R17原域每轮32686采样步，empty实际18166/27282（55.58%/83.47%），reset51/223与77/144（22.87%/53.47%）；两尾20/238步计曝光，不补Reward或terminal。不能将50%reset误作50%rollout、将惩罚总量误作梯度。
+
+1135选择PASS（187OPS含9新增/63Tensor/885历史），15排除，0测试optimizer；REG96e61d65…/SOURCE7c363f49…124文件/EXEC643d79a0…/checksee0890fd…。独立预审C0/I0/新Minor0，R7范围Minor与R18发布流程Minor分别保留。全部299grant文件+7历史raw/旧模型不变，余额1213568step/43200s、stop=false，无预留/退款/重置。inner.213s/CPU.213s，launcher12.439s，wholeHWM237.645MiB，guard样本minMem7864.406MiB，连续全程最低NOT AVAILABLE；未观察OOM，既有ABI/3D warning披露。
+
+完整报告PHASE_AUTORL_R19_REWARD_CREDIT.md、autonomous_rl_reward_credit_r19.json及三实际图；算法提升NOT TESTED。实际独立结果复审、完整检查exit0后单独Commit、正常OPS sync/远端核验仍以真实收据为准。下一安全研究R20优先只改变gamma .99→.995，相对R17其余条件不变，新初始化/新ID/65536步候选，先新测试/独立GO/预算stop资源，不能现在直跑或旧ZIP续训。不小幅盲搜更多empty比例。普通阶段继续长期研发，PX4/FASTLIO/实机/封存Test禁止。
+
+下方为历史快照，不是重放指令。
+
+## AUTORL-R19 历史：既有Reward与样本曝光只读审计准入中（2026-10-16）
+
+R18及发布补充已正常OPS sync，远端4967f0abc53552730e660d8dbe5e2674709af138；不重放。R18首次提交前检查exit2的公开流程Minor保留，后续完整检查exit0后再单独commit。
+
+新research/lidar-reward-credit-r19，AUTORL_R19_REWARD_CREDIT_ONLY。固定R18三trace、R16/R17 Train原始记录和三个ZIP JSON元数据；不加载策略模型、不采样、不更新优化器、不运行Test，OPS版本探针可能import依赖。REG96e61d65…/SOURCE7c363f49…124文件/EXEC643d79a0…，120sCPU1，唯一OUT.research_local/autorl_r19_reward_credit/run_01，已有OUT不得重试。1135实际选择PASS/15排除/0测试optimizer、精确独立GO C0/I0新Minor0及新register/recover/doctor/历史/stop/资源已通过。唯一启动请求现在发出；不得因会话句柄无结果再次启动，先核真实attempt/result/complete/exit/进程/锁。
+
+全部299授权文件及7历史raw须字节不变，余额1213568step/43200s、stop=false，不预留不退款不重置。下一安全动作：完整1135测试预期（实际须核）和独立精确GO→activate_autorl_r19.py新register/recover/doctor→唯一受监督launch_autorl_r19.py。重启先核真实attempt/result/complete/exit/进程/锁；不得依据旧状态重复启动。完成真实三图/中文MDJSON/独立结果复审/完整检查/独立commit/正常OPS sync核远端后，再由审计决定下一单变量实验。当前新训练尚未冻结或启动；旧grant未失效，但不得绕过新实验准入。
+
+下方为历史快照，不是重放指令。
+
 ## AUTORL-R18 最新：本例final未进入目标区，零训练动态诊断PASS（2026-10-16）
 
 发布补充：首次结果提交1ee2d6f7568b0e6043386763410bee32c27884e7已远端核验，但提交前空白检查因stopping_dynamics.py:85多余末空行exit2，工具编排未中止而仍commit。明确保留该FAIL警告，不改已验证SOURCE/不重跑；独立确认19文件白名单/121 SOURCE/统计/授权无损，C0/I0、新发布流程Minor1，另继承R7 Minor1。phase/report公开补充另经精确审查/文档提交同步；后续先完整核验检查成功，再单独调用commit。不得声称原git show --check通过。
