@@ -1149,6 +1149,34 @@
   "optimizer_updates": 0,
   "phase_id": "AUTORL-R18-STOPPING-DYNAMICS",
   "physics_steps": 20660,
+  "publication_addendum": {
+    "all19_committed_paths_match_reviewed_registration": true,
+    "all_blobs_source_review_history_readiness_reverified": true,
+    "evidence": {
+      "path": ".research_local/autorl_r18_publication_warning_01.json",
+      "sha256": "1a8c6481edf7231cd0c3403394160e819b706d3f36ff0860addf8d615562a27b"
+    },
+    "failed_check": "git diff --cached --check (exit2), stopping_dynamics.py:85 extra blank line at EOF",
+    "independent_disposition": {
+      "critical": 0,
+      "evidence": {
+        "path": ".research_local/autorl_r18_publication_disposition_review_01.json",
+        "sha256": "194ea82bc391d2e4b8d1950051b7bf501c1211e733d1bf30f690b454273099cf"
+      },
+      "important": 0,
+      "inherited_r7_minor": 1,
+      "method": "INDEPENDENT_READ_ONLY_SUBAGENT",
+      "publication_process_minor": 1,
+      "reviewed_report_sha256": "fcb512ca0b3aa69ee863a7bfc6c6c925d72288f0bb263a4c32b348fa8f4e6cab",
+      "status": "GO"
+    },
+    "original_released_report_sha256": "7fd9492f3c76dd09b37c862fb4b4a0255a38cf390f342fb4b35a03835181e4c4",
+    "original_result_commit": "1ee2d6f7568b0e6043386763410bee32c27884e7",
+    "process_error": "sequential tool orchestration did not abort and created commit after failed whitespace check",
+    "remedy": "Preserve reviewed runtime bytes and historical commit, disclose warning; future commits require full successful checks before separate commit invocation; no repeat diagnostic, amend or force push",
+    "runtime_source_unchanged": true,
+    "status": "NONFUNCTIONAL_WHITESPACE_CHECK_FAILED_DISCLOSED"
+  },
   "raw_files": [
     {
       "bytes": 729313,

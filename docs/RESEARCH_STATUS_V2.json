@@ -1,7 +1,7 @@
 {
   "authority": "INFORMATION_ONLY; not a grant or restorable execution state",
   "automatic_training": "DISABLED",
-  "head_at_snapshot": "07f2113b44e25f473dada365d1487b5b4df0f984",
+  "head_at_snapshot": "1ee2d6f7568b0e6043386763410bee32c27884e7",
   "operations_version": "RESEARCH_OPS_V2",
   "phase_id": "AUTORL-R18-STOPPING-DYNAMICS",
   "protocol_sha256": "d819df6675aad216c97c760d931bcb3085d2443076b6e215ae0d147e78eaf916",
