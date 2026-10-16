@@ -1,0 +1,1789 @@
+{
+  "R13_raw_unchanged": true,
+  "actual_model_architecture": [
+    {
+      "actor_mlp_passes": 2,
+      "optimizer_parameter_objects_preserved": true,
+      "parameters": 170857,
+      "shared_cnn_passes": 1,
+      "version": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+      "zero_state_mean": "STRUCTURAL_IDENTITY_NOT_LEARNED_SUCCESS"
+    },
+    {
+      "actor_mlp_passes": 2,
+      "optimizer_parameter_objects_preserved": true,
+      "parameters": 170857,
+      "shared_cnn_passes": 1,
+      "version": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+      "zero_state_mean": "STRUCTURAL_IDENTITY_NOT_LEARNED_SUCCESS"
+    }
+  ],
+  "actual_new_inference_rows": 124,
+  "actual_new_model_count": 2,
+  "all_authorization_files_unchanged": true,
+  "analysis": {
+    "bytes": 5025,
+    "path": ".research_local/autorl_r15_analysis.json",
+    "sha256": "ec8e8d5636e3d68f623e24bdaa0deb35b7904d3cdd0874c565002d912fc5e996"
+  },
+  "analysis_method": {
+    "bytes": 5882,
+    "path": ".research_local/analyze_autorl_r15.py",
+    "sha256": "084e68b918c42f329090e2fdc69cfe96956ca253662697d43c79882116c1c261"
+  },
+  "authorization_file_count": 247,
+  "budget_after": {
+    "attempts": [
+      {
+        "experiment_id": "ARL_R1_UNIFORM_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "curriculum_rule": "empty until 32768; switch only on next natural episode reset",
+          "device": "cpu",
+          "experiment_id": "ARL_R1_UNIFORM_SEED0",
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "de9a5517c7806fce459411acb9204e010124284d1dd763718e99797684cb7714",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 1,
+          "seed": 0,
+          "source_identity_sha256": "5d969e4ca2758a185e2940522668df57ff0effa194140a27fabc0c63bedef957",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R1_UNIFORM_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 586.9869169550002,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "1fb6c28449d2bdd8581df6f93d2808560ced9dbe14b9ca0857c99b335ebb1fbd",
+          "summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "CURRICULUM",
+          "curriculum_rule": "empty until 32768; switch only on next natural episode reset",
+          "device": "cpu",
+          "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "de9a5517c7806fce459411acb9204e010124284d1dd763718e99797684cb7714",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 1,
+          "seed": 0,
+          "source_identity_sha256": "5d969e4ca2758a185e2940522668df57ff0effa194140a27fabc0c63bedef957",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 546.1161378489996,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "a72c5be40f7937b98b8d12e0b5e1891f7a8b867097174dcf500b0c37fd50dfa4",
+          "summary_sha256": "8efe9be7a973f4342a5900d8b91940d608e56667eb4218137f99cb93040cfcf0"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R2_PRIOR_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed small Validation; no learned LiDAR dependence or generalization proof",
+            "initialization_effect": "final successes > R1 final successes and collisions <= R1 final collisions",
+            "learning_over_prior": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "ANALYTIC_PRIOR_R2_V1",
+          "expected_prior_policy_sha256": "1f3e9a0a6779d9b7290ba138bda5e6f916e5d73380b291cc9a97d1650c5e835c",
+          "experiment_id": "ARL_R2_PRIOR_SEED0",
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "520b6dfd65c796efe67f15e2eb2799908ae1e45b4b7f648902a049d4ee638757",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 2,
+          "seed": 0,
+          "source_identity_sha256": "44bd92f55daabbda4ce21b07a6563b27d2ed0cec9cb395a250cbe65f6179ca1e",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R2_PRIOR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 814.918260017,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "09a4da2c329ddcf6dc6da79dfa4c49c0bac6eab441e53f6c99e2a6040566f61e",
+          "summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed historical control; no learned LiDAR dependence or generalization proof",
+            "initial_std_effect": "final successes > same-mean historical std1 final successes and collisions <= control",
+            "learning_over_step0": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "INITIAL_STD_R3_V1",
+          "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 3,
+          "seed": 0,
+          "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "variant": "RANDOM",
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 713.3204778079999,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "20f0382a1e544c9a9c4419763819e9e24a6ca49c2c48033bbfb7267501ddd80d",
+          "summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed historical control; no learned LiDAR dependence or generalization proof",
+            "initial_std_effect": "final successes > same-mean historical std1 final successes and collisions <= control",
+            "learning_over_step0": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "INITIAL_STD_R3_V1",
+          "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 3,
+          "seed": 0,
+          "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "variant": "PRIOR",
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 851.6884080749996,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "6b9e46d53fabc20f2b064c7588f283f96238b8a9b4e06b6cc2f68b51982bd739",
+          "summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "single seed small Validation; no generalized obstacle avoidance claim",
+            "learning": "short final successes > own step0 short successes",
+            "original_final_collision_max": 6,
+            "original_final_success_min": 1,
+            "original_step0": "reuse fixed R3 RANDOM step0 identical policy evidence, not a new episode",
+            "selection": "FINAL_CHECKPOINT",
+            "short_final_collision_max": 1,
+            "short_final_physical_sensor_failures_max": 0,
+            "short_final_success_min": 4
+          },
+          "execution_profile": "DISTANCE_CURRICULUM_R6_V1",
+          "expected_initial_policy_sha256": "db33ba4df5f7aaf76f98b7915675cbfc80dbe52273045ed86811b5cc074dfa06",
+          "experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "79ad97c769fb046efd1908ad73db945d437fd1ab3c7945b52162bff56a174fb8",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 6,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "source_identity_sha256": "ca83fb16b419ddcd4401249d9fbcd56b4e5577ba96625f792fff18803fd4218c",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "reason": "fixed training worker failed: 1"
+        },
+        "status": "FAIL"
+      },
+      {
+        "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "single seed small Validation; no generalized obstacle avoidance claim",
+            "learning": "short final successes > own step0 short successes",
+            "original_final_collision_max": 6,
+            "original_final_success_min": 1,
+            "original_step0": "reuse fixed R3 RANDOM step0 identical policy evidence, not a new episode",
+            "selection": "FINAL_CHECKPOINT",
+            "short_final_collision_max": 1,
+            "short_final_physical_sensor_failures_max": 0,
+            "short_final_success_min": 4
+          },
+          "execution_profile": "DISTANCE_CURRICULUM_R8_REPAIRED_V1",
+          "expected_initial_policy_sha256": "db33ba4df5f7aaf76f98b7915675cbfc80dbe52273045ed86811b5cc074dfa06",
+          "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "a5c17d1466d52603580b903615b6957350c68c06e37b94f34714ee31bdd441e4",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 8,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "source_identity_sha256": "62b3302122dc6d265b60112918082c2beb59239bc326eb6ab4d9c9c7de4a32a4",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 720.3382397109999,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "2eeb62e185b5c1bfe9de5aa6a299dcc5e546248aaa7b88661667ae719a58efbe",
+          "summary_sha256": "a6760dc61ff03a3895eb451f99d61d77513c643a3e8d4f8e31a55f556475dce4"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "a6760dc61ff03a3895eb451f99d61d77513c643a3e8d4f8e31a55f556475dce4",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "hand-written initial ability is not learning; single seed small Validation, no LiDAR/generalization proof",
+            "initialization_benefit": "original final successes > historical R8 final0; collisions <= R8 final2",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own original step0",
+            "original_step0": "reuse fixed R3 PRIOR/std03 identical full policy; zero new episodes",
+            "physical_sensor_failures_max": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0 short successes; collisions <= own step0"
+          },
+          "execution_profile": "PRIOR_DISTANCE_R10_V1",
+          "expected_initial_policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74",
+          "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "original_step0_summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+          "registration_sha256": "69fcf055e72c0fee6986be3d6e4f7966e7308c9e958d9f6742bf2e5076bed302",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 10,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "5170a41bb9cade75afa81f215755e5dfbfe15b7f1c9a39e736c07e5f8cca55b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 772.0242655540005,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf",
+          "summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "0847525a939fee3eaf23a0cbf32511a7828aeaa7059084ed86ce81ce25ebc876",
+          "control_summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "hand-written initial ability is not learning; single seed small Validation, no LiDAR/generalization proof",
+            "control_original_final_collision_max": 1,
+            "first32_approx_kl_mean_max": 0.03568412724416703,
+            "kl_claim": "last epoch minibatch approximate reverse KL; mechanism result is not navigation success",
+            "learning_rate_benefit": "original final successes > historical R10 final0; collisions <= R10 final1",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own original step0",
+            "original_step0": "reuse fixed R3 PRIOR/std03 identical full policy; zero new episodes",
+            "physical_sensor_failures_max": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0 short successes; collisions <= own step0"
+          },
+          "execution_profile": "PRIOR_GLOBAL_LOWER_LR_R11_V1",
+          "expected_initial_policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74",
+          "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC; base L6/L7 identities are provenance, R11 overrides effective LR only",
+          "original_step0_summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+          "registration_sha256": "6e6907a34e99547967d7cfcbd85740eb4fe20fde23edc205e47b9679a3ecb003",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 11,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "ab7544a0c895f3a406bb3123138fe82dbe059932d748bf7ae107b319f54897d8",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 828.7288000170001,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "25c6571ecf76757b052a73ca41d620c5d42e39c42d473c36223ae65ee5b80e39",
+          "summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "8a5c911619a7905172d94674664011e7cc6b3dbbae7db42e3b6706f53b8c7dc3",
+          "control_summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actor_function_benefit": "original final successes > historical R11 final0; collisions <= R11 final6",
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed and finite Validation; structural zero mean and hand-written initial ability are not learning",
+            "control_original_final_collision_max": 6,
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "original_step0": "NEW actual evaluation; never reuse old-class performance",
+            "physical_sensor_failures_max": 0,
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+          },
+          "execution_profile": "CENTERED_ACTOR_R14_V1",
+          "expected_initial_policy_sha256": "20f5c226abc762e5aa4a9046ba400b2b0f7012b0da6715d14204b097cae06001",
+          "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_FUNCTION",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "3630bf9efc2b87f2c3d96860a269a8750aaa1e64bdd950f438f7b4fe90e6acd9",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 14,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "87cd42df2c4cd497f609fea44f2b1f1105548e19e1cc9043d2047df335a1651e",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 777.0309924369994,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "aaa06e48b1f1b4b6b23389b238064e3a027179b7e6ae9f6a370a16003118fa4d",
+          "summary_sha256": "0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd"
+        },
+        "status": "COMPLETE"
+      }
+    ],
+    "authorization_id": "AUTONOMOUS-RL-RESEARCH-V1",
+    "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+    "remaining_timesteps": 1344640,
+    "remaining_wall_seconds": 50400,
+    "reserved_timesteps": 655360,
+    "reserved_wall_seconds": 36000,
+    "stop_requested": false,
+    "training_authorized": true
+  },
+  "case_count": 62,
+  "configuration": {
+    "budget_snapshot_sha256": "c1881a758eaaf19b4ea375a2676d9e4d477f27514fef9e429b936226d1069d40",
+    "case_count": 62,
+    "cases": [
+      {
+        "axis": "x",
+        "case_id": "x_error-2.0_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -2.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error-2.0_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error-2.0_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -2.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error-0.5_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -0.5,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error-0.5_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error-0.5_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -0.5,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error-0.1_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -0.1,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error-0.1_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error-0.1_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          -0.1,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.0_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.0_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.0_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.1_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.1,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.1_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.1_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.1,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.5_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.5,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.5_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error0.5_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.5,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error2.0_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          2.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error2.0_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "x",
+        "case_id": "x_error2.0_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          2.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-2.0_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -2.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-2.0_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-2.0_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -2.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-0.5_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -0.5,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-0.5_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-0.5_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -0.5,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-0.1_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-0.1_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error-0.1_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.0_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.0_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.0_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.1_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.1_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.1_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.5_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.5_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error0.5_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error2.0_velocity-1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          2.0,
+          0.0,
+          0.0,
+          -1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error2.0_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          2.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "y",
+        "case_id": "y_error2.0_velocity1.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          2.0,
+          0.0,
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error-0.5_velocity-0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          -0.5,
+          0.0,
+          0.0,
+          -0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error-0.5_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          -0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error-0.5_velocity0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          -0.5,
+          0.0,
+          0.0,
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error-0.1_velocity-0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          -0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error-0.1_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error-0.1_velocity0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.0_velocity-0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.0_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.0_velocity0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.1_velocity-0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          -0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.1_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.1_velocity0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.5_velocity-0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          -0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.5_velocity0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "z",
+        "case_id": "z_error0.5_velocity0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.5,
+          0.0,
+          0.0,
+          0.5,
+          0.0
+        ]
+      },
+      {
+        "axis": "yaw",
+        "case_id": "yaw_error-0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.5
+        ]
+      },
+      {
+        "axis": "yaw",
+        "case_id": "yaw_error-0.1",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.1
+        ]
+      },
+      {
+        "axis": "yaw",
+        "case_id": "yaw_error0.0",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "axis": "yaw",
+        "case_id": "yaw_error0.1",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.1
+        ]
+      },
+      {
+        "axis": "yaw",
+        "case_id": "yaw_error0.5",
+        "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+        "state": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.5
+        ]
+      }
+    ],
+    "claim_limit": "fixed historical-background counterfactual feedback, not physical braking, drift, navigation success or generalization",
+    "device": "cpu",
+    "episodes": 0,
+    "experiment_id": "AUTORL_R15_CENTERED_FEEDBACK_ONLY",
+    "historical_centered_initial_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+    "kind": "READ_ONLY_INFERENCE_NOT_TRAINING",
+    "model_count": 2,
+    "model_steps": [
+      32768,
+      65536
+    ],
+    "models": [
+      {
+        "actual_step": 32768,
+        "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R14_CENTERED_ACTOR_SEED0/ARL_R14_CENTERED_ACTOR_SEED0_STEP32768.zip",
+        "checkpoint_sha256": "61a200948d9b9f41fb3f1af749ded5e05ae86dcdc926a3a9e4d6cfde71bc0b28",
+        "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+        "policy_sha256": "ead0f6d3c5c532adcc7147a812b9f8ee2406695d296dc5d445a5769948faf5a1",
+        "protocol_sha256": "aaa06e48b1f1b4b6b23389b238064e3a027179b7e6ae9f6a370a16003118fa4d",
+        "run_id": "ARL_R14_CENTERED_ACTOR_SEED0_STEP32768",
+        "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R14_CENTERED_ACTOR_SEED0/ARL_R14_CENTERED_ACTOR_SEED0_STEP32768.json",
+        "sidecar_sha256": "b083676de287aae42153b29e1a4e8abf69082bc0da0bf3fbd2c84501bc64854a",
+        "summary_sha256": "0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd",
+        "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+      },
+      {
+        "actual_step": 65536,
+        "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R14_CENTERED_ACTOR_SEED0/ARL_R14_CENTERED_ACTOR_SEED0_STEP65536.zip",
+        "checkpoint_sha256": "9c4bf63a6dea2cab494c429ea5c658b6280c20358fdd456b8d1a4926312a29bf",
+        "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+        "policy_sha256": "fddca27533edbd8df551eae297ef9f26a548214fd37fc6bb00048b9c22ec3fc8",
+        "protocol_sha256": "aaa06e48b1f1b4b6b23389b238064e3a027179b7e6ae9f6a370a16003118fa4d",
+        "run_id": "ARL_R14_CENTERED_ACTOR_SEED0_STEP65536",
+        "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R14_CENTERED_ACTOR_SEED0/ARL_R14_CENTERED_ACTOR_SEED0_STEP65536.json",
+        "sidecar_sha256": "9cbedbe7e048084d37695c30a1df3bae2d708a2d056f0782aaabc6e46ca49dbc",
+        "summary_sha256": "0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd",
+        "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+      }
+    ],
+    "new_inference_rows": 124,
+    "new_scans": 0,
+    "optimizer_updates": 0,
+    "physics_steps": 0,
+    "reference_usage": "R13_SAME_CENTERED_CLASS_INITIAL_PANEL_REUSED_NO_NEW_INFERENCE",
+    "registration_sha256": "3e4595837231c8bef9085a45c7f723e21983ffcd197a1d9e5c4e5d96ff022969",
+    "retention": {
+      "all_three_axis_goal_sign_fractions": 1.0,
+      "all_velocity_response_differences": "WITHIN_REFERENCE_ZERO_TOLERANCE",
+      "max_action_difference_to_reference": 0.05,
+      "velocity_response_difference_error_max_m_s": 0.05,
+      "yaw_response_difference": "STRICTLY_POSITIVE",
+      "zero_velocity_norm_max_m_s": 0.05
+    },
+    "source_identity_sha256": "87f8ad7efdb0d4a817208c20299535569efbba653b1b1152bfccb8ab460b512d",
+    "test_episodes": 0,
+    "training_timesteps": 0,
+    "validation_episodes": 0,
+    "wall_seconds": 120,
+    "workers": 1
+  },
+  "episodes": 0,
+  "execution_protocol_sha256": "fbd8951ff158c1a7e9daf1bc959b14de6ff335878bfa2a6e9cb78d139f966c2e",
+  "exit_evidence": {
+    "bytes": 283,
+    "path": ".research_local/autorl_r15_exit_01.json",
+    "sha256": "69400e897ab6a464cd5a8bb9ea07b25ef27254a243cdd41c2f9294c7825a56ab"
+  },
+  "figures": [
+    {
+      "path": "mujoco/reports/autonomous_rl_centered_feedback_r15/figures/position_feedback.png",
+      "sha256": "065efdf9a891d71975dbefadd687b2a93147436aa40b72fda029921cc1112e28"
+    },
+    {
+      "path": "mujoco/reports/autonomous_rl_centered_feedback_r15/figures/velocity_response.png",
+      "sha256": "cffe31be3f9c00900fdb65c76a279da2b1fc82039d6c3626fe1883cb9f097a97"
+    },
+    {
+      "path": "mujoco/reports/autonomous_rl_centered_feedback_r15/figures/yaw_response.png",
+      "sha256": "77841d7c5e9c136e92d1fe2fb9d5277e00ab3a7dabef0fbed7b2dbf95dcdf9b2"
+    }
+  ],
+  "historical_background_usage": "HISTORICAL_R4_REAL_MUJOCO_RESET_REUSED_NO_NEW_SENSOR_SAMPLE",
+  "historical_initial_metrics": {
+    "actual_step": 0,
+    "batch_inference_ms": 4.407968999657896,
+    "criterion_scope": "prior-function retention only; not navigation or learned braking",
+    "experiment_id": "AUTORL_R13_CENTERED_ACTOR_PREFLIGHT_ONLY",
+    "max_action_difference_to_initial": 0.0,
+    "mean_boundary_fraction_not_training_clip": 0.0,
+    "panel_prior_retention": "PASS",
+    "provenance": "HISTORICAL_R13_INITIAL_REUSED_NOT_NEW_INFERENCE",
+    "x_goal_sign_fraction": 1.0,
+    "x_positive_minus_negative_velocity_command": 0.0,
+    "y_goal_sign_fraction": 1.0,
+    "y_positive_minus_negative_velocity_command": 0.0,
+    "yaw_response_difference_over_1_rad": 0.9958556890487671,
+    "z_goal_sign_fraction": 1.0,
+    "z_positive_minus_negative_velocity_command": 0.0,
+    "zero_state_raw_mean": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "zero_state_std": [
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657,
+      0.29999998211860657
+    ],
+    "zero_state_velocity_command_norm": 0.0,
+    "zero_state_yaw_rate": 0.0
+  },
+  "historical_initial_policy_sha256": "20f5c226abc762e5aa4a9046ba400b2b0f7012b0da6715d14204b097cae06001",
+  "historical_initial_rows_reused": 62,
+  "history": {
+    "historical_scoped_counts": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "historical_untracked_counts": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "new_untracked_names": {
+      "/home/keyousuke/MineUAV-Learning": []
+    },
+    "protected_count": 1404,
+    "unchanged": true
+  },
+  "implementation_status": "PASS",
+  "limitations": [
+    "one historical sensor/heading/age background and finite counterfactual state panel",
+    "not trajectories or new LiDAR frames; no physical braking or causal navigation proof",
+    "prior retention is not learned improvement; structural zero is not a scientific achievement",
+    "no Test/PX4/FASTLIO/hardware; no optimizer/update/extra budget reservation",
+    "existing optionalcv2/NumPy ABI stderr and MatplotlibAxes3D warning, working CPU/2D path, unchanged dependencies",
+    "inheritedR7 malformed active_task diagnostic Minor, outside read-only inference path"
+  ],
+  "metrics": [
+    {
+      "actual_step": 32768,
+      "batch_inference_ms": 4.561945999739692,
+      "criterion_scope": "prior-function retention only; not navigation or learned braking",
+      "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+      "max_action_difference_to_initial": 0.2151040881872177,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "panel_prior_retention": "FAIL",
+      "x_goal_sign_fraction": 1.0,
+      "x_positive_minus_negative_velocity_command": -0.28546953946352005,
+      "y_goal_sign_fraction": 1.0,
+      "y_positive_minus_negative_velocity_command": -0.41038186848163605,
+      "yaw_response_difference_over_1_rad": 0.9488687217235565,
+      "z_goal_sign_fraction": 1.0,
+      "z_positive_minus_negative_velocity_command": -0.07513529062271118,
+      "zero_state_raw_mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "zero_state_std": [
+        0.3003564476966858,
+        0.30018875002861023,
+        0.2997729778289795,
+        0.29979407787323
+      ],
+      "zero_state_velocity_command_norm": 0.0,
+      "zero_state_yaw_rate": 0.0
+    },
+    {
+      "actual_step": 65536,
+      "batch_inference_ms": 3.140518001600867,
+      "criterion_scope": "prior-function retention only; not navigation or learned braking",
+      "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+      "max_action_difference_to_initial": 0.2077559530735016,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "panel_prior_retention": "FAIL",
+      "x_goal_sign_fraction": 1.0,
+      "x_positive_minus_negative_velocity_command": -0.4326980262994766,
+      "y_goal_sign_fraction": 1.0,
+      "y_positive_minus_negative_velocity_command": -0.34541353583335876,
+      "yaw_response_difference_over_1_rad": 0.9467388689517975,
+      "z_goal_sign_fraction": 1.0,
+      "z_positive_minus_negative_velocity_command": -0.0879555232822895,
+      "zero_state_raw_mean": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "zero_state_std": [
+        0.300361305475235,
+        0.30077213048934937,
+        0.2997852563858032,
+        0.2994759976863861
+      ],
+      "zero_state_velocity_command_norm": 0.0,
+      "zero_state_yaw_rate": 0.0
+    }
+  ],
+  "navigation_learning_result": "NOT TESTED; no physical/control or evaluation episode",
+  "new_scans": 0,
+  "next_action": "Only after result review/phase delivery/Commit/OPS sync remote: choose a new single-variable hypothesis from actual feedback and R14 evidence; never retry currentID or resume oldtraining.",
+  "optimizer_updates": 0,
+  "panel_retention": [
+    "FAIL",
+    "FAIL"
+  ],
+  "phase_id": "AUTORL-R15-CENTERED-FEEDBACK",
+  "physics_steps": 0,
+  "raw_files": [
+    {
+      "bytes": 626,
+      "experiment_id": "AUTORL_R15_CENTERED_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r15_centered_feedback/run_01/attempt.json",
+      "sha256": "536dfc57917259eddfa614eca46c7de96b1300f339257baba599df197cda9bbc"
+    },
+    {
+      "bytes": 90,
+      "experiment_id": "AUTORL_R15_CENTERED_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r15_centered_feedback/run_01/complete.json",
+      "sha256": "2444e298756d2dd8cbff6abe62933fd4d7875b61652839932fdd7b5b2f5fecf9"
+    },
+    {
+      "bytes": 239735,
+      "experiment_id": "AUTORL_R15_CENTERED_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r15_centered_feedback/run_01/result.json",
+      "sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846"
+    }
+  ],
+  "read_only_invariants": {
+    "optimizer_state_unchanged": true,
+    "panel_torch_rng_unchanged": true,
+    "scope": "checkpoint construction/load may consume local RNG; invariance applies within each panel",
+    "weights_unchanged": true
+  },
+  "registration_sha256": "3e4595837231c8bef9085a45c7f723e21983ffcd197a1d9e5c4e5d96ff022969",
+  "resources": {
+    "inner_cpu_seconds": 6.013678218,
+    "inner_wall_seconds": 6.8406036689993925,
+    "launcher_wall_seconds": 14.090641742001026,
+    "mem_sample_scope": "two pre-model observations only; not continuous full-run minimum",
+    "min_pre_model_sampled_mem_available_mib": 8065.7265625,
+    "resource_protection_trigger_observed": false,
+    "whole_reaped_child_tree_hwm_rss_mib": 486.87109375,
+    "worker_hwm_rss_mib": 486.87109375
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r15_results_review_01.json",
+      "sha256": "0bf31917677d3e1490e5fdaede74ece130c16b2f70bd9fcf3b7f20372a58d5d9"
+    },
+    "important": 0,
+    "inherited_minor": 1,
+    "method": "INDEPENDENT_READ_ONLY_SUBAGENT",
+    "new_minor": 0,
+    "reviewed_report_sha256": "86cc9191b0dd1b908423407e6d1e80abcc6da84787777d7e77270c68ce9d3569",
+    "source_identity_sha256": "87f8ad7efdb0d4a817208c20299535569efbba653b1b1152bfccb8ab460b512d",
+    "status": "GO"
+  },
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "bytes": 1785,
+      "path": ".research_local/autorl_r15_pre_review_01.json",
+      "sha256": "86e8037880720851719b34640ad7d3ddb49beaa8b755af5146e95e0a0bc176b0"
+    },
+    "important": 0,
+    "inherited_minor": 1,
+    "method": "INDEPENDENT_READ_ONLY_SUBAGENT",
+    "new_minor": 0,
+    "source_identity_sha256": "87f8ad7efdb0d4a817208c20299535569efbba653b1b1152bfccb8ab460b512d",
+    "status": "GO"
+  },
+  "source_identity_sha256": "87f8ad7efdb0d4a817208c20299535569efbba653b1b1152bfccb8ab460b512d",
+  "test_episodes": 0,
+  "tests": {
+    "evidence": {
+      "path": ".research_local/autorl_r15_operations_final_01.json",
+      "sha256": "c108393c727bc888b4e32462b7d87925bb9e519be3fe6dbc1ee3bc5061d4de20"
+    },
+    "excluded": 15,
+    "historical_pass": 885,
+    "method_contract_evidence": {
+      "bytes": 681,
+      "path": ".research_local/autorl_r15_analysis_green_01.json",
+      "sha256": "aad26e9e67d5296718d8ec0e1ce9eacaab37fa51eeabd025a0399b8a055166e1"
+    },
+    "new_tests": {
+      "arrays": 2,
+      "method_contracts": 4,
+      "pure": 7
+    },
+    "operations_pass": 159,
+    "optimizer_updates": 0,
+    "other_evidence": {
+      "historical": {
+        "path": ".research_local/autorl_r15_historical_final_01.json",
+        "sha256": "fdfb5f93ebaf9ac016e99f25aac119c2d2a93367311cfdf4719e5a7c49451dba"
+      },
+      "operations": {
+        "path": ".research_local/autorl_r15_operations_final_01.json",
+        "sha256": "c108393c727bc888b4e32462b7d87925bb9e519be3fe6dbc1ee3bc5061d4de20"
+      },
+      "runtime_binding": {
+        "path": ".research_local/autorl_r15_runtime_binding_final_01.json",
+        "sha256": "d78cda0e5f5914b9f66b7735f65b7ed3cce2ad602ef11b8e757e4607fcca5cc5"
+      },
+      "tensor": {
+        "path": ".research_local/autorl_r15_tensor_final_01.json",
+        "sha256": "598f8cfc407e3cdb81b64e199e62f27e57fc4be013676449069d33a09dc25ce3"
+      }
+    },
+    "scope": "selected current no-optimizer suites, not entire repository",
+    "selected_total_pass": 1097,
+    "status": "PASS",
+    "tensor_pass": 53
+  },
+  "training_timesteps": 0,
+  "validation_episodes": 0
+}

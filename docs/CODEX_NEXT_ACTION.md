@@ -1,3 +1,35 @@
+## AUTORL-R15 最新：新模型形成负速度反馈，尚不证明导航学习（2026-10-16）
+
+R14已完整推1ab46a3d0c857ded3c0f496db0e54261a49b3005，科学总FAIL不改。R15唯一AUTORL_R15_CENTERED_FEEDBACK_ONLY exit0/groupgone，result SHA85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846；R14两个新32k/final模型×62反事实输入=124新行，R13同类初态62仅复用，R4真实历史背景固定。训练/optimizer/物理/新扫描/episode/Val/Test均0。
+
+三轴非零位置误差方向正确率各1，零state声明速度为0（结构），Yaw方向正确。final在+0.1m误差下正速度减负速度的声明指令差X/Y/Z=-0.432698/-0.345414/-0.087956m/s，初态全0；支持该固定背景上形成负速度反馈，不是物理制动稳定性证明。两个panel相对初态动作最大差.215104/.207756、先验保留均FAIL；改变初态不自动是Bug，不能拿保留或结构零输出替代导航成功。R14原Val仍1/6，不声称学习提升。
+
+1097选择回归PASS（159OPS/53Tensor/885历史、15排除、0测试optimizer）及4分析契约；独立预审C0/I0/新Minor0，新register/recover/doctor实际通过，108源码身份不变。247授权文件+R13四raw保持，余1344640step/50400s、stop=false，无预留/退款。innerwall6.841s/CPU6.014s，launcher14.091s，wholechildHWM486.871MiB；两次模型前Mem采样最小8065.727MiB，不冒充全程最低。报告PHASE_AUTORL_R15_CENTERED_FEEDBACK.md、autonomous_rl_centered_feedback_r15.json及三实际图，最终结果复审/Commit/OPS sync远端以真实收据为准。
+
+下一安全动作：完整交付同步后新R16单变量初始探索std0.3→0.1预检，保留中心化均值/CNN/Reward/全局LR3e-5/课程/物理不变；先新profile/初态均值一致性/测试/独立GO/预算stop资源，才可原授权下最多65536step/3600s新attempt。不是修改R14 ZIP继续训练，不重复R15。普通阶段继续长期研究，PX4/FASTLIO/实机/封存Test禁止。
+
+下方为历史快照，不是重放指令。
+
+## AUTORL-R15 权威：唯一推理启动请求已发出，只能监控
+
+完整159OPS+53Tensor+885历史=1097选择PASS/15排除/0optimizer，独立C0/I0/新Minor0 GO绑定checks f1f6dbe6…、REG3e459583…/SOURCE87f8ad7e…/EXECfbd8951f…；新OPS register/recover/doctor及247授权文件+4R13raw、stop/预算/资源实际通过。已唯一调用launch_autorl_r15.py→固定centered_feedback_run，不能重复启动；先审计.research_local/autorl_r15_centered_feedback/run_01与exit_01/真实process/flock。工具会话编号不是重启后进程证据。
+
+只124条R14两新模型固定输入推理，初态62历史复用；0optimizer/训练/物理/新扫描/episode/Val/Test。不修改任何预算/旧文件，余1344640step/50400s、stop=false。SOURCE运行期冻结。只有exit0/groupgone+完整result/complete才分析/图/中文MDJSON/独立结果复审/Commit/OPS sync远端；已有attempt永不重放，不从R14 ZIP继续训练。普通阶段不终止研究，PX4/FASTLIO/实机/Test禁止。
+
+以下为已结束准入过程，不是重放指令。
+
+## AUTORL-R15 当前：新R14反馈诊断准入中，尚未执行
+
+R14已完整提交并推1ab46a3d0c857ded3c0f496db0e54261a49b3005，OPS sync remote_sha_verified/phase_complete=true；最终报告SHA489c3aa7f211f393c8d552a501663d9e4e02556befa9751a0404aa9348fffe70，独立C0/I0/新Minor0/继承Minor1。R14永久不重复，原任务学习判据仍FAIL。
+
+当前research/lidar-centered-feedback-r15，设计AUTORL_R15_FEEDBACK_DESIGN.md。新R14 32k/final×62固定输入=124新推理；R13新类初态62只复用、R4背景历史复用，无新扫描/物理/episode/Val/Test/optimizer。新7纯+2数组已RED→GREEN；159OPS/53Tensor PASS、885历史仍在执行，不提前宣称全部通过。另4纯分析契约GREEN。REG3e459583…/SOURCE87f8ad7e…/executionfbd8951f…，完整checks及独立GO尚待。
+
+下一动作：等待完整当前checks与独立精确GO→新OPS register/recover/doctor→247个全部授权文件+R13raw/余额/stop/资源→唯一owned group运行centered_feedback_run。OUT.research_local/autorl_r15_centered_feedback/run_01尚不存在；恢复必须核实际attempt/process/flock，不能仅凭旧文字重新启动。余额1344640step/50400s、stop=false，R15不得预留/改账本。不改变R14旧Actor/Reward/worker/模型。
+
+完成实际结果/图/中文MDJSON/独立复审/Commit/OPS sync远端后再定下一单变量实验，不在普通阶段结束长期计划。PX4/FASTLIO/实机/Test禁止；先验保留或结构零输出不能报导航学习成功。
+
+下方为已结束历史，不得据此重复执行。
+
 ## AUTORL-R14 最新：中心化对照完整结束，科学总验收FAIL（2026-10-16）
 
 R13P已完整推76bd8065056fbb392e45d8f79b9e7c6aa5b394a5，不重复。唯一ARL_R14_CENTERED_ACTOR_SEED0已主管exit0/账本COMPLETE，65536实际step/512rollout/1024epoch/2048Adam，1309387真实物理tick；summary SHA0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd，SOURCE87cd42df…保持。306结束Train=38success/144collision/124timeout，SHORT108=34/10/64，ORIGINAL198=4/134/60，尾23步未完episode另列；自然切换32901，307reset只冻结Train。
