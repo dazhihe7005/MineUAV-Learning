@@ -64,7 +64,11 @@ def supervise(protocol,*,root=ROOT):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        if protocol['schema']==10:
+        if protocol['schema']==11:
+            if registration['phase_id']!='AUTORL-R11-LOWER-LR':raise OpsError('lower-LR requires reviewed R11 phase')
+            from .lower_lr_profile import verify_lower_lr_proof,verify_lower_lr_checks
+            verify_lower_lr_proof(protocol,root);verify_lower_lr_checks(protocol,root)
+        elif protocol['schema']==10:
             if registration['phase_id']!='AUTORL-R10-PRIOR-DISTANCE':raise OpsError('prior-distance requires its reviewed R10 phase')
             from .prior_distance_profile import verify_prior_distance_proof,verify_prior_distance_checks
             verify_prior_distance_proof(protocol,root);verify_prior_distance_checks(protocol,root)

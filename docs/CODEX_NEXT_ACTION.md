@@ -1,3 +1,31 @@
+## AUTORL-R11 最新：工程COMPLETE，低KL但导航FAIL（2026-10-16）
+
+R10已推21831fcc90d06756f431373643e75822b633eb7a，未重复。新R11仅将全局PPO LR3e-4→3e-5，唯一ARL_R11_PRIOR_LOWER_LR_SEED0已主管/账本COMPLETE：65536实际step/512rollout/1024epoch/2048Adam，1306104物理tick；summary SHA7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26、final ZIP9ec87ba5…，SOURCEab7544a0…未变。574结束Train=3success/481collision/90timeout；short106、original468，自然切换32811、尾0，575reset仅冻结Train。3成功均short，不证明学会导航。
+
+短Val初态手写先验6/0/0→32k0/0/6→final0/6/0，原Val初态历史R3 PRIOR1/3/2→32k0/4/2→final0/6/0；30新Val/6旧评价复用/Test0。四导航/保留标准FAIL；首32更新KL从R10.071368降至.002472、机制PASS不等于任务PASS。全512 KL均.005162，Critic解释方差仍低；不唯一归因或盲重跑百万步。
+
+1052选择回归PASS（131OPS/36Tensor/885历史，15排除/2既有warning）及5合成分析契约，不是全仓。23raw/5图身份完整、3checkpoint真实LR/optimizer/预测重载通过；194旧不可变授权文件及R9 17raw不变。主管wall828.729s、whole-worker HWM1790.242MiB含reload/Val，训练记录minMem7296.363MiB，全程含Val最低NOT_AVAILABLE。累计589824step/32400s保守预留，余1410176step/54000s、stop=false，不initialize/退款；旧L9永久FAIL与旧OPS零维护预算不改。完整报告PHASE_AUTORL_R11_LOWER_LR.md、autonomous_rl_lower_lr_r11.json，最终审查/远端以真实OPS收据为准。
+
+下一安全动作：完成R11真实结果独立复审/历史audit/Commit/OPS sync远端，之后R12零optimizer新冻结模型反馈诊断，复用R4背景与62固定反事实输入，只分析R10/R11新32k/final权重，非重做旧R4模型，不发控制/不采新训练数据。先新身份/源码准入/独立GO再执行；根据方向/速度反馈证据决定下一单变量实验。普通科学FAIL不结束长期研究，真实停止/安全/预算/会话限制才交接。PX4/FASTLIO/实机/封存Test仍禁止。
+
+以下为历史，不得据此重复启动实验。
+
+## AUTORL-R11 权威：唯一启动请求已发出，只能监控
+
+完整1052项选择准入PASS（131OPS/36Tensor/885历史，15排除）、独立C0/I0/继承Minor1 GO，新OPS register/recover/doctor/195旧授权文件/资源预算stop检查及prepare精确25c6571ecf76757b052a73ca41d620c5d42e39c42d473c36223ae65ee5b80e39均通过，已唯一调用start-lower-lr。事件17真实RESERVE、child进程身份及flock均已核对，账本实际余1410176step/54000s、stop=false，不initialize/退款。当前最后观察完整更新12032步，不是精确停止数或完成数；初期32更新KL.002472低于R10.071368，不代表导航成功。初始管理辅助脚本误读recover返回形状KeyError，实际register/recover已成功，仅继续doctor/历史核验，不重登记/不重复attempt。
+
+只读监控.research_local/authorized_rl_v1/runs/ARL_R11_PRIOR_LOWER_LR_SEED0及主管/child/flock。存在attempt永久不得再次prepare/start、不得从checkpoint继续；当前会话工具句柄不作重启后进程证据。运行期SOURCEab7544a0…冻结，不新增研究生产/测试py。若失败/未知先离线审计，保留RESTART_REQUIRED。主管及账本COMPLETE后真实分析、五判据/图/MD/JSON/独立结果审查/Commit/OPS sync远端，再自主下一个安全任务。PX4/FASTLIO/实机/Test禁止。
+
+下方为已结束准入快照，不是启动指令。
+
+## AUTORL-R11 当前：低全局LR对照准入中，尚未训练
+
+R10已完整推21831fcc90d06756f431373643e75822b633eb7a，OPS sync远端核验phase_complete=true；四科学FAIL不重试。当前research/lidar-prior-lower-lr-r11，新schema11/ARL_R11_PRIOR_LOWER_LR_SEED0，65536step/3600s，唯一变量全局PPO LR3e-4→3e-5；Actor/Critic同时改变，原先验/std/课程/Reward/CNN/物理不变。新6纯/1真实hook RED→GREEN，131OPS/36Tensor PASS，885历史回归仍在执行，不能提前完整PASS。REG6e6907a3…/SOURCEab7544a0…/protocol25c6571e…，细则AUTORL_R11_LOWER_LR_DESIGN.md。
+
+先等待完整当前准入收据及精确独立GO，再新OPS register/recover/doctor→全部旧授权文件/原历史/预算stop资源→prepare-lower-lr核对精确SHA→唯一start-lower-lr。尚未prepare/预留/start；余1475712step/57600s、stop=false，不initialize/退款或改旧预算。run一旦存在永久不能重试，RESTART_REQUIRED，不加载R10旧权重。30新Val+6同policy历史原step0评价复用/Test0，五独立判据包括机制不等于导航。完成结果审查/Commit/OPS sync远端后继续下一安全研究；PX4/FASTLIO/实机/封存Test禁止。
+
+下方为历史快照，不得重复执行。
+
 ## AUTORL-R10 最新：执行COMPLETE，四项科学标准FAIL（2026-10-16）
 
 唯一ARL_R10_PRIOR_DISTANCE_SEED0已由主管及账本COMPLETE，实际65536步/512rollout/1024PPOepoch/2048Adam，summary SHAc9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca、final ZIP90726f17…，SOURCE5170a41…未变。425结束Train=1success/318collision/106timeout，short165、original260，实际reset切换33100，尾137步未结束仍计预算。唯一训练成功不证明学会导航；short Val从初态手写先验6成功降为final0成功0碰撞6超时，original final0/1/5，30新Val/6历史R3 PRIOR step0复用/Test0。四科学标准均FAIL，不重跑本ID/不warmstart。
