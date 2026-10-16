@@ -64,7 +64,11 @@ def supervise(protocol,*,root=ROOT):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        if protocol['schema']==11:
+        if protocol['schema']==14:
+            if registration['phase_id']!='AUTORL-R14-CENTERED-ACTOR':raise OpsError('centered Actor requires reviewed R14 phase')
+            from .centered_training_profile import verify_centered_proof,verify_centered_checks
+            verify_centered_proof(protocol,root);verify_centered_checks(protocol,root)
+        elif protocol['schema']==11:
             if registration['phase_id']!='AUTORL-R11-LOWER-LR':raise OpsError('lower-LR requires reviewed R11 phase')
             from .lower_lr_profile import verify_lower_lr_proof,verify_lower_lr_checks
             verify_lower_lr_proof(protocol,root);verify_lower_lr_checks(protocol,root)

@@ -1,3 +1,35 @@
+## AUTORL-R14 最新：中心化对照完整结束，科学总验收FAIL（2026-10-16）
+
+R13P已完整推76bd8065056fbb392e45d8f79b9e7c6aa5b394a5，不重复。唯一ARL_R14_CENTERED_ACTOR_SEED0已主管exit0/账本COMPLETE，65536实际step/512rollout/1024epoch/2048Adam，1309387真实物理tick；summary SHA0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd，SOURCE87cd42df…保持。306结束Train=38success/144collision/124timeout，SHORT108=34/10/64，ORIGINAL198=4/134/60，尾23步未完episode另列；自然切换32901，307reset只冻结Train。
+
+36条全新Val/Test0/旧评价复用0；短0→32k→final为6/0/0→6/0/0→5/0/1，原目标始终1/3/2。短候选PASS、相对历史R11 final0成功6碰撞改善PASS；短初态保留FAIL、原目标严格胜自身初态FAIL，科学总验收FAIL。结构零输出/手写初态不是学会避障，Train成功数也不是独立泛化。原Train814近目标采样779仍速度过大，停稳仍需研究，非唯一根因。
+
+1088选择回归PASS（152OPS/51Tensor/885历史、15明确排除、0测试optimizer）及4分析契约；非全仓。三checkpoint真实参数/预测/optimizer重载核验，两个训练状态非空。220旧不可变授权文件+R13四raw保持。主管777.031s，whole child-tree HWM1789.898MiB，训练采样最低Mem7049.176MiB；含Val连续最低NOT AVAILABLE，无观察OOM。累计保守预留655360step/36000s，余1344640step/50400s、stop=false，不退款/扩大。
+
+完整报告PHASE_AUTORL_R14_CENTERED_TRAINING.md、autonomous_rl_centered_actor_r14.json及五张实际图。最终独立结果复审、Commit、正常OPS sync远端以真实收据为准，未全部通过前不称PHASE_COMPLETE。下一安全动作：完成交付后进入R15，仅新R14模型的固定输入反馈诊断，先新身份/准入/独立GO，0optimizer/新物理episode/Test；再按证据选择单变量训练。普通科学FAIL不终止长期计划。禁止重试R14、旧模型warmstart、PX4/FASTLIO/实机/封存Test。
+
+下方为历史快照，不得作为重跑指令。
+
+## AUTORL-R14 权威：唯一启动请求已发出，只能监控
+
+152OPS/51Tensor/885历史=1088选择准入PASS、独立C0/I0/新Minor0/继承Minor1 GO，REG3630bf9e…/SOURCE87cd42df…/executionaaa06e48…及checks071dd7d3…一致。新OPS register/recover/doctor与prepare-centered精确SHA均已实际通过，已唯一调用launch_autorl_r14.py→受监督start-centered。不得因为工具会话/旧文字尚无run记录而再次启动；先只读审计.research_local/authorized_rl_v1/runs/ARL_R14_CENTERED_ACTOR_SEED0、真实ledger/child/process/flock。工具PTY编号不是重启后进程身份证据。
+
+实际event19 RESERVE已核，账本余1344640step/50400s、stop=false；已观察到完整更新22656步（不是最终停止或完成数），真实worker child155034有boot/startticks身份、共享flock持有。首更新前5..125步的25条存储采样与R11对应position/velocity/action完全相同（只覆盖这些采样，不证明全状态一致或学习提升），独立只读收据autorl_r14_initial_pair.json。本轮仅65536step/3600sCPU1seed0、36新Val/Test0，新初态且不加载旧ZIP。SOURCE运行期冻结，包括新增生产/测试py也会改变聚合身份。R13P已推76bd8065…，不重放R13/R11/R6。原_01审查抄录JSON有重复key，被严格读取在任何activation/prepare前拒绝；invalid收据保留，改用同真实GO的正确_02收据，运行源码/准入不变。
+
+只有主管及账本COMPLETE后，才纯分析、实际图/MD/JSON/独立结果复审、Commit/正常OPS sync远端，再依据结果和余额继续下一安全阶段。失败/未知保留证据、RESTART_REQUIRED，不重试本ID/不warmstart。零state归零为结构，不是导航PASS。禁止PX4/FASTLIO/实机/封存Test；普通阶段不结束长期研究。
+
+以下为已结束准入过程，不是启动指令。
+
+## AUTORL-R14 当前：冻结中心化Actor对照已获完整准入，尚未预留启动
+
+R13P已完整推76bd8065056fbb392e45d8f79b9e7c6aa5b394a5、OPS sync远端phase_complete=true，原R13提交8492143随该分支历史发布，不重复。当前research/lidar-state-centered-training-r14，新schema14/ARL_R14_CENTERED_ACTOR_SEED0，仅65536step/3600sCPU1seed0，Actor中心化是相对R11唯一算法变量；原CNN/Critic/LR3e-5/std.3/课程/Reward/物理不变。新初态模型，不加载任何旧checkpoint，36个新Val、Test0。细则AUTORL_R14_CENTERED_TRAINING_DESIGN.md。
+
+REG3630bf9efc2b87f2c3d96860a269a8750aaa1e64bdd950f438f7b4fe90e6acd9 /SOURCE87cd42df2c4cd497f609fea44f2b1f1105548e19e1cc9043d2047df335a1651e /executionaaa06e48b1f1b4b6b23389b238064e3a027179b7e6ae9f6a370a16003118fa4d；完整152OPS+51Tensor+885历史=1088选择PASS、15排除、0测试optimizer，另4纯分析契约RED→GREEN；独立C0/I0/新Minor0/继承R7Minor1 GO精确绑定checks071dd7d3…和分析方法ea3bbb30…。一次早期绿色命名收据实际失败仅因测试误要求缺省reuse标志，而实现明确false；已修测试且保留收据，不宣称原收据PASS。
+
+下一安全动作：唯一activate_autorl_r14.py新register/recover/doctor、220旧不可变grant文件及R13四raw、预算stop资源、prepare-centered精确SHA；成功后唯一launch_autorl_r14.py调用受监督start-centered。当前余额1410176/54000stop=false，尚无新预留/attempt；若真实预留后应1344640/50400。重启必须先审计真实protocol/ledger/attempt/child/process/flock，不能依据本段推断未启动而重放。一旦run存在永久不重试/不warmstart，RESTART_REQUIRED。运行期所有生产/测试源码冻结；主管账本COMPLETE后分析/结果复审/图MDJSON/Commit/OPS sync远端，再继续下一安全研究；禁止PX4/FASTLIO/硬件/封存Test。
+
+以下为已结束历史，不得作为重跑指令。
+
 ## AUTORL-R13P 最新：已跟踪制品发布修复，等待真实同步收据（2026-10-16）
 
 R13唯一网络预检PASS，local commit8492143未被覆盖；原OPS sync在git add阶段受历史*_pre*/目录ignore阻塞，未谎报Push成功。R13P新版本仅修改publication.py及对应单测：精确白名单的tracked项用literal add-u，fresh仍普通add，不force上传忽略raw，不改.gitignore。24sync文件显式覆盖R13旧18项与本次6项，可靠发布锚点仍79befa26…，不把未发布HEAD当远端。
