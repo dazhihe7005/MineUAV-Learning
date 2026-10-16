@@ -1,0 +1,1304 @@
+{
+  "actual_new_validation_episodes": 0,
+  "actual_timesteps": "NOT VERIFIED",
+  "additional_historical_raw_unchanged": true,
+  "additional_posthoc_files": [
+    {
+      "bytes": 1796,
+      "path": ".research_local/autorl_r20_interruption_audit/run_01/boot_addendum.json",
+      "sha256": "cbdaf53bc6b8b31d761d01b19114fb7f9b224a2bf41e6bb6089acb70cd7ca066"
+    },
+    {
+      "bytes": 90,
+      "path": ".research_local/autorl_r20_interruption_audit/run_01/complete.json",
+      "sha256": "086633e85c15090c1915d08c39a841a448f81258c45cc9b9943a30d44ca84df6"
+    },
+    {
+      "bytes": 1173,
+      "path": ".research_local/autorl_r20_interruption_audit/run_01/previous_boot_kernel_shutdown.jsonl",
+      "sha256": "118f7db11d9ef639f30c5758415481a68bc18c3c724ca563455d5aa26c1251a5"
+    },
+    {
+      "bytes": 0,
+      "path": ".research_local/autorl_r20_interruption_audit/run_01/previous_boot_kernel_shutdown.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 51143,
+      "path": ".research_local/autorl_r20_interruption_audit/run_01/result.json",
+      "sha256": "a3a83177901705d5f25525313f9a8dbe3d19bb91ab91a05175469af007586afd"
+    }
+  ],
+  "additional_raw_count": 16,
+  "analysis": {
+    "bytes": 1547,
+    "path": ".research_local/autorl_r20_interruption_analysis.json",
+    "sha256": "bf0ccfe0efdab4c3728b330dfe86a2ca046861c376e931076bd29b4f7d6faf77"
+  },
+  "analysis_method": {
+    "bytes": 4964,
+    "path": ".research_local/analyze_autorl_r20_interruption.py",
+    "sha256": "377bf2948b9b89d2251014b28167d87fd7c1deeb40ce294e87e3d62dd3092c2c"
+  },
+  "append_only_disposition": {
+    "bytes": 44585,
+    "path": ".research_local/autorl_r20_interruption_disposition_01.json",
+    "sha256": "f7441f2a5713031ec1a795415f299ef08b8f553c17017f1edd1f29a20a7dd359"
+  },
+  "automatic_retry": false,
+  "boot_addendum": {
+    "bytes": 1796,
+    "path": ".research_local/autorl_r20_interruption_audit/run_01/boot_addendum.json",
+    "sha256": "cbdaf53bc6b8b31d761d01b19114fb7f9b224a2bf41e6bb6089acb70cd7ca066"
+  },
+  "boot_collector": {
+    "bytes": 2666,
+    "path": ".research_local/audit_autorl_r20_boot_addendum.py",
+    "sha256": "7435bcf6ef9d22a17fc56638eebe213de78fc503c9a4c22687bbb73c0452fbb6"
+  },
+  "boot_range_observation_corrected_without_overwriting_original": true,
+  "budget_after": {
+    "attempts": [
+      {
+        "experiment_id": "ARL_R1_UNIFORM_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "curriculum_rule": "empty until 32768; switch only on next natural episode reset",
+          "device": "cpu",
+          "experiment_id": "ARL_R1_UNIFORM_SEED0",
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "de9a5517c7806fce459411acb9204e010124284d1dd763718e99797684cb7714",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 1,
+          "seed": 0,
+          "source_identity_sha256": "5d969e4ca2758a185e2940522668df57ff0effa194140a27fabc0c63bedef957",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R1_UNIFORM_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 586.9869169550002,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "1fb6c28449d2bdd8581df6f93d2808560ced9dbe14b9ca0857c99b335ebb1fbd",
+          "summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "CURRICULUM",
+          "curriculum_rule": "empty until 32768; switch only on next natural episode reset",
+          "device": "cpu",
+          "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "de9a5517c7806fce459411acb9204e010124284d1dd763718e99797684cb7714",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 1,
+          "seed": 0,
+          "source_identity_sha256": "5d969e4ca2758a185e2940522668df57ff0effa194140a27fabc0c63bedef957",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 546.1161378489996,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "a72c5be40f7937b98b8d12e0b5e1891f7a8b867097174dcf500b0c37fd50dfa4",
+          "summary_sha256": "8efe9be7a973f4342a5900d8b91940d608e56667eb4218137f99cb93040cfcf0"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R2_PRIOR_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed small Validation; no learned LiDAR dependence or generalization proof",
+            "initialization_effect": "final successes > R1 final successes and collisions <= R1 final collisions",
+            "learning_over_prior": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "ANALYTIC_PRIOR_R2_V1",
+          "expected_prior_policy_sha256": "1f3e9a0a6779d9b7290ba138bda5e6f916e5d73380b291cc9a97d1650c5e835c",
+          "experiment_id": "ARL_R2_PRIOR_SEED0",
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "520b6dfd65c796efe67f15e2eb2799908ae1e45b4b7f648902a049d4ee638757",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 2,
+          "seed": 0,
+          "source_identity_sha256": "44bd92f55daabbda4ce21b07a6563b27d2ed0cec9cb395a250cbe65f6179ca1e",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R2_PRIOR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 814.918260017,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "09a4da2c329ddcf6dc6da79dfa4c49c0bac6eab441e53f6c99e2a6040566f61e",
+          "summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed historical control; no learned LiDAR dependence or generalization proof",
+            "initial_std_effect": "final successes > same-mean historical std1 final successes and collisions <= control",
+            "learning_over_step0": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "INITIAL_STD_R3_V1",
+          "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 3,
+          "seed": 0,
+          "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "variant": "RANDOM",
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 713.3204778079999,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "20f0382a1e544c9a9c4419763819e9e24a6ca49c2c48033bbfb7267501ddd80d",
+          "summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed historical control; no learned LiDAR dependence or generalization proof",
+            "initial_std_effect": "final successes > same-mean historical std1 final successes and collisions <= control",
+            "learning_over_step0": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "INITIAL_STD_R3_V1",
+          "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 3,
+          "seed": 0,
+          "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "variant": "PRIOR",
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 851.6884080749996,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "6b9e46d53fabc20f2b064c7588f283f96238b8a9b4e06b6cc2f68b51982bd739",
+          "summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "single seed small Validation; no generalized obstacle avoidance claim",
+            "learning": "short final successes > own step0 short successes",
+            "original_final_collision_max": 6,
+            "original_final_success_min": 1,
+            "original_step0": "reuse fixed R3 RANDOM step0 identical policy evidence, not a new episode",
+            "selection": "FINAL_CHECKPOINT",
+            "short_final_collision_max": 1,
+            "short_final_physical_sensor_failures_max": 0,
+            "short_final_success_min": 4
+          },
+          "execution_profile": "DISTANCE_CURRICULUM_R6_V1",
+          "expected_initial_policy_sha256": "db33ba4df5f7aaf76f98b7915675cbfc80dbe52273045ed86811b5cc074dfa06",
+          "experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "79ad97c769fb046efd1908ad73db945d437fd1ab3c7945b52162bff56a174fb8",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 6,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "source_identity_sha256": "ca83fb16b419ddcd4401249d9fbcd56b4e5577ba96625f792fff18803fd4218c",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "reason": "fixed training worker failed: 1"
+        },
+        "status": "FAIL"
+      },
+      {
+        "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "single seed small Validation; no generalized obstacle avoidance claim",
+            "learning": "short final successes > own step0 short successes",
+            "original_final_collision_max": 6,
+            "original_final_success_min": 1,
+            "original_step0": "reuse fixed R3 RANDOM step0 identical policy evidence, not a new episode",
+            "selection": "FINAL_CHECKPOINT",
+            "short_final_collision_max": 1,
+            "short_final_physical_sensor_failures_max": 0,
+            "short_final_success_min": 4
+          },
+          "execution_profile": "DISTANCE_CURRICULUM_R8_REPAIRED_V1",
+          "expected_initial_policy_sha256": "db33ba4df5f7aaf76f98b7915675cbfc80dbe52273045ed86811b5cc074dfa06",
+          "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "a5c17d1466d52603580b903615b6957350c68c06e37b94f34714ee31bdd441e4",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 8,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "source_identity_sha256": "62b3302122dc6d265b60112918082c2beb59239bc326eb6ab4d9c9c7de4a32a4",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 720.3382397109999,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "2eeb62e185b5c1bfe9de5aa6a299dcc5e546248aaa7b88661667ae719a58efbe",
+          "summary_sha256": "a6760dc61ff03a3895eb451f99d61d77513c643a3e8d4f8e31a55f556475dce4"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "a6760dc61ff03a3895eb451f99d61d77513c643a3e8d4f8e31a55f556475dce4",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "hand-written initial ability is not learning; single seed small Validation, no LiDAR/generalization proof",
+            "initialization_benefit": "original final successes > historical R8 final0; collisions <= R8 final2",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own original step0",
+            "original_step0": "reuse fixed R3 PRIOR/std03 identical full policy; zero new episodes",
+            "physical_sensor_failures_max": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0 short successes; collisions <= own step0"
+          },
+          "execution_profile": "PRIOR_DISTANCE_R10_V1",
+          "expected_initial_policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74",
+          "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "original_step0_summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+          "registration_sha256": "69fcf055e72c0fee6986be3d6e4f7966e7308c9e958d9f6742bf2e5076bed302",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 10,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "5170a41bb9cade75afa81f215755e5dfbfe15b7f1c9a39e736c07e5f8cca55b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 772.0242655540005,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf",
+          "summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "0847525a939fee3eaf23a0cbf32511a7828aeaa7059084ed86ce81ce25ebc876",
+          "control_summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "hand-written initial ability is not learning; single seed small Validation, no LiDAR/generalization proof",
+            "control_original_final_collision_max": 1,
+            "first32_approx_kl_mean_max": 0.03568412724416703,
+            "kl_claim": "last epoch minibatch approximate reverse KL; mechanism result is not navigation success",
+            "learning_rate_benefit": "original final successes > historical R10 final0; collisions <= R10 final1",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own original step0",
+            "original_step0": "reuse fixed R3 PRIOR/std03 identical full policy; zero new episodes",
+            "physical_sensor_failures_max": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0 short successes; collisions <= own step0"
+          },
+          "execution_profile": "PRIOR_GLOBAL_LOWER_LR_R11_V1",
+          "expected_initial_policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74",
+          "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC; base L6/L7 identities are provenance, R11 overrides effective LR only",
+          "original_step0_summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+          "registration_sha256": "6e6907a34e99547967d7cfcbd85740eb4fe20fde23edc205e47b9679a3ecb003",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 11,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "ab7544a0c895f3a406bb3123138fe82dbe059932d748bf7ae107b319f54897d8",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 828.7288000170001,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "25c6571ecf76757b052a73ca41d620c5d42e39c42d473c36223ae65ee5b80e39",
+          "summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "8a5c911619a7905172d94674664011e7cc6b3dbbae7db42e3b6706f53b8c7dc3",
+          "control_summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actor_function_benefit": "original final successes > historical R11 final0; collisions <= R11 final6",
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed and finite Validation; structural zero mean and hand-written initial ability are not learning",
+            "control_original_final_collision_max": 6,
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "original_step0": "NEW actual evaluation; never reuse old-class performance",
+            "physical_sensor_failures_max": 0,
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+          },
+          "execution_profile": "CENTERED_ACTOR_R14_V1",
+          "expected_initial_policy_sha256": "20f5c226abc762e5aa4a9046ba400b2b0f7012b0da6715d14204b097cae06001",
+          "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_FUNCTION",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "3630bf9efc2b87f2c3d96860a269a8750aaa1e64bdd950f438f7b4fe90e6acd9",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 14,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "87cd42df2c4cd497f609fea44f2b1f1105548e19e1cc9043d2047df335a1651e",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 777.0309924369994,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "aaa06e48b1f1b4b6b23389b238064e3a027179b7e6ae9f6a370a16003118fa4d",
+          "summary_sha256": "0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R16_CENTERED_STD01_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "489c3aa7f211f393c8d552a501663d9e4e02556befa9751a0404aa9348fffe70",
+          "control_summary_sha256": "0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed/fixed small Validation; hand prior and lower-noise Train success not learned navigation or generalization",
+            "control_original_final_collision_max": 3,
+            "control_original_final_success": 1,
+            "near_goal_fast_ratio_control": [
+              1867,
+              2077
+            ],
+            "noise_benefit": "original final successes > R14 final1; collisions <= R14 final3",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "original_step0": "NEW actual evaluation; no old-class or initial-noise performance reuse",
+            "physical_sensor_failures_max": 0,
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0",
+            "short_train_success_ratio_control": [
+              34,
+              108
+            ],
+            "stopping_experience_mechanism": "short Train success ratio >34/108 AND near-goal-fast ratio <1867/2077; missing denominators FAIL; not navigation proof"
+          },
+          "execution_profile": "CENTERED_INITIAL_STD01_R16_V1",
+          "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "experiment_id": "ARL_R16_CENTERED_STD01_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+          "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+          "initial_std": 0.1,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "bbf7dae8c780aa360604524ca772b16668e1799e855c7984091243b7490a7517",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 16,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "single_variable": "INITIAL_LOG_STD_LOG03_TO_LOG01_REMAINS_TRAINABLE",
+          "source_identity_sha256": "f253400ffff84970bea2dcd1c96be00e165c18224ee80bc716ab09a58dd788be",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R16_CENTERED_STD01_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 851.2115280329999,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "10e6b844b54b51290d574eb67ca6cd91fbe2b2dc1224f5161be018dbe2d70302",
+          "summary_sha256": "bf3814e86f0402ed02748483453a8279079aabca3e4df0c93264a82fcc71668c"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "60c231a2d42afed7ba16b890f7be6774bc62f13bfb7501f5bd9f219893f3f174",
+          "control_summary_sha256": "bf3814e86f0402ed02748483453a8279079aabca3e4df0c93264a82fcc71668c",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed/small fixed Validation; more empty Train and hand prior success not generalization",
+            "control_original_final_collision_max": 3,
+            "control_original_final_success": 0,
+            "empty_retention": "original empty final successes >= own32k empty successes AND own32k empty successes >=1",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "physical_sensor_failures_max": 0,
+            "rehearsal_benefit": "original final successes > R16 final0; collisions <= R16 final3",
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+          },
+          "execution_profile": "CENTERED_STD01_EMPTY_REHEARSAL_R17_V1",
+          "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "expected_prefix_policy_sha256": "33bf6699158a35842fc05c3d4ca97f391f778db60c759fdad2564a6e94c87f60",
+          "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+          "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+          "initial_std": 0.1,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "original_empty_probability": 0.5,
+          "original_train_sampling": "three empty each1/6; nine nonempty each1/18; reset only after32768",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "8242b52bdc21cebcf5a72461a20e961f1d17f6893d47801eb6159505bc6f6f9c",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 17,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "single_variable": "POST_SWITCH_ORIGINAL_TRAIN_EMPTY_PROBABILITY_025_TO_050",
+          "source_identity_sha256": "590c019185093d572ed27bde12b2da3d130f6ffdcd77c06d465cb0c4ee1081bf",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 844.7414650840001,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "3140266ae8034fc0114ff5334961fb8260254c100d8971eb0f3c46fb4b348f1b",
+          "summary_sha256": "950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R20_TEMPORAL_CREDIT_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "audit_report_sha256": "3762e526e46314fd369b6cc404dcb4966c9a87b69e8b3feccfe811f3157b6ebc",
+          "control_report_sha256": "d87993588f64db612daab4ee3091f64437a090eeb2b82532906f770a740a12f6",
+          "control_summary_sha256": "950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed/small fixed Validation; more empty Train and hand prior success not generalization",
+            "control_original_final_collision_max": 3,
+            "control_original_final_success": 0,
+            "empty_retention": "original empty final successes >= own32k empty successes AND own32k empty successes >=1",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "physical_sensor_failures_max": 0,
+            "rehearsal_benefit": "original final successes > R16 final0; collisions <= R16 final3",
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+          },
+          "execution_profile": "CENTERED_STD01_GAMMA0995_R20_V1",
+          "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "experiment_id": "ARL_R20_TEMPORAL_CREDIT_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+          "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+          "gae_lambda": 0.95,
+          "gamma": 0.995,
+          "initial_std": 0.1,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "original_empty_probability": 0.5,
+          "original_train_sampling": "three empty each1/6; nine nonempty each1/18; reset only after32768",
+          "prefix_policy_relationship": "different gamma from first rollout; not expected identical to R17 at32k",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "572e0645ff4ef5d33b39ece9bf6aeb9860d274b0232e163747cc986a24b43092",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 20,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "single_variable": "PPO_AND_ROLLOUT_GAMMA_099_TO_0995",
+          "source_identity_sha256": "7e674406492935f2ca0953d3e6e64ecd5860851b9f16746a6944a076210142c1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "experiment_id": "ARL_R20_TEMPORAL_CREDIT_SEED0",
+          "reason": "CROSS_BOOT_SYSTEM_SHUTDOWN_INTERRUPTION; exact step/worker exit/signal/shutdown cause UNKNOWN; posthoc=a3a83177901705d5f25525313f9a8dbe3d19bb91ab91a05175469af007586afd; boot_addendum=cbdaf53bc6b8b31d761d01b19114fb7f9b224a2bf41e6bb6089acb70cd7ca066; NO_RETRY_RESTART_REQUIRED_NO_REFUND"
+        },
+        "status": "FAIL"
+      }
+    ],
+    "authorization_id": "AUTONOMOUS-RL-RESEARCH-V1",
+    "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+    "remaining_timesteps": 1148032,
+    "remaining_wall_seconds": 39600,
+    "reserved_timesteps": 851968,
+    "reserved_wall_seconds": 46800,
+    "stop_requested": false,
+    "training_authorized": true
+  },
+  "checkpoints": [
+    {
+      "archive_crc_and_metadata": "PASS",
+      "resume": "RESTART_REQUIRED",
+      "run_id": "ARL_R20_TEMPORAL_CREDIT_SEED0_STEP0",
+      "sidecar_sha256": "21b8740b776489e29c55407b5074d5cfa80fa793c6ce3753ffa0ac49a531cf8a",
+      "step": 0,
+      "trained_weights_optimizer_prediction_reload": "NOT TESTED",
+      "usage": "LOCAL_ONLY_NOT_AUTHORIZED_TO_RESUME",
+      "zip_sha256": "f959d083bc8e3e0ebc7a00303636dca78b76b90e85b29926e60469e07d2a1ad6"
+    },
+    {
+      "archive_crc_and_metadata": "PASS",
+      "resume": "RESTART_REQUIRED",
+      "run_id": "ARL_R20_TEMPORAL_CREDIT_SEED0_STEP32768",
+      "sidecar_sha256": "e5d121eb6c5a48c3c9c3828974bc136b709e7139c1a5af59b38d26b06f49549e",
+      "step": 32768,
+      "trained_weights_optimizer_prediction_reload": "NOT TESTED",
+      "usage": "LOCAL_ONLY_NOT_AUTHORIZED_TO_RESUME",
+      "zip_sha256": "dc0d55168cba43d4ea82c686966c87801b6fd4c79c1b307a0cb81322db68e3d4"
+    }
+  ],
+  "completion_analysis_executed": false,
+  "configuration": {
+    "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+    "algorithm": "PPO",
+    "arm": "UNIFORM",
+    "audit_report_sha256": "3762e526e46314fd369b6cc404dcb4966c9a87b69e8b3feccfe811f3157b6ebc",
+    "control_report_sha256": "d87993588f64db612daab4ee3091f64437a090eeb2b82532906f770a740a12f6",
+    "control_summary_sha256": "950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72",
+    "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+    "device": "cpu",
+    "evaluation": {
+      "actual_new_validation_episodes": 36,
+      "claim_limit": "single seed/small fixed Validation; more empty Train and hand prior success not generalization",
+      "control_original_final_collision_max": 3,
+      "control_original_final_success": 0,
+      "empty_retention": "original empty final successes >= own32k empty successes AND own32k empty successes >=1",
+      "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+      "physical_sensor_failures_max": 0,
+      "rehearsal_benefit": "original final successes > R16 final0; collisions <= R16 final3",
+      "reused_original_step0_episodes": 0,
+      "selection": "FINAL_CHECKPOINT",
+      "short_candidate_collision_max": 1,
+      "short_candidate_success_min": 4,
+      "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+    },
+    "execution_profile": "CENTERED_STD01_GAMMA0995_R20_V1",
+    "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+    "experiment_id": "ARL_R20_TEMPORAL_CREDIT_SEED0",
+    "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+    "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+    "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+    "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+    "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+    "gae_lambda": 0.95,
+    "gamma": 0.995,
+    "initial_std": 0.1,
+    "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+    "learning_rate": 3e-05,
+    "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+    "n_steps": 128,
+    "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+    "original_empty_probability": 0.5,
+    "original_train_sampling": "three empty each1/6; nine nonempty each1/18; reset only after32768",
+    "prefix_policy_relationship": "different gamma from first rollout; not expected identical to R17 at32k",
+    "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+    "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+    "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+    "registration_sha256": "572e0645ff4ef5d33b39ece9bf6aeb9860d274b0232e163747cc986a24b43092",
+    "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+    "resume": "RESTART_REQUIRED",
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "schema": 20,
+    "seed": 0,
+    "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+    "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+    "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+    "single_variable": "PPO_AND_ROLLOUT_GAMMA_099_TO_0995",
+    "source_identity_sha256": "7e674406492935f2ca0953d3e6e64ecd5860851b9f16746a6944a076210142c1",
+    "std_remains_trainable": true,
+    "test_episode_count": 0,
+    "timesteps": 65536,
+    "validation_steps": [
+      0,
+      32768,
+      65536
+    ],
+    "wall_seconds": 3600,
+    "workers": 1,
+    "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+  },
+  "cross_boot_system_shutdown_evidence": {
+    "confirmed": "old boot entered system shutdown and broadcast SIGTERM shortly after last observed update",
+    "confirmed_cross_boot": true,
+    "confirmed_old_boot_shutdown_messages": [
+      {
+        "boot_id": "b5fd7f5c62784129ae226a50bed7c8f9",
+        "message": "Syncing filesystems and block devices.",
+        "realtime_timestamp_usec": "1792155089577043"
+      },
+      {
+        "boot_id": "b5fd7f5c62784129ae226a50bed7c8f9",
+        "message": "Sending SIGTERM to remaining processes...",
+        "realtime_timestamp_usec": "1792155089585268"
+      }
+    ],
+    "correction": "old posthoc current /proc/vmstat oom_kill=0 is NEW_BOOT_ONLY; earlier unqualified journal no-entry wording does not establish old-boot absence",
+    "corrects_but_does_not_replace_result_sha256": "a3a83177901705d5f25525313f9a8dbe3d19bb91ab91a05175469af007586afd",
+    "current_boot_id": "0b6aec35-b19b-4fd1-b0f0-c41ff4b7e148",
+    "journal_invocation": [
+      "journalctl",
+      "-k",
+      "-b",
+      "-1",
+      "--since",
+      "2026-10-16 12:50:00 UTC",
+      "--until",
+      "2026-10-16 12:53:00 UTC",
+      "--no-pager",
+      "-o",
+      "json",
+      "-g",
+      "systemd-shutdown|Sending SIGTERM|Syncing filesystems"
+    ],
+    "journal_raw": {
+      "path": ".research_local/autorl_r20_interruption_audit/run_01/previous_boot_kernel_shutdown.jsonl",
+      "sha256": "118f7db11d9ef639f30c5758415481a68bc18c3c724ca563455d5aa26c1251a5"
+    },
+    "journal_returncode": 0,
+    "last_update_file_mtime_utc": "2026-10-16T12:51:27.509480+00:00",
+    "not_proven": [
+      "exact worker final signal",
+      "exact final timesteps",
+      "who requested shutdown",
+      "why shutdown occurred",
+      "old boot OOM exclusion"
+    ],
+    "old_recorded_boot_id": "b5fd7f5c-6278-4129-ae22-6a50bed7c8f9",
+    "resume": "RESTART_REQUIRED_NO_AUTOMATIC_RETRY_OR_WARM_START",
+    "status": "PASS"
+  },
+  "disposition_review": {
+    "bytes": 1669,
+    "path": ".research_local/autorl_r20_interruption_disposition_review_01.json",
+    "sha256": "2e81e3feeafe2c0ae9fa4e31c17eebac51b5f9552d2d789ae4cad48b2001ca1e"
+  },
+  "ended_train_episodes": 291,
+  "exact_worker_exit": "NOT AVAILABLE",
+  "exact_worker_signal": "UNKNOWN",
+  "execution_protocol_sha256": "5f4c657947014e512725a7425d4174921974a39ee97d9ec425577e8214d63f23",
+  "execution_status": "INTERRUPTED",
+  "figures": [
+    {
+      "path": "mujoco/reports/autonomous_rl_temporal_credit_r20/figures/episodes.png",
+      "sha256": "117aec3cf9c2cae9f01181de62f00519328e2171ee03dfc7e003f1944618c03e"
+    },
+    {
+      "path": "mujoco/reports/autonomous_rl_temporal_credit_r20/figures/goals.png",
+      "sha256": "52415c28fbf8cf004c725899bf3a959c077a145ecac1cc5b051f4e3a96bc802f"
+    },
+    {
+      "path": "mujoco/reports/autonomous_rl_temporal_credit_r20/figures/ppo_updates.png",
+      "sha256": "da14a0d108a0eceef7109af9c3ce881e510079cc549c4e045f33ddced0b68d93"
+    },
+    {
+      "path": "mujoco/reports/autonomous_rl_temporal_credit_r20/figures/resources.png",
+      "sha256": "9c0d534e64dab946f449c3594a545fef91f157ea4e60d18a00da0ffeb90e5f32"
+    },
+    {
+      "path": "mujoco/reports/autonomous_rl_temporal_credit_r20/figures/validation.png",
+      "sha256": "e6b58c4e2997046d9a3268d189323f8fd6af53227da71f29e309535da960c001"
+    }
+  ],
+  "final_checkpoint": "NOT AVAILABLE",
+  "full_65536_steps_and_3600_seconds_reservation_permanently_charged": true,
+  "history": {
+    "historical_scoped_counts": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "historical_untracked_counts": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "new_untracked_names": {
+      "/home/keyousuke/MineUAV-Learning": []
+    },
+    "protected_count": 1404,
+    "unchanged": true
+  },
+  "implementation_status": "FAIL",
+  "implementation_status_scope": "planned end-to-end training experiment not completed; unit interface checks PASS is separate",
+  "interruption_audit": {
+    "bytes": 51143,
+    "path": ".research_local/autorl_r20_interruption_audit/run_01/result.json",
+    "sha256": "a3a83177901705d5f25525313f9a8dbe3d19bb91ab91a05175469af007586afd"
+  },
+  "last_ended_episode_policy_step": 40317,
+  "last_verified_complete_optimizer_update_step": 40448,
+  "last_verified_optimizer_steps": 1264,
+  "last_verified_ppo_epochs": 632,
+  "logged_complete_update_count": 316,
+  "new_training_ready": "NO",
+  "next_action": "Publish interrupted evidence through normal OPS sync; only offline shutdown/lifecycle diagnosis next. No R20 replay, ZIP continuation, budget refund, new training before separately reviewed protocol.",
+  "old_immutable_authorization_files_unchanged": true,
+  "old_immutable_file_count": 298,
+  "phase_id": "AUTORL-R20-TEMPORAL-CREDIT",
+  "planned_completion_analysis": {
+    "bytes": 15282,
+    "path": ".research_local/analyze_autorl_r20.py",
+    "sha256": "c03e42843ef6797d233a5780b78448b14a5f5c7691416fdcf16bcbb2d1471920"
+  },
+  "planned_completion_finalizer_executed": false,
+  "planned_training_timesteps": 65536,
+  "planned_validation_episodes": 36,
+  "posthoc_collector": {
+    "bytes": 6702,
+    "path": ".research_local/audit_autorl_r20_interruption.py",
+    "sha256": "694e04a9386829dadec1e716d85bd14dd14119b5302393df38d5ca3855f805cf"
+  },
+  "raw_files": [
+    {
+      "bytes": 8199,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/ARL_R20_TEMPORAL_CREDIT_SEED0_STEP0.json",
+      "sha256": "21b8740b776489e29c55407b5074d5cfa80fa793c6ce3753ffa0ac49a531cf8a"
+    },
+    {
+      "bytes": 731546,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/ARL_R20_TEMPORAL_CREDIT_SEED0_STEP0.zip",
+      "sha256": "f959d083bc8e3e0ebc7a00303636dca78b76b90e85b29926e60469e07d2a1ad6"
+    },
+    {
+      "bytes": 118664,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/ARL_R20_TEMPORAL_CREDIT_SEED0_STEP32768.json",
+      "sha256": "e5d121eb6c5a48c3c9c3828974bc136b709e7139c1a5af59b38d26b06f49549e"
+    },
+    {
+      "bytes": 2117092,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/ARL_R20_TEMPORAL_CREDIT_SEED0_STEP32768.zip",
+      "sha256": "dc0d55168cba43d4ea82c686966c87801b6fd4c79c1b307a0cb81322db68e3d4"
+    },
+    {
+      "bytes": 32190,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/bounded_traces.jsonl",
+      "sha256": "632c6eb06cb3da7487920201adc0206579d9fd50de86be8dc70d109bdaac3de8"
+    },
+    {
+      "bytes": 144,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/child.json",
+      "sha256": "284b03b4a4fb9def7f5a9e923ac716e18c8563551e653e50552ba24e4284ff8e"
+    },
+    {
+      "bytes": 2728,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/console.txt",
+      "sha256": "83b0c60e9a378ab244f643fe069c0c362d6f2c769563f36a365ff00213cdd98e"
+    },
+    {
+      "bytes": 378197,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/episode_details.jsonl",
+      "sha256": "fb405f7a7f6033ae3e45ad68a888a04ddd94a7ed4e8370a6209da54d44b94d7f"
+    },
+    {
+      "bytes": 372,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/formal_progress.json",
+      "sha256": "ebfde30747eca975c2111c2aba6aa36be9fc5a33f8a17d6e4198a1cc3bbe6927"
+    },
+    {
+      "bytes": 242,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/initial_weights.json",
+      "sha256": "0ed538878c8b8a8e3f996e6047e38121674ef61d1fce63cd1ff1958d32490e2e"
+    },
+    {
+      "bytes": 1461,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/initialization.json",
+      "sha256": "56398a1325ed74b0da17e6a35d9b4a00034ec76e6c68aefac81063e2a96523ca"
+    },
+    {
+      "bytes": 299,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/permit.json",
+      "sha256": "87af78110f0bae64e644db6712458bb6247a8b6a952e9b0023290536184e8ef2"
+    },
+    {
+      "bytes": 173076,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/ppo_updates.jsonl",
+      "sha256": "f51a14450fa8fc3ed9ae01690e75e16095d5b990809fea81d291a3568e44f18e"
+    },
+    {
+      "bytes": 3995,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/protocol.json",
+      "sha256": "5ac0414d438522ec32c949d7c22728b4b54d43af8016cdc0e5a030edeed32f3e"
+    },
+    {
+      "bytes": 71123,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/resource_samples.jsonl",
+      "sha256": "37a227626761a7867ba74b88f7f496f53d2c2f41fbd0149d94300f54ad06cdf3"
+    },
+    {
+      "bytes": 150573,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0/train_episodes.jsonl",
+      "sha256": "1f515025fe5baa742b93be608aa94c6ff9d718954b026f74792d75e9cf2abeb1"
+    }
+  ],
+  "registration_sha256": "572e0645ff4ef5d33b39ece9bf6aeb9860d274b0232e163747cc986a24b43092",
+  "resources": {
+    "available_prefix_last_resource": {
+      "cpu_elapsed_s": 529.88914373,
+      "disk_free_bytes": 70306852864,
+      "mem_available_mib": 6423.91796875,
+      "policy_step": 40448,
+      "rss_current_mib": 1235.3828125,
+      "rss_peak_mib": 1657.74609375,
+      "wall_elapsed_s": 538.2794623779992
+    },
+    "continuous_full_run_min_mem": "NOT AVAILABLE",
+    "final_physics_ticks": "NOT VERIFIED",
+    "full_wall_seconds": "NOT AVAILABLE",
+    "old_boot_oom_exclusion": "NOT PROVEN",
+    "recorded_training_hwm_rss_mib": 1657.74609375,
+    "scope": "recorded prefix only; current boot resource counters cannot describe old boot",
+    "whole_run_hwm_rss": "NOT AVAILABLE"
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r20_results_review_01.json",
+      "sha256": "0008343bf9c9cdbd53780cd62795d819a62bd96ebd5b086ba67f1d764e5fb1a6"
+    },
+    "important": 0,
+    "inherited_findings": {
+      "R18_publication_process": {
+        "minor": 1
+      },
+      "R7_failure_context": {
+        "minor": 1
+      }
+    },
+    "method": "INDEPENDENT_READ_ONLY_SUBAGENT",
+    "new_minor": 1,
+    "reviewed_report_sha256": "67e758901cf0da2170ac5816a92210205a74595b43169f096ae5c7afee2768fb",
+    "scope": "interrupted report publication only,not training completion",
+    "source_identity_sha256": "7e674406492935f2ca0953d3e6e64ecd5860851b9f16746a6944a076210142c1",
+    "status": "GO"
+  },
+  "resume": "RESTART_REQUIRED",
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "bytes": 2524,
+      "path": ".research_local/autorl_r20_pre_review_01.json",
+      "sha256": "943dcb8e032538b87ba79e7e2cbb44ce1a6a12adcd3f488695e3879f272c722e"
+    },
+    "important": 0,
+    "inherited_findings": {
+      "R18_publication_process": {
+        "minor": 1
+      },
+      "R7_failure_context": {
+        "minor": 1
+      }
+    },
+    "method": "INDEPENDENT_READ_ONLY_SUBAGENT",
+    "new_minor": 1,
+    "scope": "original prerun admission only, not completed-run certification",
+    "source_identity_sha256": "7e674406492935f2ca0953d3e6e64ecd5860851b9f16746a6944a076210142c1",
+    "status": "GO"
+  },
+  "runtime_source_modified_after_start": false,
+  "scientific_acceptance": {
+    "empty_retention": "NOT TESTED",
+    "original_learning_over_prior": "NOT TESTED",
+    "short_candidate": "NOT TESTED",
+    "short_prior_retention": "NOT TESTED",
+    "temporal_credit_benefit_over_R17": "NOT TESTED"
+  },
+  "scientific_result": "NOT TESTED",
+  "source_identity_sha256": "7e674406492935f2ca0953d3e6e64ecd5860851b9f16746a6944a076210142c1",
+  "stage_metrics": {
+    "ORIGINAL": {
+      "closed_policy_steps": 7478,
+      "ended_episodes": 40,
+      "mean_return": 3.513537390278823,
+      "terminal_counts": {
+        "collision": 15,
+        "success": 19,
+        "time_limit": 6
+      }
+    },
+    "SHORT": {
+      "closed_policy_steps": 32839,
+      "ended_episodes": 251,
+      "mean_return": 8.317552360307529,
+      "terminal_counts": {
+        "success": 246,
+        "time_limit": 5
+      }
+    }
+  },
+  "summary_complete_supervisor_terminal": "MISSING",
+  "test_episodes": 0,
+  "tests": {
+    "actual_test_optimizer_updates": 0,
+    "analysis_contract_tests": 5,
+    "evidence": {
+      "bytes": 57012,
+      "path": ".research_local/autorl_r20_postboot_operations_01.json",
+      "sha256": "bb92e56083c2c4e98476c4f616008dba03dadd867503b84d0b17969f2bbf74c1"
+    },
+    "excluded": 15,
+    "finalizer_provenance_contract_tests": 1,
+    "finalizer_reference_important_fixed_before_training": true,
+    "inherited_pre_run_historical": 885,
+    "postboot_operations_pass": 193,
+    "postboot_tensor_evidence": {
+      "bytes": 13600,
+      "path": ".research_local/autorl_r20_postboot_tensor_01.json",
+      "sha256": "baab2a0eaabf046740e86932a26d124fbb392cf56c803b27dab5379a5c096f22"
+    },
+    "postboot_tensor_pass": 66,
+    "postboot_total_pass": 259,
+    "pre_run_evidence": {
+      "historical": {
+        "path": ".research_local/autorl_r20_historical_final_01.json",
+        "sha256": "a68a18b331e776729fd749ce70cf25329f9e761708ef49d791e31ae1562d0a4b"
+      },
+      "operations": {
+        "path": ".research_local/autorl_r20_operations_final_01.json",
+        "sha256": "93cc5a22a53e643056a0b174fcbaf1d4e1a2dde256684aa4e5cc8d123d74daa6"
+      },
+      "runtime_binding": {
+        "path": ".research_local/autorl_r20_runtime_binding_final_01.json",
+        "sha256": "5f75ac8a378adeed84adcffe72f6f9991377704562e64e3c7475dc3b47a2af33"
+      },
+      "tensor": {
+        "path": ".research_local/autorl_r20_tensor_final_01.json",
+        "sha256": "6213886b07ddbaee2488506bdee42fa89608e3653f87343d03ed9d1d40c25393"
+      }
+    },
+    "pre_run_operations": 193,
+    "pre_run_selected_total_pass": 1144,
+    "pre_run_tensor": 66,
+    "scope": "selected no-update checks, not all repository; completed pre-run tests are not interrupted training results",
+    "status": "PASS"
+  },
+  "unknown_shutdown_initiator_and_reason": true
+}

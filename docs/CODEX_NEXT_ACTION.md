@@ -1,3 +1,41 @@
+## AUTORL-R20 最新：跨boot系统关机中断，科学NOT TESTED（2026-10-16）
+
+R19已完整发布545c6c9a321956e1b89314f1fa8a63583e475cf1，不重放。R20新gamma .995单变量训练已跨boot中断，不能重复启动或从32k ZIP继续。原boot b5fd…的12:51:29 UTC kernel记录系统关机与向remaining processes发SIGTERM，紧随最后PPO日志约2秒；当前boot0b6…。可确认关机事件，不能证明具体worker最终信号、精确停止步数、是谁/为何关机。
+
+最后完整更新40448/316rollout记录/1264Adam/632epoch，旧progress39936只是更早快照；确切最终训练步数NOT VERIFIED。291个结束Train=short246成功5超时（251）、original19成功15碰撞6超时（40），原距离实际32839才自然reset切换。final65536 ZIP/summary/complete/正常主管终态均缺，新Val0/计划36、Test0；科学五判据全部NOT TESTED，不把部分Train或缺测当gamma科学FAIL。两中间ZIP仅静态CRC/hash/JSON通过，不等于训练后Adam/预测重载通过；中断后不加载R20训练checkpoint或执行它的新评价episode。postboot接口测试自己的fresh模型、临时checkpoint及受控reset/step另列，不是R20评估或训练。
+
+原16raw原样保存，新posthoc a3a83177…不是运行时异常捕获。独立审查发现boot范围遗漏后，新boot补充cbdaf53b…保留精确原boot关机消息，透明更正“当前oom_kill=0/笼统journal无entry不能排除旧boot OOM”，原收据未改。独立处置GO后仅现有BudgetStore.fail追加第26事件，R20永久FAIL/INTERRUPTED，保留全额65536step/3600s预留；余额1148032/39600、stopfalse，不退款/重置/重试。298旧不可变授权+16额外raw/原模型/87基线untracked保持。
+
+SOURCE7e674406…129文件运行后未改。训练前1144选择PASS（193OPS/66Tensor/885历史）/15排除/0测试optimizer；重启后193OPS+66Tensor另259无更新复核PASS，未声称新boot重跑885。实际OPS postrun audit PASS d0291cd0…；这些不是训练完成。预审C0/I0、新legacy文案Minor1及R7/R18历史Minor保留；finalizer错误引用Important已启动前RED→GREEN修复。
+
+最后资源样本wall538.279s/CPU529.889s，已记录训练HWM1657.746MiB、minMem6423.918MiB；完整wall、全程峰值/最低、最终physics ticks/exit均不可补猜。五图仅实际前缀，Validation图明确NOT TESTED。报告PHASE_AUTORL_R20_TEMPORAL_CREDIT.md、autonomous_rl_temporal_credit_r20.json。完整失败交付仍需真实结果复审/完整检查exit0后单独Commit/正常OPS sync远端；不得标训练完成或PHASE_COMPLETE。
+
+下一安全动作：完成本次中断报告发布后，只开展Level0/1停机/SIGTERM/不可捕获中断的证据和账本语义诊断，模拟进程、优化器0，不注册无人值守后台服务。不重试R20、不旧ZIP续训、不把它当完整科学对照；新训练必须新独立假设/协议/测试/GO并核真实余额。原独立grant未被OPS零维护预算撤销，但当前训练执行NO-GO。普通失败交付后继续已授权安全工作；PX4/FASTLIO/实机/封存Test禁止。
+
+下方为历史快照，不是重放指令。
+
+## AUTORL-R20 权威：唯一训练启动请求已发出，只能监控（2026-10-16）
+
+1144当前选择测试/15排除/0测试optimizer、5分析契约+1finalizer绑定契约，精确独立GO C0/I0/新文案Minor1（及两历史Minor分别保留）已通过。新register/recover/doctor、298旧不可变授权+16额外raw/旧模型/预算stop资源、独立固定temporal_credit_cli prepare精确EXEC5f4c6579…全部实际通过；现在通过唯一launch_autorl_r20.py调用已审查supervisor start。
+
+不得因会话句柄没有结果或旧文档仍写“尚未训练”再次启动。先只读核.research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0、真实ledger/attempt/protocol/child/process/flock、supervisor_01收据。预留后余额应1148032/39600，以真实账本为准，不退款不重置。仅65536step/3600sCPU1seed0、36新Val/Test0、fresh初始化无旧ZIP。SOURCE7e674406…129文件运行期冻结，新增生产或测试py也会改变身份。
+
+完成主管exit0+ledger COMPLETE+summary/complete身份后才运行冻结analysis c03e4284…及finalizer7895099d…，真实图/中文MDJSON/独立结果复审/完整检查exit0后独立Commit/正常OPS sync远端，再按证据与余额继续下一安全研究。UNKNOWN/FAIL先只读审计，RESTART_REQUIRED、不重复ID或warmstart；PX4/FASTLIO/实机/封存Test禁止。
+
+下方为已结束准入快照，不是重放指令。
+
+## AUTORL-R20 历史：gamma单变量新对照准入完成（2026-10-16）
+
+R19已完整OPS sync，远端545c6c9a321956e1b89314f1fa8a63583e475cf1、phase_complete=true，released report3762e526…；不重复。新research/lidar-temporal-credit-r20，相对R17仅gamma .99→.995，model和RolloutBuffer同步，lambda .95/初态std.1/centeredActor/CNN/Reward/LR3e-5/PPO其余/empty抽样.5/物理和频率不变；seed0新初始化，不从旧ZIP继续。
+
+唯一ARL_R20_TEMPORAL_CREDIT_SEED0，65536step/3600sCPU1worker、36新Val/Test0。REG572e0645ff4ef5d33b39ece9bf6aeb9860d274b0232e163747cc986a24b43092 /SOURCE7e674406492935f2ca0953d3e6e64ecd5860851b9f16746a6944a076210142c1（129文件）/EXEC5f4c657947014e512725a7425d4174921974a39ee97d9ec425577e8214d63f23。实际1144选择PASS（193OPS/66Tensor/885hist）/15排除/0测试optimizer；5分析契约及1finalizer绑定契约。Important旧R17方法引用已启动前RED→GREEN修复，旧失败收据保存；legacy标签R16但实际R17control SHA/正式判据明确，保留新文案Minor1。R7与R18历史Minor分别披露。
+
+现在真实余额1213568/43200、stopfalse，24事件/12历史attempt；尚未prepare、预留或训练。298旧不可变授权文件（动态head只可合法追加）+16额外历史raw受保护。下一安全动作：精确独立GO→activate_autorl_r20.py新register/recover/doctor/预算stop/资源/历史→新固定CLI prepare精确SHA→唯一launch_autorl_r20.py受监督start。预留后应1148032/39600，不能退款/重置。SOURCE运行期冻结，完成主管exit0+ledger COMPLETE+summary/complete身份后才执行冻结分析/图MDJSON/独立结果复审/单独Commit/正常OPS sync远端，再决定下一安全任务。
+
+重启先核真实目录.research_local/authorized_rl_v1/runs/ARL_R20_TEMPORAL_CREDIT_SEED0、protocol、attempt/child/ledger/flock/主管receipt，工具句柄不是进程证据。已有ID永不重试，不重跑R19/R17或warmstart。普通阶段继续长期任务；PX4/FASTLIO/实机/封存Test禁止。
+
+下方为历史快照，不是重放指令。
+
 ## AUTORL-R19 最新：成功Reward排序与实际任务曝光审计PASS（2026-10-16）
 
 R18含发布补充已正常OPS sync/远端4967f0abc53552730e660d8dbe5e2674709af138，不重放。R19唯一AUTORL_R19_REWARD_CREDIT_ONLY exit0/groupgone/complete，result e4b187eec7da23bcae213c92c9b36ec68ed751f7625ec8e19fd769fd7ee9ef1f。只读三R18 trace、两轮Train及ZIP JSON；train/optimizer/inference/physics/new episodes/Test0，OPS环境探针可import包但不加载策略。

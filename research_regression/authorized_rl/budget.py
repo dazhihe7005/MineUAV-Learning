@@ -44,6 +44,9 @@ def experiment(arm,steps,wall,*,seed=0,revision='R1'):
 
 
 def validate_experiment(p):
+    if p.get('schema')==20:
+        from .temporal_credit_profile import validate_temporal_profile
+        return validate_temporal_profile(p)
     if p.get('schema')==17:
         from .empty_rehearsal_profile import validate_rehearsal_profile
         return validate_rehearsal_profile(p)

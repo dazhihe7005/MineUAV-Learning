@@ -64,7 +64,11 @@ def supervise(protocol,*,root=ROOT):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        if protocol['schema']==17:
+        if protocol['schema']==20:
+            if registration['phase_id']!='AUTORL-R20-TEMPORAL-CREDIT':raise OpsError('temporal credit requires reviewed R20 phase')
+            from .temporal_credit_profile import verify_temporal_proof,verify_temporal_checks
+            verify_temporal_proof(protocol,root);verify_temporal_checks(protocol,root)
+        elif protocol['schema']==17:
             if registration['phase_id']!='AUTORL-R17-EMPTY-REHEARSAL':raise OpsError('rehearsal requires reviewed R17 phase')
             from .empty_rehearsal_profile import verify_rehearsal_proof,verify_rehearsal_checks
             verify_rehearsal_proof(protocol,root);verify_rehearsal_checks(protocol,root)
