@@ -64,11 +64,17 @@ def supervise(protocol,*,root=ROOT):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        from .baseline import verify_baseline
-        verify_baseline(registration)
-        baseline=read_json(home/'baseline.json')
-        for rel,value in baseline['runtime_sources'].items():
-            if sha256(root/rel)!=value:raise OpsError('baseline runtime identity differs')
+        if protocol['schema']==2:
+            if registration['phase_id']!='AUTORL-R2-PRIOR':raise OpsError('prior run needs its own reviewed training registration')
+            from .prior_profile import verify_prior_proof,verify_training_checks
+            verify_prior_proof(protocol,root)
+            verify_training_checks(protocol,root)
+        else:
+            from .baseline import verify_baseline
+            verify_baseline(registration)
+            baseline=read_json(home/'baseline.json')
+            for rel,value in baseline['runtime_sources'].items():
+                if sha256(root/rel)!=value:raise OpsError('baseline runtime identity differs')
         output=run_directory(home,protocol['experiment_id'])
         if output.exists():raise OpsError('runtime directory already used; never retry')
         available=resource_status(root);check_resources(available['mem_available_mib'],available['disk_free_bytes'])

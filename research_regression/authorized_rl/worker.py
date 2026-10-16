@@ -127,10 +127,17 @@ def train_worker(output,permit,p,registration,identity):
     try:
         model=make_ppo(measured,n_steps=128,seed=p['seed'])
         if model.num_timesteps or model.policy.optimizer.state:raise OpsError('not a new random initialization')
+        initialization={'kind':'FRESH_RANDOM'}
+        events=[];checkpoint_probes={}
+        if p['schema']==2:
+            from .prior_training import initialize_training_prior
+            initialization,event,probe=initialize_training_prior(model,scheduler,manager,identity=identity,seed=p['seed'])
+            events.append(event);checkpoint_probes[0]=probe
+        atomic_json(output/'initialization.json',initialization,exclusive=True)
         initial={'actor':_weights_sha(model.policy.action_net),'critic':_weights_sha(model.policy.value_net),
                  'policy':_weights_sha(model.policy)}
         atomic_json(output/'initial_weights.json',initial,exclusive=True)
-        updates=[];events=[];original_train=model.train
+        updates=[];original_train=model.train
 
         def train():
             guard()
@@ -160,9 +167,8 @@ def train_worker(output,permit,p,registration,identity):
                 return True
 
         from lidar_integration.ppo_formal_validation import _optimizer_states_equal
-        checkpoint_probes={}
         for target in p['validation_steps']:
-            if target>p['timesteps']:continue
+            if target==0 or target>p['timesteps']:continue
             model.learn(target-int(model.num_timesteps),reset_num_timesteps=False,callback=Guard())
             if model.num_timesteps!=target or model._n_updates!=2*(target//128):raise OpsError('rollout/update boundary inconsistent')
             record,probe=save_checkpoint_probe(model,scheduler,manager,run_id=f'{identity}_STEP{target}',seed=p['seed'])
@@ -193,6 +199,10 @@ def train_worker(output,permit,p,registration,identity):
                 raise OpsError('checkpoint optimizer/prediction identity mismatch')
             event['optimizer_and_prediction_reload_verified']=True
             event['validation']=LidarPPOValidationEvaluator(prereg,upstream,failure_recorder=failures).evaluate(restored)
+            if p['schema']==2:
+                event['validation']['initialization']=initialization['kind']
+                if event['actual_step']==0:
+                    event['validation']['model_status']='ANALYTIC_HAND_WRITTEN_PRIOR_NOT_LEARNED'
             event['validation_execution']='DEFERRED_UNTIL_TRAIN_ENV_CLOSED; frozen milestone weights'
             atomic_json(output/f"validation_{event['actual_step']}.json",event,exclusive=True)
             del restored
@@ -202,7 +212,7 @@ def train_worker(output,permit,p,registration,identity):
             'ppo_n_updates':int(model._n_updates),'finite_model_and_gradients':_finite_model_and_gradients(model),
             'training_physics_ticks':measured.physics_ticks,'terminal_counts':measured.terminal_counts,
             'episode_count':len(measured.episode_returns),'mean_return':float(np.mean(measured.episode_returns)),
-            'initial_weights':initial,'final_weights':final,'scheduler_state':scheduler_state,
+            'initial_weights':initial,'initialization':initialization,'final_weights':final,'scheduler_state':scheduler_state,
             'events':events,'test_episode_count':0,'runtime_sources':frozen,
             'environment_step_ms':_stats(measured.step_ms),'scan_ms':_stats(measured.scan_ms),
             'encoding_ms':_stats(measured.encode_ms),'ppo_update_ms':_stats(updates),

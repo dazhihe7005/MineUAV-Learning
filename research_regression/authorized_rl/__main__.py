@@ -14,6 +14,8 @@ def main():
     p=sub.add_parser('prepare');p.add_argument('--arm',choices=('UNIFORM','CURRICULUM'),required=True)
     p=sub.add_parser('start');p.add_argument('--arm',choices=('UNIFORM','CURRICULUM'),required=True)
     p.add_argument('--expected-protocol-sha256',required=True)
+    sub.add_parser('prepare-prior')
+    p=sub.add_parser('start-prior');p.add_argument('--expected-protocol-sha256',required=True)
     args=parser.parse_args();store=BudgetStore(HOME)
     try:
         if args.command=='initialize':
@@ -33,17 +35,25 @@ def main():
         elif args.command=='baseline':
             from .baseline import run_baseline
             result=run_baseline()
-        elif args.command=='prepare':
+        elif args.command in ('prepare','prepare-prior'):
             m,r=verify_current()
             from research_ops.storage import FileLock
             with FileLock(m.lock_path):
-                p=experiment(args.arm,65536,3600)
+                if args.command=='prepare-prior':
+                    from .prior_profile import prior_experiment,verify_prior_proof
+                    if r['phase_id']!='AUTORL-R2-PRIOR':raise OpsError('prior prepare requires its reviewed training phase')
+                    p=prior_experiment();verify_prior_proof(p)
+                else:p=experiment(args.arm,65536,3600)
                 p.update(source_identity_sha256=digest(r['source_identity']),registration_sha256=digest(r))
+                if args.command=='prepare-prior':
+                    from .prior_profile import verify_training_checks
+                    verify_training_checks(p)
                 dest=HOME/'protocols'/f"{p['experiment_id']}.json"
                 atomic_json(dest,p,exclusive=True)
             result={'protocol_sha256':digest(p),'protocol':p,'active':False}
         else:
-            p=read_json(HOME/'protocols'/f'ARL_R1_{args.arm}_SEED0.json')
+            identity='ARL_R2_PRIOR_SEED0' if args.command=='start-prior' else f'ARL_R1_{args.arm}_SEED0'
+            p=read_json(HOME/'protocols'/f'{identity}.json')
             if digest(p)!=args.expected_protocol_sha256:raise OpsError('explicit experiment SHA mismatch')
             result=supervise(p)
         print(json.dumps(result,ensure_ascii=False,indent=2));return 0

@@ -1,5 +1,17 @@
 # 每日项目交接
 
+## 2026-10-16：AUTORL-R2完整结束
+
+唯一65536步完成，2048 Adam调用；983结束episode中956碰撞、24自然越界、3超时、0成功。初始化Validation1/6成功，最终0/6且6碰撞；科学改善FAIL、执行PASS，不修改Reward或重试。剩余预算1,803,392步／75,600s保守wall。主管wall814.918s，训练采样峰值RSS1703.41MiB，无观察到OOM。延后启动的附加/proc观察器首次解析空字段失败，独立诊断修正后继续只读观察，未影响训练守护；最终精确进程HWM不可验证，详见报告。
+
+972项相关测试PASS／15排除，运行后78 OPS重复验证不计新增数量。冻结源码44bd92f5…不变，历史1404文件及87untracked不变。原始summary/检查点只读local-only；报告、5图、独立结果复审及Git推送收据决定阶段完成。下一次先读NEXT_ACTION、新预算和实际锁；不得再启动R2。下一方向为初始动作噪声的独立受控研究，不自动重复百万步，也不启动PX4。
+
+## 2026-10-16：AUTORL-R2恢复（IN_PROGRESS）
+
+后续：中断的无更新回归已在新stdout完整通过885／15排除，原partial log未改；准入dfe21c6c…、最新独立GO及版本登记完成，recover/doctor PASS。唯一ARL_R2_PRIOR_SEED0已启动并核验初始权重，预算余1,803,392步／75,600s。当前训练未结束，不能宣称导航提升；只监控同一attempt，不重放准备或start。
+
+分支research/lidar-actor-prior-r2，HEAD161997c已与预检远端核验。已读MASTER／新增自主授权／NEXT_ACTION，核验独立预算余额1,868,928步／79,200s；无活跃训练、无锁、R2未预留或执行。新boot与旧boot不同；上一会话最后历史回归只有约56%部分输出、无完整结果，标INCOMPLETE并保留原文件。本次只补做无optimizer回归，不重复R1或已完成三条物理预检。旧OPS拒绝未登记源码，按新候选_02明确审查／register流程处理，不修改旧版本。下一步完成准入及唯一R2训练，最新状态以本地真实收据为准。
+
 ## 2026-10-15：AUTORL-R2-PRIOR-PREFLIGHT
 
 R1远端已核验9d3ac31。新分支research/lidar-actor-prior-preflight完成原网络解析初始化表达测试：3条Train empty均成功，optimizer0、Validation/Test0。962项选择测试PASS／15排除；RSS实测最大1880.04MiB，未OOM。原模型／历史数据不变；剩余预算1,868,928步／79,200s。下次先核验OPS及新账本，若SYNC_PENDING先同步。下一项是新注册R2执行协议／初始化单变量训练设计；不能重复旧R1，也不能用本预检的成功声称学习提升。

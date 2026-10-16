@@ -1,4 +1,26 @@
-## AUTORL-R2-PRIOR-PREFLIGHT：当前执行优先于以下历史
+## AUTORL-R2-PRIOR：2026-10-16当前权威交接
+
+**唯一attempt已完整COMPLETE，不可再次prepare/start。** 实际65536步、2048 Adam调用、512rollout；Train983=956碰撞+24自然越界+3超时+0成功；尾部55步未结束，仍计预算。最终Validation0/6成功、6碰撞，step0为1成功3碰撞2超时，改善假设FAIL；不是学会避障。源码44bd92f5…运行前后相同，summary SHA03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928。原始目录只读。
+
+累计预算196608步／10800s保守预留，剩余1,803,392步／75,600s；新grant stop=false、三个attempt均COMPLETE。旧OPS维护预算0不是新授权丢失。972项选择测试PASS／15排除，无更新测试与计费训练分开。当前分支research/lidar-actor-prior-r2，Commit及远端完成读真实V2收据；若未推，先完成结果独立复审和sync，不提前启动下一训练。
+
+下一已授权安全工作：研究初始动作std。候选R3A原随机Actor/std0.3对照已冻结R1/std1，R3B相同解析先验/std0.3对照已冻结R2/std1，各65536步／3600s、顺序单worker；仅为待登记设计，不是当前CLI可运行任务。保持其他协议不变、std继续可训练；先无optimizer身份与数学检查、独立预注册／测试／审查／新OPS登记，才可在原累计预算内执行。不能改旧schema1/2协议、重跑旧ID、读取Test或把手写先验能力当作学习。具体方案可由证据重新评估，禁止盲目百万步。
+
+### 恢复与运行过程（已结束的历史快照，非执行指令）
+
+**最新运行状态：R2唯一attempt已启动，禁止再次prepare/start。** 新版本登记、recover/doctor、78 OPS＋9 Tensor＋885历史选择测试（15排除）及准入均已完成；训练协议09a4da2c…已匹配。完整证据在`.research_local/authorized_rl_v1/runs/ARL_R2_PRIOR_SEED0/`。预算已保守预留196608步／10800s，余额1,803,392步／75,600s。是否仍活跃必须核对实际flock、child身份及grant事件；资源日志只代表最近观测，不是最终步数。若没有complete、已有预留或进程状态不明，先审计，不重复已开始的attempt；RESTART_REQUIRED，不从STEP0／中间checkpoint继续训练。
+
+工作分支`research/lidar-actor-prior-r2`，HEAD为已推送的预检提交`161997c0cecbe0b0f1e19d861d927ab774bb7ccf`。工作树未提交修改是上一会话R2独立执行入口开发，不要reset或重新实现。候选登记`.research_local/autorl_r2_registration_02.json` SHA`520b6dfd65c796efe67f15e2eb2799908ae1e45b4b7f648902a049d4ee638757`，源码SHA`44bd92f55daabbda4ce21b07a6563b27d2ed0cec9cb395a250cbe65f6179ca1e`，两者已实际匹配。
+
+2026-10-16已核验：无活跃训练／锁，R1两臂COMPLETE并远端核验；R2尚无protocol或run、未预留预算。已用131072步／7200s，剩余1,868,928步／79,200s；账本stop=false，不initialize、不更改旧授权。最新独立源码审查GO须精确绑定上述_02候选，_01旧GO不能代替。
+
+上次关机使最终历史回归INCOMPLETE：仅有`.research_local/autorl_r2_historical_final.stdout.txt`部分输出，没有final.json；原部分日志保持不变。本次在独立restart stdout补做未完成无optimizer测试，不重放已完成研究实验。78项OPS、9项Tensor完整结果已保存且绑定同一源码；待历史885项完整完成后，再生成`.research_local/autorl_r2_checks.json`。旧OPS recover/doctor因未登记新源码返回BLOCKED是预期；只能用V2新登记迁移解决，不能改旧协议或关闭检查。
+
+上述回归／准入／登记／准备／启动链已执行，下一安全步骤是监控同一活跃attempt，完成后分析原始结果、独立结果复审、Commit/Push及远端核验。执行协议SHA`09a4da2c329ddcf6dc6da79dfa4c49c0bac6eab441e53f6c99e2a6040566f61e`，65536步／3600s、seed0／单CPU；step0/32768/65536关闭Train后各6Validation，Test0。若无complete但进程已经消失，按真实中断处理，不再次start。
+
+读取`docs/AUTORL_R2_TRAINING_DESIGN.md`和本阶段MD／预注册。只改变Actor初始化，std／CNN／Reward／PPO不变；最终必须分别比较R1历史控制与自身step0，不能把手写先验能力说成PPO学习。完成后报告／图／独立复审／Commit/Push远端核验，再依据预算自主推进。禁止PX4／FAST-LIO2／实机及Test开发评价。
+
+## AUTORL-R2-PRIOR-PREFLIGHT：已完成历史
 
 分支research/lidar-actor-prior-preflight，基线为已推送R1的9d3ac31。登记443833a087946a174ef3988c8e7f260ae6ea6d3cd1e8ec80bd12693f020698b0；源码400e25a68a2af0ed3dcf351ed7deeca657d9bc7d78f6f9b7f92ee8ec831d699d。读本阶段MD／JSON和真实OPS收据；结果／Commit／Push完成后再推进。
 

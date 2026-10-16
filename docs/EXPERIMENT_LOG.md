@@ -1,5 +1,11 @@
 # Experiment Log
 
+## 2026-10-16 — AUTORL-R2-PRIOR：Actor先验训练未改善（FAIL）
+
+原网络／Reward／PPO／std1不变，仅解析Actor均值初始化；全新seed0、单CPU worker、65536实际步、512rollout／2048 Adam调用。Train983结束=956碰撞+24自然outside_flight_area+3超时、0成功；尾部55步未结束但计费。step0／32768／65536三份checkpoint关闭Train后各6Validation：成功1→0→0，碰撞3→6→6，超时2→0→0。原R1 UNIFORM最终0成功6碰撞作为历史控制，不重跑。三个预注册科学准入全部FAIL，不解释为独特根因或PPO已学会感知。
+
+运行源码44bd92f5…，执行协议09a4da2c…，summary SHA03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928；训练及3份检查点重载工程PASS。972项相关测试PASS、15排除（不是全仓）；完整历史回归补做前的关机中断输出保留INCOMPLETE。主管wall814.918s、训练采样峰值RSS1703.41MiB，附加观察器首轮诊断失败如实保留，不影响主守护。Test0、无PX4／实机，历史不变。余额1,803,392步／75,600s保守预留wall。独立结果复审和Git最终状态以报告及V2收据为准；下一研究只在新协议下验证初始动作噪声，不重试本attempt。
+
 ## 2026-10-15 — AUTORL-R2-PRIOR-PREFLIGHT：无学习解析初始化
 
 分支research/lidar-actor-prior-preflight，基线9d3ac31。原Tanh结构实现10*tanh(.5*tanh(.2y))，裁剪动作解析误差上界.016315<预注册.02；只赋值Actor，CNN/Critic/log_std不变。3个冻结empty Train真实物理probe均成功，295/193/193步、最终误差.072885/.077863/.062842m，连续5帧速度／距离满足原条件。PPO更新0、Validation0、Test0；不是训练或避障成功。

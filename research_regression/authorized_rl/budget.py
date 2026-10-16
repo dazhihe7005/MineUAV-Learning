@@ -44,6 +44,9 @@ def experiment(arm,steps,wall,*,seed=0,revision='R1'):
 
 
 def validate_experiment(p):
+    if p.get('schema')==2:
+        from .prior_profile import validate_prior_profile
+        return validate_prior_profile(p)
     keys=set(experiment('UNIFORM',65536,3600))|{'source_identity_sha256','registration_sha256'}
     if set(p)-keys or not set(experiment('UNIFORM',65536,3600))<=set(p):raise OpsError('experiment schema invalid')
     if (not re.fullmatch(r'ARL_[A-Z0-9_]{3,90}',p['experiment_id']) or p['arm'] not in ('UNIFORM','CURRICULUM')

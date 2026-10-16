@@ -1,0 +1,49 @@
+{
+  "comparator": "FROZEN HISTORICAL R1 UNIFORM, not rerun; single seed and cross-stage version differences disclosed",
+  "cumulative_authority": "existing immutable user grant; full65536/3600 conservative reservation; no new budget or old denial edits",
+  "phase": "AUTORL-R2-PRIOR",
+  "protocol": {
+    "algorithm": "PPO",
+    "arm": "UNIFORM",
+    "control_summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+    "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+    "device": "cpu",
+    "evaluation": {
+      "candidate_collision_max": 1,
+      "candidate_physical_sensor_failures_max": 0,
+      "candidate_success_min": 4,
+      "claim_limit": "single seed small Validation; no learned LiDAR dependence or generalization proof",
+      "initialization_effect": "final successes > R1 final successes and collisions <= R1 final collisions",
+      "learning_over_prior": "final successes > own step0 successes and collisions <= own step0 collisions",
+      "selection": "FINAL_CHECKPOINT"
+    },
+    "execution_profile": "ANALYTIC_PRIOR_R2_V1",
+    "expected_prior_policy_sha256": "1f3e9a0a6779d9b7290ba138bda5e6f916e5d73380b291cc9a97d1650c5e835c",
+    "experiment_id": "ARL_R2_PRIOR_SEED0",
+    "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+    "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+    "n_steps": 128,
+    "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+    "registration_sha256": "520b6dfd65c796efe67f15e2eb2799908ae1e45b4b7f648902a049d4ee638757",
+    "resume": "RESTART_REQUIRED",
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "schema": 2,
+    "seed": 0,
+    "source_identity_sha256": "44bd92f55daabbda4ce21b07a6563b27d2ed0cec9cb395a250cbe65f6179ca1e",
+    "test_episode_count": 0,
+    "timesteps": 65536,
+    "validation_steps": [
+      0,
+      32768,
+      65536
+    ],
+    "wall_seconds": 3600,
+    "workers": 1
+  },
+  "protocol_sha256": "09a4da2c329ddcf6dc6da79dfa4c49c0bac6eab441e53f6c99e2a6040566f61e",
+  "registration_sha256": "520b6dfd65c796efe67f15e2eb2799908ae1e45b4b7f648902a049d4ee638757",
+  "selection": "FINAL_CHECKPOINT",
+  "source_identity_sha256": "44bd92f55daabbda4ce21b07a6563b27d2ed0cec9cb395a250cbe65f6179ca1e",
+  "unchanged": "Reward, CNN, Critic initialization, std, PPO hyperparameters, action scale, dynamics, Train/Val/Test manifest, 500/100/25/10Hz and24000 rays",
+  "validation": "step0 /32768 /65536 frozen weights, deferred until Train closed; same six identities,18 total; Test0"
+}
