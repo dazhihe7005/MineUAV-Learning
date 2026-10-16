@@ -1,6 +1,10 @@
 
 
-## 当前阶段：AUTORL-R4 冻结反馈诊断（执行PASS，非导航评价）
+## 当前阶段：AUTORL-R5 短目标真实可完成性（PASS，非学习）
+
+12个保留原障碍/起点/Yaw的新0.20m Train目标全部原标准成功，58–59step/任务，合计701step/14020真实物理tick；最后误差.07859–.08364m、速度.09766–.10953m/s。执行前0.35m静态几何拒绝及_01准入I1均已修复、_02测试1003项PASS/15排除和独立预审GO后才运行。Budget字节不变，余1,672,320步/68,400s，0optimizer/Val/Test。结果proof395fe389…仅为state-only Scripted可完成性。报告/图/结果复审/Git远端完成后自动进入R6，不以普通阶段结束整个研究任务。
+
+## 历史阶段：AUTORL-R4 冻结反馈诊断（执行PASS，非导航评价）
 
 11个固定checkpoint×62反事实case，只有一个真实24k射线Train reset背景，0physics/optimizer/episode/Val/Test。R2／R3解析step0方向反馈正确、相对Scripted误差<.002073；final零state指令增至2.345／1.565m/s，R3随机final为.331m/s，仅是有限输入的动作偏置证据，非实测漂移或唯一原因。992项相关测试PASS／15排除。_01 NO_GO I1先修，_02新源码d789aa04…完整测试／预审GO／登记后唯一运行。预算不变，历史1404保护项和87untracked保持。下一项是近距离到点任务可完成性与课程设计，先独立预注册，不重复R1/R2/R3，不启动PX4。
 

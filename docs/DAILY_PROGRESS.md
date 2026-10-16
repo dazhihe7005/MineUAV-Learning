@@ -1,5 +1,9 @@
 # 每日项目交接
 
+## 2026-10-16：AUTORL-R5短目标物理基线
+
+基线R4 ac10e5cc…远端完整核验、grant/5attempt/stop/历史保护PASS后进入新分支research/lidar-short-goal-r5。_02源码2d576a2e…、协议f52ea7b9…、清单f93b6dce…经1003项相关测试/独立预审/OPS准入后唯一运行，12短Train全成功（701step/14020tick），proof395fe389…；没有训练或Validation/Test，预算未变。_01 NO_GO I1在执行前已修复；0.35m静态冲突改统一0.20m，未放宽原成功/安全条件。最终结果复审与远端收据决定完整完成。完成后同会话继续独立R6课程训练准入，不等普通新指令；若会话中断，先status/recover/doctor与grant，绝不重跑R5/旧训练。
+
 ## 2026-10-16：AUTORL-R4实际诊断
 
 基线远端dafc0fa…核验，当前research/lidar-policy-feedback-audit。源码／协议／历史身份、登记／doctor PASS后唯一run_01完成；11checkpoint、682反事实响应，0训练／0物理step／0Val/Test。运行前背景身份Important已修复重审；992项相关测试PASS／15排除，结果83d3766e…、8.335s／HWM1306.43MiB。先验反馈训练后偏置与随机策略方向不充分是CONFIRMED症状，非唯一因果。下一次恢复先查最新Git收据和预算，绝不重放R4，独立设计短距离到点可完成性及课程。预算余额不变1,672,320步／68,400s；原授权内普通研发无需再确认。

@@ -1,4 +1,18 @@
-## AUTORL-R4-FEEDBACK：唯一运行已完成，下一项设计
+## AUTORL-R5-SHORT：唯一物理基线已完整结束，下一项R6
+
+R5 run_01实际12/12短Train成功，result SHA395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94，禁止重放/删除attempt。701策略step/14020物理tick、0optimizer/Val/Test，源码2d576a2e…执行前后相同，1003项相关测试PASS/15排除；预算字节不变。完成独立结果复审/Commit/Push后，以OPS远端收据为权威，自动进入新独立R6课程PPO，而非结束长期任务。
+
+R6准确任务：固定新schema6与ID（保留旧schema1/2/3/4拒绝行为及immutable grant）；pin R5已发布proof SHA和R3 RANDOM历史summary7651327c…，新随机seed0/std.3/65536step/3600s/CPU单worker。只变目标距离分布：前32768步12短目标.20m，下一自然reset恢复原12目标，不中途改目标。原CNN/Reward/PPO/PI/24000 rays/频率不变。复用现有worker与计费，不复制算法。Checkpoint0/32768/65536；独立短Validation6在三个checkpoint评价，原Validation仅32k/final实际跑、step0复用同权重R3历史证据，不能把复用当新episode；Test0。Final选择，预注册短成功≥4/6/碰撞≤1/6/无物理传感器失败、original成功>0、优于自身step0分别判断，不事后改标准。先开发RED→GREEN/完整回归/审查/新登记/doctor再预留原账本并唯一执行；当前R5注册不能启动R6训练。R6发布后再审计预算/stop/资源决定下一安全假设，无需普通阶段确认。
+
+余额仍1,672,320步/68,400s，stop=false；不initialize/退款，不从旧模型继续，RESTART_REQUIRED。PX4/FASTLIO/实机禁止，Test封存。若最新状态SYNC_PENDING先完成同步；未知attempt先审计，不能重试。下面是本阶段过程历史，不是新的执行命令。
+
+## AUTORL-R5-SHORT：实现与准入过程
+
+R4远端ac10e5cccb2e84f9b42b39d4924f4c71bfdd19bd已再次核验完整，当前新分支research/lidar-short-goal-r5。读AUTORL_R5_SHORT_GOAL_DESIGN.md。唯一run_01尚未执行；设计最初0.35m被静态几何拒绝，执行前统一改0.20m，18个Train/Validation派生目标重新检查通过，不改障碍/裕量/Reward。8项OPS/3项实际环境测试含RED→GREEN；预审_01 NO_GO I1可完成性证据不足，已先RED7失败→GREEN8项，_02完整重新冻结与回归/复审中，不用旧准入运行。
+
+剩余独立grant1,672,320步／68,400s、5旧attempt均COMPLETE、stop=false，不initialize/不重放。R5当前只执行经审查的唯一12个短Train非学习物理episode，0optimizer/Val/Test；全部原停稳标准成功才可进入独立R6课程训练。R5实际结果/MD/JSON/独立复审/Commit/Push远端完成后，自动继续R6冻结入口/协议与测试审查，在原预算执行65536步课程，不能只停在文档。R6必须pin已发布R5 proof SHA，不改旧profile/grant。任何安全/未知状态/停止/资源不足先安全交接。
+
+## AUTORL-R4-FEEDBACK：唯一运行已完成历史
 
 当前research/lidar-policy-feedback-audit，基线dafc0fa117913ad40a1bbb9057b7c6b7b4767e06；最终commit／远端以OPS收据为准。R4 result83d3766ebdba586282f23e2b3c39a4284cc03791a4017d963af2fa04cef7a673，已完成，不得再次run或删除attempt。11固定checkpoint×62反事实case、单真实Train reset，零physics/optimizer/episode/Val/Test。_01 I1修复后_02注册42dcf1b3…、源码d789aa04…、协议b4379107…、992项PASS／15排除、独立预审GO。先查最终结果审查／同步收据；待推先sync。
 

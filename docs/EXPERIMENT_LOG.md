@@ -1,5 +1,11 @@
 # Experiment Log
 
+## 2026-10-16 — AUTORL-R5：短目标可完成性PASS
+
+冻结派生12Train+6Validation短任务（只运行12Train，Test不派生/运行），距离为原目标方向0.20m、其他几何/起点/Yaw不变。0.35m初稿有3处静态裕量拒绝，运行前修订、未降低原标准；预审_01 I1证据准入不足先RED→GREEN修复后_02完整1003项相关测试PASS/15排除、独立GO/准入/登记/doctor完成才唯一执行。12/12 Scripted真实物理成功，701策略step/14020tick，生成288雷达帧，0optimizer/Val/Test。result395fe389…，源码2d576a2e…前后不变，预算SHA不变；余额1,672,320步/68,400s。
+
+producer wall11.418s/CPU11.531s/HWM1612.86MiB/minMem7894.04MiB，未观察OOM；step P95=12.099ms，扫描/编码为最近帧重复样本统计已明确标注。原标准只要求<.10m/<.15m/s连续5step，并非精确静止。原始证据local-only；完成独立结果复审/Commit/Push远端后自动进入R6新的目标距离课程PPO，不重复R3控制臂、不触碰历史模型与原L9 FAIL。
+
 ## 2026-10-16 — AUTORL-R4：冻结目标反馈的无更新诊断
 
 唯一运行result SHA83d3766e…，固定11checkpoint×62case=682组反事实响应、单一实际Train reset雷达背景，物理推进／episode／optimizer／Val／Test均0。解析均值step0正确，PPO后明显偏置；R3随机／解析final零state速度指令范数.33091／1.56468m/s，不是实际漂移。全权重／optimizer／Torch RNG不变，原budget文件SHA前后完全相同，余1,672,320步／68,400s。源码d789aa04…、协议b4379107…全程一致，原模型／原失败／87历史untracked不变。

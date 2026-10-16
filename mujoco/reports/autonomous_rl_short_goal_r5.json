@@ -1,0 +1,386 @@
+{
+  "acceptance": {
+    "Test_PX4_hardware": "NOT TESTED",
+    "all_twelve_physical_successes": "PASS",
+    "new_learning_performance": "NOT TESTED",
+    "original_physics_reward_control": "PASS",
+    "original_stop_standard": "PASS",
+    "task_identity_and_causal_timestamps": "PASS",
+    "zero_optimizer_and_budget_unchanged": "PASS"
+  },
+  "actual_generated_lidar_frames": 288,
+  "admission": {
+    "path": ".research_local/autorl_r5_checks.json",
+    "sha256": "af22e7824bd0705b07fe22ab32d0bb595a32d2cec3a4884a3f766aa3772a1caf"
+  },
+  "analysis": {
+    "path": ".research_local/autorl_r5_analysis.json",
+    "sha256": "8bb32b2f544bf753ffaff5a33d143e39af81572d8c9ec9a777bfdaf3af2db4b0"
+  },
+  "analysis_source": {
+    "path": ".research_local/analyze_autorl_r5.py",
+    "sha256": "7003f415b46390e6db47cd69e8b595a284ef1b1c9cf34b7060c8a59da40ab3e3"
+  },
+  "execution": {
+    "budget": {
+      "authorization_id": "AUTONOMOUS-RL-RESEARCH-V1",
+      "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+      "remaining_timesteps": 1672320,
+      "remaining_wall_seconds": 68400,
+      "reserved_timesteps": 327680,
+      "reserved_wall_seconds": 18000,
+      "stop_requested": false,
+      "training_authorized": true
+    },
+    "budget_unchanged": true,
+    "claim": "STATE_ONLY_SCRIPTED_FEASIBILITY_NOT_LEARNED_AVOIDANCE",
+    "cpu_seconds": 11.530993198999997,
+    "encoding_ms_last_sample_per_step": {
+      "count": 701,
+      "max": 7.195889999820793,
+      "p50": 4.14607899983821,
+      "p95": 4.393856000206142,
+      "p99": 6.895052999425388
+    },
+    "environment_step_ms": {
+      "count": 701,
+      "max": 14.94105599977047,
+      "p50": 1.1684239998430712,
+      "p95": 12.098745000002964,
+      "p99": 12.498748999860254
+    },
+    "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+    "min_sampled_mem_available_mib": 7894.0390625,
+    "optimizer_updates": 0,
+    "physics_ticks": 14020,
+    "protocol_sha256": "f52ea7b9e84ee44335c256521a086432894390aedba4b6745da93857a83fc1b7",
+    "registration_sha256": "608a2c4c24a23343338d48832ab78ddf574527aa919c5e4d5072e2beb86c5a63",
+    "scan_ms_last_sample_per_step": {
+      "count": 701,
+      "max": 7.523278000007849,
+      "p50": 6.524182999783079,
+      "p95": 6.768915000066045,
+      "p99": 7.4902149999616086
+    },
+    "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+    "source_identity_sha256": "2d576a2e81db76b0c6f3252fa97aa0da1b2ab074bebc42e32f45b33a00653289",
+    "status": "PASS",
+    "test_episodes": 0,
+    "training_timesteps": 0,
+    "validation_episodes": 0,
+    "wall_seconds": 11.41793943399989,
+    "worker_ru_maxrss_mib": 1612.86328125
+  },
+  "figures": {
+    "mujoco/reports/autonomous_rl_short_goal_r5/figures/goal_stop.png": "ddfeed81f11d0edff8b57fe9e3b7cb159629484f57fe35ad1cb6e27deb63e8c9",
+    "mujoco/reports/autonomous_rl_short_goal_r5/figures/timing.png": "137371d9ed20a54f0c9abcb503ac370aba21c027d7f4902c6aef2a0e45b4bf39",
+    "mujoco/reports/autonomous_rl_short_goal_r5/figures/trajectories.png": "a1d91a4f4d6b27ea4cc62a29365606a0d4a2f681b3f3a1d0f1340e1357e966e1"
+  },
+  "implementation_status": "PASS",
+  "limitations": [
+    "state-only Scripted is not learned or obstacle-aware",
+    "0.20m goals before obstacles are not avoidance tasks",
+    "success allows nonzero final error/speed per unchanged historical rule",
+    "scan/encode timing retains last sample each policy step, repeated frames not independent samples",
+    "CPU/wall scope producer, not whole CLI/analysis; no exact resume"
+  ],
+  "metrics": [
+    {
+      "base_identity_sha256": "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+      "episode_return": 10.291237093467485,
+      "final_goal_error_m": 0.08088190363981196,
+      "final_speed_m_s": 0.10913123362266106,
+      "path_length_m": 0.12024597453386754,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "eb25d5230c0d44c40595eff50d4d807d61dbf89226ada2091bb465c81df02328"
+    },
+    {
+      "base_identity_sha256": "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+      "episode_return": 10.321736615327639,
+      "final_goal_error_m": 0.08105091312055461,
+      "final_speed_m_s": 0.10811204485101782,
+      "path_length_m": 0.12000153836997202,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "d26c835a3c460b3cd92292731913cd8744ff958b108b54ac978d7080813fcb9c"
+    },
+    {
+      "base_identity_sha256": "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+      "episode_return": 10.274992349458797,
+      "final_goal_error_m": 0.07858965842359701,
+      "final_speed_m_s": 0.10778742674336557,
+      "path_length_m": 0.12226492467600515,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "69510af27f743edfdeafc2ec29663341c38ea04e1a7bf2452326db2b20769bfc"
+    },
+    {
+      "base_identity_sha256": "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+      "episode_return": 10.202766307485689,
+      "final_goal_error_m": 0.08056998479636879,
+      "final_speed_m_s": 0.10562888131267205,
+      "path_length_m": 0.12001782045493728,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "5a5de25c104b52078d2d5cc4581fafda281e6f2fba38829dc4b4b55fc5c787fd"
+    },
+    {
+      "base_identity_sha256": "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+      "episode_return": 10.221138552573466,
+      "final_goal_error_m": 0.07980581916207406,
+      "final_speed_m_s": 0.10664356368129146,
+      "path_length_m": 0.12089448452091926,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "2daf66441a4710a859014924b581e06e9e9e09f247308496d50f82f025b27a71"
+    },
+    {
+      "base_identity_sha256": "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+      "episode_return": 10.427944300206391,
+      "final_goal_error_m": 0.08028263021757168,
+      "final_speed_m_s": 0.10245113157220058,
+      "path_length_m": 0.1203364613670827,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "8965e5ac8e2301f67eec79c7ff77bdc83702abe017323539cbaee977dc0a8bb1"
+    },
+    {
+      "base_identity_sha256": "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+      "episode_return": 10.171039030127252,
+      "final_goal_error_m": 0.08363777263135122,
+      "final_speed_m_s": 0.09896743885173173,
+      "path_length_m": 0.11658384726383857,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "1a78c7f694369dd0570292a6577af8f84abf3888bf0a1ba65df37e00fd25c79d"
+    },
+    {
+      "base_identity_sha256": "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+      "episode_return": 10.172757504127999,
+      "final_goal_error_m": 0.08336143585824897,
+      "final_speed_m_s": 0.09998824900601902,
+      "path_length_m": 0.11687560413140849,
+      "sim_seconds": 2.3599999999999617,
+      "steps": 59,
+      "task_identity_sha256": "1d7f972606b5a9a29cfebe106af298c13e1ad3ac7e3a5634954e7d596640af8c"
+    },
+    {
+      "base_identity_sha256": "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+      "episode_return": 10.500206782073287,
+      "final_goal_error_m": 0.0805272400233861,
+      "final_speed_m_s": 0.09766122640535574,
+      "path_length_m": 0.11952909385809808,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "fd0b684dd3c541e3239b32eec86837a020810e90bd80c3cd4aa178b19cff8c59"
+    },
+    {
+      "base_identity_sha256": "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+      "episode_return": 10.299042373840532,
+      "final_goal_error_m": 0.07960981795903048,
+      "final_speed_m_s": 0.10953314178018037,
+      "path_length_m": 0.1216866520594651,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "a2456b5178db23ba4982786ee6e2bdb7704e599800e36a5cc3976676b8f9cd85"
+    },
+    {
+      "base_identity_sha256": "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+      "episode_return": 10.49917001837269,
+      "final_goal_error_m": 0.08066905092409085,
+      "final_speed_m_s": 0.09772990549583127,
+      "path_length_m": 0.11938557562258474,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "2cb407703306b5fe63c3e4aec58d07e795600be89e60b87fc3b854e2dee789ab"
+    },
+    {
+      "base_identity_sha256": "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+      "episode_return": 10.433670524900124,
+      "final_goal_error_m": 0.08061753302907411,
+      "final_speed_m_s": 0.10200250841222111,
+      "path_length_m": 0.119921834916311,
+      "sim_seconds": 2.319999999999966,
+      "steps": 58,
+      "task_identity_sha256": "951641977659cfdbe0534a758008be9f070b497f0d885645ca859022b7483b4d"
+    }
+  ],
+  "next_action": "after independent result review and verified remote publication, automatically implement and run reviewed R6 distance curriculum within original budget; pin this R5 result SHA; never repeat R5",
+  "phase_id": "AUTORL-R5-SHORT",
+  "policy_steps": 701,
+  "protocol_sha256": "f52ea7b9e84ee44335c256521a086432894390aedba4b6745da93857a83fc1b7",
+  "raw_files": [
+    {
+      "bytes": 575,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/attempt.json",
+      "sha256": "c56f7c807c70617af2d849d074559fb50318034c4fc57c1f36e49c2048cce176"
+    },
+    {
+      "bytes": 90,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/complete.json",
+      "sha256": "01ea4bcc70e12c1a0d9b76223b8feaa757621e609794fb974bd1a0c030c43bcb"
+    },
+    {
+      "bytes": 40638,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_00.json",
+      "sha256": "dfc8da85bc06f6ebc5a6d4a5ed8f65ad3c9f4c273fc6b60d96ca635d9cf09678"
+    },
+    {
+      "bytes": 40641,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_01.json",
+      "sha256": "93082aa70aab011df4c92fd3bd5ed5c146e605d30303d4e0999d5dc6bafc8f5a"
+    },
+    {
+      "bytes": 41098,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_02.json",
+      "sha256": "bf8ffb171ac13a4b23d4180c5474c4981c59085255fbc84c65c10fbc2907d009"
+    },
+    {
+      "bytes": 40825,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_03.json",
+      "sha256": "0a1719fea40e7b1df972a5b21285bc35d9312f85f50800cc496f99512537f96c"
+    },
+    {
+      "bytes": 40945,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_04.json",
+      "sha256": "437b8547db6af648b14856e8d549650bbccf9ed45d2a2aabd84e63c189a39612"
+    },
+    {
+      "bytes": 40983,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_05.json",
+      "sha256": "468ad3b2bf2a00fddafd896d176e54a1291634b49bc77dbc71a288a3d0800157"
+    },
+    {
+      "bytes": 40826,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_06.json",
+      "sha256": "0d9c9bf52e817ac450b2cef18336ccbe7eb0ca03925bba4ce7ae4fd42f04822b"
+    },
+    {
+      "bytes": 40846,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_07.json",
+      "sha256": "420c191a57c5346141bc2727919677cf728ec624271ae043ac7f37001874d8f1"
+    },
+    {
+      "bytes": 40967,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_08.json",
+      "sha256": "2a48cea1c52470066a4a6baf3c7ea8eb5b5c5718a4dd575b92dbf8877d2e60dc"
+    },
+    {
+      "bytes": 40447,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_09.json",
+      "sha256": "d6acd4378fcc70b2f79d623f514fa1ed0b6cfcbcf6286280ba5fc2a319040318"
+    },
+    {
+      "bytes": 40937,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_10.json",
+      "sha256": "66462fb994214919f863c749efb119b8b338eab1bcb3c653af21c19b3e6955c4"
+    },
+    {
+      "bytes": 40855,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/episode_11.json",
+      "sha256": "4ad72b422e38699b16f006c530b70fc4f45ba681a242c3e0347a035340f00f40"
+    },
+    {
+      "bytes": 566826,
+      "experiment_id": "AUTORL_R5_SHORT_FEASIBILITY_ONLY",
+      "path": ".research_local/autorl_r5_short_goal/run_01/result.json",
+      "sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94"
+    }
+  ],
+  "registration_sha256": "608a2c4c24a23343338d48832ab78ddf574527aa919c5e4d5072e2beb86c5a63",
+  "result": {
+    "path": ".research_local/autorl_r5_short_goal/run_01/result.json",
+    "sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94"
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r5_results_review_01.json",
+      "sha256": "b2d5a6f790a8e0a5954119ba381b6d694d17696958cea55b4c4e7b36bb78b2a4"
+    },
+    "important": 0,
+    "minor": 0,
+    "reviewed_report_before_receipt_sha256": "89ab70aca1c756e717bef07f08fd284c89159c069cbe6ec0611b3a441af353ce",
+    "status": "GO"
+  },
+  "review": {
+    "evidence": {
+      "path": ".research_local/autorl_r5_pre_review_02.json",
+      "sha256": "efab30f0507755bf646111d0501c49aa5c4ee7862d7760e074ce10d49293c759"
+    },
+    "initial_candidate": "NO_GO I1 proof identity/physical consistency; fixed before experiment",
+    "source_identity_sha256": "2d576a2e81db76b0c6f3252fa97aa0da1b2ab074bebc42e32f45b33a00653289",
+    "status": "GO"
+  },
+  "scripted_failures": 0,
+  "scripted_successes": 12,
+  "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+  "sim_seconds_summed": 28.039999999999566,
+  "source_identity_sha256": "2d576a2e81db76b0c6f3252fa97aa0da1b2ab074bebc42e32f45b33a00653289",
+  "tests": {
+    "deselected": 15,
+    "evidence": {
+      "path": ".research_local/autorl_r5_operations_final_02.json",
+      "sha256": "78e9013aad043040bf27b139e2600751a53207c9f433804c06c486d2c2e2e68b"
+    },
+    "historical": 885,
+    "historical_evidence": {
+      "path": ".research_local/autorl_r5_historical_final_02.json",
+      "sha256": "fa8858f524e09071c1ff3fccb0da8c63ea52e6b07fa0c4acf8ebf75add18ed08"
+    },
+    "operations": 99,
+    "red_green": [
+      {
+        "path": ".research_local/autorl_r5_spec_red_01.json",
+        "sha256": "590cbc3d92dcd12316383bbd9430896ccb5c245febee3f2eb322a02d44b0826d"
+      },
+      {
+        "path": ".research_local/autorl_r5_spec_green_01.json",
+        "sha256": "fdb477ae4d800f1996a03645b2c798c0bd9435a30f7b820b82b61ff87b7092e0"
+      },
+      {
+        "path": ".research_local/autorl_r5_env_red_01.json",
+        "sha256": "eaa18f730cb874095fd56fc6ffb7f4811c9872812193e4bdb841d0672ebe0096"
+      },
+      {
+        "path": ".research_local/autorl_r5_env_green_01.json",
+        "sha256": "f40fc4d8209ed059c968fa5b9f9bacd586adf41ee890e79a8f68c9912fa85f73"
+      },
+      {
+        "path": ".research_local/autorl_r5_geometry_red_01.json",
+        "sha256": "44c1bd33c01a1d041ff2e4a89f6e7500267e66ee2ff89db725beed9de462fa02"
+      },
+      {
+        "path": ".research_local/autorl_r5_proof_red_02.json",
+        "sha256": "1e61c72125c3d623e1f5821de8aae153b481e53d9c89f1b03f2ead27d059bb83"
+      },
+      {
+        "path": ".research_local/autorl_r5_proof_green_01.json",
+        "sha256": "6db324d51e98bd13aa5dbc6b5ee041fd76e98e306f8d261e89803ab08a0f3604"
+      }
+    ],
+    "scope": "selected related regression NOT full repository",
+    "status": "PASS",
+    "tensor_and_environment": 19,
+    "tensor_evidence": {
+      "path": ".research_local/autorl_r5_tensor_final_02.json",
+      "sha256": "836f6e9a29f01a50fcff5415cfba682d3f6302142de3981a7b301a54b3eeb1fe"
+    },
+    "unique_pass": 1003
+  }
+}
