@@ -1,4 +1,20 @@
-## AUTORL-R5-SHORT：唯一物理基线已完整结束，下一项R6
+## AUTORL-R6 最新：FAIL，必须先离线修复（2026-10-16）
+
+唯一ARL_R6_DISTANCE_SEED0已FAIL，禁止prepare/start重试或从step0继续。第一条实际20tick/.04s transition返回后，新短目标task身份不在旧TrainingMetricsEnv的12个base白名单，被安全拒绝；已完成训练记账步数0，optimizer/episode/新Validation/Test均0，不是PPO学习失败。完整现场/step0 ZIP已封存local-only，运行源码ca83fb16…未改；原预审GO遗漏此Important消费者契约，1011项选择回归PASS不等于完整链通过。
+
+预算保守预留不退款：累计393216步/21600s，余1,606,784步/64,800s，stop=false。R5已推送d4971529…，R6最终Commit/远端以OPS实时收据为准。阶段报告PHASE_AUTORL_R6_DISTANCE_CURRICULUM.md、机器JSONautonomous_rl_distance_curriculum_r6.json。失败报告可同步但OPS保守phase_complete=false，不伪造PASS。
+
+下一安全动作：先完成R6失败结果独立审查及Commit/Push远端核验，再独立R7 Level1修复。显式保留base/task双身份，只在记账边界使用受审Train任务白名单，不删除过滤/伪造base身份，不准入Val/Test；完整TrainingMetricsEnv→FormalHealthMetricsEnv真实step、跨课程阈值、未知身份/失败锁存/Checkpoint状态先RED→GREEN，0optimizer。修复发布及新审查后才可另立独立训练协议和ID，不重试R6、不重置原grant。PX4/FASTLIO/实机禁止，Test封存。当前训练因已知Important暂BLOCKED，离线修复自动继续。
+
+以下为历史过程快照，不是当前执行命令。
+
+## AUTORL-R6-DISTANCE：实现完成，准入中，尚未训练
+
+R5已独立结果复审GO并远端核验d4971529c63c9f2f305c78c851cb8d94b20d6487。当前research/lidar-distance-curriculum-r6，读AUTORL_R6_DISTANCE_TRAINING_DESIGN.md；固定新schema6/ARL_R6_DISTANCE_SEED0，65536步/3600s/seed0/std.3，只改变目标距离课程。新profile6项与实际初始化/独立短Validation2项测试已RED→GREEN，完整105OPS/21Tensor/885历史与独立预审正在执行。尚未prepare/预留/start，不重复旧实验，余额仍1,672,320步/68,400s。
+
+下一安全步骤：全部当前终证据及精确SOURCE/REG独立GO后建立r6_checks、OPS register/recover/doctor，通过固定R5proof/R3control验证，prepare-distance并核SHA，唯一start-distance。训练时冻结代码，failure/unknown保留attempt不重试，RESTART_REQUIRED。首次训练余额应在预留后变1,606,784步/64,800s，不能退款或initialize。完成后实际30新Validation/Test0、checkpoint/optimizer/权重及源身份核验、图/MD/JSON/独立结果复审/Commit/Push/远端，然后继续新安全假设。不把step0旧6条评价算作新执行，不从旧checkpoint初始化。
+
+## AUTORL-R5-SHORT：已完成历史
 
 R5 run_01实际12/12短Train成功，result SHA395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94，禁止重放/删除attempt。701策略step/14020物理tick、0optimizer/Val/Test，源码2d576a2e…执行前后相同，1003项相关测试PASS/15排除；预算字节不变。完成独立结果复审/Commit/Push后，以OPS远端收据为权威，自动进入新独立R6课程PPO，而非结束长期任务。
 

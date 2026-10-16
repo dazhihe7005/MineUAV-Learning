@@ -15,6 +15,8 @@ def main():
     p=sub.add_parser('start');p.add_argument('--arm',choices=('UNIFORM','CURRICULUM'),required=True)
     p.add_argument('--expected-protocol-sha256',required=True)
     sub.add_parser('prepare-prior')
+    sub.add_parser('prepare-distance')
+    p=sub.add_parser('start-distance');p.add_argument('--expected-protocol-sha256',required=True)
     p=sub.add_parser('start-prior');p.add_argument('--expected-protocol-sha256',required=True)
     p=sub.add_parser('prepare-std');p.add_argument('--variant',choices=('RANDOM','PRIOR'),required=True)
     p=sub.add_parser('start-std');p.add_argument('--variant',choices=('RANDOM','PRIOR'),required=True)
@@ -38,11 +40,15 @@ def main():
         elif args.command=='baseline':
             from .baseline import run_baseline
             result=run_baseline()
-        elif args.command in ('prepare','prepare-prior','prepare-std'):
+        elif args.command in ('prepare','prepare-prior','prepare-std','prepare-distance'):
             m,r=verify_current()
             from research_ops.storage import FileLock
             with FileLock(m.lock_path):
-                if args.command=='prepare-std':
+                if args.command=='prepare-distance':
+                    from .distance_profile import distance_experiment,verify_distance_proof
+                    if r['phase_id']!='AUTORL-R6-DISTANCE':raise OpsError('distance prepare requires reviewed R6 phase')
+                    p=distance_experiment();verify_distance_proof(p)
+                elif args.command=='prepare-std':
                     from .std_profile import std_experiment,verify_std_controls
                     if r['phase_id']!='AUTORL-R3-STD':raise OpsError('std prepare requires its reviewed training phase')
                     p=std_experiment(args.variant);verify_std_controls(p)
@@ -52,7 +58,10 @@ def main():
                     p=prior_experiment();verify_prior_proof(p)
                 else:p=experiment(args.arm,65536,3600)
                 p.update(source_identity_sha256=digest(r['source_identity']),registration_sha256=digest(r))
-                if args.command=='prepare-prior':
+                if args.command=='prepare-distance':
+                    from .distance_profile import verify_distance_checks
+                    verify_distance_checks(p)
+                elif args.command=='prepare-prior':
                     from .prior_profile import verify_training_checks
                     verify_training_checks(p)
                 elif args.command=='prepare-std':
@@ -62,7 +71,8 @@ def main():
                 atomic_json(dest,p,exclusive=True)
             result={'protocol_sha256':digest(p),'protocol':p,'active':False}
         else:
-            identity=(f'ARL_R3_{args.variant}_STD03_SEED0' if args.command=='start-std' else
+            identity=('ARL_R6_DISTANCE_SEED0' if args.command=='start-distance' else
+                f'ARL_R3_{args.variant}_STD03_SEED0' if args.command=='start-std' else
                 'ARL_R2_PRIOR_SEED0' if args.command=='start-prior' else f'ARL_R1_{args.arm}_SEED0')
             p=read_json(HOME/'protocols'/f'{identity}.json')
             if digest(p)!=args.expected_protocol_sha256:raise OpsError('explicit experiment SHA mismatch')

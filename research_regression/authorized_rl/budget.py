@@ -44,6 +44,9 @@ def experiment(arm,steps,wall,*,seed=0,revision='R1'):
 
 
 def validate_experiment(p):
+    if p.get('schema')==6:
+        from .distance_profile import validate_distance_profile
+        return validate_distance_profile(p)
     if p.get('schema')==3:
         from .std_profile import validate_std_profile
         return validate_std_profile(p)

@@ -1,0 +1,189 @@
+{
+  "actual_physics_ticks": 20,
+  "actual_returned_physical_transitions": 1,
+  "analysis_evidence": {
+    "path": ".research_local/autorl_r6_failure_analysis.json",
+    "sha256": "16005fee48c759189916d04a0638bd9c957e82ceeeacb3c9e65a9fa27b3d2382"
+  },
+  "attempt_count": 1,
+  "budget": {
+    "cumulative_reserved_steps": 393216,
+    "cumulative_reserved_wall_seconds": 21600,
+    "refund": false,
+    "remaining_steps": 1606784,
+    "remaining_wall_seconds": 64800,
+    "reserved_for_failed_attempt_steps": 65536,
+    "reserved_for_failed_attempt_wall_seconds": 3600,
+    "stop_requested": false
+  },
+  "completed_accounted_training_steps": 0,
+  "completed_episodes": 0,
+  "confirmed_failure": {
+    "actual_physics_ticks": 20,
+    "analysis_source_sha256": "123bcc7bb53c63f0a581b68298dd5a9e8de00d09f051dfc53ec6bd0972686998",
+    "attempted_returned_transitions": 1,
+    "base_identity_sha256": "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+    "completed_rollouts": 0,
+    "confirmed_root": "new short-task identity not in old TrainingMetricsEnv base-identity whitelist",
+    "current_rss_mib_not_peak": 1053.921875,
+    "failure": {
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/failures/failure_ARL_R6_DISTANCE_SEED0_8ec71a866d41406db424f3a4b0133695.json",
+      "sha256": "61bb24fbfb0fb4ccff22518a66b9ac489e8447ab4e9a6a58703c4b7b172602e7"
+    },
+    "figures": {
+      "mujoco/reports/autonomous_rl_distance_curriculum_r6/figures/goal_progress.png": "6046c0f19fab308d27b5e7702984c5ccd70152b0e4bf3b547e46881ee8113201",
+      "mujoco/reports/autonomous_rl_distance_curriculum_r6/figures/ppo.png": "0e1042f2bab193174a2f04fa6bb1ce2dfd4abde1ddccd42df74f84abbbd74c4f",
+      "mujoco/reports/autonomous_rl_distance_curriculum_r6/figures/resources.png": "5457983e93d22ea7302ad5a2ee1f52f35672ab724d573a9efa0d92624e65be3c",
+      "mujoco/reports/autonomous_rl_distance_curriculum_r6/figures/training.png": "017ecb854816de8e47b9f94701748d7fffd2aa58e142e929d1ff7fa754eb9a95",
+      "mujoco/reports/autonomous_rl_distance_curriculum_r6/figures/validation.png": "207ad8b2aa0962a2256ca6a85383ddb7c63d5ee9c42cce48ce9a17adb01df07d"
+    },
+    "last_completed_accounted_policy_steps": 0,
+    "mem_available_mib_one_sample": 10126.0625,
+    "new_validation_episodes": 0,
+    "optimizer_updates": 0,
+    "peak_rss": "NOT_AVAILABLE",
+    "raw_files": [
+      {
+        "bytes": 4928,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/ARL_R6_DISTANCE_SEED0_STEP0.json",
+        "sha256": "4b5a9d9c93827764b02cc79f8f978f2a5b9df12535cac3b37e14b6a365b7e4b3"
+      },
+      {
+        "bytes": 733114,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/ARL_R6_DISTANCE_SEED0_STEP0.zip",
+        "sha256": "e7071a140717c3daae124dde34f95cf4e3e7d43f1296dd5c59dcff5f497122db"
+      },
+      {
+        "bytes": 140,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/child.json",
+        "sha256": "d297f9c116cf3e04349618c89bb9155116ea7b6156648c1f062ce7c190c1fc2b"
+      },
+      {
+        "bytes": 5729,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/console.txt",
+        "sha256": "c84760adee60cfe1201335ca08c36c92aa76475e0a7d9c98d9c44771b2d191d9"
+      },
+      {
+        "bytes": 1923,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/failures/failure_ARL_R6_DISTANCE_SEED0_8ec71a866d41406db424f3a4b0133695.json",
+        "sha256": "61bb24fbfb0fb4ccff22518a66b9ac489e8447ab4e9a6a58703c4b7b172602e7"
+      },
+      {
+        "bytes": 242,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/initial_weights.json",
+        "sha256": "32608e9f384f657352af5a91e44b03593d0b9f6cda2a11a541ed934acd071936"
+      },
+      {
+        "bytes": 739,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/initialization.json",
+        "sha256": "d739daae08238448b89c9377a5aa26de302f1c1c399307a6ed4f9bb68fccf458"
+      },
+      {
+        "bytes": 287,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/permit.json",
+        "sha256": "9db90a2c7e641bdeb9b0fe32eff373bfcba00293369e27f269c6bd730e4ecfd4"
+      },
+      {
+        "bytes": 1960,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/protocol.json",
+        "sha256": "32aaeb10b98c1b90b78f5c974992b9f0d7b218a0d3e074ff7d8cab09511379e7"
+      },
+      {
+        "bytes": 176,
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "path": ".research_local/authorized_rl_v1/runs/ARL_R6_DISTANCE_SEED0/supervisor_failure.json",
+        "sha256": "eef6bb4adbfcb95d674df2c2d358d6dcb2e275ed25ab8e5edd765d0239cd4378"
+      }
+    ],
+    "returned_goal_error_m": 0.199997008323766,
+    "returned_speed_m_s": 0.039287821823613685,
+    "returned_task_identity_sha256": "2cb407703306b5fe63c3e4aec58d07e795600be89e60b87fc3b854e2dee789ab",
+    "status": "FAIL",
+    "test_episodes": 0
+  },
+  "current_runtime_training_readiness": "BLOCKED: known Important identity contract defect",
+  "execution_protocol_sha256": "9132142a2e8e295bf877a38e3d466988e3925772f88817240b498dce1e6bfbce",
+  "experiment_id": "ARL_R6_DISTANCE_SEED0",
+  "historical_protection": "OPS audit required before publication; raw files sealed in analysis",
+  "implementation_status": "FAIL",
+  "initial_policy_sha256": "db33ba4df5f7aaf76f98b7915675cbfc80dbe52273045ed86811b5cc074dfa06",
+  "learning_hypothesis": "NOT TESTED",
+  "limitations": [
+    "No learning outcome",
+    "No peak RSS or full CPU measurement",
+    "No Val/Test executed",
+    "Prior test and pre-review GO did not cover actual accounting integration"
+  ],
+  "new_validation_episodes": 0,
+  "next_action": "Publish FAIL then separate offline full-chain identity repair with zero optimizer updates; never rerun R6",
+  "not_attributed_to": [
+    "PPO learning performance",
+    "physics",
+    "Reward",
+    "NaN",
+    "resource exhaustion"
+  ],
+  "optimizer_updates": 0,
+  "phase_id": "AUTORL-R6-DISTANCE",
+  "registration_sha256": "79ad97c769fb046efd1908ad73db945d437fd1ab3c7945b52162bff56a174fb8",
+  "result_review": {
+    "evidence": {
+      "path": ".research_local/autorl_r6_failure_results_review_01.json",
+      "sha256": "e98d6fc6a3267526ba5893b80f01d0ce7cf7d3f42c8f678400facda5d15292e9"
+    },
+    "scope": "GO FOR HONEST FAIL PUBLICATION ONLY; CURRENT RUNTIME NO_GO, known Important defect",
+    "status": "GO"
+  },
+  "resume": "RESTART_REQUIRED; this experiment ID permanently consumed, no retry",
+  "retry_authorized": false,
+  "review": {
+    "evidence": {
+      "path": ".research_local/autorl_r6_pre_review_01.json",
+      "sha256": "580d161948c91892729a4296ffae7bf02e826e4c8c3b76efac28a093324071e8"
+    },
+    "scope": "HISTORICAL PRE-RUN GO ONLY; missed Important identity-contract defect",
+    "source_identity_sha256": "ca83fb16b419ddcd4401249d9fbcd56b4e5577ba96625f792fff18803fd4218c",
+    "status": "GO"
+  },
+  "root_cause": "new task identity absent from original base-identity whitelist; finite Train transition rejected",
+  "root_cause_confidence": "CONFIRMED_FROM_SOURCE_AND_RETURNED_TRANSITION",
+  "source_identity_sha256": "ca83fb16b419ddcd4401249d9fbcd56b4e5577ba96625f792fff18803fd4218c",
+  "supervisor_wall_seconds": 3.215235589000031,
+  "test_episodes": 0,
+  "tests": {
+    "admission_evidence": {
+      "path": ".research_local/autorl_r6_checks.json",
+      "sha256": "033c53421a68057d202d07d737b0fa7f20450f15488cfe27a71a964632296aa3"
+    },
+    "deselected": 15,
+    "earlier_reboot_interrupted_regression": "INCOMPLETE; fresh complete run used",
+    "evidence": {
+      "path": ".research_local/autorl_r6_operations_final.json",
+      "sha256": "f99cfe057716940ab5c0e4485253feb5fd96c09b076f62ff96b4959f334ed2a8"
+    },
+    "historical": 885,
+    "historical_evidence": {
+      "path": ".research_local/autorl_r6_historical_final.json",
+      "sha256": "ecb978548a4f4cf616675df0a395dd15aa48fc024170e0d6e58593c91b4ed6e5"
+    },
+    "missed_coverage": "actual short task through TrainingMetricsEnv and FormalHealthMetricsEnv",
+    "operations": 105,
+    "scope": "selected no-update regression, NOT full chain certification",
+    "status": "PASS",
+    "tensor": 21,
+    "tensor_evidence": {
+      "path": ".research_local/autorl_r6_tensor_final.json",
+      "sha256": "7c0c8864f99a598c7383220a8264d830a5fd927fc472e715a577d5e017ee8c99"
+    },
+    "unique_passed": 1011
+  }
+}
