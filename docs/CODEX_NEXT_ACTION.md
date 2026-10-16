@@ -1,4 +1,18 @@
-## AUTORL-R3-STD：2026-10-16当前研发阶段
+## AUTORL-R4-FEEDBACK：唯一运行已完成，下一项设计
+
+当前research/lidar-policy-feedback-audit，基线dafc0fa117913ad40a1bbb9057b7c6b7b4767e06；最终commit／远端以OPS收据为准。R4 result83d3766ebdba586282f23e2b3c39a4284cc03791a4017d963af2fa04cef7a673，已完成，不得再次run或删除attempt。11固定checkpoint×62反事实case、单真实Train reset，零physics/optimizer/episode/Val/Test。_01 I1修复后_02注册42dcf1b3…、源码d789aa04…、协议b4379107…、992项PASS／15排除、独立预审GO。先查最终结果审查／同步收据；待推先sync。
+
+下一项已授权安全研发：新分支设计短距离empty到点任务可完成性及冻结课程。理由是R4发现训练后的零state偏置和方向响应不足，不能唯一归因Reward／LR；先保持Reward/CNN/PPO/物理不变，独立改变任务距离分布并核验新manifest/几何可达性。原R1只切换empty/混合且未缩短目标，不能冒充相同研究。先设计／测试／审查／登记，未冻结不启动训练；不重复旧attempt、不加载旧权重续训。仍只CPU单worker、Test封存、PX4/FASTLIO/实机禁止。剩余1,672,320训练步／68,400s保守wall、stop=false；旧OPS零预算只是维护权限，新grant为权威。新实验仍计累计预算，不initialize、不退款。
+
+下列为本阶段过程历史，不是新的执行命令。
+
+## AUTORL-R4-FEEDBACK：2026-10-16过程记录
+
+R3已完成并远端核验dafc0fa117913ad40a1bbb9057b7c6b7b4767e06，两个std.3训练不重放。当前新分支research/lidar-policy-feedback-audit，正在实现固定11checkpoint／62反事实输入的无optimizer诊断，读AUTORL_R4_FEEDBACK_DESIGN.md及PHASE_AUTORL_R4_FEEDBACK.md。7项标准库／2项真实Tensor已RED→GREEN（含Mask拒绝）；尚待最终源码冻结／完整回归／独立预审／新OPS登记，不先执行唯一run_01。
+
+本阶段训练0、物理step0、episode0、Val/Test0；只新建一个固定Train reset真实射线快照，再关闭环境做推理。预算仍余1,672,320步／68,400s；不initialize、不改旧grant／protocol、不重试已消费ID。当前旧OPS源码身份拒绝新文件属预期，按prepare→review→register处理，不绕过；完成后如实报告／Commit／Push远端核验。
+
+## AUTORL-R3-STD：已完成历史交接
 
 **当前权威：两组均完整COMPLETE，不得再次prepare/start。** RANDOM summary7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1；PRIOR summaryafbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e，各65536步／2048Adam。Train均0成功，Final Val均0成功6碰撞，三个科学标准FAIL。源码b7290417…前后不变，982个唯一相关测试PASS／15排除。所有5个grant attempt均COMPLETE，预算余额1,672,320步／68,400s，stop=false；不得initialize或退款。完整原始目录只读。
 

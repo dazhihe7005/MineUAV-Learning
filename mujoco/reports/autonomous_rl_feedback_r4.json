@@ -1,0 +1,405 @@
+{
+  "acceptance": {
+    "PX4_FASTLIO_hardware": "NOT TESTED",
+    "fixed_counterfactual_feedback_evidence": "PASS",
+    "history_protection": "PASS",
+    "new_navigation_performance": "NOT TESTED",
+    "no_budget_spending": "PASS",
+    "readonly_models_optimizer_rng": "PASS",
+    "snapshot_identity": "PASS",
+    "unique_failure_cause": "NOT TESTED"
+  },
+  "admission": {
+    "path": ".research_local/autorl_r4_checks.json",
+    "sha256": "0662402a73cbf9df9db44fac94964ec69859954bccfa3eeedf518f3ce8d8588e"
+  },
+  "analysis": {
+    "path": ".research_local/autorl_r4_analysis.json",
+    "sha256": "647298ec3186794dc00bfd0721cb31ad9aff76665d92297aced9db673131b578"
+  },
+  "analysis_source": {
+    "path": ".research_local/analyze_autorl_r4.py",
+    "sha256": "7b0589d4f0050a28cf59557fa7fdf649d95d49455a740a1314892d5bfdf6b676"
+  },
+  "budget": {
+    "authorization_id": "AUTONOMOUS-RL-RESEARCH-V1",
+    "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+    "remaining_timesteps": 1672320,
+    "remaining_wall_seconds": 68400,
+    "reserved_timesteps": 327680,
+    "reserved_wall_seconds": 18000,
+    "stop_requested": false,
+    "training_authorized": true
+  },
+  "budget_files_unchanged": true,
+  "data_provenance": "one REAL_MUJOCO_TRAIN_RESET_SNAPSHOT; OFFLINE_COUNTERFACTUAL_INPUT, not new physical trajectories",
+  "execution": {
+    "case_count": 62,
+    "episodes": 0,
+    "min_sampled_mem_available_mib": 9013.9765625,
+    "optimizer_updates": 0,
+    "physics_steps": 0,
+    "test_episodes": 0,
+    "training_timesteps": 0,
+    "validation_episodes": 0,
+    "wall_seconds": 8.334589875999882,
+    "worker_ru_maxrss_mib_including_model_loads": 1306.43359375
+  },
+  "figures": {
+    "mujoco/reports/autonomous_rl_feedback_r4/figures/position_feedback.png": "ad4cae1b9e088ff2b89619df14121ff6f232dadf9f9b5402da1da7afb15835d1",
+    "mujoco/reports/autonomous_rl_feedback_r4/figures/velocity_response.png": "31230e1e6923aa7bb7b637e81a5213a830b898439e981c550eb6902d34e52ffd",
+    "mujoco/reports/autonomous_rl_feedback_r4/figures/yaw_response.png": "52630c13d373957d2d6a304b44a4809ef35f6b36ed78cfdd58dd229b0a2f9f18",
+    "mujoco/reports/autonomous_rl_feedback_r4/figures/zero_bias.png": "6b2a0fcbb2a8b77391d5b209de44bd39da2228fcd8d32583a05ed40970a539d9"
+  },
+  "fixed_checkpoint_count": 11,
+  "history": {
+    "historical_scoped_counts": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "historical_untracked_counts": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "new_untracked_names": {
+      "/home/keyousuke/MineUAV-Learning": []
+    },
+    "protected_count": 1404,
+    "unchanged": true
+  },
+  "implementation_status": "PASS",
+  "input_response_rows": 682,
+  "limitations": [
+    "one fixed Train perception background, seed0 only",
+    "command is not measured motion or stability",
+    "no Critic return truth, no 25Hz hard realtime claim",
+    "old optional cv2 ABI and Axes3D warning retained",
+    "no new training; source runtime unchanged after inference"
+  ],
+  "metrics": [
+    {
+      "actual_step": 32768,
+      "batch_inference_ms": 4.274521999832359,
+      "experiment_id": "ARL_R1_UNIFORM_SEED0",
+      "max_error_to_scripted_reference": 0.7886947989463806,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "x_goal_sign_fraction": 0.5,
+      "x_positive_minus_negative_velocity_command": -0.002733278553932905,
+      "y_goal_sign_fraction": 0.5,
+      "y_positive_minus_negative_velocity_command": 0.02305850386619568,
+      "yaw_response_difference_over_1_rad": -0.020984351634979248,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": -0.007974313572049141,
+      "zero_state_velocity_command_norm": 0.07285627121583253,
+      "zero_state_yaw_rate": -0.278395414352417
+    },
+    {
+      "actual_step": 65536,
+      "batch_inference_ms": 3.3527189998494578,
+      "experiment_id": "ARL_R1_UNIFORM_SEED0",
+      "max_error_to_scripted_reference": 1.1524029970169067,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "x_goal_sign_fraction": 0.5,
+      "x_positive_minus_negative_velocity_command": -0.0012524127960205078,
+      "y_goal_sign_fraction": 0.8333333333333334,
+      "y_positive_minus_negative_velocity_command": -0.011413203086704016,
+      "yaw_response_difference_over_1_rad": -0.007622182369232178,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": -0.007320612668991089,
+      "zero_state_velocity_command_norm": 0.36499231222434775,
+      "zero_state_yaw_rate": -0.6506704092025757
+    },
+    {
+      "actual_step": 0,
+      "batch_inference_ms": 3.184146000421606,
+      "experiment_id": "ARL_R2_PRIOR_SEED0",
+      "max_error_to_scripted_reference": 0.002072155475616455,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "x_goal_sign_fraction": 1.0,
+      "x_positive_minus_negative_velocity_command": 0.0,
+      "y_goal_sign_fraction": 1.0,
+      "y_positive_minus_negative_velocity_command": 0.0,
+      "yaw_response_difference_over_1_rad": 0.9958556890487671,
+      "z_goal_sign_fraction": 1.0,
+      "z_positive_minus_negative_velocity_command": 0.0,
+      "zero_state_velocity_command_norm": 0.0,
+      "zero_state_yaw_rate": 0.0
+    },
+    {
+      "actual_step": 32768,
+      "batch_inference_ms": 2.951913999822864,
+      "experiment_id": "ARL_R2_PRIOR_SEED0",
+      "max_error_to_scripted_reference": 1.5,
+      "mean_boundary_fraction_not_training_clip": 0.5120967741935484,
+      "x_goal_sign_fraction": 0.5,
+      "x_positive_minus_negative_velocity_command": -0.015145987272262573,
+      "y_goal_sign_fraction": 0.5,
+      "y_positive_minus_negative_velocity_command": 0.0,
+      "yaw_response_difference_over_1_rad": 0.0,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": -0.12718304991722107,
+      "zero_state_velocity_command_norm": 1.8799175018778016,
+      "zero_state_yaw_rate": -1.0
+    },
+    {
+      "actual_step": 65536,
+      "batch_inference_ms": 3.038544999981241,
+      "experiment_id": "ARL_R2_PRIOR_SEED0",
+      "max_error_to_scripted_reference": 1.5,
+      "mean_boundary_fraction_not_training_clip": 0.9879032258064516,
+      "x_goal_sign_fraction": 0.5,
+      "x_positive_minus_negative_velocity_command": 0.0,
+      "y_goal_sign_fraction": 0.5,
+      "y_positive_minus_negative_velocity_command": 0.0,
+      "yaw_response_difference_over_1_rad": 0.0,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": 0.0,
+      "zero_state_velocity_command_norm": 2.345207879911715,
+      "zero_state_yaw_rate": -1.0
+    },
+    {
+      "actual_step": 0,
+      "batch_inference_ms": 3.0652250006824033,
+      "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+      "max_error_to_scripted_reference": 0.5059922817163169,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "x_goal_sign_fraction": 0.6666666666666666,
+      "x_positive_minus_negative_velocity_command": 0.006279088673181832,
+      "y_goal_sign_fraction": 0.6666666666666666,
+      "y_positive_minus_negative_velocity_command": -0.00019816355779767036,
+      "yaw_response_difference_over_1_rad": 0.0022459612227976322,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": 0.0007618083618581295,
+      "zero_state_velocity_command_norm": 0.008818576410867054,
+      "zero_state_yaw_rate": 0.007199656218290329
+    },
+    {
+      "actual_step": 32768,
+      "batch_inference_ms": 3.1706010004199925,
+      "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+      "max_error_to_scripted_reference": 0.5318044610321522,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "x_goal_sign_fraction": 0.5,
+      "x_positive_minus_negative_velocity_command": -0.0036008432507514954,
+      "y_goal_sign_fraction": 0.5,
+      "y_positive_minus_negative_velocity_command": 0.004414692521095276,
+      "yaw_response_difference_over_1_rad": -0.006555397063493729,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": -0.008619382977485657,
+      "zero_state_velocity_command_norm": 0.09527316897848354,
+      "zero_state_yaw_rate": 0.02830420807003975
+    },
+    {
+      "actual_step": 65536,
+      "batch_inference_ms": 2.91311199998745,
+      "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+      "max_error_to_scripted_reference": 0.5828721225261688,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "x_goal_sign_fraction": 0.5,
+      "x_positive_minus_negative_velocity_command": -0.016606897115707397,
+      "y_goal_sign_fraction": 0.8333333333333334,
+      "y_positive_minus_negative_velocity_command": -0.01599806919693947,
+      "yaw_response_difference_over_1_rad": 0.012694932520389557,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": 0.002485230565071106,
+      "zero_state_velocity_command_norm": 0.33090756124721266,
+      "zero_state_yaw_rate": -0.05474759638309479
+    },
+    {
+      "actual_step": 0,
+      "batch_inference_ms": 3.087365999817848,
+      "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+      "max_error_to_scripted_reference": 0.002072155475616455,
+      "mean_boundary_fraction_not_training_clip": 0.0,
+      "x_goal_sign_fraction": 1.0,
+      "x_positive_minus_negative_velocity_command": 0.0,
+      "y_goal_sign_fraction": 1.0,
+      "y_positive_minus_negative_velocity_command": 0.0,
+      "yaw_response_difference_over_1_rad": 0.9958556890487671,
+      "z_goal_sign_fraction": 1.0,
+      "z_positive_minus_negative_velocity_command": 0.0,
+      "zero_state_velocity_command_norm": 0.0,
+      "zero_state_yaw_rate": 0.0
+    },
+    {
+      "actual_step": 32768,
+      "batch_inference_ms": 3.1502820002060616,
+      "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+      "max_error_to_scripted_reference": 1.3806373178958893,
+      "mean_boundary_fraction_not_training_clip": 0.32661290322580644,
+      "x_goal_sign_fraction": 0.5,
+      "x_positive_minus_negative_velocity_command": 0.28106868267059326,
+      "y_goal_sign_fraction": 0.5,
+      "y_positive_minus_negative_velocity_command": 0.0,
+      "yaw_response_difference_over_1_rad": 0.96199831366539,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": 0.07062622904777527,
+      "zero_state_velocity_command_norm": 2.126714644871036,
+      "zero_state_yaw_rate": 0.23375117778778076
+    },
+    {
+      "actual_step": 65536,
+      "batch_inference_ms": 3.3464369998910115,
+      "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+      "max_error_to_scripted_reference": 1.4444444477558136,
+      "mean_boundary_fraction_not_training_clip": 0.31048387096774194,
+      "x_goal_sign_fraction": 0.6666666666666666,
+      "x_positive_minus_negative_velocity_command": 0.5883297957479954,
+      "y_goal_sign_fraction": 0.5,
+      "y_positive_minus_negative_velocity_command": 0.0,
+      "yaw_response_difference_over_1_rad": 0.6215099394321442,
+      "z_goal_sign_fraction": 0.5,
+      "z_positive_minus_negative_velocity_command": 0.14285922050476074,
+      "zero_state_velocity_command_norm": 1.5646791117282952,
+      "zero_state_yaw_rate": 0.9291883707046509
+    }
+  ],
+  "next_action": "independent short-distance task feasibility and frozen curriculum design, then separately reviewed training within remaining budget",
+  "phase_id": "AUTORL-R4-FEEDBACK",
+  "protocol_sha256": "b437910773b28628d7d6c9a7cd9372fc8dfb0bfbce7c83e2911ed0f753aae29f",
+  "publication_png_metadata": "removed renderer pHYs using existing clean_png; decoded pixel arrays unchanged; not runtime change",
+  "raw_files": [
+    {
+      "bytes": 561,
+      "experiment_id": "AUTORL_R4_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r4_feedback/run_01/attempt.json",
+      "sha256": "18edcf5de635974550a897c4b1dec7605d7791c80e27ef57bc4e551a6676776c"
+    },
+    {
+      "bytes": 1548,
+      "experiment_id": "AUTORL_R4_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r4_feedback/run_01/base_observation.npz",
+      "sha256": "c3623067784b9ee5e57845bff6496aad0cf5cafb8604fc06bf4a195d9ae1b741"
+    },
+    {
+      "bytes": 90,
+      "experiment_id": "AUTORL_R4_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r4_feedback/run_01/complete.json",
+      "sha256": "24208f8d1d51e8c71a63483c9fac650a345c668b385d9ceb4f884724f6b722d3"
+    },
+    {
+      "bytes": 711207,
+      "experiment_id": "AUTORL_R4_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r4_feedback/run_01/result.json",
+      "sha256": "83d3766ebdba586282f23e2b3c39a4284cc03791a4017d963af2fa04cef7a673"
+    },
+    {
+      "bytes": 977645,
+      "experiment_id": "AUTORL_R4_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r4_feedback/run_01/sensor_frame.npz",
+      "sha256": "ec026bbc6e5fa020cf9d9657f6869d47486c14c0ce043b416d89710f2342230d"
+    },
+    {
+      "bytes": 780,
+      "experiment_id": "AUTORL_R4_FEEDBACK_ONLY",
+      "path": ".research_local/autorl_r4_feedback/run_01/snapshot.json",
+      "sha256": "08555af64000a33eb4f9cd277aedd84258e1fccf09a59885332f6d37640dc5c8"
+    }
+  ],
+  "registration_sha256": "42dcf1b3b64a7e15d6a7bc46d8d5c272ba9dfcf0a3ad5f8d22922fe1f3c000a2",
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r4_results_review_01.json",
+      "sha256": "3bb1f39a337d5952018deb359edaeeda271090f2871b3502f2b33618ab4849f1"
+    },
+    "important": 0,
+    "minor": 0,
+    "reviewed_report_before_receipt_sha256": "24754172acbcd662c0e24fde8a333b0ab7804ab0337a09b2cb58ca8ebb98d1a2",
+    "status": "GO"
+  },
+  "review": {
+    "evidence": {
+      "path": ".research_local/autorl_r4_pre_review_02.json",
+      "sha256": "38c6bae835bd3731e190bcacdd13f00ae2ec2c720cc1b96fedb51870031b90f1"
+    },
+    "initial_candidate": "NO_GO C0 I1 snapshot identity; fixed BEFORE execution with fresh tests/source/GO",
+    "source_identity_sha256": "d789aa040da93c3883f8ac444c4827017c765a9c30065bd44d98e0d9ee8d2a27",
+    "status": "GO"
+  },
+  "run_result": {
+    "path": ".research_local/autorl_r4_feedback/run_01/result.json",
+    "sha256": "83d3766ebdba586282f23e2b3c39a4284cc03791a4017d963af2fa04cef7a673"
+  },
+  "scientific_claim": "DESCRIPTIVE_FEEDBACK_DIAGNOSTIC_NOT_NAVIGATION_SUCCESS",
+  "snapshot_identity": {
+    "files": {
+      "base_observation.npz": {
+        "bytes": 1548,
+        "sha256": "c3623067784b9ee5e57845bff6496aad0cf5cafb8604fc06bf4a195d9ae1b741"
+      },
+      "sensor_frame.npz": {
+        "bytes": 977645,
+        "sha256": "ec026bbc6e5fa020cf9d9657f6869d47486c14c0ce043b416d89710f2342230d"
+      },
+      "snapshot.json": {
+        "bytes": 780,
+        "sha256": "08555af64000a33eb4f9cd277aedd84258e1fccf09a59885332f6d37640dc5c8"
+      }
+    },
+    "observation_identity_sha256": "453a7723fb4225d141af3c32f847d6b7df12aad9067d488fe343f82aac3702fc"
+  },
+  "source_identity_sha256": "d789aa040da93c3883f8ac444c4827017c765a9c30065bd44d98e0d9ee8d2a27",
+  "tests": {
+    "deselected": 15,
+    "evidence": {
+      "path": ".research_local/autorl_r4_operations_final_02.json",
+      "sha256": "0e55101f7676df01bd0da73a409ba22e5272e1be9284903c0c072b5a422d10a2"
+    },
+    "historical": 885,
+    "historical_evidence": {
+      "path": ".research_local/autorl_r4_historical_final_02.json",
+      "sha256": "b41bb3587c12ef7b55ab0145924738e6179a74f5fcbacfa0a450802b3b72935e"
+    },
+    "operations": 91,
+    "red_green": [
+      {
+        "path": ".research_local/autorl_r4_spec_red_01.stdout.txt",
+        "sha256": "66be9d87a3e444f96c59f2a9250e40d0b7db066f692941f3928d62bdba2f0221"
+      },
+      {
+        "path": ".research_local/autorl_r4_spec_green_01.stdout.txt",
+        "sha256": "91bf10ce34b2b5f6f6efdd64fd681002bb5816631b2608575fab164709c80992"
+      },
+      {
+        "path": ".research_local/autorl_r4_tensor_red_01.json",
+        "sha256": "7d47c11e1df9621a56d95ab8bec9e8e054d4fe20f2a88a61cf082688c92311c2"
+      },
+      {
+        "path": ".research_local/autorl_r4_tensor_green_01.json",
+        "sha256": "96ce9ec380cd964a7481b3483916a3320075c8cae245a778b2f720d3444c9588"
+      },
+      {
+        "path": ".research_local/autorl_r4_mask_red_01.json",
+        "sha256": "131f4ddd89d46782dd32af8350491c86825001c25f1abffaa06ac59e7bb0d7a7"
+      },
+      {
+        "path": ".research_local/autorl_r4_mask_green_01.json",
+        "sha256": "4fc721275786834a7e388fb2f90750f7fa217f6963f079e80859f58e9acbf204"
+      },
+      {
+        "path": ".research_local/autorl_r4_admission_red_01.stdout.txt",
+        "sha256": "f77a0cfcd89c89931b6fec3d618c8a93334f97e032c6bdd36dfd44adbcb5ce29"
+      },
+      {
+        "path": ".research_local/autorl_r4_admission_green_01.stdout.txt",
+        "sha256": "3bed887726824c8bd3e2c4e0cea9f92eca3d71e8e2371cfaf8e45eabe1240dda"
+      },
+      {
+        "path": ".research_local/autorl_r4_snapshot_red_01.json",
+        "sha256": "3d7fbbd39d3648c8b0e47566c41173235345d49e0faecb183c55bbd5f3b4eccb"
+      },
+      {
+        "path": ".research_local/autorl_r4_snapshot_green_01.json",
+        "sha256": "82b13ea4df714c996f91a8fa59aa43d1b6ef6909373de825634a18042c2a9fe5"
+      }
+    ],
+    "scope": "selected related regression, NOT full repository",
+    "status": "PASS",
+    "tensor": 16,
+    "tensor_evidence": {
+      "path": ".research_local/autorl_r4_tensor_final_02.json",
+      "sha256": "70798ce9dbb7b1c1a10d558e06cc120c820c9153cccebee6055cc6360743bf74"
+    },
+    "unique_pass": 992
+  },
+  "unique_counterfactual_states": 59
+}

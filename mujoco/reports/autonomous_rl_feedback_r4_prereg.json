@@ -1,0 +1,1038 @@
+{
+  "cases": [
+    {
+      "axis": "x",
+      "case_id": "x_error-2.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-2.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-2.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.5_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.5,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.5_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.1_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.1,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error-0.1_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        -0.1,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.1_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.1,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.1_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.1,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.5_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.5,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error0.5_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error2.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error2.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "x",
+      "case_id": "x_error2.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-2.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-2.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-2.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.5_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.5_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.1_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error-0.1_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.1_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.1_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.5_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error0.5_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error2.0_velocity-1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error2.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "y",
+      "case_id": "y_error2.0_velocity1.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.5_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.5_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.1_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error-0.1_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        -0.1,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.0_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.0_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.0_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.1_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.1_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.1_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.1,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.5_velocity-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        -0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.5_velocity0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "z",
+      "case_id": "z_error0.5_velocity0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.5,
+        0.0,
+        0.0,
+        0.5,
+        0.0
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error-0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.5
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error-0.1",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.1
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error0.0",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error0.1",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1
+      ]
+    },
+    {
+      "axis": "yaw",
+      "case_id": "yaw_error0.5",
+      "provenance": "OFFLINE_COUNTERFACTUAL_INPUT",
+      "state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.5
+      ]
+    }
+  ],
+  "claim_limit": "OFFLINE_COUNTERFACTUAL_INPUT; not trajectories or closed-loop success",
+  "episodes": 0,
+  "experiment_id": "AUTORL_R4_FEEDBACK_ONLY",
+  "metrics": [
+    "zero_state_velocity_command_norm",
+    "axis_goal_sign_fraction_at_zero_velocity",
+    "velocity_command_difference_at_e_0_1",
+    "yaw_response_difference_over_1_rad",
+    "mean_boundary_fraction_not_training_clip",
+    "max_error_to_scripted_reference"
+  ],
+  "models": [
+    {
+      "actual_step": 32768,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R1_UNIFORM_SEED0/ARL_R1_UNIFORM_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "be5c33a34ec64319d968f3d320c1637d62d816441780a12177139de2372b9984",
+      "experiment_id": "ARL_R1_UNIFORM_SEED0",
+      "policy_sha256": "e68995eff6384ded0f93fd620a975e9ea298fd686fa7afa446ee21e636e1d29c",
+      "protocol_sha256": "1fb6c28449d2bdd8581df6f93d2808560ced9dbe14b9ca0857c99b335ebb1fbd",
+      "run_id": "ARL_R1_UNIFORM_SEED0_STEP32768",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R1_UNIFORM_SEED0/ARL_R1_UNIFORM_SEED0_STEP32768.json",
+      "sidecar_sha256": "fdc56ff9ad24002e5edd5266b2f143194bf38945f6285efa1086ff729ba75d0c",
+      "summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 65536,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R1_UNIFORM_SEED0/ARL_R1_UNIFORM_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "b374af4b0489ea74e3fbb6a45e9bee36838b6edcc72229db03b284211e8a7351",
+      "experiment_id": "ARL_R1_UNIFORM_SEED0",
+      "policy_sha256": "709a0f87c9cf65dd63598c8afc97f36543c67a8ae63e54089daec3f8534cd811",
+      "protocol_sha256": "1fb6c28449d2bdd8581df6f93d2808560ced9dbe14b9ca0857c99b335ebb1fbd",
+      "run_id": "ARL_R1_UNIFORM_SEED0_STEP65536",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R1_UNIFORM_SEED0/ARL_R1_UNIFORM_SEED0_STEP65536.json",
+      "sidecar_sha256": "41c4756eeb29b2cae756f5dcd022c4c5233d16f96dbdf76b0993ea3a45fb2087",
+      "summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 0,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R2_PRIOR_SEED0/ARL_R2_PRIOR_SEED0_STEP0.zip",
+      "checkpoint_sha256": "cec2d9a2eed3a6d5da22e582511166b5c9616c056ce7203300fb202f020ceb75",
+      "experiment_id": "ARL_R2_PRIOR_SEED0",
+      "policy_sha256": "1f3e9a0a6779d9b7290ba138bda5e6f916e5d73380b291cc9a97d1650c5e835c",
+      "protocol_sha256": "09a4da2c329ddcf6dc6da79dfa4c49c0bac6eab441e53f6c99e2a6040566f61e",
+      "run_id": "ARL_R2_PRIOR_SEED0_STEP0",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R2_PRIOR_SEED0/ARL_R2_PRIOR_SEED0_STEP0.json",
+      "sidecar_sha256": "114264d8856af7851fb5feae2eaa27f5a180e1c1cba9a1c2f8b4ae53a2e41ea1",
+      "summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 32768,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R2_PRIOR_SEED0/ARL_R2_PRIOR_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "011d02f8030b96ee9fdc890e906589d7fa317c9a2421fc7a0d55d87a2e9599c2",
+      "experiment_id": "ARL_R2_PRIOR_SEED0",
+      "policy_sha256": "7745f30c10780cd26b75aeb75c1f2612bf1f17b7de6986f13110a0f80ec52188",
+      "protocol_sha256": "09a4da2c329ddcf6dc6da79dfa4c49c0bac6eab441e53f6c99e2a6040566f61e",
+      "run_id": "ARL_R2_PRIOR_SEED0_STEP32768",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R2_PRIOR_SEED0/ARL_R2_PRIOR_SEED0_STEP32768.json",
+      "sidecar_sha256": "d55186457f593b3fe2aac3e6d72fe7205fd1c2de0718b06650677deddb1e73e6",
+      "summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 65536,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R2_PRIOR_SEED0/ARL_R2_PRIOR_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "a588fc423b43beac832eba568d54f60f5d10f0e5e524f896a90871be83fc38ad",
+      "experiment_id": "ARL_R2_PRIOR_SEED0",
+      "policy_sha256": "1a2bf57b4a237ca473fd4a334febc73c43d62422cb30e60d2e1014c0066b0bcf",
+      "protocol_sha256": "09a4da2c329ddcf6dc6da79dfa4c49c0bac6eab441e53f6c99e2a6040566f61e",
+      "run_id": "ARL_R2_PRIOR_SEED0_STEP65536",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R2_PRIOR_SEED0/ARL_R2_PRIOR_SEED0_STEP65536.json",
+      "sidecar_sha256": "ca2c2603552dd5a6d5ee73ea25aa6dc9c21c5a119413ab91d36dbe4f90aa44c2",
+      "summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 0,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R3_RANDOM_STD03_SEED0/ARL_R3_RANDOM_STD03_SEED0_STEP0.zip",
+      "checkpoint_sha256": "5abaab09e8de3bf1d057b3767d48c71682f76373e71c6673c3e712e01412907d",
+      "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+      "policy_sha256": "db33ba4df5f7aaf76f98b7915675cbfc80dbe52273045ed86811b5cc074dfa06",
+      "protocol_sha256": "20f0382a1e544c9a9c4419763819e9e24a6ca49c2c48033bbfb7267501ddd80d",
+      "run_id": "ARL_R3_RANDOM_STD03_SEED0_STEP0",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R3_RANDOM_STD03_SEED0/ARL_R3_RANDOM_STD03_SEED0_STEP0.json",
+      "sidecar_sha256": "b28eadad2f78518ba7af49881802a07f00d89f1175c2edf37e000ed31468dc88",
+      "summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 32768,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R3_RANDOM_STD03_SEED0/ARL_R3_RANDOM_STD03_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "7602400092474913df2551793e96d3a04f63e22e360ae437744550bbebd2138f",
+      "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+      "policy_sha256": "ca1bccb781a8f4b92d3d87f05f127619d1897ad2ae9fc032de5a9f31a100905f",
+      "protocol_sha256": "20f0382a1e544c9a9c4419763819e9e24a6ca49c2c48033bbfb7267501ddd80d",
+      "run_id": "ARL_R3_RANDOM_STD03_SEED0_STEP32768",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R3_RANDOM_STD03_SEED0/ARL_R3_RANDOM_STD03_SEED0_STEP32768.json",
+      "sidecar_sha256": "52f18656c67b9e5bba4d8de6c4ccd4ef825911df19c354e8a8d00b052321f3c8",
+      "summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 65536,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R3_RANDOM_STD03_SEED0/ARL_R3_RANDOM_STD03_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "a691e018fed6f14bd7858d49b987670943641706c0d55d319eeb1ea0184ca86e",
+      "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+      "policy_sha256": "757de005dd0179c12942952848239eca379576d97ba49be3e62e096dbfe6f5b4",
+      "protocol_sha256": "20f0382a1e544c9a9c4419763819e9e24a6ca49c2c48033bbfb7267501ddd80d",
+      "run_id": "ARL_R3_RANDOM_STD03_SEED0_STEP65536",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R3_RANDOM_STD03_SEED0/ARL_R3_RANDOM_STD03_SEED0_STEP65536.json",
+      "sidecar_sha256": "6153ff52629b30bb88f80bfd4c01b6b40f9b542dca7ca7efb864b78b1fb59efb",
+      "summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 0,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R3_PRIOR_STD03_SEED0/ARL_R3_PRIOR_STD03_SEED0_STEP0.zip",
+      "checkpoint_sha256": "d2593b82e3e2b69defb160732614d3fec7c15fc461e1d5a72075bc54fbce505d",
+      "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+      "policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74",
+      "protocol_sha256": "6b9e46d53fabc20f2b064c7588f283f96238b8a9b4e06b6cc2f68b51982bd739",
+      "run_id": "ARL_R3_PRIOR_STD03_SEED0_STEP0",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R3_PRIOR_STD03_SEED0/ARL_R3_PRIOR_STD03_SEED0_STEP0.json",
+      "sidecar_sha256": "18ee53368f557127b404347b30dbd56ae1190051c0848ad1202b04d4072acab3",
+      "summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 32768,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R3_PRIOR_STD03_SEED0/ARL_R3_PRIOR_STD03_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "eb689a052a9bddd1c87de01646c5af835e24166e0d3289ae48e320f341d08e01",
+      "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+      "policy_sha256": "ffa323c48718fbd001e7de7cab68e4a705458dcb719d07184d2297c4cd7a7870",
+      "protocol_sha256": "6b9e46d53fabc20f2b064c7588f283f96238b8a9b4e06b6cc2f68b51982bd739",
+      "run_id": "ARL_R3_PRIOR_STD03_SEED0_STEP32768",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R3_PRIOR_STD03_SEED0/ARL_R3_PRIOR_STD03_SEED0_STEP32768.json",
+      "sidecar_sha256": "ea43654756738530975a63dee5494b588f9a959da12d79dbcbae204d5f42fe9b",
+      "summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    },
+    {
+      "actual_step": 65536,
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R3_PRIOR_STD03_SEED0/ARL_R3_PRIOR_STD03_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "5872b0881154d8e93f8f128243a2e69def85343093b2ebe3716d604b4ed971cb",
+      "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+      "policy_sha256": "1221e56b5dae09ebc17484e09ce5a20aa3ccc3891b11435bc75d36ba6cb3d05a",
+      "protocol_sha256": "6b9e46d53fabc20f2b064c7588f283f96238b8a9b4e06b6cc2f68b51982bd739",
+      "run_id": "ARL_R3_PRIOR_STD03_SEED0_STEP65536",
+      "sidecar_path": ".research_local/authorized_rl_v1/runs/ARL_R3_PRIOR_STD03_SEED0/ARL_R3_PRIOR_STD03_SEED0_STEP65536.json",
+      "sidecar_sha256": "3bd48f8617ccbaceaf15035e9844cf0fdfed8dbc963423d6a47b37791c89400a",
+      "summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+      "usage": "READ_ONLY_INFERENCE_NOT_RESUME"
+    }
+  ],
+  "optimizer_updates": 0,
+  "phase": "AUTORL-R4-FEEDBACK",
+  "physics_steps": 0,
+  "registration_sha256": "42dcf1b3b64a7e15d6a7bc46d8d5c272ba9dfcf0a3ad5f8d22922fe1f3c000a2",
+  "snapshot_identity": "write-time three-file SHA256 and dtype/shape/bytes observation digest, readback equality and completion recheck",
+  "source_identity_sha256": "d789aa040da93c3883f8ac444c4827017c765a9c30065bd44d98e0d9ee8d2a27",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "validation_episodes": 0,
+  "wall_cap_s": 120
+}

@@ -1,5 +1,9 @@
 # 每日项目交接
 
+## 2026-10-16：AUTORL-R4实际诊断
+
+基线远端dafc0fa…核验，当前research/lidar-policy-feedback-audit。源码／协议／历史身份、登记／doctor PASS后唯一run_01完成；11checkpoint、682反事实响应，0训练／0物理step／0Val/Test。运行前背景身份Important已修复重审；992项相关测试PASS／15排除，结果83d3766e…、8.335s／HWM1306.43MiB。先验反馈训练后偏置与随机策略方向不充分是CONFIRMED症状，非唯一因果。下一次恢复先查最新Git收据和预算，绝不重放R4，独立设计短距离到点可完成性及课程。预算余额不变1,672,320步／68,400s；原授权内普通研发无需再确认。
+
 ## 2026-10-16：AUTORL-R3实际结果
 
 两臂各65536步完整完成（总131072／4096 Adam），最终Validation均0成功6碰撞，初始std改善FAIL。随机组548结束episode：513碰撞35超时；先验组971：956碰撞14超时1自然outside_flight_area，均0成功。未完成尾段65／4步计预算不计terminal；原始summary SHA7651327c…／afbeac0d…保持只读。最新总训练预留327680步／18000s，余额1,672,320步／68,400s；实测本阶段wall1565.009s，不等于保守预留。worker峰值RSS1779.86MiB包含重载／Validation；纯训练样本ru_maxrss最大1699.07MiB，未观察OOM。

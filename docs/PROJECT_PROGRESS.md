@@ -1,6 +1,10 @@
 
 
-## 当前阶段：AUTORL-R3 初始std对照（执行PASS／改善FAIL）
+## 当前阶段：AUTORL-R4 冻结反馈诊断（执行PASS，非导航评价）
+
+11个固定checkpoint×62反事实case，只有一个真实24k射线Train reset背景，0physics/optimizer/episode/Val/Test。R2／R3解析step0方向反馈正确、相对Scripted误差<.002073；final零state指令增至2.345／1.565m/s，R3随机final为.331m/s，仅是有限输入的动作偏置证据，非实测漂移或唯一原因。992项相关测试PASS／15排除。_01 NO_GO I1先修，_02新源码d789aa04…完整测试／预审GO／登记后唯一运行。预算不变，历史1404保护项和87untracked保持。下一项是近距离到点任务可完成性与课程设计，先独立预注册，不重复R1/R2/R3，不启动PX4。
+
+## 历史阶段：AUTORL-R3 初始std对照（执行PASS／改善FAIL）
 
 两个独立65536步新attempt均COMPLETE，共4096 Adam调用；RANDOM548=513碰撞35超时，PRIOR971=956碰撞14超时1自然越界，Train成功均0。最终各6Validation全碰撞，std效果／超越自身step0／候选导航三项均FAIL。RANDOM虽平均raw元素裁剪仅.625%，仍未学会任务；PRIOR平均KL.1054，更新敏感性待分离。982项选择测试PASS／15排除（运行后84复核不双计），源码b7290417…前后不变。worker峰值RSS1779.86MiB（含重载／Validation），主管wall总1565.009s，未观察OOM。余额1,672,320步／68,400s保守wall，Test0。最终独立结果复审及远端收据决定阶段完成；下一项无optimizer反馈诊断，不重跑或延长本实验。
 

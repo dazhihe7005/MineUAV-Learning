@@ -1,5 +1,11 @@
 # Experiment Log
 
+## 2026-10-16 — AUTORL-R4：冻结目标反馈的无更新诊断
+
+唯一运行result SHA83d3766e…，固定11checkpoint×62case=682组反事实响应、单一实际Train reset雷达背景，物理推进／episode／optimizer／Val／Test均0。解析均值step0正确，PPO后明显偏置；R3随机／解析final零state速度指令范数.33091／1.56468m/s，不是实际漂移。全权重／optimizer／Torch RNG不变，原budget文件SHA前后完全相同，余1,672,320步／68,400s。源码d789aa04…、协议b4379107…全程一致，原模型／原失败／87历史untracked不变。
+
+预审_01 NO_GO的I1背景身份链在运行前RED→GREEN修复，_02重新冻结并独立预审GO；992个唯一选择测试PASS（91+16+885），15排除、2历史warning，非全仓。诊断wall8.335s（不含前置完整身份核验／绘图），worker HWM1306.43MiB含重载、最低采样Mem9013.98MiB。4图／中文MD／JSON记录边界，最终结果审查及远端收据决定完成。下一研究优先近距离到点课程，而非盲调多个参数。
+
 ## 2026-10-16 — AUTORL-R3-STD：两臂完整执行，改善FAIL
 
 原随机均值／解析均值仅将初始std改.3，各65536步／2048 Adam，源b7290417…全程不变。RANDOM548结束=513碰撞35超时0成功，PRIOR971=956碰撞14超时1自然outside_flight_area0成功；尾段65／4步仍计预算。Final Validation两臂均0成功6碰撞，三项预注册标准均FAIL。PRIOR step0的1成功3碰撞2超时与历史R2相同，是手写先验，不是新学习成果。RANDOM平均raw元素裁剪.62485%仍未成功；不能把少裁剪或较高return当成导航提升。
