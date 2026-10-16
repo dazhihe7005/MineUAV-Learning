@@ -1,3 +1,35 @@
+## AUTORL-R17 最新：空场景重放未保留最终能力，科学FAIL（2026-10-16）
+
+R16已完整推c8307c0f670787bb2a4897e14034452cbd57588f，不重复。R17唯一ARL_R17_EMPTY_REHEARSAL_SEED0主管exit0/账本COMPLETE，实际65536step/512rollout/1024epoch/2048Adam、1309913tick；summary950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72，SOURCE590c0191…保持。唯一变量后半程原Train empty概率.25→.5，实际144加权reset中77empty；32k policy精确等于R16 33bf6699…，short251个结束结果223/18/10也完全相同。395reset，自然32850切课程，394结束Train=243成功81碰撞70超时，原Train143=20/63/60；尾238步仍计预算，未伪造成结束episode。
+
+36新Val/历史复用0/Test0：short6/0/0→5/1/0→5/1/0，原1/3/2→2/3/1→0/3/3；两个empty0→2→0。五科学判据只有short candidate PASS，其余短保留/原学习/相对R16/empty保留FAIL，总FAIL。坚持FinalCheckpoint，不挑32k。Critic最后explained variance.956383不等于导航成功；训练分布改变后不能用总体Train成功率作公平泛化比较。Val没有逐step速度，不编造失败动态原因。
+
+1119选择测试PASS（174OPS/60Tensor/885历史）、15排除、0测试optimizer，另5分析契约。训练前独立预审C0/I0/新Minor0，分析overall接线Important已真实RED→GREEN并复审关闭、旧方法/NO_GO保存。23raw/五图、三checkpoint真实权重/预测/optimizer重载，272旧授权+七R13/R15raw及历史模型不变。主管844.741s、wholeHWM1730.730MiB、训练采样minMem6644.664MiB，含Val连续最低NOT AVAILABLE；训练CPU累计单核97.53%。final ZIPe5f66c5e…/policy72979b21… local-only。
+
+累计保守预留786432step/43200s，余1213568step/43200s、stop=false，24事件/12attempt，旧OPS零维护预算不撤销独立grant。完整文档PHASE_AUTORL_R17_EMPTY_REHEARSAL.md、机器报告autonomous_rl_empty_rehearsal_r17.json。当前最终独立结果审查/Commit/正常OPS sync远端仍须真实收据，未全交付不称phase complete。下一安全动作：完整发布后冻结R18零optimizer停稳动态诊断，优先补足新冻结策略动作与实际运动反馈证据；不得伪装成旧Val原始轨迹、重训/重试R17、warmstart或直接盲加步数。普通FAIL继续长期任务；PX4/FASTLIO/实机/封存Test禁止。
+
+下方为历史快照，不是重放指令。
+
+## AUTORL-R17 权威：唯一启动请求已发出，只能监控（2026-10-16）
+
+1119选择测试（174OPS/60Tensor/885历史）完整PASS/15排除/0测试optimizer，5分析契约及修复Important独立复审GO。精确REG8242b52b…/SOURCE590c0191…/EXEC3140266a…/checks24280479…已新register/recover/doctor/272旧授权+7历史raw/预算stop资源/prepare精确核验，通过唯一launch_autorl_r17.py调用原主管start-empty-rehearsal。不得因会话句柄或旧文档没有结果再启动。
+
+只审计.research_local/authorized_rl_v1/runs/ARL_R17_EMPTY_REHEARSAL_SEED0、真实ledger/attempt/child/process/flock与supervisor_01；工具会话不是跨重启进程身份证明。预计预留后1213568step/43200s，以实际ledger为准，不退款/重置。不加载旧ZIP，只有65536/3600CPU1seed0，36新Val/Test0。32k前缀若不等R16 33bf6699…，必须保留FAIL停机不重试。
+
+运行期全部生产/测试SOURCE冻结，不新增研究py到source globs。monitor_autorl_r17.py仅显示完整行观测，不能代替精确完成数。主管exit0+ledger COMPLETE+summary/complete校验后，才执行已冻结分析5e696084…和finalizer0acbaca2…、图/真实MDJSON/独立结果审查/Commit/OPS sync远端，再按预算与结果自主下一安全任务。未知/失败先离线审计，RESTART_REQUIRED，不重复attempt、不warmstart。PX4/FASTLIO/实机/封存Test禁止；普通阶段不终止长期研究。
+
+以下为已结束准入快照，不是重放指令。
+
+## AUTORL-R17 当前：新空场景重放协议准入中，尚未训练（2026-10-16）
+
+R16已完整推c8307c0f670787bb2a4897e14034452cbd57588f，OPS sync PASS/远端核验/phase_complete=true，最终report60c231a2…；不重放。新research/lidar-empty-rehearsal-r17，只将后半程原Train empty概率.25→.5，3empty各1/6、9nonempty各1/18；前32768原short均匀/RNG/初态std.1/centeredActor/LR3e-5/Reward/CNN/物理完全不变。不ZIP初始化。唯一新ARL_R17_EMPTY_REHEARSAL_SEED0，65536/3600CPU1seed0，36新Val/Test0。32k实际权重必须等于R16的33bf6699…，否则保留FAIL停机不重试。
+
+REG8242b52bdc21cebcf5a72461a20e961f1d17f6893d47801eb6159505bc6f6f9c /SOURCE590c019185093d572ed27bde12b2da3d130f6ffdcd77c06d465cb0c4ee1081bf /EXEC3140266ae8034fc0114ff5334961fb8260254c100d8971eb0f3c46fb4b348f1b。174OPS/60Tensor已PASS、885历史仍执行；0测试optimizer，不能提前完整PASS。新分析接线Important在训练前发现，旧方法f713…归档/NO_GO/真实overall新增RED；最终方法5e696084…与5契约GREEN_02已复审解决，源码身份不变。完整证据及独立精确GO尚待。
+
+余额实际1279104step/46800s、stop=false，22事件/11attempt，尚未预留R17。必须核真实ledger/attempt/protocol/process/flock，不据文档重放。272旧不可变授权文件+七R13/R15 raw及历史模型受保护。下一安全动作：完整checks与精确独立GO→activate_autorl_r17.py新register/recover/doctor/预算stop资源/精确prepare→唯一launch_autorl_r17.py；任何已有attempt不得再次start或warmstart。运行期SOURCE冻结，主管COMPLETE后才分析真实图MDJSON/独立复审/Commit/OPS sync远端，再继续下一安全研究。普通FAIL不终止长期任务；PX4/FASTLIO/实机/封存Test禁止。
+
+下方为历史快照，不是重放指令。
+
 ## AUTORL-R16 最新：停稳经验增加，最终原任务0/6，科学总FAIL（2026-10-16）
 
 R15已完整推59e34070a166f195261abd6a3b62e051f20695b3，不重复。R16唯一ARL_R16_CENTERED_STD01_SEED0主管exit0/ledger COMPLETE，实际65536step/512rollout/1024epoch/2048Adam，1309123tick；summary bf3814e86f0402ed02748483453a8279079aabca3e4df0c93264a82fcc71668c、SOURCEf253400f…保持。唯一变量新初态std.3→.1，均值/Critic初态相同，不加载旧ZIP。473结束Train=247success175collision51timeout，short251=223/18/10、original222=24/157/41；自然32850切课程，474reset，尾20步另列。

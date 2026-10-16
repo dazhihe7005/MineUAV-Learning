@@ -44,6 +44,9 @@ def experiment(arm,steps,wall,*,seed=0,revision='R1'):
 
 
 def validate_experiment(p):
+    if p.get('schema')==17:
+        from .empty_rehearsal_profile import validate_rehearsal_profile
+        return validate_rehearsal_profile(p)
     if p.get('schema')==16:
         from .centered_noise_profile import validate_noise_profile
         return validate_noise_profile(p)

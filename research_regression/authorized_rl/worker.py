@@ -88,7 +88,10 @@ def train_worker(output,permit,p,registration,identity):
         if store.status()['stop_requested']:raise OpsError('stop requested')
         if time.monotonic()-started>=p['wall_seconds']:raise OpsError('worker absolute wall deadline')
 
-    if p['schema'] in (8,10,11,14,16):
+    if p['schema']==17:
+        from .empty_rehearsal import make_rehearsal_scheduler
+        scheduler=make_rehearsal_scheduler(prereg,upstream,seed=p['seed'])
+    elif p['schema'] in (8,10,11,14,16):
         from .repaired_distance_training import make_repaired_scheduler
         scheduler=make_repaired_scheduler(prereg,upstream,seed=p['seed'])
     elif p['schema']==6:
@@ -102,7 +105,7 @@ def train_worker(output,permit,p,registration,identity):
             result=super().reset(**kwargs)
             self.minimum_goal_error=float(np.linalg.norm(result[0]['state'][:3]))
             self.reward_components={};self.boundary_count=0;self.near_goal_steps=0
-            if p['schema'] in (10,11,14,16):
+            if p['schema'] in (10,11,14,16,17):
                 from .prior_distance_training import GoalStopDiagnostics
                 self.goal_stop_diagnostics=GoalStopDiagnostics()
             return result
@@ -116,7 +119,7 @@ def train_worker(output,permit,p,registration,identity):
                 self.reward_components[key]=self.reward_components.get(key,0.)+float(value)
             self.boundary_count+=int(np.any(np.abs(action)>=.999999))
             self.near_goal_steps+=int(info['distance_m']<.1)
-            if p['schema'] in (10,11,14,16):self.goal_stop_diagnostics.observe(float(info['distance_m']),float(info['speed_m_s']))
+            if p['schema'] in (10,11,14,16,17):self.goal_stop_diagnostics.observe(float(info['distance_m']),float(info['speed_m_s']))
             if t or tr:
                 _append_jsonl(output/'episode_details.jsonl',{
                     **self.episode_diagnostics[-1],'minimum_goal_error_m':self.minimum_goal_error,
@@ -124,8 +127,8 @@ def train_worker(output,permit,p,registration,identity):
                     'collision_contact_pairs':info.get('contact_pairs',[]),
                     'action_boundary_fraction':self.boundary_count/self._episode_steps,
                     **({'distance_stage':info['distance_stage'],'base_scenario_identity_sha256':info['base_scenario_identity_sha256'],
-                        'task_target_xyz':info['task_target_xyz']} if p['schema'] in (6,8,10,11,14,16) else {}),
-                    **({'goal_stop_diagnostics':self.goal_stop_diagnostics.record()} if p['schema'] in (10,11,14,16) else {})})
+                        'task_target_xyz':info['task_target_xyz']} if p['schema'] in (6,8,10,11,14,16,17) else {}),
+                    **({'goal_stop_diagnostics':self.goal_stop_diagnostics.record()} if p['schema'] in (10,11,14,16,17) else {})})
             if len(self.episode_diagnostics)<4 and self.policy_steps%5==0:
                 plant=scheduler.active.unwrapped
                 _append_jsonl(output/'bounded_traces.jsonl',{'step':self.policy_steps,'sim_time':float(plant.data.time),
@@ -138,16 +141,17 @@ def train_worker(output,permit,p,registration,identity):
     manager=CheckpointManager(output,prereg,execution_protocol_sha256=digest(p))
     model=None
     try:
-        if p['schema'] in (14,16):
+        if p['schema'] in (14,16,17):
             from .state_centered_policy import make_centered_ppo,verify_centered_policy
             model=make_centered_ppo(measured,seed=p['seed'])
         else:model=make_ppo(measured,n_steps=128,seed=p['seed'])
         if model.num_timesteps or model.policy.optimizer.state:raise OpsError('not a new random initialization')
         initialization={'kind':'FRESH_RANDOM'}
         events=[];checkpoint_probes={}
-        if p['schema']==16:
+        if p['schema'] in (16,17):
             from .centered_noise_training import initialize_noise_training
             initialization,event,probe=initialize_noise_training(model,scheduler,manager,identity=identity,seed=p['seed'])
+            if p['schema']==17:initialization['execution_profile']=p['execution_profile']
             events.append(event);checkpoint_probes[0]=probe
         elif p['schema']==14:
             from .centered_training import initialize_centered_training
@@ -191,10 +195,10 @@ def train_worker(output,permit,p,registration,identity):
             for rel,value in frozen.items():
                 if sha256(ROOT/rel)!=value:raise OpsError('historical source changed before optimizer')
             if p['schema']==11:verify_effective_lr(model)
-            if p['schema'] in (14,16):verify_centered_policy(model)
+            if p['schema'] in (14,16,17):verify_centered_policy(model)
             begun=time.monotonic();original_train()
             if p['schema']==11:verify_effective_lr(model)
-            if p['schema'] in (14,16):verify_centered_policy(model)
+            if p['schema'] in (14,16,17):verify_centered_policy(model)
             if not _finite_model_and_gradients(model):raise OpsError('nonfinite model or gradients')
             values={k:float(v) for k,v in model.logger.name_to_value.items()
                     if k.startswith('train/') and np.isscalar(v)}
@@ -220,6 +224,9 @@ def train_worker(output,permit,p,registration,identity):
             if target==0 or target>p['timesteps']:continue
             model.learn(target-int(model.num_timesteps),reset_num_timesteps=False,callback=Guard())
             if model.num_timesteps!=target or model._n_updates!=2*(target//128):raise OpsError('rollout/update boundary inconsistent')
+            if p['schema']==17:
+                from .empty_rehearsal_profile import verify_rehearsal_prefix
+                verify_rehearsal_prefix(target,_weights_sha(model.policy))
             record,probe=save_checkpoint_probe(model,scheduler,manager,run_id=f'{identity}_STEP{target}',seed=p['seed'])
             checkpoint_probes[target]=probe
             events.append({'actual_step':target,'checkpoint':record,'weight_sha256':_weights_sha(model.policy),
@@ -242,16 +249,16 @@ def train_worker(output,permit,p,registration,identity):
             restored=manager.load_verified(None,run_id=event['checkpoint']['run_id'])
             if _weights_sha(restored.policy)!=event['weight_sha256']:raise OpsError('checkpoint reloaded with different weights')
             if p['schema']==11:event['effective_optimizer_configuration']=verify_effective_lr(restored)
-            if p['schema'] in (14,16):event['actual_actor_parameterization']=verify_centered_policy(restored)
+            if p['schema'] in (14,16,17):event['actual_actor_parameterization']=verify_centered_policy(restored)
             obs_probe,action_probe,optimizer_probe=checkpoint_probes[event['actual_step']]
             if (restored.num_timesteps!=event['actual_step']
                 or not _optimizer_states_equal(optimizer_probe,restored.policy.optimizer.state_dict())
                 or not np.array_equal(action_probe,restored.predict(obs_probe,deterministic=True)[0])):
                 raise OpsError('checkpoint optimizer/prediction identity mismatch')
             event['optimizer_and_prediction_reload_verified']=True
-            if p['schema'] in (14,16):
+            if p['schema'] in (14,16,17):
                 from .distance_training import ShortValidationEvaluator
-                if p['schema']==16:
+                if p['schema'] in (16,17):
                     from .centered_noise_training import annotate_noise_validation as annotate_centered_validation
                 else:
                     from .centered_training import annotate_centered_validation
@@ -297,15 +304,15 @@ def train_worker(output,permit,p,registration,identity):
             'reset_rss_mib':measured.reset_rss_mib,'elapsed_wall_seconds':time.monotonic()-started,
             'resume':'RESTART_REQUIRED','model_selection':'FINAL_CHECKPOINT'}
         if p['schema']==11:summary['effective_optimizer_configuration']=verify_effective_lr(model)
-        if p['schema'] in (14,16):summary['actual_actor_parameterization']=verify_centered_policy(model)
-        if p['schema'] in (6,8,10,11,14,16):
+        if p['schema'] in (14,16,17):summary['actual_actor_parameterization']=verify_centered_policy(model)
+        if p['schema'] in (6,8,10,11,14,16,17):
             actual_validation=sum(len(e['short_validation']['episodes'])+
-                (0 if e['actual_step']==0 and p['schema'] not in (14,16) else len(e['validation']['episodes'])) for e in events)
-            if actual_validation!=(36 if p['schema'] in (14,16) else 30):raise OpsError('distance Validation evidence coverage incomplete')
+                (0 if e['actual_step']==0 and p['schema'] not in (14,16,17) else len(e['validation']['episodes'])) for e in events)
+            if actual_validation!=(36 if p['schema'] in (14,16,17) else 30):raise OpsError('distance Validation evidence coverage incomplete')
             summary.update(short_manifest_sha256=p['short_manifest_sha256'],
-                actual_new_validation_episodes=actual_validation,reused_original_step0_episodes=(0 if p['schema'] in (14,16) else 6),
+                actual_new_validation_episodes=actual_validation,reused_original_step0_episodes=(0 if p['schema'] in (14,16,17) else 6),
                 checkpoint_l6_manifest_scope='unchanged base geometry/start/yaw metadata; distance task manifest bound by execution protocol and scheduler')
-            if p['schema'] in (14,16):
+            if p['schema'] in (14,16,17):
                 summary['checkpoint_l6_network_scope']='base CNN/trunks provenance only; actual centered policy class/source/function bound to new execution and verified loaded architecture'
         atomic_json(output/'summary.json',summary,exclusive=True)
         atomic_json(output/'complete.json',{'summary_sha256':sha256(output/'summary.json'),

@@ -64,7 +64,11 @@ def supervise(protocol,*,root=ROOT):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        if protocol['schema']==16:
+        if protocol['schema']==17:
+            if registration['phase_id']!='AUTORL-R17-EMPTY-REHEARSAL':raise OpsError('rehearsal requires reviewed R17 phase')
+            from .empty_rehearsal_profile import verify_rehearsal_proof,verify_rehearsal_checks
+            verify_rehearsal_proof(protocol,root);verify_rehearsal_checks(protocol,root)
+        elif protocol['schema']==16:
             if registration['phase_id']!='AUTORL-R16-CENTERED-STD01':raise OpsError('centered noise requires reviewed R16 phase')
             from .centered_noise_profile import verify_noise_proof,verify_noise_checks
             verify_noise_proof(protocol,root);verify_noise_checks(protocol,root)
