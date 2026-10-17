@@ -1,3 +1,11 @@
+## AUTORL-R24 最新：跨boot系统重启中断，科学NOT TESTED（2026-10-17）
+
+唯一Yaw覆盖训练永久FAIL/INTERRUPTED，不重试/ZIP续训。精确旧_BOOT_ID日志确认系统Reboot，具体发起者/worker最终信号/退出码未知；393完整更新到50304步/1572Adam/786epoch，旧progress50176不是最终步数。243结束Train=short131S19C20T、original22S22C29T；final65536 ZIP/summary/训练complete/主管终态缺失，新Val0/计划36、Test0。五科学判据NOT TESTED，不把中断或早期Train成功当完整科学结果。
+
+146运行SOURCE冻结未改，384旧文件和16原raw不变；独立处置GO后仅追加30FAIL，保留65536step/3600s全额预留，余额1016960步/32400预留秒、stopfalse。训练前1181选择PASS/15排除/测试optimizer0；重启后OPS220PASS/2ERROR（旧正例耦合可变真实账本，R24被门禁正确拒绝），另74无更新TensorPASS，885历史未重跑。不隐藏失败、不改门禁。
+
+当前先独立结果复审、显式白名单Commit/正常OPSsync并核远端；随后只做Level0/1修冻结历史fixture与R24失败封口证明，禁止训练，不能重放本ID或把32k ZIP当无损续训。详见[中文报告](PHASE_AUTORL_R24_YAW_COVERAGE.md)及mujoco/reports/autonomous_rl_train_yaw_r24.json。下面RUNNING/准备段均是历史快照，不是重启指令。
+
 ## 2026-10-17 开机恢复与R23发布
 
 R22训练、R23只读分析和后置审计已在16日完整结束；本次未重复实验。recover与doctor顺序核验PASS，344授权文件不变、head28、余额1082496步/36000预留秒、stop=false。一次doctor提前遇到自有recover持锁而被正确拒绝，等待后顺序核验通过，未绕锁。独立结果复审GO/C0/I0/新Minor0，保留继承问题；当前HEAD基点55594504。先正常封口、Commit/Push并核远端，再准备新的Train-only Yaw覆盖单变量实验。最新实际Commit/远端身份以OPS同步收据为准。

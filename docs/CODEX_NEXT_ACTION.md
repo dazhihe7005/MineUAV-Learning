@@ -1,3 +1,31 @@
+## AUTORL-R24 最新：跨boot系统重启中断，科学NOT TESTED（2026-10-17）
+
+唯一Yaw覆盖训练永久FAIL/INTERRUPTED，不重试/ZIP续训。精确旧_BOOT_ID日志确认系统Reboot，具体发起者/worker最终信号/退出码未知；393完整更新到50304步/1572Adam/786epoch，旧progress50176不是最终步数。243结束Train=short131S19C20T、original22S22C29T；final65536 ZIP/summary/训练complete/主管终态缺失，新Val0/计划36、Test0。五科学判据NOT TESTED，不把中断或早期Train成功当完整科学结果。
+
+146运行SOURCE冻结未改，384旧文件和16原raw不变；独立处置GO后仅追加30FAIL，保留65536step/3600s全额预留，余额1016960步/32400预留秒、stopfalse。训练前1181选择PASS/15排除/测试optimizer0；重启后OPS220PASS/2ERROR（旧正例耦合可变真实账本，R24被门禁正确拒绝），另74无更新TensorPASS，885历史未重跑。不隐藏失败、不改门禁。
+
+当前先独立结果复审、显式白名单Commit/正常OPSsync并核远端；随后只做Level0/1修冻结历史fixture与R24失败封口证明，禁止训练，不能重放本ID或把32k ZIP当无损续训。详见[中文报告](PHASE_AUTORL_R24_YAW_COVERAGE.md)及mujoco/reports/autonomous_rl_train_yaw_r24.json。下面RUNNING/准备段均是历史快照，不是重启指令。
+
+## AUTORL-R24 权威：唯一训练已启动，只监控、不得再次start（2026-10-17）
+
+正常新OPS register/recover/doctor/audit/CLI prepare通过、最终独立预审C0/I0/newMinor0后，唯一launch_autorl_r24.py已发出启动请求并真实追加第29RESERVE；当前余额1016960 environment步/32400预留wall秒、stop=false。run `.research_local/authorized_rl_v1/runs/ARL_R24_TRAIN_YAW_COVERAGE_SEED0/`；独占启动标记autorl_r24_launch_attempt_01.json、prelaunch/预审收据均local-only。观测worker PID32049/start_ticks169737/boot75a72268-5a3c-471f-aa58-e35f9f4b0f6a只是当时身份，恢复必须核child.json与真实/proc/锁，不能单靠PID判断。
+
+只允许监控同一次65536步/3600秒CPU1新初始化训练。不要再次activate、prepare、start或调用launcher；不退款、不修改grant、不旧ZIP续训。146SOURCE3b2b6d7ae0bb668c22c8eab1c0db7151d7afc020b37035a0047a9af04a5042cf、EXEC3595c1be7190fa6288439547ab2a472fd2c1cc8f2f783654ac25ad23d56b038a冻结，训练中不改运行/测试源码。progress只作最近已记录边界，不冒充最终完成步数。若进程消失而无summary/complete/主管终态，先中断审计，RESTART_REQUIRED、不自动重试。
+
+须真实主管exit0、账本COMPLETE、summary/complete一致后才运行已审查分析器f17423b9106bec8f1172791bc90529e686732543e61661ecbab10271f15c98c4和finalizer1697036ece4705d40f9abe98317c7329b8324d42aefb693a76cce41eaf0886da，核36新Val/Test0/实际physics计数，五图与中文MDJSON；再独立结果复审、显式白名单Commit、正常OPS sync核远端、检查预算/stop/资源继续下一安全阶段。预审发现的分析器Important已真实RED→GREEN02修复，旧01保留而不作新准入；1181当前选择回归PASS/15排除/测试optimizer0。以下准备段仅为历史快照。
+
+## AUTORL-R24 准备记录：Train起始Yaw覆盖（2026-10-17，启动前历史）
+
+实际HEAD基点c19e3b2d3ada3992c4b18578b02ff52f7ea7210c（R23正常OPS sync/远端核验/phase_complete=true），当前独立分支research/lidar-train-yaw-coverage-r24。R22/R23均已完成，不重复。当前boot75a72268-5a3c-471f-aa58-e35f9f4b0f6a的R23恢复/doctor及344授权文件核验PASS；旧OPS零预算仍是维护权限，不撤销独立授权。
+
+余额仍1082496 environment步/36000预留wall秒，head28、stop=false；R24没有真实reserve、protocol、attempt或run。未执行任何新optimizer。候选相对完整R17只变Train起始Yaw：每个原12几何/目标的原Yaw+四方位各1/5，独立Yaw RNG、不改变base抽样RNG；short/original合计120个新任务身份。γ=.99、λ=.95、同手写先验/std.1/CNN/Reward/PI/500/100/25/10Hz/24000rays；不是相对R22只改Yaw，也不是旧ZIP恢复。拟唯一65536步/3600秒（仅准入通过后才预留，届时应余1016960/32400）。
+
+当前已新增yaw_coverage.py、yaw_coverage_env.py、yaw_coverage_profile.py、yaw_coverage_cli.py、yaw_coverage_tests.py、tests/research_ops_v2/test_yaw_coverage.py，及budget/runtime/worker固定schema24分支。5标准库RED→GREEN；4Tensor先实际缺模块RED、actual-worker旧分派另有RED。开发测试120任务初始化/一步物理、RNG隔离已PASS；step0初始化曾因新wrapper缺selected_identities ERROR，保留development01，查明旧初始化器边界后新增显式只读属性，受影响development02已PASS。当前完整4项Tensor重跑结果须从autorl_r24_tensor_green_01.json实际核对，不推测。
+
+准入最新：4Tensor及当前146SOURCE绑定1181选择回归全部PASS（222OPS+74无更新Tensor+885历史，15排除，测试optimizer0），checks dad893869cb646ae5829bd976a6ce0a788868e29245432264fe469c669f4423a。独立预审曾发现分析器episode与reset任务漏同序绑定，真实合法其他任务替换RED后补齐，同序/步数/base计数3GREEN02与finalizer2GREEN02通过；旧收据保留。最终独立GO C0/I0/newMinor0见autorl_r24_pre_review_01.json，不等于训练已完成。
+
+正在正常新版本register/recover/doctor/audit/CLI prepare流程，执行协议3595c1be7190fa6288439547ab2a472fd2c1cc8f2f783654ac25ad23d56b038a、SOURCE3b2b6d7ae0bb668c22c8eab1c0db7151d7afc020b37035a0047a9af04a5042cf。下一步必须核真实prelaunch收据/进程/锁/预算/384保护/资源，全部通过后才允许唯一launch_autorl_r24.py，不能因会话恢复再次start。若已存在launch_attempt或run，转只读监控/中断审计，不重试。绝不重置grant、修改L9R false、读取Test或运行PX4/设备。设计与计划见[AUTORL_R24_YAW_COVERAGE_DESIGN.md](AUTORL_R24_YAW_COVERAGE_DESIGN.md)。旧OPS身份保留归档，正常新注册迁移，不绕门或重初始化旧状态。
+
 ## AUTORL-R23 最新：分布只读诊断（2026-10-16）
 
 R22已发布55594504，科学FAIL不覆盖。R23仅只读完整R17/R22和12Train/6Validation，真实初始Yaw圆周距离与按layout结束统计已核对；发现同layout empty朝向覆盖差异，但因果UNVERIFIED，不把非平稳Train率与final Val当同策略差值。新学习/推理/扫描/物理/episode/Val/Test/optimizer全0，344授权文件字节不变，余额1082496步/36000预留秒stopfalse。1172选择回归PASS=217OPS+70Tensor+885历史/15排除，6新RED→GREEN；不是全仓或性能提升证明。

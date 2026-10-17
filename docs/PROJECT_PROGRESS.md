@@ -1,3 +1,11 @@
+## AUTORL-R24 最新：跨boot系统重启中断，科学NOT TESTED（2026-10-17）
+
+唯一Yaw覆盖训练永久FAIL/INTERRUPTED，不重试/ZIP续训。精确旧_BOOT_ID日志确认系统Reboot，具体发起者/worker最终信号/退出码未知；393完整更新到50304步/1572Adam/786epoch，旧progress50176不是最终步数。243结束Train=short131S19C20T、original22S22C29T；final65536 ZIP/summary/训练complete/主管终态缺失，新Val0/计划36、Test0。五科学判据NOT TESTED，不把中断或早期Train成功当完整科学结果。
+
+146运行SOURCE冻结未改，384旧文件和16原raw不变；独立处置GO后仅追加30FAIL，保留65536step/3600s全额预留，余额1016960步/32400预留秒、stopfalse。训练前1181选择PASS/15排除/测试optimizer0；重启后OPS220PASS/2ERROR（旧正例耦合可变真实账本，R24被门禁正确拒绝），另74无更新TensorPASS，885历史未重跑。不隐藏失败、不改门禁。
+
+当前先独立结果复审、显式白名单Commit/正常OPSsync并核远端；随后只做Level0/1修冻结历史fixture与R24失败封口证明，禁止训练，不能重放本ID或把32k ZIP当无损续训。详见[中文报告](PHASE_AUTORL_R24_YAW_COVERAGE.md)及mujoco/reports/autonomous_rl_train_yaw_r24.json。下面RUNNING/准备段均是历史快照，不是重启指令。
+
 ## AUTORL-R23 最新：分布只读诊断（2026-10-16）
 
 R22已发布55594504，科学FAIL不覆盖。R23仅只读完整R17/R22和12Train/6Validation，真实初始Yaw圆周距离与按layout结束统计已核对；发现同layout empty朝向覆盖差异，但因果UNVERIFIED，不把非平稳Train率与final Val当同策略差值。新学习/推理/扫描/物理/episode/Val/Test/optimizer全0，344授权文件字节不变，余额1082496步/36000预留秒stopfalse。1172选择回归PASS=217OPS+70Tensor+885历史/15排除，6新RED→GREEN；不是全仓或性能提升证明。
