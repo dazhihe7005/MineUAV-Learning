@@ -1,0 +1,152 @@
+{
+  "R28_summary_sha256": "542f70407f426a15caf60d567411e17ccdc2c2b8fd0e49a275af1868318cf36c",
+  "R29_report_sha256": "e9edcb1523230060b96be28f0a4aee730bf1cf4b62135a3bdbf7229f6b54ec6b",
+  "ablation": "APPLIED_YAW_RATE_ACTION_ZERO_TRANSLATION_UNCHANGED_FOR_SAME_OBSERVATION",
+  "acceptance": "bothsuccess and no physical/sensor failure;elseFAIL,do not reduce stopping threshold",
+  "budget_snapshot_sha256": "7afbe81b27fad0417a01fc6bce65e51884e99aefbeed514e4f829983c557972c",
+  "cases": [
+    {
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.8096483,
+      "identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+      "scenario": {
+        "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+        "layout": "empty",
+        "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+        "obstacle_variation": [],
+        "scene_seed": 51000,
+        "split": "validation",
+        "start_seed": 151000,
+        "start_xyz": [
+          -0.0754896,
+          -0.2716165,
+          1.0
+        ],
+        "start_yaw_rad": -2.8096483,
+        "target_seed": 251000,
+        "target_xyz": [
+          1.9774321,
+          -0.0969566,
+          1.0
+        ]
+      }
+    },
+    {
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.532766,
+      "identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+      "scenario": {
+        "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+        "layout": "empty",
+        "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+        "obstacle_variation": [],
+        "scene_seed": 51005,
+        "split": "validation",
+        "start_seed": 151005,
+        "start_xyz": [
+          -0.1505737,
+          0.0293293,
+          1.0
+        ],
+        "start_yaw_rad": -2.532766,
+        "target_seed": 251005,
+        "target_xyz": [
+          1.979277,
+          -0.0583131,
+          1.0
+        ]
+      }
+    }
+  ],
+  "claim_limit": "new action-ablation diagnostics,not unchanged learned-policy success,training improvement,solecausal mechanism or generalization",
+  "controls": [
+    {
+      "base_scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+      "collision": false,
+      "collision_contact_pairs": [],
+      "completion_time_s": null,
+      "distance_task_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+      "episode_return": -8.826027359849718,
+      "final_target_error_m": 0.06156953834511991,
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "inference_ms": {
+        "count": 375,
+        "max": 0.6506690006062854,
+        "p50": 0.29644599999301136,
+        "p95": 0.31164599995463504,
+        "p99": 0.33324617967082304
+      },
+      "last_sim_time_s": 15.000000000001679,
+      "layout": "empty",
+      "mean_lidar_age_s": 0.04000000000000448,
+      "minimum_valid_lidar_range_m": 0.7509608853064682,
+      "outcome": "time_limit",
+      "physical_failure": false,
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+      "sensor_failure": false,
+      "success": false,
+      "task_goal_yaw_rad": -2.8096483,
+      "terminal_class": "time_limit",
+      "timeout": true,
+      "trajectory_length_m": 6.714138485061039
+    },
+    {
+      "base_scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+      "collision": false,
+      "collision_contact_pairs": [],
+      "completion_time_s": null,
+      "distance_task_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+      "episode_return": -9.061131875939772,
+      "final_target_error_m": 0.0660098937949531,
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "inference_ms": {
+        "count": 375,
+        "max": 0.6727300005877623,
+        "p50": 0.29557499965449097,
+        "p95": 0.30853059970468166,
+        "p99": 0.3175647202078835
+      },
+      "last_sim_time_s": 15.000000000001679,
+      "layout": "empty",
+      "mean_lidar_age_s": 0.04000000000000448,
+      "minimum_valid_lidar_range_m": 0.7018732684761092,
+      "outcome": "time_limit",
+      "physical_failure": false,
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+      "sensor_failure": false,
+      "success": false,
+      "task_goal_yaw_rad": -2.532766,
+      "terminal_class": "time_limit",
+      "timeout": true,
+      "trajectory_length_m": 6.925167334598212
+    }
+  ],
+  "device": "cpu",
+  "expected_policy_sha256": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+  "experiment_id": "AUTORL_R30_YAW_ACTION_ABLATION_ONLY",
+  "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+  "hypothesis": "both new empty original-distance cases meet unchanged stop standard vs two existing finalmodel timeouts => supports yaw-action involvement in this pair only",
+  "kind": "READ_ONLY_FROZEN_MODEL_CHANGED_APPLIED_ACTION_NOT_POLICY_LEARNING",
+  "max_policy_steps_per_episode": 375,
+  "model": {
+    "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536.zip",
+    "checkpoint_sha256": "0bcbdca60b131b749ed3a3b0101fbd149e47b58244f99e13e92c0916da5dbd0a",
+    "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+    "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536",
+    "sidecar_sha256": "f0810d7250a032ce7c2df8db7a4d96e9f755320d3c3c428acecb01cb68117f79",
+    "step": 65536
+  },
+  "new_episodes": 2,
+  "optimizer_updates": 0,
+  "registration_sha256": "866768cd558c7036644392569cc9df654a68ecfea6f2ff1245dc35d979195090",
+  "reused_R28_control_episodes": 2,
+  "source_identity_sha256": "302b82788b90fc538146f51f1367e43f5fcfcf58a64dad8e816b57f4545c07f9",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "wall_seconds": 180,
+  "workers": 1
+}

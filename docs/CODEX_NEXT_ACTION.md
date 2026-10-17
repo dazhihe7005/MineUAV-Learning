@@ -1,3 +1,27 @@
+## AUTORL-R30 结果已复审，发布后继续新单变量停稳研究（2026-10-17）
+
+唯一Yaw动作清0两例均375step超时，合计750策略/15000实际tick；冻结双成功假设FAIL、工程完整PASS。进入.10m球分别38/37个真实样本，但联合低速度样本全0，终点速度.345/.350m/s，近目标往复运动在新trace可见；仅清Yaw不足以恢复停稳，不证明Yaw完全无影响。原R28FAIL不改，未训练/optimizer/Test；1234选择PASS/15排除、另2本地分析篡改契约PASS。483旧保护/原168SOURCE/账本head32不变，余额951424步/28800预留秒stopfalse。
+
+先核autorl_r30_staging_checks_01、实际Commit/OPSsync/远端phase_complete，再查stop/resources。下一安全候选R31：利用新trace，独立预注册平移速度反馈的单变量非学习对照（可能显式damping=.3），保留R30Yaw清0基线，不直接修改原模型/PI/Reward，也不将改动作成功冒称学习成功。真正执行须新源码/协议、测试、审查与正常登记；新训练必须另预注册并计入剩余原授权。R30run_01/complete/exit已存在，不能重放或重试；不sealedTest/PX4/ZIP续训。以下为历史。
+
+## AUTORL-R30 实际Yaw动作消融结束，发布待核验（2026-10-17）
+
+唯一2新显式改动作empty轨迹完成，750策略step/15000实际tick；冻结双成功对照FAIL，新成功0/2、复用旧未改模型控制0/2。只对同一obs平移不改，实际YawRate清0，不是目标Yaw改0或原策略学习成功。1234选择PASS/15排除/0optimizer；483旧保护/旧168SOURCE/账本32不变，余额951424/28800stopfalse。R28科学FAIL不改。
+
+下一步结果独立复审、18显式文件Commit/正常OPSsync/远端；run_01/complete/exit已存在，不可重放launcher/分析辅助或两例。真实发布后核budget/stop/resource，基于trace继续下一安全研究，不盲训/不Test/PX4/ZIP续训。详见PHASE_AUTORL_R30_YAW_ACTION.md。以下为历史。
+
+## AUTORL-R30 权威启动状态：修复Important后已准入，正常登记正在进行（2026-10-17）
+
+最终独立GO C0/I0/newMinor0已实际取得，pre_review_01精确绑定173SOURCE302b82788b90fc538146f51f1367e43f5fcfcf58a64dad8e816b57f4545c07f9、REG866768cd558c7036644392569cc9df654a68ecfea6f2ff1245dc35d979195090、EXECe5f4cd89e0b3aae7b0885d8dca339ea5c37047454fa50e702f2fe8ef8c1f1d63及checks3263338c27c77b1afa6ed8b070e84ff14d746075f51c74665b733c66ce8a03bf。1234选择PASS=262OPS+87Tensor+885历史，15排除、optimizer0；另2本地纯算术契约覆盖15trace/4bundle篡改PASS，不冒充物理实验。旧NO_GO Important及初版分析SHA415455…精确字节副本保留，修复仅本地后处理，运行SOURCE不改。
+
+唯一activate_autorl_r30.py已发起，先核activation/recovery/doctor/prerun_audit/prelaunch真实收据，不可重放登记。其后仅允许唯一launch_autorl_r30.py，两例新Yaw动作清0消融、每例375step/内部180秒/CPU1/no训练或Test，预算head32/951424步/28800预留秒stopfalse不变。如已见launch_attempt或run_01，先核真实进程/共享锁/exit及complete，不重试。真正完整退出后才用已审analyzer08bf272…、contracta6a241…、finalizerbb302…生成结果，再结果独立审查/18文件Commit/正常OPSsync/远端。以下准备段为历史。
+
+## AUTORL-R30 准备中：Yaw动作消融（2026-10-17）
+
+R29已正常发布远端c3b7197ed715638db7c1d18c962fe28f7b41ba1a/phase_complete=true，不重做。当前新分支research/lidar-yaw-action-ablation-r30，173SOURCE302b82788b90fc538146f51f1367e43f5fcfcf58a64dad8e816b57f4545c07f9、REG866768cd558c7036644392569cc9df654a68ecfea6f2ff1245dc35d979195090、协议e5f4cd89e0b3aae7b0885d8dca339ea5c37047454fa50e702f2fe8ef8c1f1d63。唯一候选2个新held原距离empty动作消融（final模型只将实际YawRate动作index3设0，同输入平移不改），180秒CPU1/每例375step，复用R28两timeout作控制不重放；无训练/optimizer/Test。当前完整回归与独立预审前不运行。真实预算仍head32/951424步/28800预留秒stopfalse。
+
+恢复先查autorl_r30_checks_01/pre_review/唯一launchattempt及run01/exit，不能重复执行。旧R29 OPS source mismatch是新登记开发，不reset/reinit。完成MD/JSON/图/结果复审/Commit/正常sync远端后核余额继续独立研究，不将消融成功冒称原策略学习成功。以下为历史。
+
 ## AUTORL-R29 诊断已复审，发布后继续R30安全研究（2026-10-17）
 
 唯一同背景237函数输入＋237重复完成，参数/optimizer不变；工程PASS、新导航/学习NOT TESTED。未支持远距离指令塌缩；XY朝目标响应增强，原prior直接速度反馈0使“制动相对prior减弱”不可判（NOT TESTED零参考）。训练后存在跨轴/Yaw指令候选，但闭环因果UNVERIFIED。旧R28final两个empty终点虽约.062/.066m，仍超时；不能用终点位置冒充速度<.15且连续5步成功。1228选择PASS/15排除/0optimizer，另2本地分析契约PASS；466旧保护不变、R28科学FAIL保持。
