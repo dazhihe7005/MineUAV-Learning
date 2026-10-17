@@ -1,3 +1,25 @@
+## AUTORL-R27 最新：目标航向受限对照（2026-10-17）
+
+新增两条同先验original-distance empty Validation、只改目标Yaw0→初始Yaw，成功2/2；复用R26原控制0/2，不重复。冻结heading_contrast=PASS，不等于原任务/学习/避障或泛化PASS。新386策略步/7720实际tick；训练0/optimizer0/Test0。1199选择PASS/15排除，363授权/42历史/旧150SOURCE不变，余额1016960/32400stopfalse，原R24仍永久FAIL/五科学NOT TESTED。详见[中文报告](PHASE_AUTORL_R27_GOAL_HEADING.md)与mujoco/reports/autonomous_rl_goal_heading_r27.json。
+
+下一步先独立结果复审、19文件显式Commit、正常OPSsync/远端，再核预算/stop/资源，从新证据选择单变量研究。旧训练gate仍closed，无新训练准入，不重试R24/ZIP续训；恢复见run01/complete不可重放两个诊断。以下准备段均为历史快照。
+
+## AUTORL-R27 权威启动状态：唯一两条改变任务航向诊断已发起（2026-10-17）
+
+1199选择回归已完整PASS（238OPS/76无更新Tensor/885历史/15排除），独立最终预审GO C0/I0；正常新OPS register/recover/doctor/audit及prelaunch通过后唯一launch_autorl_r27.py已发起。不能重放launcher/登记。恢复先查.research_local/autorl_r27_launch_attempt_01.json、autorl_r27_goal_heading_diagnostic/run_01、真实进程/共享锁、autorl_r27_exit_01.json及result/complete；没有完整退出收据不能认定完成，失败不自动重试。
+
+155SOURCE372e18c77a389658b49c5e911d8215d3cfcb1f6df81c5437e8e42957ceaa39b6、L1协议caa53b1f3419c43d359eac1831ba383cb7cd3b456e26850ffcc5a801cf0c4d7c运行中冻结。固定2新original-distance emptyVal、可信step0、只改任务目标Yaw0→初始Yaw、375步/例、180秒CPU1，复用R26已有2control不重放；训练/optimizer/Test0，余额1016960/32400stopfalse，无新增预留。原R24仍永久FAIL。实际结束后才运行已审查analysis10dc716d534a348bdb87c2d534cab76651c0ae74f1f3eb00a1dd02d789ff6693与finalizerc64670884d3242a6f0bdf460795cf84ee1ca13bac0ad31f758ad8f134086b51f，结果独立复审/19文件Commit/正常OPSsync远端后继续下一安全研究。以下准备段为历史，不是再次启动指令。
+
+## AUTORL-R27 准备中：目标航向耦合诊断（2026-10-17，启动前历史）
+
+R26完整交付正常OPSsync、远端4310738b5f7f9472f321242690457e4d2bff561d、phase_complete=true，不重做。8新诊断证明短距离先验2S→32k1S1T；原距离两模型各2T，原R24仍永久FAIL/五科学NOT TESTED。当前独立分支research/lidar-goal-heading-diagnostic-r27，真实head30/余额1016960步/32400预留秒stopfalse，旧训练门禁仍closed。
+
+新R27只检验目标航向0→保持初始ENU航向，保持可信step0模型、原距离两empty Validation几何/起终点/初始姿态、Reward/PI/动力学/频率不变。复用R26两条step0原距离超时为已有对照、不重复；最多新增2个375步episode/180秒/CPU1，训练/optimizer/Test均0。两新例全成功才为本子集heading_contrast PASS，不称原任务/学习/泛化成功。HoldInitialHeading wrapper只改合法task target_yaw及当前7D yaw_error；无qpos/qvel/控制器/时钟/LiDAR重写。
+
+7标准库契约（6接口缺失RED+1准入缺失RED）→GREEN；1真实MuJoCo wrapper reset/单step接口RED→GREEN，不冒充两诊断episode。REG88167a3f0b25436c353d7319b8a4f1b0053e4e4126be3c5ee31c602b5c478a7c、155SOURCE372e18c77a389658b49c5e911d8215d3cfcb1f6df81c5437e8e42957ceaa39b6、L1协议caa53b1f3419c43d359eac1831ba383cb7cd3b456e26850ffcc5a801cf0c4d7c已冻结。唯一check_autorl_r27.py正在执行1199选择回归（238OPS/76无更新Tensor/885历史，15排除），运行中不改SOURCE/重跑收据。
+
+下一步核完整checks、独立预审及本地launcher/analysis/finalizer；GO前禁止实际诊断。正常新OPS登记/recover/doctor/audit后才可独占前台启动唯一run_01；若出现launchattempt/run先查真实进程、锁与退出收据，不重放。363授权文件与42额外历史、旧150SOURCE保持。完成后真实图/MD/JSON/独立结果复审/Commit/正常OPSsync远端，再预算/stop/资源核验继续长期研究；不能因普通阶段结束停止整个计划。
+
 ## AUTORL-R26 最新：中断checkpoint独立只读诊断（2026-10-17）
 
 实际8个新empty Validation诊断/两个可信step0与32768模型，2368策略步/47360物理tick；短距离子集遗忘判据SUPPORTED_IN_THIS_SUBSET，不等于完整泛化或R24最终结果。训练0/optimizer0/Test0，原R24永久FAIL/五科学判据NOT TESTED，未续训或补原complete。1191选择PASS/15排除，363授权与15历史不变，余额1016960步/32400预留秒stopfalse。实际结果见[中文报告](PHASE_AUTORL_R26_INTERRUPTED_YAW.md)及mujoco/reports/autonomous_rl_interrupted_yaw_r26.json。

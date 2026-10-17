@@ -1,0 +1,147 @@
+{
+  "R26_result_sha256": "dfd021c0e4c922fcd5dd353c98d48731f29557ce22c54c881aca0729378e6c45",
+  "budget_snapshot_sha256": "d0d125396ea08d1c001aa909773a8ba1affddfb33c26c9ba44fbd6cf4d194521",
+  "cases": [
+    {
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.8096483,
+      "identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+      "scenario": {
+        "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+        "layout": "empty",
+        "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+        "obstacle_variation": [],
+        "scene_seed": 51000,
+        "split": "validation",
+        "start_seed": 151000,
+        "start_xyz": [
+          -0.0754896,
+          -0.2716165,
+          1.0
+        ],
+        "start_yaw_rad": -2.8096483,
+        "target_seed": 251000,
+        "target_xyz": [
+          1.9774321,
+          -0.0969566,
+          1.0
+        ]
+      }
+    },
+    {
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.532766,
+      "identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+      "scenario": {
+        "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+        "layout": "empty",
+        "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+        "obstacle_variation": [],
+        "scene_seed": 51005,
+        "split": "validation",
+        "start_seed": 151005,
+        "start_xyz": [
+          -0.1505737,
+          0.0293293,
+          1.0
+        ],
+        "start_yaw_rad": -2.532766,
+        "target_seed": 251005,
+        "target_xyz": [
+          1.979277,
+          -0.0583131,
+          1.0
+        ]
+      }
+    }
+  ],
+  "claim_limit": "two altered-task empty Validation cases;not original-task success,learned improvement,controller bug proof or generalization",
+  "controls": [
+    {
+      "checkpoint_step": 0,
+      "coordinate_contract": "existing environment freejoint world ENU position/linear velocity, qpos quaternion wxyz; not SLAM/PX4/COM calibration",
+      "distance_stage": "ORIGINAL",
+      "episode_return": 4.752990520267375,
+      "final_target_error_m": 0.10501033054403508,
+      "optimizer_unchanged": true,
+      "outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_sha256_before_after": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+      "stop_metrics": {
+        "first_five_joint_time_s": null,
+        "first_near_time_s": 10.920000000000316,
+        "joint_samples": 0,
+        "max_consecutive_joint_samples": 0,
+        "near_goal_fast_samples": 18,
+        "near_goal_samples": 18
+      },
+      "trace_file": {
+        "bytes": 726842,
+        "path": ".research_local/autorl_r26_interrupted_yaw_diagnostic/run_01/trace_0_2.jsonl",
+        "sha256": "936d65a5bce8913f0c5315dcff4d1caf2e3b4bb35dd9c8370362402ff2546bb4"
+      },
+      "training_timesteps_before_after": 0,
+      "wall_seconds": 6.996932346999984
+    },
+    {
+      "checkpoint_step": 0,
+      "coordinate_contract": "existing environment freejoint world ENU position/linear velocity, qpos quaternion wxyz; not SLAM/PX4/COM calibration",
+      "distance_stage": "ORIGINAL",
+      "episode_return": 5.893452514053847,
+      "final_target_error_m": 0.0988587513821058,
+      "optimizer_unchanged": true,
+      "outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_sha256_before_after": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+      "stop_metrics": {
+        "first_five_joint_time_s": null,
+        "first_near_time_s": 10.920000000000316,
+        "joint_samples": 0,
+        "max_consecutive_joint_samples": 0,
+        "near_goal_fast_samples": 19,
+        "near_goal_samples": 19
+      },
+      "trace_file": {
+        "bytes": 727544,
+        "path": ".research_local/autorl_r26_interrupted_yaw_diagnostic/run_01/trace_0_3.jsonl",
+        "sha256": "59dc94f4c59e362651f0c4c00c3a62734a86ebc7566ed22c0eb97423db608053"
+      },
+      "training_timesteps_before_after": 0,
+      "wall_seconds": 6.849505463000241
+    }
+  ],
+  "device": "cpu",
+  "experiment_id": "AUTORL_R27_GOAL_HEADING_DIAGNOSTIC_ONLY",
+  "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+  "hypothesis": "both hold-initial original-distance empty tasks succeed vs same prior R26 two timeouts",
+  "kind": "NEW_TASK_HEADING_NON_LEARNING_CONTRAST",
+  "max_policy_steps_per_episode": 375,
+  "model": {
+    "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R24_TRAIN_YAW_COVERAGE_SEED0/ARL_R24_TRAIN_YAW_COVERAGE_SEED0_STEP0.zip",
+    "checkpoint_sha256": "d0a55edc83df3f6a4ca4220e203efa99f8908dfeba85dd7f9bef13d33ece0292",
+    "execution_protocol_sha256": "3595c1be7190fa6288439547ab2a472fd2c1cc8f2f783654ac25ad23d56b038a",
+    "expected_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+    "run_id": "ARL_R24_TRAIN_YAW_COVERAGE_SEED0_STEP0",
+    "sidecar_sha256": "7dd21d315d3ca4a02e5eeda7d74182dc102342c65fa12dfd89c88244c77b6aa3",
+    "step": 0,
+    "use": "DESERIALIZE_FOR_READ_ONLY_INFERENCE_ONLY;legacy loader mode namedWARM_START,not training initialization/resume"
+  },
+  "new_episodes": 2,
+  "new_training_authority": false,
+  "old_training_gate_still_closed": true,
+  "optimizer_updates": 0,
+  "registration_sha256": "88167a3f0b25436c353d7319b8a4f1b0053e4e4126be3c5ee31c602b5c478a7c",
+  "reused_control_episodes": 2,
+  "single_variable": "declared task goal yaw0 to initialENUyaw;not controller/physics/policy weights/reward change",
+  "source_identity_sha256": "372e18c77a389658b49c5e911d8215d3cfcb1f6df81c5437e8e42957ceaa39b6",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "wall_seconds": 180,
+  "workers": 1
+}

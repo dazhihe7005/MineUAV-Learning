@@ -1,3 +1,9 @@
+## AUTORL-R27 最新：目标航向受限对照（2026-10-17）
+
+新增两条同先验original-distance empty Validation、只改目标Yaw0→初始Yaw，成功2/2；复用R26原控制0/2，不重复。冻结heading_contrast=PASS，不等于原任务/学习/避障或泛化PASS。新386策略步/7720实际tick；训练0/optimizer0/Test0。1199选择PASS/15排除，363授权/42历史/旧150SOURCE不变，余额1016960/32400stopfalse，原R24仍永久FAIL/五科学NOT TESTED。详见[中文报告](PHASE_AUTORL_R27_GOAL_HEADING.md)与mujoco/reports/autonomous_rl_goal_heading_r27.json。
+
+下一步先独立结果复审、19文件显式Commit、正常OPSsync/远端，再核预算/stop/资源，从新证据选择单变量研究。旧训练gate仍closed，无新训练准入，不重试R24/ZIP续训；恢复见run01/complete不可重放两个诊断。以下准备段均为历史快照。
+
 ## AUTORL-R26 最新：中断checkpoint独立只读诊断（2026-10-17）
 
 实际8个新empty Validation诊断/两个可信step0与32768模型，2368策略步/47360物理tick；短距离子集遗忘判据SUPPORTED_IN_THIS_SUBSET，不等于完整泛化或R24最终结果。训练0/optimizer0/Test0，原R24永久FAIL/五科学判据NOT TESTED，未续训或补原complete。1191选择PASS/15排除，363授权与15历史不变，余额1016960步/32400预留秒stopfalse。实际结果见[中文报告](PHASE_AUTORL_R26_INTERRUPTED_YAW.md)及mujoco/reports/autonomous_rl_interrupted_yaw_r26.json。
