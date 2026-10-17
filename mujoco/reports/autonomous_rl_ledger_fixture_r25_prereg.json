@@ -1,0 +1,28 @@
+{
+  "base_release": "996d2b10ab39e4303476450f6b510142a35d31a1",
+  "changed_source": [
+    "tests/research_ops_v2/test_gae_credit.py"
+  ],
+  "experiment_id": "AUTORL_R25_LEGACY_FIXTURE_ONLY",
+  "frozen_R22_report_sha256": "ea1f49e4df91af36b158f318022137e8fa76e0d39ec14ba10b76a219509ba8b5",
+  "kind": "LEVEL1_NO_TRAINING_TEST_REPAIR",
+  "method": "Explicit bounded test-only full frozen R22 budget reader for historical positive AND stop/forged negatives;real proof/gate unchanged;precise error-branch assertions;separate actualcurrentledger rejection/restoration/nonmutation",
+  "new_policy_inference": 0,
+  "new_simulation_steps": 0,
+  "new_training_gate": "REMAINS_CLOSED_FOR_R24;this protocol does not authorize new/resumed/retried training",
+  "new_validation_episodes": 0,
+  "optimizer_updates": 0,
+  "production_source_change": false,
+  "r24_report_sha256": "b1ef4ab998b391f1bf57bae9a5f7c735c19f950706b0ee15da69c2ee5811e07b",
+  "registration_sha256": "eb2b52eabb9a99f55c3df18e432dc3acfb80ec1de7458fdde1ddbe54cfadfb8d",
+  "resources": {
+    "minimum_MemAvailable_mib": 1536,
+    "minimum_disk_free_bytes": 2147483648,
+    "workers": 1
+  },
+  "schema": 1,
+  "scope_limit": "selected no-update regression may perform controlled finite simulator initialization/steps,not learning or scientific navigation evaluation",
+  "source_identity_sha256": "3bd5f4408876611b08234b4fdb1f3eed7d52846d70cbbe5e7192dd0910682418",
+  "test_episodes": 0,
+  "training_timesteps": 0
+}

@@ -1,3 +1,21 @@
+## AUTORL-R25 最新：历史预算fixture隔离（2026-10-17，训练0）
+
+仅改test_gae_credit测试源码，明确用固定R22历史预算reader替身跑历史unit正例/stop与forged负例，退出恢复真实读取。新增实际当前账本集成负例证明R24FAIL仍被原生产gate拒绝，生产门禁/预算/算法/模型未改。独立早审发现forged负例错误分支遮蔽，实际RED→GREEN修复后重冻02并完整1183选择PASS（224OPS/74无更新Tensor/885历史），15排除，非全仓；旧01收据保留，不冒充02。
+
+363授权文件含head30与11额外R24证据字节不变；余额1016960步/32400预留秒、stopfalse，R24永久FAIL/科学NOT TESTED。当前无训练准入，不重试/ZIP续训。独立结果复审/Commit/正常OPSsync/远端状态以真实收据为准；之后只在已授权范围内设计新的无训练中间checkpoint诊断，不把它回填为R24完整结论。详见[中文报告](PHASE_AUTORL_R25_LEDGER_FIXTURE.md)及mujoco/reports/autonomous_rl_ledger_fixture_r25.json。以下R25准备段为旧快照。
+
+## AUTORL-R25 进行中：历史预算fixture隔离（2026-10-17，训练0）
+
+当前权威进度：01整套1183已结束并保留，但早审Important后增强精确错误分支获得真实RED，再修历史负例、全模块11GREEN02；旧01不是当前准入。当前02 REG eb2b52eabb9a99f55c3df18e432dc3acfb80ec1de7458fdde1ddbe54cfadfb8d、SOURCE3bd5f4408876611b08234b4fdb1f3eed7d52846d70cbbe5e7192dd0910682418、L1协议42091390b36aff092a4fbd2cb6511d0eab08f5f3a146dbdfb4f143186026bfdb冻结，唯一check_autorl_r25_02.py正在执行，224OPS02已PASS，其余须核真实收据；独立修复复审C0/I0但尚非最终GO。不得重复启动或在回归中改SOURCE。以下01描述保留为准备历史。
+
+R24失败报告已正常OPS sync/远端996d2b10ab39e4303476450f6b510142a35d31a1，phase_complete=false，不重跑。当前分支research/lidar-ledger-fixture-r25；授权head30、余额1016960步/32400预留秒stopfalse，R24永久FAIL，不新增训练授权或预留。
+
+仅修改tests/research_ops_v2/test_gae_credit.py：公开R22固定报告中的完整历史预算快照，只在历史unit测试context内显式替换BudgetStore.status外部读取，真实proof/生产门禁不改。新集成负例证明当前R24FAIL仍拒绝，退出恢复真实reader/实际账本不变；不是隐藏monkeypatch或当前训练准入。初次4例RED(1FAIL2ERROR)、全该模块11GREEN已保存。首候选REG0a1c881d…/SOURCEbf7e15a5…/L1协议fd062052…，363授权文件含head与11额外R24证据保护。
+
+完整01回归正在唯一check_autorl_r25.py中执行，224OPS已PASS，历史885和74无更新Tensor须从实际收据核，不推测。独立早审发现Important1：旧forged-budget负例先被当前R24FAIL遮蔽，需在当前回归完全结束后增强拒绝原因断言获得真实RED，再将历史负例纳入明确fixture、GREEN、冻结02候选并重跑完整回归。不能在01运行中改测试SOURCE，不能拿01收据验证02。新训练仍NO_GO，生产gate/Reward/模型/协议都不改。
+
+尚未登记新OPS版本，旧R24状态/档案保持；下次恢复先核真实测试进程/当前SOURCE和01各收据，已执行过的唯一测试输出不得覆盖。完成修复/02回归/独立精确GO后正常register/recover/doctor/audit，11节MD/JSON/长期文档、显式白名单Commit/正常OPSsync远端；之后只继续已授权安全研究，不自动重试R24或从ZIP续训。
+
 ## AUTORL-R24 最新：跨boot系统重启中断，科学NOT TESTED（2026-10-17）
 
 唯一Yaw覆盖训练永久FAIL/INTERRUPTED，不重试/ZIP续训。精确旧_BOOT_ID日志确认系统Reboot，具体发起者/worker最终信号/退出码未知；393完整更新到50304步/1572Adam/786epoch，旧progress50176不是最终步数。243结束Train=short131S19C20T、original22S22C29T；final65536 ZIP/summary/训练complete/主管终态缺失，新Val0/计划36、Test0。五科学判据NOT TESTED，不把中断或早期Train成功当完整科学结果。

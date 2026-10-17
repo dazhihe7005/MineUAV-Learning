@@ -1,15 +1,33 @@
 """R22 profile/closed-failure proof contracts, no ML or optimizer."""
 import copy
+from contextlib import contextmanager
 import importlib
 import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 
-from research_ops.storage import OpsError, digest, read_json
+from research_ops.storage import OpsError, digest, read_json, sha256
 
 
 class GAECreditTests(unittest.TestCase):
+    @contextmanager
+    def historical_budget_context(self, root):
+        """Explicit historical-reader double, never a current training admission.
+
+        Freeze the full published R22 budget, not a hand-edited current ledger.
+        Only this unit-process reader is substituted; all real proof files and
+        production eligibility checks remain active. Separate integration test
+        below proves the untouched current ledger still rejects the later FAIL.
+        """
+        from research_regression.authorized_rl.budget import BudgetStore
+        path = root/'mujoco/reports/autonomous_rl_gae_credit_r22.json'
+        self.assertEqual(sha256(path), 'ea1f49e4df91af36b158f318022137e8fa76e0d39ec14ba10b76a219509ba8b5')
+        snapshot = read_json(path)['budget_after']
+        with patch.object(BudgetStore, 'status', new=lambda _store: copy.deepcopy(snapshot)):
+            yield copy.deepcopy(snapshot)
+
     def module(self, suffix='gae_credit_profile'):
         name = 'research_regression.authorized_rl.' + suffix
         self.assertIsNotNone(importlib.util.find_spec(name), 'missing fixed R22 GAE/provenance interface')
@@ -65,35 +83,56 @@ class GAECreditTests(unittest.TestCase):
             self.assertEqual(sha256(path), expected)
 
     def test_new_gate_accepts_only_real_closed_failures_not_pending_or_unknown(self):
-        from research_regression.authorized_rl.budget import BudgetStore
         root = Path(__file__).resolve().parents[2]
-        b = BudgetStore(root/'.research_local/authorized_rl_v1').status()
         m = self.module('closed_failure_proof')
-        m.eligible_after_closed_r20(b, root)
-        for status, identity in (('FAIL', 'ARL_UNKNOWN_FAIL_SEED0'),
-                                 ('RESERVED_OR_INTERRUPTED', 'ARL_R20_TEMPORAL_CREDIT_SEED0')):
-            bad = copy.deepcopy(b)
-            bad['attempts'][-1]['status'] = status
-            bad['attempts'][-1]['experiment_id'] = identity
-            with self.assertRaises(OpsError):
-                m.eligible_after_closed_r20(bad, root)
+        with self.historical_budget_context(root) as b:
+            m.eligible_after_closed_r20(b, root)
+            for status, identity in (('FAIL', 'ARL_UNKNOWN_FAIL_SEED0'),
+                                     ('RESERVED_OR_INTERRUPTED', 'ARL_R20_TEMPORAL_CREDIT_SEED0')):
+                bad = copy.deepcopy(b)
+                bad['attempts'][-1]['status'] = status
+                bad['attempts'][-1]['experiment_id'] = identity
+                with self.assertRaisesRegex(OpsError, 'unresolved/unknown failed attempt'):
+                    m.eligible_after_closed_r20(bad, root)
 
     def test_stop_and_forged_budget_still_fail_closed(self):
-        from research_regression.authorized_rl.budget import BudgetStore
         root = Path(__file__).resolve().parents[2]
-        b = BudgetStore(root/'.research_local/authorized_rl_v1').status()
         m = self.module('closed_failure_proof')
-        for key, value in (('stop_requested', True), ('remaining_timesteps', 2000000)):
-            bad = copy.deepcopy(b); bad[key] = value
-            with self.assertRaises(OpsError):
-                m.eligible_after_closed_r20(bad, root)
+        with self.historical_budget_context(root) as b:
+            for key, value, reason in (('stop_requested', True, 'stop latched'),
+                                       ('remaining_timesteps', 2000000, 'caller budget is not the actual immutable grant ledger')):
+                bad = copy.deepcopy(b); bad[key] = value
+                with self.assertRaisesRegex(OpsError, reason):
+                    m.eligible_after_closed_r20(bad, root)
 
     def test_old_gate_stays_closed_for_r20_and_its_identity_stays_consumed(self):
-        from research_regression.authorized_rl.budget import BudgetStore
         from research_regression.authorized_rl.feedback_followup import eligible_budget
         root = Path(__file__).resolve().parents[2]
-        b = BudgetStore(root/'.research_local/authorized_rl_v1').status()
-        self.module('closed_failure_proof').eligible_after_closed_r20(b, root)
-        with self.assertRaises(OpsError):
-            eligible_budget(b)
-        self.assertEqual([a['status'] for a in b['attempts'] if a['experiment_id'] == 'ARL_R20_TEMPORAL_CREDIT_SEED0'], ['FAIL'])
+        with self.historical_budget_context(root) as b:
+            self.module('closed_failure_proof').eligible_after_closed_r20(b, root)
+            with self.assertRaises(OpsError):
+                eligible_budget(b)
+            self.assertEqual([a['status'] for a in b['attempts'] if a['experiment_id'] == 'ARL_R20_TEMPORAL_CREDIT_SEED0'], ['FAIL'])
+
+    def test_historical_fixture_is_explicit_bounded_and_restores_actual_ledger_reader(self):
+        from research_regression.authorized_rl.budget import BudgetStore
+        root = Path(__file__).resolve().parents[2]
+        context = getattr(self, 'historical_budget_context', None)
+        self.assertTrue(callable(context), 'missing explicit frozen historical budget context')
+        original = BudgetStore.status
+        actual_before = BudgetStore(root/'.research_local/authorized_rl_v1').status()
+        with context(root) as historical:
+            self.assertEqual((historical['remaining_timesteps'], historical['remaining_wall_seconds']), (1082496, 36000))
+            self.assertEqual(len(historical['attempts']), 14)
+            self.assertNotIn('ARL_R24_TRAIN_YAW_COVERAGE_SEED0', [a['experiment_id'] for a in historical['attempts']])
+            self.module('closed_failure_proof').eligible_after_closed_r20(historical, root)
+        self.assertIs(BudgetStore.status, original)
+        self.assertEqual(BudgetStore(root/'.research_local/authorized_rl_v1').status(), actual_before)
+
+    def test_actual_later_failed_attempt_still_blocks_old_gate_outside_fixture(self):
+        from research_regression.authorized_rl.budget import BudgetStore
+        root = Path(__file__).resolve().parents[2]
+        actual = BudgetStore(root/'.research_local/authorized_rl_v1').status()
+        self.assertEqual([a['status'] for a in actual['attempts'] if a['experiment_id'] == 'ARL_R24_TRAIN_YAW_COVERAGE_SEED0'], ['FAIL'])
+        with self.assertRaisesRegex(OpsError, 'unresolved/unknown failed attempt'):
+            self.module('closed_failure_proof').eligible_after_closed_r20(actual, root)

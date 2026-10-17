@@ -1,3 +1,9 @@
+## AUTORL-R25 最新：历史预算fixture隔离（2026-10-17，训练0）
+
+仅改test_gae_credit测试源码，明确用固定R22历史预算reader替身跑历史unit正例/stop与forged负例，退出恢复真实读取。新增实际当前账本集成负例证明R24FAIL仍被原生产gate拒绝，生产门禁/预算/算法/模型未改。独立早审发现forged负例错误分支遮蔽，实际RED→GREEN修复后重冻02并完整1183选择PASS（224OPS/74无更新Tensor/885历史），15排除，非全仓；旧01收据保留，不冒充02。
+
+363授权文件含head30与11额外R24证据字节不变；余额1016960步/32400预留秒、stopfalse，R24永久FAIL/科学NOT TESTED。当前无训练准入，不重试/ZIP续训。独立结果复审/Commit/正常OPSsync/远端状态以真实收据为准；之后只在已授权范围内设计新的无训练中间checkpoint诊断，不把它回填为R24完整结论。详见[中文报告](docs/PHASE_AUTORL_R25_LEDGER_FIXTURE.md)及mujoco/reports/autonomous_rl_ledger_fixture_r25.json。以下R25准备段为旧快照。
+
 ## AUTORL-R24 最新：跨boot系统重启中断，科学NOT TESTED（2026-10-17）
 
 唯一Yaw覆盖训练永久FAIL/INTERRUPTED，不重试/ZIP续训。精确旧_BOOT_ID日志确认系统Reboot，具体发起者/worker最终信号/退出码未知；393完整更新到50304步/1572Adam/786epoch，旧progress50176不是最终步数。243结束Train=short131S19C20T、original22S22C29T；final65536 ZIP/summary/训练complete/主管终态缺失，新Val0/计划36、Test0。五科学判据NOT TESTED，不把中断或早期Train成功当完整科学结果。

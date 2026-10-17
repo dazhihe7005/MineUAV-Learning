@@ -1,11 +1,11 @@
 {
   "authority": "INFORMATION_ONLY; not a grant or restorable execution state",
   "automatic_training": "DISABLED",
-  "head_at_snapshot": "c19e3b2d3ada3992c4b18578b02ff52f7ea7210c",
+  "head_at_snapshot": "996d2b10ab39e4303476450f6b510142a35d31a1",
   "operations_version": "RESEARCH_OPS_V2",
-  "phase_id": "AUTORL-R24-TRAIN-YAW-COVERAGE",
-  "protocol_sha256": "9ab3abe66ca7c84d600f5f23547ab82949a299525026b526934089c881e9f2c1",
-  "registration_sha256": "f10adedc274d5e12baa9d69fd4d3b0fe2f5084fd4764e8940fe0c68e741f6df3",
+  "phase_id": "AUTORL-R25-LEDGER-FIXTURE",
+  "protocol_sha256": "1c6804973b40d487da65ebb8ecaab4cd08fc5c06c9956148c5fafeacca490ef9",
+  "registration_sha256": "eb2b52eabb9a99f55c3df18e432dc3acfb80ec1de7458fdde1ddbe54cfadfb8d",
   "resume": "RESTART_REQUIRED",
   "stage_status": "PASS",
   "training_budget": 0
