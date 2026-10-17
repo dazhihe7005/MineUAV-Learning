@@ -1,3 +1,21 @@
+## AUTORL-R28 发布修正已审查，先核真实同步收据再进R29（2026-10-17）
+
+publication-only新REG53431c954f89f8caa0f94b3aefd23c6cb9d3e0b3c231fab71ca8c5e99c2d2ccc、SOURCEe3e61d7d7e8cebfbf80498402d2a571e8c80ff0362376431f112f4e8e575e132，只移除新增测试EOF的1个额外LF，AST含行号相等/其余163SOURCE不变。新身份完整1221选择PASS/15排除/optimizer0；独立发布审查及正常register/recover/doctor/audit均PASS，原训练SOURCE94daaf…/协议/23raw/结果GO/旧R28注册不改。原R28工程运行65536完成、科学3FAIL2PASS总体FAIL；修复发布不等于学会导航。
+
+不得重放旧seal/activation/训练或改历史账本。先查autorl_r28_publication_staging_checks_01、commit、researchctl-v2实际sync/远端SHA；仅全部通过后才能确认当前phase_complete。预算仍head32/951424步/28800预留秒stopfalse。下一安全研究为R29无optimizer的同输入策略函数诊断，查短课程之后长距离能力丢失；不重复36Val，不读取Test、不旧ZIP续训。电脑关闭不执行研究。以下段落是历史状态。
+
+## AUTORL-R28 发布修正进行中：测试EOF格式，尚未Commit/Push（2026-10-17）
+
+原R28训练/36Val完整结束、科学FAIL、独立结果GO均保留；旧28文件stage后的真实cached whitespace检查exit2，唯一原因test_held_goal_entry.py末尾额外LF。未Commit/Push，不能声称已交付；已仅解除自己的28路径索引，工作文件无损。正常新publication-only REG 53431c954f89f8caa0f94b3aefd23c6cb9d3e0b3c231fab71ca8c5e99c2d2ccc，164 SOURCE e3e61d7d7e8cebfbf80498402d2a571e8c80ff0362376431f112f4e8e575e132；只少一个测试LF/AST含行号完全相同，其余163SOURCE不变。旧执行SOURCE94daaf…/旧cc5注册/协议/attempt/23raw/两个GO不改，当前全套1221新身份无更新回归执行中。
+
+下一步完整复验/新发布报告与独立GO→正常新register/recover/doctor/audit→31文件显式stage/actual working+cached checks exit0→单独Commit/正常OPSsync/远端。不得重跑旧seal、训练、旧attempt或改旧注册，不能关闭whitespace/身份检查。预算head32/951424步/28800预留秒stopfalse，PPO新增0。只有实际发布后才进入R29无optimizer同输入策略函数诊断。以下R28实际结果与启动段为历史，完整研究结论仍科学FAIL。
+
+## AUTORL-R28 实验结果：新held-goal任务学习实际完成（2026-10-17）
+
+关键负结果：新held原距离Val从step0手写先验4/6成功降到32768与final均0/6，两个empty从2成功变2超时；short三个checkpoint均6/6，全部36评价无物理/传感器失败。下降在短课程结束模型已出现，不能只怪后半段混合训练，也不证明唯一算法根因。发布后下一安全阶段R29优先做无optimizer、同输入策略函数诊断，区分距离范围与速度/制动映射候选；不重放36Val或相同训练，不读取Test。
+
+fresh650a先验/65536步/1310232实际tick/512rollout/2048Adam/1024epoch/36新held Val/Test0，科学FAIL，五冻结判据{'held_empty_retention': 'FAIL', 'held_original_candidate': 'FAIL', 'held_original_learning_over_prior': 'FAIL', 'held_short_candidate': 'PASS', 'held_short_prior_retention': 'PASS'}。仅改变任务目标Yaw0→initialYaw，非同旧任务的性能增益；原Yaw0迁移NOT TESTED。1221选择PASS/15排除/测试optimizer0，419旧文件不变。实际31RESERVE/32COMPLETE；余额951424步/28800预留秒stopfalse，RESTART_REQUIRED，不续训旧ID。结果独立审查、Commit、正常OPSsync/远端核验仍须实际收据，未全交付不称phase_complete。详见[中文报告](PHASE_AUTORL_R28_HELD_GOAL.md)与mujoco/reports/autonomous_rl_held_goal_r28.json。随后检查预算/stop/资源，继续下一独立安全研究；不Test/PX4/设备。
+
 ## AUTORL-R27 最新：目标航向受限对照（2026-10-17）
 
 新增两条同先验original-distance empty Validation、只改目标Yaw0→初始Yaw，成功2/2；复用R26原控制0/2，不重复。冻结heading_contrast=PASS，不等于原任务/学习/避障或泛化PASS。新386策略步/7720实际tick；训练0/optimizer0/Test0。1199选择PASS/15排除，363授权/42历史/旧150SOURCE不变，余额1016960/32400stopfalse，原R24仍永久FAIL/五科学NOT TESTED。详见[中文报告](docs/PHASE_AUTORL_R27_GOAL_HEADING.md)与mujoco/reports/autonomous_rl_goal_heading_r27.json。

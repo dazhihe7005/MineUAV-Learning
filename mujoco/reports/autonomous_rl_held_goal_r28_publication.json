@@ -1,0 +1,137 @@
+{
+  "budget_remaining": {
+    "remaining_timesteps": 951424,
+    "remaining_wall_seconds": 28800,
+    "stop_requested": false
+  },
+  "budget_unchanged": true,
+  "format_change": {
+    "AST_with_line_locations_identical": true,
+    "all_other163SOURCE_unchanged": true,
+    "changed_file": "tests/research_ops_v2/test_held_goal_entry.py",
+    "full_added_file_whitespace_check_exit": 0,
+    "new_bytes": 3197,
+    "new_sha256": "d4286b34601d3c68b5a4a4b0e341f3d125ba8e677b1e817812922750c1f5d41c",
+    "old_bytes": 3198,
+    "old_sha256": "9ad406b9a1b85de9ae438bd52758f8429ab39bfff40764ac4f6c247df457cb1c",
+    "only_final_extra_LF_removed": true,
+    "original_execution_source_sha256": "94daaf6b68f5db9977ede2c5db14660a067549f1e28d41b8ee48fb29aada3fc3",
+    "original_registration_sha256": "cc5a35abd5d6a965945a42c7fe0584946bc1df37a98941c4c61e82ded9a604dc",
+    "scope": "test formatting only,not training runtime or protocol change;original frozen execution remains archived,not retrained",
+    "source_diff": [
+      "tests/research_ops_v2/test_held_goal_entry.py"
+    ],
+    "status": "PASS"
+  },
+  "implementation_status": "PASS",
+  "limits": [
+    "as-run training SOURCE includes old EOF;current publication SOURCE explicitly differs in test formatting only",
+    "no current source is falsely declared byteidentical to old full164 snapshot",
+    "R28 scientificFAIL unchanged;newpublicationPASS is not navigation learningPASS",
+    "commit/push/remoteSHA andphase_complete must come from actual normalOPSreceipt,not predeclared"
+  ],
+  "next_action": "after realpublication andremotesha,checkbudget/stop/resources andregister R29 no-optimizer same-input policy-function diagnostic;no duplicateR28training/36Val or sealedTest",
+  "normal_registration_audit": {
+    "activation": {
+      "path": ".research_local/autorl_r28_publication_activation_01.json",
+      "sha256": "dcd599d98745fea691e06859308e49bf30558cf8ec61bbc4c34d059dc5290fff"
+    },
+    "audit": {
+      "path": ".research_local/autorl_r28_publication_audit_01.json",
+      "sha256": "98fc8870dc346ff52ec3033352ea8bb2af5c1145d64c0683eb66ab1c0a6ef48c"
+    },
+    "task_evidence_sha256": "ddd7cebbb979a4a4703c909f0ad10cab8ed4a7f4ce6a518a529b622538470412"
+  },
+  "optimizer_updates": 0,
+  "original_R28_execution": {
+    "actual_timesteps": 65536,
+    "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+    "markdown": {
+      "bytes": 9273,
+      "path": "docs/PHASE_AUTORL_R28_HELD_GOAL.md",
+      "sha256": "46a9581624320f0c30001aa71043cb6ee844e95e12a6c2a9d47fb9e9af8ab1d3"
+    },
+    "protocol_or_attempt_rewritten": false,
+    "registration_sha256": "cc5a35abd5d6a965945a42c7fe0584946bc1df37a98941c4c61e82ded9a604dc",
+    "repeat_or_resume": false,
+    "report": {
+      "bytes": 110077,
+      "path": "mujoco/reports/autonomous_rl_held_goal_r28.json",
+      "sha256": "54af04e2001f6612fea6a20d6af1837243a3a7b23c728ddf3d61d3b0921b35fc"
+    },
+    "result_review_status": "GO",
+    "retained_immutable_raw_files": 23,
+    "runtime_code_unchanged": true,
+    "scientific_result": "FAIL",
+    "source_identity_sha256": "94daaf6b68f5db9977ede2c5db14660a067549f1e28d41b8ee48fb29aada3fc3"
+  },
+  "original_test_copy": {
+    "bytes": 3198,
+    "path": ".research_local/autorl_r28_original_entry_test_01.py",
+    "sha256": "9ad406b9a1b85de9ae438bd52758f8429ab39bfff40764ac4f6c247df457cb1c"
+  },
+  "phase_id": "AUTORL-R28-PUBLICATION-FIX",
+  "physics_episodes": 0,
+  "protected_immutable_files_unchanged": 462,
+  "publication_rule": "normalnewregister;oldV1/V2/grant/history unchanged;no whitespace or identity bypass;real31fileworking/cached checks before separatecommit andnormalOPSsync",
+  "publication_status": "PENDING_COMMIT_PUSH_REMOTE_VERIFICATION",
+  "registration_sha256": "53431c954f89f8caa0f94b3aefd23c6cb9d3e0b3c231fab71ca8c5e99c2d2ccc",
+  "release_RED": {
+    "bytes": 213,
+    "path": ".research_local/autorl_r28_release_diff_RED_01.json",
+    "sha256": "885d42ea60864e1cdd73c6a691f209cca4c672fa112bb1cd7393f52621651328"
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r28_publication_results_review_01.json",
+      "sha256": "28df81c52f2bfc02bc6f98ce88528b59cbd1a4f33fa80b46b1c8e2e92115ec66"
+    },
+    "important": 0,
+    "method": "independent_read_only_normal_versioned_publication_actual_audit_result_review",
+    "new_minor": 0,
+    "scope": "only new publication report result_review,newMD true reviewnote,reviewed commonhandoff andactual31file stage/working/cached checks;original R28 scientificFAIL/23raw/oldREG/reportMD/figures/statistics/protocol untouched;462protected andbudget951424/28800stopfalse unchanged;no training,ZIPresume,R29execution or oldhelperreplay;Commit/Push/remote not certifiedinadvance",
+    "source_identity_sha256": "e3e61d7d7e8cebfbf80498402d2a571e8c80ff0362376431f112f4e8e575e132",
+    "status": "GO"
+  },
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r28_publication_pre_review_01.json",
+      "sha256": "87acb94fb51baa4b248cee1c93d344f219217ee74b89d9f97b149bdc3154b247"
+    },
+    "important": 0,
+    "method": "independent_read_only_versioned_publication_test_EOF_AST_source_history_regression_review",
+    "source_identity_sha256": "e3e61d7d7e8cebfbf80498402d2a571e8c80ff0362376431f112f4e8e575e132",
+    "status": "GO"
+  },
+  "scope": "publication-only test EOF normalization,new explicit OPS version;no algorithm or runtime change,not a new training experiment",
+  "source_diff_evidence": {
+    "bytes": 886,
+    "path": ".research_local/autorl_r28_publication_source_diff_01.json",
+    "sha256": "bbff7e0f0537fd74827df036281102f31455f680f92666345daba565206f1c92"
+  },
+  "source_identity_sha256": "e3e61d7d7e8cebfbf80498402d2a571e8c80ff0362376431f112f4e8e575e132",
+  "test_episodes": 0,
+  "tests": {
+    "checks": {
+      "bytes": 1084,
+      "path": ".research_local/autorl_r28_publication_checks_01.json",
+      "sha256": "025354ca9f7d81b5808337078087f03cca079cbb28d9504c42caa6af9fdf46d0"
+    },
+    "evidence": {
+      "path": ".research_local/autorl_r28_operations_publication_01.json",
+      "sha256": "e28abb63ed709e69f0c9fb62943be7687b6033e344c665194d77ec00749ac3d2"
+    },
+    "excluded": 15,
+    "historical_pass": 885,
+    "operations_pass": 253,
+    "optimizer_updates": 0,
+    "scope": "same selected cases rebound to new SOURCE;not new learning/episodes or whole repository",
+    "selected_distinct_tests": 1221,
+    "status": "PASS",
+    "tensor_pass": 83
+  },
+  "training_runs": 0,
+  "training_timesteps": 0
+}

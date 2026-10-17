@@ -70,7 +70,13 @@ def _supervise(protocol,*,root,termination):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        if protocol['schema']==24:
+        if protocol['schema']==28:
+            if registration['phase_id']!='AUTORL-R28-HELD-GOAL-YAW':raise OpsError('heldgoal requires reviewed R28 phase')
+            from .held_goal_profile import verify_held_goal_proof,verify_held_goal_checks
+            from .closed_yaw_failure import eligible_after_closed_r24
+            verify_held_goal_proof(protocol,root);verify_held_goal_checks(protocol,root)
+            eligible_after_closed_r24(store.status(),root)
+        elif protocol['schema']==24:
             if registration['phase_id']!='AUTORL-R24-TRAIN-YAW-COVERAGE':raise OpsError('Yaw coverage requires reviewed R24 phase')
             from .yaw_coverage_profile import verify_yaw_proof,verify_yaw_checks
             from .closed_failure_proof import eligible_after_closed_r20

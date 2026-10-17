@@ -1,3 +1,51 @@
+## AUTORL-R28 发布修正已审查，先核真实同步收据再进R29（2026-10-17）
+
+publication-only新REG53431c954f89f8caa0f94b3aefd23c6cb9d3e0b3c231fab71ca8c5e99c2d2ccc、SOURCEe3e61d7d7e8cebfbf80498402d2a571e8c80ff0362376431f112f4e8e575e132，只移除新增测试EOF的1个额外LF，AST含行号相等/其余163SOURCE不变。新身份完整1221选择PASS/15排除/optimizer0；独立发布审查及正常register/recover/doctor/audit均PASS，原训练SOURCE94daaf…/协议/23raw/结果GO/旧R28注册不改。原R28工程运行65536完成、科学3FAIL2PASS总体FAIL；修复发布不等于学会导航。
+
+不得重放旧seal/activation/训练或改历史账本。先查autorl_r28_publication_staging_checks_01、commit、researchctl-v2实际sync/远端SHA；仅全部通过后才能确认当前phase_complete。预算仍head32/951424步/28800预留秒stopfalse。下一安全研究为R29无optimizer的同输入策略函数诊断，查短课程之后长距离能力丢失；不重复36Val，不读取Test、不旧ZIP续训。电脑关闭不执行研究。以下段落是历史状态。
+
+## AUTORL-R28 发布修正进行中：测试EOF格式，尚未Commit/Push（2026-10-17）
+
+原R28训练/36Val完整结束、科学FAIL、独立结果GO均保留；旧28文件stage后的真实cached whitespace检查exit2，唯一原因test_held_goal_entry.py末尾额外LF。未Commit/Push，不能声称已交付；已仅解除自己的28路径索引，工作文件无损。正常新publication-only REG 53431c954f89f8caa0f94b3aefd23c6cb9d3e0b3c231fab71ca8c5e99c2d2ccc，164 SOURCE e3e61d7d7e8cebfbf80498402d2a571e8c80ff0362376431f112f4e8e575e132；只少一个测试LF/AST含行号完全相同，其余163SOURCE不变。旧执行SOURCE94daaf…/旧cc5注册/协议/attempt/23raw/两个GO不改，当前全套1221新身份无更新回归执行中。
+
+下一步完整复验/新发布报告与独立GO→正常新register/recover/doctor/audit→31文件显式stage/actual working+cached checks exit0→单独Commit/正常OPSsync/远端。不得重跑旧seal、训练、旧attempt或改旧注册，不能关闭whitespace/身份检查。预算head32/951424步/28800预留秒stopfalse，PPO新增0。只有实际发布后才进入R29无optimizer同输入策略函数诊断。以下R28实际结果与启动段为历史，完整研究结论仍科学FAIL。
+
+## AUTORL-R28 实验结果：新held-goal任务学习实际完成（2026-10-17）
+
+关键负结果：新held原距离Val从step0手写先验4/6成功降到32768与final均0/6，两个empty从2成功变2超时；short三个checkpoint均6/6，全部36评价无物理/传感器失败。下降在短课程结束模型已出现，不能只怪后半段混合训练，也不证明唯一算法根因。发布后下一安全阶段R29优先做无optimizer、同输入策略函数诊断，区分距离范围与速度/制动映射候选；不重放36Val或相同训练，不读取Test。
+
+fresh650a先验/65536步/1310232实际tick/512rollout/2048Adam/1024epoch/36新held Val/Test0，科学FAIL，五冻结判据{'held_empty_retention': 'FAIL', 'held_original_candidate': 'FAIL', 'held_original_learning_over_prior': 'FAIL', 'held_short_candidate': 'PASS', 'held_short_prior_retention': 'PASS'}。仅改变任务目标Yaw0→initialYaw，非同旧任务的性能增益；原Yaw0迁移NOT TESTED。1221选择PASS/15排除/测试optimizer0，419旧文件不变。实际31RESERVE/32COMPLETE；余额951424步/28800预留秒stopfalse，RESTART_REQUIRED，不续训旧ID。结果独立审查、Commit、正常OPSsync/远端核验仍须实际收据，未全交付不称phase_complete。详见[中文报告](PHASE_AUTORL_R28_HELD_GOAL.md)与mujoco/reports/autonomous_rl_held_goal_r28.json。随后检查预算/stop/资源，继续下一独立安全研究；不Test/PX4/设备。
+
+## AUTORL-R28 当前权威：唯一训练已启动，只监控，不重复start（2026-10-17）
+
+正常新OPS register/recover/doctor/audit/CLI prepare均已PASS，独立最终预审C0/I0/newMinor0后，唯一launch_autorl_r28.py已发起；真实事件31RESERVE已全额计65536步/3600秒，实际剩余951424步/28800预留秒stopfalse。run .research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/；启动标记autorl_r28_launch_attempt_01.json已存在，绝不可重放activate/prepare/start。初见worker72078/start_ticks609066/boot189bfa8c-5d0c-4857-82e2-b221364d91d7只作当时身份，恢复必须核child.json/实际proc/共享锁、supervisor_01退出收据及真实summary/complete/ledgerCOMPLETE，不能仅靠PID或progress认定完成。
+
+SOURCE94daaf6b68f5db9977ede2c5db14660a067549f1e28d41b8ee48fb29aada3fc3与EXECbc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7运行中冻结。65536实际步/CPU1/fresh650a先验/仅新held目标任务/36新Val/Test0，RESTART_REQUIRED、不旧ZIP续训。只有实际完整结束后，才运行已审查分析器b27ff22babcb8667e56ce110655e34a3533aa51d34edc6955373458a8907478b与finalizer233d376bf5208a5747be39cdd52c816642da3212ec502c09b6c2d08ee3c88825；再独立结果复审、28文件显式Commit/正常OPSsync/远端，检查预算/stop/资源继续新独立研究。科学失败照样发布，不改五阈值或任务定义，不把新held任务分数当原Yaw0提升。电脑关闭后不能运行，若中断不自动重启。
+
+## AUTORL-R28 启动前历史：独立GO后正常登记正在进行（2026-10-17）
+
+最终独立只读预审GO C0/I0/newMinor0，收据.research_local/autorl_r28_pre_review_01.json精确绑定164SOURCE/EXEC/manifest/1221checks及四个执行辅助；全36安全Important真实RED→GREEN02，不用旧01代替最终证据。唯一activate_autorl_r28.py已发起正常新OPS register/recover/doctor/audit/CLI prepare，不可重复登记或覆盖收据。必须看到prelaunch_01后才发起唯一launch_autorl_r28.py；如果已经有launch_attempt/run，先检查真实进程/共享锁/主管退出和实际summary，不重复start。
+
+唯一候选ARL_R28_HOLD_GOAL_YAW_SEED0，fresh650a先验/65536步/3600秒/CPU1，36新held-task Val/Test0。准入前余额1016960步/32400预留秒stopfalse，真正reserve后才应变951424/28800，不能把计划预算当已消耗。RESTART_REQUIRED，R24永久FAIL不重试。actual complete且主管exit0/ledgerCOMPLETE后才使用审查绑定analysis b27ff22babcb8667e56ce110655e34a3533aa51d34edc6955373458a8907478b和finalizer233d376bf5208a5747be39cdd52c816642da3212ec502c09b6c2d08ee3c88825；结果另独立复审、正常Commit/OPSsync/远端，再核budget/stop/resource继续新研究。以下为启动前历史记录。
+
+## AUTORL-R28 冻结历史：源码已冻结、回归通过、等待独立最终准入（2026-10-17）
+
+完整1221选择PASS=253OPS/83无更新Tensor/885历史，15既定排除，测试optimizer0。REG cc5a35abd5d6a965945a42c7fe0584946bc1df37a98941c4c61e82ded9a604dc；164 SOURCE 94daaf6b68f5db9977ede2c5db14660a067549f1e28d41b8ee48fb29aada3fc3；EXEC bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7；held manifest 3a670bbbc1b841fc81efbc2b6f81f3a58e4d84583a5f5cebaa61820f0e8007b3。checks4c0b2d88dd7f89d8ecd6da2b4ee0629c4bc81595569e8d44e2859156476e4147。419旧保护文件及旧152SOURCE不变，真实head30/余额1016960步/32400预留秒stopfalse；尚无真实R28protocol/reserve/run/optimizer。旧R27 OPS当前source mismatch属新版本开发，绝不reset/reinit。
+
+独立只读最终审查正在核worker/runtime/CLI及唯一activation/launcher/analysis/finalizer；GO前禁止训练。7真实接口测试包括24任务有限reset/step、12Val各1step probe与实际worker在首次learn前阻断；不冒充24导航成功或新科学episodes。旧checkpoint membership SHA Important已真实RED→GREEN修复；worker旧随机初始化路径也实际RED→GREEN。最终新Val明确held任务，不把不同任务分数当原Yaw0公平增益，原Yaw0 transfer NOT TESTED。预定唯一65536步/3600秒CPU1、fresh650a先验、RESTART_REQUIRED、36新Val/Test0。
+
+GO后正常新register/recover/doctor/audit/CLI prepare，再核实际预算与资源，唯一前台launch；如见autorl_r28_launch_attempt_01.json或runs/ARL_R28_HOLD_GOAL_YAW_SEED0，先检查进程/共享锁/真实退出，不能重放或重试。完整结果后才运行已审查分析/发布辅助，独立结果复审、28文件显式Commit/正常OPSsync/远端SHA；随后继续下一个有证据的独立研究。下述开发记录为历史。
+
+## AUTORL-R28 开发历史：保持初始目标航向的新任务训练（2026-10-17，尚未预留或训练）
+
+R27已正常OPSsync、远端dc410d29ecc912c92b63ac5ca546d145805e9e65、phase_complete=true；两新original-distance empty Val保持初始航向均193步/7.72s成功，对应R26既有Yaw0控制均超时，不重复。R27 sealed report b1f161de91d1d0aba235760a7361d5cf0dd3658a696d775566b86979205591e6。科学只限改变任务航向的固定先验双例，不是已学会导航或控制器bug。
+
+当前独立分支research/lidar-held-heading-training-r28，HEAD仍dc410d29ecc912c92b63ac5ca546d145805e9e65。真实授权head30、余额1016960步/32400预留秒stopfalse；R28尚无HOME protocol、reserve、run/attempt或optimizer。计划唯一ARL_R28_HOLD_GOAL_YAW_SEED0：65536步/3600秒、CPU1/fresh手写先验650a5841…，对比完整R17仅将Train及明确声明的Validation任务目标Yaw0改为initialYaw，原12Train几何/目标位置/初Yaw、0.2m→original课程、original empty reset.5、γ.99/λ.95/LR3e-5/std.1/CNN/Reward/PI/频率24k不变。新主评价同held任务的自身step0/32k/final，不声称与历史R17不同任务分数公平同条件，原Yaw0迁移NOT TESTED。拟36新Val/Test0、Final Checkpoint、RESTART_REQUIRED，不旧ZIP初始化。
+
+已新增closed_yaw_failure.py+6标准库测试：真实R24发布/16raw/事件30FAIL/全额65536+3600保留、R6/R20既有闭环、实际caller-budget SHA、unknown/pending/stop/refund拒绝；旧eligible_after_closed_r20仍拒绝R24，未改旧门禁。6缺接口RED→GREEN。新增held_goal_profile.py+6profile/manifest测试：固定24Train+12Val held任务身份、无Test，核心参数/旧ZIP/预算改动拒绝；初始缺模块6RED，中间缺budget dispatch ERROR与角度规范化1ulp严格等号FAIL保留，补固定schema28白名单分派及1e-14角度容差后6GREEN，实际R27/R17 proof只读核验PASS。budget.py仅新增固定schema28 validator分派，旧grant/L9R/OPS账本不改。
+
+下一步TDD实现held-goal Train scheduler与Validation evaluator、worker/runtime固定28分支和CLI，不能复制新控制器/PPO；旧schema17的prefix检查仍仅17。登记新任务manifest/SOURCE/协议/新全套无更新回归及独立GO前绝对不训练。当前旧R27 OPS身份不匹配是新版本开发，不能reset/reinit旧状态。完成后正常新OPS注册/doctor/audit/prepare、核真实预算并只reserve一次；存在attempt时先审计，不重试。若按计划预留后应余951424步/28800预留秒，但现在仍1016960/32400，禁止提前写已消耗。完成结果无论科学PASS/FAIL均MD/JSON/图/独立审查/Commit/正常sync远端，再继续下一安全研究。
+
 ## AUTORL-R27 最新：目标航向受限对照（2026-10-17）
 
 新增两条同先验original-distance empty Validation、只改目标Yaw0→初始Yaw，成功2/2；复用R26原控制0/2，不重复。冻结heading_contrast=PASS，不等于原任务/学习/避障或泛化PASS。新386策略步/7720实际tick；训练0/optimizer0/Test0。1199选择PASS/15排除，363授权/42历史/旧150SOURCE不变，余额1016960/32400stopfalse，原R24仍永久FAIL/五科学NOT TESTED。详见[中文报告](PHASE_AUTORL_R27_GOAL_HEADING.md)与mujoco/reports/autonomous_rl_goal_heading_r27.json。
