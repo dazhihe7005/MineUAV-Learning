@@ -1,3 +1,27 @@
+## AUTORL-R31 发布绑定已修复并复审（2026-10-17）
+
+首次seal被原OPS readiness拒绝，尚未Commit；缺少两个报告元数据字段已补齐，新增1本地发布契约RED02→GREEN01，原错误收据及原报告MD字节保留。独立复审GO，仅证据绑定修复，178SOURCE/运行协议/raw/科学FAIL/1240选择测试数不变；507历史文件/账本head32、余额951424/28800stopfalse不变。先核autorl_r31_staging_checks_02及真实Commit/正常OPSsync/远端phase_complete，不能重复旧seal或run_01。
+
+发布后下一安全研究：只读比较已存R27先验成功与R30/R31实际轨迹中的速度命令、PI积分、姿态及实测加速度时序，区分原网络输出映射与内环动态候选；不再盲试反馈gain，不重放旧病例，不在证据不足时直接重训。原授权仍可用，新的训练必须独立冻结并实际扣预算。以下为历史。
+
+## AUTORL-R31 结果已复审，发布后继续独立研究（2026-10-17）
+
+两个新显式速度反馈病例，冻结双成功对照FAIL，成功0/2、750策略/15000实际tick；仅hybrid动作诊断，不是网络学习成功。真实R30控制2timeout保持，原R28科学FAIL保持。1240选择PASS/15exclude，另2本地分析契约PASS；507旧文件/原173SOURCE/账本head32不变，余额951424步/28800预留秒stopfalse，训练/optimizer/Test0。
+
+先核autorl_r31_staging_checks_01、实际Commit/正常OPSsync/远端phase_complete，再budget/stop/resources，依据本次结果独立冻结下一研究。不得重放run_01或原Val、旧ZIP续训/封存Test/PX4。若反馈成功可设计独立新初始化速度先验学习对照；若失败先解释反证，不盲目增加gain。下一实验必须新登记/审查并计入原累计预算。以下为历史。
+
+## AUTORL-R31 真实速度反馈诊断完成，发布待核验（2026-10-17）
+
+固定D=.3、Yaw清0两新例，冻结对照FAIL，成功0/2，750策略/15000实际tick；显式hybrid动作，不是learnedpolicy导航成功。旧R28FAIL/旧R30两timeout不变。1240选择PASS/15排除，另2本地分析契约PASS，507旧文件/原173SOURCE/账本head32不变，余额951424/28800stopfalse；训练/optimizer/Test0。
+
+先独立结果复审、18文件Commit/正常OPSsync/远端，再按实际证据与预算继续下一独立安全研究。run_01/complete/exit已存在，不重放本诊断或旧Val、不读Test、不旧ZIP续训。详见PHASE_AUTORL_R31_VELOCITY_DAMPING.md。以下为历史。
+
+## AUTORL-R31 准备：显式平移速度反馈（2026-10-17）
+
+R30已正常发布远端64fe3ed22281f3929f8bb3efa36a47e864b85dc9/phase_complete=true，不重做。当前research/lidar-velocity-damping-diagnostic-r31，178SOURCE58a0c94fe2839482952c22a21316c154df99c1aadfd88161f0d415ca1cae04db、REG328721f314b7a3c8b560c24735826c0852ccc4779e98300948c03c166a1e08b6、EXEC35e551a8409baae94aed70c0d41f902c35cdcee39fdbc0e8fd891cf3efc068e8。新候选两例hybrid反馈对照：保持R30Yaw清0，fixedfinal模型已clip平移动作减去.3·当前ENU速度/动作尺度后再clip；不是原网络学习成功。180秒CPU1/每例375step、无optimizer/训练/Test；独立完整回归与预审前不执行。
+
+余额head32/951424步/28800预留秒stopfalse不变。恢复查checks/review与唯一launchattempt/run_01/exit，若已存在不能重复；旧R30 OPS source mismatch是新登记开发，不reset/reinit。完整结果后MD/JSON/图/独立结果复审/18文件Commit/正常OPSsync/远端，再按预算继续安全研究。以下为历史。
+
 ## AUTORL-R30 结果已复审，发布后继续新单变量停稳研究（2026-10-17）
 
 唯一Yaw动作清0两例均375step超时，合计750策略/15000实际tick；冻结双成功假设FAIL、工程完整PASS。进入.10m球分别38/37个真实样本，但联合低速度样本全0，终点速度.345/.350m/s，近目标往复运动在新trace可见；仅清Yaw不足以恢复停稳，不证明Yaw完全无影响。原R28FAIL不改，未训练/optimizer/Test；1234选择PASS/15排除、另2本地分析篡改契约PASS。483旧保护/原168SOURCE/账本head32不变，余额951424步/28800预留秒stopfalse。

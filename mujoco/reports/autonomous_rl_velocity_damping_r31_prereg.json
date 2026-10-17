@@ -1,0 +1,165 @@
+{
+  "R30_report_sha256": "1cc55a09678d40d0765613ebaf46b1973cce6b0c6451714d606bb668dc27aa49",
+  "acceptance": "two successes,no physical/sensor failures;otherwiseFAIL without threshold retuning",
+  "action_scales": [
+    1.5,
+    1.5,
+    1.0,
+    1.0
+  ],
+  "budget_snapshot_sha256": "7afbe81b27fad0417a01fc6bce65e51884e99aefbeed514e4f829983c557972c",
+  "cases": [
+    {
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.8096483,
+      "identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+      "scenario": {
+        "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+        "layout": "empty",
+        "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+        "obstacle_variation": [],
+        "scene_seed": 51000,
+        "split": "validation",
+        "start_seed": 151000,
+        "start_xyz": [
+          -0.0754896,
+          -0.2716165,
+          1.0
+        ],
+        "start_yaw_rad": -2.8096483,
+        "target_seed": 251000,
+        "target_xyz": [
+          1.9774321,
+          -0.0969566,
+          1.0
+        ]
+      }
+    },
+    {
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.532766,
+      "identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+      "scenario": {
+        "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+        "layout": "empty",
+        "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+        "obstacle_variation": [],
+        "scene_seed": 51005,
+        "split": "validation",
+        "start_seed": 151005,
+        "start_xyz": [
+          -0.1505737,
+          0.0293293,
+          1.0
+        ],
+        "start_yaw_rad": -2.532766,
+        "target_seed": 251005,
+        "target_xyz": [
+          1.979277,
+          -0.0583131,
+          1.0
+        ]
+      }
+    }
+  ],
+  "claim_limit": "hybrid action intervention,not learned navigation,unmodifiedpolicy success,causal uniqueness,obstacle avoidance or generalization",
+  "controls": [
+    {
+      "action_scope": "only applied action index3 changed to0;policy parameters/input/translation for sameobs unchanged;result is altered-action diagnostic",
+      "applied_yaw_zero_verified": true,
+      "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+      "episode_return": -8.83227728719067,
+      "final_target_error_m": 0.062229606337647,
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.8096483,
+      "optimizer_unchanged": true,
+      "outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+      "state_source": "SIM_GROUND_TRUTH_STATE",
+      "stop_metrics": {
+        "first_five_joint_time_s": null,
+        "first_near_time_s": 6.599999999999495,
+        "joint_samples": 0,
+        "max_consecutive_joint_samples": 0,
+        "near_goal_fast_samples": 38,
+        "near_goal_samples": 38
+      },
+      "task_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+      "trace_file": {
+        "bytes": 882698,
+        "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_0.jsonl",
+        "sha256": "fca97828e1cfc02c1e54efb1e2a0271f8ab478de6015d9ec248a015574af0acc"
+      },
+      "training_timesteps_before_after": 65536,
+      "translation_unchanged_given_observation": true,
+      "wall_seconds": 7.640952304000166
+    },
+    {
+      "action_scope": "only applied action index3 changed to0;policy parameters/input/translation for sameobs unchanged;result is altered-action diagnostic",
+      "applied_yaw_zero_verified": true,
+      "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+      "episode_return": -9.004103339947669,
+      "final_target_error_m": 0.06698574586618274,
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.532766,
+      "optimizer_unchanged": true,
+      "outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+      "state_source": "SIM_GROUND_TRUTH_STATE",
+      "stop_metrics": {
+        "first_five_joint_time_s": null,
+        "first_near_time_s": 6.599999999999495,
+        "joint_samples": 0,
+        "max_consecutive_joint_samples": 0,
+        "near_goal_fast_samples": 37,
+        "near_goal_samples": 37
+      },
+      "task_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+      "trace_file": {
+        "bytes": 881455,
+        "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_1.jsonl",
+        "sha256": "a758739c27a9d0fb3f75ea3dd678afa1fcdacad395c12d858c981b3231b96e01"
+      },
+      "training_timesteps_before_after": 65536,
+      "translation_unchanged_given_observation": true,
+      "wall_seconds": 7.5464351549999265
+    }
+  ],
+  "device": "cpu",
+  "expected_policy_sha256": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+  "experiment_id": "AUTORL_R31_VELOCITY_DAMPING_DIAGNOSTIC_ONLY",
+  "feedback_frame": "WORLD_ENU_VELOCITY_FROM_CURRENT_SIM_STATE7",
+  "feedback_gain": 0.3,
+  "formula": "float32 clip(original_clipped_xyz - .3*current_ENU_velocity/[1.5,1.5,1],-1,1);appliedYaw=0",
+  "gain_rationale": "R29 approximate local XYposition gain~.43/s;goalboundary .10m and speedthreshold.15m/s imply .43*.10/.15~.287;fixed .3 rounded before evaluation,not an identified global plant or certified safety gain",
+  "hypothesis": "both new cases meet unchanged stopping criterion vs two existing R30 timeouts supports explicit velocity-feedback effect in this pair only",
+  "kind": "EXPLICIT_HYBRID_ACTION_FEEDBACK_ABLATION_NOT_POLICY_LEARNING",
+  "max_policy_steps_per_episode": 375,
+  "model": {
+    "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536.zip",
+    "checkpoint_sha256": "0bcbdca60b131b749ed3a3b0101fbd149e47b58244f99e13e92c0916da5dbd0a",
+    "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+    "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536",
+    "sidecar_sha256": "f0810d7250a032ce7c2df8db7a4d96e9f755320d3c3c428acecb01cb68117f79",
+    "step": 65536
+  },
+  "new_episodes": 2,
+  "optimizer_updates": 0,
+  "order": "original SB3 clip first,thenexplicit physical-unit feedback andsecondbounds clip;not unmodified model action",
+  "registration_sha256": "328721f314b7a3c8b560c24735826c0852ccc4779e98300948c03c166a1e08b6",
+  "reused_R30_control_episodes": 2,
+  "single_variable": "R30 same finalmodel/same heldtask/Yawzero baseline;additional velocityfeedback gain0 to.3",
+  "source_identity_sha256": "58a0c94fe2839482952c22a21316c154df99c1aadfd88161f0d415ca1cae04db",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "wall_seconds": 180,
+  "workers": 1
+}

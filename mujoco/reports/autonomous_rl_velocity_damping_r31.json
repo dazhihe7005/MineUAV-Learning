@@ -1,0 +1,597 @@
+{
+  "R28_original_result_preserved": "FAIL",
+  "actual_policy_steps": 750,
+  "analysis": {
+    "bytes": 4616,
+    "path": ".research_local/autorl_r31_analysis_01.json",
+    "sha256": "b573c907bbf69c43536f8ccbed5b794ef5b7ea83e9bb7084423ea8f9c95eab7b"
+  },
+  "assessment": {
+    "new_hybrid_action_successes": 0,
+    "reused_R30_control_successes": 0,
+    "scope": "changed-action velocity feedback contribution only,not original learnedpolicy navigation or solecausal proof",
+    "velocity_feedback_contrast": "FAIL"
+  },
+  "budget_remaining": {
+    "remaining_timesteps": 951424,
+    "remaining_wall_seconds": 28800,
+    "stop_requested": false
+  },
+  "budget_unchanged": true,
+  "cases": [
+    {
+      "action_scope": "explicit physical-unit velocity feedback .3 andYawzero;network parameters unchanged,hybrid diagnostic not original learnedpolicy",
+      "applied_feedback_verified": true,
+      "applied_yaw_zero_verified": true,
+      "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+      "episode_return": -3.0446172018527315,
+      "final_target_error_m": 0.07593670983093022,
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.8096483,
+      "optimizer_unchanged": true,
+      "outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+      "state_source": "SIM_GROUND_TRUTH_STATE",
+      "stop_metrics": {
+        "first_five_joint_time_s": null,
+        "first_near_time_s": 5.999999999999561,
+        "joint_samples": 0,
+        "max_consecutive_joint_samples": 0,
+        "near_goal_fast_samples": 45,
+        "near_goal_samples": 45
+      },
+      "task_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+      "trace_file": {
+        "bytes": 959804,
+        "path": ".research_local/autorl_r31_velocity_damping/run_01/trace_0.jsonl",
+        "sha256": "da59b91257eaac99d6eefad3f4ee740c8554de943dede6d65f1034b95f3246fa"
+      },
+      "training_timesteps_before_after": 65536,
+      "wall_seconds": 7.862527557999783
+    },
+    {
+      "action_scope": "explicit physical-unit velocity feedback .3 andYawzero;network parameters unchanged,hybrid diagnostic not original learnedpolicy",
+      "applied_feedback_verified": true,
+      "applied_yaw_zero_verified": true,
+      "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+      "episode_return": -3.1462216946450012,
+      "final_target_error_m": 0.07638633071613764,
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.532766,
+      "optimizer_unchanged": true,
+      "outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+      "state_source": "SIM_GROUND_TRUTH_STATE",
+      "stop_metrics": {
+        "first_five_joint_time_s": null,
+        "first_near_time_s": 5.999999999999561,
+        "joint_samples": 0,
+        "max_consecutive_joint_samples": 0,
+        "near_goal_fast_samples": 45,
+        "near_goal_samples": 45
+      },
+      "task_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+      "trace_file": {
+        "bytes": 958991,
+        "path": ".research_local/autorl_r31_velocity_damping/run_01/trace_1.jsonl",
+        "sha256": "09b5ae8f4c45fa1dca3b78b18aa31f0725425b575866ac1c3dc4ac71f1cdaaa4"
+      },
+      "training_timesteps_before_after": 65536,
+      "wall_seconds": 7.741517233000195
+    }
+  ],
+  "configuration": {
+    "R30_report_sha256": "1cc55a09678d40d0765613ebaf46b1973cce6b0c6451714d606bb668dc27aa49",
+    "acceptance": "two successes,no physical/sensor failures;otherwiseFAIL without threshold retuning",
+    "action_scales": [
+      1.5,
+      1.5,
+      1.0,
+      1.0
+    ],
+    "budget_snapshot_sha256": "7afbe81b27fad0417a01fc6bce65e51884e99aefbeed514e4f829983c557972c",
+    "cases": [
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -2.8096483,
+        "identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+        "scenario": {
+          "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "layout": "empty",
+          "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+          "obstacle_variation": [],
+          "scene_seed": 51000,
+          "split": "validation",
+          "start_seed": 151000,
+          "start_xyz": [
+            -0.0754896,
+            -0.2716165,
+            1.0
+          ],
+          "start_yaw_rad": -2.8096483,
+          "target_seed": 251000,
+          "target_xyz": [
+            1.9774321,
+            -0.0969566,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -2.532766,
+        "identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+        "scenario": {
+          "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "layout": "empty",
+          "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+          "obstacle_variation": [],
+          "scene_seed": 51005,
+          "split": "validation",
+          "start_seed": 151005,
+          "start_xyz": [
+            -0.1505737,
+            0.0293293,
+            1.0
+          ],
+          "start_yaw_rad": -2.532766,
+          "target_seed": 251005,
+          "target_xyz": [
+            1.979277,
+            -0.0583131,
+            1.0
+          ]
+        }
+      }
+    ],
+    "claim_limit": "hybrid action intervention,not learned navigation,unmodifiedpolicy success,causal uniqueness,obstacle avoidance or generalization",
+    "controls": [
+      {
+        "action_scope": "only applied action index3 changed to0;policy parameters/input/translation for sameobs unchanged;result is altered-action diagnostic",
+        "applied_yaw_zero_verified": true,
+        "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+        "episode_return": -8.83227728719067,
+        "final_target_error_m": 0.062229606337647,
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -2.8096483,
+        "optimizer_unchanged": true,
+        "outcome": "time_limit",
+        "physics_ticks": 7500,
+        "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+        "policy_steps": 375,
+        "raw_termination_reason": "time_limit",
+        "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+        "state_source": "SIM_GROUND_TRUTH_STATE",
+        "stop_metrics": {
+          "first_five_joint_time_s": null,
+          "first_near_time_s": 6.599999999999495,
+          "joint_samples": 0,
+          "max_consecutive_joint_samples": 0,
+          "near_goal_fast_samples": 38,
+          "near_goal_samples": 38
+        },
+        "task_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+        "trace_file": {
+          "bytes": 882698,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_0.jsonl",
+          "sha256": "fca97828e1cfc02c1e54efb1e2a0271f8ab478de6015d9ec248a015574af0acc"
+        },
+        "training_timesteps_before_after": 65536,
+        "translation_unchanged_given_observation": true,
+        "wall_seconds": 7.640952304000166
+      },
+      {
+        "action_scope": "only applied action index3 changed to0;policy parameters/input/translation for sameobs unchanged;result is altered-action diagnostic",
+        "applied_yaw_zero_verified": true,
+        "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+        "episode_return": -9.004103339947669,
+        "final_target_error_m": 0.06698574586618274,
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -2.532766,
+        "optimizer_unchanged": true,
+        "outcome": "time_limit",
+        "physics_ticks": 7500,
+        "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+        "policy_steps": 375,
+        "raw_termination_reason": "time_limit",
+        "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+        "state_source": "SIM_GROUND_TRUTH_STATE",
+        "stop_metrics": {
+          "first_five_joint_time_s": null,
+          "first_near_time_s": 6.599999999999495,
+          "joint_samples": 0,
+          "max_consecutive_joint_samples": 0,
+          "near_goal_fast_samples": 37,
+          "near_goal_samples": 37
+        },
+        "task_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+        "trace_file": {
+          "bytes": 881455,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_1.jsonl",
+          "sha256": "a758739c27a9d0fb3f75ea3dd678afa1fcdacad395c12d858c981b3231b96e01"
+        },
+        "training_timesteps_before_after": 65536,
+        "translation_unchanged_given_observation": true,
+        "wall_seconds": 7.5464351549999265
+      }
+    ],
+    "device": "cpu",
+    "expected_policy_sha256": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+    "experiment_id": "AUTORL_R31_VELOCITY_DAMPING_DIAGNOSTIC_ONLY",
+    "feedback_frame": "WORLD_ENU_VELOCITY_FROM_CURRENT_SIM_STATE7",
+    "feedback_gain": 0.3,
+    "formula": "float32 clip(original_clipped_xyz - .3*current_ENU_velocity/[1.5,1.5,1],-1,1);appliedYaw=0",
+    "gain_rationale": "R29 approximate local XYposition gain~.43/s;goalboundary .10m and speedthreshold.15m/s imply .43*.10/.15~.287;fixed .3 rounded before evaluation,not an identified global plant or certified safety gain",
+    "hypothesis": "both new cases meet unchanged stopping criterion vs two existing R30 timeouts supports explicit velocity-feedback effect in this pair only",
+    "kind": "EXPLICIT_HYBRID_ACTION_FEEDBACK_ABLATION_NOT_POLICY_LEARNING",
+    "max_policy_steps_per_episode": 375,
+    "model": {
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "0bcbdca60b131b749ed3a3b0101fbd149e47b58244f99e13e92c0916da5dbd0a",
+      "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+      "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536",
+      "sidecar_sha256": "f0810d7250a032ce7c2df8db7a4d96e9f755320d3c3c428acecb01cb68117f79",
+      "step": 65536
+    },
+    "new_episodes": 2,
+    "optimizer_updates": 0,
+    "order": "original SB3 clip first,thenexplicit physical-unit feedback andsecondbounds clip;not unmodified model action",
+    "registration_sha256": "328721f314b7a3c8b560c24735826c0852ccc4779e98300948c03c166a1e08b6",
+    "reused_R30_control_episodes": 2,
+    "single_variable": "R30 same finalmodel/same heldtask/Yawzero baseline;additional velocityfeedback gain0 to.3",
+    "source_identity_sha256": "58a0c94fe2839482952c22a21316c154df99c1aadfd88161f0d415ca1cae04db",
+    "test_episodes": 0,
+    "training_timesteps": 0,
+    "wall_seconds": 180,
+    "workers": 1
+  },
+  "details": [
+    {
+      "control_outcome": "time_limit",
+      "control_trace_sha256": "fca97828e1cfc02c1e54efb1e2a0271f8ab478de6015d9ec248a015574af0acc",
+      "final_goal_error_m": 0.07593670983093022,
+      "final_speed_m_s": 0.4336434424708809,
+      "independent_complete_trace_checks": {
+        "independent_float32_feedback_and_all_frozen_reward_terms": true,
+        "independently_validated_qpos_goal_and_qvel_speed": true,
+        "max_lidar_age_s": 0.08000000000002672,
+        "max_speed_m_s": 1.1642742908555281,
+        "minimum_goal_error_m": 0.020698190551394054,
+        "per_step_task_yaw_and_world_state_validated": true,
+        "physics_ticks": 7500,
+        "stop_metrics": {
+          "first_five_joint_time_s": null,
+          "first_near_time_s": 5.999999999999561,
+          "joint_samples": 0,
+          "max_consecutive_joint_samples": 0,
+          "near_goal_fast_samples": 45,
+          "near_goal_samples": 45
+        },
+        "trajectory_length_m": 6.308775972331777
+      },
+      "initial_state_model_and_first_raw_mean_match_control": true,
+      "joint_samples": 0,
+      "max_joint_stopping_samples": 0,
+      "minimum_goal_error_m": 0.020698190551394054,
+      "near_goal_max_speed_m_s": 0.6316177458789264,
+      "near_goal_min_speed_m_s": 0.4184722552668196,
+      "near_goal_samples": 45,
+      "new_outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_steps": 375,
+      "task_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+      "trace_sha256": "da59b91257eaac99d6eefad3f4ee740c8554de943dede6d65f1034b95f3246fa",
+      "trajectory_length_m": 6.308775972331777
+    },
+    {
+      "control_outcome": "time_limit",
+      "control_trace_sha256": "a758739c27a9d0fb3f75ea3dd678afa1fcdacad395c12d858c981b3231b96e01",
+      "final_goal_error_m": 0.07638633071613764,
+      "final_speed_m_s": 0.4481670923785633,
+      "independent_complete_trace_checks": {
+        "independent_float32_feedback_and_all_frozen_reward_terms": true,
+        "independently_validated_qpos_goal_and_qvel_speed": true,
+        "max_lidar_age_s": 0.08000000000002672,
+        "max_speed_m_s": 1.2071099492289554,
+        "minimum_goal_error_m": 0.023119321807815733,
+        "per_step_task_yaw_and_world_state_validated": true,
+        "physics_ticks": 7500,
+        "stop_metrics": {
+          "first_five_joint_time_s": null,
+          "first_near_time_s": 5.999999999999561,
+          "joint_samples": 0,
+          "max_consecutive_joint_samples": 0,
+          "near_goal_fast_samples": 45,
+          "near_goal_samples": 45
+        },
+        "trajectory_length_m": 6.526651585704636
+      },
+      "initial_state_model_and_first_raw_mean_match_control": true,
+      "joint_samples": 0,
+      "max_joint_stopping_samples": 0,
+      "minimum_goal_error_m": 0.023119321807815733,
+      "near_goal_max_speed_m_s": 0.6568887169011803,
+      "near_goal_min_speed_m_s": 0.4298117823274707,
+      "near_goal_samples": 45,
+      "new_outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_steps": 375,
+      "task_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+      "trace_sha256": "09b5ae8f4c45fa1dca3b78b18aa31f0725425b575866ac1c3dc4ac71f1cdaaa4",
+      "trajectory_length_m": 6.526651585704636
+    }
+  ],
+  "figures": [
+    {
+      "bytes": 200858,
+      "path": "mujoco/reports/autonomous_rl_velocity_damping_r31/figures/stopping.png",
+      "sha256": "93da0a2dee831fd41faec1d01e2a911c317ac565341174b6287c56f524362c2c"
+    },
+    {
+      "bytes": 59803,
+      "path": "mujoco/reports/autonomous_rl_velocity_damping_r31/figures/trajectories.png",
+      "sha256": "5a43218fa00d6604bae2c488fa8e5014f615b0ca2d82bc1b00dc1f9944747b32"
+    },
+    {
+      "bytes": 188621,
+      "path": "mujoco/reports/autonomous_rl_velocity_damping_r31/figures/velocity_commands.png",
+      "sha256": "d396c02ed1ec780eb488e0d1cfd81cc6cc109d2d8a70ff671202cee758668a27"
+    }
+  ],
+  "implementation_status": "PASS",
+  "interpretation": {
+    "confirmed": "physical-unit negativefeedback with unchanged weights/PI/Reward/physics",
+    "supported_scope": "fixed two-success velocityfeedback hypothesis NOT SUPPORTED",
+    "unverified": "learned policy improvement,solecausal mechanism,other scenes/seeds,obstacle avoidance,generalization,realflight"
+  },
+  "limitations": [
+    "hybrid action wrapper not original learnedpolicy;current simtruth velocity is explicitly privileged ownstate",
+    "twoempty Validation cases singlemodel;old controls reused actual traces,not newcontrolrollouts",
+    "freeze .3 beforedata,not plant identification or certified stability margin",
+    "no fullpoint timing/FASTLIO/PX4/hardware/Test",
+    "optional caught cv2NumPyABI/Axes3D warnings remain;no global dependency change"
+  ],
+  "new_diagnostic_episodes": 2,
+  "next_action": "independentresultreview/explicit18file checks/Commit/normalOPSsync/remote;then auditbudget-stop-resources and independently preregister evidencebased followup;do not repeat this diagnostic",
+  "optimizer_updates": 0,
+  "phase_id": "AUTORL-R31-VELOCITY-DAMPING",
+  "physics_ticks": 15000,
+  "protected_immutable_files_unchanged": 507,
+  "protocol_sha256": "35e551a8409baae94aed70c0d41f902c35cdcee39fdbc0e8fd891cf3efc068e8",
+  "publication_repair": {
+    "actual_RED": {
+      "path": ".research_local/autorl_r31_publication_RED_02.json",
+      "sha256": "440f2c918c71053f8a933b19fe20507725faf20d886269dea4656d0a86574a4d"
+    },
+    "additional_publication_contract_tests": 1,
+    "failed_publication_report_sha256": "57fac453e782195babdc32d8a5b5a3449e5d8b490d96ab6f2e00f37290dbd2eb",
+    "failure": "existing unchanged OPS readiness refused missing review.source_identity_sha256 and tests.evidence before staging/commit",
+    "first_test_launch_error": "publication_RED_01 directscript lacked project importpath;preserved,not valid bugreproduction",
+    "old_result_review_preserved": {
+      "path": ".research_local/autorl_r31_results_review_01.json",
+      "sha256": "2edbc8068ed1ef9f10a6811207f3dcdcb71a0f0bf11e42d243e0885ad1022be0"
+    },
+    "scope": "onlymissingOPSreportbindings,no runtime/source/protocol/raw/statisticchange"
+  },
+  "raw_files": [
+    {
+      "bytes": 409,
+      "path": ".research_local/autorl_r31_velocity_damping/run_01/attempt.json",
+      "sha256": "6e27a941345ca755b89f98e5fc51448f1028fc2d244c8f20f60716cf73a5ac8f"
+    },
+    {
+      "bytes": 1490,
+      "path": ".research_local/autorl_r31_velocity_damping/run_01/case_0.json",
+      "sha256": "ae594430c6ddb76ac43171f9cae92a3ac64c8bfb636feedf586a8559f61f5a88"
+    },
+    {
+      "bytes": 1489,
+      "path": ".research_local/autorl_r31_velocity_damping/run_01/case_1.json",
+      "sha256": "d8ed8ee9eb5ee0e2af71b14ad602f750146c0e94587e03506cd2bb651ea8845b"
+    },
+    {
+      "bytes": 90,
+      "path": ".research_local/autorl_r31_velocity_damping/run_01/complete.json",
+      "sha256": "ef7cfbd712168397615585d3ffb9c16b65e6e110d8179c45d9ad7640b73cf1f9"
+    },
+    {
+      "bytes": 4546,
+      "path": ".research_local/autorl_r31_velocity_damping/run_01/result.json",
+      "sha256": "7d857dd4662e5e84f6444a5d25e4b37f1f6c78d47974a317ba508ee3c5bb37eb"
+    },
+    {
+      "bytes": 959804,
+      "path": ".research_local/autorl_r31_velocity_damping/run_01/trace_0.jsonl",
+      "sha256": "da59b91257eaac99d6eefad3f4ee740c8554de943dede6d65f1034b95f3246fa"
+    },
+    {
+      "bytes": 958991,
+      "path": ".research_local/autorl_r31_velocity_damping/run_01/trace_1.jsonl",
+      "sha256": "09b5ae8f4c45fa1dca3b78b18aa31f0725425b575866ac1c3dc4ac71f1cdaaa4"
+    }
+  ],
+  "registration_sha256": "328721f314b7a3c8b560c24735826c0852ccc4779e98300948c03c166a1e08b6",
+  "resources": {
+    "cpu_seconds": 17.747995091999996,
+    "inner_budget_seconds": 180,
+    "outer_cleanup_timeout_seconds": 190,
+    "outer_launcher_wall_seconds": 25.16253485299967,
+    "per_policy_guard_sampled_min_MemAvailable_mib": 8909.19140625,
+    "wall_seconds": 17.59297073200105,
+    "whole_reaped_child_tree_hwm_rss_mib": 1409.98828125,
+    "worker_hwm_rss_mib": 1409.98828125
+  },
+  "result": {
+    "bytes": 4546,
+    "path": ".research_local/autorl_r31_velocity_damping/run_01/result.json",
+    "sha256": "7d857dd4662e5e84f6444a5d25e4b37f1f6c78d47974a317ba508ee3c5bb37eb"
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r31_publication_review_02.json",
+      "sha256": "0949ed38814218192c9987d23d43e505d953e95a933c09ba47bb15118f5607f9"
+    },
+    "important": 0,
+    "method": "independent_read_only_publication_metadata_repair_exactscience_payload_RED_GREEN_unchanged_OPS_source_history_budget_review",
+    "new_minor": 0,
+    "scope": "R31_PUBLICATION_REPAIR_ONLY/METADATA_ONLY_SEAL02;two missing OPS metadata fields repaired;all scientific payload/raw/178SOURCE/507protect/budget32 unchanged;18paths actualstage/check then separatecommit/normalOPSsync/remote;no preclaimedpublication/newtraining/retry/resume",
+    "source_identity_sha256": "58a0c94fe2839482952c22a21316c154df99c1aadfd88161f0d415ca1cae04db",
+    "status": "GO"
+  },
+  "reused_R30_controls": [
+    {
+      "action_scope": "only applied action index3 changed to0;policy parameters/input/translation for sameobs unchanged;result is altered-action diagnostic",
+      "applied_yaw_zero_verified": true,
+      "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+      "episode_return": -8.83227728719067,
+      "final_target_error_m": 0.062229606337647,
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.8096483,
+      "optimizer_unchanged": true,
+      "outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+      "state_source": "SIM_GROUND_TRUTH_STATE",
+      "stop_metrics": {
+        "first_five_joint_time_s": null,
+        "first_near_time_s": 6.599999999999495,
+        "joint_samples": 0,
+        "max_consecutive_joint_samples": 0,
+        "near_goal_fast_samples": 38,
+        "near_goal_samples": 38
+      },
+      "task_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+      "trace_file": {
+        "bytes": 882698,
+        "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_0.jsonl",
+        "sha256": "fca97828e1cfc02c1e54efb1e2a0271f8ab478de6015d9ec248a015574af0acc"
+      },
+      "training_timesteps_before_after": 65536,
+      "translation_unchanged_given_observation": true,
+      "wall_seconds": 7.640952304000166
+    },
+    {
+      "action_scope": "only applied action index3 changed to0;policy parameters/input/translation for sameobs unchanged;result is altered-action diagnostic",
+      "applied_yaw_zero_verified": true,
+      "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+      "episode_return": -9.004103339947669,
+      "final_target_error_m": 0.06698574586618274,
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "goal_yaw_rad": -2.532766,
+      "optimizer_unchanged": true,
+      "outcome": "time_limit",
+      "physics_ticks": 7500,
+      "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+      "policy_steps": 375,
+      "raw_termination_reason": "time_limit",
+      "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+      "state_source": "SIM_GROUND_TRUTH_STATE",
+      "stop_metrics": {
+        "first_five_joint_time_s": null,
+        "first_near_time_s": 6.599999999999495,
+        "joint_samples": 0,
+        "max_consecutive_joint_samples": 0,
+        "near_goal_fast_samples": 37,
+        "near_goal_samples": 37
+      },
+      "task_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+      "trace_file": {
+        "bytes": 881455,
+        "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_1.jsonl",
+        "sha256": "a758739c27a9d0fb3f75ea3dd678afa1fcdacad395c12d858c981b3231b96e01"
+      },
+      "training_timesteps_before_after": 65536,
+      "translation_unchanged_given_observation": true,
+      "wall_seconds": 7.5464351549999265
+    }
+  ],
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "bytes": 1759,
+      "path": ".research_local/autorl_r31_pre_review_01.json",
+      "sha256": "9204143319898d1a6e6d3abbe6b5f9c860fe7fa68729d1b02028d4c02350f5f2"
+    },
+    "important": 0,
+    "method": "independent_read_only_full_source_checks_helpers_float32_reward_trace_control_provenance_review",
+    "source_identity_sha256": "58a0c94fe2839482952c22a21316c154df99c1aadfd88161f0d415ca1cae04db",
+    "status": "GO"
+  },
+  "scientific_result": "FAIL",
+  "scientific_scope": "explicit hybrid velocity-feedback diagnostic vs existing R30 yawzero physical controls,not learned navigation",
+  "source_identity_sha256": "58a0c94fe2839482952c22a21316c154df99c1aadfd88161f0d415ca1cae04db",
+  "supervisor_receipt": {
+    "bytes": 309,
+    "path": ".research_local/autorl_r31_exit_01.json",
+    "sha256": "d8038ca4f1fd8e87073ef41e5742d2385c9b9b3cd6ec84505181fde9043fcb31"
+  },
+  "test_episodes": 0,
+  "tests": {
+    "GREEN": {
+      "bytes": 774,
+      "path": ".research_local/autorl_r31_contract_GREEN_01.json",
+      "sha256": "3ef7e8d3bb08c7b6903b1093e0fcc51b00f3a6d6f2a9cbceee08f418a71d2e01"
+    },
+    "RED": {
+      "bytes": 4270,
+      "path": ".research_local/autorl_r31_contract_RED_01.json",
+      "sha256": "0849c01609ab32ea21cadf7d0d8db5acea5c8374c32fb0f11e399a84cfb1eacd"
+    },
+    "additional_pure_analysis_contracts": {
+      "GREEN": {
+        "bytes": 239,
+        "path": ".research_local/autorl_r31_analysis_contract_GREEN_01.json",
+        "sha256": "123258891ab5db6ea978d1ab1123b7f18d094890645a07ee9eebbe4e709fb5c6"
+      },
+      "RED": {
+        "bytes": 1839,
+        "path": ".research_local/autorl_r31_analysis_contract_RED_01.json",
+        "sha256": "46f77375c0c95ac9ffdce3e6fa59e759c3924743c0be9ec1c2c2d9c4daaa2f47"
+      },
+      "distinct_tests": 2,
+      "scope": "copiedR30 numeric unitfixture with explicitly adapted action/rewardmetadata,not newfeedbackphysicaldata;not counted inside1240",
+      "status": "PASS"
+    },
+    "checks": {
+      "bytes": 1047,
+      "path": ".research_local/autorl_r31_checks_01.json",
+      "sha256": "47b50775e4a1b93bc1089a5c3e73289575359901069929a65c84e989c140cc14"
+    },
+    "evidence": {
+      "path": ".research_local/autorl_r31_operations_final_01.json",
+      "sha256": "11ba9b8684c7f3a37facdd5c64ce446a82bc07333e200640d6a1ffc41e5e0004"
+    },
+    "excluded": 15,
+    "historical_pass": 885,
+    "new_tests": 6,
+    "operations_pass": 266,
+    "optimizer_updates": 0,
+    "scope": "selected applicable regression,not whole repository;single20tick interfaceprobe is not a completed science episode",
+    "selected_total_pass": 1240,
+    "status": "PASS",
+    "tensor_GREEN": {
+      "bytes": 3677,
+      "path": ".research_local/autorl_r31_tensor_GREEN_01.json",
+      "sha256": "5f713657f5b3f43ab300c4923f6d691455aac6e9785094696909b21f6e9ad4b8"
+    },
+    "tensor_RED": {
+      "bytes": 5548,
+      "path": ".research_local/autorl_r31_tensor_RED_01.json",
+      "sha256": "c6286de246c0f0e1ffa3b32b6e3d84d6a73ab1728cbda9b188d95d308370d996"
+    },
+    "tensor_pass": 89
+  },
+  "training_timesteps": 0
+}
