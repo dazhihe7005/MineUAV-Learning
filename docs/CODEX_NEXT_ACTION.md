@@ -1,3 +1,25 @@
+## AUTORL-R26 最新：中断checkpoint独立只读诊断（2026-10-17）
+
+实际8个新empty Validation诊断/两个可信step0与32768模型，2368策略步/47360物理tick；短距离子集遗忘判据SUPPORTED_IN_THIS_SUBSET，不等于完整泛化或R24最终结果。训练0/optimizer0/Test0，原R24永久FAIL/五科学判据NOT TESTED，未续训或补原complete。1191选择PASS/15排除，363授权与15历史不变，余额1016960步/32400预留秒stopfalse。实际结果见[中文报告](PHASE_AUTORL_R26_INTERRUPTED_YAW.md)及mujoco/reports/autonomous_rl_interrupted_yaw_r26.json。
+
+下一步先完成独立结果复审、显式白名单Commit、正常OPSsync远端，再核余额/stop/资源，依新trace选择单变量研究；旧训练gate仍关闭，不能因本诊断PASS重试R24。恢复若见run_01/complete不得再次运行8episode。停止用独立authorized_rl request-stop；电脑关闭后不运行。以下准备段为历史快照。
+
+## AUTORL-R26 权威启动状态：唯一诊断已发起（2026-10-17）
+
+第二版独立精确GO C0/I0后，正常新OPS register/recover/doctor/audit及recheck均已通过，唯一launch_autorl_r26.py已发起。不可重放launcher/recheck/register。先检查.research_local/autorl_r26_launch_attempt_01.json、autorl_r26_interrupted_yaw_diagnostic/run_01/、真实进程/共享锁和autorl_r26_exit_01.json；当前只有进程实际退出、result/complete/主管exit及8trace一致才能算完成。协议2ea8327ef1ee0b52a70c1c6e5c4c8fe97e054077b2ac7b688d9cbd938d20aaad、150SOURCEc5cf2d1300709154261a8bb68c1d8bc4b30541f2413c4d60708507fb6f5c346d冻结，运行中不改源码。
+
+固定2可信模型×4empty Validation共8个新诊断，每例≤375策略步/总600秒/单CPU，非训练、不续训，原R24仍永久FAIL/五科学NOT TESTED；预算1016960/32400不新增预留。启动前修本地helper的真实running=None误判，旧01GO/prelaunch保留但未执行，最终使用pre_review_02/prelaunch_02；复审hash绑定的analysis5218a3840f040cdb890d6250702116303b9d6542587ad1559f177f844913226a、finalizer8ae130cfde89615055449aa93328be12dd5cdaff2d8ea2ccfff51a41e75002ab。分析与最终发布须等真实退出，再结果独立复审/Commit/正常OPSsync，随后预算/stop/资源核验并继续下一安全研究，不把普通阶段完成当长期任务结束。
+
+## AUTORL-R26 准备中：中断checkpoint独立只读诊断（2026-10-17，启动前历史）
+
+R25已正常OPSsync/远端be547c53894317048ea0decc2c13f39cede76cc4，工程phase_complete=true，不重做。R24永久FAIL/科学NOT TESTED，原16raw/ZIP不改，不重复attempt、不训练续训。当前独立分支research/lidar-interrupted-yaw-diagnostic-r26；真实head30/余额1016960步/32400预留秒stopfalse，旧训练gate继续拒绝R24，无新训练预算事件。
+
+候选仅两个固定R24 checkpoint(0、32768)，四个empty Validation任务(两个short+两个original)，8个新的独立诊断episode/每个最多375策略步/600秒总上限/CPU1；复用现有stopping_trace真实mj_step/24k射线。不是R24已执行过的Validation，不补原实验final或五科学判据。先验short两例都成功且32k更少成功，才支持“该子集停稳遗忘”候选；不外推完整验证或泛化。
+
+已新增interrupted_yaw_diagnostic.py/_run.py/_tests.py与对应OPS测试；6契约缺接口RED、物理计数/布尔步数负例另RED→7契约GREEN；单独只读loader测试缺接口RED→GREEN，实际只读加载两个可信ZIP并对人工测试输入做4次推理，无物理episode/optimizer。旧loader API名WARM_START仅作验证反序列化env=None，禁止learn/train/Adam.step，不是训练初始化或恢复，原sidecar与ZIP不改。
+
+下一步冻结新REG/SOURCE/L1协议、完整231OPS+75无更新Tensor+885历史选择回归，独立精确预审GO后正常新OPS登记/doctor/audit，再独占前台唯一诊断。此前禁止启动诊断，不拿单独loader测试充当8episode完成。若已出现run_01/attempt，先核真实进程/锁/完整收据，不重复运行。当前旧R25 OPS身份不匹配明确新增源码属待新注册开发，不改旧版本或账本。诊断全部完成后也须MD/JSON/真实图/结果复审/Commit/正常OPSsync远端，再核授权继续研究。
+
 ## AUTORL-R25 最新：历史预算fixture隔离（2026-10-17，训练0）
 
 仅改test_gae_credit测试源码，明确用固定R22历史预算reader替身跑历史unit正例/stop与forged负例，退出恢复真实读取。新增实际当前账本集成负例证明R24FAIL仍被原生产gate拒绝，生产门禁/预算/算法/模型未改。独立早审发现forged负例错误分支遮蔽，实际RED→GREEN修复后重冻02并完整1183选择PASS（224OPS/74无更新Tensor/885历史），15排除，非全仓；旧01收据保留，不冒充02。

@@ -1,0 +1,151 @@
+{
+  "R24_permanent_FAIL": true,
+  "budget_snapshot_sha256": "d0d125396ea08d1c001aa909773a8ba1affddfb33c26c9ba44fbd6cf4d194521",
+  "case_count": 4,
+  "cases": [
+    {
+      "distance_stage": "SHORT",
+      "scenario": {
+        "base_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+        "identity_sha256": "13daf599df67e134cc99072073a3fa678059c3ab521cae07a495f48a38b784e6",
+        "layout": "empty",
+        "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+        "obstacle_variation": [],
+        "scene_seed": 51000,
+        "split": "validation",
+        "start_seed": 151000,
+        "start_xyz": [
+          -0.0754896,
+          -0.2716165,
+          1.0
+        ],
+        "start_yaw_rad": -2.8096483,
+        "target_seed": 251000,
+        "target_xyz": [
+          0.12379046757058813,
+          -0.2546620118313221,
+          1.0
+        ],
+        "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+      }
+    },
+    {
+      "distance_stage": "SHORT",
+      "scenario": {
+        "base_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+        "identity_sha256": "0a0b6aa72e84170f27c1d9d31974c62dd544a8c7fd05a3b0faaa6b817dc24e59",
+        "layout": "empty",
+        "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+        "obstacle_variation": [],
+        "scene_seed": 51005,
+        "split": "validation",
+        "start_seed": 151005,
+        "start_xyz": [
+          -0.1505737,
+          0.0293293,
+          1.0
+        ],
+        "start_yaw_rad": -2.532766,
+        "target_seed": 251005,
+        "target_xyz": [
+          0.04925718618346403,
+          0.021106348757809347,
+          1.0
+        ],
+        "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+      }
+    },
+    {
+      "distance_stage": "ORIGINAL",
+      "scenario": {
+        "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+        "layout": "empty",
+        "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+        "obstacle_variation": [],
+        "scene_seed": 51000,
+        "split": "validation",
+        "start_seed": 151000,
+        "start_xyz": [
+          -0.0754896,
+          -0.2716165,
+          1.0
+        ],
+        "start_yaw_rad": -2.8096483,
+        "target_seed": 251000,
+        "target_xyz": [
+          1.9774321,
+          -0.0969566,
+          1.0
+        ]
+      }
+    },
+    {
+      "distance_stage": "ORIGINAL",
+      "scenario": {
+        "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+        "layout": "empty",
+        "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+        "obstacle_variation": [],
+        "scene_seed": 51005,
+        "split": "validation",
+        "start_seed": 151005,
+        "start_xyz": [
+          -0.1505737,
+          0.0293293,
+          1.0
+        ],
+        "start_yaw_rad": -2.532766,
+        "target_seed": 251005,
+        "target_xyz": [
+          1.979277,
+          -0.0583131,
+          1.0
+        ]
+      }
+    }
+  ],
+  "checkpoint_steps": [
+    0,
+    32768
+  ],
+  "claim_limit": "posthoc eight NEW diagnostic episodes;R24 remains interrupted with original five criteria NOT TESTED;not finalmodel/generalization",
+  "device": "cpu",
+  "episodes": 8,
+  "experiment_id": "AUTORL_R26_INTERRUPTED_YAW_DIAGNOSTIC_ONLY",
+  "formal_completion_claim": false,
+  "hypothesis": "two short empty Validation tasks: prior2success and32k fewer successes supports retention loss in this subset only",
+  "kind": "NEW_FROZEN_CHECKPOINT_DIAGNOSTIC_NOT_FORMAL_RESULT_OR_RESUME",
+  "max_policy_steps_per_episode": 375,
+  "model_count": 2,
+  "models": [
+    {
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R24_TRAIN_YAW_COVERAGE_SEED0/ARL_R24_TRAIN_YAW_COVERAGE_SEED0_STEP0.zip",
+      "checkpoint_sha256": "d0a55edc83df3f6a4ca4220e203efa99f8908dfeba85dd7f9bef13d33ece0292",
+      "execution_protocol_sha256": "3595c1be7190fa6288439547ab2a472fd2c1cc8f2f783654ac25ad23d56b038a",
+      "expected_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+      "run_id": "ARL_R24_TRAIN_YAW_COVERAGE_SEED0_STEP0",
+      "sidecar_sha256": "7dd21d315d3ca4a02e5eeda7d74182dc102342c65fa12dfd89c88244c77b6aa3",
+      "step": 0,
+      "use": "DESERIALIZE_FOR_READ_ONLY_INFERENCE_ONLY;legacy loader mode namedWARM_START,not training initialization/resume"
+    },
+    {
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R24_TRAIN_YAW_COVERAGE_SEED0/ARL_R24_TRAIN_YAW_COVERAGE_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "668112c1747cff67b92335a3c3e8fb6f0e9ad406fcc2da943ad1b82858463866",
+      "execution_protocol_sha256": "3595c1be7190fa6288439547ab2a472fd2c1cc8f2f783654ac25ad23d56b038a",
+      "expected_policy_sha256": null,
+      "run_id": "ARL_R24_TRAIN_YAW_COVERAGE_SEED0_STEP32768",
+      "sidecar_sha256": "a58a912721258d2d5d0e8208c98aa9376c81538516fab2a12d92eb024281d9a9",
+      "step": 32768,
+      "use": "DESERIALIZE_FOR_READ_ONLY_INFERENCE_ONLY;legacy loader mode namedWARM_START,not training initialization/resume"
+    }
+  ],
+  "new_training_authority": false,
+  "old_training_gate_still_closed": true,
+  "optimizer_updates": 0,
+  "registration_sha256": "102956dd023d973e64f53193b0d3bd9094f352510659e8d72b93328f8f582783",
+  "source_identity_sha256": "c5cf2d1300709154261a8bb68c1d8bc4b30541f2413c4d60708507fb6f5c346d",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "wall_seconds": 600,
+  "workers": 1
+}

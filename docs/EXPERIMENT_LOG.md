@@ -1,3 +1,9 @@
+## AUTORL-R26 最新：中断checkpoint独立只读诊断（2026-10-17）
+
+实际8个新empty Validation诊断/两个可信step0与32768模型，2368策略步/47360物理tick；短距离子集遗忘判据SUPPORTED_IN_THIS_SUBSET，不等于完整泛化或R24最终结果。训练0/optimizer0/Test0，原R24永久FAIL/五科学判据NOT TESTED，未续训或补原complete。1191选择PASS/15排除，363授权与15历史不变，余额1016960步/32400预留秒stopfalse。实际结果见[中文报告](PHASE_AUTORL_R26_INTERRUPTED_YAW.md)及mujoco/reports/autonomous_rl_interrupted_yaw_r26.json。
+
+下一步先完成独立结果复审、显式白名单Commit、正常OPSsync远端，再核余额/stop/资源，依新trace选择单变量研究；旧训练gate仍关闭，不能因本诊断PASS重试R24。恢复若见run_01/complete不得再次运行8episode。停止用独立authorized_rl request-stop；电脑关闭后不运行。以下准备段为历史快照。
+
 ## AUTORL-R25 最新：历史预算fixture隔离（2026-10-17，训练0）
 
 仅改test_gae_credit测试源码，明确用固定R22历史预算reader替身跑历史unit正例/stop与forged负例，退出恢复真实读取。新增实际当前账本集成负例证明R24FAIL仍被原生产gate拒绝，生产门禁/预算/算法/模型未改。独立早审发现forged负例错误分支遮蔽，实际RED→GREEN修复后重冻02并完整1183选择PASS（224OPS/74无更新Tensor/885历史），15排除，非全仓；旧01收据保留，不冒充02。
