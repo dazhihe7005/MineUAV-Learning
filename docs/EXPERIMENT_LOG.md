@@ -1,3 +1,21 @@
+## AUTORL-R32 结果已复审，发布后准备独立学习对照（2026-10-17）
+
+1886行旧trace描述性审计完成；analysisPASS，新学习NOT TESTED/因果UNVERIFIED。两组final操作的实际近目标平均速度约.50m/s，不能由约.67s相关峰宣称真实控制延迟；无电机/100Hz中间/每行LiDAR完整证据。1245选择PASS/15exclude，533旧文件/原178SOURCE/账本head32不变；余额951424训练步/28800预留秒stopfalse，训练/推理/新物理/新episode/Test0。
+
+先核autorl_r32_staging_checks_01、真实Commit/正常OPSsync/远端phase_complete；之后查budget-stop-resource，下一候选R33为前32768步自然reset时均匀base下SHORT/ORIGINAL距离各.5（独立distance RNG）、后半按R28原距离/empty.5的单变量对照。保持fresh650a/CNN/Reward/PPO/原PI/held任务/65536预算，不加入R30/R31动作shim。须先新协议/源码/测试/独立审查/合法扣预算；此候选不提供执行许可。R32run_01/complete/exit不得重放，不盲试gain、不读Test/PX4/旧ZIP续训。以下为历史。
+
+## AUTORL-R32 只读响应审计已执行，发布待核验（2026-10-17）
+
+六条既有真实trace/1886行算术复核，analysisPASS，新学习NOT TESTED/唯一根因UNVERIFIED；没有新episode/物理/推理/optimizer/Test。last100Hz请求post-.01与40ms平均加速度中点post-.02区别明确，固定[3,7]s的正lag相关峰不冒称真实延迟。1245选择PASS/15exclude，533旧文件/原178SOURCE/账本head32不变，余额951424/28800stopfalse。
+
+先独立结果复审/15文件Commit/正常OPSsync/远端，run_01/complete/exit存在不得重放。发布后据真实证据选单变量学习对照（提前原距离rehearsal或自身状态记忆），新协议/审查/实际扣预算前不训练；不盲试gain，不改旧FAIL、不读Test/PX4/旧ZIP续训。详见PHASE_AUTORL_R32_CONTROL_RESPONSE.md。以下为历史。
+
+## AUTORL-R32 准备：既有控制响应只读审计（2026-10-17）
+
+R31真实两feedback例失败0/2已发布24e8b51b94f0ce520ed150459cff3d81dee0427a，不重放。新REGff4d7eacfc995d6a3230613475882dfc14317996c63784b9730f90013db50b92，180SOURCE608ba9b7d4c62f4c791057896ecfc1085b84f40763b65ff897fe6726e4e161a0、EXECf0dd09e3a6594992afa1de3ee2d08aac19c31259d39118477aedc35a3095c710；只读取R27/R30/R31六条旧trace，固定[3,7]s和正lag网格，区分last100Hz请求与40ms平均加速度。不是新闭环、延迟识别或因果证明。完整1245选择回归/独立预审前不分析；5新增RED→GREEN、无训练/optimizer/物理/Test。账本head32/951424步/28800秒stopfalse，历史533保护不变。
+
+先查checks/review/唯一analysisattempt，不重放旧launcher或实验。新阶段开发导致旧OPS SOURCE不匹配，须正常新登记不reset/reinit。实际结果后11节MDJSON图/独立复审/15文件Commit/正常sync/远端，再预算与stop/resource审核继续独立研究。以下为历史。
+
 ## AUTORL-R31 发布绑定已修复并复审（2026-10-17）
 
 首次seal被原OPS readiness拒绝，尚未Commit；缺少两个报告元数据字段已补齐，新增1本地发布契约RED02→GREEN01，原错误收据及原报告MD字节保留。独立复审GO，仅证据绑定修复，178SOURCE/运行协议/raw/科学FAIL/1240选择测试数不变；507历史文件/账本head32、余额951424/28800stopfalse不变。先核autorl_r31_staging_checks_02及真实Commit/正常OPSsync/远端phase_complete，不能重复旧seal或run_01。

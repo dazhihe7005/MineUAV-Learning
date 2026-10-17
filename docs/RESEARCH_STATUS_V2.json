@@ -1,11 +1,11 @@
 {
   "authority": "INFORMATION_ONLY; not a grant or restorable execution state",
   "automatic_training": "DISABLED",
-  "head_at_snapshot": "64fe3ed22281f3929f8bb3efa36a47e864b85dc9",
+  "head_at_snapshot": "24e8b51b94f0ce520ed150459cff3d81dee0427a",
   "operations_version": "RESEARCH_OPS_V2",
-  "phase_id": "AUTORL-R31-VELOCITY-DAMPING",
-  "protocol_sha256": "5ddf5fb8030f3a215d3df097b9cf11eec533034109a5c7a56ebd61802e32e967",
-  "registration_sha256": "328721f314b7a3c8b560c24735826c0852ccc4779e98300948c03c166a1e08b6",
+  "phase_id": "AUTORL-R32-CONTROL-RESPONSE-AUDIT",
+  "protocol_sha256": "e7bc387c94b966cfff0c1dc1ca4eb62bd41902d079c558c949b470ac89b6139e",
+  "registration_sha256": "ff4d7eacfc995d6a3230613475882dfc14317996c63784b9730f90013db50b92",
   "resume": "RESTART_REQUIRED",
   "stage_status": "PASS",
   "training_budget": 0

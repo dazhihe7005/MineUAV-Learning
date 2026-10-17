@@ -1,0 +1,719 @@
+{
+  "analytical_ownstate_counterexample": "same ownpose/velocity/heading/frozenLiDAR can coexist with different PI integralmemory/bodyrates;not forced physical test or proof uniquelearningcause",
+  "claim_limit": "describe existing traces and evidence gaps only,no learnedgain/plantstability/solecause claim",
+  "clock_contract": {
+    "average_acceleration_timestamp": "interval midpoint",
+    "control_average_time_difference_s": 0.01,
+    "control_ticks": 5,
+    "logged_last_control_timestamp": "post_time-.01s for complete20tick rows only",
+    "physics_dt_s": 0.002,
+    "policy_ticks": 20
+  },
+  "experiment_id": "AUTORL_R32_EXISTING_TRACE_RESPONSE_AUDIT_ONLY",
+  "fixed_alignment_window_s": [
+    3.0,
+    7.0
+  ],
+  "groups_limit": "R27 different model and tiny unmodifiedYaw vs R30/R31;not a singlevariable matched model contrast",
+  "inputs": [
+    {
+      "cases": [
+        {
+          "control_trace_checks": {
+            "independently_validated_qpos_goal_and_qvel_speed": true,
+            "max_lidar_age_s": 0.08000000000002672,
+            "max_speed_m_s": 1.0521439957308274,
+            "minimum_goal_error_m": 0.026125311703355525,
+            "physics_ticks": 7500,
+            "stop_metrics": {
+              "first_five_joint_time_s": null,
+              "first_near_time_s": 10.920000000000316,
+              "joint_samples": 0,
+              "max_consecutive_joint_samples": 0,
+              "near_goal_fast_samples": 18,
+              "near_goal_samples": 18
+            },
+            "trajectory_length_m": 6.211792314604421
+          },
+          "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+          "episode_return": 24.670947195121123,
+          "final_target_error_m": 0.06176838179174584,
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.8096483,
+          "independent_trace_checks": {
+            "independently_validated_qpos_goal_and_qvel_speed": true,
+            "max_lidar_age_s": 0.08000000000000007,
+            "max_speed_m_s": 1.0331749304631133,
+            "minimum_goal_error_m": 0.0021020970981940387,
+            "per_step_task_yaw_and_world_state_validated": true,
+            "physics_ticks": 3860,
+            "stop_metrics": {
+              "first_five_joint_time_s": 7.719999999999372,
+              "first_near_time_s": 6.999999999999451,
+              "joint_samples": 5,
+              "max_consecutive_joint_samples": 5,
+              "near_goal_fast_samples": 14,
+              "near_goal_samples": 19
+            },
+            "trajectory_length_m": 3.02286345154295
+          },
+          "optimizer_unchanged": true,
+          "outcome": "success",
+          "physics_ticks": 3860,
+          "policy_sha256_before_after": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "policy_steps": 193,
+          "raw_termination_reason": "success",
+          "reused_R26_control": {
+            "checkpoint_step": 0,
+            "coordinate_contract": "existing environment freejoint world ENU position/linear velocity, qpos quaternion wxyz; not SLAM/PX4/COM calibration",
+            "distance_stage": "ORIGINAL",
+            "episode_return": 4.752990520267375,
+            "final_target_error_m": 0.10501033054403508,
+            "optimizer_unchanged": true,
+            "outcome": "time_limit",
+            "physics_ticks": 7500,
+            "policy_sha256_before_after": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+            "policy_steps": 375,
+            "raw_termination_reason": "time_limit",
+            "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+            "stop_metrics": {
+              "first_five_joint_time_s": null,
+              "first_near_time_s": 10.920000000000316,
+              "joint_samples": 0,
+              "max_consecutive_joint_samples": 0,
+              "near_goal_fast_samples": 18,
+              "near_goal_samples": 18
+            },
+            "trace_file": {
+              "bytes": 726842,
+              "path": ".research_local/autorl_r26_interrupted_yaw_diagnostic/run_01/trace_0_2.jsonl",
+              "sha256": "936d65a5bce8913f0c5315dcff4d1caf2e3b4bb35dd9c8370362402ff2546bb4"
+            },
+            "training_timesteps_before_after": 0,
+            "wall_seconds": 6.996932346999984
+          },
+          "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "state_source": "SIM_GROUND_TRUTH_STATE",
+          "stop_metrics": {
+            "first_five_joint_time_s": 7.719999999999372,
+            "first_near_time_s": 6.999999999999451,
+            "joint_samples": 5,
+            "max_consecutive_joint_samples": 5,
+            "near_goal_fast_samples": 14,
+            "near_goal_samples": 19
+          },
+          "task_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+          "trace_file": {
+            "bytes": 390485,
+            "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/trace_0.jsonl",
+            "sha256": "75d1e30a5f178de7f5a9bf2138cbb61594b065a4186459164761b0ead6054e4e"
+          },
+          "training_timesteps_before_after": 0,
+          "wall_seconds": 3.754841015999773
+        },
+        {
+          "control_trace_checks": {
+            "independently_validated_qpos_goal_and_qvel_speed": true,
+            "max_lidar_age_s": 0.08000000000002672,
+            "max_speed_m_s": 1.091253213949058,
+            "minimum_goal_error_m": 0.0237587523462874,
+            "physics_ticks": 7500,
+            "stop_metrics": {
+              "first_five_joint_time_s": null,
+              "first_near_time_s": 10.920000000000316,
+              "joint_samples": 0,
+              "max_consecutive_joint_samples": 0,
+              "near_goal_fast_samples": 19,
+              "near_goal_samples": 19
+            },
+            "trajectory_length_m": 6.053330450920124
+          },
+          "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+          "episode_return": 25.302141681005175,
+          "final_target_error_m": 0.0638281291037387,
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.532766,
+          "independent_trace_checks": {
+            "independently_validated_qpos_goal_and_qvel_speed": true,
+            "max_lidar_age_s": 0.08000000000000007,
+            "max_speed_m_s": 1.068771773686627,
+            "minimum_goal_error_m": 0.0023733997408290236,
+            "per_step_task_yaw_and_world_state_validated": true,
+            "physics_ticks": 3860,
+            "stop_metrics": {
+              "first_five_joint_time_s": 7.719999999999372,
+              "first_near_time_s": 6.999999999999451,
+              "joint_samples": 5,
+              "max_consecutive_joint_samples": 5,
+              "near_goal_fast_samples": 14,
+              "near_goal_samples": 19
+            },
+            "trajectory_length_m": 3.1272917824383613
+          },
+          "optimizer_unchanged": true,
+          "outcome": "success",
+          "physics_ticks": 3860,
+          "policy_sha256_before_after": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "policy_steps": 193,
+          "raw_termination_reason": "success",
+          "reused_R26_control": {
+            "checkpoint_step": 0,
+            "coordinate_contract": "existing environment freejoint world ENU position/linear velocity, qpos quaternion wxyz; not SLAM/PX4/COM calibration",
+            "distance_stage": "ORIGINAL",
+            "episode_return": 5.893452514053847,
+            "final_target_error_m": 0.0988587513821058,
+            "optimizer_unchanged": true,
+            "outcome": "time_limit",
+            "physics_ticks": 7500,
+            "policy_sha256_before_after": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+            "policy_steps": 375,
+            "raw_termination_reason": "time_limit",
+            "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+            "stop_metrics": {
+              "first_five_joint_time_s": null,
+              "first_near_time_s": 10.920000000000316,
+              "joint_samples": 0,
+              "max_consecutive_joint_samples": 0,
+              "near_goal_fast_samples": 19,
+              "near_goal_samples": 19
+            },
+            "trace_file": {
+              "bytes": 727544,
+              "path": ".research_local/autorl_r26_interrupted_yaw_diagnostic/run_01/trace_0_3.jsonl",
+              "sha256": "59dc94f4c59e362651f0c4c00c3a62734a86ebc7566ed22c0eb97423db608053"
+            },
+            "training_timesteps_before_after": 0,
+            "wall_seconds": 6.849505463000241
+          },
+          "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "state_source": "SIM_GROUND_TRUTH_STATE",
+          "stop_metrics": {
+            "first_five_joint_time_s": 7.719999999999372,
+            "first_near_time_s": 6.999999999999451,
+            "joint_samples": 5,
+            "max_consecutive_joint_samples": 5,
+            "near_goal_fast_samples": 14,
+            "near_goal_samples": 19
+          },
+          "task_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+          "trace_file": {
+            "bytes": 391007,
+            "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/trace_1.jsonl",
+            "sha256": "7784b51785a21f0cd3ac0243d5ca01900988e44a2bfc2ff39dd82d1e6b17aef1"
+          },
+          "training_timesteps_before_after": 0,
+          "wall_seconds": 3.763782870999421
+        }
+      ],
+      "label": "R27_HAND_PRIOR_UNMODIFIED_ACTION",
+      "raw_files": [
+        {
+          "bytes": 634,
+          "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/attempt.json",
+          "sha256": "f9bae830157a331895c75638785fe554700e9d1fe173555a4b97d8abff0f3515"
+        },
+        {
+          "bytes": 1275,
+          "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/case_0.json",
+          "sha256": "dd8fc2b486da8ae73e85c564a113d8883a0de9572865ef5bea32e3374909ec81"
+        },
+        {
+          "bytes": 1273,
+          "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/case_1.json",
+          "sha256": "cea3f249a0e0d4fd138b0618627c0f27a20f1788cb847663c527cacb49fe943c"
+        },
+        {
+          "bytes": 90,
+          "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/complete.json",
+          "sha256": "eca48c0b26cfb32019491aa903f836a863a334dd11198df4ab5a0361c5a60cc2"
+        },
+        {
+          "bytes": 4768,
+          "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/result.json",
+          "sha256": "a48ea6a81b6d650d8388091c01d493f9da80a5e1c69c112a99e67517d4012563"
+        },
+        {
+          "bytes": 390485,
+          "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/trace_0.jsonl",
+          "sha256": "75d1e30a5f178de7f5a9bf2138cbb61594b065a4186459164761b0ead6054e4e"
+        },
+        {
+          "bytes": 391007,
+          "path": ".research_local/autorl_r27_goal_heading_diagnostic/run_01/trace_1.jsonl",
+          "sha256": "7784b51785a21f0cd3ac0243d5ca01900988e44a2bfc2ff39dd82d1e6b17aef1"
+        }
+      ],
+      "report": {
+        "path": "mujoco/reports/autonomous_rl_goal_heading_r27.json",
+        "sha256": "b1f161de91d1d0aba235760a7361d5cf0dd3658a696d775566b86979205591e6"
+      },
+      "task_definitions": [
+        {
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.8096483,
+          "identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+          "scenario": {
+            "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+            "layout": "empty",
+            "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+            "obstacle_variation": [],
+            "scene_seed": 51000,
+            "split": "validation",
+            "start_seed": 151000,
+            "start_xyz": [
+              -0.0754896,
+              -0.2716165,
+              1.0
+            ],
+            "start_yaw_rad": -2.8096483,
+            "target_seed": 251000,
+            "target_xyz": [
+              1.9774321,
+              -0.0969566,
+              1.0
+            ]
+          }
+        },
+        {
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.532766,
+          "identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+          "scenario": {
+            "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+            "layout": "empty",
+            "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+            "obstacle_variation": [],
+            "scene_seed": 51005,
+            "split": "validation",
+            "start_seed": 151005,
+            "start_xyz": [
+              -0.1505737,
+              0.0293293,
+              1.0
+            ],
+            "start_yaw_rad": -2.532766,
+            "target_seed": 251005,
+            "target_xyz": [
+              1.979277,
+              -0.0583131,
+              1.0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "cases": [
+        {
+          "action_scope": "only applied action index3 changed to0;policy parameters/input/translation for sameobs unchanged;result is altered-action diagnostic",
+          "applied_yaw_zero_verified": true,
+          "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+          "episode_return": -8.83227728719067,
+          "final_target_error_m": 0.062229606337647,
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.8096483,
+          "optimizer_unchanged": true,
+          "outcome": "time_limit",
+          "physics_ticks": 7500,
+          "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+          "policy_steps": 375,
+          "raw_termination_reason": "time_limit",
+          "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "state_source": "SIM_GROUND_TRUTH_STATE",
+          "stop_metrics": {
+            "first_five_joint_time_s": null,
+            "first_near_time_s": 6.599999999999495,
+            "joint_samples": 0,
+            "max_consecutive_joint_samples": 0,
+            "near_goal_fast_samples": 38,
+            "near_goal_samples": 38
+          },
+          "task_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+          "trace_file": {
+            "bytes": 882698,
+            "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_0.jsonl",
+            "sha256": "fca97828e1cfc02c1e54efb1e2a0271f8ab478de6015d9ec248a015574af0acc"
+          },
+          "training_timesteps_before_after": 65536,
+          "translation_unchanged_given_observation": true,
+          "wall_seconds": 7.640952304000166
+        },
+        {
+          "action_scope": "only applied action index3 changed to0;policy parameters/input/translation for sameobs unchanged;result is altered-action diagnostic",
+          "applied_yaw_zero_verified": true,
+          "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+          "episode_return": -9.004103339947669,
+          "final_target_error_m": 0.06698574586618274,
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.532766,
+          "optimizer_unchanged": true,
+          "outcome": "time_limit",
+          "physics_ticks": 7500,
+          "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+          "policy_steps": 375,
+          "raw_termination_reason": "time_limit",
+          "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "state_source": "SIM_GROUND_TRUTH_STATE",
+          "stop_metrics": {
+            "first_five_joint_time_s": null,
+            "first_near_time_s": 6.599999999999495,
+            "joint_samples": 0,
+            "max_consecutive_joint_samples": 0,
+            "near_goal_fast_samples": 37,
+            "near_goal_samples": 37
+          },
+          "task_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+          "trace_file": {
+            "bytes": 881455,
+            "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_1.jsonl",
+            "sha256": "a758739c27a9d0fb3f75ea3dd678afa1fcdacad395c12d858c981b3231b96e01"
+          },
+          "training_timesteps_before_after": 65536,
+          "translation_unchanged_given_observation": true,
+          "wall_seconds": 7.5464351549999265
+        }
+      ],
+      "label": "R30_FINAL_MODEL_YAWZERO",
+      "raw_files": [
+        {
+          "bytes": 414,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/attempt.json",
+          "sha256": "bcb6b4343aa98907afb3fc1c3adfad62a91763cb09ea47a68af8f844638165bf"
+        },
+        {
+          "bytes": 1507,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/case_0.json",
+          "sha256": "d34acd9c3cae6c44d1328f430e8e06141fae1c7b47f1f25c99709ab5d22492bb"
+        },
+        {
+          "bytes": 1510,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/case_1.json",
+          "sha256": "5208f97539980ad9e0e87af4feb5ca871e24e192a0c0a552afd9b7ae8ae8ca42"
+        },
+        {
+          "bytes": 90,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/complete.json",
+          "sha256": "bb9d1be0a1c1d6d7c7d1e7c171a3b31bbb49b2bda8c99371ea77f285ec310feb"
+        },
+        {
+          "bytes": 4562,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/result.json",
+          "sha256": "59da84f3033c27b7e2442606b489db00fb7257c55cebe0532113ae53ae7813af"
+        },
+        {
+          "bytes": 882698,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_0.jsonl",
+          "sha256": "fca97828e1cfc02c1e54efb1e2a0271f8ab478de6015d9ec248a015574af0acc"
+        },
+        {
+          "bytes": 881455,
+          "path": ".research_local/autorl_r30_yaw_action_ablation/run_01/trace_1.jsonl",
+          "sha256": "a758739c27a9d0fb3f75ea3dd678afa1fcdacad395c12d858c981b3231b96e01"
+        }
+      ],
+      "report": {
+        "path": "mujoco/reports/autonomous_rl_yaw_action_r30.json",
+        "sha256": "1cc55a09678d40d0765613ebaf46b1973cce6b0c6451714d606bb668dc27aa49"
+      },
+      "task_definitions": [
+        {
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.8096483,
+          "identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+          "scenario": {
+            "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+            "layout": "empty",
+            "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+            "obstacle_variation": [],
+            "scene_seed": 51000,
+            "split": "validation",
+            "start_seed": 151000,
+            "start_xyz": [
+              -0.0754896,
+              -0.2716165,
+              1.0
+            ],
+            "start_yaw_rad": -2.8096483,
+            "target_seed": 251000,
+            "target_xyz": [
+              1.9774321,
+              -0.0969566,
+              1.0
+            ]
+          }
+        },
+        {
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.532766,
+          "identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+          "scenario": {
+            "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+            "layout": "empty",
+            "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+            "obstacle_variation": [],
+            "scene_seed": 51005,
+            "split": "validation",
+            "start_seed": 151005,
+            "start_xyz": [
+              -0.1505737,
+              0.0293293,
+              1.0
+            ],
+            "start_yaw_rad": -2.532766,
+            "target_seed": 251005,
+            "target_xyz": [
+              1.979277,
+              -0.0583131,
+              1.0
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "cases": [
+        {
+          "action_scope": "explicit physical-unit velocity feedback .3 andYawzero;network parameters unchanged,hybrid diagnostic not original learnedpolicy",
+          "applied_feedback_verified": true,
+          "applied_yaw_zero_verified": true,
+          "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+          "episode_return": -3.0446172018527315,
+          "final_target_error_m": 0.07593670983093022,
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.8096483,
+          "optimizer_unchanged": true,
+          "outcome": "time_limit",
+          "physics_ticks": 7500,
+          "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+          "policy_steps": 375,
+          "raw_termination_reason": "time_limit",
+          "scenario_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "state_source": "SIM_GROUND_TRUTH_STATE",
+          "stop_metrics": {
+            "first_five_joint_time_s": null,
+            "first_near_time_s": 5.999999999999561,
+            "joint_samples": 0,
+            "max_consecutive_joint_samples": 0,
+            "near_goal_fast_samples": 45,
+            "near_goal_samples": 45
+          },
+          "task_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+          "trace_file": {
+            "bytes": 959804,
+            "path": ".research_local/autorl_r31_velocity_damping/run_01/trace_0.jsonl",
+            "sha256": "da59b91257eaac99d6eefad3f4ee740c8554de943dede6d65f1034b95f3246fa"
+          },
+          "training_timesteps_before_after": 65536,
+          "wall_seconds": 7.862527557999783
+        },
+        {
+          "action_scope": "explicit physical-unit velocity feedback .3 andYawzero;network parameters unchanged,hybrid diagnostic not original learnedpolicy",
+          "applied_feedback_verified": true,
+          "applied_yaw_zero_verified": true,
+          "coordinate_contract": "existing freejoint worldENU qpos/qvel,wxyz;not COM/SLAM/PX4 calibration",
+          "episode_return": -3.1462216946450012,
+          "final_target_error_m": 0.07638633071613764,
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.532766,
+          "optimizer_unchanged": true,
+          "outcome": "time_limit",
+          "physics_ticks": 7500,
+          "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+          "policy_steps": 375,
+          "raw_termination_reason": "time_limit",
+          "scenario_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "state_source": "SIM_GROUND_TRUTH_STATE",
+          "stop_metrics": {
+            "first_five_joint_time_s": null,
+            "first_near_time_s": 5.999999999999561,
+            "joint_samples": 0,
+            "max_consecutive_joint_samples": 0,
+            "near_goal_fast_samples": 45,
+            "near_goal_samples": 45
+          },
+          "task_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+          "trace_file": {
+            "bytes": 958991,
+            "path": ".research_local/autorl_r31_velocity_damping/run_01/trace_1.jsonl",
+            "sha256": "09b5ae8f4c45fa1dca3b78b18aa31f0725425b575866ac1c3dc4ac71f1cdaaa4"
+          },
+          "training_timesteps_before_after": 65536,
+          "wall_seconds": 7.741517233000195
+        }
+      ],
+      "label": "R31_FINAL_MODEL_YAWZERO_D03",
+      "raw_files": [
+        {
+          "bytes": 409,
+          "path": ".research_local/autorl_r31_velocity_damping/run_01/attempt.json",
+          "sha256": "6e27a941345ca755b89f98e5fc51448f1028fc2d244c8f20f60716cf73a5ac8f"
+        },
+        {
+          "bytes": 1490,
+          "path": ".research_local/autorl_r31_velocity_damping/run_01/case_0.json",
+          "sha256": "ae594430c6ddb76ac43171f9cae92a3ac64c8bfb636feedf586a8559f61f5a88"
+        },
+        {
+          "bytes": 1489,
+          "path": ".research_local/autorl_r31_velocity_damping/run_01/case_1.json",
+          "sha256": "d8ed8ee9eb5ee0e2af71b14ad602f750146c0e94587e03506cd2bb651ea8845b"
+        },
+        {
+          "bytes": 90,
+          "path": ".research_local/autorl_r31_velocity_damping/run_01/complete.json",
+          "sha256": "ef7cfbd712168397615585d3ffb9c16b65e6e110d8179c45d9ad7640b73cf1f9"
+        },
+        {
+          "bytes": 4546,
+          "path": ".research_local/autorl_r31_velocity_damping/run_01/result.json",
+          "sha256": "7d857dd4662e5e84f6444a5d25e4b37f1f6c78d47974a317ba508ee3c5bb37eb"
+        },
+        {
+          "bytes": 959804,
+          "path": ".research_local/autorl_r31_velocity_damping/run_01/trace_0.jsonl",
+          "sha256": "da59b91257eaac99d6eefad3f4ee740c8554de943dede6d65f1034b95f3246fa"
+        },
+        {
+          "bytes": 958991,
+          "path": ".research_local/autorl_r31_velocity_damping/run_01/trace_1.jsonl",
+          "sha256": "09b5ae8f4c45fa1dca3b78b18aa31f0725425b575866ac1c3dc4ac71f1cdaaa4"
+        }
+      ],
+      "report": {
+        "path": "mujoco/reports/autonomous_rl_velocity_damping_r31.json",
+        "sha256": "1714a99a94675af18b1c446f4d0399bcc4d1d805fdc6febfa307861ceae7460a"
+      },
+      "task_definitions": [
+        {
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.8096483,
+          "identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+          "scenario": {
+            "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+            "layout": "empty",
+            "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+            "obstacle_variation": [],
+            "scene_seed": 51000,
+            "split": "validation",
+            "start_seed": 151000,
+            "start_xyz": [
+              -0.0754896,
+              -0.2716165,
+              1.0
+            ],
+            "start_yaw_rad": -2.8096483,
+            "target_seed": 251000,
+            "target_xyz": [
+              1.9774321,
+              -0.0969566,
+              1.0
+            ]
+          }
+        },
+        {
+          "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+          "goal_yaw_rad": -2.532766,
+          "identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+          "scenario": {
+            "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+            "layout": "empty",
+            "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+            "obstacle_variation": [],
+            "scene_seed": 51005,
+            "split": "validation",
+            "start_seed": 151005,
+            "start_xyz": [
+              -0.1505737,
+              0.0293293,
+              1.0
+            ],
+            "start_yaw_rad": -2.532766,
+            "target_seed": 251005,
+            "target_xyz": [
+              1.979277,
+              -0.0583131,
+              1.0
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "kind": "READ_ONLY_DESCRIPTIVE_CONTROL_RESPONSE_NOT_CAUSAL_IDENTIFICATION",
+  "lag_measurement_limit": "descriptive paired correlation,not actual transport/control latency or causality;gridmaximum not significance",
+  "model_inferences": 0,
+  "new_episodes": 0,
+  "new_physics_ticks": 0,
+  "optimizer_updates": 0,
+  "phase_id": "AUTORL-R32-CONTROL-RESPONSE-AUDIT",
+  "positive_lag_grid_policy_intervals": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25
+  ],
+  "reference_to_response_offsets_s": [
+    0.03,
+    0.07,
+    0.11,
+    0.15,
+    0.19,
+    0.22999999999999998,
+    0.27,
+    0.31,
+    0.35,
+    0.39,
+    0.43,
+    0.47,
+    0.51,
+    0.55,
+    0.59,
+    0.63,
+    0.67,
+    0.71,
+    0.75,
+    0.79,
+    0.83,
+    0.87,
+    0.91,
+    0.95,
+    0.99
+  ],
+  "registration_sha256": "ff4d7eacfc995d6a3230613475882dfc14317996c63784b9730f90013db50b92",
+  "source_clock_evidence": {
+    "mujoco/control/velocity_command_controller.py": "79618e6ab6c19d40c6e94ee23b67a18388b12917374f9ef05875529424264e24",
+    "mujoco/lidar_integration/navigation_env.py": "dfd8aa3918a450a80a568fc147057b018bcd8a129625e83187d07ada5cf8f5d2",
+    "mujoco/rl/mine_uav_env.py": "1006c9fded52cdf3e14a8e7941a52dad38a7858b6bc73fdd10db9a48c2c3d524"
+  },
+  "source_identity_sha256": "608ba9b7d4c62f4c791057896ecfc1085b84f40763b65ff897fe6726e4e161a0",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "unobserved": [
+    "100Hz intermediate velocities/requests",
+    "perrotor output/saturation/wrench",
+    "perrow raw LiDAR tensor"
+  ],
+  "wall_seconds": 180,
+  "workers": 1
+}
