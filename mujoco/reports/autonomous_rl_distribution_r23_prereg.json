@@ -1,0 +1,41 @@
+{
+  "budget_snapshot_sha256": "d8b66943ba709c65dfc6b8484295667207e30ede1642f9ae4c66ce5b5de363a6",
+  "claim_limit": "nonstationary stochastic Train aggregates are not final deterministic Validation generalization rates",
+  "device": "cpu",
+  "episodes": 0,
+  "experiment_id": "AUTORL_R23_SPLIT_DISTRIBUTION_ONLY",
+  "hypothesis": "initial heading/task distribution mismatch is a candidate,not a proven cause",
+  "kind": "READ_ONLY_ARITHMETIC_NOT_TRAINING",
+  "manifest_file_sha256": "c468490154627ba8f71df9c73bc8c80769f557054d9692313139188971e332c8",
+  "models_loaded": 0,
+  "new_scans": 0,
+  "optimizer_updates": 0,
+  "physics_steps": 0,
+  "references": [
+    {
+      "episode_details_sha256": "50a60a175d81dc5f7e458529eff85c1c263c93b43efcfd16e16a37a0f21acf9b",
+      "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+      "report_path": "mujoco/reports/autonomous_rl_empty_rehearsal_r17.json",
+      "report_sha256": "d87993588f64db612daab4ee3091f64437a090eeb2b82532906f770a740a12f6",
+      "run_path": ".research_local/authorized_rl_v1/runs/ARL_R17_EMPTY_REHEARSAL_SEED0",
+      "summary_sha256": "950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72",
+      "train_episodes_sha256": "97e62d9199e1745ff1f16b5b818475f771a54a9e6922340bb73f363ab0137732"
+    },
+    {
+      "episode_details_sha256": "f164c7e87b6d2da6d18641342dcd933d988493621223a6a157d8d18c5e51e99c",
+      "experiment_id": "ARL_R22_GAE_CREDIT_SEED0",
+      "report_path": "mujoco/reports/autonomous_rl_gae_credit_r22.json",
+      "report_sha256": "ea1f49e4df91af36b158f318022137e8fa76e0d39ec14ba10b76a219509ba8b5",
+      "run_path": ".research_local/authorized_rl_v1/runs/ARL_R22_GAE_CREDIT_SEED0",
+      "summary_sha256": "b0c45293b8713e20a7861fa835b6063d00146572e93860ca9f05637e8a8f8c14",
+      "train_episodes_sha256": "bb268a38a1fea31ccc96df13e3fb6df6cbf961bb4bdb30050dc0456d93fbfecf"
+    }
+  ],
+  "registration_sha256": "7879e9400486c234ae5257147d7e64f51a6193ad767c1c1be457f8e6f7638390",
+  "source_identity_sha256": "336f98c8dbc76b4fc812e3e75281f93564a3ad4d875d7a4084ca11920241792a",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "validation_episodes": 0,
+  "wall_seconds": 120,
+  "workers": 1
+}

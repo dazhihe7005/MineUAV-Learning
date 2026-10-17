@@ -1,0 +1,2612 @@
+{
+  "actual_new_episodes": 0,
+  "actual_optimizer_updates": 0,
+  "actual_run_statistics": [
+    {
+      "actual_switch_step": 32850,
+      "causal_attribution": "NOT_TESTED_NO_NEW_TRAJECTORIES_OR_POLICY_INTERVENTION",
+      "counterfactual_success_on_other_heading": "NOT_TESTED",
+      "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+      "original_completed_train": {
+        "by_identity": {
+          "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": {
+            "episodes": 21,
+            "episodes_with_sampled_goal_entry": 19,
+            "joint_max_distribution": {
+              "0": 11,
+              "1": 1,
+              "3": 1,
+              "5": 8
+            },
+            "mean_final_goal_error_m": 0.09919581747614765,
+            "mean_minimum_goal_error_m": 0.05863698602430194,
+            "mean_return": 14.36999227282221,
+            "policy_steps": 6874,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 8,
+              "time_limit": 13
+            }
+          },
+          "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": {
+            "episodes": 11,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 11
+            },
+            "mean_final_goal_error_m": 0.7086494953174574,
+            "mean_minimum_goal_error_m": 0.6301469356641419,
+            "mean_return": -18.782879284137593,
+            "policy_steps": 1238,
+            "terminal_counts": {
+              "collision": 11,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": {
+            "episodes": 4,
+            "episodes_with_sampled_goal_entry": 1,
+            "joint_max_distribution": {
+              "0": 4
+            },
+            "mean_final_goal_error_m": 0.6555670063148462,
+            "mean_minimum_goal_error_m": 0.47398194657363135,
+            "mean_return": -14.293946193321968,
+            "policy_steps": 742,
+            "terminal_counts": {
+              "collision": 3,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 1
+            }
+          },
+          "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": {
+            "episodes": 8,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 8
+            },
+            "mean_final_goal_error_m": 1.6335236703620886,
+            "mean_minimum_goal_error_m": 1.6335236703620886,
+            "mean_return": -25.60544877775383,
+            "policy_steps": 360,
+            "terminal_counts": {
+              "collision": 8,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": {
+            "episodes": 8,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 8
+            },
+            "mean_final_goal_error_m": 1.4133994244241463,
+            "mean_minimum_goal_error_m": 1.4133994244241463,
+            "mean_return": -24.21967558055658,
+            "policy_steps": 371,
+            "terminal_counts": {
+              "collision": 8,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": {
+            "episodes": 10,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 10
+            },
+            "mean_final_goal_error_m": 1.4651117582191788,
+            "mean_minimum_goal_error_m": 1.4651117582191788,
+            "mean_return": -25.992768539118334,
+            "policy_steps": 430,
+            "terminal_counts": {
+              "collision": 10,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": {
+            "episodes": 24,
+            "episodes_with_sampled_goal_entry": 22,
+            "joint_max_distribution": {
+              "0": 20,
+              "5": 4
+            },
+            "mean_final_goal_error_m": 0.1293342073141414,
+            "mean_minimum_goal_error_m": 0.05977302600481533,
+            "mean_return": 8.277593645643856,
+            "policy_steps": 8934,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 4,
+              "time_limit": 20
+            }
+          },
+          "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": {
+            "episodes": 5,
+            "episodes_with_sampled_goal_entry": 3,
+            "joint_max_distribution": {
+              "0": 3,
+              "4": 1,
+              "5": 1
+            },
+            "mean_final_goal_error_m": 0.36744557035551034,
+            "mean_minimum_goal_error_m": 0.29025109909102964,
+            "mean_return": -0.4100350117934905,
+            "policy_steps": 1261,
+            "terminal_counts": {
+              "collision": 2,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 1,
+              "time_limit": 2
+            }
+          },
+          "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": {
+            "episodes": 7,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 7
+            },
+            "mean_final_goal_error_m": 1.5623878135790306,
+            "mean_minimum_goal_error_m": 1.5623878135790306,
+            "mean_return": -26.012284829505173,
+            "policy_steps": 280,
+            "terminal_counts": {
+              "collision": 7,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": {
+            "episodes": 31,
+            "episodes_with_sampled_goal_entry": 27,
+            "joint_max_distribution": {
+              "0": 23,
+              "3": 1,
+              "5": 7
+            },
+            "mean_final_goal_error_m": 0.12083567774433954,
+            "mean_minimum_goal_error_m": 0.06976543981917238,
+            "mean_return": 12.989279865074225,
+            "policy_steps": 11236,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 7,
+              "time_limit": 24
+            }
+          },
+          "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": {
+            "episodes": 8,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 8
+            },
+            "mean_final_goal_error_m": 1.378997473998317,
+            "mean_minimum_goal_error_m": 1.378997473998317,
+            "mean_return": -25.665572339099434,
+            "policy_steps": 365,
+            "terminal_counts": {
+              "collision": 8,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": {
+            "episodes": 6,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 6
+            },
+            "mean_final_goal_error_m": 1.1537754225135537,
+            "mean_minimum_goal_error_m": 1.1191567865582728,
+            "mean_return": -23.608675994105415,
+            "policy_steps": 357,
+            "terminal_counts": {
+              "collision": 6,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          }
+        },
+        "by_layout": {
+          "channel": {
+            "episodes": 13,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 13
+            },
+            "mean_final_goal_error_m": 1.373797479241118,
+            "mean_minimum_goal_error_m": 1.3578196472617576,
+            "mean_return": -24.902926905474512,
+            "policy_steps": 637,
+            "terminal_counts": {
+              "collision": 13,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "detour": {
+            "episodes": 16,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 16
+            },
+            "mean_final_goal_error_m": 1.5234615473931175,
+            "mean_minimum_goal_error_m": 1.5234615473931175,
+            "mean_return": -24.912562179155206,
+            "policy_steps": 731,
+            "terminal_counts": {
+              "collision": 16,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "empty": {
+            "episodes": 76,
+            "episodes_with_sampled_goal_entry": 68,
+            "joint_max_distribution": {
+              "0": 54,
+              "1": 1,
+              "3": 2,
+              "5": 19
+            },
+            "mean_final_goal_error_m": 0.11753998885017132,
+            "mean_minimum_goal_error_m": 0.0635349732239507,
+            "mean_return": 11.882891592658156,
+            "policy_steps": 27044,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 19,
+              "time_limit": 57
+            }
+          },
+          "front_box": {
+            "episodes": 29,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 29
+            },
+            "mean_final_goal_error_m": 1.154422131816219,
+            "mean_minimum_goal_error_m": 1.124645298844272,
+            "mean_return": -23.16772193894801,
+            "policy_steps": 2033,
+            "terminal_counts": {
+              "collision": 29,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "side_pair": {
+            "episodes": 9,
+            "episodes_with_sampled_goal_entry": 4,
+            "joint_max_distribution": {
+              "0": 7,
+              "4": 1,
+              "5": 1
+            },
+            "mean_final_goal_error_m": 0.495499541892993,
+            "mean_minimum_goal_error_m": 0.3719092535277415,
+            "mean_return": -6.580662203583925,
+            "policy_steps": 2003,
+            "terminal_counts": {
+              "collision": 5,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 1,
+              "time_limit": 3
+            }
+          }
+        },
+        "overall": {
+          "episodes": 143,
+          "episodes_with_sampled_goal_entry": 72,
+          "joint_max_distribution": {
+            "0": 119,
+            "1": 1,
+            "3": 2,
+            "4": 1,
+            "5": 20
+          },
+          "mean_final_goal_error_m": 0.6231155862989142,
+          "mean_minimum_goal_error_m": 0.5791440215800457,
+          "mean_return": -3.8484558017998585,
+          "policy_steps": 32448,
+          "terminal_counts": {
+            "collision": 63,
+            "physical_failure": 0,
+            "sensor_failure": 0,
+            "success": 20,
+            "time_limit": 60
+          }
+        },
+        "scope": "completed nonstationary stochastic ORIGINAL Train episodes,not final policy evaluation"
+      },
+      "tail_terminal_and_return": "NOT_IMPUTED",
+      "unfinished_tail_policy_steps": 238,
+      "validation": [
+        {
+          "actual_step": 0,
+          "by_identity": {
+            "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.0988587513821058,
+              "layout": "empty",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            },
+            "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.6748875190334667,
+              "layout": "detour",
+              "policy_steps": 38,
+              "terminal_class": "collision"
+            },
+            "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.6342374754206213,
+              "layout": "front_box",
+              "policy_steps": 34,
+              "terminal_class": "collision"
+            },
+            "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 0.36183746143011625,
+              "layout": "channel",
+              "policy_steps": 71,
+              "terminal_class": "collision"
+            },
+            "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.06908715484033259,
+              "layout": "side_pair",
+              "policy_steps": 193,
+              "terminal_class": "success"
+            },
+            "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.10501033054403508,
+              "layout": "empty",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            }
+          },
+          "by_layout": {
+            "channel": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "detour": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "empty": {
+              "episodes": 2,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 2
+              }
+            },
+            "front_box": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "side_pair": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 1,
+                "time_limit": 0
+              }
+            }
+          }
+        },
+        {
+          "actual_step": 32768,
+          "by_identity": {
+            "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.0846330953104048,
+              "layout": "empty",
+              "policy_steps": 285,
+              "terminal_class": "success"
+            },
+            "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.678949929265686,
+              "layout": "detour",
+              "policy_steps": 36,
+              "terminal_class": "collision"
+            },
+            "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.637132373447451,
+              "layout": "front_box",
+              "policy_steps": 30,
+              "terminal_class": "collision"
+            },
+            "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 0.603604654445624,
+              "layout": "channel",
+              "policy_steps": 58,
+              "terminal_class": "collision"
+            },
+            "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.09743419959738503,
+              "layout": "side_pair",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            },
+            "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.050980578042314366,
+              "layout": "empty",
+              "policy_steps": 283,
+              "terminal_class": "success"
+            }
+          },
+          "by_layout": {
+            "channel": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "detour": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "empty": {
+              "episodes": 2,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 2,
+                "time_limit": 0
+              }
+            },
+            "front_box": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "side_pair": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 1
+              }
+            }
+          }
+        },
+        {
+          "actual_step": 65536,
+          "by_identity": {
+            "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.11934349777054216,
+              "layout": "empty",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            },
+            "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.687644922958921,
+              "layout": "detour",
+              "policy_steps": 41,
+              "terminal_class": "collision"
+            },
+            "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.6500722379404746,
+              "layout": "front_box",
+              "policy_steps": 33,
+              "terminal_class": "collision"
+            },
+            "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.2998625344436698,
+              "layout": "channel",
+              "policy_steps": 49,
+              "terminal_class": "collision"
+            },
+            "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.07217938093869065,
+              "layout": "side_pair",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            },
+            "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.12384201010092492,
+              "layout": "empty",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            }
+          },
+          "by_layout": {
+            "channel": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "detour": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "empty": {
+              "episodes": 2,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 2
+              }
+            },
+            "front_box": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "side_pair": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "actual_switch_step": 32882,
+      "causal_attribution": "NOT_TESTED_NO_NEW_TRAJECTORIES_OR_POLICY_INTERVENTION",
+      "counterfactual_success_on_other_heading": "NOT_TESTED",
+      "experiment_id": "ARL_R22_GAE_CREDIT_SEED0",
+      "original_completed_train": {
+        "by_identity": {
+          "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e": {
+            "episodes": 25,
+            "episodes_with_sampled_goal_entry": 25,
+            "joint_max_distribution": {
+              "0": 2,
+              "2": 1,
+              "4": 1,
+              "5": 21
+            },
+            "mean_final_goal_error_m": 0.09204891168239997,
+            "mean_minimum_goal_error_m": 0.06263452303175797,
+            "mean_return": 15.243068427894684,
+            "policy_steps": 7098,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 21,
+              "time_limit": 4
+            }
+          },
+          "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d": {
+            "episodes": 10,
+            "episodes_with_sampled_goal_entry": 8,
+            "joint_max_distribution": {
+              "0": 7,
+              "1": 1,
+              "5": 2
+            },
+            "mean_final_goal_error_m": 0.135275737774258,
+            "mean_minimum_goal_error_m": 0.07289845709368212,
+            "mean_return": 10.204187125199912,
+            "policy_steps": 3705,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 2,
+              "time_limit": 8
+            }
+          },
+          "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032": {
+            "episodes": 4,
+            "episodes_with_sampled_goal_entry": 3,
+            "joint_max_distribution": {
+              "0": 3,
+              "5": 1
+            },
+            "mean_final_goal_error_m": 0.12512794803734095,
+            "mean_minimum_goal_error_m": 0.0928308646613367,
+            "mean_return": 12.89885844722589,
+            "policy_steps": 1476,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 1,
+              "time_limit": 3
+            }
+          },
+          "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0": {
+            "episodes": 6,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 6
+            },
+            "mean_final_goal_error_m": 1.6026885411399963,
+            "mean_minimum_goal_error_m": 1.6026885411399963,
+            "mean_return": -25.33924346093346,
+            "policy_steps": 208,
+            "terminal_counts": {
+              "collision": 6,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750": {
+            "episodes": 9,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 9
+            },
+            "mean_final_goal_error_m": 1.4246839474040764,
+            "mean_minimum_goal_error_m": 1.4246839474040764,
+            "mean_return": -24.371579508998433,
+            "policy_steps": 398,
+            "terminal_counts": {
+              "collision": 9,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e": {
+            "episodes": 12,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 12
+            },
+            "mean_final_goal_error_m": 1.4662953804122225,
+            "mean_minimum_goal_error_m": 1.4662953804122225,
+            "mean_return": -25.960851131477682,
+            "policy_steps": 463,
+            "terminal_counts": {
+              "collision": 12,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465": {
+            "episodes": 22,
+            "episodes_with_sampled_goal_entry": 22,
+            "joint_max_distribution": {
+              "0": 8,
+              "1": 1,
+              "5": 13
+            },
+            "mean_final_goal_error_m": 0.09278564477739551,
+            "mean_minimum_goal_error_m": 0.04805279624400198,
+            "mean_return": 17.786668449344848,
+            "policy_steps": 7172,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 13,
+              "time_limit": 9
+            }
+          },
+          "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508": {
+            "episodes": 8,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 8
+            },
+            "mean_final_goal_error_m": 0.8948366393679326,
+            "mean_minimum_goal_error_m": 0.660653142723804,
+            "mean_return": -24.753913786307038,
+            "policy_steps": 669,
+            "terminal_counts": {
+              "collision": 8,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c": {
+            "episodes": 6,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 6
+            },
+            "mean_final_goal_error_m": 1.7475609451025889,
+            "mean_minimum_goal_error_m": 1.7475609451025889,
+            "mean_return": -28.10471084919598,
+            "policy_steps": 391,
+            "terminal_counts": {
+              "collision": 6,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65": {
+            "episodes": 31,
+            "episodes_with_sampled_goal_entry": 30,
+            "joint_max_distribution": {
+              "0": 7,
+              "2": 1,
+              "5": 23
+            },
+            "mean_final_goal_error_m": 0.10181989735631596,
+            "mean_minimum_goal_error_m": 0.0731027802382177,
+            "mean_return": 20.30862422168809,
+            "policy_steps": 10252,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 23,
+              "time_limit": 8
+            }
+          },
+          "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9": {
+            "episodes": 6,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 6
+            },
+            "mean_final_goal_error_m": 1.3843993311467406,
+            "mean_minimum_goal_error_m": 1.3843993311467406,
+            "mean_return": -25.669277420596558,
+            "policy_steps": 228,
+            "terminal_counts": {
+              "collision": 6,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3": {
+            "episodes": 10,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 10
+            },
+            "mean_final_goal_error_m": 1.6822016087991294,
+            "mean_minimum_goal_error_m": 1.6822016087991294,
+            "mean_return": -28.688881670487472,
+            "policy_steps": 509,
+            "terminal_counts": {
+              "collision": 10,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          }
+        },
+        "by_layout": {
+          "channel": {
+            "episodes": 16,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 16
+            },
+            "mean_final_goal_error_m": 1.7067113599129267,
+            "mean_minimum_goal_error_m": 1.7067113599129267,
+            "mean_return": -28.469817612503164,
+            "policy_steps": 900,
+            "terminal_counts": {
+              "collision": 16,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "detour": {
+            "episodes": 15,
+            "episodes_with_sampled_goal_entry": 0,
+            "joint_max_distribution": {
+              "0": 15
+            },
+            "mean_final_goal_error_m": 1.4958857848984444,
+            "mean_minimum_goal_error_m": 1.4958857848984444,
+            "mean_return": -24.75864508977244,
+            "policy_steps": 606,
+            "terminal_counts": {
+              "collision": 15,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 0,
+              "time_limit": 0
+            }
+          },
+          "empty": {
+            "episodes": 78,
+            "episodes_with_sampled_goal_entry": 77,
+            "joint_max_distribution": {
+              "0": 17,
+              "1": 1,
+              "2": 2,
+              "4": 1,
+              "5": 57
+            },
+            "mean_final_goal_error_m": 0.09614004865651916,
+            "mean_minimum_goal_error_m": 0.062682189494189,
+            "mean_return": 17.97372778788826,
+            "policy_steps": 24522,
+            "terminal_counts": {
+              "collision": 0,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 57,
+              "time_limit": 21
+            }
+          },
+          "front_box": {
+            "episodes": 28,
+            "episodes_with_sampled_goal_entry": 8,
+            "joint_max_distribution": {
+              "0": 25,
+              "1": 1,
+              "5": 2
+            },
+            "mean_final_goal_error_m": 0.9733820689132033,
+            "mean_minimum_goal_error_m": 0.9511044686701406,
+            "mean_return": -12.982285958904015,
+            "policy_steps": 4396,
+            "terminal_counts": {
+              "collision": 18,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 2,
+              "time_limit": 8
+            }
+          },
+          "side_pair": {
+            "episodes": 12,
+            "episodes_with_sampled_goal_entry": 3,
+            "joint_max_distribution": {
+              "0": 11,
+              "5": 1
+            },
+            "mean_final_goal_error_m": 0.6382670755910687,
+            "mean_minimum_goal_error_m": 0.4713790500363149,
+            "mean_return": -12.202989708462729,
+            "policy_steps": 2145,
+            "terminal_counts": {
+              "collision": 8,
+              "physical_failure": 0,
+              "sensor_failure": 0,
+              "success": 1,
+              "time_limit": 3
+            }
+          }
+        },
+        "overall": {
+          "episodes": 149,
+          "episodes_with_sampled_goal_entry": 88,
+          "joint_max_distribution": {
+            "0": 84,
+            "1": 2,
+            "2": 2,
+            "4": 1,
+            "5": 60
+          },
+          "mean_final_goal_error_m": 0.6185133903621107,
+          "mean_minimum_goal_error_m": 0.5833714968847648,
+          "mean_return": 0.43700755676363784,
+          "policy_steps": 32569,
+          "terminal_counts": {
+            "collision": 57,
+            "physical_failure": 0,
+            "sensor_failure": 0,
+            "success": 60,
+            "time_limit": 32
+          }
+        },
+        "scope": "completed nonstationary stochastic ORIGINAL Train episodes,not final policy evaluation"
+      },
+      "tail_terminal_and_return": "NOT_IMPUTED",
+      "unfinished_tail_policy_steps": 85,
+      "validation": [
+        {
+          "actual_step": 0,
+          "by_identity": {
+            "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.0988587513821058,
+              "layout": "empty",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            },
+            "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.6748875190334667,
+              "layout": "detour",
+              "policy_steps": 38,
+              "terminal_class": "collision"
+            },
+            "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.6342374754206213,
+              "layout": "front_box",
+              "policy_steps": 34,
+              "terminal_class": "collision"
+            },
+            "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 0.36183746143011625,
+              "layout": "channel",
+              "policy_steps": 71,
+              "terminal_class": "collision"
+            },
+            "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.06908715484033259,
+              "layout": "side_pair",
+              "policy_steps": 193,
+              "terminal_class": "success"
+            },
+            "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.10501033054403508,
+              "layout": "empty",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            }
+          },
+          "by_layout": {
+            "channel": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "detour": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "empty": {
+              "episodes": 2,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 2
+              }
+            },
+            "front_box": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "side_pair": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 1,
+                "time_limit": 0
+              }
+            }
+          }
+        },
+        {
+          "actual_step": 32768,
+          "by_identity": {
+            "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.1482544424609122,
+              "layout": "empty",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            },
+            "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.3650411868292107,
+              "layout": "detour",
+              "policy_steps": 106,
+              "terminal_class": "collision"
+            },
+            "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277": {
+              "collision_contact_pairs": [
+                [
+                  "floor",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 2.75852591066046,
+              "layout": "front_box",
+              "policy_steps": 61,
+              "terminal_class": "collision"
+            },
+            "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.5658563283339795,
+              "layout": "channel",
+              "policy_steps": 59,
+              "terminal_class": "collision"
+            },
+            "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.168852461692011,
+              "layout": "side_pair",
+              "policy_steps": 65,
+              "terminal_class": "collision"
+            },
+            "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.16535773630715608,
+              "layout": "empty",
+              "policy_steps": 375,
+              "terminal_class": "time_limit"
+            }
+          },
+          "by_layout": {
+            "channel": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "detour": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "empty": {
+              "episodes": 2,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 2
+              }
+            },
+            "front_box": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "side_pair": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            }
+          }
+        },
+        {
+          "actual_step": 65536,
+          "by_identity": {
+            "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd": {
+              "collision_contact_pairs": [
+                [
+                  "nav_wall_x_pos",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.3510751326624935,
+              "layout": "empty",
+              "policy_steps": 67,
+              "terminal_class": "collision"
+            },
+            "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.09015819342191235,
+              "layout": "detour",
+              "policy_steps": 302,
+              "terminal_class": "success"
+            },
+            "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277": {
+              "collision_contact_pairs": [
+                [
+                  "floor",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 2.8204568068679827,
+              "layout": "front_box",
+              "policy_steps": 77,
+              "terminal_class": "collision"
+            },
+            "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1": {
+              "collision_contact_pairs": [
+                [
+                  "nav_obstacle_0",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.497237487140216,
+              "layout": "channel",
+              "policy_steps": 55,
+              "terminal_class": "collision"
+            },
+            "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c": {
+              "collision_contact_pairs": [],
+              "final_target_error_m": 0.08384201873996183,
+              "layout": "side_pair",
+              "policy_steps": 280,
+              "terminal_class": "success"
+            },
+            "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f": {
+              "collision_contact_pairs": [
+                [
+                  "nav_wall_x_pos",
+                  "coarse_collision"
+                ]
+              ],
+              "final_target_error_m": 1.354126573146452,
+              "layout": "empty",
+              "policy_steps": 66,
+              "terminal_class": "collision"
+            }
+          },
+          "by_layout": {
+            "channel": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "detour": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 1,
+                "time_limit": 0
+              }
+            },
+            "empty": {
+              "episodes": 2,
+              "terminal_counts": {
+                "collision": 2,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "front_box": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 1,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 0,
+                "time_limit": 0
+              }
+            },
+            "side_pair": {
+              "episodes": 1,
+              "terminal_counts": {
+                "collision": 0,
+                "physical_failure": 0,
+                "sensor_failure": 0,
+                "success": 1,
+                "time_limit": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "actual_training_timesteps": 0,
+  "all_authorization_files_unchanged": 344,
+  "budget_after": {
+    "attempts": [
+      {
+        "experiment_id": "ARL_R1_UNIFORM_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "curriculum_rule": "empty until 32768; switch only on next natural episode reset",
+          "device": "cpu",
+          "experiment_id": "ARL_R1_UNIFORM_SEED0",
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "de9a5517c7806fce459411acb9204e010124284d1dd763718e99797684cb7714",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 1,
+          "seed": 0,
+          "source_identity_sha256": "5d969e4ca2758a185e2940522668df57ff0effa194140a27fabc0c63bedef957",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R1_UNIFORM_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 586.9869169550002,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "1fb6c28449d2bdd8581df6f93d2808560ced9dbe14b9ca0857c99b335ebb1fbd",
+          "summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "CURRICULUM",
+          "curriculum_rule": "empty until 32768; switch only on next natural episode reset",
+          "device": "cpu",
+          "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "de9a5517c7806fce459411acb9204e010124284d1dd763718e99797684cb7714",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 1,
+          "seed": 0,
+          "source_identity_sha256": "5d969e4ca2758a185e2940522668df57ff0effa194140a27fabc0c63bedef957",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R1_CURRICULUM_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 546.1161378489996,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "a72c5be40f7937b98b8d12e0b5e1891f7a8b867097174dcf500b0c37fd50dfa4",
+          "summary_sha256": "8efe9be7a973f4342a5900d8b91940d608e56667eb4218137f99cb93040cfcf0"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R2_PRIOR_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed small Validation; no learned LiDAR dependence or generalization proof",
+            "initialization_effect": "final successes > R1 final successes and collisions <= R1 final collisions",
+            "learning_over_prior": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "ANALYTIC_PRIOR_R2_V1",
+          "expected_prior_policy_sha256": "1f3e9a0a6779d9b7290ba138bda5e6f916e5d73380b291cc9a97d1650c5e835c",
+          "experiment_id": "ARL_R2_PRIOR_SEED0",
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "520b6dfd65c796efe67f15e2eb2799908ae1e45b4b7f648902a049d4ee638757",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 2,
+          "seed": 0,
+          "source_identity_sha256": "44bd92f55daabbda4ce21b07a6563b27d2ed0cec9cb395a250cbe65f6179ca1e",
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R2_PRIOR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 814.918260017,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "09a4da2c329ddcf6dc6da79dfa4c49c0bac6eab441e53f6c99e2a6040566f61e",
+          "summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "f12df386cf9a0cadd8ac979dbbb8799db9e0af4b2a0127af1c31d7d14b61c927",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed historical control; no learned LiDAR dependence or generalization proof",
+            "initial_std_effect": "final successes > same-mean historical std1 final successes and collisions <= control",
+            "learning_over_step0": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "INITIAL_STD_R3_V1",
+          "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 3,
+          "seed": 0,
+          "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "variant": "RANDOM",
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R3_RANDOM_STD03_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 713.3204778079999,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "20f0382a1e544c9a9c4419763819e9e24a6ca49c2c48033bbfb7267501ddd80d",
+          "summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "03fdb73a394880432eabbe19b7e28ce0325186e8d96d9346aae1dd319ec3d928",
+          "curriculum_rule": "uniform twelve registered Train scenes for entire run",
+          "device": "cpu",
+          "evaluation": {
+            "candidate_collision_max": 1,
+            "candidate_physical_sensor_failures_max": 0,
+            "candidate_success_min": 4,
+            "claim_limit": "single seed historical control; no learned LiDAR dependence or generalization proof",
+            "initial_std_effect": "final successes > same-mean historical std1 final successes and collisions <= control",
+            "learning_over_step0": "final successes > own step0 successes and collisions <= own step0 collisions",
+            "selection": "FINAL_CHECKPOINT"
+          },
+          "execution_profile": "INITIAL_STD_R3_V1",
+          "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "prior_report_sha256": "99586894ee6295cca5f58e201bafbec41d6fd833152c63c5f2a52eae9ae24d11",
+          "registration_sha256": "955dd536d1c50c64c9a7f02cc2b8a575acbdb0aa5254680fe6c4dffd5fa9ab5e",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 3,
+          "seed": 0,
+          "source_identity_sha256": "b7290417a340087c30b1bd77bde87f4b9cc7a89c09ecf2fe44afa70de7a3b8b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "variant": "PRIOR",
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R3_PRIOR_STD03_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 851.6884080749996,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "6b9e46d53fabc20f2b064c7588f283f96238b8a9b4e06b6cc2f68b51982bd739",
+          "summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R6_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "single seed small Validation; no generalized obstacle avoidance claim",
+            "learning": "short final successes > own step0 short successes",
+            "original_final_collision_max": 6,
+            "original_final_success_min": 1,
+            "original_step0": "reuse fixed R3 RANDOM step0 identical policy evidence, not a new episode",
+            "selection": "FINAL_CHECKPOINT",
+            "short_final_collision_max": 1,
+            "short_final_physical_sensor_failures_max": 0,
+            "short_final_success_min": 4
+          },
+          "execution_profile": "DISTANCE_CURRICULUM_R6_V1",
+          "expected_initial_policy_sha256": "db33ba4df5f7aaf76f98b7915675cbfc80dbe52273045ed86811b5cc074dfa06",
+          "experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "79ad97c769fb046efd1908ad73db945d437fd1ab3c7945b52162bff56a174fb8",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 6,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "source_identity_sha256": "ca83fb16b419ddcd4401249d9fbcd56b4e5577ba96625f792fff18803fd4218c",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "reason": "fixed training worker failed: 1"
+        },
+        "status": "FAIL"
+      },
+      {
+        "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "7651327c99f27940ce047d4b03b57b40f4ab59aff37632757ae70350445d36d1",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "single seed small Validation; no generalized obstacle avoidance claim",
+            "learning": "short final successes > own step0 short successes",
+            "original_final_collision_max": 6,
+            "original_final_success_min": 1,
+            "original_step0": "reuse fixed R3 RANDOM step0 identical policy evidence, not a new episode",
+            "selection": "FINAL_CHECKPOINT",
+            "short_final_collision_max": 1,
+            "short_final_physical_sensor_failures_max": 0,
+            "short_final_success_min": 4
+          },
+          "execution_profile": "DISTANCE_CURRICULUM_R8_REPAIRED_V1",
+          "expected_initial_policy_sha256": "db33ba4df5f7aaf76f98b7915675cbfc80dbe52273045ed86811b5cc074dfa06",
+          "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_RANDOM",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "registration_sha256": "a5c17d1466d52603580b903615b6957350c68c06e37b94f34714ee31bdd441e4",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 8,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "source_identity_sha256": "62b3302122dc6d265b60112918082c2beb59239bc326eb6ab4d9c9c7de4a32a4",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R8_REPAIRED_DISTANCE_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 720.3382397109999,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "2eeb62e185b5c1bfe9de5aa6a299dcc5e546248aaa7b88661667ae719a58efbe",
+          "summary_sha256": "a6760dc61ff03a3895eb451f99d61d77513c643a3e8d4f8e31a55f556475dce4"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_summary_sha256": "a6760dc61ff03a3895eb451f99d61d77513c643a3e8d4f8e31a55f556475dce4",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "hand-written initial ability is not learning; single seed small Validation, no LiDAR/generalization proof",
+            "initialization_benefit": "original final successes > historical R8 final0; collisions <= R8 final2",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own original step0",
+            "original_step0": "reuse fixed R3 PRIOR/std03 identical full policy; zero new episodes",
+            "physical_sensor_failures_max": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0 short successes; collisions <= own step0"
+          },
+          "execution_profile": "PRIOR_DISTANCE_R10_V1",
+          "expected_initial_policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74",
+          "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "original_step0_summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+          "registration_sha256": "69fcf055e72c0fee6986be3d6e4f7966e7308c9e958d9f6742bf2e5076bed302",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 10,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "5170a41bb9cade75afa81f215755e5dfbfe15b7f1c9a39e736c07e5f8cca55b1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R10_PRIOR_DISTANCE_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 772.0242655540005,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "5534e4ae5a2389e98d34b6d1aa6405f3159f1d53d85fa57084000c94365f7abf",
+          "summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+        "protocol": {
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "0847525a939fee3eaf23a0cbf32511a7828aeaa7059084ed86ce81ce25ebc876",
+          "control_summary_sha256": "c9fa8bcc9b14fe441903e1f733e7496393e39a36a72c0d2f8e907fc9778ba2ca",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 30,
+            "claim_limit": "hand-written initial ability is not learning; single seed small Validation, no LiDAR/generalization proof",
+            "control_original_final_collision_max": 1,
+            "first32_approx_kl_mean_max": 0.03568412724416703,
+            "kl_claim": "last epoch minibatch approximate reverse KL; mechanism result is not navigation success",
+            "learning_rate_benefit": "original final successes > historical R10 final0; collisions <= R10 final1",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own original step0",
+            "original_step0": "reuse fixed R3 PRIOR/std03 identical full policy; zero new episodes",
+            "physical_sensor_failures_max": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0 short successes; collisions <= own step0"
+          },
+          "execution_profile": "PRIOR_GLOBAL_LOWER_LR_R11_V1",
+          "expected_initial_policy_sha256": "6312e99c87fd5a4dca066bd1ef64acd17d5ee44b563c152c59c133ee659d7f74",
+          "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "ANALYTIC_STATE_MEAN_TANH_V1",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC; base L6/L7 identities are provenance, R11 overrides effective LR only",
+          "original_step0_summary_sha256": "afbeac0d092aa4f38c318f4b75909006db65f2f8eaa4435783ae6b7a887ada4e",
+          "registration_sha256": "6e6907a34e99547967d7cfcbd85740eb4fe20fde23edc205e47b9679a3ecb003",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 11,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "ab7544a0c895f3a406bb3123138fe82dbe059932d748bf7ae107b319f54897d8",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R11_PRIOR_LOWER_LR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 828.7288000170001,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "25c6571ecf76757b052a73ca41d620c5d42e39c42d473c36223ae65ee5b80e39",
+          "summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "8a5c911619a7905172d94674664011e7cc6b3dbbae7db42e3b6706f53b8c7dc3",
+          "control_summary_sha256": "7f34a1e98eae2ef289becacb4d1086f7e5dbb0d686d2cae750610452d90b8f26",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actor_function_benefit": "original final successes > historical R11 final0; collisions <= R11 final6",
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed and finite Validation; structural zero mean and hand-written initial ability are not learning",
+            "control_original_final_collision_max": 6,
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "original_step0": "NEW actual evaluation; never reuse old-class performance",
+            "physical_sensor_failures_max": 0,
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+          },
+          "execution_profile": "CENTERED_ACTOR_R14_V1",
+          "expected_initial_policy_sha256": "20f5c226abc762e5aa4a9046ba400b2b0f7012b0da6715d14204b097cae06001",
+          "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "initial_std": 0.3,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_FUNCTION",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "3630bf9efc2b87f2c3d96860a269a8750aaa1e64bdd950f438f7b4fe90e6acd9",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 14,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "source_identity_sha256": "87cd42df2c4cd497f609fea44f2b1f1105548e19e1cc9043d2047df335a1651e",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R14_CENTERED_ACTOR_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 777.0309924369994,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "aaa06e48b1f1b4b6b23389b238064e3a027179b7e6ae9f6a370a16003118fa4d",
+          "summary_sha256": "0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R16_CENTERED_STD01_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "489c3aa7f211f393c8d552a501663d9e4e02556befa9751a0404aa9348fffe70",
+          "control_summary_sha256": "0cd11a7161b2518ee9aa48c180d31435c723ae6f9978cd785128d788a074fafd",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed/fixed small Validation; hand prior and lower-noise Train success not learned navigation or generalization",
+            "control_original_final_collision_max": 3,
+            "control_original_final_success": 1,
+            "near_goal_fast_ratio_control": [
+              1867,
+              2077
+            ],
+            "noise_benefit": "original final successes > R14 final1; collisions <= R14 final3",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "original_step0": "NEW actual evaluation; no old-class or initial-noise performance reuse",
+            "physical_sensor_failures_max": 0,
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0",
+            "short_train_success_ratio_control": [
+              34,
+              108
+            ],
+            "stopping_experience_mechanism": "short Train success ratio >34/108 AND near-goal-fast ratio <1867/2077; missing denominators FAIL; not navigation proof"
+          },
+          "execution_profile": "CENTERED_INITIAL_STD01_R16_V1",
+          "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "experiment_id": "ARL_R16_CENTERED_STD01_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+          "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+          "initial_std": 0.1,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "bbf7dae8c780aa360604524ca772b16668e1799e855c7984091243b7490a7517",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 16,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "single_variable": "INITIAL_LOG_STD_LOG03_TO_LOG01_REMAINS_TRAINABLE",
+          "source_identity_sha256": "f253400ffff84970bea2dcd1c96be00e165c18224ee80bc716ab09a58dd788be",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R16_CENTERED_STD01_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 851.2115280329999,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "10e6b844b54b51290d574eb67ca6cd91fbe2b2dc1224f5161be018dbe2d70302",
+          "summary_sha256": "bf3814e86f0402ed02748483453a8279079aabca3e4df0c93264a82fcc71668c"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "control_report_sha256": "60c231a2d42afed7ba16b890f7be6774bc62f13bfb7501f5bd9f219893f3f174",
+          "control_summary_sha256": "bf3814e86f0402ed02748483453a8279079aabca3e4df0c93264a82fcc71668c",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed/small fixed Validation; more empty Train and hand prior success not generalization",
+            "control_original_final_collision_max": 3,
+            "control_original_final_success": 0,
+            "empty_retention": "original empty final successes >= own32k empty successes AND own32k empty successes >=1",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "physical_sensor_failures_max": 0,
+            "rehearsal_benefit": "original final successes > R16 final0; collisions <= R16 final3",
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+          },
+          "execution_profile": "CENTERED_STD01_EMPTY_REHEARSAL_R17_V1",
+          "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "expected_prefix_policy_sha256": "33bf6699158a35842fc05c3d4ca97f391f778db60c759fdad2564a6e94c87f60",
+          "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+          "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+          "initial_std": 0.1,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "original_empty_probability": 0.5,
+          "original_train_sampling": "three empty each1/6; nine nonempty each1/18; reset only after32768",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "8242b52bdc21cebcf5a72461a20e961f1d17f6893d47801eb6159505bc6f6f9c",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 17,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "single_variable": "POST_SWITCH_ORIGINAL_TRAIN_EMPTY_PROBABILITY_025_TO_050",
+          "source_identity_sha256": "590c019185093d572ed27bde12b2da3d130f6ffdcd77c06d465cb0c4ee1081bf",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 844.7414650840001,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "3140266ae8034fc0114ff5334961fb8260254c100d8971eb0f3c46fb4b348f1b",
+          "summary_sha256": "950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72"
+        },
+        "status": "COMPLETE"
+      },
+      {
+        "experiment_id": "ARL_R20_TEMPORAL_CREDIT_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "audit_report_sha256": "3762e526e46314fd369b6cc404dcb4966c9a87b69e8b3feccfe811f3157b6ebc",
+          "control_report_sha256": "d87993588f64db612daab4ee3091f64437a090eeb2b82532906f770a740a12f6",
+          "control_summary_sha256": "950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed/small fixed Validation; more empty Train and hand prior success not generalization",
+            "control_original_final_collision_max": 3,
+            "control_original_final_success": 0,
+            "empty_retention": "original empty final successes >= own32k empty successes AND own32k empty successes >=1",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "physical_sensor_failures_max": 0,
+            "rehearsal_benefit": "original final successes > R16 final0; collisions <= R16 final3",
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+          },
+          "execution_profile": "CENTERED_STD01_GAMMA0995_R20_V1",
+          "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "experiment_id": "ARL_R20_TEMPORAL_CREDIT_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+          "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+          "gae_lambda": 0.95,
+          "gamma": 0.995,
+          "initial_std": 0.1,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "original_empty_probability": 0.5,
+          "original_train_sampling": "three empty each1/6; nine nonempty each1/18; reset only after32768",
+          "prefix_policy_relationship": "different gamma from first rollout; not expected identical to R17 at32k",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "572e0645ff4ef5d33b39ece9bf6aeb9860d274b0232e163747cc986a24b43092",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 20,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "single_variable": "PPO_AND_ROLLOUT_GAMMA_099_TO_0995",
+          "source_identity_sha256": "7e674406492935f2ca0953d3e6e64ecd5860851b9f16746a6944a076210142c1",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "experiment_id": "ARL_R20_TEMPORAL_CREDIT_SEED0",
+          "reason": "CROSS_BOOT_SYSTEM_SHUTDOWN_INTERRUPTION; exact step/worker exit/signal/shutdown cause UNKNOWN; posthoc=a3a83177901705d5f25525313f9a8dbe3d19bb91ab91a05175469af007586afd; boot_addendum=cbdaf53bc6b8b31d761d01b19114fb7f9b224a2bf41e6bb6089acb70cd7ca066; NO_RETRY_RESTART_REQUIRED_NO_REFUND"
+        },
+        "status": "FAIL"
+      },
+      {
+        "experiment_id": "ARL_R22_GAE_CREDIT_SEED0",
+        "protocol": {
+          "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+          "algorithm": "PPO",
+          "arm": "UNIFORM",
+          "audit_report_sha256": "3762e526e46314fd369b6cc404dcb4966c9a87b69e8b3feccfe811f3157b6ebc",
+          "closed_failure_report_sha256": "ba600c42d4b851b390d3787e47c43635ef05112c89b7c12949de1aa4251ec014",
+          "control_report_sha256": "d87993588f64db612daab4ee3091f64437a090eeb2b82532906f770a740a12f6",
+          "control_summary_sha256": "950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72",
+          "curriculum_rule": "twelve short0.20m tasks until32768; original targets only on next natural reset",
+          "device": "cpu",
+          "evaluation": {
+            "actual_new_validation_episodes": 36,
+            "claim_limit": "single seed/small fixed Validation; more empty Train and hand prior success not generalization",
+            "control_original_final_collision_max": 3,
+            "control_original_final_success": 0,
+            "empty_retention": "original empty final successes >= own32k empty successes AND own32k empty successes >=1",
+            "gae_credit_benefit_over_R17": "original final successes > R17 final0;collisions <= R17 final3",
+            "original_learning_over_prior": "original final successes > own original step0; collisions <= own step0",
+            "physical_sensor_failures_max": 0,
+            "reused_original_step0_episodes": 0,
+            "selection": "FINAL_CHECKPOINT",
+            "short_candidate_collision_max": 1,
+            "short_candidate_success_min": 4,
+            "short_prior_retention": "final short successes >= own step0; collisions <= own step0"
+          },
+          "execution_profile": "CENTERED_STD01_GAMMA099_LAMBDA099_R22_V1",
+          "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+          "experiment_id": "ARL_R22_GAE_CREDIT_SEED0",
+          "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+          "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+          "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+          "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+          "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+          "gae_lambda": 0.99,
+          "gamma": 0.99,
+          "guard_report_sha256": "0d6bc17fdbb88f23cec4ffa219d46da2677558ae31027f457095103e3f6a9404",
+          "initial_std": 0.1,
+          "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+          "learning_rate": 3e-05,
+          "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+          "n_steps": 128,
+          "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+          "original_empty_probability": 0.5,
+          "original_train_sampling": "three empty each1/6; nine nonempty each1/18; reset only after32768",
+          "prefix_policy_relationship": "different GAE advantages from first rollout;not expected identical to R17 at32k",
+          "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+          "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+          "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+          "registration_sha256": "4564cd3419bbb607fe3ee29355aa7def17e600048cf5b89e327a36e05e2ceba2",
+          "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+          "resume": "RESTART_REQUIRED",
+          "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+          "schema": 22,
+          "seed": 0,
+          "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+          "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+          "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+          "single_variable": "PPO_AND_ROLLOUT_GAE_LAMBDA_095_TO_099",
+          "source_identity_sha256": "5b4013569e334db25b0154ad5c88a3d6d6ba781bb75e988ca1e19606234887e8",
+          "std_remains_trainable": true,
+          "test_episode_count": 0,
+          "timesteps": 65536,
+          "validation_steps": [
+            0,
+            32768,
+            65536
+          ],
+          "wall_seconds": 3600,
+          "workers": 1,
+          "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+        },
+        "result": {
+          "actual_timesteps": 65536,
+          "experiment_id": "ARL_R22_GAE_CREDIT_SEED0",
+          "finite_model_and_gradients": true,
+          "observed_wall_seconds": 892.6858071079996,
+          "optimizer_step_count": 2048,
+          "protocol_sha256": "7d24fa9a6ff3dc45497ff6715af3d65e3e930942d96e9986e2bccad51f68bd6c",
+          "summary_sha256": "b0c45293b8713e20a7861fa835b6063d00146572e93860ca9f05637e8a8f8c14"
+        },
+        "status": "COMPLETE"
+      }
+    ],
+    "authorization_id": "AUTONOMOUS-RL-RESEARCH-V1",
+    "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+    "remaining_timesteps": 1082496,
+    "remaining_wall_seconds": 36000,
+    "reserved_timesteps": 917504,
+    "reserved_wall_seconds": 50400,
+    "stop_requested": false,
+    "training_authorized": true
+  },
+  "conclusions": {
+    "causes_navigation_failure": "UNVERIFIED",
+    "per_step_advantages_and_collision_approach": "NOT_OBSERVABLE",
+    "policy_improvement": "NOT_TESTED",
+    "same_policy_train_vs_validation_gap": "NOT_ESTIMABLE_FROM_NONSTATIONARY_TRAIN_EPISODES",
+    "yaw_distribution_difference": "CONFIRMED_DESCRIPTIVE"
+  },
+  "configuration": {
+    "budget_snapshot_sha256": "d8b66943ba709c65dfc6b8484295667207e30ede1642f9ae4c66ce5b5de363a6",
+    "claim_limit": "nonstationary stochastic Train aggregates are not final deterministic Validation generalization rates",
+    "device": "cpu",
+    "episodes": 0,
+    "experiment_id": "AUTORL_R23_SPLIT_DISTRIBUTION_ONLY",
+    "hypothesis": "initial heading/task distribution mismatch is a candidate,not a proven cause",
+    "kind": "READ_ONLY_ARITHMETIC_NOT_TRAINING",
+    "manifest_file_sha256": "c468490154627ba8f71df9c73bc8c80769f557054d9692313139188971e332c8",
+    "models_loaded": 0,
+    "new_scans": 0,
+    "optimizer_updates": 0,
+    "physics_steps": 0,
+    "references": [
+      {
+        "episode_details_sha256": "50a60a175d81dc5f7e458529eff85c1c263c93b43efcfd16e16a37a0f21acf9b",
+        "experiment_id": "ARL_R17_EMPTY_REHEARSAL_SEED0",
+        "report_path": "mujoco/reports/autonomous_rl_empty_rehearsal_r17.json",
+        "report_sha256": "d87993588f64db612daab4ee3091f64437a090eeb2b82532906f770a740a12f6",
+        "run_path": ".research_local/authorized_rl_v1/runs/ARL_R17_EMPTY_REHEARSAL_SEED0",
+        "summary_sha256": "950a588ea593f5eb0ece276748624e590efb231472a5c5aacb67098946da2f72",
+        "train_episodes_sha256": "97e62d9199e1745ff1f16b5b818475f771a54a9e6922340bb73f363ab0137732"
+      },
+      {
+        "episode_details_sha256": "f164c7e87b6d2da6d18641342dcd933d988493621223a6a157d8d18c5e51e99c",
+        "experiment_id": "ARL_R22_GAE_CREDIT_SEED0",
+        "report_path": "mujoco/reports/autonomous_rl_gae_credit_r22.json",
+        "report_sha256": "ea1f49e4df91af36b158f318022137e8fa76e0d39ec14ba10b76a219509ba8b5",
+        "run_path": ".research_local/authorized_rl_v1/runs/ARL_R22_GAE_CREDIT_SEED0",
+        "summary_sha256": "b0c45293b8713e20a7861fa835b6063d00146572e93860ca9f05637e8a8f8c14",
+        "train_episodes_sha256": "bb268a38a1fea31ccc96df13e3fb6df6cbf961bb4bdb30050dc0456d93fbfecf"
+      }
+    ],
+    "registration_sha256": "7879e9400486c234ae5257147d7e64f51a6193ad767c1c1be457f8e6f7638390",
+    "source_identity_sha256": "336f98c8dbc76b4fc812e3e75281f93564a3ad4d875d7a4084ca11920241792a",
+    "test_episodes": 0,
+    "training_timesteps": 0,
+    "validation_episodes": 0,
+    "wall_seconds": 120,
+    "workers": 1
+  },
+  "execution_protocol_sha256": "7c5b59ba1ff7133541440690a4c6c0230fe759fc7e32d58ad1fae36c95ca7586",
+  "figures": {
+    "mujoco/reports/autonomous_rl_distribution_r23/figures/heading_coverage.png": "e48bd094c09571fc4c5ba5b185da881d796abd220778bf6e4498ff1fe7814a0a",
+    "mujoco/reports/autonomous_rl_distribution_r23/figures/train_outcomes.png": "807f9021fc3602dff60ea7a63cc4c4a83bb231f67292dbe28f2a9585f47fcfef",
+    "mujoco/reports/autonomous_rl_distribution_r23/figures/validation_outcomes.png": "dec02dec00015656147a96f7289234bfb872a0da52bdedf9c71c2f48d00f6543"
+  },
+  "finalizer": {
+    "bytes": 14794,
+    "path": ".research_local/finalize_autorl_r23.py",
+    "sha256": "597479b54a2c3a6af4c195e66e023ec350a26b9d37222504408ffc28dac40b54"
+  },
+  "heading_coverage": [
+    {
+      "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+      "layout": "empty",
+      "nearest_any_train_yaw_gap_deg": 57.57713043838132,
+      "nearest_any_train_yaw_gap_rad": 1.0049105,
+      "nearest_same_layout_yaw_gap_deg": 93.59368142907327,
+      "nearest_same_layout_yaw_gap_rad": 1.6335179000000002,
+      "same_layout_train_yaw_deg": [
+        -67.38730807703331,
+        38.65886618407471,
+        -6.7058751158993495
+      ],
+      "yaw_deg": -160.9809895061066,
+      "yaw_rad": -2.8096483
+    },
+    {
+      "identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+      "layout": "front_box",
+      "nearest_any_train_yaw_gap_deg": 40.25590582391058,
+      "nearest_any_train_yaw_gap_rad": 0.7025981000000003,
+      "nearest_same_layout_yaw_gap_deg": 40.25590582391058,
+      "nearest_same_layout_yaw_gap_rad": 0.7025981000000003,
+      "same_layout_train_yaw_deg": [
+        -59.02337904569463,
+        133.07875848330457,
+        -36.429813989163904
+      ],
+      "yaw_deg": 173.33466430721515,
+      "yaw_rad": 3.0252606
+    },
+    {
+      "identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+      "layout": "side_pair",
+      "nearest_any_train_yaw_gap_deg": 4.500176680718072,
+      "nearest_any_train_yaw_gap_rad": 0.07854289999999997,
+      "nearest_same_layout_yaw_gap_deg": 91.34860360463264,
+      "nearest_same_layout_yaw_gap_rad": 1.5943339,
+      "same_layout_train_yaw_deg": [
+        -76.2089501725902,
+        125.50729310798928
+      ],
+      "yaw_deg": 34.15868950335664,
+      "yaw_rad": 0.5961816
+    },
+    {
+      "identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+      "layout": "detour",
+      "nearest_any_train_yaw_gap_deg": 9.351673892676516,
+      "nearest_any_train_yaw_gap_rad": 0.16321750000000002,
+      "nearest_same_layout_yaw_gap_deg": 84.5030528374363,
+      "nearest_same_layout_yaw_gap_rad": 1.4748565,
+      "same_layout_train_yaw_deg": [
+        -103.40385906772526,
+        -7.012751310971418
+      ],
+      "yaw_deg": 77.49030152646489,
+      "yaw_rad": 1.3524609
+    },
+    {
+      "identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+      "layout": "channel",
+      "nearest_any_train_yaw_gap_deg": 6.774681617516609,
+      "nearest_any_train_yaw_gap_rad": 0.11824049999999997,
+      "nearest_same_layout_yaw_gap_deg": 6.774681617516609,
+      "nearest_same_layout_yaw_gap_rad": 0.11824049999999997,
+      "same_layout_train_yaw_deg": [
+        95.20448351514815,
+        68.13862763378837
+      ],
+      "yaw_deg": 61.36394601627176,
+      "yaw_rad": 1.0710029
+    },
+    {
+      "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+      "layout": "empty",
+      "nearest_any_train_yaw_gap_deg": 41.7129432265062,
+      "nearest_any_train_yaw_gap_rad": 0.7280282,
+      "nearest_same_layout_yaw_gap_deg": 77.72949421719815,
+      "nearest_same_layout_yaw_gap_rad": 1.3566356000000002,
+      "same_layout_train_yaw_deg": [
+        -67.38730807703331,
+        38.65886618407471,
+        -6.7058751158993495
+      ],
+      "yaw_deg": -145.11680229423146,
+      "yaw_rad": -2.532766
+    }
+  ],
+  "history": {
+    "historical_scoped_counts": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "historical_untracked_counts": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "new_untracked_names": {
+      "/home/keyousuke/MineUAV-Learning": []
+    },
+    "protected_count": 1404,
+    "unchanged": true
+  },
+  "implementation_status": "PASS",
+  "launch": {
+    "bytes": 365,
+    "path": ".research_local/autorl_r23_launch_01.json",
+    "sha256": "e4990ac2d423cdb2dd80b07af2cf2ece23a9679bff4690ceace2e775ff8efc91"
+  },
+  "limits": [
+    "one seed/small developmentValidation",
+    "layout,yaw,position and obstacle variations co-vary;not matched causal intervention",
+    "initial heading distance not full visited-state coverage",
+    "raw policy actions and advantages not saved",
+    "no model loading,inference,newphysical run or learning;no performance gain claim",
+    "all oldR20FAIL/history retained"
+  ],
+  "next_hypothesis": "New separately frozen Train-only uniform yaw augmentation vs completeR17;never choose angles from held-out Test;not retry/resume.",
+  "phase_id": "AUTORL-R23-SPLIT-DISTRIBUTION",
+  "postboot_recovery": {
+    "date": "2026-10-17",
+    "evidence": {
+      "path": ".research_local/autorl_r23_postboot_recovery_01.json",
+      "sha256": "afde0cf99e2f8a07864d67b348b38f2135187f2c9c2bd204b709a132c0734a0d"
+    },
+    "experiment_execution_date": "2026-10-16",
+    "new_experiment_execution": false,
+    "status": "PASS"
+  },
+  "postrun_OPS_audit": {
+    "evidence": {
+      "path": ".research_local/autorl_r23_postrun_audit_01.json",
+      "sha256": "d94d190425a4a8652eac8aac25c23b9e522ed7ae151b6aea1c59e31fe21fa7f0"
+    },
+    "status": "PASS",
+    "task_evidence_sha256": "679a946f4c317b374574e37301d51255d23fb6d4f1d2662eb40793cf6c6d6116"
+  },
+  "raw_files": [
+    {
+      "bytes": 484,
+      "path": ".research_local/autorl_r23_distribution_audit/run_01/attempt.json",
+      "sha256": "134ea758deb10286c11c07197b913972f9f9d6c20188dae0e5996b68bc5b6ae3"
+    },
+    {
+      "bytes": 90,
+      "path": ".research_local/autorl_r23_distribution_audit/run_01/complete.json",
+      "sha256": "61aebd7b7fde856c2ea0dafbcb26d8baa080e6f2477818d0a6279ab17a88f197"
+    },
+    {
+      "bytes": 170711,
+      "path": ".research_local/autorl_r23_distribution_audit/run_01/result.json",
+      "sha256": "b745afbb910aead9f03af225bd1ca1123fe1defffa1678226fd3e397c902202c"
+    }
+  ],
+  "registration_sha256": "7879e9400486c234ae5257147d7e64f51a6193ad767c1c1be457f8e6f7638390",
+  "resources": {
+    "cpu_elapsed_seconds": 0.18788052300000047,
+    "sampled_min_mem_available_mib": 9445.03125,
+    "wall_elapsed_seconds": 0.19047818000035477,
+    "worker_hwm_rss_mib": 64.04296875
+  },
+  "result": {
+    "bytes": 170711,
+    "path": ".research_local/autorl_r23_distribution_audit/run_01/result.json",
+    "sha256": "b745afbb910aead9f03af225bd1ca1123fe1defffa1678226fd3e397c902202c"
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r23_results_review_01.json",
+      "sha256": "98aecee7088412a3859e14f7f53708ed83d38f4d1c998ada1a92866836817924"
+    },
+    "important": 0,
+    "inherited_findings": {
+      "R18_publication_process": "Minor1",
+      "R20_legacy_evaluation_label": "Minor1",
+      "R7_failure_context": "Minor1"
+    },
+    "method": "independent_read_only_source_and_evidence_review",
+    "new_minor": 0,
+    "reviewed_pre_seal_markdown_sha256": "b535fb91c6b5d8ccdbd3c3204d9e50a28bdc79a37364a47bb4503129f4b7f92c",
+    "reviewed_pre_seal_report_sha256": "1facd47ba0316b600cbd1411c41403bbf04e13472df8a48c01eaaab258a85962",
+    "scope": "R23_descriptive_result_publication_only",
+    "seal_scope": "review/audit/postboot references and recovery note only;frozen statistics unchanged",
+    "source_identity_sha256": "336f98c8dbc76b4fc812e3e75281f93564a3ad4d875d7a4084ca11920241792a",
+    "status": "GO"
+  },
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "bytes": 1683,
+      "path": ".research_local/autorl_r23_pre_review_01.json",
+      "sha256": "1cb3ddf59121921f83aed872536f59c6d49b396d5aef1704fb5dae268df3e2de"
+    },
+    "important": 0,
+    "method": "independent_read_only_source_and_evidence_review",
+    "source_identity_sha256": "336f98c8dbc76b4fc812e3e75281f93564a3ad4d875d7a4084ca11920241792a",
+    "status": "GO"
+  },
+  "scientific_result": "DESCRIPTIVE_AUDIT_ONLY",
+  "source_identity_sha256": "336f98c8dbc76b4fc812e3e75281f93564a3ad4d875d7a4084ca11920241792a",
+  "test_episodes": 0,
+  "tests": {
+    "GREEN": {
+      "bytes": 1047,
+      "path": ".research_local/autorl_r23_green_01.json",
+      "sha256": "09b4bae279a934cc1fcca0b65065e86e023ef7ae586d71392a44efc903632b6a"
+    },
+    "RED": {
+      "bytes": 6332,
+      "path": ".research_local/autorl_r23_red_01.json",
+      "sha256": "30f7063463d18e0837ba6b2ad52f0ca4fcfbe7d38ce1007b72dc35af07730e5a"
+    },
+    "checks": {
+      "bytes": 976,
+      "path": ".research_local/autorl_r23_checks_02.json",
+      "sha256": "a264adef6cd2ccdf3aad0ef2447bcfb47d5cbfc8931c84d5c1276b7ce40c5f7e"
+    },
+    "evidence": {
+      "path": ".research_local/autorl_r23_operations_final_02.json",
+      "sha256": "32b4f122df7ca73dfc0619ee25c142587059b050639c7db9e1fab84adaecefb2"
+    },
+    "excluded": 15,
+    "historical": 885,
+    "new_RED_GREEN": 6,
+    "operations": 217,
+    "review_contract_GREEN": {
+      "bytes": 1047,
+      "path": ".research_local/autorl_r23_review_green_01.json",
+      "sha256": "09b4bae279a934cc1fcca0b65065e86e023ef7ae586d71392a44efc903632b6a"
+    },
+    "review_contract_RED": {
+      "bytes": 2632,
+      "path": ".research_local/autorl_r23_review_red_01.json",
+      "sha256": "58a70bf0f4a42549b02867959b061184063756c78b5b030e42f88563365be253"
+    },
+    "scope": "selected,not whole repository;first1172pass applies to superseded SOURCE;all1172 rerun on final SOURCE02",
+    "selected_pass": 1172,
+    "status": "PASS",
+    "superseded_checks": {
+      "bytes": 976,
+      "path": ".research_local/autorl_r23_checks_01.json",
+      "sha256": "0d1ef6196a44728436ea9cf5f0b07cf8e63b3bb31b01234a514920553cdc8811"
+    },
+    "tensor": 70,
+    "test_optimizer_updates": 0
+  }
+}

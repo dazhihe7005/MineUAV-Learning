@@ -1,3 +1,9 @@
+## AUTORL-R23 最新：分布只读诊断（2026-10-16）
+
+R22已发布55594504，科学FAIL不覆盖。R23仅只读完整R17/R22和12Train/6Validation，真实初始Yaw圆周距离与按layout结束统计已核对；发现同layout empty朝向覆盖差异，但因果UNVERIFIED，不把非平稳Train率与final Val当同策略差值。新学习/推理/扫描/物理/episode/Val/Test/optimizer全0，344授权文件字节不变，余额1082496步/36000预留秒stopfalse。1172选择回归PASS=217OPS+70Tensor+885历史/15排除，6新RED→GREEN；不是全仓或性能提升证明。
+
+下一步完成结果独立复审、Commit/正常OPS sync与远端核验，再准备相对完整R17仅扩展Train起始Yaw的独立新manifest/协议；λ回到控制R17的.95，不能称相对R22只改Yaw。不得匹配封存Test、旧ID重试、ZIP续训或回写旧协议。详见[中文阶段报告](docs/PHASE_AUTORL_R23_DISTRIBUTION.md)与mujoco/reports/autonomous_rl_distribution_r23.json；实际发布状态以OPS收据为准。下一次恢复先核Git、授权head28、stop/余额及无活跃进程，读最新块，不重复本阶段。
+
 ## AUTORL-R22 最新：GAE单变量训练实际完成（2026-10-16）
 
 R21已发布597ff08，R20永久FAIL/INTERRUPTED、科学NOT TESTED不重试。新R22相对完整R17只改GAE λ .95→.99，γ=.99保持；fresh手写先验/std.1、同中心化CNN/Reward/PI/课程reset.5/频率与24000rays。65536实际步/512rollout/2048Adam/1024epoch/1309969实际physics ticks完成（逐episode时间核对，非65536×20假定），36新Val/Test0；科学FAIL，五原判据{'empty_retention': 'FAIL', 'gae_credit_benefit_over_R17': 'FAIL', 'original_learning_over_prior': 'FAIL', 'short_candidate': 'FAIL', 'short_prior_retention': 'FAIL'}。原始checkpoint local-only，Final Checkpoint，不选32k。
