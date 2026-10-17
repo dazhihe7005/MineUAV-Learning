@@ -1,0 +1,62 @@
+{
+  "R28_publication_sha256": "2fbbb6984d1b61842071d0d9bbced524a638271391a33b8bcb17767bcd879c1a",
+  "R28_report_sha256": "54af04e2001f6612fea6a20d6af1837243a3a7b23c728ddf3d61d3b0921b35fc",
+  "R28_scientific_result": "FAIL",
+  "assessment": "axiswise signed toward commands at v0 near .05/.2 versus far .5/1m;zero-error velocity damping at +/-.2m/s",
+  "budget_snapshot_sha256": "7afbe81b27fad0417a01fc6bce65e51884e99aefbeed514e4f829983c557972c",
+  "checkpoint_steps": [
+    0,
+    32768,
+    65536
+  ],
+  "claim_limit": "not a trajectory,success rate,causal explanation,LiDAR dependence or closed-loop stability test",
+  "context": "R28_STEP0_SAVED_LAST_OBS_LIDAR_HEADING_AGE_FIXED_ALL_MODELS",
+  "device": "cpu",
+  "experiment_id": "AUTORL_R29_POLICY_FUNCTION_PROBE_ONLY",
+  "grid_sha256": "af9f217ecf2aee85df86d8023e494b5c99749c0f7561e6a6cf696d9e36f27f39",
+  "hypothesis_threshold": "far signed mean or zero-error braking mean <= half ownprior and ownprior>1e-6 => weakened function response in this context only",
+  "kind": "COUNTERFACTUAL_POLICY_FUNCTION_PROBE",
+  "model_input_rows": 237,
+  "models": [
+    {
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP0.zip",
+      "checkpoint_sha256": "b71cfbff5652e2ac0c407f80ee2b9cb48aa5ef9d86478a657ee504d7e1259b08",
+      "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+      "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP0",
+      "sidecar_sha256": "158aef31f0a20eb47a79e1d63eee5f697ace90e7e6397fbcc9cbba78152b209b",
+      "step": 0
+    },
+    {
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP32768.zip",
+      "checkpoint_sha256": "0d959a81006d3dbbd2aefb3c5f1ac4242affb5a27c127c18ee25fb423c97b490",
+      "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+      "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP32768",
+      "sidecar_sha256": "65bb887bedf0805b43f512ce675d73582297a69ccb2a337ade655278f37ff074",
+      "step": 32768
+    },
+    {
+      "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536.zip",
+      "checkpoint_sha256": "0bcbdca60b131b749ed3a3b0101fbd149e47b58244f99e13e92c0916da5dbd0a",
+      "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+      "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536",
+      "sidecar_sha256": "f0810d7250a032ce7c2df8db7a4d96e9f755320d3c3c428acecb01cb68117f79",
+      "step": 65536
+    }
+  ],
+  "new_episodes": 0,
+  "optimizer_updates": 0,
+  "physics_ticks": 0,
+  "registration_sha256": "36bc2b5fe68997470dcaa85317726c81c4333c5872861efd4aa3ce905c249c55",
+  "source_identity_sha256": "d64b739465c66ca08494b3179c708298abd6ee23e230b8b64e407f941b9d4668",
+  "state_convention": "ENU position error,ENU world velocity,yaw error0;not an actual simultaneous physical state",
+  "test_episodes": 0,
+  "training_timesteps": 0,
+  "wall_seconds": 180,
+  "workers": 1,
+  "world_velocity_action_scale": [
+    1.5,
+    1.5,
+    1.0,
+    1.0
+  ]
+}

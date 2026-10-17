@@ -1,3 +1,19 @@
+## AUTORL-R29 诊断已复审，发布后继续R30安全研究（2026-10-17）
+
+唯一同背景237函数输入＋237重复完成，参数/optimizer不变；工程PASS、新导航/学习NOT TESTED。未支持远距离指令塌缩；XY朝目标响应增强，原prior直接速度反馈0使“制动相对prior减弱”不可判（NOT TESTED零参考）。训练后存在跨轴/Yaw指令候选，但闭环因果UNVERIFIED。旧R28final两个empty终点虽约.062/.066m，仍超时；不能用终点位置冒充速度<.15且连续5步成功。1228选择PASS/15排除/0optimizer，另2本地分析契约PASS；466旧保护不变、R28科学FAIL保持。
+
+先核autorl_r29_staging_checks_01、真实Commit、OPSsync/远端/phase_complete，再预算head32/951424步/28800预留秒stopfalse与资源/stop检查。下一安全方向R30：围绕held任务近目标耦合/停稳设计新的受限非学习trace或单变量Yaw-action ablation，先冻结协议和审查，不直接重训。不得重复R29 run_01/237probe/旧helpers或36Val，不Test/PX4/ZIP续训；电脑关闭不执行。以下为历史快照。
+
+## AUTORL-R29 实际函数诊断完成，发布待核验（2026-10-17）
+
+三个可信R28模型同一真实LiDAR/heading/age背景、79反事实state各模型共237输入＋237重复，有限且确定性，参数/optimizer不变；无物理、新episode、训练或Test，不冒充闭环。far弱化候选[]；brake弱化候选[]，只限函数背景，不定唯一因果。1228选择PASS/15排除/0测试optimizer，466旧保护文件不变；R28科学FAIL保留，预算head32/951424步/28800预留秒stopfalse。
+
+下一步独立结果复审、17路径显式Commit/正常OPSsync/远端；run_01与complete/exit已存在不可重放。发布后检查预算/stop/resource选择新独立研究。完整报告docs/PHASE_AUTORL_R29_POLICY_FUNCTION.md。以下为历史快照。
+
+## AUTORL-R29 准备：同输入策略函数诊断（2026-10-17）
+
+R28已完整发布远端4a757f43e6564ff9f7d656ae59a2dafe03a4ff2d/phase_complete=true，不重跑；训练65536步完成、科学FAIL。当前新分支research/lidar-policy-function-diagnostic-r29。拟3可信R28模型×79反事实state共237输入，固定真实step0 LiDAR/heading/age，不创建物理episode、不优化、不Test，不声称真实轨迹；严格180秒CPU1。REG36bc2b5fe68997470dcaa85317726c81c4333c5872861efd4aa3ce905c249c55、SOURCEd64b739465c66ca08494b3179c708298abd6ee23e230b8b64e407f941b9d4668、协议fb4c20db46abd4b1843fd33406bf958aaef2c4c5fbb25174b3327bf8ab3fc690，当前正在选择回归与独立审查，GO前不执行。余额head32/951424步/28800预留秒stopfalse不变。下次先查checks/review及唯一run_01/launch_attempt，不能重复执行。旧OPS source mismatch是新登记开发，不reset/reinit历史。
+
 ## AUTORL-R28 发布修正已审查，先核真实同步收据再进R29（2026-10-17）
 
 publication-only新REG53431c954f89f8caa0f94b3aefd23c6cb9d3e0b3c231fab71ca8c5e99c2d2ccc、SOURCEe3e61d7d7e8cebfbf80498402d2a571e8c80ff0362376431f112f4e8e575e132，只移除新增测试EOF的1个额外LF，AST含行号相等/其余163SOURCE不变。新身份完整1221选择PASS/15排除/optimizer0；独立发布审查及正常register/recover/doctor/audit均PASS，原训练SOURCE94daaf…/协议/23raw/结果GO/旧R28注册不改。原R28工程运行65536完成、科学3FAIL2PASS总体FAIL；修复发布不等于学会导航。

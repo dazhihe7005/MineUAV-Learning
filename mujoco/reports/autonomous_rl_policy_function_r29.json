@@ -1,0 +1,432 @@
+{
+  "R28_preserved_scientific_result": "FAIL",
+  "analysis": {
+    "bytes": 4735,
+    "path": ".research_local/autorl_r29_analysis_01.json",
+    "sha256": "c455174a5efbba3c986a502ac50152a0c8f90cbd94ab6d50d16e7d715b923258"
+  },
+  "assessment": {
+    "axiswise": [
+      {
+        "axis": 0,
+        "far_signed_velocity_command_mean": 0.24984583631157875,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.04166555218398571,
+        "step": 0,
+        "zero_error_braking_mean": 0.0,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      },
+      {
+        "axis": 1,
+        "far_signed_velocity_command_mean": 0.24984583631157875,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.04166555218398571,
+        "step": 0,
+        "zero_error_braking_mean": 0.0,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      },
+      {
+        "axis": 2,
+        "far_signed_velocity_command_mean": 0.24965354800224304,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.04166416451334953,
+        "step": 0,
+        "zero_error_braking_mean": 0.0,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      },
+      {
+        "axis": 0,
+        "far_signed_velocity_command_mean": 0.28940299898386,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.04825197206810117,
+        "step": 32768,
+        "zero_error_braking_mean": -0.0030983593314886093,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      },
+      {
+        "axis": 1,
+        "far_signed_velocity_command_mean": 0.2713516429066658,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.0452496400102973,
+        "step": 32768,
+        "zero_error_braking_mean": 0.0023712124675512314,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      },
+      {
+        "axis": 2,
+        "far_signed_velocity_command_mean": 0.2851771116256714,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.04758024401962757,
+        "step": 32768,
+        "zero_error_braking_mean": 0.014222188387066126,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      },
+      {
+        "axis": 0,
+        "far_signed_velocity_command_mean": 0.3224220760166645,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.05383571237325668,
+        "step": 65536,
+        "zero_error_braking_mean": 0.004212632775306702,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      },
+      {
+        "axis": 1,
+        "far_signed_velocity_command_mean": 0.28400534950196743,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.04737872094847262,
+        "step": 65536,
+        "zero_error_braking_mean": 0.0042254738509655,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      },
+      {
+        "axis": 2,
+        "far_signed_velocity_command_mean": 0.22879847884178162,
+        "far_signed_velocity_command_mean_weakened_vs_prior": false,
+        "near_signed_velocity_command_mean": 0.03812071681022644,
+        "step": 65536,
+        "zero_error_braking_mean": 0.00857466459274292,
+        "zero_error_braking_mean_weakened_vs_prior": false
+      }
+    ],
+    "claim": "FUNCTION_PROBE_ONLY_NOT_CLOSED_LOOP_OR_CAUSAL_STABILITY"
+  },
+  "budget_remaining": {
+    "remaining_timesteps": 951424,
+    "remaining_wall_seconds": 28800,
+    "stop_requested": false
+  },
+  "budget_unchanged": true,
+  "configuration": {
+    "R28_publication_sha256": "2fbbb6984d1b61842071d0d9bbced524a638271391a33b8bcb17767bcd879c1a",
+    "R28_report_sha256": "54af04e2001f6612fea6a20d6af1837243a3a7b23c728ddf3d61d3b0921b35fc",
+    "R28_scientific_result": "FAIL",
+    "assessment": "axiswise signed toward commands at v0 near .05/.2 versus far .5/1m;zero-error velocity damping at +/-.2m/s",
+    "budget_snapshot_sha256": "7afbe81b27fad0417a01fc6bce65e51884e99aefbeed514e4f829983c557972c",
+    "checkpoint_steps": [
+      0,
+      32768,
+      65536
+    ],
+    "claim_limit": "not a trajectory,success rate,causal explanation,LiDAR dependence or closed-loop stability test",
+    "context": "R28_STEP0_SAVED_LAST_OBS_LIDAR_HEADING_AGE_FIXED_ALL_MODELS",
+    "device": "cpu",
+    "experiment_id": "AUTORL_R29_POLICY_FUNCTION_PROBE_ONLY",
+    "grid_sha256": "af9f217ecf2aee85df86d8023e494b5c99749c0f7561e6a6cf696d9e36f27f39",
+    "hypothesis_threshold": "far signed mean or zero-error braking mean <= half ownprior and ownprior>1e-6 => weakened function response in this context only",
+    "kind": "COUNTERFACTUAL_POLICY_FUNCTION_PROBE",
+    "model_input_rows": 237,
+    "models": [
+      {
+        "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP0.zip",
+        "checkpoint_sha256": "b71cfbff5652e2ac0c407f80ee2b9cb48aa5ef9d86478a657ee504d7e1259b08",
+        "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+        "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP0",
+        "sidecar_sha256": "158aef31f0a20eb47a79e1d63eee5f697ace90e7e6397fbcc9cbba78152b209b",
+        "step": 0
+      },
+      {
+        "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP32768.zip",
+        "checkpoint_sha256": "0d959a81006d3dbbd2aefb3c5f1ac4242affb5a27c127c18ee25fb423c97b490",
+        "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+        "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP32768",
+        "sidecar_sha256": "65bb887bedf0805b43f512ce675d73582297a69ccb2a337ade655278f37ff074",
+        "step": 32768
+      },
+      {
+        "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536.zip",
+        "checkpoint_sha256": "0bcbdca60b131b749ed3a3b0101fbd149e47b58244f99e13e92c0916da5dbd0a",
+        "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+        "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536",
+        "sidecar_sha256": "f0810d7250a032ce7c2df8db7a4d96e9f755320d3c3c428acecb01cb68117f79",
+        "step": 65536
+      }
+    ],
+    "new_episodes": 0,
+    "optimizer_updates": 0,
+    "physics_ticks": 0,
+    "registration_sha256": "36bc2b5fe68997470dcaa85317726c81c4333c5872861efd4aa3ce905c249c55",
+    "source_identity_sha256": "d64b739465c66ca08494b3179c708298abd6ee23e230b8b64e407f941b9d4668",
+    "state_convention": "ENU position error,ENU world velocity,yaw error0;not an actual simultaneous physical state",
+    "test_episodes": 0,
+    "training_timesteps": 0,
+    "wall_seconds": 180,
+    "workers": 1,
+    "world_velocity_action_scale": [
+      1.5,
+      1.5,
+      1.0,
+      1.0
+    ]
+  },
+  "context": {
+    "path": ".research_local/autorl_r29_policy_function/run_01/context.json",
+    "physical_consistency_of_counterfactuals": "NOT TESTED",
+    "sample_timestamp": "NOT_AVAILABLE_FROM_SAVED_OBSERVATION",
+    "sha256": "8275f2bd5885177313ad245f93bdf920247a9a1e0dd859e76643254e98e70fb8",
+    "source": "R28_STEP0_SAVED_LAST_OBS",
+    "tensor_sha256": "271ef30b3188cd4c242499a605ede789f24b36a389fbf48eec62ce6672b108e3"
+  },
+  "diagnostic_result": "PASS",
+  "exact_repeated_inference_rows": 237,
+  "figures": [
+    {
+      "bytes": 100206,
+      "path": "mujoco/reports/autonomous_rl_policy_function_r29/figures/braking_response.png",
+      "sha256": "d03140c647ad57a0320fdb1c63566c0b5e4ecf57a8d54168fbe006e51ff0d9dc"
+    },
+    {
+      "bytes": 109151,
+      "path": "mujoco/reports/autonomous_rl_policy_function_r29/figures/distance_response.png",
+      "sha256": "100e50a000e78589be2c0ce6471975200ce20f8dd9eb52a93d1289ed9406a76b"
+    },
+    {
+      "bytes": 90675,
+      "path": "mujoco/reports/autonomous_rl_policy_function_r29/figures/function_summary.png",
+      "sha256": "349f96d0c3abba5297f6dcb9bc5864e72bb76ca6167ba02a0769832687f0e28d"
+    }
+  ],
+  "implementation_status": "PASS",
+  "limitations": [
+    "one real fixedLiDAR/heading/age background,synthetic state counterfactuals,seed0 only",
+    "function changes do not prove causal reason for closed-loop failure or LiDAR dependence",
+    "no new navigation episode,Test,optimizer,physics or task success claim;not PX4/realworld proof",
+    "legacy loader API says WARM_START but env=None readonly,no initialized/continued experiment",
+    "optional caught cv2 NumPyABI and unavailable Axes3D warnings retained,no dependency upgrade"
+  ],
+  "model_input_rows": 237,
+  "models": [
+    {
+      "legacy_loader_mode": "WARM_START_NAME_DESERIALIZATION_ONLY_NO_TRAINING",
+      "optimizer_unchanged": true,
+      "paired_batch_forward_wall_ms": 9.944970001015463,
+      "policy_sha256_before_after": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+      "reference": {
+        "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP0.zip",
+        "checkpoint_sha256": "b71cfbff5652e2ac0c407f80ee2b9cb48aa5ef9d86478a657ee504d7e1259b08",
+        "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+        "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP0",
+        "sidecar_sha256": "158aef31f0a20eb47a79e1d63eee5f697ace90e7e6397fbcc9cbba78152b209b",
+        "step": 0
+      },
+      "training_timesteps_before_after": 0
+    },
+    {
+      "legacy_loader_mode": "WARM_START_NAME_DESERIALIZATION_ONLY_NO_TRAINING",
+      "optimizer_unchanged": true,
+      "paired_batch_forward_wall_ms": 6.602637999094441,
+      "policy_sha256_before_after": "4dcf0c2f63e08ec73b4bba2a1eff4ed0278e7c0a258c1edc9fa7a315d887df4c",
+      "reference": {
+        "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP32768.zip",
+        "checkpoint_sha256": "0d959a81006d3dbbd2aefb3c5f1ac4242affb5a27c127c18ee25fb423c97b490",
+        "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+        "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP32768",
+        "sidecar_sha256": "65bb887bedf0805b43f512ce675d73582297a69ccb2a337ade655278f37ff074",
+        "step": 32768
+      },
+      "training_timesteps_before_after": 32768
+    },
+    {
+      "legacy_loader_mode": "WARM_START_NAME_DESERIALIZATION_ONLY_NO_TRAINING",
+      "optimizer_unchanged": true,
+      "paired_batch_forward_wall_ms": 6.599180998819065,
+      "policy_sha256_before_after": "f7349c40158b1f064542bdf8180f22cf9b68f11aee9ab563f732e678bfc85475",
+      "reference": {
+        "checkpoint_path": ".research_local/authorized_rl_v1/runs/ARL_R28_HOLD_GOAL_YAW_SEED0/ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536.zip",
+        "checkpoint_sha256": "0bcbdca60b131b749ed3a3b0101fbd149e47b58244f99e13e92c0916da5dbd0a",
+        "execution_protocol_sha256": "bc2f81ffa7e7fb67ec46a6afe31255300f6ff86ce782168edc3f648e043db3f7",
+        "run_id": "ARL_R28_HOLD_GOAL_YAW_SEED0_STEP65536",
+        "sidecar_sha256": "f0810d7250a032ce7c2df8db7a4d96e9f755320d3c3c428acecb01cb68117f79",
+        "step": 65536
+      },
+      "training_timesteps_before_after": 65536
+    }
+  ],
+  "new_episodes": 0,
+  "next_action": "after true review/commit/OPSsync/remote,budget-stop-resource audit;choose independent evidence-based distance/feedback control,not duplicateR28 or ZIPresume",
+  "optimizer_updates": 0,
+  "phase_id": "AUTORL-R29-POLICY-FUNCTION",
+  "physics_ticks": 0,
+  "posthoc_interpretation": {
+    "braking_weakening_vs_prior": "NOT_TESTED_REFERENCE_ZERO_ON_ALL_AXES",
+    "closed_loop_failure_mechanism": "UNVERIFIED",
+    "existing_R28_empty_episode_records_reused_only": [
+      {
+        "episodes": [
+          {
+            "final_target_error_m": 0.06176838179174584,
+            "policy_steps": 193,
+            "scenario_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+            "terminal_class": "success",
+            "trajectory_length_m": 3.02286345154295
+          },
+          {
+            "final_target_error_m": 0.0638281291037387,
+            "policy_steps": 193,
+            "scenario_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+            "terminal_class": "success",
+            "trajectory_length_m": 3.1272917824383613
+          }
+        ],
+        "step": 0
+      },
+      {
+        "episodes": [
+          {
+            "final_target_error_m": 0.128768917613791,
+            "policy_steps": 375,
+            "scenario_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+            "terminal_class": "time_limit",
+            "trajectory_length_m": 5.293028299514844
+          },
+          {
+            "final_target_error_m": 0.14026699340281645,
+            "policy_steps": 375,
+            "scenario_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+            "terminal_class": "time_limit",
+            "trajectory_length_m": 5.531129579440361
+          }
+        ],
+        "step": 32768
+      },
+      {
+        "episodes": [
+          {
+            "final_target_error_m": 0.06156953834511991,
+            "policy_steps": 375,
+            "scenario_identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+            "terminal_class": "time_limit",
+            "trajectory_length_m": 6.714138485061039
+          },
+          {
+            "final_target_error_m": 0.0660098937949531,
+            "policy_steps": 375,
+            "scenario_identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+            "terminal_class": "time_limit",
+            "trajectory_length_m": 6.925167334598212
+          }
+        ],
+        "step": 65536
+      }
+    ],
+    "far_amplitude_collapse_threshold": "NOT_SUPPORTED_IN_THIS_CONTEXT",
+    "next_hypothesis_candidate": "retention failure may involve coupled commands and near-goal settling,not lack of far command amplitude;new actual trace or bounded action ablation must be independently frozen/reviewed",
+    "observed_off_diagonal_and_yaw_commands": "nonzero after training even in zero yaw-error probes; descriptive only",
+    "prior_direct_velocity_feedback_zero": true
+  },
+  "postrun_audit": {
+    "path": ".research_local/autorl_r29_postrun_audit_01.json",
+    "sha256": "7f362a363d7eeeb4ab63de5ecb466276c5f76e8a3a5eff612d9df0f5799401fe",
+    "task_evidence_sha256": "d45d60fd1e09442d64ec78f6b514d12cfa0d033c9e5b947a884e58ca86e4fb17"
+  },
+  "postrun_identity": {
+    "path": ".research_local/autorl_r29_postrun_identity_01.json",
+    "sha256": "3dae0d23ac5c25fe9fa4fe5418061be04df5a7956d6f6579bfe3bc875d3adb75"
+  },
+  "protected_immutable_files_unchanged": 466,
+  "protocol_sha256": "fb4c20db46abd4b1843fd33406bf958aaef2c4c5fbb25174b3327bf8ab3fc690",
+  "raw_files": [
+    {
+      "bytes": 385,
+      "path": ".research_local/autorl_r29_policy_function/run_01/attempt.json",
+      "sha256": "cf90502f70585210dd13fb8e1767138148ecc4d7a37e26cb2400ee400339f975"
+    },
+    {
+      "bytes": 90,
+      "path": ".research_local/autorl_r29_policy_function/run_01/complete.json",
+      "sha256": "7415273b7b1d7ff8e21b43b090cee2de4c111cd1faf316fd9d24369dc3725d7a"
+    },
+    {
+      "bytes": 19543,
+      "path": ".research_local/autorl_r29_policy_function/run_01/context.json",
+      "sha256": "8275f2bd5885177313ad245f93bdf920247a9a1e0dd859e76643254e98e70fb8"
+    },
+    {
+      "bytes": 125249,
+      "path": ".research_local/autorl_r29_policy_function/run_01/result.json",
+      "sha256": "7ee0bc8a1963a6c4f946a2be2bae77b06604f9d54f2df57d4ec57d591372edde"
+    }
+  ],
+  "registration_sha256": "36bc2b5fe68997470dcaa85317726c81c4333c5872861efd4aa3ce905c249c55",
+  "resources": {
+    "cpu_seconds": 0.9425419669999995,
+    "guard_sampled_min_MemAvailable_mib": 9646.26953125,
+    "inner_budget_seconds": 180,
+    "outer_launcher_cleanup_timeout_seconds": 190,
+    "outer_launcher_wall_seconds": 8.543245723001746,
+    "wall_seconds": 0.9499158080016059,
+    "worker_hwm_rss_mib": 439.9375
+  },
+  "result": {
+    "bytes": 125249,
+    "path": ".research_local/autorl_r29_policy_function/run_01/result.json",
+    "sha256": "7ee0bc8a1963a6c4f946a2be2bae77b06604f9d54f2df57d4ec57d591372edde"
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r29_results_review_01.json",
+      "sha256": "1ddcf1ddb9ae737d51578bf43153ec72a5f44fad1d1cdf89efe7fcc74ba69b70"
+    },
+    "important": 0,
+    "method": "independent_read_only_actual_same_input_function_raw_math_context_policy_figures_budget_results_review",
+    "new_minor": 0,
+    "scope": "REPORT_ONLY metadata-only seal/newMDreview/commonhandoff thenactual17file stage/working/cached checks;237actualsamecontextinputs+237repeat,3trustedmodels,9mathresponses,no newepisode/physics/optimizer/Test;466protected168SOURCE/budget32unchanged;farcollapse unsupported andbrakingcomparisonNOTTESTEDzeroprior;R28FAIL preserved;no training,R29replay,R30execution ornavigation/causalstability proof;Commit/Push/remote/phase_complete not precertified",
+    "source_identity_sha256": "d64b739465c66ca08494b3179c708298abd6ee23e230b8b64e407f941b9d4668",
+    "status": "GO"
+  },
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "bytes": 1599,
+      "path": ".research_local/autorl_r29_pre_review_01.json",
+      "sha256": "0d33c147a9b8d548d120e1da298898ea5e388ac89dd3d5cdeede9f50ab561ec3"
+    },
+    "important": 0,
+    "method": "independent_read_only_fixed_no_learning_function_protocol_source_tests_helpers_history_review",
+    "source_identity_sha256": "d64b739465c66ca08494b3179c708298abd6ee23e230b8b64e407f941b9d4668",
+    "status": "GO"
+  },
+  "scientific_result": "NOT TESTED",
+  "scientific_scope": "no new navigation or learning acceptance;function responses only",
+  "source_identity_sha256": "d64b739465c66ca08494b3179c708298abd6ee23e230b8b64e407f941b9d4668",
+  "supervisor_receipt": {
+    "bytes": 308,
+    "path": ".research_local/autorl_r29_exit_01.json",
+    "sha256": "ec7562ddbbccccc96b9ebcd0659cf53eecc6ba3e9ed41502f3d00400dc21014d"
+  },
+  "test_episodes": 0,
+  "tests": {
+    "checks": {
+      "bytes": 1047,
+      "path": ".research_local/autorl_r29_checks_01.json",
+      "sha256": "3bf9991468c7db1923e9edd1ddc50601631899c8027eeaf9e7645ca820fe25a5"
+    },
+    "evidence": {
+      "path": ".research_local/autorl_r29_operations_final_01.json",
+      "sha256": "864f16d3551255293c0d79d192ea8beb890f7926b3d838d4f20878f1892898ec"
+    },
+    "excluded": 15,
+    "historical_pass": 885,
+    "local_analysis_contracts": {
+      "distinct_tests": 2,
+      "evidence": {
+        "path": ".research_local/autorl_r29_analysis_contract_GREEN_02.json",
+        "sha256": "ede7dc84cb835eeb0575ac2fcaf044e72950584b5c1f1a3fd3e9bd33b39e917b"
+      },
+      "status": "PASS"
+    },
+    "new_tests": 7,
+    "operations_pass": 258,
+    "optimizer_updates": 0,
+    "scope": "selected applicable regression,not whole repository;no free optimizer updates",
+    "selected_total_pass": 1228,
+    "status": "PASS",
+    "tensor_pass": 85
+  },
+  "training_timesteps": 0,
+  "weakened_response_candidates": {
+    "far_signed_velocity_command_mean": [],
+    "zero_error_braking_mean": []
+  }
+}
