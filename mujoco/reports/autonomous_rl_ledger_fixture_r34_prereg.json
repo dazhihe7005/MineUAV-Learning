@@ -1,0 +1,40 @@
+{
+  "base_release": "34d46f722cad0ed61c765ed98a5083fcb8f17911",
+  "candidate": 3,
+  "candidate01": "Preserved:287OPS and885historical PASS;93Tensor92PASS1ERROR same historical-reader issue;no activation/execution",
+  "candidate02": "Actual1265PASS and independentGO retained;cached diff found newblanklineEOF;no commit/push;only one LF removed AST identical;all suites rerun",
+  "changed_source": [
+    "tests/research_ops_v2/_historical_budget_fixture.py",
+    "tests/research_ops_v2/test_historical_budget_fixture.py",
+    "tests/research_ops_v2/test_closed_yaw_failure.py",
+    "tests/research_ops_v2/test_goal_heading_diagnostic.py",
+    "tests/research_ops_v2/test_interrupted_yaw_diagnostic.py",
+    "research_regression/authorized_rl/interrupted_yaw_diagnostic_tests.py"
+  ],
+  "experiment_id": "AUTORL_R34_HISTORICAL_FIXTURE_ONLY",
+  "frozen_R28_report_sha256": "54af04e2001f6612fea6a20d6af1837243a3a7b23c728ddf3d61d3b0921b35fc",
+  "frozen_R33_failure_report_sha256": "7daba6afd11967359cbb8d6163e96a2a29fc0f0bfb3cab07d8f1351e763444ee",
+  "kind": "LEVEL1_NO_TRAINING_TEST_REPAIR",
+  "method": "explicit test-only full historical snapshot reader for one matching home; deep copies and context restoration; real proof files and production gates unchanged; real R33 rejection tested outside fixture",
+  "new_training_gate": "REMAINS_CLOSED_FOR_R33;fixture is never runtime execution admission",
+  "new_validation_episodes": 0,
+  "optimizer_updates": 0,
+  "production_source_change": false,
+  "registration_sha256": "42b046d6513e9b0fe3fd498fa8905233302f8584c5ae84c65ac95388935a711d",
+  "resources": {
+    "minimum_MemAvailable_mib": 1536,
+    "minimum_disk_free_bytes": 2147483648,
+    "workers": 1
+  },
+  "schema": 1,
+  "scope_limit": "stdlib tests no ML; separate inherited regression has bounded no-update model and physical interface tests, not scientific navigation episodes",
+  "selected_tests": {
+    "historical": 885,
+    "historical_deselected": 15,
+    "operations": 287,
+    "tensor_no_update": 93
+  },
+  "source_identity_sha256": "1e12eef096b1478797604f95955997e5e1e82ee8abbff2830cafe5a9db515c45",
+  "test_episodes": 0,
+  "training_timesteps": 0
+}

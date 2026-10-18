@@ -6,6 +6,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from research_ops.storage import OpsError
+from _historical_budget_fixture import r28_budget_reader
 
 
 class InterruptedYawDiagnosticTests(unittest.TestCase):
@@ -34,7 +35,9 @@ class InterruptedYawDiagnosticTests(unittest.TestCase):
             self.assertEqual(list(Path(d).iterdir()),[])
 
     def test_actual_fixed_references_only_empty_validation_not_test(self):
-        r=self.module().references(Path(__file__).resolve().parents[2])
+        root=Path(__file__).resolve().parents[2]
+        with r28_budget_reader(root):
+            r=self.module().references(root)
         self.assertEqual([m['step'] for m in r['models']],[0,32768])
         self.assertEqual(len(r['cases']),4)
         self.assertEqual({v['distance_stage'] for v in r['cases']},{'SHORT','ORIGINAL'})

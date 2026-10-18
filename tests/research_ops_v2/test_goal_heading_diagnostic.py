@@ -2,6 +2,7 @@
 import copy,importlib,importlib.util,tempfile,unittest
 from pathlib import Path
 from research_ops.storage import OpsError,digest
+from _historical_budget_fixture import r28_budget_reader
 
 class GoalHeadingDiagnosticTests(unittest.TestCase):
     def module(self):
@@ -31,7 +32,9 @@ class GoalHeadingDiagnosticTests(unittest.TestCase):
             with self.assertRaises(OpsError):importlib.import_module(name).verify_checks({'source_identity':{}},Path(d))
             self.assertEqual(list(Path(d).iterdir()),[])
     def test_actual_sources_are_same_R26_original_validation_and_prior_only(self):
-        s=self.module().references(Path(__file__).resolve().parents[2])
+        root=Path(__file__).resolve().parents[2]
+        with r28_budget_reader(root):
+            s=self.module().references(root)
         self.assertEqual(s['model']['step'],0);self.assertEqual(len(s['cases']),2)
         self.assertTrue(all(v['scenario']['layout']=='empty' and v['scenario']['split']=='validation' for v in s['cases']))
         self.assertTrue(all(v['outcome']=='time_limit' for v in s['controls']))

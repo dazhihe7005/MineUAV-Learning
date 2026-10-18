@@ -1,3 +1,15 @@
+## AUTORL-R34：历史预算测试夹具修复（2026-10-18）
+
+仅六个测试文件修改，完整R28冻结快照只用于显式单测reader；真实当前R33FAIL仍被旧三个入口拒绝，生产门禁/Reward/PI/模型/预算不改。7新增RED→GREEN；首候选Tensor92PASS/1ERROR真实NO_GO后修旧loader夹具，候选02全通过后提交检查发现EOF空行；字节归档并修正后重冻03，重新完整1265选择PASS=287OPS+93无更新Tensor+885历史，15排除，非全仓。572保护文件及183项非修改旧源码一致，训练/optimizer/科学Validation/Test0。
+
+真实余额885888步/25200预留秒、head34 stopfalse，原自主授权未失效、未重置。R33永久FAIL/六科学NOT TESTED，16raw保留。不重复R33或从ZIP续训。独立预审通过；结果复审、Commit/正常OPSsync及远端以真实收据为准。发布后进入Level0/1 R33关闭证明及中间证据审计，再选择新独立研究。详见[中文报告](PHASE_AUTORL_R34_LEDGER_FIXTURE.md)。以下为历史快照。
+
+## AUTORL-R34：历史预算测试夹具修复（2026-10-18）
+
+仅六个测试文件修改，完整R28冻结快照只用于显式单测reader；真实当前R33FAIL仍被旧三个入口拒绝，生产门禁/Reward/PI/模型/预算不改。7新增RED→GREEN；首候选Tensor92PASS/1ERROR真实NO_GO后修旧loader夹具，重冻02并完整1265选择PASS=287OPS+93无更新Tensor+885历史，15排除，非全仓。572保护文件及183项非修改旧源码一致，训练/optimizer/科学Validation/Test0。
+
+真实余额885888步/25200预留秒、head34 stopfalse，原自主授权未失效、未重置。R33永久FAIL/六科学NOT TESTED，16raw保留。不重复R33或从ZIP续训。独立预审通过；结果复审、Commit/正常OPSsync及远端以真实收据为准。发布后进入Level0/1 R33关闭证明及中间证据审计，再选择新独立研究。详见[中文报告](PHASE_AUTORL_R34_LEDGER_FIXTURE.md)。以下为历史快照。
+
 ## AUTORL-R33：跨启动中断已封口，科学结果未测试（2026-10-18）
 
 唯一R33训练永久FAIL/INTERRUPTED，不重试、不ZIP续训。旧boot日志确认系统重启；最后385完整PPO更新到49280步/1540optimizer step/770epoch，343结束Train到49384步（已采样下界，精确停止步数未知）。SHORT135S，ORIGINAL96S84C28T；没有最终65536checkpoint、summary、complete或新Validation（0/计划36），Test0，六科学判据全部NOT TESTED。
