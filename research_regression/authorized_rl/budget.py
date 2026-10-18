@@ -44,6 +44,9 @@ def experiment(arm,steps,wall,*,seed=0,revision='R1'):
 
 
 def validate_experiment(p):
+    if p.get('schema')==33:
+        from .early_distance_profile import validate_early_mix_profile
+        return validate_early_mix_profile(p)
     if p.get('schema')==28:
         from .held_goal_profile import validate_held_goal_profile
         return validate_held_goal_profile(p)

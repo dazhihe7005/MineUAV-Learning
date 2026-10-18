@@ -70,7 +70,14 @@ def _supervise(protocol,*,root,termination):
         if (protocol.get('registration_sha256')!=digest(registration)
             or protocol.get('source_identity_sha256')!=digest(registration['source_identity'])):
             raise OpsError('experiment source/registration not the independently reviewed version')
-        if protocol['schema']==28:
+        if protocol['schema']==33:
+            if registration['phase_id']!='AUTORL-R33-EARLY-DISTANCE-MIX':raise OpsError('earlydistance requires reviewed R33 phase')
+            from .early_distance_profile import verify_early_mix_proof,verify_early_mix_checks,require_preregistered
+            from .closed_yaw_failure import eligible_after_closed_r24
+            require_preregistered(protocol,read_json(root/'mujoco/reports/autonomous_rl_early_distance_r33_prereg.json'))
+            verify_early_mix_proof(protocol,root);verify_early_mix_checks(protocol,root)
+            eligible_after_closed_r24(store.status(),root)
+        elif protocol['schema']==28:
             if registration['phase_id']!='AUTORL-R28-HELD-GOAL-YAW':raise OpsError('heldgoal requires reviewed R28 phase')
             from .held_goal_profile import verify_held_goal_proof,verify_held_goal_checks
             from .closed_yaw_failure import eligible_after_closed_r24

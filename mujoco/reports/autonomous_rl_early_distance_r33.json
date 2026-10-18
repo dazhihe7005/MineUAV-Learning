@@ -1,0 +1,608 @@
+{
+  "acceptance": {
+    "early_mix_benefit_over_R28": "NOT TESTED",
+    "empty_retention": "NOT TESTED",
+    "original_candidate": "NOT TESTED",
+    "original_learning_over_prior": "NOT TESTED",
+    "short_candidate": "NOT TESTED",
+    "short_prior_retention": "NOT TESTED"
+  },
+  "actual_new_validation_episodes": 0,
+  "actual_timesteps": "NOT VERIFIED",
+  "append_only_disposition": {
+    "bytes": 69070,
+    "path": ".research_local/autorl_r33_interruption_disposition_01.json",
+    "sha256": "e8c70c5f08a58e9bb88fc1bc8eb3b39edf57c791b4652ece8165684ecdff0bfb"
+  },
+  "automatic_retry": false,
+  "budget_after": {
+    "grant_sha256": "1897b889fd3fea3f269abed9533104c123ef4d81fd9843d1cbe0d448db1cb7fc",
+    "remaining_timesteps": 885888,
+    "remaining_wall_seconds": 25200,
+    "reserved_timesteps": 1114112,
+    "reserved_wall_seconds": 61200,
+    "stop_requested": false
+  },
+  "checkpoints": [
+    {
+      "postboot_model_optimizer_reload": "NOT TESTED",
+      "resume": "RESTART_REQUIRED",
+      "sidecar_sha256": "d5f841177991c097e946ff43b846da6d355cbbdb93b39937fd53a4700f738006",
+      "static_CRC_and_metadata": "PASS",
+      "step": 0,
+      "verified_ended_prefix": 0,
+      "verified_measured_reset_samples": 1,
+      "zip_sha256": "f1070bc0489067045abf1de0e34f3ed2857abf49363c98e6cad95e9b606cf403"
+    },
+    {
+      "postboot_model_optimizer_reload": "NOT TESTED",
+      "resume": "RESTART_REQUIRED",
+      "sidecar_sha256": "ebac12c1ad76365321003e417afd8fefc8f0c03dfeae6e4ee0655407571f0275",
+      "static_CRC_and_metadata": "PASS",
+      "step": 32768,
+      "verified_ended_prefix": 261,
+      "verified_measured_reset_samples": 262,
+      "zip_sha256": "33dfb0c293354899ffaf5eb046adff7863d772cf4aa4b76099b955415cdd79d0"
+    }
+  ],
+  "completion_analysis_executed": false,
+  "completion_finalizer_executed": false,
+  "configuration": {
+    "actor_parameterization": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+    "algorithm": "PPO",
+    "arm": "UNIFORM",
+    "budget_head_policy": "archive pre-run head32;only sanctioned new RESERVE/terminal append events may advance livehead;old1..32/grant/attempts immutable,no reset/refund",
+    "checkpoint_base_metadata_scope": "L6 describes base geometry/start/positiongoal and old task;actual newgoalYaw bound by independentmanifest/protocol/reset/episode/eval evidence",
+    "control_report_sha256": "54af04e2001f6612fea6a20d6af1837243a3a7b23c728ddf3d61d3b0921b35fc",
+    "control_summary_sha256": "542f70407f426a15caf60d567411e17ccdc2c2b8fd0e49a275af1868318cf36c",
+    "curriculum_rule": "first32768: atnaturalreset choose SHORT/ORIGINAL each.5 with separate distance RNG,baseuniform12;thenORIGINAL atnaturalreset andR28empty.5 weights",
+    "device": "cpu",
+    "early_distance_mix_configuration": {
+      "claim_limit": "probability per episode reset,not fraction of environment timesteps;no action/Reward/PI/physics change",
+      "distance_rng_scope": "separate reproducible PRNG state,not a proof of statistical independence",
+      "distance_rng_seed_offset": 330000,
+      "early_base_sampling": "UNIFORM12 regardlessdistance,not weightedempty;preserves earlybase marginal",
+      "early_original_probability_per_reset": 0.5,
+      "early_short_probability_per_reset": 0.5,
+      "late_base_sampling": "R28_ORIGINAL3empty each1/6 and9nonempty each1/18",
+      "late_distance_rng": "NOT_CONSUMED",
+      "phase_switch_step_semantics": "first reset at/after32768,not first earlyORIGINAL draw",
+      "switch_nominal_policy_step": 32768,
+      "switch_semantics": "next natural reset at/after32768,no mid-episode target change",
+      "version": "EARLY_DISTANCE_RESET_MIX_R33_V1"
+    },
+    "early_original_probability_per_reset": 0.5,
+    "evaluation": {
+      "actual_new_validation_episodes": 36,
+      "claim_limit": "single seed/small heldgoal Validation;retaining handprior not learned navigation,LiDAR dependence,obstacle-generalization or realflight proof",
+      "control_original_final_collision_max": 2,
+      "control_original_final_success": 0,
+      "early_mix_benefit_over_R28": "final heldoriginal successes >R28final0;collisions <=R28final2",
+      "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+      "held_empty_retention": "heldoriginal empty final successes >= own32k empty successes AND own32k empty successes >=1",
+      "held_original_candidate_collision_max": 1,
+      "held_original_candidate_success_min": 4,
+      "held_original_learning_over_prior": "final heldoriginal successes > own heldoriginal step0;collisions <= own step0",
+      "held_short_candidate_collision_max": 1,
+      "held_short_candidate_success_min": 4,
+      "held_short_prior_retention": "final heldshort successes >= own heldshort step0;collisions <= own step0",
+      "original_fixed_yaw0_transfer": "NOT TESTED",
+      "physical_sensor_failures_max": 0,
+      "reused_original_step0_episodes": 0,
+      "selection": "FINAL_CHECKPOINT"
+    },
+    "execution_profile": "HELD_GOAL_EARLY_DISTANCE_MIX_R33_V1",
+    "expected_initial_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+    "experiment_id": "ARL_R33_EARLY_DISTANCE_MIX_SEED0",
+    "failed_predecessor_experiment_id": "ARL_R6_DISTANCE_SEED0",
+    "feasibility_report_sha256": "f97b5266ecec75e9e8067ad9611026a3fd7d8e0db1bcb6743062f81919809ee7",
+    "feasibility_result_sha256": "395fe3891efc2b7917d087a939922d945bd9d3c1aace4e632efa95b366fd0a94",
+    "feedback_report_sha256": "cd99705ebc359fdad321e05913deeabf09a13704c5e9d1ef4da5968930a067f1",
+    "feedback_result_sha256": "85d36387eff30e4ee02e0c4ee8c9bcd398c72e3f2886469ee65e9406dbeac846",
+    "gae_lambda": 0.95,
+    "gamma": 0.99,
+    "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+    "heading_diagnostic_report_sha256": "b1f161de91d1d0aba235760a7361d5cf0dd3658a696d775566b86979205591e6",
+    "held_goal_manifest_sha256": "3a670bbbc1b841fc81efbc2b6f81f3a58e4d84583a5f5cebaa61820f0e8007b3",
+    "held_goal_train_task_count": 24,
+    "held_goal_validation_task_count": 12,
+    "historical_control_scope": "completeR28 same heldgoal/geometry/initialization/CNN/PPO/Reward/PI/timesteps control;newresetdistance distribution only",
+    "initial_std": 0.1,
+    "initialization": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+    "initialization_scope": "fresh unchanged handprior,not R28checkpoint or explicit actionfeedback/Yawzero wrapper",
+    "learning_rate": 3e-05,
+    "manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+    "n_steps": 128,
+    "optimizer_scope": "GLOBAL_ACTOR_AND_CRITIC_LR3e-5; L6/L7 network hashes are base provenance, not centered function identity",
+    "original_empty_probability": 0.5,
+    "original_train_sampling": "early bothdistance baseuniform12;late3empty each1/6 and9nonempty each1/18",
+    "prefix_policy_relationship": "fresh650a weights equalR28 step0;distance draws canchange experience atfirstreset,no same trainedprefix expected",
+    "preflight_report_sha256": "cece507b9522455906dd7b31bb7c2da8a55319ae2e31bff45219ea3716842065",
+    "preflight_result_sha256": "1107e3fe8388b6b36910a469a1a35324c51efac2a6fabeaf2dd41eb923876c5d",
+    "publication_repair_report_sha256": "c38cd4629da70a4ba61a1004fd73a478ff6d25bca7306804ca5764b99cb1fb2b",
+    "registration_sha256": "21591d609618e860d7f2ee001b0790a66af81332b477473584e586aacb001d17",
+    "repair_report_sha256": "ecbce36daebac0a561e88225430432679be85046f61101b6812989c511588efa",
+    "response_audit_report_sha256": "ab586479347674b0d8b59558e51c90e85bf18cfa17b8607975a8bf4f2f63134a",
+    "resume": "RESTART_REQUIRED",
+    "reward_version": "NAV_V2_COLLISION_PREFLIGHT_V1",
+    "schema": 33,
+    "seed": 0,
+    "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+    "short_prior_report_sha256": "437a1ca34846777754a95d766b7a8d59913f083268d85524507e1d2415907e60",
+    "short_prior_result_sha256": "3abcb783342e3f4429904a1a2188a0741e297df3eece98315af17589f61915d1",
+    "single_variable": "EARLY_ORIGINAL_DISTANCE_PROBABILITY_PER_NATURAL_RESET_0_TO_05_WITH_UNCHANGED_UNIFORM_EARLY_BASE_MARGINAL",
+    "source_identity_sha256": "0dae1070650a0ef14ebe4201fb43093c3468d7c561a0e24088c61819a15e7066",
+    "std_remains_trainable": true,
+    "test_episode_count": 0,
+    "timesteps": 65536,
+    "validation_steps": [
+      0,
+      32768,
+      65536
+    ],
+    "velocity_feedback_diagnostic_report_sha256": "1714a99a94675af18b1c446f4d0399bcc4d1d805fdc6febfa307861ceae7460a",
+    "wall_seconds": 3600,
+    "workers": 1,
+    "zero_state_claim": "STRUCTURAL_MEAN_IDENTITY_NOT_LEARNED_SUCCESS"
+  },
+  "disposition_review": {
+    "bytes": 851,
+    "path": ".research_local/autorl_r33_interruption_disposition_review_01.json",
+    "sha256": "f049abc86a5ad53dac6f539af522cb36bfdd1ca97eaabdc05c9f6ffc258efa8d"
+  },
+  "ended_train_episodes": 343,
+  "exact_worker_exit": "NOT AVAILABLE",
+  "exact_worker_signal": "UNKNOWN",
+  "execution_protocol_sha256": "f14fbcea537e4ae55cd73712bed3eb3f4b4a9f97d50253c4cc6a32f80388e686",
+  "execution_status": "INTERRUPTED",
+  "failure_publication_builder": {
+    "bytes": 10018,
+    "path": ".research_local/finalize_autorl_r33_interruption.py",
+    "sha256": "9263c280734ed1bf592e65907d813d5823e13f4c0a0ace50cbc150c3df3b099c"
+  },
+  "figures": {
+    "mujoco/reports/autonomous_rl_early_distance_r33/figures/episodes.png": "25351aaed8c13287d4dd7540239c5f3a4c0ac0d511e3f6162e401e83a1ea2dc0",
+    "mujoco/reports/autonomous_rl_early_distance_r33/figures/goals.png": "2a1e5826d63e6c993933b52617c75004a5c05844015ac3cc32561119efbbf2dc",
+    "mujoco/reports/autonomous_rl_early_distance_r33/figures/ppo_updates.png": "c01fd570ca11a20d77f20638941216e038e8dd87fe1b7d507486c770c100d46f",
+    "mujoco/reports/autonomous_rl_early_distance_r33/figures/resources.png": "2385015582228b24dc3622abf7882a7ca4a03c330e5483d7e398366e9297b4e2",
+    "mujoco/reports/autonomous_rl_early_distance_r33/figures/validation.png": "414a33e8d276bc2a50f86bc71ad00e96b26377b27cfbc1a36dc443a0b1ab1ac7"
+  },
+  "final_checkpoint": "NOT AVAILABLE",
+  "full_65536_steps_and_3600_seconds_permanently_charged": true,
+  "history": {
+    "historical_scoped_counts": {
+      "/home/keyousuke/MineUAV-Learning": 42935
+    },
+    "historical_untracked_counts": {
+      "/home/keyousuke/MineUAV-Learning": 87
+    },
+    "new_untracked_names": {
+      "/home/keyousuke/MineUAV-Learning": []
+    },
+    "protected_count": 1404,
+    "unchanged": true
+  },
+  "implementation_status": "FAIL",
+  "implementation_status_scope": "complete65536step/36Val experiment interrupted;code/tests separately verified",
+  "initial_weights": {
+    "actor": "20decf673da33a227da3a76bb2171ec5ac34aac301db04cbde45132b63d24021",
+    "critic": "c8eb88d063c5a2b4ec9545c8e5228322dc42d19e876ac78f3549624606e44539",
+    "policy": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4"
+  },
+  "initialization": {
+    "actor_mlp_passes": 2,
+    "actual_std": [
+      0.09999999403953552,
+      0.09999999403953552,
+      0.09999999403953552,
+      0.09999999403953552
+    ],
+    "assigned_policy_sha256": "650a5841c96a054bf43db9a54a6c5c6da6af8b4b362e4c934a2121d0a16849a4",
+    "canonical_comparison_only": true,
+    "canonical_policy_sha256": "4f15468a15bce468f58d7fe5ed81434558ee9bb0c68a82b83ee39171a034758d",
+    "execution_profile": "HELD_GOAL_EARLY_DISTANCE_MIX_R33_V1",
+    "initialization": "FRESH_RANDOM_SEED0_PLUS_HAND_WRITTEN_PRIOR_NOT_CHECKPOINT",
+    "kind": "FRESH_SEED0_HAND_PRIOR_CENTERED_INITIAL_STD01",
+    "optimizer_parameter_objects_preserved": true,
+    "optimizer_updates": 0,
+    "parameters": 170857,
+    "prior": {
+      "alpha": 0.2,
+      "analytic_error_bound": 0.016314780826418795,
+      "beta": 0.5,
+      "kind": "HAND_WRITTEN_PRIOR_NOT_LEARNED_AVOIDANCE",
+      "max_clipped_action_error": 0.02,
+      "normalized_gains": [
+        0.2222222222222222,
+        0.2222222222222222,
+        0.3333333333333333,
+        1.0
+      ],
+      "optimizer_updates": 0,
+      "state_feature_indices": [
+        64,
+        65,
+        66,
+        70
+      ],
+      "version": "ANALYTIC_STATE_MEAN_TANH_V1"
+    },
+    "shared_cnn_passes": 1,
+    "single_changed_parameter_from_R14_initial": "log_std",
+    "std_remains_trainable": true,
+    "step0_usage": "NEW_EVALUATION_ONLY_NOT_TRAINING_INITIALIZATION_CHECKPOINT",
+    "version": "SAME_BACKGROUND_STATE_CENTERED_ACTOR_V1",
+    "zero_state_mean": "STRUCTURAL_IDENTITY_NOT_LEARNED_SUCCESS"
+  },
+  "interruption_audit": {
+    "bytes": 77983,
+    "path": ".research_local/autorl_r33_interruption_audit/run_01/result.json",
+    "sha256": "255380d57eee20bc4142a1a0a6ac5a86942d8cb504ce81cfbc9e609f437069a0"
+  },
+  "journal": {
+    "command": [
+      "journalctl",
+      "-b",
+      "189bfa8c5d0c485782e2b221364d91d7",
+      "--since",
+      "2026-10-17 11:43:25 UTC",
+      "--until",
+      "2026-10-17 11:44:10 UTC",
+      "-o",
+      "json",
+      "--no-pager"
+    ],
+    "path": ".research_local/autorl_r33_interruption_audit/run_01/old_boot_shutdown.jsonl",
+    "records": 669,
+    "returncode": 0,
+    "sha256": "2db6aea3cd5d5344fd7c853a2b6166bcccab8b633d9cc0b637abc711e9fd8da8",
+    "shutdown_messages": [
+      {
+        "message": "<info>  [1792237415.7042] caught SIGTERM, shutting down normally.",
+        "realtime_usec": "1792237415704250"
+      },
+      {
+        "message": "Finished System Reboot.",
+        "realtime_usec": "1792237417142976"
+      },
+      {
+        "message": "Reached target System Reboot.",
+        "realtime_usec": "1792237417143007"
+      },
+      {
+        "message": "Shutting down.",
+        "realtime_usec": "1792237417143037"
+      },
+      {
+        "message": "Sending SIGTERM to remaining processes...",
+        "realtime_usec": "1792237417173707"
+      },
+      {
+        "message": "Journal stopped",
+        "realtime_usec": "1792237417173769"
+      }
+    ]
+  },
+  "last_ended_episode_policy_step": 49384,
+  "last_verified_complete_optimizer_update_step": 49280,
+  "last_verified_optimizer_steps": 1540,
+  "last_verified_ppo_epochs": 770,
+  "later_measured_reset_binding": "NOT AVAILABLE final scheduler snapshot absent;all343 ended row task metadata separately verified",
+  "logged_complete_rollout_count": 385,
+  "new_training_ready": "NO",
+  "next_action": "Publish immutable R33FAIL then Level0/1 audit closed interruption proof and remaining safe research;no R33 retry/ZIPresume/automatic replacement training.",
+  "observed_interruption": "CONFIRMED_CROSS_BOOT_SYSTEM_REBOOT",
+  "phase_id": "AUTORL-R33-EARLY-DISTANCE-MIX",
+  "planned_training_timesteps": 65536,
+  "planned_validation_episodes": 36,
+  "posthoc_collector": {
+    "bytes": 9147,
+    "path": ".research_local/audit_autorl_r33_interruption.py",
+    "sha256": "88fb5630fffda645f0b747c9a7d6ce195e181c499b4578544ae7f44a3c812462"
+  },
+  "protected_immutable_files_unchanged": 547,
+  "proven_sampled_step_lower_bound": 49384,
+  "raw_files": [
+    {
+      "bytes": 12436,
+      "mtime_unix_ns": 1792235991415004452,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/ARL_R33_EARLY_DISTANCE_MIX_SEED0_STEP0.json",
+      "sha256": "d5f841177991c097e946ff43b846da6d355cbbdb93b39937fd53a4700f738006"
+    },
+    {
+      "bytes": 731581,
+      "mtime_unix_ns": 1792235991412004400,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/ARL_R33_EARLY_DISTANCE_MIX_SEED0_STEP0.zip",
+      "sha256": "f1070bc0489067045abf1de0e34f3ed2857abf49363c98e6cad95e9b606cf403"
+    },
+    {
+      "bytes": 343214,
+      "mtime_unix_ns": 1792236947745469344,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/ARL_R33_EARLY_DISTANCE_MIX_SEED0_STEP32768.json",
+      "sha256": "ebac12c1ad76365321003e417afd8fefc8f0c03dfeae6e4ee0655407571f0275"
+    },
+    {
+      "bytes": 2117129,
+      "mtime_unix_ns": 1792236947733469616,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/ARL_R33_EARLY_DISTANCE_MIX_SEED0_STEP32768.zip",
+      "sha256": "33dfb0c293354899ffaf5eb046adff7863d772cf4aa4b76099b955415cdd79d0"
+    },
+    {
+      "bytes": 51661,
+      "mtime_unix_ns": 1792236007635280988,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/bounded_traces.jsonl",
+      "sha256": "6d89e729d5e5218c191db6e2ab68bebe9013b96913620b8836ad7b749105fb9b"
+    },
+    {
+      "bytes": 144,
+      "mtime_unix_ns": 1792235988777959043,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/child.json",
+      "sha256": "3e91c855831e745ad6d8b7e0c3924be1ca8204cccc17fad8d546fbd6fd7d5143"
+    },
+    {
+      "bytes": 2728,
+      "mtime_unix_ns": 1792235989545972281,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/console.txt",
+      "sha256": "c1c2ac49ed925364b7a590a7fee855ba3908f3792c8a2ff2aaa7de75e99c5503"
+    },
+    {
+      "bytes": 535771,
+      "mtime_unix_ns": 1792237415578920355,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/episode_details.jsonl",
+      "sha256": "6f1426bc30ab7e93ee9794d0f2f6d000f4c202083828cfd76573463200c61d46"
+    },
+    {
+      "bytes": 369,
+      "mtime_unix_ns": 1792237409221968951,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/formal_progress.json",
+      "sha256": "8fa56cf03c4ec1fb6141dd1df1e39a08d8281a48594bf5ba00b30faa2feb31d4"
+    },
+    {
+      "bytes": 242,
+      "mtime_unix_ns": 1792235991422004572,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/initial_weights.json",
+      "sha256": "0ed538878c8b8a8e3f996e6047e38121674ef61d1fce63cd1ff1958d32490e2e"
+    },
+    {
+      "bytes": 1465,
+      "mtime_unix_ns": 1792235991420004538,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/initialization.json",
+      "sha256": "4abd7bc49179c3764558a00c3f30b03c60d19de330d5e51ddee8fd75cfcd34c2"
+    },
+    {
+      "bytes": 302,
+      "mtime_unix_ns": 1792235988776959026,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/permit.json",
+      "sha256": "5817c9143f65ccbb80c204723ea642c28996ac1af1523db46af70237215d27d0"
+    },
+    {
+      "bytes": 209083,
+      "mtime_unix_ns": 1792237412768941737,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/ppo_updates.jsonl",
+      "sha256": "c304beb4c95bc75d9aa6fac09447ce917a4697b9e8dbcba62836047475db30c6"
+    },
+    {
+      "bytes": 6505,
+      "mtime_unix_ns": 1792235988775959009,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/protocol.json",
+      "sha256": "1a21ec53685dda97e0c7e241f5f3cce464f85cd11d47314d41cc209b9021fa9e"
+    },
+    {
+      "bytes": 85987,
+      "mtime_unix_ns": 1792237412719942111,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/resource_samples.jsonl",
+      "sha256": "02bca48839e0fd8c9c9d0b7cefd368ede1d542516584a85551cedc5fbaca053c"
+    },
+    {
+      "bytes": 178109,
+      "mtime_unix_ns": 1792237415577920362,
+      "path": ".research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/train_episodes.jsonl",
+      "sha256": "8037fcd68a3293c99a7161d475cd22f1389c689092742f2cfb0b837c4d7d9e2a"
+    }
+  ],
+  "reboot_initiator_and_reason": "UNKNOWN",
+  "refund_or_reinitialization": false,
+  "registration_sha256": "21591d609618e860d7f2ee001b0790a66af81332b477473584e586aacb001d17",
+  "resources": {
+    "OOM_at_interruption": "NOT PROVEN; sampled healthy resources and bounded journal do not establish exact process exit cause",
+    "available_prefix_last_resource": {
+      "cpu_elapsed_s": 1317.689669851,
+      "disk_free_bytes": 69491863552,
+      "mem_available_mib": 8322.4453125,
+      "policy_step": 49280,
+      "rss_current_mib": 1253.1796875,
+      "rss_peak_mib": 1667.59375,
+      "wall_elapsed_s": 1422.2539536650002
+    },
+    "exact_final_physics_ticks": "NOT VERIFIED",
+    "full_wall_seconds": "NOT AVAILABLE",
+    "recorded_prefix_hwm_rss_mib": 1667.59375,
+    "whole_run_hwm_rss": "NOT AVAILABLE"
+  },
+  "result_review": {
+    "critical": 0,
+    "evidence": {
+      "path": ".research_local/autorl_r33_failure_results_review_01.json",
+      "sha256": "1a1dbea9e4db4dbeff840832551385e107cc684b8d3f2bc53e179f8c54d93561"
+    },
+    "important": 0,
+    "method": "independent_read_only_actualraw_statistical_report_figures_history_and_publication_review",
+    "new_minor": 1,
+    "scope": "truthfulFAIL/INTERRUPTEDmetadata-onlyseal26registeredstage;readinessFalse;no training/retry/resume/refund/testgateexception",
+    "source_identity_sha256": "0dae1070650a0ef14ebe4201fb43093c3468d7c561a0e24088c61819a15e7066",
+    "status": "GO_REPORT_ONLY"
+  },
+  "resume": "RESTART_REQUIRED",
+  "review": {
+    "critical": 0,
+    "evidence": {
+      "bytes": 1870,
+      "path": ".research_local/autorl_r33_pre_review_01.json",
+      "sha256": "07b0b8d1324d9f498c76f86160b4026196ca81bb5718e7b376409e5ea9d52e9b"
+    },
+    "important": 0,
+    "method": "independent_read_only_precise_source_current1258_helpers_RNG_actualexposure_safety_admission",
+    "scope": "PRE_RUN admission only;not final result certification",
+    "source_identity_sha256": "0dae1070650a0ef14ebe4201fb43093c3468d7c561a0e24088c61819a15e7066",
+    "status": "GO"
+  },
+  "runtime_or_test_source_modified_after_start": false,
+  "scientific_result": "NOT TESTED",
+  "single_variable": "first32768 natural reset distance mix SHORT/ORIGINAL50/50;late unchanged R28 original/empty0.5;no action shim",
+  "source_identity_sha256": "0dae1070650a0ef14ebe4201fb43093c3468d7c561a0e24088c61819a15e7066",
+  "stage_metrics": {
+    "ORIGINAL": {
+      "closed_policy_steps": 39228,
+      "ended_episodes": 208,
+      "mean_final_goal_error_m": 0.6231148139733887,
+      "mean_return": 3.2436269437192027,
+      "terminal_counts": {
+        "collision": 84,
+        "success": 96,
+        "time_limit": 28
+      }
+    },
+    "SHORT": {
+      "closed_policy_steps": 10156,
+      "ended_episodes": 135,
+      "mean_final_goal_error_m": 0.08345800744665996,
+      "mean_return": 10.203696183291457,
+      "terminal_counts": {
+        "success": 135
+      }
+    }
+  },
+  "summary_complete_supervisor_terminal": "MISSING",
+  "test_episodes": 0,
+  "tests": {
+    "evidence": {
+      "bytes": 84619,
+      "path": ".research_local/autorl_r33_operations_final_01.json",
+      "sha256": "b875b4dde2963218a43db4811ed134f3623e78da18703fd0af136a7445ceff71"
+    },
+    "excluded": 15,
+    "new_runtime_tests": 13,
+    "postboot_operations": {
+      "cause": "historical positive fixtures consume mutable current ledger;pendingR33 correctly rejected;no gate/source modified",
+      "complete": false,
+      "errors": 12,
+      "evidence": {
+        "bytes": 97793,
+        "path": ".research_local/autorl_r33_postboot_operations_01.json",
+        "sha256": "5a17eb440e9f2892ee2ffd2d0f7b15837893cfb1e3ad4bb07a371bf6a079cf59"
+      },
+      "failed_nodes": [
+        {
+          "nodeid": "test_closed_yaw_failure.ClosedYawFailureTests.test_current_true_ledger_can_only_use_new_separately_reviewed_profiles",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_closed_yaw_failure.ClosedYawFailureTests.test_forged_balance_cannot_replace_actual_grant_ledger",
+          "outcome": "FAIL"
+        },
+        {
+          "nodeid": "test_early_distance_profile.EarlyDistanceProfileTests.test_completed_control_proof_is_real_and_missing_evidence_blocks",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_goal_heading_diagnostic.GoalHeadingDiagnosticTests.test_actual_sources_are_same_R26_original_validation_and_prior_only",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_interrupted_yaw_diagnostic.InterruptedYawDiagnosticTests.test_actual_fixed_references_only_empty_validation_not_test",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_policy_function_probe.PolicyFunctionProbeTests.test_bad_reference_digest_is_rejected_before_deserialization",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_policy_function_probe.PolicyFunctionProbeTests.test_exact_published_checkpoint_membership_not_arbitrary_path",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_velocity_damping_diagnostic.VelocityDampingContractTests.test_actual_stop_count_is_required_for_success",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_velocity_damping_diagnostic.VelocityDampingContractTests.test_exact_two_R30_yawzero_timeout_controls_and_same_final_weights",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_velocity_damping_diagnostic.VelocityDampingContractTests.test_wrong_case_and_unverified_feedback_failclosed",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_yaw_action_diagnostic.YawActionContractTests.test_exact_final_model_two_actual_timeout_controls_not_test_scenes",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_yaw_action_diagnostic.YawActionContractTests.test_incomplete_or_wrong_task_cannot_support_yaw_contrast",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_yaw_action_diagnostic.YawActionContractTests.test_stopping_samples_and_real_tick_counts_are_required",
+          "outcome": "ERROR"
+        }
+      ],
+      "failures": 1,
+      "pass": 267,
+      "tests_run": 280
+    },
+    "postboot_pure_contract_GREEN": {
+      "bytes": 538,
+      "path": ".research_local/autorl_r33_interruption_contract_GREEN_01.json",
+      "sha256": "fad8319f6033477a5049ea4f91473d90db97b29bff8e9d06e2107698b96eea5d"
+    },
+    "postboot_pure_contract_RED": {
+      "bytes": 3666,
+      "path": ".research_local/autorl_r33_interruption_contract_RED_01.json",
+      "sha256": "f99d9d620dcf7e3e47aa9f070e2498b88e67fd2678f47532804457b360ef699e"
+    },
+    "postboot_pure_contract_tests": 4,
+    "postboot_status": "FAIL",
+    "postboot_tensor_and_historical": "NOT RERUN;source unchanged;prelaunch receipts retained",
+    "postclosure_operations": {
+      "cause": "after legalFAILclosure pending-only rejections disappear;four historical-positive assertions still assume no newfailedID;production gates remainunchanged",
+      "complete": false,
+      "errors": 3,
+      "evidence": {
+        "path": ".research_local/autorl_r33_postclosure_operations_02.json",
+        "sha256": "e42c59497fecc6ed4c3a9c8a2929e3b48d4c8abdb807698c7a48637431b1530a"
+      },
+      "failed_nodes": [
+        {
+          "nodeid": "test_closed_yaw_failure.ClosedYawFailureTests.test_current_true_ledger_can_only_use_new_separately_reviewed_profiles",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_closed_yaw_failure.ClosedYawFailureTests.test_forged_balance_cannot_replace_actual_grant_ledger",
+          "outcome": "FAIL"
+        },
+        {
+          "nodeid": "test_goal_heading_diagnostic.GoalHeadingDiagnosticTests.test_actual_sources_are_same_R26_original_validation_and_prior_only",
+          "outcome": "ERROR"
+        },
+        {
+          "nodeid": "test_interrupted_yaw_diagnostic.InterruptedYawDiagnosticTests.test_actual_fixed_references_only_empty_validation_not_test",
+          "outcome": "ERROR"
+        }
+      ],
+      "failures": 1,
+      "pass": 276,
+      "tests_run": 280
+    },
+    "pre_run_checks": {
+      "bytes": 1047,
+      "path": ".research_local/autorl_r33_checks_01.json",
+      "sha256": "6998baad4edb6fef817b24b3848612377b6bdc4cb377ca10bedaf73d0e0eb5fb"
+    },
+    "pre_run_historical_pass": 885,
+    "pre_run_operations_pass": 280,
+    "pre_run_tensor_pass": 93,
+    "pre_run_total_pass": 1258,
+    "scope": "PRELAUNCH_ONLY_CURRENT_IDENTICAL_SOURCE1258;postbootFAIL separately disclosed;not full repository",
+    "status": "PASS",
+    "test_optimizer_updates": 0
+  }
+}

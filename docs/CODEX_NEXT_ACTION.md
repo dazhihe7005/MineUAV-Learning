@@ -1,3 +1,25 @@
+## AUTORL-R33：跨启动中断已封口，科学结果未测试（2026-10-18）
+
+唯一R33训练永久FAIL/INTERRUPTED，不重试、不ZIP续训。旧boot日志确认系统重启；最后385完整PPO更新到49280步/1540optimizer step/770epoch，343结束Train到49384步（已采样下界，精确停止步数未知）。SHORT135S，ORIGINAL96S84C28T；没有最终65536checkpoint、summary、complete或新Validation（0/计划36），Test0，六科学判据全部NOT TESTED。
+
+独立处置GO后只追加34FAIL，保留65536步/3600秒全额预留；余额885888步/25200预留秒stopfalse。187运行源码、547保护文件及16项本次raw未改。启动前1258选择PASS/15排除；重启后280OPS为267PASS/1FAIL/12ERROR（旧正例耦合实时pending账本，运行门禁正确拒绝），另4项纯记账RED→GREEN。不能称重启后全绿，不能把231个Train成功当最终导航能力。
+
+当前按正常OPS发布FAIL报告并独立结果复审；实际Commit/Push只看核验收据。随后进入Level0/1历史快照夹具修复与R33关闭证明审计，再判断独立研究准入；原自主授权仍有效，不重置预算、不绕过门禁。恢复先核当前HEAD/远端、账本34、进程锁与下面结果路径，不执行旧launch/prepare/成功分析器。详见 docs/PHASE_AUTORL_R33_EARLY_DISTANCE_MIX.md 和 mujoco/reports/autonomous_rl_early_distance_r33.json。
+
+用户要求观看的历史仿真回放另存 .research_local/user_preview_20261018_02/（local-only，CPU软件渲染、真实旧qpos/qvel、mj_forward而非mj_step，无推理/优化器）。它不是新实验或正在训练的实况；R27手写先验成功与R30旧训练模型加Yaw约束超时并非公平同条件对照。以下RUNNING/冻结候选段均为历史快照。
+
+## AUTORL-R33 唯一实际训练已启动（2026-10-17）
+
+完整1258选择PASS/15排除、独立精确GO C0/I0后，正常register/recover/doctor/audit/prepare与唯一launch已执行。EXECf14fbcea537e4ae55cd73712bed3eb3f4b4a9f97d50253c4cc6a32f80388e686，187SOURCE0dae1070650a0ef14ebe4201fb43093c3468d7c561a0e24088c61819a15e7066冻结；真实事件33已预留65536步/3600秒，余额885888步/25200预留秒stopfalse。当前RESERVED_OR_INTERRUPTED是账本进行中状态，不代表已失败或已完成。
+
+恢复先查autorl_r33_launch_attempt_01、prelaunch_01、真实主管/worker/guard进程和共享锁、supervisor_01、run内complete/summary与账本终态。**不得重复prepare/launcher/attempt、旧ZIP续训或退款**。运行目录`.research_local/authorized_rl_v1/runs/ARL_R33_EARLY_DISTANCE_MIX_SEED0/`，完整65536/36Val/主管exit0/终态COMPLETE全部核实后，才用已独立审查绑定的analysis54843996…/contractabdd6312…/finalizeraf5f4e8c…进行分析与发布，随后结果复审/26文件Commit/正常OPSsync/远端，再核预算与stop/resources继续。若中断，保留唯一attempt并按RESTART_REQUIRED只读审计，不自动重试。电脑关机后不会继续执行。以下为启动前历史。
+
+## AUTORL-R33 冻结候选：早期距离混合（2026-10-17，尚未训练）
+
+R32已正常发布4e39632430730bbb4670770ca7ce7c2754e142d4，不重做。新REG21591d609618e860d7f2ee001b0790a66af81332b477473584e586aacb001d17、187SOURCE0dae1070650a0ef14ebe4201fb43093c3468d7c561a0e24088c61819a15e7066、EXECf14fbcea537e4ae55cd73712bed3eb3f4b4a9f97d50253c4cc6a32f80388e686；前32768自然reset距离SHORT/ORIGINAL各.5、base均匀12，后半保持R28 original/empty.5，fresh650a与CNN/Reward/PPO/PI/物理/24k不变。9STD+4Tensor缺接口/旧worker错误分派实际RED→GREEN（全套1258准入仍需真实完成），早审无C/I但不是executionGO。CPU1/seed0候选65536/3600，实际granthead32/951424步/28800秒stopfalse，尚无真实R33protocol/run/reserve。
+
+恢复先核checks/精确pre_review/唯一prepare与launchattempt/账本、进程与锁，绝不重复旧实验。正常新登记前旧OPS源码不匹配属本阶段开发，不reset/reinit；新训练允许账本合法追加，旧head32 payload/SHA归档、旧1..32/grant/raw不可改，不静默豁免。完整准入和独立GO前不执行optimizer。之后实际训练/分析/MDJSON图/独立复审/26文件Commit/正常sync/远端，再按余额继续。以下为历史。
+
 ## AUTORL-R32 结果已复审，发布后准备独立学习对照（2026-10-17）
 
 1886行旧trace描述性审计完成；analysisPASS，新学习NOT TESTED/因果UNVERIFIED。两组final操作的实际近目标平均速度约.50m/s，不能由约.67s相关峰宣称真实控制延迟；无电机/100Hz中间/每行LiDAR完整证据。1245选择PASS/15exclude，533旧文件/原178SOURCE/账本head32不变；余额951424训练步/28800预留秒stopfalse，训练/推理/新物理/新episode/Test0。

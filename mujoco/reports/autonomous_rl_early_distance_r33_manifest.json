@@ -1,0 +1,1237 @@
+{
+  "base_manifest_sha256": "f6ee34a153e6cb4d95fa43e7214d6d67c9b534835362be275363e14ec87b75d5",
+  "schema": "R28_HELD_INITIAL_ENU_GOAL_YAW_TASKS_V1",
+  "scope": "new task goals only;unchanged geometry/start/target-position/initialYaw,not original goalYaw0 task",
+  "short_manifest_sha256": "f93b6dce91abeadbde8ebaf619a3c5839cbb9312cca2402f2868472345d5faf3",
+  "test": "SEALED_NOT_INCLUDED",
+  "train": {
+    "ORIGINAL": [
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -1.1761304,
+        "identity_sha256": "dfc38627aa6bb75a2bee873ffa2920b5feb40b6eb8e26068ab33ec04008f1694",
+        "scenario": {
+          "identity_sha256": "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+          "layout": "empty",
+          "obstacle_configuration_hash": "d8502ffc90eb4e545e426ae0436814c15a447f8cf5cd63138514d9298dce2e17",
+          "obstacle_variation": [],
+          "scene_seed": 41000,
+          "split": "train",
+          "start_seed": 141000,
+          "start_xyz": [
+            -0.0503064,
+            -0.0709097,
+            1.0
+          ],
+          "start_yaw_rad": -1.1761304,
+          "target_seed": 241000,
+          "target_xyz": [
+            1.9765056,
+            -0.0914893,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -1.0301523,
+        "identity_sha256": "0d7a86cd67c01bd4995b8b79b8cd518b5cab8bfe4c43f0320a3dc4c6639afaf5",
+        "scenario": {
+          "identity_sha256": "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+          "layout": "front_box",
+          "obstacle_configuration_hash": "9f80e09c817b87d92e12c93068a6335e1f3f72fecf106acedd246fd21a3423a6",
+          "obstacle_variation": [
+            [
+              0.0996531,
+              -0.2019382,
+              0.9978964
+            ]
+          ],
+          "scene_seed": 41001,
+          "split": "train",
+          "start_seed": 141001,
+          "start_xyz": [
+            0.0780003,
+            -0.1084441,
+            1.0
+          ],
+          "start_yaw_rad": -1.0301523,
+          "target_seed": 241001,
+          "target_xyz": [
+            1.9471578,
+            0.1662212,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -1.3300971,
+        "identity_sha256": "c25c81d84945a4008ee32580a3edd3bc222a82027c69294a23e0d3115da76f50",
+        "scenario": {
+          "identity_sha256": "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+          "layout": "side_pair",
+          "obstacle_configuration_hash": "5bd3214fb42c619328ae006d5ae5e1c6367af8c5da7370482ca3d19459fc02a3",
+          "obstacle_variation": [
+            [
+              -0.0263049,
+              0.0357125,
+              1.1895347
+            ],
+            [
+              -4.28e-05,
+              -0.0726642,
+              1.050846
+            ]
+          ],
+          "scene_seed": 41002,
+          "split": "train",
+          "start_seed": 141002,
+          "start_xyz": [
+            0.0169887,
+            -0.0452211,
+            1.0
+          ],
+          "start_yaw_rad": -1.3300971,
+          "target_seed": 241002,
+          "target_xyz": [
+            1.9419767,
+            0.1421112,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -1.8047378,
+        "identity_sha256": "4efc6bb3eff3fe3cab55caeef596225a0eddbc0dfb3e99e57f21b67c4d99e874",
+        "scenario": {
+          "identity_sha256": "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+          "layout": "detour",
+          "obstacle_configuration_hash": "08b398c21469de480d1d693928b05293c0a9351c7c764998e1a0dcd74fb6b8a1",
+          "obstacle_variation": [
+            [
+              -0.0062002,
+              -0.2062267,
+              1.1472422
+            ],
+            [
+              -0.0712984,
+              0.1480872,
+              0.9755263
+            ]
+          ],
+          "scene_seed": 41003,
+          "split": "train",
+          "start_seed": 141003,
+          "start_xyz": [
+            -0.1746756,
+            0.2997526,
+            1.0
+          ],
+          "start_yaw_rad": -1.8047378,
+          "target_seed": 241003,
+          "target_xyz": [
+            1.9637311,
+            0.0103784,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 1.6616317,
+        "identity_sha256": "a9fbc33d791bd5ecd65ef1155c8a5beeca45fb5c8c1ee79df2494d1b8251204f",
+        "scenario": {
+          "identity_sha256": "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+          "layout": "channel",
+          "obstacle_configuration_hash": "c1bde6f25ac38c94dfd752680fb6e2c790a839b6a4f8c56437f1920521b2c295",
+          "obstacle_variation": [
+            [
+              -0.0305128,
+              0.0206339,
+              1.0019997
+            ],
+            [
+              0.1032185,
+              0.0222619,
+              0.8658643
+            ]
+          ],
+          "scene_seed": 41004,
+          "split": "train",
+          "start_seed": 141004,
+          "start_xyz": [
+            -0.0705515,
+            -0.2032268,
+            1.0
+          ],
+          "start_yaw_rad": 1.6616317,
+          "target_seed": 241004,
+          "target_xyz": [
+            1.9601126,
+            0.0118547,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 0.6747245,
+        "identity_sha256": "0e16941b0eb8b6a70b1359b411bff3c55244219a3f1d8583799b1f9e8c08c6e5",
+        "scenario": {
+          "identity_sha256": "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+          "layout": "empty",
+          "obstacle_configuration_hash": "c85940ca34e17fc044f43e6e3ab2a52c1e308a5a05aeabfa88ac7507086f7778",
+          "obstacle_variation": [],
+          "scene_seed": 41005,
+          "split": "train",
+          "start_seed": 141005,
+          "start_xyz": [
+            -0.0836704,
+            0.0571978,
+            1.0
+          ],
+          "start_yaw_rad": 0.6747245,
+          "target_seed": 241005,
+          "target_xyz": [
+            1.9766657,
+            0.066806,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 2.3226625,
+        "identity_sha256": "20bae877eb78ef8d18d87aa416d28ead7ea91286fd843ada9c2988b2a9399e27",
+        "scenario": {
+          "identity_sha256": "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+          "layout": "front_box",
+          "obstacle_configuration_hash": "87717b1076dd90f2375ce4c10a9802b61f4a7b6a51bf4e61d6c96c2a481231f7",
+          "obstacle_variation": [
+            [
+              0.1242362,
+              0.171486,
+              1.132154
+            ]
+          ],
+          "scene_seed": 41006,
+          "split": "train",
+          "start_seed": 141006,
+          "start_xyz": [
+            -0.0487935,
+            -0.2457135,
+            1.0
+          ],
+          "start_yaw_rad": 2.3226625,
+          "target_seed": 241006,
+          "target_xyz": [
+            1.9539395,
+            -0.1564169,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 2.1905155,
+        "identity_sha256": "f45dad78f17ddbfaa68e3e72c1de8666560bd0287c2725887b67d41e4d484e5d",
+        "scenario": {
+          "identity_sha256": "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+          "layout": "side_pair",
+          "obstacle_configuration_hash": "9645b93ebc1f36dca3523f96f0d84d5ee85a377b2ee557355d310e898ecf8b64",
+          "obstacle_variation": [
+            [
+              -0.1055013,
+              -0.0659062,
+              1.0025937
+            ],
+            [
+              0.024353,
+              0.1631752,
+              0.8361876
+            ]
+          ],
+          "scene_seed": 41007,
+          "split": "train",
+          "start_seed": 141007,
+          "start_xyz": [
+            -0.1670658,
+            0.1210261,
+            1.0
+          ],
+          "start_yaw_rad": 2.1905155,
+          "target_seed": 241007,
+          "target_xyz": [
+            1.9698097,
+            0.1233911,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -0.12239560000000001,
+        "identity_sha256": "ea2d08ed61fca7a35f9b1fe0eeb48d31ddb4a38c265a1d00c18d6d3b6e5b57cf",
+        "scenario": {
+          "identity_sha256": "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+          "layout": "detour",
+          "obstacle_configuration_hash": "b61378daf091f62bb74ff68f6541405832be6fe5e92cdbe4e476688f6eb6a7fd",
+          "obstacle_variation": [
+            [
+              0.1402849,
+              0.1040301,
+              0.9128544
+            ],
+            [
+              -0.1982575,
+              0.1615301,
+              1.004311
+            ]
+          ],
+          "scene_seed": 41008,
+          "split": "train",
+          "start_seed": 141008,
+          "start_xyz": [
+            -0.0761844,
+            0.1303479,
+            1.0
+          ],
+          "start_yaw_rad": -0.1223956,
+          "target_seed": 241008,
+          "target_xyz": [
+            1.9715636,
+            -0.051198,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 1.1892434,
+        "identity_sha256": "e4a53284b4cbcba95059fa1f0b180491286bdcc23786935d4767e783d0bc8803",
+        "scenario": {
+          "identity_sha256": "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+          "layout": "channel",
+          "obstacle_configuration_hash": "8195e008d0552db0a5ae77857a3389789feb26ea5bf17080b8f19be3ee42fd53",
+          "obstacle_variation": [
+            [
+              -0.0022273,
+              0.0303716,
+              0.8898724
+            ],
+            [
+              0.1044016,
+              -0.0638676,
+              0.8761821
+            ]
+          ],
+          "scene_seed": 41009,
+          "split": "train",
+          "start_seed": 141009,
+          "start_xyz": [
+            0.0925123,
+            -0.2403769,
+            1.0
+          ],
+          "start_yaw_rad": 1.1892434,
+          "target_seed": 241009,
+          "target_xyz": [
+            1.9495167,
+            0.1300323,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -0.1170396,
+        "identity_sha256": "e7806fd226c232ebf7841ddbbb594af5ccd3e965ad69cae7b5ca9d4a3b32b503",
+        "scenario": {
+          "identity_sha256": "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+          "layout": "empty",
+          "obstacle_configuration_hash": "5165a98ab03db7be80be20dfbd99eeb3963d8d459d48ce4f3318b04669fbefe2",
+          "obstacle_variation": [],
+          "scene_seed": 41010,
+          "split": "train",
+          "start_seed": 141010,
+          "start_xyz": [
+            -0.1110285,
+            -0.0459002,
+            1.0
+          ],
+          "start_yaw_rad": -0.1170396,
+          "target_seed": 241010,
+          "target_xyz": [
+            1.9596643,
+            0.1630154,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -0.6358202,
+        "identity_sha256": "45413292d8bca1beb89cc8d868ec4b06e6a557c49a907b3241c949020f791af8",
+        "scenario": {
+          "identity_sha256": "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+          "layout": "front_box",
+          "obstacle_configuration_hash": "c73c805dd4b0de5952907868e488b27bd0d826c37b21c032d876aeb7496f99b3",
+          "obstacle_variation": [
+            [
+              -0.0311387,
+              0.0909714,
+              0.830849
+            ]
+          ],
+          "scene_seed": 41011,
+          "split": "train",
+          "start_seed": 141011,
+          "start_xyz": [
+            0.0397968,
+            0.0232398,
+            1.0
+          ],
+          "start_yaw_rad": -0.6358202,
+          "target_seed": 241011,
+          "target_xyz": [
+            1.9663402,
+            0.177499,
+            1.0
+          ]
+        }
+      }
+    ],
+    "SHORT": [
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -1.1761304,
+        "identity_sha256": "f6925b9b90558d970c49970275985d3426a3ff6c4b4fd53ca41db4f2c48e9874",
+        "scenario": {
+          "base_identity_sha256": "0f905943b41c900608c06393db69d71402bc6c54275b1a7122beead6eba8f98e",
+          "identity_sha256": "eb25d5230c0d44c40595eff50d4d807d61dbf89226ada2091bb465c81df02328",
+          "layout": "empty",
+          "obstacle_configuration_hash": "d8502ffc90eb4e545e426ae0436814c15a447f8cf5cd63138514d9298dce2e17",
+          "obstacle_variation": [],
+          "scene_seed": 41000,
+          "split": "train",
+          "start_seed": 141000,
+          "start_xyz": [
+            -0.0503064,
+            -0.0709097,
+            1.0
+          ],
+          "start_yaw_rad": -1.1761304,
+          "target_seed": 241000,
+          "target_xyz": [
+            0.14968329107582398,
+            -0.07294033128028847,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -1.0301523,
+        "identity_sha256": "707d9c6eb41b3b55f9f74d7eb6c6a42a8e0da94b22f6846bf8c2e5ce77c8270b",
+        "scenario": {
+          "base_identity_sha256": "bdc2c92fc75d992729b489097beb443093d488107d31d891ef75e142e11dc4c9",
+          "identity_sha256": "d26c835a3c460b3cd92292731913cd8744ff958b108b54ac978d7080813fcb9c",
+          "layout": "front_box",
+          "obstacle_configuration_hash": "9f80e09c817b87d92e12c93068a6335e1f3f72fecf106acedd246fd21a3423a6",
+          "obstacle_variation": [
+            [
+              0.0996531,
+              -0.2019382,
+              0.9978964
+            ]
+          ],
+          "scene_seed": 41001,
+          "split": "train",
+          "start_seed": 141001,
+          "start_xyz": [
+            0.0780003,
+            -0.1084441,
+            1.0
+          ],
+          "start_yaw_rad": -1.0301523,
+          "target_seed": 241001,
+          "target_xyz": [
+            0.2758753382020624,
+            -0.0793671459550461,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -1.3300971,
+        "identity_sha256": "bc96817c0abac338f02f18a0a01fdda67f30f7f8744fceac1eac937f96a2d26b",
+        "scenario": {
+          "base_identity_sha256": "a77a46d59509cfd5510284575baeede895224bf766e04265293b5173c8448508",
+          "identity_sha256": "69510af27f743edfdeafc2ec29663341c38ea04e1a7bf2452326db2b20769bfc",
+          "layout": "side_pair",
+          "obstacle_configuration_hash": "5bd3214fb42c619328ae006d5ae5e1c6367af8c5da7370482ca3d19459fc02a3",
+          "obstacle_variation": [
+            [
+              -0.0263049,
+              0.0357125,
+              1.1895347
+            ],
+            [
+              -4.28e-05,
+              -0.0726642,
+              1.050846
+            ]
+          ],
+          "scene_seed": 41002,
+          "split": "train",
+          "start_seed": 141002,
+          "start_xyz": [
+            0.0169887,
+            -0.0452211,
+            1.0
+          ],
+          "start_yaw_rad": -1.3300971,
+          "target_seed": 241002,
+          "target_xyz": [
+            0.2160483319324098,
+            -0.02584939550778926,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -1.8047378,
+        "identity_sha256": "fc61d6966c699b8096eac906d08bc5d73450202de74d9aa632c9f758682b218d",
+        "scenario": {
+          "base_identity_sha256": "486841efec6ac78387a7e951386676d0ab8476a4ac0319fea689d10370012ed0",
+          "identity_sha256": "5a5de25c104b52078d2d5cc4581fafda281e6f2fba38829dc4b4b55fc5c787fd",
+          "layout": "detour",
+          "obstacle_configuration_hash": "08b398c21469de480d1d693928b05293c0a9351c7c764998e1a0dcd74fb6b8a1",
+          "obstacle_variation": [
+            [
+              -0.0062002,
+              -0.2062267,
+              1.1472422
+            ],
+            [
+              -0.0712984,
+              0.1480872,
+              0.9755263
+            ]
+          ],
+          "scene_seed": 41003,
+          "split": "train",
+          "start_seed": 141003,
+          "start_xyz": [
+            -0.1746756,
+            0.2997526,
+            1.0
+          ],
+          "start_yaw_rad": -1.8047378,
+          "target_seed": 241003,
+          "target_xyz": [
+            0.023517958741877593,
+            0.2729325837205505,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 1.6616317,
+        "identity_sha256": "a37ed7ac83474f00557f5010544e1e897c7906ece64ab5de0a55271132c908dc",
+        "scenario": {
+          "base_identity_sha256": "a7a049fb7f7338bb3d36f43ac38d574d6ad015f7230820b86eb1789ff57cb06c",
+          "identity_sha256": "2daf66441a4710a859014924b581e06e9e9e09f247308496d50f82f025b27a71",
+          "layout": "channel",
+          "obstacle_configuration_hash": "c1bde6f25ac38c94dfd752680fb6e2c790a839b6a4f8c56437f1920521b2c295",
+          "obstacle_variation": [
+            [
+              -0.0305128,
+              0.0206339,
+              1.0019997
+            ],
+            [
+              0.1032185,
+              0.0222619,
+              0.8658643
+            ]
+          ],
+          "scene_seed": 41004,
+          "split": "train",
+          "start_seed": 141004,
+          "start_xyz": [
+            -0.0705515,
+            -0.2032268,
+            1.0
+          ],
+          "start_yaw_rad": 1.6616317,
+          "target_seed": 241004,
+          "target_xyz": [
+            0.12833601406779965,
+            -0.18216126540125793,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 0.6747245,
+        "identity_sha256": "378f67d50b9ce683cd4ec2ebe92d90a4b7c69cd51c576e6043cebe2ee01f805c",
+        "scenario": {
+          "base_identity_sha256": "9cac892ba1833424d0f3aea947ed90f0807896c404fa2924440408eb6facb465",
+          "identity_sha256": "8965e5ac8e2301f67eec79c7ff77bdc83702abe017323539cbaee977dc0a8bb1",
+          "layout": "empty",
+          "obstacle_configuration_hash": "c85940ca34e17fc044f43e6e3ab2a52c1e308a5a05aeabfa88ac7507086f7778",
+          "obstacle_variation": [],
+          "scene_seed": 41005,
+          "split": "train",
+          "start_seed": 141005,
+          "start_xyz": [
+            -0.0836704,
+            0.0571978,
+            1.0
+          ],
+          "start_yaw_rad": 0.6747245,
+          "target_seed": 241005,
+          "target_xyz": [
+            0.11632742529255372,
+            0.0581304726377196,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 2.3226625,
+        "identity_sha256": "8b16c8a3b7226d25963d6bd382fb8b640aaaa797adafa0304b073f73535b6d98",
+        "scenario": {
+          "base_identity_sha256": "1c0bc54406be08f84e366c955bd042411490025135661b500b237cfed2245a6d",
+          "identity_sha256": "1a78c7f694369dd0570292a6577af8f84abf3888bf0a1ba65df37e00fd25c79d",
+          "layout": "front_box",
+          "obstacle_configuration_hash": "87717b1076dd90f2375ce4c10a9802b61f4a7b6a51bf4e61d6c96c2a481231f7",
+          "obstacle_variation": [
+            [
+              0.1242362,
+              0.171486,
+              1.132154
+            ]
+          ],
+          "scene_seed": 41006,
+          "split": "train",
+          "start_seed": 141006,
+          "start_xyz": [
+            -0.0487935,
+            -0.2457135,
+            1.0
+          ],
+          "start_yaw_rad": 2.3226625,
+          "target_seed": 241006,
+          "target_xyz": [
+            0.15100799256216563,
+            -0.23680487665343974,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 2.1905155,
+        "identity_sha256": "9f5038579c039a6348b4b5d75f0eae51ef06242900a4b7df0a9fccf0cae8baa7",
+        "scenario": {
+          "base_identity_sha256": "22caef01f8b9a4b97b3cbebb3379c84680f168471103f293936d7662be5e1032",
+          "identity_sha256": "1d7f972606b5a9a29cfebe106af298c13e1ad3ac7e3a5634954e7d596640af8c",
+          "layout": "side_pair",
+          "obstacle_configuration_hash": "9645b93ebc1f36dca3523f96f0d84d5ee85a377b2ee557355d310e898ecf8b64",
+          "obstacle_variation": [
+            [
+              -0.1055013,
+              -0.0659062,
+              1.0025937
+            ],
+            [
+              0.024353,
+              0.1631752,
+              0.8361876
+            ]
+          ],
+          "scene_seed": 41007,
+          "split": "train",
+          "start_seed": 141007,
+          "start_xyz": [
+            -0.1670658,
+            0.1210261,
+            1.0
+          ],
+          "start_yaw_rad": 2.1905155,
+          "target_seed": 241007,
+          "target_xyz": [
+            0.03293407750920552,
+            0.1212474510849412,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -0.12239560000000001,
+        "identity_sha256": "180619fd2abf414d7a1be696193eddb45fd90848e0a490b1a5cebd2fec23df72",
+        "scenario": {
+          "base_identity_sha256": "859eac9c3e0dc0a2890c5f60550cc1bcca9c5e014aae8b3c551a82c0036d3750",
+          "identity_sha256": "fd0b684dd3c541e3239b32eec86837a020810e90bd80c3cd4aa178b19cff8c59",
+          "layout": "detour",
+          "obstacle_configuration_hash": "b61378daf091f62bb74ff68f6541405832be6fe5e92cdbe4e476688f6eb6a7fd",
+          "obstacle_variation": [
+            [
+              0.1402849,
+              0.1040301,
+              0.9128544
+            ],
+            [
+              -0.1982575,
+              0.1615301,
+              1.004311
+            ]
+          ],
+          "scene_seed": 41008,
+          "split": "train",
+          "start_seed": 141008,
+          "start_xyz": [
+            -0.0761844,
+            0.1303479,
+            1.0
+          ],
+          "start_yaw_rad": -0.1223956,
+          "target_seed": 241008,
+          "target_xyz": [
+            0.12303420811503284,
+            0.11268590179172878,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 1.1892434,
+        "identity_sha256": "3cd4e59102302e213c873dbca2ed94354fe57ae51740399e262456bc00a98837",
+        "scenario": {
+          "base_identity_sha256": "c978c3c5277325cbb1ee3a7e675078c21aaad7acf008d174e6a26f41aa12e2c3",
+          "identity_sha256": "a2456b5178db23ba4982786ee6e2bdb7704e599800e36a5cc3976676b8f9cd85",
+          "layout": "channel",
+          "obstacle_configuration_hash": "8195e008d0552db0a5ae77857a3389789feb26ea5bf17080b8f19be3ee42fd53",
+          "obstacle_variation": [
+            [
+              -0.0022273,
+              0.0303716,
+              0.8898724
+            ],
+            [
+              0.1044016,
+              -0.0638676,
+              0.8761821
+            ]
+          ],
+          "scene_seed": 41009,
+          "split": "train",
+          "start_seed": 141009,
+          "start_xyz": [
+            0.0925123,
+            -0.2403769,
+            1.0
+          ],
+          "start_yaw_rad": 1.1892434,
+          "target_seed": 241009,
+          "target_xyz": [
+            0.28864855176818643,
+            -0.20125439059267036,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -0.1170396,
+        "identity_sha256": "264cffeedb3a1e420f9921105f6309f8f71e157573f19e11821179d6093eda5d",
+        "scenario": {
+          "base_identity_sha256": "adeeeb0d51443f0bcac9e5944ed27fb60adc4ad975ef85afdfed1908166f2e65",
+          "identity_sha256": "2cb407703306b5fe63c3e4aec58d07e795600be89e60b87fc3b854e2dee789ab",
+          "layout": "empty",
+          "obstacle_configuration_hash": "5165a98ab03db7be80be20dfbd99eeb3963d8d459d48ce4f3318b04669fbefe2",
+          "obstacle_variation": [],
+          "scene_seed": 41010,
+          "split": "train",
+          "start_seed": 141010,
+          "start_xyz": [
+            -0.1110285,
+            -0.0459002,
+            1.0
+          ],
+          "start_yaw_rad": -0.1170396,
+          "target_seed": 241010,
+          "target_xyz": [
+            0.08796129337972938,
+            -0.025823792684630868,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -0.6358202,
+        "identity_sha256": "09bf55bc11a4aa6f1229289eddc60eae240674c71955f18f5e703ff09cc56467",
+        "scenario": {
+          "base_identity_sha256": "8a67d03b52991c12d9c6193ea6154da199d7941741748345dea38c3cf650e39e",
+          "identity_sha256": "951641977659cfdbe0534a758008be9f070b497f0d885645ca859022b7483b4d",
+          "layout": "front_box",
+          "obstacle_configuration_hash": "c73c805dd4b0de5952907868e488b27bd0d826c37b21c032d876aeb7496f99b3",
+          "obstacle_variation": [
+            [
+              -0.0311387,
+              0.0909714,
+              0.830849
+            ]
+          ],
+          "scene_seed": 41011,
+          "split": "train",
+          "start_seed": 141011,
+          "start_xyz": [
+            0.0397968,
+            0.0232398,
+            1.0
+          ],
+          "start_yaw_rad": -0.6358202,
+          "target_seed": 241011,
+          "target_xyz": [
+            0.2391587387353682,
+            0.03920280045966621,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      }
+    ]
+  },
+  "validation": {
+    "ORIGINAL": [
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -2.8096483,
+        "identity_sha256": "15a9e0c084d7e25aa5e5791853e2f15a543dd0c4223e8a90a4dc9921223f092b",
+        "scenario": {
+          "identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "layout": "empty",
+          "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+          "obstacle_variation": [],
+          "scene_seed": 51000,
+          "split": "validation",
+          "start_seed": 151000,
+          "start_xyz": [
+            -0.0754896,
+            -0.2716165,
+            1.0
+          ],
+          "start_yaw_rad": -2.8096483,
+          "target_seed": 251000,
+          "target_xyz": [
+            1.9774321,
+            -0.0969566,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 3.0252606,
+        "identity_sha256": "0079f3a06ef06c448ee7083a826a4ba0b912556f87cca147f964c5df370571a3",
+        "scenario": {
+          "identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+          "layout": "front_box",
+          "obstacle_configuration_hash": "4d63e53d1f19e88193c642d165a880eea591798f512b12f7fc368dc772f57dfd",
+          "obstacle_variation": [
+            [
+              -0.1530586,
+              -0.0479436,
+              1.0917566
+            ]
+          ],
+          "scene_seed": 51001,
+          "split": "validation",
+          "start_seed": 151001,
+          "start_xyz": [
+            0.0497985,
+            -0.1996976,
+            1.0
+          ],
+          "start_yaw_rad": 3.0252606,
+          "target_seed": 251001,
+          "target_xyz": [
+            1.9322095,
+            0.1532845,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 0.5961816,
+        "identity_sha256": "d153a0e0b9fa6b5977236183a5fc534b3c3b0b23332b219a4266d83c747955f7",
+        "scenario": {
+          "identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+          "layout": "side_pair",
+          "obstacle_configuration_hash": "de69ffee0adddf072b6e2675e2f25a0fa65d7afd559d682ebdb4af4f16784289",
+          "obstacle_variation": [
+            [
+              -0.1700284,
+              -0.0904398,
+              0.9578842
+            ],
+            [
+              -0.0326648,
+              -0.0563386,
+              0.8878916
+            ]
+          ],
+          "scene_seed": 51002,
+          "split": "validation",
+          "start_seed": 151002,
+          "start_xyz": [
+            0.0512922,
+            0.1899546,
+            1.0
+          ],
+          "start_yaw_rad": 0.5961816,
+          "target_seed": 251002,
+          "target_xyz": [
+            1.953399,
+            -0.1115559,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 1.3524609,
+        "identity_sha256": "dbca698444f99031043d0ba22365a17f09ca28f32d431b9f03fc6cd873c4b788",
+        "scenario": {
+          "identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+          "layout": "detour",
+          "obstacle_configuration_hash": "8fcc17ffb850c9eb3e81282ecf58a7d5e43c3785373e09607121d8afa007c08c",
+          "obstacle_variation": [
+            [
+              -0.0195579,
+              0.1950133,
+              1.1450021
+            ],
+            [
+              -0.1809624,
+              0.1393471,
+              0.9555784
+            ]
+          ],
+          "scene_seed": 51003,
+          "split": "validation",
+          "start_seed": 151003,
+          "start_xyz": [
+            -0.1221735,
+            -0.1046859,
+            1.0
+          ],
+          "start_yaw_rad": 1.3524609,
+          "target_seed": 251003,
+          "target_xyz": [
+            1.9789627,
+            0.1048454,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 1.0710029,
+        "identity_sha256": "e8e53b7d378d6290b54fb9324885099681584602d60f5c367de1b5ba325a3572",
+        "scenario": {
+          "identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+          "layout": "channel",
+          "obstacle_configuration_hash": "a5eb7b33488bdf8858e0e696fb6e0189d8e535207b6cfe018b1eab8c38eb12cc",
+          "obstacle_variation": [
+            [
+              0.1158533,
+              -0.0178958,
+              1.0297941
+            ],
+            [
+              0.1086019,
+              -0.0283534,
+              1.0066017
+            ]
+          ],
+          "scene_seed": 51004,
+          "split": "validation",
+          "start_seed": 151004,
+          "start_xyz": [
+            0.007751,
+            0.017084,
+            1.0
+          ],
+          "start_yaw_rad": 1.0710029,
+          "target_seed": 251004,
+          "target_xyz": [
+            1.9329941,
+            -0.1685474,
+            1.0
+          ]
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -2.532766,
+        "identity_sha256": "2c3a67e9850931999af33b385efa990dedca33dee7200eb577bddc9ff03d90ff",
+        "scenario": {
+          "identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "layout": "empty",
+          "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+          "obstacle_variation": [],
+          "scene_seed": 51005,
+          "split": "validation",
+          "start_seed": 151005,
+          "start_xyz": [
+            -0.1505737,
+            0.0293293,
+            1.0
+          ],
+          "start_yaw_rad": -2.532766,
+          "target_seed": 251005,
+          "target_xyz": [
+            1.979277,
+            -0.0583131,
+            1.0
+          ]
+        }
+      }
+    ],
+    "SHORT": [
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -2.8096483,
+        "identity_sha256": "3d7960adcea3fa82596f94646b5f6c9fd7eaa48b50aecf5022a1a80ad6f9cbf3",
+        "scenario": {
+          "base_identity_sha256": "fe85ac443a0dc1bd2c676b6455f28ef0a4d15ea046287b692cc7eb3f6eefe06f",
+          "identity_sha256": "13daf599df67e134cc99072073a3fa678059c3ab521cae07a495f48a38b784e6",
+          "layout": "empty",
+          "obstacle_configuration_hash": "9645d1af2a67abbab4dd71b2c3dbaf75e29d81da1b35c67992c0271fce09e73e",
+          "obstacle_variation": [],
+          "scene_seed": 51000,
+          "split": "validation",
+          "start_seed": 151000,
+          "start_xyz": [
+            -0.0754896,
+            -0.2716165,
+            1.0
+          ],
+          "start_yaw_rad": -2.8096483,
+          "target_seed": 251000,
+          "target_xyz": [
+            0.12379046757058813,
+            -0.2546620118313221,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 3.0252606,
+        "identity_sha256": "7e1375026260334addd47150d0bd7a7b8ae50cb24ff9737363b5a264f96c7adb",
+        "scenario": {
+          "base_identity_sha256": "80f560c47ef1fc9491a085ce27a88e021583f0cf26b3cd36c20af77dcbd77277",
+          "identity_sha256": "92e2547adc9b9ad737579a3ae6f92ed371cf4b1de2bc9eb6f5eae623b6b6c8c9",
+          "layout": "front_box",
+          "obstacle_configuration_hash": "4d63e53d1f19e88193c642d165a880eea591798f512b12f7fc368dc772f57dfd",
+          "obstacle_variation": [
+            [
+              -0.1530586,
+              -0.0479436,
+              1.0917566
+            ]
+          ],
+          "scene_seed": 51001,
+          "split": "validation",
+          "start_seed": 151001,
+          "start_xyz": [
+            0.0497985,
+            -0.1996976,
+            1.0
+          ],
+          "start_yaw_rad": 3.0252606,
+          "target_seed": 251001,
+          "target_xyz": [
+            0.24637236920373648,
+            -0.16283686280888698,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 0.5961816,
+        "identity_sha256": "5ec6d5ac9094302181e7a83ac9b9cc2f15508f1c8fcafb3bbc143ea1bd4f26a8",
+        "scenario": {
+          "base_identity_sha256": "f07b571d7ec350fe277175a521d7282858ba2219808ee1f706a10503194d9d6c",
+          "identity_sha256": "445ca64157041508340b53d5893abb2f13f132dd31dbfce896808e37fe0dc251",
+          "layout": "side_pair",
+          "obstacle_configuration_hash": "de69ffee0adddf072b6e2675e2f25a0fa65d7afd559d682ebdb4af4f16784289",
+          "obstacle_variation": [
+            [
+              -0.1700284,
+              -0.0904398,
+              0.9578842
+            ],
+            [
+              -0.0326648,
+              -0.0563386,
+              0.8878916
+            ]
+          ],
+          "scene_seed": 51002,
+          "split": "validation",
+          "start_seed": 151002,
+          "start_xyz": [
+            0.0512922,
+            0.1899546,
+            1.0
+          ],
+          "start_yaw_rad": 0.5961816,
+          "target_seed": 251002,
+          "target_xyz": [
+            0.24882591321756464,
+            0.15864274693313513,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 1.3524609,
+        "identity_sha256": "93670e143e1896e56fe7632b1aa7699770b662649850e4892125cf0fb6ad7400",
+        "scenario": {
+          "base_identity_sha256": "6587c37f51d0508084e8b886c61df5fce96dd1cccd074b6b4feb54e7b8436079",
+          "identity_sha256": "8f034b38da1d239a767eefa61e5ba522dde5c13a9728886811d7d33c25c991de",
+          "layout": "detour",
+          "obstacle_configuration_hash": "8fcc17ffb850c9eb3e81282ecf58a7d5e43c3785373e09607121d8afa007c08c",
+          "obstacle_variation": [
+            [
+              -0.0195579,
+              0.1950133,
+              1.1450021
+            ],
+            [
+              -0.1809624,
+              0.1393471,
+              0.9555784
+            ]
+          ],
+          "scene_seed": 51003,
+          "split": "validation",
+          "start_seed": 151003,
+          "start_xyz": [
+            -0.1221735,
+            -0.1046859,
+            1.0
+          ],
+          "start_yaw_rad": 1.3524609,
+          "target_seed": 251003,
+          "target_xyz": [
+            0.07683939148849607,
+            -0.08483976633653567,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": 1.0710029,
+        "identity_sha256": "fbc1db1ca0d4defac48181ea38844fe13631ba41b83ebe91f07f4a59f8c9fa3c",
+        "scenario": {
+          "base_identity_sha256": "919918bef095caea79a23faae776b8785511dab630d4f908584db1d935a535b1",
+          "identity_sha256": "515ed7a0d5dc397b45e7eadd3fe8b4f0385f21b1446cb9b178066914e512539a",
+          "layout": "channel",
+          "obstacle_configuration_hash": "a5eb7b33488bdf8858e0e696fb6e0189d8e535207b6cfe018b1eab8c38eb12cc",
+          "obstacle_variation": [
+            [
+              0.1158533,
+              -0.0178958,
+              1.0297941
+            ],
+            [
+              0.1086019,
+              -0.0283534,
+              1.0066017
+            ]
+          ],
+          "scene_seed": 51004,
+          "split": "validation",
+          "start_seed": 151004,
+          "start_xyz": [
+            0.007751,
+            0.017084,
+            1.0
+          ],
+          "start_yaw_rad": 1.0710029,
+          "target_seed": 251004,
+          "target_xyz": [
+            0.2068277561854205,
+            -0.0021109250243557705,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      },
+      {
+        "goal_yaw_mode": "HOLD_INITIAL_ENU_YAW",
+        "goal_yaw_rad": -2.532766,
+        "identity_sha256": "1382a2364fec153a0be302d3f9987cb61150e34e4f41cad9851fb50eae7ce34b",
+        "scenario": {
+          "base_identity_sha256": "0936e963da209891260ccd32980230a6bccaddfe6136ee1629bc6f4f7664f6dd",
+          "identity_sha256": "0a0b6aa72e84170f27c1d9d31974c62dd544a8c7fd05a3b0faaa6b817dc24e59",
+          "layout": "empty",
+          "obstacle_configuration_hash": "860efb3b24cd84e55601c049cc6bb64145f7a125d5a24d6d1fd98e8eab25ab07",
+          "obstacle_variation": [],
+          "scene_seed": 51005,
+          "split": "validation",
+          "start_seed": 151005,
+          "start_xyz": [
+            -0.1505737,
+            0.0293293,
+            1.0
+          ],
+          "start_yaw_rad": -2.532766,
+          "target_seed": 251005,
+          "target_xyz": [
+            0.04925718618346403,
+            0.021106348757809347,
+            1.0
+          ],
+          "task_variant": "DISTANCE_ONLY_0_20M_SIM_TASK"
+        }
+      }
+    ]
+  }
+}
